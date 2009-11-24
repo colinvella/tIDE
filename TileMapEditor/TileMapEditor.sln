@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiling", "Tiling\Tiling.csproj", "{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapEditor", "TileMapEditor\TileMapEditor.csproj", "{23DDF477-C651-46E1-A856-46BA1D64FC6B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs04.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TileMapEditor\\TileMapEditor.csproj
+		SccProjectName1 = TileMapEditor
+		SccLocalPath1 = TileMapEditor
+		SccProjectUniqueName2 = Tiling\\Tiling.csproj
+		SccProjectName2 = Tiling
+		SccLocalPath2 = Tiling
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
