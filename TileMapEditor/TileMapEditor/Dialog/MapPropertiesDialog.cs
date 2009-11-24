@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TileMapEditor
+namespace TileMapEditor.Dialog
 {
     public partial class MapPropertiesDialog : Form
     {

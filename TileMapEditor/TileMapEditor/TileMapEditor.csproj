@@ -53,10 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomPropertyGrid.cs">
+    <Compile Include="Control\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CustomPropertyGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomPropertyGrid.Designer.cs">
+    <Compile Include="Control\CustomPropertyGrid.Designer.cs">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -65,10 +68,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapPropertiesDialog.cs">
+    <Compile Include="Dialog\MapPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MapPropertiesDialog.Designer.cs">
+    <Compile Include="Dialog\MapPropertiesDialog.Designer.cs">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\MapTreeView.cs">
@@ -79,7 +82,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomPropertyGrid.resx">
+    <EmbeddedResource Include="Control\CustomPropertyGrid.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -87,7 +90,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapPropertiesDialog.resx">
+    <EmbeddedResource Include="Dialog\MapPropertiesDialog.resx">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

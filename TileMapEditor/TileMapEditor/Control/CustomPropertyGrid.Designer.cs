@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor
+﻿namespace TileMapEditor.Control
 {
     partial class CustomPropertyGrid
     {
@@ -37,14 +37,19 @@
             // m_dataGridView
             // 
             this.m_dataGridView.AllowUserToOrderColumns = true;
+            this.m_dataGridView.AllowUserToResizeRows = false;
+            this.m_dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.m_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.m_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PropertyName,
             this.PropertyValue});
             this.m_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.m_dataGridView.MultiSelect = false;
             this.m_dataGridView.Name = "m_dataGridView";
-            this.m_dataGridView.Size = new System.Drawing.Size(440, 150);
+            this.m_dataGridView.RowHeadersWidth = 21;
+            this.m_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.m_dataGridView.Size = new System.Drawing.Size(421, 150);
             this.m_dataGridView.TabIndex = 0;
             this.m_dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.m_dataGridView_CellBeginEdit);
             this.m_dataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_dataGridView_CellValidated);
@@ -53,15 +58,15 @@
             // 
             // PropertyName
             // 
+            this.PropertyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PropertyName.HeaderText = "Name";
             this.PropertyName.Name = "PropertyName";
-            this.PropertyName.Width = 200;
             // 
             // PropertyValue
             // 
+            this.PropertyValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PropertyValue.HeaderText = "Value";
             this.PropertyValue.Name = "PropertyValue";
-            this.PropertyValue.Width = 200;
             // 
             // CustomPropertyGrid
             // 
@@ -69,7 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.m_dataGridView);
             this.Name = "CustomPropertyGrid";
-            this.Size = new System.Drawing.Size(440, 150);
+            this.Size = new System.Drawing.Size(421, 150);
             ((System.ComponentModel.ISupportInitialize)(this.m_dataGridView)).EndInit();
             this.ResumeLayout(false);
 

@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 using Tiling;
 
+using TileMapEditor.Dialog;
+
 namespace TileMapEditor
 {
     public partial class MainForm : Form
