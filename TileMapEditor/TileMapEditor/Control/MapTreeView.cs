@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 using Tiling;
 
-namespace TileMapEditor
+namespace TileMapEditor.Control
 {
     public partial class MapTreeView : UserControl
     {

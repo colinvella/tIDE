@@ -27,7 +27,12 @@ namespace TileMapEditor
 
             m_map.Properties.Add("hello", "world");
             m_map.Properties.Add("yo", true);
-            customPropertyGrid1.LoadProperties(m_map);
+        }
+
+        private void OnFileNew(object sender, EventArgs eventArgs)
+        {
+            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog();
+            mapPropertiesDialog.ShowDialog(this);
         }
     }
 }
