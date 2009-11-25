@@ -74,11 +74,7 @@ namespace TileMapEditor.Dialog
         private void m_panelImage_Paint(object sender, PaintEventArgs paintEventArgs)
         {
             Graphics graphics = paintEventArgs.Graphics;
-            graphics.SmoothingMode = SmoothingMode.HighSpeed;
-
-            Matrix matrix = new Matrix();
-            matrix.Scale(m_trackBar.Value, m_trackBar.Value);
-            graphics.Transform = matrix;
+            //graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
 
             if (m_bitmapImageSource == null && m_imageSourceErrorMessge == null)
             {
@@ -91,11 +87,41 @@ namespace TileMapEditor.Dialog
             }
             else
             {
+                graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+                graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
+                //System.Drawing.Rectangle rectangleSource = new System.Drawing.Rectangle(0, 0, m_bitmapImageSource.Width, m_bitmapImageSource.Height);
+                System.Drawing.Rectangle rectangleDestination = new System.Drawing.Rectangle(0, 0, m_bitmapImageSource.Width * m_trackBar.Value, m_bitmapImageSource.Height * m_trackBar.Value);
+                //graphics.DrawImage(m_bitmapImageSource, rectangleDestination, rectangleSource, GraphicsUnit.Pixel);
                 graphics.DrawImage(m_bitmapImageSource, 0, 0);
+
+                Pen pen = new Pen(Color.FromArgb(192, Color.White));
+
+                int imageWidth = m_bitmapImageSource.Width;
+                int imageHeight = m_bitmapImageSource.Height;
+                int marginLeft = (int)m_textBoxLeftMargin.Value;
+                int marginTop = (int)m_textBoxTopMargin.Value;
+                int tileWidth = (int)m_textBoxTileWidth.Value;
+                int tileHeight = (int)m_textBoxTileHeight.Value;
+                int tilePaddingX = (int)m_textBoxPaddingX.Value;
+                int tilePaddingY = (int)m_textBoxPaddingY.Value;
+
+                for (int posY = marginTop; posY + tileHeight < imageHeight; posY += tileHeight + tilePaddingY)
+                    for (int posX = marginLeft; posX + tileWidth < imageWidth; posX += tileWidth + tilePaddingX)
+                        graphics.DrawRectangle(pen, posX, posY, tileWidth - 1, tileHeight - 1);
             }
+
         }
 
         private void m_trackBar_Scroll(object sender, EventArgs eventArgs)
+        {
+            if (m_trackBar.Value == 1)
+                m_labelZoom.Text = "Zoom";
+            else
+                m_labelZoom.Text = "Zoom (x " + m_trackBar.Value + ")";
+            m_panelImage.Invalidate();
+        }
+
+        private void OnUpdateAlignment(object sender, EventArgs eventArgs)
         {
             m_panelImage.Invalidate();
         }

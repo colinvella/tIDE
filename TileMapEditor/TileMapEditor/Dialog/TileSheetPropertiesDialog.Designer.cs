@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label m_labelTileSizeBy;
+            System.Windows.Forms.Label m_labelTileSize;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
@@ -46,32 +52,86 @@
             this.m_panelImage = new System.Windows.Forms.Panel();
             this.m_trackBar = new System.Windows.Forms.TrackBar();
             this.m_labelZoom = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.m_textBoxPaddingY = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxPaddingX = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxTopMargin = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxLeftMargin = new System.Windows.Forms.NumericUpDown();
             this.m_textBoxTileHeight = new System.Windows.Forms.NumericUpDown();
-            this.m_labelTileSizeBy = new System.Windows.Forms.Label();
             this.m_textBoxTileWidth = new System.Windows.Forms.NumericUpDown();
-            this.m_labelTileSize = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            m_labelTileSizeBy = new System.Windows.Forms.Label();
+            m_labelTileSize = new System.Windows.Forms.Label();
             this.m_customTabControl.SuspendLayout();
             this.m_tabGeneral.SuspendLayout();
             this.m_tabAlignment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_trackBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxPaddingY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxPaddingX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTopMargin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxLeftMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileWidth)).BeginInit();
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(460, 33);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(12, 13);
+            label3.TabIndex = 11;
+            label3.Text = "x";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(319, 33);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(46, 13);
+            label4.TabIndex = 9;
+            label4.Text = "Padding";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(461, 7);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(12, 13);
+            label1.TabIndex = 7;
+            label1.Text = "x";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(319, 7);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(39, 13);
+            label2.TabIndex = 5;
+            label2.Text = "Margin";
+            // 
+            // m_labelTileSizeBy
+            // 
+            m_labelTileSizeBy.AutoSize = true;
+            m_labelTileSizeBy.Location = new System.Drawing.Point(149, 7);
+            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
+            m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
+            m_labelTileSizeBy.TabIndex = 3;
+            m_labelTileSizeBy.Text = "x";
+            // 
+            // m_labelTileSize
+            // 
+            m_labelTileSize.AutoSize = true;
+            m_labelTileSize.Location = new System.Drawing.Point(7, 7);
+            m_labelTileSize.Name = "m_labelTileSize";
+            m_labelTileSize.Size = new System.Drawing.Size(47, 13);
+            m_labelTileSize.TabIndex = 0;
+            m_labelTileSize.Text = "Tile Size";
             // 
             // m_buttonOk
             // 
@@ -207,18 +267,18 @@
             this.m_tabAlignment.Controls.Add(this.m_panelImage);
             this.m_tabAlignment.Controls.Add(this.m_trackBar);
             this.m_tabAlignment.Controls.Add(this.m_labelZoom);
-            this.m_tabAlignment.Controls.Add(this.numericUpDown3);
-            this.m_tabAlignment.Controls.Add(this.label3);
-            this.m_tabAlignment.Controls.Add(this.numericUpDown4);
-            this.m_tabAlignment.Controls.Add(this.label4);
-            this.m_tabAlignment.Controls.Add(this.numericUpDown1);
-            this.m_tabAlignment.Controls.Add(this.label1);
-            this.m_tabAlignment.Controls.Add(this.numericUpDown2);
-            this.m_tabAlignment.Controls.Add(this.label2);
+            this.m_tabAlignment.Controls.Add(this.m_textBoxPaddingY);
+            this.m_tabAlignment.Controls.Add(label3);
+            this.m_tabAlignment.Controls.Add(this.m_textBoxPaddingX);
+            this.m_tabAlignment.Controls.Add(label4);
+            this.m_tabAlignment.Controls.Add(this.m_textBoxTopMargin);
+            this.m_tabAlignment.Controls.Add(label1);
+            this.m_tabAlignment.Controls.Add(this.m_textBoxLeftMargin);
+            this.m_tabAlignment.Controls.Add(label2);
             this.m_tabAlignment.Controls.Add(this.m_textBoxTileHeight);
-            this.m_tabAlignment.Controls.Add(this.m_labelTileSizeBy);
+            this.m_tabAlignment.Controls.Add(m_labelTileSizeBy);
             this.m_tabAlignment.Controls.Add(this.m_textBoxTileWidth);
-            this.m_tabAlignment.Controls.Add(this.m_labelTileSize);
+            this.m_tabAlignment.Controls.Add(m_labelTileSize);
             this.m_tabAlignment.Location = new System.Drawing.Point(4, 22);
             this.m_tabAlignment.Name = "m_tabAlignment";
             this.m_tabAlignment.Padding = new System.Windows.Forms.Padding(3);
@@ -254,133 +314,61 @@
             this.m_labelZoom.TabIndex = 14;
             this.m_labelZoom.Text = "Zoom";
             // 
-            // numericUpDown3
+            // m_textBoxPaddingY
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(478, 31);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            512,
+            this.m_textBoxPaddingY.Location = new System.Drawing.Point(478, 31);
+            this.m_textBoxPaddingY.Maximum = new decimal(new int[] {
+            1024,
             0,
             0,
             0});
-            this.numericUpDown3.Minimum = new decimal(new int[] {
-            8,
+            this.m_textBoxPaddingY.Name = "m_textBoxPaddingY";
+            this.m_textBoxPaddingY.Size = new System.Drawing.Size(68, 20);
+            this.m_textBoxPaddingY.TabIndex = 12;
+            this.m_textBoxPaddingY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxPaddingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // m_textBoxPaddingX
+            // 
+            this.m_textBoxPaddingX.Location = new System.Drawing.Point(386, 31);
+            this.m_textBoxPaddingX.Maximum = new decimal(new int[] {
+            1024,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(68, 20);
-            this.numericUpDown3.TabIndex = 12;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown3.Value = new decimal(new int[] {
-            8,
+            this.m_textBoxPaddingX.Name = "m_textBoxPaddingX";
+            this.m_textBoxPaddingX.Size = new System.Drawing.Size(68, 20);
+            this.m_textBoxPaddingX.TabIndex = 10;
+            this.m_textBoxPaddingX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxPaddingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // m_textBoxTopMargin
+            // 
+            this.m_textBoxTopMargin.Location = new System.Drawing.Point(479, 5);
+            this.m_textBoxTopMargin.Maximum = new decimal(new int[] {
+            1024,
             0,
             0,
             0});
+            this.m_textBoxTopMargin.Name = "m_textBoxTopMargin";
+            this.m_textBoxTopMargin.Size = new System.Drawing.Size(67, 20);
+            this.m_textBoxTopMargin.TabIndex = 8;
+            this.m_textBoxTopMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxTopMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
-            // label3
+            // m_textBoxLeftMargin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(460, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "x";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(386, 31);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            512,
+            this.m_textBoxLeftMargin.Location = new System.Drawing.Point(387, 5);
+            this.m_textBoxLeftMargin.Maximum = new decimal(new int[] {
+            1024,
             0,
             0,
             0});
-            this.numericUpDown4.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(68, 20);
-            this.numericUpDown4.TabIndex = 10;
-            this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown4.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(319, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Padding";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(479, 5);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(461, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "x";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(387, 5);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown2.TabIndex = 6;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Margin";
+            this.m_textBoxLeftMargin.Name = "m_textBoxLeftMargin";
+            this.m_textBoxLeftMargin.Size = new System.Drawing.Size(67, 20);
+            this.m_textBoxLeftMargin.TabIndex = 6;
+            this.m_textBoxLeftMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxLeftMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // m_textBoxTileHeight
             // 
@@ -404,15 +392,7 @@
             0,
             0,
             0});
-            // 
-            // m_labelTileSizeBy
-            // 
-            this.m_labelTileSizeBy.AutoSize = true;
-            this.m_labelTileSizeBy.Location = new System.Drawing.Point(149, 7);
-            this.m_labelTileSizeBy.Name = "m_labelTileSizeBy";
-            this.m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
-            this.m_labelTileSizeBy.TabIndex = 3;
-            this.m_labelTileSizeBy.Text = "x";
+            this.m_textBoxTileHeight.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // m_textBoxTileWidth
             // 
@@ -436,15 +416,7 @@
             0,
             0,
             0});
-            // 
-            // m_labelTileSize
-            // 
-            this.m_labelTileSize.AutoSize = true;
-            this.m_labelTileSize.Location = new System.Drawing.Point(7, 7);
-            this.m_labelTileSize.Name = "m_labelTileSize";
-            this.m_labelTileSize.Size = new System.Drawing.Size(47, 13);
-            this.m_labelTileSize.TabIndex = 0;
-            this.m_labelTileSize.Text = "Tile Size";
+            this.m_textBoxTileWidth.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // m_tabCustomProperties
             // 
@@ -459,9 +431,10 @@
             // 
             // m_customPropertyGrid
             // 
-            this.m_customPropertyGrid.Location = new System.Drawing.Point(6, 6);
+            this.m_customPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_customPropertyGrid.Location = new System.Drawing.Point(3, 3);
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
-            this.m_customPropertyGrid.Size = new System.Drawing.Size(540, 321);
+            this.m_customPropertyGrid.Size = new System.Drawing.Size(546, 327);
             this.m_customPropertyGrid.TabIndex = 0;
             // 
             // TileSheetPropertiesDialog
@@ -488,10 +461,10 @@
             this.m_tabAlignment.ResumeLayout(false);
             this.m_tabAlignment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_trackBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxPaddingY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxPaddingX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTopMargin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxLeftMargin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileWidth)).EndInit();
             this.m_tabCustomProperties.ResumeLayout(false);
@@ -512,25 +485,19 @@
         private System.Windows.Forms.Label m_labelDescription;
         private System.Windows.Forms.TextBox m_textBoxId;
         private System.Windows.Forms.Label m_labelId;
-        private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.TabPage m_tabAlignment;
         private System.Windows.Forms.Label m_labelImageSource;
         private System.Windows.Forms.Button m_buttonBrowse;
-        private System.Windows.Forms.Label m_labelTileSize;
         private System.Windows.Forms.NumericUpDown m_textBoxTileHeight;
-        private System.Windows.Forms.Label m_labelTileSizeBy;
         private System.Windows.Forms.NumericUpDown m_textBoxTileWidth;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown m_textBoxPaddingY;
+        private System.Windows.Forms.NumericUpDown m_textBoxPaddingX;
+        private System.Windows.Forms.NumericUpDown m_textBoxTopMargin;
+        private System.Windows.Forms.NumericUpDown m_textBoxLeftMargin;
         private System.Windows.Forms.Panel m_panelImage;
         private System.Windows.Forms.TextBox m_textBoxImageSource;
         private System.Windows.Forms.Label m_labelZoom;
         private System.Windows.Forms.TrackBar m_trackBar;
+        private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
     }
 }
