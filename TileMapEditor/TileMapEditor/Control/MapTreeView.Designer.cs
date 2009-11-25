@@ -68,6 +68,7 @@ namespace TileMapEditor.Control
             this.m_treeView.SelectedImageIndex = 0;
             this.m_treeView.Size = new System.Drawing.Size(150, 150);
             this.m_treeView.TabIndex = 0;
+            this.m_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.m_treeView_AfterSelect);
             // 
             // m_imageList
             // 

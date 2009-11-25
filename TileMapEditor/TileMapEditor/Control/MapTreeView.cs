@@ -20,55 +20,6 @@ namespace TileMapEditor.Control
             InitializeComponent();
         }
 
-        /*
-        public void Rebuild()
-        {
-            m_treeView.Nodes.Clear();
-
-            if (m_map == null)
-                return;
-
-            // determine image list indices
-            int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
-            int collectionImageIndex = m_imageList.Images.IndexOfKey("Collection.png");
-            int layerImageIndex = m_imageList.Images.IndexOfKey("Layer.png");
-            int tileSheetImageIndex = m_imageList.Images.IndexOfKey("TileSheet.png");
-
-            // map root node
-            TreeNode mapNode = new TreeNode(m_map.Id, mapImageIndex, mapImageIndex);
-            mapNode.Tag = m_map;
-
-            // layer collection node
-            TreeNode layersNode = new TreeNode("Layers", collectionImageIndex, collectionImageIndex);
-            layersNode.Tag = m_map.Layers;
-            mapNode.Nodes.Add(layersNode);
-
-            // tilesheet collection node
-            TreeNode tileSheetsNode = new TreeNode("Tile Sheets", collectionImageIndex, collectionImageIndex);
-            tileSheetsNode.Tag = m_map.TileSheets;
-            mapNode.Nodes.Add(tileSheetsNode);
-
-            // layers
-            foreach (Layer layer in m_map.Layers)
-            {
-                TreeNode layerNode = new TreeNode(layer.Id, layerImageIndex, layerImageIndex);
-                layerNode.Tag = layer;
-                tileSheetsNode.Nodes.Add(layerNode);
-            }
-
-            // tile sheets
-            foreach (TileSheet tileSheet in m_map.TileSheets)
-            {
-                TreeNode tileSheetNode = new TreeNode(tileSheet.Id, tileSheetImageIndex, tileSheetImageIndex);
-                tileSheetsNode.Tag = tileSheet;
-                tileSheetsNode.Nodes.Add(tileSheetNode);
-            }
-
-            // assign root node
-            m_treeView.Nodes.Add(mapNode);
-        }
-        */
-
         public void UpdateTree()
         {
             if (m_map == null)
@@ -112,6 +63,7 @@ namespace TileMapEditor.Control
                 // determine update map node
                 mapNode = m_treeView.Nodes[0];
                 mapNode.Text = m_map.Id;
+                mapNode.Tag = m_map;
                 layersNode = mapNode.Nodes[0];
                 tileSheetsNode = mapNode.Nodes[1];
             }
@@ -169,5 +121,46 @@ namespace TileMapEditor.Control
         }
 
         #endregion
+
+        #region Public Events
+
+        [Category("Behavior"), Description("Occurs when the selected component node is changed")]
+        public event MapTreeViewEventHandler ComponentChanged;
+
+        #endregion
+
+        private void m_treeView_AfterSelect(object sender, TreeViewEventArgs treeViewEventArgs)
+        {
+            if (ComponentChanged != null)
+            {
+                TreeNode treeNode = m_treeView.SelectedNode;
+
+                object tag = treeNode.Tag;
+                Tiling.Component component = tag is Tiling.Component
+                    ? (Tiling.Component)tag : null;
+
+                ComponentChanged(this,
+                    new MapTreeViewEventArgs(treeNode, component));
+            }
+        }
     }
+
+    public class MapTreeViewEventArgs
+    {
+        private TreeNode m_treeNode;
+        private Tiling.Component m_component;
+
+        public MapTreeViewEventArgs(TreeNode treeNode, Tiling.Component component)
+        {
+            m_treeNode = treeNode;
+            m_component = component;
+        }
+
+        public TreeNode TreeNode { get { return m_treeNode; } }
+
+        public Tiling.Component Component { get { return m_component; } }
+    }
+
+    public delegate void MapTreeViewEventHandler(
+        object sender, MapTreeViewEventArgs mapTreeViewEventArgs);
 }

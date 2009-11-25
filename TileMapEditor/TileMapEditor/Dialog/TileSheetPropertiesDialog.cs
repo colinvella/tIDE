@@ -48,6 +48,9 @@ namespace TileMapEditor.Dialog
 
             m_customPropertyGrid.StoreProperties(m_tileSheet);
 
+            if (m_bitmapImageSource != null)
+                m_bitmapImageSource.Dispose();
+
             DialogResult = DialogResult.OK;
 
             Close();

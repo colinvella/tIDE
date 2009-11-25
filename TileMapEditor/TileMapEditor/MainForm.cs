@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 using Tiling;
 
+using TileMapEditor.Control;
 using TileMapEditor.Dialog;
 
 namespace TileMapEditor
@@ -16,6 +17,7 @@ namespace TileMapEditor
     public partial class MainForm : Form
     {
         private Map m_map;
+        private Tiling.Component m_selectedComponent;
 
         public MainForm()
         {
@@ -27,8 +29,7 @@ namespace TileMapEditor
             m_map = new Map("Untitled map");
             m_mapTreeView.Map = m_map;
 
-            m_map.Properties.Add("hello", "world");
-            m_map.Properties.Add("yo", true);
+            m_selectedComponent = m_map;
         }
 
         private void OnFileNew(object sender, EventArgs eventArgs)
@@ -65,6 +66,31 @@ namespace TileMapEditor
                 return;
 
             m_map.AddTileSheet(tileSheet);
+            m_mapTreeView.UpdateTree();
+        }
+
+        private void m_mapTreeView_ComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
+        {
+            Tiling.Component component = mapTreeViewEventArgs.Component;
+
+            m_tileSheetPropertiesMenuItem.Enabled = m_tileSheetDeleteMenuItem.Enabled
+                = component != null && mapTreeViewEventArgs.Component is TileSheet;
+
+            m_selectedComponent = component;
+        }
+
+        private void m_tileSheetPropertiesMenuItem_Click(object sender, EventArgs e)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is TileSheet))
+                return;
+
+            TileSheet tileSheet = (TileSheet)m_selectedComponent;
+            TileSheetPropertiesDialog TileSheetPropertiesDialog
+                = new TileSheetPropertiesDialog(tileSheet);
+
+            TileSheetPropertiesDialog.ShowDialog(this);
+
             m_mapTreeView.UpdateTree();
         }
     }
