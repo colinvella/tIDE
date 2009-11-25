@@ -54,6 +54,7 @@
             this.m_buttonOk.TabIndex = 1;
             this.m_buttonOk.Text = "OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
+            this.m_buttonOk.Click += new System.EventHandler(this.m_buttonOk_Click);
             // 
             // m_buttonCancel
             // 
@@ -130,7 +131,7 @@
             // 
             this.m_textBoxId.Location = new System.Drawing.Point(103, 7);
             this.m_textBoxId.Name = "m_textBoxId";
-            this.m_textBoxId.Size = new System.Drawing.Size(100, 20);
+            this.m_textBoxId.Size = new System.Drawing.Size(200, 20);
             this.m_textBoxId.TabIndex = 1;
             // 
             // m_labelId
@@ -175,7 +176,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MapPropertiesDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Map Properties";
+            this.Load += new System.EventHandler(this.MapPropertiesDialog_Load);
             this.m_customTabControl.ResumeLayout(false);
             this.m_tabGeneral.ResumeLayout(false);
             this.m_tabGeneral.PerformLayout();

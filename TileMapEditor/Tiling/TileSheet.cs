@@ -21,6 +21,15 @@ namespace Tiling
             m_margin = m_spacing = Size.Zero;
         }
 
+        public TileSheet(string id, string imageSource, Size sheetSize, Size tileSize)
+            : base(id)
+        {
+            m_imageSource = imageSource;
+            m_sheetSize = sheetSize;
+            m_tileSize = tileSize;
+            m_margin = m_spacing = Size.Zero;
+        }
+
         public string ImageSource { get { return m_imageSource; } }
 
         public Size TileSize { get { return m_tileSize; } }

@@ -32,6 +32,7 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.m_mapPanel = new System.Windows.Forms.Panel();
             this.m_splitter = new System.Windows.Forms.Splitter();
+            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,6 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -115,6 +115,15 @@
             this.m_splitter.TabIndex = 1;
             this.m_splitter.TabStop = false;
             // 
+            // m_mapTreeView
+            // 
+            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_mapTreeView.Map = null;
+            this.m_mapTreeView.Name = "m_mapTreeView";
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 538);
+            this.m_mapTreeView.TabIndex = 0;
+            // 
             // m_menuStrip
             // 
             this.m_menuStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -153,7 +162,7 @@
             this.m_fileNewMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileNewMenuItem.Name = "m_fileNewMenuItem";
             this.m_fileNewMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.m_fileNewMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_fileNewMenuItem.Size = new System.Drawing.Size(146, 22);
             this.m_fileNewMenuItem.Text = "&New";
             this.m_fileNewMenuItem.Click += new System.EventHandler(this.OnFileNew);
             // 
@@ -163,13 +172,13 @@
             this.m_fileOpenMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileOpenMenuItem.Name = "m_fileOpenMenuItem";
             this.m_fileOpenMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.m_fileOpenMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_fileOpenMenuItem.Size = new System.Drawing.Size(146, 22);
             this.m_fileOpenMenuItem.Text = "&Open";
             // 
             // m_fileSeparator1
             // 
             this.m_fileSeparator1.Name = "m_fileSeparator1";
-            this.m_fileSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.m_fileSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // m_fileSaveMenuItem
             // 
@@ -177,25 +186,25 @@
             this.m_fileSaveMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileSaveMenuItem.Name = "m_fileSaveMenuItem";
             this.m_fileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.m_fileSaveMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_fileSaveMenuItem.Size = new System.Drawing.Size(146, 22);
             this.m_fileSaveMenuItem.Text = "&Save";
             // 
             // m_fileSaveAsMenuItem
             // 
             this.m_fileSaveAsMenuItem.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
             this.m_fileSaveAsMenuItem.Name = "m_fileSaveAsMenuItem";
-            this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(146, 22);
             this.m_fileSaveAsMenuItem.Text = "Save &As";
             // 
             // m_fileSeparator2
             // 
             this.m_fileSeparator2.Name = "m_fileSeparator2";
-            this.m_fileSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.m_fileSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // m_editMenuItem
@@ -288,6 +297,7 @@
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
             this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_mapPropertiesMenuItem.Text = "Properties...";
+            this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
             // 
             // m_layerMenuItem
             // 
@@ -365,26 +375,27 @@
             // 
             this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
-            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_tileSheetNewMenuItem.Text = "New...";
+            this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
             // m_tileSheetPropertiesMenuItem
             // 
             this.m_tileSheetPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesMenuItem.Name = "m_tileSheetPropertiesMenuItem";
-            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_tileSheetPropertiesMenuItem.Text = "Properties...";
             // 
             // m_tileSheetSeparator1
             // 
             this.m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
-            this.m_tileSheetSeparator1.Size = new System.Drawing.Size(133, 6);
+            this.m_tileSheetSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // m_tileSheetDeleteMenuItem
             // 
             this.m_tileSheetDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteMenuItem.Name = "m_tileSheetDeleteMenuItem";
-            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_tileSheetDeleteMenuItem.Text = "Delete";
             // 
             // m_helpMenuItem
@@ -430,21 +441,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // m_mapTreeView
-            // 
-            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
-            this.m_mapTreeView.Map = null;
-            this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 538);
-            this.m_mapTreeView.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.toolStripContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_menuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -29,7 +29,7 @@ namespace TileMapEditor.Control
             {
                 tabBrush = new LinearGradientBrush(tabRectangle,
                     SystemColors.GradientActiveCaption, SystemColors.Control, 90.0f);
-                tabRectangle.Inflate(2, 2);
+                tabRectangle.Inflate(2, 1);
             }
             else
             {

@@ -27,7 +27,11 @@ namespace Tiling
             return "Component: " + m_id;
         }
 
-        public string Id { get { return m_id; } }
+        public string Id
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
 
         public Dictionary<string, PropertyValue> Properties { get { return m_properties; } }
     }

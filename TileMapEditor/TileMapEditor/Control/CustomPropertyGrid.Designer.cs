@@ -39,6 +39,7 @@
             this.m_dataGridView.AllowUserToOrderColumns = true;
             this.m_dataGridView.AllowUserToResizeRows = false;
             this.m_dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.m_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.m_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.m_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PropertyName,

@@ -33,8 +33,33 @@ namespace TileMapEditor
 
         private void OnFileNew(object sender, EventArgs eventArgs)
         {
-            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog();
+            if (MessageBox.Show(this, "Start a new map project?", "New map", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.No)
+                return;
+
+            Map map = new Map("Untitled Map");
+
+            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(map);
+
+            if (mapPropertiesDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                m_map = map;
+                m_mapTreeView.Map = m_map;
+                m_mapTreeView.Rebuild();
+            }
+        }
+
+        private void OnMapProperties(object sender, EventArgs eventArgs)
+        {
+            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
             mapPropertiesDialog.ShowDialog(this);
+        }
+
+        private void OnTileSheetNew(object sender, EventArgs eventArgs)
+        {
+            TileSheet tileSheet = new TileSheet("untitled tile sheet", "", new Tiling.Size(8, 8), new Tiling.Size(8, 8));
+            TileSheetPropertiesDialog tileSheetPropertiesDialog = new TileSheetPropertiesDialog(tileSheet);
+            tileSheetPropertiesDialog.ShowDialog(this);
         }
     }
 }
