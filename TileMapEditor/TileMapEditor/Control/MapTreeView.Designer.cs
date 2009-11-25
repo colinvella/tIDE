@@ -75,6 +75,8 @@ namespace TileMapEditor.Control
             this.m_imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.m_imageList.Images.SetKeyName(0, "Map.png");
             this.m_imageList.Images.SetKeyName(1, "Collection.png");
+            this.m_imageList.Images.SetKeyName(2, "Layer.png");
+            this.m_imageList.Images.SetKeyName(3, "TileSheet.png");
             // 
             // MapTreeView
             // 

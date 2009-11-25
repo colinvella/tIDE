@@ -20,6 +20,7 @@ namespace TileMapEditor.Control
             InitializeComponent();
         }
 
+        /*
         public void Rebuild()
         {
             m_treeView.Nodes.Clear();
@@ -27,16 +28,129 @@ namespace TileMapEditor.Control
             if (m_map == null)
                 return;
 
-            int mapImageIndex =  m_imageList.Images.IndexOfKey("Map.png");
-            TreeNode mapNode = new TreeNode("Map - " + m_map.Id, mapImageIndex, mapImageIndex);
-
+            // determine image list indices
+            int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
             int collectionImageIndex = m_imageList.Images.IndexOfKey("Collection.png");
+            int layerImageIndex = m_imageList.Images.IndexOfKey("Layer.png");
+            int tileSheetImageIndex = m_imageList.Images.IndexOfKey("TileSheet.png");
+
+            // map root node
+            TreeNode mapNode = new TreeNode(m_map.Id, mapImageIndex, mapImageIndex);
+            mapNode.Tag = m_map;
+
+            // layer collection node
             TreeNode layersNode = new TreeNode("Layers", collectionImageIndex, collectionImageIndex);
+            layersNode.Tag = m_map.Layers;
             mapNode.Nodes.Add(layersNode);
+
+            // tilesheet collection node
             TreeNode tileSheetsNode = new TreeNode("Tile Sheets", collectionImageIndex, collectionImageIndex);
+            tileSheetsNode.Tag = m_map.TileSheets;
             mapNode.Nodes.Add(tileSheetsNode);
 
+            // layers
+            foreach (Layer layer in m_map.Layers)
+            {
+                TreeNode layerNode = new TreeNode(layer.Id, layerImageIndex, layerImageIndex);
+                layerNode.Tag = layer;
+                tileSheetsNode.Nodes.Add(layerNode);
+            }
+
+            // tile sheets
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+            {
+                TreeNode tileSheetNode = new TreeNode(tileSheet.Id, tileSheetImageIndex, tileSheetImageIndex);
+                tileSheetsNode.Tag = tileSheet;
+                tileSheetsNode.Nodes.Add(tileSheetNode);
+            }
+
+            // assign root node
             m_treeView.Nodes.Add(mapNode);
+        }
+        */
+
+        public void UpdateTree()
+        {
+            if (m_map == null)
+            {
+                m_treeView.Nodes.Clear();
+                return;
+            }
+
+            // determine image list indices
+            int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
+            int collectionImageIndex = m_imageList.Images.IndexOfKey("Collection.png");
+            int layerImageIndex = m_imageList.Images.IndexOfKey("Layer.png");
+            int tileSheetImageIndex = m_imageList.Images.IndexOfKey("TileSheet.png");
+
+            // map root node
+            TreeNode mapNode = null;
+            TreeNode layersNode = null;
+            TreeNode tileSheetsNode = null;
+            if (m_treeView.Nodes.Count == 0)
+            {
+                // create root map node
+                mapNode = new TreeNode(m_map.Id, mapImageIndex, mapImageIndex);
+                mapNode.Tag = m_map;
+
+                // create layer collection node
+                layersNode = new TreeNode("Layers", collectionImageIndex, collectionImageIndex);
+                layersNode.Tag = m_map.Layers;
+                mapNode.Nodes.Add(layersNode);
+
+                // create tilesheet collection node
+                tileSheetsNode = new TreeNode("Tile Sheets", collectionImageIndex, collectionImageIndex);
+                tileSheetsNode.Tag = m_map.TileSheets;
+                mapNode.Nodes.Add(tileSheetsNode);
+
+                m_treeView.Nodes.Add(mapNode);
+
+                m_treeView.SelectedNode = mapNode;
+            }
+            else
+            {
+                // determine update map node
+                mapNode = m_treeView.Nodes[0];
+                mapNode.Text = m_map.Id;
+                layersNode = mapNode.Nodes[0];
+                tileSheetsNode = mapNode.Nodes[1];
+            }
+
+            // tile sheets
+
+            // remove nodes for deleted tile sheets
+            for(int nodeIndex = 0; nodeIndex < tileSheetsNode.Nodes.Count;)
+            {
+                TreeNode tileSheetNode = tileSheetsNode.Nodes[nodeIndex];
+
+                if (m_map.TileSheets.Contains((TileSheet)tileSheetNode.Tag))
+                    ++nodeIndex;
+                else
+                    tileSheetsNode.Nodes.Remove(tileSheetNode);
+            }
+
+            // add nodes for new tile sheets, or update existing
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+            {
+                bool bMatched = false;
+                foreach (TreeNode tileSheetNode in tileSheetsNode.Nodes)
+                    if (tileSheetNode.Tag == tileSheet)
+                    {
+                        bMatched = true;
+                        tileSheetNode.Text = ((TileSheet)tileSheetNode.Tag).Id;
+                        break;
+                    }
+
+                // add new node if needed
+                if (!bMatched)
+                {
+                    TreeNode tileSheetNode = new TreeNode(tileSheet.Id, tileSheetImageIndex, tileSheetImageIndex);
+                    tileSheetNode.Tag = tileSheet;
+                    tileSheetsNode.Nodes.Add(tileSheetNode);
+
+                    m_treeView.SelectedNode = tileSheetNode;
+                }
+            }
         }
 
         #region Public Properties
@@ -50,7 +164,7 @@ namespace TileMapEditor.Control
             set
             {
                 m_map = value;
-                Rebuild();
+                UpdateTree();
             }
         }
 

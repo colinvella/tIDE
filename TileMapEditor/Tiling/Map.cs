@@ -28,6 +28,23 @@ namespace Tiling
             m_elapsedTime = 0;
         }
 
+        public void AddTileSheet(TileSheet tileSheet)
+        {
+            if (tileSheet.Map != this)
+                throw new Exception("The specified TileSheet was not created for use with this map");
+
+            if (m_tileSheets.Contains(tileSheet))
+                throw new Exception("The specified TileSheet is already associated with this map");
+
+            m_tileSheets.Add(tileSheet);
+
+            m_tileSheets.Sort(
+                delegate(TileSheet tileSheet1, TileSheet tileSheet2)
+                {
+                    return tileSheet1.Id.CompareTo(tileSheet2.Id);
+                });
+        }
+
         public void RemoveTileSheet(TileSheet tileSheet)
         {
             if (!m_tileSheets.Contains(tileSheet))
@@ -73,6 +90,11 @@ namespace Tiling
                 layer.Draw(displayDevice, displayOffset, mapViewPort);
 
             displayDevice.EndScene();
+        }
+
+        public ReadOnlyCollection<Layer> Layers
+        {
+            get { return m_layers.AsReadOnly(); }
         }
 
         public ReadOnlyCollection<TileSheet> TileSheets

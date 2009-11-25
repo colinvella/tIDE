@@ -45,7 +45,7 @@ namespace TileMapEditor
             {
                 m_map = map;
                 m_mapTreeView.Map = m_map;
-                m_mapTreeView.Rebuild();
+                m_mapTreeView.UpdateTree();
             }
         }
 
@@ -57,9 +57,15 @@ namespace TileMapEditor
 
         private void OnTileSheetNew(object sender, EventArgs eventArgs)
         {
-            TileSheet tileSheet = new TileSheet("untitled tile sheet", "", new Tiling.Size(8, 8), new Tiling.Size(8, 8));
+            TileSheet tileSheet = new TileSheet("untitled tile sheet", m_map, "",
+                new Tiling.Size(8, 8), new Tiling.Size(8, 8));
             TileSheetPropertiesDialog tileSheetPropertiesDialog = new TileSheetPropertiesDialog(tileSheet);
-            tileSheetPropertiesDialog.ShowDialog(this);
+
+            if (tileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            m_map.AddTileSheet(tileSheet);
+            m_mapTreeView.UpdateTree();
         }
     }
 }

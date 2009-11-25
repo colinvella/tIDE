@@ -27,7 +27,21 @@ namespace TileMapEditor.Dialog
 
         private void m_buttonOk_Click(object sender, EventArgs eventArgs)
         {
-            m_tileSheet.Id = m_textBoxId.Text;
+            string newId = m_textBoxId.Text;
+
+            foreach (TileSheet tileSheet in m_tileSheet.Map.TileSheets)
+            {
+                if (tileSheet == m_tileSheet)
+                    continue;
+                if (newId == m_tileSheet.Id)
+                {
+                    MessageBox.Show(this, "The specified Id is already used by another tile sheet",
+                        "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            m_tileSheet.Id = newId;
 
             m_tileSheet.Description = m_textBoxDescription.Text;
 

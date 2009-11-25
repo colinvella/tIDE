@@ -7,28 +7,33 @@ namespace Tiling
 {
     public class TileSheet: DescribedComponent
     {
+        private Map m_map;
         private string m_imageSource;
         private Size m_sheetSize;
         private Size m_tileSize;
         private Size m_margin;
         private Size m_spacing;
 
-        public TileSheet(string imageSource, Size sheetSize, Size tileSize)
+        public TileSheet(Map map, string imageSource, Size sheetSize, Size tileSize)
         {
+            m_map = map;
             m_imageSource = imageSource;
             m_sheetSize = sheetSize;
             m_tileSize = tileSize;
             m_margin = m_spacing = Size.Zero;
         }
 
-        public TileSheet(string id, string imageSource, Size sheetSize, Size tileSize)
+        public TileSheet(string id, Map map, string imageSource, Size sheetSize, Size tileSize)
             : base(id)
         {
+            m_map = map;
             m_imageSource = imageSource;
             m_sheetSize = sheetSize;
             m_tileSize = tileSize;
             m_margin = m_spacing = Size.Zero;
         }
+
+        public Map Map { get { return m_map; } }
 
         public string ImageSource { get { return m_imageSource; } }
 
