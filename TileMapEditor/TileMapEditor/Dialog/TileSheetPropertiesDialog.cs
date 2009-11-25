@@ -34,7 +34,7 @@ namespace TileMapEditor.Dialog
             {
                 if (tileSheet == m_tileSheet)
                     continue;
-                if (newId == m_tileSheet.Id)
+                if (newId == tileSheet.Id)
                 {
                     MessageBox.Show(this, "The specified Id is already used by another tile sheet",
                         "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
