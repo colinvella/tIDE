@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Control\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -160,6 +163,7 @@
     <Content Include="Resources\Help.png" />
     <None Include="Resources\LayerBringForward.png" />
     <None Include="Resources\LayerSendBackward.png" />
+    <None Include="Resources\ImageBackground.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

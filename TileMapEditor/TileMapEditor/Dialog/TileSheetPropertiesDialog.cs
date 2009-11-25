@@ -17,6 +17,7 @@ namespace TileMapEditor.Dialog
         private TileSheet m_tileSheet;
         private Bitmap m_bitmapImageSource;
         private string m_imageSourceErrorMessge;
+        private int m_cycle;
 
         public TileSheetPropertiesDialog(TileSheet tileSheet)
         {
@@ -59,6 +60,7 @@ namespace TileMapEditor.Dialog
             m_customPropertyGrid.LoadProperties(m_tileSheet);
             m_bitmapImageSource = null;
             m_imageSourceErrorMessge = null;
+            m_cycle = 0;
         }
 
         private void m_buttonBrowse_Click(object sender, EventArgs eventArgs)
@@ -108,7 +110,8 @@ namespace TileMapEditor.Dialog
                 //graphics.DrawImage(m_bitmapImageSource, rectangleDestination, rectangleSource, GraphicsUnit.Pixel);
                 graphics.DrawImage(m_bitmapImageSource, 0, 0);
 
-                Pen pen = new Pen(Color.FromArgb(192, Color.White));
+                byte intensity = m_cycle < 10 ? (byte)(255 * m_cycle / 10 ) : (byte)(255 * (20 - m_cycle) / 10);
+                Pen pen = new Pen(Color.FromArgb(128, intensity, intensity, intensity));
 
                 int imageWidth = m_bitmapImageSource.Width;
                 int imageHeight = m_bitmapImageSource.Height;
@@ -137,6 +140,12 @@ namespace TileMapEditor.Dialog
 
         private void OnUpdateAlignment(object sender, EventArgs eventArgs)
         {
+            m_panelImage.Invalidate();
+        }
+
+        private void m_timer_Tick(object sender, EventArgs e)
+        {
+            m_cycle = (m_cycle + 1) % 20;
             m_panelImage.Invalidate();
         }
     }
