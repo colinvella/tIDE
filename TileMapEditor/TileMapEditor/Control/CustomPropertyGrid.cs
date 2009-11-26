@@ -161,6 +161,11 @@ namespace TileMapEditor.Control
                 nameCell.Value = keyValuePair.Key;
                 DataGridViewTextBoxCell valueCell = new DataGridViewTextBoxCell();
                 valueCell.Value = keyValuePair.Value.ToString();
+
+                if (keyValuePair.Value.Type == typeof(float)
+                    || keyValuePair.Value.Type == typeof(int))
+                    valueCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+
                 row.Cells.Add(nameCell);
                 row.Cells.Add(valueCell);
                 m_dataGridView.Rows.Add(row);
