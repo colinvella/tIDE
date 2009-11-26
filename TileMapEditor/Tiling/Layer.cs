@@ -15,7 +15,8 @@ namespace Tiling
         private Tile[,] m_tiles;
         private TileArray m_tileArray;
 
-        public Layer(Map map, Size layerSize, Size tileSize)
+        public Layer(string id, Map map, Size layerSize, Size tileSize)
+            : base(id)
         {
             m_map = map;
             m_tileSheets = map.TileSheets;

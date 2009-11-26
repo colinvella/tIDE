@@ -51,6 +51,59 @@ namespace Tiling
             m_size = Size.Zero;
         }
 
+        public void AddLayer(Layer layer)
+        {
+            InsertLayer(layer, m_layers.Count);
+        }
+
+        public void InsertLayer(Layer layer, int layerIndex)
+        {
+            if (layer.Map != this)
+                throw new Exception("The specified Layer was not created for use with this map");
+
+            if (m_layers.Contains(layer))
+                throw new Exception("The specified Layer is already associated with this map");
+
+            if (layerIndex < 0 || layerIndex > m_layers.Count)
+                throw new Exception("The specified layer index is out of range");
+
+            m_layers.Insert(layerIndex, layer);
+        }
+
+        public void RemoveLayer(Layer layer)
+        {
+            if (!m_layers.Contains(layer))
+                throw new Exception("The specified Layer is not contained in this map");
+
+            m_layers.Remove(layer);
+        }
+
+        public void BringLayerForward(Layer layer)
+        {
+            int layerIndex = m_layers.IndexOf(layer);
+            if (layerIndex < 0)
+                throw new Exception("The specified Layer is not contained in this map");
+
+            if (layerIndex == m_layers.Count - 1)
+                return;
+
+            m_layers[layerIndex] = m_layers[layerIndex + 1];
+            m_layers[layerIndex + 1] = layer;            
+        }
+
+        public void SendLayerBackward(Layer layer)
+        {
+            int layerIndex = m_layers.IndexOf(layer);
+            if (layerIndex < 0)
+                throw new Exception("The specified Layer is not contained in this map");
+
+            if (layerIndex == 0)
+                return;
+
+            m_layers[layerIndex] = m_layers[layerIndex - 1];
+            m_layers[layerIndex - 1] = layer;
+        }
+
         public void AddTileSheet(TileSheet tileSheet)
         {
             if (tileSheet.Map != this)
