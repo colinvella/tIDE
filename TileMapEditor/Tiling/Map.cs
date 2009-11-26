@@ -11,6 +11,24 @@ namespace Tiling
         private List<TileSheet> m_tileSheets;
         private List<Layer> m_layers;
         private long m_elapsedTime;
+        private Size m_size;
+
+        #region Private Methods
+
+        private void UpdateSize()
+        {
+            m_size = Size.Zero;
+            foreach (Layer layer in m_layers)
+            {
+                Size layerSize = layer.LayerSize;
+                m_size.Width = Math.Max(m_size.Width, layerSize.Width);
+                m_size.Height = Math.Max(m_size.Height, layerSize.Height);
+            }
+        }
+
+        #endregion
+
+        #region Public Methods
 
         public Map()
             : base("Untiled map")
@@ -26,6 +44,7 @@ namespace Tiling
             m_tileSheets = new List<TileSheet>();
             m_layers = new List<Layer>();
             m_elapsedTime = 0;
+            m_size = Size.Zero;
         }
 
         public void AddTileSheet(TileSheet tileSheet)
@@ -92,6 +111,15 @@ namespace Tiling
             displayDevice.EndScene();
         }
 
+        #endregion
+
+        #region Public Properties
+
+        public Size Size
+        {
+            get { return m_size; }
+        }
+
         public ReadOnlyCollection<Layer> Layers
         {
             get { return m_layers.AsReadOnly(); }
@@ -106,5 +134,7 @@ namespace Tiling
         {
             get { return m_elapsedTime; }
         }
+
+        #endregion
     }
 }

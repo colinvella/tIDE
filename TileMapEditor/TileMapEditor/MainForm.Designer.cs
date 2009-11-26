@@ -81,10 +81,13 @@
             this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editUndoButton = new System.Windows.Forms.ToolStripButton();
             this.m_editRedoButton = new System.Windows.Forms.ToolStripButton();
+            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
+            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.m_mapPanel.SuspendLayout();
             this.m_menuStrip.SuspendLayout();
             this.m_editToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -113,6 +116,8 @@
             // m_mapPanel
             // 
             this.m_mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_mapPanel.Controls.Add(this.m_verticalScrollBar);
+            this.m_mapPanel.Controls.Add(this.m_horizontalScrollBar);
             this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_mapPanel.Location = new System.Drawing.Point(204, 0);
             this.m_mapPanel.Name = "m_mapPanel";
@@ -463,7 +468,7 @@
             this.m_editPasteButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(216, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(185, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editSingleTileButton
@@ -540,6 +545,26 @@
             this.m_editRedoButton.Size = new System.Drawing.Size(23, 22);
             this.m_editRedoButton.Text = "Redo last change";
             // 
+            // m_horizontalScrollBar
+            // 
+            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_horizontalScrollBar.LargeChange = 1;
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
+            this.m_horizontalScrollBar.Maximum = 0;
+            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(578, 17);
+            this.m_horizontalScrollBar.TabIndex = 0;
+            // 
+            // m_verticalScrollBar
+            // 
+            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_verticalScrollBar.LargeChange = 1;
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(561, 0);
+            this.m_verticalScrollBar.Maximum = 0;
+            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
+            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
+            this.m_verticalScrollBar.TabIndex = 1;
+            // 
             // m_mapTreeView
             // 
             this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
@@ -567,6 +592,7 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.m_mapPanel.ResumeLayout(false);
             this.m_menuStrip.ResumeLayout(false);
             this.m_menuStrip.PerformLayout();
             this.m_editToolStrip.ResumeLayout(false);
@@ -630,5 +656,7 @@
         private System.Windows.Forms.ToolStripButton m_editUndoButton;
         private System.Windows.Forms.ToolStripButton m_editRedoButton;
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator2;
+        private System.Windows.Forms.VScrollBar m_verticalScrollBar;
+        private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
     }
 }
