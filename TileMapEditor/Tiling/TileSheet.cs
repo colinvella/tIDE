@@ -35,13 +35,29 @@ namespace Tiling
 
         public Map Map { get { return m_map; } }
 
-        public string ImageSource { get { return m_imageSource; } }
+        public string ImageSource
+        {
+            get { return m_imageSource; }
+            set { m_imageSource = value; }
+        }
 
-        public Size TileSize { get { return m_tileSize; } }
+        public Size TileSize 
+        {
+            get { return m_tileSize; }
+            set { m_tileSize = value; }
+        }
 
-        public Size Margin { get { return m_margin; } }
+        public Size Margin
+        {
+            get { return m_margin; }
+            set { m_margin = value; }
+        }
 
-        public Size Spacing { get { return m_spacing; } }
+        public Size Spacing
+        {
+            get { return m_spacing; }
+            set { m_spacing = value; }
+        }
 
         public int TileCount
         {

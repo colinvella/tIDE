@@ -19,13 +19,6 @@ namespace TileMapEditor.Dialog
         private string m_imageSourceErrorMessge;
         private int m_cycle;
 
-        public TileSheetPropertiesDialog(TileSheet tileSheet)
-        {
-            InitializeComponent();
-
-            m_tileSheet = tileSheet;
-        }
-
         private void m_buttonOk_Click(object sender, EventArgs eventArgs)
         {
             string newId = m_textBoxId.Text;
@@ -43,8 +36,12 @@ namespace TileMapEditor.Dialog
             }
 
             m_tileSheet.Id = newId;
-
             m_tileSheet.Description = m_textBoxDescription.Text;
+            m_tileSheet.ImageSource = m_textBoxImageSource.Text;
+
+            m_tileSheet.TileSize = new Tiling.Size((int) m_textBoxTileWidth.Value, (int) m_textBoxTileHeight.Value);
+            m_tileSheet.Margin = new Tiling.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
+            m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxPaddingX.Value, (int)m_textBoxPaddingY.Value);
 
             m_customPropertyGrid.StoreProperties(m_tileSheet);
 
@@ -60,10 +57,31 @@ namespace TileMapEditor.Dialog
         {
             m_textBoxId.Text = m_tileSheet.Id;
             m_textBoxDescription.Text = m_tileSheet.Description;
+            m_textBoxImageSource.Text = m_tileSheet.ImageSource;
+
+            m_textBoxTileWidth.Value = m_tileSheet.TileSize.Width;
+            m_textBoxTileHeight.Value = m_tileSheet.TileSize.Height;
+            m_textBoxLeftMargin.Value = m_tileSheet.Margin.Width;
+            m_textBoxTopMargin.Value = m_tileSheet.Margin.Height;
+            m_textBoxPaddingX.Value = m_tileSheet.Spacing.Width;
+            m_textBoxPaddingY.Value = m_tileSheet.Spacing.Height;
+
             m_customPropertyGrid.LoadProperties(m_tileSheet);
+
             m_bitmapImageSource = null;
             m_imageSourceErrorMessge = null;
             m_cycle = 0;
+
+            m_bitmapImageSource = null;
+            m_imageSourceErrorMessge = null;
+            try
+            {
+                m_bitmapImageSource = new Bitmap(m_tileSheet.ImageSource);
+            }
+            catch (Exception exception)
+            {
+                m_imageSourceErrorMessge = exception.Message;
+            }
         }
 
         private void m_buttonBrowse_Click(object sender, EventArgs eventArgs)
@@ -146,10 +164,17 @@ namespace TileMapEditor.Dialog
             m_panelImage.Invalidate();
         }
 
-        private void m_timer_Tick(object sender, EventArgs e)
+        private void m_timer_Tick(object sender, EventArgs eventArgs)
         {
             m_cycle = (m_cycle + 1) % 20;
             m_panelImage.Invalidate();
+        }
+
+        public TileSheetPropertiesDialog(TileSheet tileSheet)
+        {
+            InitializeComponent();
+
+            m_tileSheet = tileSheet;
         }
     }
 }
