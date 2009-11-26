@@ -14,10 +14,16 @@ namespace TileMapEditor.Dialog
 {
     public partial class TileSheetPropertiesDialog : Form
     {
+        #region Private Variables
+
         private TileSheet m_tileSheet;
         private Bitmap m_bitmapImageSource;
         private string m_imageSourceErrorMessge;
         private int m_cycle;
+
+        #endregion
+
+        #region Private Methods
 
         private void m_buttonOk_Click(object sender, EventArgs eventArgs)
         {
@@ -170,11 +176,17 @@ namespace TileMapEditor.Dialog
             m_panelImage.Invalidate();
         }
 
+        #endregion
+
+        #region Public Methods
+
         public TileSheetPropertiesDialog(TileSheet tileSheet)
         {
             InitializeComponent();
 
             m_tileSheet = tileSheet;
         }
+
+        #endregion
     }
 }
