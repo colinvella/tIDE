@@ -79,7 +79,7 @@ namespace TileMapEditor
             m_selectedComponent = component;
         }
 
-        private void m_tileSheetPropertiesMenuItem_Click(object sender, EventArgs e)
+        private void OnTileSheetProperties(object sender, EventArgs e)
         {
             if (m_selectedComponent == null
                 || !(m_selectedComponent is TileSheet))
@@ -90,6 +90,25 @@ namespace TileMapEditor
                 = new TileSheetPropertiesDialog(tileSheet);
 
             TileSheetPropertiesDialog.ShowDialog(this);
+
+            m_mapTreeView.UpdateTree();
+        }
+
+        private void OnTileSheetDelete(object sender, EventArgs e)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is TileSheet))
+                return;
+
+            TileSheet tileSheet = (TileSheet)m_selectedComponent;
+
+            if (MessageBox.Show(this, "Are you sure you want to delete this Tile Sheet?",
+                "Delete Tile Sheet \"" + tileSheet.Id + "\"",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+                == DialogResult.No)
+                return;
+
+            m_map.RemoveTileSheet(tileSheet);
 
             m_mapTreeView.UpdateTree();
         }

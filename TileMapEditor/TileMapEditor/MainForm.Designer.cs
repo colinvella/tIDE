@@ -44,11 +44,11 @@
             this.m_editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editUndoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editRedoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editMenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editCutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editCopyMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editPasteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editMenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editSelectAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,11 +71,22 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_editToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_editSingleTileButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editTileBlockButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editUndoButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editRedoButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.m_menuStrip.SuspendLayout();
+            this.m_editToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -86,7 +97,7 @@
             this.toolStripContainer1.ContentPanel.Controls.Add(this.m_mapPanel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.m_splitter);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.m_mapTreeView);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 538);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 513);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -97,6 +108,7 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.m_menuStrip);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             // 
             // m_mapPanel
             // 
@@ -104,14 +116,14 @@
             this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_mapPanel.Location = new System.Drawing.Point(204, 0);
             this.m_mapPanel.Name = "m_mapPanel";
-            this.m_mapPanel.Size = new System.Drawing.Size(580, 538);
+            this.m_mapPanel.Size = new System.Drawing.Size(580, 513);
             this.m_mapPanel.TabIndex = 2;
             // 
             // m_splitter
             // 
             this.m_splitter.Location = new System.Drawing.Point(200, 0);
             this.m_splitter.Name = "m_splitter";
-            this.m_splitter.Size = new System.Drawing.Size(4, 538);
+            this.m_splitter.Size = new System.Drawing.Size(4, 513);
             this.m_splitter.TabIndex = 1;
             this.m_splitter.TabStop = false;
             // 
@@ -203,11 +215,11 @@
             this.m_editMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_editUndoMenuItem,
             this.m_editRedoMenuItem,
-            this.toolStripSeparator3,
+            this.m_editMenuSeparator1,
             this.m_editCutMenuItem,
             this.m_editCopyMenuItem,
             this.m_editPasteMenuItem,
-            this.toolStripSeparator4,
+            this.m_editMenuSeparator2,
             this.m_editSelectAllMenuItem});
             this.m_editMenuItem.Image = global::TileMapEditor.Properties.Resources.Edit;
             this.m_editMenuItem.Name = "m_editMenuItem";
@@ -230,10 +242,10 @@
             this.m_editRedoMenuItem.Size = new System.Drawing.Size(144, 22);
             this.m_editRedoMenuItem.Text = "&Redo";
             // 
-            // toolStripSeparator3
+            // m_editMenuSeparator1
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
+            this.m_editMenuSeparator1.Name = "m_editMenuSeparator1";
+            this.m_editMenuSeparator1.Size = new System.Drawing.Size(141, 6);
             // 
             // m_editCutMenuItem
             // 
@@ -262,10 +274,10 @@
             this.m_editPasteMenuItem.Size = new System.Drawing.Size(144, 22);
             this.m_editPasteMenuItem.Text = "&Paste";
             // 
-            // toolStripSeparator4
+            // m_editMenuSeparator2
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+            this.m_editMenuSeparator2.Name = "m_editMenuSeparator2";
+            this.m_editMenuSeparator2.Size = new System.Drawing.Size(141, 6);
             // 
             // m_editSelectAllMenuItem
             // 
@@ -366,7 +378,7 @@
             // 
             this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
-            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_tileSheetNewMenuItem.Text = "New...";
             this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
@@ -375,22 +387,23 @@
             this.m_tileSheetPropertiesMenuItem.Enabled = false;
             this.m_tileSheetPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesMenuItem.Name = "m_tileSheetPropertiesMenuItem";
-            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_tileSheetPropertiesMenuItem.Text = "Properties...";
-            this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.m_tileSheetPropertiesMenuItem_Click);
+            this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
             // 
             // m_tileSheetSeparator1
             // 
             this.m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
-            this.m_tileSheetSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.m_tileSheetSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // m_tileSheetDeleteMenuItem
             // 
             this.m_tileSheetDeleteMenuItem.Enabled = false;
             this.m_tileSheetDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteMenuItem.Name = "m_tileSheetDeleteMenuItem";
-            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_tileSheetDeleteMenuItem.Text = "Delete";
+            this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
             // m_helpMenuItem
             // 
@@ -435,13 +448,105 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // m_editToolStrip
+            // 
+            this.m_editToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.m_editToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_editSingleTileButton,
+            this.m_editTileBlockButton,
+            this.m_editToolStripSeparator1,
+            this.m_editUndoButton,
+            this.m_editRedoButton,
+            this.m_editToolStripSeparator2,
+            this.m_editCutButton,
+            this.m_editCopyButton,
+            this.m_editPasteButton});
+            this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
+            this.m_editToolStrip.Name = "m_editToolStrip";
+            this.m_editToolStrip.Size = new System.Drawing.Size(216, 25);
+            this.m_editToolStrip.TabIndex = 1;
+            // 
+            // m_editSingleTileButton
+            // 
+            this.m_editSingleTileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editSingleTileButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editSingleTileButton.Image")));
+            this.m_editSingleTileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editSingleTileButton.Name = "m_editSingleTileButton";
+            this.m_editSingleTileButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editSingleTileButton.Text = "toolStripButton1";
+            this.m_editSingleTileButton.ToolTipText = "Draw a single tile";
+            // 
+            // m_editTileBlockButton
+            // 
+            this.m_editTileBlockButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editTileBlockButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editTileBlockButton.Image")));
+            this.m_editTileBlockButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editTileBlockButton.Name = "m_editTileBlockButton";
+            this.m_editTileBlockButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editTileBlockButton.Text = "Draw a block of tiles";
+            // 
+            // m_editToolStripSeparator1
+            // 
+            this.m_editToolStripSeparator1.Name = "m_editToolStripSeparator1";
+            this.m_editToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_editCutButton
+            // 
+            this.m_editCutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editCutButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editCutButton.Image")));
+            this.m_editCutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editCutButton.Name = "m_editCutButton";
+            this.m_editCutButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editCutButton.Text = "C&ut";
+            // 
+            // m_editCopyButton
+            // 
+            this.m_editCopyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editCopyButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editCopyButton.Image")));
+            this.m_editCopyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editCopyButton.Name = "m_editCopyButton";
+            this.m_editCopyButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editCopyButton.Text = "&Copy";
+            // 
+            // m_editPasteButton
+            // 
+            this.m_editPasteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editPasteButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editPasteButton.Image")));
+            this.m_editPasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editPasteButton.Name = "m_editPasteButton";
+            this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editPasteButton.Text = "&Paste";
+            // 
+            // m_editToolStripSeparator2
+            // 
+            this.m_editToolStripSeparator2.Name = "m_editToolStripSeparator2";
+            this.m_editToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_editUndoButton
+            // 
+            this.m_editUndoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editUndoButton.Image = global::TileMapEditor.Properties.Resources.EditUndo;
+            this.m_editUndoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editUndoButton.Name = "m_editUndoButton";
+            this.m_editUndoButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editUndoButton.Text = "Undo last change";
+            // 
+            // m_editRedoButton
+            // 
+            this.m_editRedoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editRedoButton.Image = global::TileMapEditor.Properties.Resources.EditRedo;
+            this.m_editRedoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editRedoButton.Name = "m_editRedoButton";
+            this.m_editRedoButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editRedoButton.Text = "Redo last change";
+            // 
             // m_mapTreeView
             // 
             this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
             this.m_mapTreeView.Map = null;
             this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 538);
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 513);
             this.m_mapTreeView.TabIndex = 0;
             this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.m_mapTreeView_ComponentChanged);
             // 
@@ -464,6 +569,8 @@
             this.toolStripContainer1.PerformLayout();
             this.m_menuStrip.ResumeLayout(false);
             this.m_menuStrip.PerformLayout();
+            this.m_editToolStrip.ResumeLayout(false);
+            this.m_editToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -483,11 +590,11 @@
         private System.Windows.Forms.ToolStripMenuItem m_editMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editUndoMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editRedoMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator m_editMenuSeparator1;
         private System.Windows.Forms.ToolStripMenuItem m_editCutMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editCopyMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editPasteMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator m_editMenuSeparator2;
         private System.Windows.Forms.ToolStripMenuItem m_editSelectAllMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_helpMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
@@ -513,5 +620,15 @@
         private System.Windows.Forms.ToolStripMenuItem m_layerSendBackwardMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private Control.MapTreeView m_mapTreeView;
+        private System.Windows.Forms.ToolStrip m_editToolStrip;
+        private System.Windows.Forms.ToolStripButton m_editSingleTileButton;
+        private System.Windows.Forms.ToolStripButton m_editTileBlockButton;
+        private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton m_editCutButton;
+        private System.Windows.Forms.ToolStripButton m_editCopyButton;
+        private System.Windows.Forms.ToolStripButton m_editPasteButton;
+        private System.Windows.Forms.ToolStripButton m_editUndoButton;
+        private System.Windows.Forms.ToolStripButton m_editRedoButton;
+        private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator2;
     }
 }
