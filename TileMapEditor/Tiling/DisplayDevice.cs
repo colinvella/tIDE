@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
-    public interface IDisplayDevice
+    public interface DisplayDevice
     {
         void LoadTileSheet(TileSheet tileSheet);
 

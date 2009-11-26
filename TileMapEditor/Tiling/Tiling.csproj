@@ -54,7 +54,7 @@
     <Compile Include="AnimatedTile.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="DescribedComponent.cs" />
-    <Compile Include="IDisplayDevice.cs" />
+    <Compile Include="DisplayDevice.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticTile.cs" />

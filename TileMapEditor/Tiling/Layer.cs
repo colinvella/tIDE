@@ -37,7 +37,7 @@ namespace Tiling
             return false;
         }
 
-        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
+        public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             // determine internal tile offset
             Location tileInternalOffset = new Location(

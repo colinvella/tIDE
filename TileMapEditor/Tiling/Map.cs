@@ -8,10 +8,14 @@ namespace Tiling
 {
     public class Map: DescribedComponent
     {
+        #region Private Variables
+
         private List<TileSheet> m_tileSheets;
         private List<Layer> m_layers;
         private long m_elapsedTime;
         private Size m_size;
+
+        #endregion
 
         #region Private Methods
 
@@ -81,24 +85,24 @@ namespace Tiling
             m_elapsedTime += timeInterval;
         }
 
-        public void LoadTileSheets(IDisplayDevice displayDevice)
+        public void LoadTileSheets(DisplayDevice displayDevice)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
                 displayDevice.LoadTileSheet(tileSheet);
         }
 
-        public void DisposeTileSheets(IDisplayDevice displayDevice)
+        public void DisposeTileSheets(DisplayDevice displayDevice)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
                 displayDevice.DisposeTileSheet(tileSheet);
         }
 
-        public void Draw(IDisplayDevice displayDevice, Rectangle mapViewPort)
+        public void Draw(DisplayDevice displayDevice, Rectangle mapViewPort)
         {
             Draw(displayDevice, Location.Origin, mapViewPort);
         }
 
-        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
+        public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             displayDevice.BeginScene();
 
