@@ -40,8 +40,13 @@ namespace TileMapEditor.Control
             treeNode1,
             treeNode2});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapTreeView));
+            System.Windows.Forms.Label m_labelCaption;
+            System.Windows.Forms.Panel m_treePanel;
             this.m_treeView = new System.Windows.Forms.TreeView();
             this.m_imageList = new System.Windows.Forms.ImageList(this.components);
+            m_labelCaption = new System.Windows.Forms.Label();
+            m_treePanel = new System.Windows.Forms.Panel();
+            m_treePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_treeView
@@ -66,7 +71,7 @@ namespace TileMapEditor.Control
             this.m_treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3});
             this.m_treeView.SelectedImageIndex = 0;
-            this.m_treeView.Size = new System.Drawing.Size(150, 150);
+            this.m_treeView.Size = new System.Drawing.Size(150, 130);
             this.m_treeView.TabIndex = 0;
             this.m_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.m_treeView_AfterSelect);
             // 
@@ -79,12 +84,37 @@ namespace TileMapEditor.Control
             this.m_imageList.Images.SetKeyName(2, "Layer.png");
             this.m_imageList.Images.SetKeyName(3, "TileSheet.png");
             // 
+            // m_labelCaption
+            // 
+            m_labelCaption.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            m_labelCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            m_labelCaption.Dock = System.Windows.Forms.DockStyle.Top;
+            m_labelCaption.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            m_labelCaption.Location = new System.Drawing.Point(0, 0);
+            m_labelCaption.Name = "m_labelCaption";
+            m_labelCaption.Padding = new System.Windows.Forms.Padding(2);
+            m_labelCaption.Size = new System.Drawing.Size(150, 20);
+            m_labelCaption.TabIndex = 1;
+            m_labelCaption.Text = "Map Explorer";
+            m_labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_treePanel
+            // 
+            m_treePanel.Controls.Add(this.m_treeView);
+            m_treePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            m_treePanel.Location = new System.Drawing.Point(0, 20);
+            m_treePanel.Name = "m_treePanel";
+            m_treePanel.Size = new System.Drawing.Size(150, 130);
+            m_treePanel.TabIndex = 2;
+            // 
             // MapTreeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.m_treeView);
+            this.Controls.Add(m_treePanel);
+            this.Controls.Add(m_labelCaption);
             this.Name = "MapTreeView";
+            m_treePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

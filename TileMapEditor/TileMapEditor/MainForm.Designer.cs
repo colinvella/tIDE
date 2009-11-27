@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.SplitContainer m_splitContainerVertical;
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
@@ -80,16 +81,25 @@
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
+            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_contentPanel = new TileMapEditor.Control.CustomPanel();
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
+            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
+            m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             this.m_toolStripContainer.ContentPanel.SuspendLayout();
             this.m_toolStripContainer.TopToolStripPanel.SuspendLayout();
             this.m_toolStripContainer.SuspendLayout();
             this.m_menuStrip.SuspendLayout();
             this.m_editToolStrip.SuspendLayout();
+            this.m_splitContainerLeftRight.Panel1.SuspendLayout();
+            this.m_splitContainerLeftRight.Panel2.SuspendLayout();
+            this.m_splitContainerLeftRight.SuspendLayout();
             this.m_contentPanel.SuspendLayout();
+            m_splitContainerVertical.Panel1.SuspendLayout();
+            m_splitContainerVertical.Panel2.SuspendLayout();
+            m_splitContainerVertical.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_toolStripContainer
@@ -97,9 +107,8 @@
             // 
             // m_toolStripContainer.ContentPanel
             // 
-            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_contentPanel);
+            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitContainerLeftRight);
             this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitter);
-            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_mapTreeView);
             this.m_toolStripContainer.ContentPanel.Size = new System.Drawing.Size(784, 513);
             this.m_toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_toolStripContainer.Location = new System.Drawing.Point(0, 0);
@@ -115,7 +124,7 @@
             // 
             // m_splitter
             // 
-            this.m_splitter.Location = new System.Drawing.Point(200, 0);
+            this.m_splitter.Location = new System.Drawing.Point(0, 0);
             this.m_splitter.Name = "m_splitter";
             this.m_splitter.Size = new System.Drawing.Size(4, 513);
             this.m_splitter.TabIndex = 1;
@@ -159,7 +168,7 @@
             this.m_fileNewMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileNewMenuItem.Name = "m_fileNewMenuItem";
             this.m_fileNewMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.m_fileNewMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileNewMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_fileNewMenuItem.Text = "&New";
             this.m_fileNewMenuItem.Click += new System.EventHandler(this.OnFileNew);
             // 
@@ -169,13 +178,13 @@
             this.m_fileOpenMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileOpenMenuItem.Name = "m_fileOpenMenuItem";
             this.m_fileOpenMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.m_fileOpenMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileOpenMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_fileOpenMenuItem.Text = "&Open";
             // 
             // m_fileSeparator1
             // 
             this.m_fileSeparator1.Name = "m_fileSeparator1";
-            this.m_fileSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.m_fileSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // m_fileSaveMenuItem
             // 
@@ -183,25 +192,25 @@
             this.m_fileSaveMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileSaveMenuItem.Name = "m_fileSaveMenuItem";
             this.m_fileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.m_fileSaveMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileSaveMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_fileSaveMenuItem.Text = "&Save";
             // 
             // m_fileSaveAsMenuItem
             // 
             this.m_fileSaveAsMenuItem.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
             this.m_fileSaveAsMenuItem.Name = "m_fileSaveAsMenuItem";
-            this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_fileSaveAsMenuItem.Text = "Save &As";
             // 
             // m_fileSeparator2
             // 
             this.m_fileSeparator2.Name = "m_fileSeparator2";
-            this.m_fileSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.m_fileSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // m_editMenuItem
@@ -225,7 +234,7 @@
             this.m_editUndoMenuItem.Image = global::TileMapEditor.Properties.Resources.EditUndo;
             this.m_editUndoMenuItem.Name = "m_editUndoMenuItem";
             this.m_editUndoMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.m_editUndoMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.m_editUndoMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_editUndoMenuItem.Text = "&Undo";
             // 
             // m_editRedoMenuItem
@@ -233,13 +242,13 @@
             this.m_editRedoMenuItem.Image = global::TileMapEditor.Properties.Resources.EditRedo;
             this.m_editRedoMenuItem.Name = "m_editRedoMenuItem";
             this.m_editRedoMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.m_editRedoMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.m_editRedoMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_editRedoMenuItem.Text = "&Redo";
             // 
             // m_editMenuSeparator1
             // 
             this.m_editMenuSeparator1.Name = "m_editMenuSeparator1";
-            this.m_editMenuSeparator1.Size = new System.Drawing.Size(141, 6);
+            this.m_editMenuSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // m_editCutMenuItem
             // 
@@ -247,7 +256,7 @@
             this.m_editCutMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCutMenuItem.Name = "m_editCutMenuItem";
             this.m_editCutMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.m_editCutMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.m_editCutMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_editCutMenuItem.Text = "Cu&t";
             // 
             // m_editCopyMenuItem
@@ -256,7 +265,7 @@
             this.m_editCopyMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCopyMenuItem.Name = "m_editCopyMenuItem";
             this.m_editCopyMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.m_editCopyMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.m_editCopyMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_editCopyMenuItem.Text = "&Copy";
             // 
             // m_editPasteMenuItem
@@ -265,18 +274,18 @@
             this.m_editPasteMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editPasteMenuItem.Name = "m_editPasteMenuItem";
             this.m_editPasteMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.m_editPasteMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.m_editPasteMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_editPasteMenuItem.Text = "&Paste";
             // 
             // m_editMenuSeparator2
             // 
             this.m_editMenuSeparator2.Name = "m_editMenuSeparator2";
-            this.m_editMenuSeparator2.Size = new System.Drawing.Size(141, 6);
+            this.m_editMenuSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // m_editSelectAllMenuItem
             // 
             this.m_editSelectAllMenuItem.Name = "m_editSelectAllMenuItem";
-            this.m_editSelectAllMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.m_editSelectAllMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_editSelectAllMenuItem.Text = "Select &All";
             // 
             // m_mapMenuItem
@@ -292,7 +301,7 @@
             // 
             this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
-            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_mapPropertiesMenuItem.Text = "Properties...";
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
             // 
@@ -381,7 +390,7 @@
             // 
             this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
-            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_tileSheetNewMenuItem.Text = "New...";
             this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
@@ -390,21 +399,21 @@
             this.m_tileSheetPropertiesMenuItem.Enabled = false;
             this.m_tileSheetPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesMenuItem.Name = "m_tileSheetPropertiesMenuItem";
-            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_tileSheetPropertiesMenuItem.Text = "Properties...";
             this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
             // 
             // m_tileSheetSeparator1
             // 
             this.m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
-            this.m_tileSheetSeparator1.Size = new System.Drawing.Size(133, 6);
+            this.m_tileSheetSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // m_tileSheetDeleteMenuItem
             // 
             this.m_tileSheetDeleteMenuItem.Enabled = false;
             this.m_tileSheetDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteMenuItem.Name = "m_tileSheetDeleteMenuItem";
-            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_tileSheetDeleteMenuItem.Text = "Delete";
             this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
@@ -424,31 +433,31 @@
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpAbout;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // m_editToolStrip
@@ -466,7 +475,7 @@
             this.m_editPasteButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(216, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(185, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editSingleTileButton
@@ -547,15 +556,43 @@
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
             // 
+            // m_splitContainerLeftRight
+            // 
+            this.m_splitContainerLeftRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_splitContainerLeftRight.Location = new System.Drawing.Point(4, 0);
+            this.m_splitContainerLeftRight.Name = "m_splitContainerLeftRight";
+            // 
+            // m_splitContainerLeftRight.Panel1
+            // 
+            this.m_splitContainerLeftRight.Panel1.Controls.Add(m_splitContainerVertical);
+            // 
+            // m_splitContainerLeftRight.Panel2
+            // 
+            this.m_splitContainerLeftRight.Panel2.Controls.Add(this.m_contentPanel);
+            this.m_splitContainerLeftRight.Size = new System.Drawing.Size(780, 513);
+            this.m_splitContainerLeftRight.SplitterDistance = 200;
+            this.m_splitContainerLeftRight.TabIndex = 3;
+            // 
+            // m_mapTreeView
+            // 
+            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_mapTreeView.Map = null;
+            this.m_mapTreeView.Name = "m_mapTreeView";
+            this.m_mapTreeView.SelectedComponent = null;
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 250);
+            this.m_mapTreeView.TabIndex = 0;
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            // 
             // m_contentPanel
             // 
             this.m_contentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_contentPanel.Controls.Add(this.m_verticalScrollBar);
             this.m_contentPanel.Controls.Add(this.m_horizontalScrollBar);
             this.m_contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_contentPanel.Location = new System.Drawing.Point(204, 0);
+            this.m_contentPanel.Location = new System.Drawing.Point(0, 0);
             this.m_contentPanel.Name = "m_contentPanel";
-            this.m_contentPanel.Size = new System.Drawing.Size(580, 513);
+            this.m_contentPanel.Size = new System.Drawing.Size(576, 513);
             this.m_contentPanel.TabIndex = 2;
             this.m_contentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintContentPanel);
             // 
@@ -563,7 +600,7 @@
             // 
             this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_verticalScrollBar.LargeChange = 1;
-            this.m_verticalScrollBar.Location = new System.Drawing.Point(561, 0);
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(557, 0);
             this.m_verticalScrollBar.Maximum = 0;
             this.m_verticalScrollBar.Name = "m_verticalScrollBar";
             this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
@@ -576,19 +613,34 @@
             this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
             this.m_horizontalScrollBar.Maximum = 0;
             this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(578, 17);
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(574, 17);
             this.m_horizontalScrollBar.TabIndex = 0;
             // 
-            // m_mapTreeView
+            // m_splitContainerVertical
             // 
-            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
-            this.m_mapTreeView.Map = null;
-            this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.SelectedComponent = null;
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 513);
-            this.m_mapTreeView.TabIndex = 0;
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            m_splitContainerVertical.Dock = System.Windows.Forms.DockStyle.Fill;
+            m_splitContainerVertical.Location = new System.Drawing.Point(0, 0);
+            m_splitContainerVertical.Name = "m_splitContainerVertical";
+            m_splitContainerVertical.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // m_splitContainerVertical.Panel1
+            // 
+            m_splitContainerVertical.Panel1.Controls.Add(this.m_mapTreeView);
+            // 
+            // m_splitContainerVertical.Panel2
+            // 
+            m_splitContainerVertical.Panel2.Controls.Add(this.m_tilePicker);
+            m_splitContainerVertical.Size = new System.Drawing.Size(200, 513);
+            m_splitContainerVertical.SplitterDistance = 250;
+            m_splitContainerVertical.TabIndex = 1;
+            // 
+            // m_tilePicker
+            // 
+            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
+            this.m_tilePicker.Name = "m_tilePicker";
+            this.m_tilePicker.Size = new System.Drawing.Size(200, 259);
+            this.m_tilePicker.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -611,7 +663,13 @@
             this.m_menuStrip.PerformLayout();
             this.m_editToolStrip.ResumeLayout(false);
             this.m_editToolStrip.PerformLayout();
+            this.m_splitContainerLeftRight.Panel1.ResumeLayout(false);
+            this.m_splitContainerLeftRight.Panel2.ResumeLayout(false);
+            this.m_splitContainerLeftRight.ResumeLayout(false);
             this.m_contentPanel.ResumeLayout(false);
+            m_splitContainerVertical.Panel1.ResumeLayout(false);
+            m_splitContainerVertical.Panel2.ResumeLayout(false);
+            m_splitContainerVertical.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -673,5 +731,7 @@
         private System.Windows.Forms.VScrollBar m_verticalScrollBar;
         private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
         private TileMapEditor.Control.CustomPanel m_contentPanel;
+        private System.Windows.Forms.SplitContainer m_splitContainerLeftRight;
+        private TileMapEditor.Control.TilePicker m_tilePicker;
     }
 }

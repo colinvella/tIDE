@@ -40,6 +40,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -64,6 +65,12 @@
     </Compile>
     <Compile Include="Control\CustomPropertyGrid.Designer.cs">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TilePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TilePicker.Designer.cs">
+      <DependentUpon>TilePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\LayerPropertiesDialog.cs">
       <SubType>Form</SubType>
@@ -100,6 +107,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\CustomPropertyGrid.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TilePicker.resx">
+      <DependentUpon>TilePicker.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\LayerPropertiesDialog.resx">
