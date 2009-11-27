@@ -34,7 +34,6 @@
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_splitter = new System.Windows.Forms.Splitter();
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +83,7 @@
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -151,16 +151,6 @@
             this.m_splitter.Size = new System.Drawing.Size(4, 513);
             this.m_splitter.TabIndex = 1;
             this.m_splitter.TabStop = false;
-            // 
-            // m_mapTreeView
-            // 
-            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
-            this.m_mapTreeView.Map = null;
-            this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 513);
-            this.m_mapTreeView.TabIndex = 0;
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
             // 
             // m_menuStrip
             // 
@@ -381,6 +371,7 @@
             this.m_layerBringForwardMenuItem.Name = "m_layerBringForwardMenuItem";
             this.m_layerBringForwardMenuItem.Size = new System.Drawing.Size(154, 22);
             this.m_layerBringForwardMenuItem.Text = "Bring Forward";
+            this.m_layerBringForwardMenuItem.Click += new System.EventHandler(this.OnLayerBringForward);
             // 
             // m_layerSendBackwardMenuItem
             // 
@@ -389,6 +380,7 @@
             this.m_layerSendBackwardMenuItem.Name = "m_layerSendBackwardMenuItem";
             this.m_layerSendBackwardMenuItem.Size = new System.Drawing.Size(154, 22);
             this.m_layerSendBackwardMenuItem.Text = "Send Backward";
+            this.m_layerSendBackwardMenuItem.Click += new System.EventHandler(this.OnLayerSendBackward);
             // 
             // toolStripMenuItem1
             // 
@@ -581,6 +573,17 @@
             this.m_editPasteButton.Name = "m_editPasteButton";
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
+            // 
+            // m_mapTreeView
+            // 
+            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_mapTreeView.Map = null;
+            this.m_mapTreeView.Name = "m_mapTreeView";
+            this.m_mapTreeView.SelectedComponent = null;
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 513);
+            this.m_mapTreeView.TabIndex = 0;
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
             // 
             // MainForm
             // 

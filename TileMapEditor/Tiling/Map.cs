@@ -68,6 +68,8 @@ namespace Tiling
                 throw new Exception("The specified layer index is out of range");
 
             m_layers.Insert(layerIndex, layer);
+
+            UpdateSize();
         }
 
         public void RemoveLayer(Layer layer)
@@ -76,6 +78,8 @@ namespace Tiling
                 throw new Exception("The specified Layer is not contained in this map");
 
             m_layers.Remove(layer);
+
+            UpdateSize();
         }
 
         public void BringLayerForward(Layer layer)

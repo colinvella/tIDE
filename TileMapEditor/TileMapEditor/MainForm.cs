@@ -85,6 +85,38 @@ namespace TileMapEditor
             m_mapTreeView.UpdateTree();
         }
 
+        private void OnLayerBringForward(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is Layer))
+                return;
+
+            Layer layer = (Layer)m_selectedComponent;
+            LayerPropertiesDialog layerPropertiesDialog
+                = new LayerPropertiesDialog(layer);
+
+            m_map.BringLayerForward(layer);
+
+            m_mapTreeView.UpdateTree(true);
+            m_mapTreeView.SelectedComponent = layer;
+        }
+
+        private void OnLayerSendBackward(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is Layer))
+                return;
+
+            Layer layer = (Layer)m_selectedComponent;
+            LayerPropertiesDialog layerPropertiesDialog
+                = new LayerPropertiesDialog(layer);
+
+            m_map.SendLayerBackward(layer);
+
+            m_mapTreeView.UpdateTree(true);
+            m_mapTreeView.SelectedComponent = layer;
+        }
+
         private void OnLayerDelete(object sender, EventArgs eventArgs)
         {
             if (m_selectedComponent == null
@@ -156,11 +188,23 @@ namespace TileMapEditor
             Tiling.Component component = mapTreeViewEventArgs.Component;
 
             // enable/disable layer menu items as applicable
+            bool layerSelected = component != null && component is Layer;
+
             m_layerPropertiesMenuItem.Enabled
-                = m_layerBringForwardMenuItem.Enabled
-                = m_layerSendBackwardMenuItem.Enabled
                 = m_layerDeleteMenuItem.Enabled
-                = component != null && component is Layer;
+                = layerSelected;
+
+            if (layerSelected)
+            {
+                Layer layer = (Layer)component;
+                int layerIndex = m_map.Layers.IndexOf(layer);
+                m_layerBringForwardMenuItem.Enabled = layerIndex < m_map.Layers.Count - 1;
+                m_layerSendBackwardMenuItem.Enabled = layerIndex > 0;
+            }
+            else
+                m_layerBringForwardMenuItem.Enabled
+                    = m_layerSendBackwardMenuItem.Enabled = false;
+
 
             // enable/disable tile sheet menu items as applicable
             m_tileSheetPropertiesMenuItem.Enabled

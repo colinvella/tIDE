@@ -13,7 +13,13 @@ namespace TileMapEditor.Control
 {
     public partial class MapTreeView : UserControl
     {
+        #region Private Variables
+
         private Map m_map;
+
+        #endregion
+
+        #region Private Methods
 
         private void UpdateLayersSubTree(TreeNode layersNode)
         {
@@ -91,12 +97,51 @@ namespace TileMapEditor.Control
             }
         }
 
+        private void m_treeView_AfterSelect(object sender, TreeViewEventArgs treeViewEventArgs)
+        {
+            if (ComponentChanged != null)
+            {
+                TreeNode treeNode = m_treeView.SelectedNode;
+
+                object tag = treeNode.Tag;
+                Tiling.Component component = tag is Tiling.Component
+                    ? (Tiling.Component)tag : null;
+
+                ComponentChanged(this,
+                    new MapTreeViewEventArgs(treeNode, component));
+            }
+        }
+
+        private TreeNode SearchComponent(TreeNode rootNode, Tiling.Component component)
+        {
+            if (rootNode.Tag == component)
+                return rootNode;
+
+            foreach (TreeNode childNode in rootNode.Nodes)
+            {
+                TreeNode resultNode = SearchComponent(childNode, component);
+                if (resultNode != null)
+                    return resultNode;
+            }
+
+            return null;
+        }
+
+        #endregion
+
+        #region Public Methods
+
         public MapTreeView()
         {
             InitializeComponent();
         }
 
         public void UpdateTree()
+        {
+            UpdateTree(false);
+        }
+
+        public void UpdateTree(bool refreshLayers)
         {
             if (m_map == null)
             {
@@ -139,7 +184,12 @@ namespace TileMapEditor.Control
                 mapNode = m_treeView.Nodes[0];
                 mapNode.Text = m_map.Id;
                 mapNode.Tag = m_map;
+
                 layersNode = mapNode.Nodes[0];
+
+                if (refreshLayers)
+                    layersNode.Nodes.Clear();
+
                 tileSheetsNode = mapNode.Nodes[1];
             }
 
@@ -149,6 +199,8 @@ namespace TileMapEditor.Control
             // tile sheets
             UpdateTileSheetsSubTree(tileSheetsNode);
         }
+
+        #endregion
 
         #region Public Properties
 
@@ -165,6 +217,30 @@ namespace TileMapEditor.Control
             }
         }
 
+        public Tiling.Component SelectedComponent
+        {
+            get
+            {
+                TreeNode treeNode = m_treeView.SelectedNode;
+                if (treeNode == null || treeNode.Tag == null)
+                    return null;
+                if (!(treeNode.Tag is Tiling.Component))
+                    return null;
+
+                return (Tiling.Component)treeNode.Tag;
+            }
+
+            set
+            {
+                if (m_treeView.Nodes.Count == 0)
+                    return;
+
+                TreeNode matchingNode = SearchComponent(m_treeView.Nodes[0], value);
+
+                m_treeView.SelectedNode = matchingNode;
+            }
+        }
+
         #endregion
 
         #region Public Events
@@ -174,20 +250,6 @@ namespace TileMapEditor.Control
 
         #endregion
 
-        private void m_treeView_AfterSelect(object sender, TreeViewEventArgs treeViewEventArgs)
-        {
-            if (ComponentChanged != null)
-            {
-                TreeNode treeNode = m_treeView.SelectedNode;
-
-                object tag = treeNode.Tag;
-                Tiling.Component component = tag is Tiling.Component
-                    ? (Tiling.Component)tag : null;
-
-                ComponentChanged(this,
-                    new MapTreeViewEventArgs(treeNode, component));
-            }
-        }
     }
 
     public class MapTreeViewEventArgs
