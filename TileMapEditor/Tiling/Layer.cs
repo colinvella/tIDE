@@ -60,8 +60,8 @@ namespace Tiling
                 ++tileRows;
 
             // determine tile-level viewport limits
-            int tileXMax = tileXMin + tileColumns;
-            int tileYMax = tileYMin + tileRows;
+            int tileXMax = Math.Min(tileXMin + tileColumns, m_layerSize.Width);
+            int tileYMax = Math.Min(tileYMin + tileRows, m_layerSize.Height);
 
             Location tileLocation = displayOffset - tileInternalOffset;
 
@@ -71,6 +71,9 @@ namespace Tiling
                 for (int tileX = tileXMin; tileX < tileXMax; tileX++)
                 {
                     Tile tile = m_tiles[tileX, tileY];
+
+                    if (tile == null)
+                        continue;
 
                     displayDevice.DrawTile(tile, tileLocation);
 

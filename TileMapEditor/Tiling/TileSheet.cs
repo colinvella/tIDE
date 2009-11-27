@@ -33,12 +33,29 @@ namespace Tiling
             m_margin = m_spacing = Size.Zero;
         }
 
+        public Rectangle GetTileImageBounds(int tileIndex)
+        {
+            int tileX = tileIndex % m_sheetSize.Width;
+            int tileY = tileIndex / m_sheetSize.Width;
+            Location location = new Location(
+                m_margin.Width + (m_tileSize.Width + m_spacing.Width) * tileX,
+                m_margin.Height + (m_tileSize.Height + m_spacing.Height) * tileY);
+
+            return new Rectangle(location, m_tileSize);
+        }
+
         public Map Map { get { return m_map; } }
 
         public string ImageSource
         {
             get { return m_imageSource; }
             set { m_imageSource = value; }
+        }
+
+        public Size SheetSize
+        {
+            get { return m_sheetSize; }
+            set { m_sheetSize = value; }
         }
 
         public Size TileSize 

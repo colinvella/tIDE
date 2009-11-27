@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.m_mapPanel = new System.Windows.Forms.Panel();
-            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
-            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
+            this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,66 +80,38 @@
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_contentPanel = new TileMapEditor.Control.CustomPanel();
+            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
+            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.m_mapPanel.SuspendLayout();
+            this.m_toolStripContainer.ContentPanel.SuspendLayout();
+            this.m_toolStripContainer.TopToolStripPanel.SuspendLayout();
+            this.m_toolStripContainer.SuspendLayout();
             this.m_menuStrip.SuspendLayout();
             this.m_editToolStrip.SuspendLayout();
+            this.m_contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStripContainer1
+            // m_toolStripContainer
             // 
             // 
-            // toolStripContainer1.ContentPanel
+            // m_toolStripContainer.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.m_mapPanel);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.m_splitter);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.m_mapTreeView);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 513);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(784, 562);
-            this.toolStripContainer1.TabIndex = 0;
-            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_contentPanel);
+            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitter);
+            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_mapTreeView);
+            this.m_toolStripContainer.ContentPanel.Size = new System.Drawing.Size(784, 513);
+            this.m_toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_toolStripContainer.Location = new System.Drawing.Point(0, 0);
+            this.m_toolStripContainer.Name = "m_toolStripContainer";
+            this.m_toolStripContainer.Size = new System.Drawing.Size(784, 562);
+            this.m_toolStripContainer.TabIndex = 0;
+            this.m_toolStripContainer.Text = "toolStripContainer1";
             // 
-            // toolStripContainer1.TopToolStripPanel
+            // m_toolStripContainer.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.m_menuStrip);
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
-            // 
-            // m_mapPanel
-            // 
-            this.m_mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_mapPanel.Controls.Add(this.m_verticalScrollBar);
-            this.m_mapPanel.Controls.Add(this.m_horizontalScrollBar);
-            this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapPanel.Location = new System.Drawing.Point(204, 0);
-            this.m_mapPanel.Name = "m_mapPanel";
-            this.m_mapPanel.Size = new System.Drawing.Size(580, 513);
-            this.m_mapPanel.TabIndex = 2;
-            // 
-            // m_verticalScrollBar
-            // 
-            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_verticalScrollBar.LargeChange = 1;
-            this.m_verticalScrollBar.Location = new System.Drawing.Point(561, 0);
-            this.m_verticalScrollBar.Maximum = 0;
-            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
-            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
-            this.m_verticalScrollBar.TabIndex = 1;
-            // 
-            // m_horizontalScrollBar
-            // 
-            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_horizontalScrollBar.LargeChange = 1;
-            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
-            this.m_horizontalScrollBar.Maximum = 0;
-            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(578, 17);
-            this.m_horizontalScrollBar.TabIndex = 0;
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             // 
             // m_splitter
             // 
@@ -574,6 +543,38 @@
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
             // 
+            // m_contentPanel
+            // 
+            this.m_contentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_contentPanel.Controls.Add(this.m_verticalScrollBar);
+            this.m_contentPanel.Controls.Add(this.m_horizontalScrollBar);
+            this.m_contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_contentPanel.Location = new System.Drawing.Point(204, 0);
+            this.m_contentPanel.Name = "m_contentPanel";
+            this.m_contentPanel.Size = new System.Drawing.Size(580, 513);
+            this.m_contentPanel.TabIndex = 2;
+            this.m_contentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintContentPanel);
+            // 
+            // m_verticalScrollBar
+            // 
+            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_verticalScrollBar.LargeChange = 1;
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(561, 0);
+            this.m_verticalScrollBar.Maximum = 0;
+            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
+            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
+            this.m_verticalScrollBar.TabIndex = 1;
+            // 
+            // m_horizontalScrollBar
+            // 
+            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_horizontalScrollBar.LargeChange = 1;
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
+            this.m_horizontalScrollBar.Maximum = 0;
+            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(578, 17);
+            this.m_horizontalScrollBar.TabIndex = 0;
+            // 
             // m_mapTreeView
             // 
             this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
@@ -590,30 +591,30 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.m_toolStripContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_menuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tile Map Editor";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.m_mapPanel.ResumeLayout(false);
+            this.m_toolStripContainer.ContentPanel.ResumeLayout(false);
+            this.m_toolStripContainer.TopToolStripPanel.ResumeLayout(false);
+            this.m_toolStripContainer.TopToolStripPanel.PerformLayout();
+            this.m_toolStripContainer.ResumeLayout(false);
+            this.m_toolStripContainer.PerformLayout();
             this.m_menuStrip.ResumeLayout(false);
             this.m_menuStrip.PerformLayout();
             this.m_editToolStrip.ResumeLayout(false);
             this.m_editToolStrip.PerformLayout();
+            this.m_contentPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripContainer m_toolStripContainer;
         private System.Windows.Forms.MenuStrip m_menuStrip;
         private System.Windows.Forms.ToolStripMenuItem m_fileMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_fileNewMenuItem;
@@ -651,7 +652,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetDeleteMenuItem;
         private System.Windows.Forms.ToolStripSeparator m_tileSheetSeparator1;
         private System.Windows.Forms.Splitter m_splitter;
-        private System.Windows.Forms.Panel m_mapPanel;
         private System.Windows.Forms.ToolStripMenuItem m_layerBringForwardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerSendBackwardMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
@@ -668,5 +668,6 @@
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator2;
         private System.Windows.Forms.VScrollBar m_verticalScrollBar;
         private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
+        private TileMapEditor.Control.CustomPanel m_contentPanel;
     }
 }

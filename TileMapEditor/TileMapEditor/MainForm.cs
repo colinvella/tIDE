@@ -214,6 +214,20 @@ namespace TileMapEditor
             m_selectedComponent = component;
         }
 
+        private void OnPaintContentPanel(object sender, PaintEventArgs paintEventArgs)
+        {
+            GdiPlusDisplayDevice gdiPlusDisplayDevice = new GdiPlusDisplayDevice();
+            gdiPlusDisplayDevice.Graphics = paintEventArgs.Graphics;
+
+            m_map.LoadTileSheets(gdiPlusDisplayDevice);
+
+            m_map.Draw(gdiPlusDisplayDevice,
+                new Tiling.Rectangle(Tiling.Location.Origin,
+                    new Tiling.Size(m_contentPanel.ClientRectangle.Width, m_contentPanel.ClientRectangle.Height)));
+
+            m_map.DisposeTileSheets(gdiPlusDisplayDevice);
+        }
+
         #endregion
 
         #region Public Mehods
