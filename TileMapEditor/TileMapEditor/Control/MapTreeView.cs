@@ -15,6 +15,44 @@ namespace TileMapEditor.Control
     {
         private Map m_map;
 
+        private void UpdateLayersSubTree(TreeNode layersNode)
+        {
+            // remove nodes for deleted layers
+            for (int nodeIndex = 0; nodeIndex < layersNode.Nodes.Count; )
+            {
+                TreeNode layerNode = layersNode.Nodes[nodeIndex];
+
+                if (m_map.Layers.Contains((Layer)layerNode.Tag))
+                    ++nodeIndex;
+                else
+                    layersNode.Nodes.Remove(layerNode);
+            }
+
+            // add nodes for new layers, or update existing
+            int layerImageIndex = m_imageList.Images.IndexOfKey("Layer.png");
+            foreach (Layer layer in m_map.Layers)
+            {
+                bool bMatched = false;
+                foreach (TreeNode layerNode in layersNode.Nodes)
+                    if (layerNode.Tag == layer)
+                    {
+                        bMatched = true;
+                        layerNode.Text = ((Layer)layerNode.Tag).Id;
+                        break;
+                    }
+
+                // add new node if needed
+                if (!bMatched)
+                {
+                    TreeNode layerNode = new TreeNode(layer.Id, layerImageIndex, layerImageIndex);
+                    layerNode.Tag = layer;
+                    layersNode.Nodes.Add(layerNode);
+
+                    m_treeView.SelectedNode = layerNode;
+                }
+            }
+        }
+
         private void UpdateTileSheetsSubTree(TreeNode tileSheetsNode)
         {
             // remove nodes for deleted tile sheets
@@ -69,7 +107,6 @@ namespace TileMapEditor.Control
             // determine image list indices
             int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
             int collectionImageIndex = m_imageList.Images.IndexOfKey("Collection.png");
-            int layerImageIndex = m_imageList.Images.IndexOfKey("Layer.png");
             int tileSheetImageIndex = m_imageList.Images.IndexOfKey("TileSheet.png");
 
             // map root node
@@ -105,6 +142,9 @@ namespace TileMapEditor.Control
                 layersNode = mapNode.Nodes[0];
                 tileSheetsNode = mapNode.Nodes[1];
             }
+
+            // layers
+            UpdateLayersSubTree(layersNode);
 
             // tile sheets
             UpdateTileSheetsSubTree(tileSheetsNode);

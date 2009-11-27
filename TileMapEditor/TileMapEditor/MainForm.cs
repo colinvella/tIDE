@@ -16,15 +16,16 @@ namespace TileMapEditor
 {
     public partial class MainForm : Form
     {
+        #region Private Variables
+
         private Map m_map;
         private Tiling.Component m_selectedComponent;
 
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+        #endregion
 
-        private void MainForm_Load(object sender, EventArgs e)
+        #region Private Mehods
+
+        private void MainForm_Load(object sender, EventArgs eventArgs)
         {
             m_map = new Map("Untitled map");
             m_mapTreeView.Map = m_map;
@@ -56,6 +57,19 @@ namespace TileMapEditor
             mapPropertiesDialog.ShowDialog(this);
         }
 
+        private void OnLayerNew(object sender, EventArgs eventArgs)
+        {
+            Layer layer = new Layer("untitled layer", m_map,
+                new Tiling.Size(1, 1), new Tiling.Size(8, 8));
+            LayerPropertiesDialog layerPropertiesDialog = new LayerPropertiesDialog(layer);
+
+            if (layerPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            m_map.AddLayer(layer);
+            m_mapTreeView.UpdateTree();
+        }
+
         private void OnTileSheetNew(object sender, EventArgs eventArgs)
         {
             TileSheet tileSheet = new TileSheet("untitled tile sheet", m_map, "",
@@ -69,17 +83,7 @@ namespace TileMapEditor
             m_mapTreeView.UpdateTree();
         }
 
-        private void m_mapTreeView_ComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
-        {
-            Tiling.Component component = mapTreeViewEventArgs.Component;
-
-            m_tileSheetPropertiesMenuItem.Enabled = m_tileSheetDeleteMenuItem.Enabled
-                = component != null && mapTreeViewEventArgs.Component is TileSheet;
-
-            m_selectedComponent = component;
-        }
-
-        private void OnTileSheetProperties(object sender, EventArgs e)
+        private void OnTileSheetProperties(object sender, EventArgs eventArgs)
         {
             if (m_selectedComponent == null
                 || !(m_selectedComponent is TileSheet))
@@ -94,7 +98,7 @@ namespace TileMapEditor
             m_mapTreeView.UpdateTree();
         }
 
-        private void OnTileSheetDelete(object sender, EventArgs e)
+        private void OnTileSheetDelete(object sender, EventArgs eventArgs)
         {
             if (m_selectedComponent == null
                 || !(m_selectedComponent is TileSheet))
@@ -112,5 +116,35 @@ namespace TileMapEditor
 
             m_mapTreeView.UpdateTree();
         }
+
+        private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
+        {
+            Tiling.Component component = mapTreeViewEventArgs.Component;
+
+            // enable/disable layer menu items as applicable
+            m_layerPropertiesMenuItem.Enabled
+                = m_layerBringForwardMenuItem.Enabled
+                = m_layerSendBackwardMenuItem.Enabled
+                = m_layerDeleteMenuItem.Enabled
+                = component != null && component is Layer;
+
+            // enable/disable tile sheet menu items as applicable
+            m_tileSheetPropertiesMenuItem.Enabled
+                = m_tileSheetDeleteMenuItem.Enabled
+                = component != null && component is TileSheet;
+
+            m_selectedComponent = component;
+        }
+
+        #endregion
+
+        #region Public Mehods
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        #endregion
     }
 }

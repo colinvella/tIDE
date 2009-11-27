@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.m_mapPanel = new System.Windows.Forms.Panel();
+            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
+            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,14 +77,12 @@
             this.m_editSingleTileButton = new System.Windows.Forms.ToolStripButton();
             this.m_editTileBlockButton = new System.Windows.Forms.ToolStripButton();
             this.m_editToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editUndoButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editRedoButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_editUndoButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editRedoButton = new System.Windows.Forms.ToolStripButton();
-            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
-            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -123,6 +123,26 @@
             this.m_mapPanel.Name = "m_mapPanel";
             this.m_mapPanel.Size = new System.Drawing.Size(580, 513);
             this.m_mapPanel.TabIndex = 2;
+            // 
+            // m_verticalScrollBar
+            // 
+            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_verticalScrollBar.LargeChange = 1;
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(561, 0);
+            this.m_verticalScrollBar.Maximum = 0;
+            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
+            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
+            this.m_verticalScrollBar.TabIndex = 1;
+            // 
+            // m_horizontalScrollBar
+            // 
+            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_horizontalScrollBar.LargeChange = 1;
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
+            this.m_horizontalScrollBar.Maximum = 0;
+            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(578, 17);
+            this.m_horizontalScrollBar.TabIndex = 0;
             // 
             // m_splitter
             // 
@@ -328,9 +348,11 @@
             this.m_layerNewMenuItem.Name = "m_layerNewMenuItem";
             this.m_layerNewMenuItem.Size = new System.Drawing.Size(154, 22);
             this.m_layerNewMenuItem.Text = "&New...";
+            this.m_layerNewMenuItem.Click += new System.EventHandler(this.OnLayerNew);
             // 
             // m_layerPropertiesMenuItem
             // 
+            this.m_layerPropertiesMenuItem.Enabled = false;
             this.m_layerPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
             this.m_layerPropertiesMenuItem.Name = "m_layerPropertiesMenuItem";
             this.m_layerPropertiesMenuItem.Size = new System.Drawing.Size(154, 22);
@@ -343,6 +365,7 @@
             // 
             // m_layerBringForwardMenuItem
             // 
+            this.m_layerBringForwardMenuItem.Enabled = false;
             this.m_layerBringForwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
             this.m_layerBringForwardMenuItem.Name = "m_layerBringForwardMenuItem";
             this.m_layerBringForwardMenuItem.Size = new System.Drawing.Size(154, 22);
@@ -350,6 +373,7 @@
             // 
             // m_layerSendBackwardMenuItem
             // 
+            this.m_layerSendBackwardMenuItem.Enabled = false;
             this.m_layerSendBackwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
             this.m_layerSendBackwardMenuItem.Name = "m_layerSendBackwardMenuItem";
             this.m_layerSendBackwardMenuItem.Size = new System.Drawing.Size(154, 22);
@@ -362,6 +386,7 @@
             // 
             // m_layerDeleteMenuItem
             // 
+            this.m_layerDeleteMenuItem.Enabled = false;
             this.m_layerDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
             this.m_layerDeleteMenuItem.Name = "m_layerDeleteMenuItem";
             this.m_layerDeleteMenuItem.Size = new System.Drawing.Size(154, 22);
@@ -495,6 +520,29 @@
             this.m_editToolStripSeparator1.Name = "m_editToolStripSeparator1";
             this.m_editToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // m_editUndoButton
+            // 
+            this.m_editUndoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editUndoButton.Image = global::TileMapEditor.Properties.Resources.EditUndo;
+            this.m_editUndoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editUndoButton.Name = "m_editUndoButton";
+            this.m_editUndoButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editUndoButton.Text = "Undo last change";
+            // 
+            // m_editRedoButton
+            // 
+            this.m_editRedoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editRedoButton.Image = global::TileMapEditor.Properties.Resources.EditRedo;
+            this.m_editRedoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editRedoButton.Name = "m_editRedoButton";
+            this.m_editRedoButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editRedoButton.Text = "Redo last change";
+            // 
+            // m_editToolStripSeparator2
+            // 
+            this.m_editToolStripSeparator2.Name = "m_editToolStripSeparator2";
+            this.m_editToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // m_editCutButton
             // 
             this.m_editCutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -522,49 +570,6 @@
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
             // 
-            // m_editToolStripSeparator2
-            // 
-            this.m_editToolStripSeparator2.Name = "m_editToolStripSeparator2";
-            this.m_editToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // m_editUndoButton
-            // 
-            this.m_editUndoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editUndoButton.Image = global::TileMapEditor.Properties.Resources.EditUndo;
-            this.m_editUndoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editUndoButton.Name = "m_editUndoButton";
-            this.m_editUndoButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editUndoButton.Text = "Undo last change";
-            // 
-            // m_editRedoButton
-            // 
-            this.m_editRedoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editRedoButton.Image = global::TileMapEditor.Properties.Resources.EditRedo;
-            this.m_editRedoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editRedoButton.Name = "m_editRedoButton";
-            this.m_editRedoButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editRedoButton.Text = "Redo last change";
-            // 
-            // m_horizontalScrollBar
-            // 
-            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_horizontalScrollBar.LargeChange = 1;
-            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
-            this.m_horizontalScrollBar.Maximum = 0;
-            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(578, 17);
-            this.m_horizontalScrollBar.TabIndex = 0;
-            // 
-            // m_verticalScrollBar
-            // 
-            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_verticalScrollBar.LargeChange = 1;
-            this.m_verticalScrollBar.Location = new System.Drawing.Point(561, 0);
-            this.m_verticalScrollBar.Maximum = 0;
-            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
-            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
-            this.m_verticalScrollBar.TabIndex = 1;
-            // 
             // m_mapTreeView
             // 
             this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Left;
@@ -573,7 +578,7 @@
             this.m_mapTreeView.Name = "m_mapTreeView";
             this.m_mapTreeView.Size = new System.Drawing.Size(200, 513);
             this.m_mapTreeView.TabIndex = 0;
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.m_mapTreeView_ComponentChanged);
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
             // 
             // MainForm
             // 

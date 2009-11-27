@@ -47,9 +47,6 @@
             this.m_numericTileWidth = new System.Windows.Forms.NumericUpDown();
             this.m_numericLayerHeight = new System.Windows.Forms.NumericUpDown();
             this.m_numericLayerWidth = new System.Windows.Forms.NumericUpDown();
-            this.m_labelImageSource = new System.Windows.Forms.Label();
-            this.m_buttonBrowse = new System.Windows.Forms.Button();
-            this.m_textBoxImageSource = new System.Windows.Forms.TextBox();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
@@ -92,7 +89,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 256);
+            label1.Location = new System.Drawing.Point(6, 283);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(56, 13);
             label1.TabIndex = 7;
@@ -101,7 +98,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(169, 256);
+            label2.Location = new System.Drawing.Point(169, 283);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(12, 13);
             label2.TabIndex = 9;
@@ -110,7 +107,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(253, 256);
+            label3.Location = new System.Drawing.Point(253, 283);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(25, 13);
             label3.TabIndex = 11;
@@ -119,7 +116,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(253, 282);
+            label4.Location = new System.Drawing.Point(253, 309);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(33, 13);
             label4.TabIndex = 16;
@@ -128,7 +125,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(169, 282);
+            label5.Location = new System.Drawing.Point(169, 309);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(12, 13);
             label5.TabIndex = 14;
@@ -137,7 +134,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(6, 282);
+            label6.Location = new System.Drawing.Point(6, 309);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(47, 13);
             label6.TabIndex = 12;
@@ -206,9 +203,6 @@
             this.m_tabGeneral.Controls.Add(label2);
             this.m_tabGeneral.Controls.Add(this.m_numericLayerWidth);
             this.m_tabGeneral.Controls.Add(label1);
-            this.m_tabGeneral.Controls.Add(this.m_labelImageSource);
-            this.m_tabGeneral.Controls.Add(this.m_buttonBrowse);
-            this.m_tabGeneral.Controls.Add(this.m_textBoxImageSource);
             this.m_tabGeneral.Controls.Add(this.m_textBoxDescription);
             this.m_tabGeneral.Controls.Add(m_labelDescription);
             this.m_tabGeneral.Controls.Add(this.m_textBoxId);
@@ -222,7 +216,7 @@
             // 
             // m_numericTileHeight
             // 
-            this.m_numericTileHeight.Location = new System.Drawing.Point(187, 280);
+            this.m_numericTileHeight.Location = new System.Drawing.Point(187, 307);
             this.m_numericTileHeight.Maximum = new decimal(new int[] {
             512,
             0,
@@ -244,7 +238,7 @@
             // 
             // m_numericTileWidth
             // 
-            this.m_numericTileWidth.Location = new System.Drawing.Point(103, 280);
+            this.m_numericTileWidth.Location = new System.Drawing.Point(103, 307);
             this.m_numericTileWidth.Maximum = new decimal(new int[] {
             512,
             0,
@@ -266,7 +260,7 @@
             // 
             // m_numericLayerHeight
             // 
-            this.m_numericLayerHeight.Location = new System.Drawing.Point(187, 254);
+            this.m_numericLayerHeight.Location = new System.Drawing.Point(187, 281);
             this.m_numericLayerHeight.Maximum = new decimal(new int[] {
             1024,
             0,
@@ -288,7 +282,7 @@
             // 
             // m_numericLayerWidth
             // 
-            this.m_numericLayerWidth.Location = new System.Drawing.Point(103, 254);
+            this.m_numericLayerWidth.Location = new System.Drawing.Point(103, 281);
             this.m_numericLayerWidth.Maximum = new decimal(new int[] {
             1024,
             0,
@@ -308,38 +302,12 @@
             0,
             0});
             // 
-            // m_labelImageSource
-            // 
-            this.m_labelImageSource.AutoSize = true;
-            this.m_labelImageSource.Location = new System.Drawing.Point(6, 309);
-            this.m_labelImageSource.Name = "m_labelImageSource";
-            this.m_labelImageSource.Size = new System.Drawing.Size(73, 13);
-            this.m_labelImageSource.TabIndex = 6;
-            this.m_labelImageSource.Text = "Image Source";
-            // 
-            // m_buttonBrowse
-            // 
-            this.m_buttonBrowse.Location = new System.Drawing.Point(471, 304);
-            this.m_buttonBrowse.Name = "m_buttonBrowse";
-            this.m_buttonBrowse.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonBrowse.TabIndex = 5;
-            this.m_buttonBrowse.Text = "Browse...";
-            this.m_buttonBrowse.UseVisualStyleBackColor = true;
-            // 
-            // m_textBoxImageSource
-            // 
-            this.m_textBoxImageSource.Location = new System.Drawing.Point(103, 306);
-            this.m_textBoxImageSource.Name = "m_textBoxImageSource";
-            this.m_textBoxImageSource.ReadOnly = true;
-            this.m_textBoxImageSource.Size = new System.Drawing.Size(362, 20);
-            this.m_textBoxImageSource.TabIndex = 4;
-            // 
             // m_textBoxDescription
             // 
             this.m_textBoxDescription.Location = new System.Drawing.Point(103, 33);
             this.m_textBoxDescription.Multiline = true;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
-            this.m_textBoxDescription.Size = new System.Drawing.Size(443, 215);
+            this.m_textBoxDescription.Size = new System.Drawing.Size(443, 242);
             this.m_textBoxDescription.TabIndex = 3;
             // 
             // m_textBoxId
@@ -386,6 +354,7 @@
             this.Name = "LayerPropertiesDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Layer Properties";
+            this.Load += new System.EventHandler(this.LayerPropertiesDialog_Load);
             this.m_customTabControl.ResumeLayout(false);
             this.m_tabGeneral.ResumeLayout(false);
             this.m_tabGeneral.PerformLayout();
@@ -409,9 +378,6 @@
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxDescription;
         private System.Windows.Forms.TextBox m_textBoxId;
-        private System.Windows.Forms.Label m_labelImageSource;
-        private System.Windows.Forms.Button m_buttonBrowse;
-        private System.Windows.Forms.TextBox m_textBoxImageSource;
         private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.NumericUpDown m_numericLayerHeight;
         private System.Windows.Forms.NumericUpDown m_numericLayerWidth;
