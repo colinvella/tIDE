@@ -15,6 +15,44 @@ namespace TileMapEditor.Control
     {
         private Map m_map;
 
+        private void UpdateTileSheetsSubTree(TreeNode tileSheetsNode)
+        {
+            // remove nodes for deleted tile sheets
+            for (int nodeIndex = 0; nodeIndex < tileSheetsNode.Nodes.Count; )
+            {
+                TreeNode tileSheetNode = tileSheetsNode.Nodes[nodeIndex];
+
+                if (m_map.TileSheets.Contains((TileSheet)tileSheetNode.Tag))
+                    ++nodeIndex;
+                else
+                    tileSheetsNode.Nodes.Remove(tileSheetNode);
+            }
+
+            // add nodes for new tile sheets, or update existing
+            int tileSheetImageIndex = m_imageList.Images.IndexOfKey("TileSheet.png");
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+            {
+                bool bMatched = false;
+                foreach (TreeNode tileSheetNode in tileSheetsNode.Nodes)
+                    if (tileSheetNode.Tag == tileSheet)
+                    {
+                        bMatched = true;
+                        tileSheetNode.Text = ((TileSheet)tileSheetNode.Tag).Id;
+                        break;
+                    }
+
+                // add new node if needed
+                if (!bMatched)
+                {
+                    TreeNode tileSheetNode = new TreeNode(tileSheet.Id, tileSheetImageIndex, tileSheetImageIndex);
+                    tileSheetNode.Tag = tileSheet;
+                    tileSheetsNode.Nodes.Add(tileSheetNode);
+
+                    m_treeView.SelectedNode = tileSheetNode;
+                }
+            }
+        }
+
         public MapTreeView()
         {
             InitializeComponent();
@@ -69,40 +107,7 @@ namespace TileMapEditor.Control
             }
 
             // tile sheets
-
-            // remove nodes for deleted tile sheets
-            for(int nodeIndex = 0; nodeIndex < tileSheetsNode.Nodes.Count;)
-            {
-                TreeNode tileSheetNode = tileSheetsNode.Nodes[nodeIndex];
-
-                if (m_map.TileSheets.Contains((TileSheet)tileSheetNode.Tag))
-                    ++nodeIndex;
-                else
-                    tileSheetsNode.Nodes.Remove(tileSheetNode);
-            }
-
-            // add nodes for new tile sheets, or update existing
-            foreach (TileSheet tileSheet in m_map.TileSheets)
-            {
-                bool bMatched = false;
-                foreach (TreeNode tileSheetNode in tileSheetsNode.Nodes)
-                    if (tileSheetNode.Tag == tileSheet)
-                    {
-                        bMatched = true;
-                        tileSheetNode.Text = ((TileSheet)tileSheetNode.Tag).Id;
-                        break;
-                    }
-
-                // add new node if needed
-                if (!bMatched)
-                {
-                    TreeNode tileSheetNode = new TreeNode(tileSheet.Id, tileSheetImageIndex, tileSheetImageIndex);
-                    tileSheetNode.Tag = tileSheet;
-                    tileSheetsNode.Nodes.Add(tileSheetNode);
-
-                    m_treeView.SelectedNode = tileSheetNode;
-                }
-            }
+            UpdateTileSheetsSubTree(tileSheetsNode);
         }
 
         #region Public Properties
