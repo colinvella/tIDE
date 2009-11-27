@@ -70,7 +70,9 @@ namespace TileMapEditor
                 return;
 
             m_map.AddLayer(layer);
+
             m_mapTreeView.UpdateTree();
+            m_mapTreeView.SelectedComponent = layer;
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)
@@ -149,7 +151,10 @@ namespace TileMapEditor
                 return;
 
             m_map.AddTileSheet(tileSheet);
+
             m_mapTreeView.UpdateTree();
+            m_mapTreeView.SelectedComponent = tileSheet;
+
             m_tilePicker.UpdatePicker();
         }
 
