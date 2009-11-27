@@ -466,11 +466,13 @@
             this.m_editPasteButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(185, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(216, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editSingleTileButton
             // 
+            this.m_editSingleTileButton.Checked = true;
+            this.m_editSingleTileButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_editSingleTileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.m_editSingleTileButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editSingleTileButton.Image")));
             this.m_editSingleTileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -478,6 +480,7 @@
             this.m_editSingleTileButton.Size = new System.Drawing.Size(23, 22);
             this.m_editSingleTileButton.Text = "toolStripButton1";
             this.m_editSingleTileButton.ToolTipText = "Draw a single tile";
+            this.m_editSingleTileButton.Click += new System.EventHandler(this.OnSingleTileTool);
             // 
             // m_editTileBlockButton
             // 
@@ -487,6 +490,7 @@
             this.m_editTileBlockButton.Name = "m_editTileBlockButton";
             this.m_editTileBlockButton.Size = new System.Drawing.Size(23, 22);
             this.m_editTileBlockButton.Text = "Draw a block of tiles";
+            this.m_editTileBlockButton.Click += new System.EventHandler(this.OnTileBlockTool);
             // 
             // m_editToolStripSeparator1
             // 

@@ -183,6 +183,18 @@ namespace TileMapEditor
             m_mapTreeView.UpdateTree();
         }
 
+        private void OnSingleTileTool(object sender, EventArgs eventArgs)
+        {
+            m_editSingleTileButton.Checked = true;
+            m_editTileBlockButton.Checked = false;
+        }
+
+        private void OnTileBlockTool(object sender, EventArgs eventArgs)
+        {
+            m_editSingleTileButton.Checked = false;
+            m_editTileBlockButton.Checked = true;
+        }
+
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
             Tiling.Component component = mapTreeViewEventArgs.Component;
@@ -238,5 +250,6 @@ namespace TileMapEditor
         }
 
         #endregion
+
     }
 }
