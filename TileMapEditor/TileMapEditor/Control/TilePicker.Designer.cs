@@ -28,37 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Panel m_panelContent;
+            this.m_labelCaption = new System.Windows.Forms.Label();
+            this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
+            m_panelContent = new System.Windows.Forms.Panel();
+            m_panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // m_labelCaption
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(2);
-            this.label1.Size = new System.Drawing.Size(148, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tile Picker";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_labelCaption.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.m_labelCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_labelCaption.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_labelCaption.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.m_labelCaption.Location = new System.Drawing.Point(0, 0);
+            this.m_labelCaption.Name = "m_labelCaption";
+            this.m_labelCaption.Padding = new System.Windows.Forms.Padding(2);
+            this.m_labelCaption.Size = new System.Drawing.Size(148, 20);
+            this.m_labelCaption.TabIndex = 0;
+            this.m_labelCaption.Text = "Tile Picker";
+            this.m_labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_panelContent
+            // 
+            m_panelContent.Controls.Add(this.m_comboBoxTileSheets);
+            m_panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            m_panelContent.Location = new System.Drawing.Point(0, 20);
+            m_panelContent.Name = "m_panelContent";
+            m_panelContent.Size = new System.Drawing.Size(148, 128);
+            m_panelContent.TabIndex = 1;
+            // 
+            // m_comboBoxTileSheets
+            // 
+            this.m_comboBoxTileSheets.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_comboBoxTileSheets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxTileSheets.FormattingEnabled = true;
+            this.m_comboBoxTileSheets.Location = new System.Drawing.Point(0, 0);
+            this.m_comboBoxTileSheets.Name = "m_comboBoxTileSheets";
+            this.m_comboBoxTileSheets.Size = new System.Drawing.Size(148, 21);
+            this.m_comboBoxTileSheets.TabIndex = 0;
             // 
             // TilePicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(m_panelContent);
+            this.Controls.Add(this.m_labelCaption);
             this.Name = "TilePicker";
             this.Size = new System.Drawing.Size(148, 148);
+            m_panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_labelCaption;
+        private System.Windows.Forms.ComboBox m_comboBoxTileSheets;
     }
 }

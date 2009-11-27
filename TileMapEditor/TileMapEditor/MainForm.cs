@@ -28,8 +28,9 @@ namespace TileMapEditor
         private void MainForm_Load(object sender, EventArgs eventArgs)
         {
             m_map = new Map("Untitled map");
-            m_mapTreeView.Map = m_map;
 
+            m_mapTreeView.Map = m_map;
+            m_tilePicker.Map = m_map;
             m_selectedComponent = m_map;
         }
 
@@ -48,6 +49,8 @@ namespace TileMapEditor
                 m_map = map;
                 m_mapTreeView.Map = m_map;
                 m_mapTreeView.UpdateTree();
+                m_tilePicker.Map = map;
+                m_selectedComponent = null;
             }
         }
 
@@ -147,6 +150,7 @@ namespace TileMapEditor
 
             m_map.AddTileSheet(tileSheet);
             m_mapTreeView.UpdateTree();
+            m_tilePicker.UpdatePicker();
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)
@@ -162,6 +166,7 @@ namespace TileMapEditor
             TileSheetPropertiesDialog.ShowDialog(this);
 
             m_mapTreeView.UpdateTree();
+            m_tilePicker.UpdatePicker();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)
@@ -181,6 +186,7 @@ namespace TileMapEditor
             m_map.RemoveTileSheet(tileSheet);
 
             m_mapTreeView.UpdateTree();
+            m_tilePicker.UpdatePicker();
         }
 
         private void OnSingleTileTool(object sender, EventArgs eventArgs)
@@ -250,6 +256,7 @@ namespace TileMapEditor
         }
 
         #endregion
+
 
     }
 }
