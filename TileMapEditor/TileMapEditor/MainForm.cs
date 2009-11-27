@@ -70,6 +70,40 @@ namespace TileMapEditor
             m_mapTreeView.UpdateTree();
         }
 
+        private void OnLayerProperties(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is Layer))
+                return;
+
+            Layer layer = (Layer)m_selectedComponent;
+            LayerPropertiesDialog layerPropertiesDialog
+                = new LayerPropertiesDialog(layer);
+
+            layerPropertiesDialog.ShowDialog(this);
+
+            m_mapTreeView.UpdateTree();
+        }
+
+        private void OnLayerDelete(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is Layer))
+                return;
+
+            Layer layer = (Layer)m_selectedComponent;
+
+            if (MessageBox.Show(this, "Are you sure you want to delete this Layer?",
+                "Delete Layer \"" + layer.Id + "\"",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+                == DialogResult.No)
+                return;
+
+            m_map.RemoveLayer(layer);
+
+            m_mapTreeView.UpdateTree();
+        }
+
         private void OnTileSheetNew(object sender, EventArgs eventArgs)
         {
             TileSheet tileSheet = new TileSheet("untitled tile sheet", m_map, "",

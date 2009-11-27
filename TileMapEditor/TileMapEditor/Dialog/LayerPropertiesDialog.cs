@@ -22,6 +22,19 @@ namespace TileMapEditor.Dialog
 
         #region Private Methods
 
+        private void LayerPropertiesDialog_Load(object sender, EventArgs eventArgs)
+        {
+            m_textBoxId.Text = m_layer.Id;
+            m_textBoxDescription.Text = m_layer.Description;
+
+            m_numericLayerWidth.Value = m_layer.LayerSize.Width;
+            m_numericLayerHeight.Value = m_layer.LayerSize.Height;
+            m_numericTileWidth.Value = m_layer.TileSize.Width;
+            m_numericTileHeight.Value = m_layer.TileSize.Height;
+
+            m_customPropertyGrid.LoadProperties(m_layer);
+        }
+
         private void m_buttonOk_Click(object sender, EventArgs eventArgs)
         {
             string newId = m_textBoxId.Text;
@@ -41,6 +54,7 @@ namespace TileMapEditor.Dialog
             m_layer.Id = newId;
             m_layer.Description = m_textBoxDescription.Text;
 
+            m_layer.LayerSize = new Tiling.Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
             m_layer.TileSize = new Tiling.Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
 
             m_customPropertyGrid.StoreProperties(m_layer);
@@ -48,19 +62,6 @@ namespace TileMapEditor.Dialog
             DialogResult = DialogResult.OK;
 
             Close();
-        }
-
-        private void LayerPropertiesDialog_Load(object sender, EventArgs eventArgs)
-        {
-            m_textBoxId.Text = m_layer.Id;
-            m_textBoxDescription.Text = m_layer.Description;
-
-            m_numericLayerWidth.Value = m_layer.LayerSize.Width;
-            m_numericLayerHeight.Value = m_layer.LayerSize.Height;
-            m_numericTileWidth.Value = m_layer.TileSize.Width;
-            m_numericTileHeight.Value = m_layer.TileSize.Height;
-
-            m_customPropertyGrid.LoadProperties(m_layer);
         }
 
         #endregion
