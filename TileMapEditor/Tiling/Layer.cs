@@ -83,9 +83,31 @@ namespace Tiling
 
         public Map Map { get { return m_map; } }
 
-        public Size LayerSize { get { return m_layerSize; } }
+        public Size LayerSize
+        {
+            get { return m_layerSize; }
+            set
+            {
+                if (m_layerSize == value)
+                    return;
 
-        public Size TileSize { get { return m_tileSize; } }
+                int commonWidth = Math.Min(m_layerSize.Width, value.Width);
+                int commonHeight = Math.Min(m_layerSize.Height, value.Height);
+                Tile[,] tiles = new Tile[commonWidth, commonHeight];
+                for (int tileY = 0; tileY < commonHeight; tileY++)
+                    for (int tileX = 0; tileX < commonWidth; tileX++)
+                        tiles[tileX, tileY] = m_tiles[tileX, tileY];
+                m_tiles = tiles;
+
+                m_layerSize = value;
+            }
+        }
+
+        public Size TileSize
+        {
+            get { return m_tileSize; }
+            set { m_tileSize = value; }
+        }
 
         public TileArray Tiles { get { return m_tileArray; } }
     }
