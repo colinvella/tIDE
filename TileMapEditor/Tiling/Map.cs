@@ -13,20 +13,20 @@ namespace Tiling
         private List<TileSheet> m_tileSheets;
         private List<Layer> m_layers;
         private long m_elapsedTime;
-        private Size m_size;
+        private Size m_displaySize;
 
         #endregion
 
         #region Private Methods
 
-        private void UpdateSize()
+        private void UpdateDisplaySize()
         {
-            m_size = Size.Zero;
+            m_displaySize = Size.Zero;
             foreach (Layer layer in m_layers)
             {
-                Size layerSize = layer.LayerSize;
-                m_size.Width = Math.Max(m_size.Width, layerSize.Width);
-                m_size.Height = Math.Max(m_size.Height, layerSize.Height);
+                Size displaySize = layer.DisplaySize;
+                m_displaySize.Width = Math.Max(m_displaySize.Width, displaySize.Width);
+                m_displaySize.Height = Math.Max(m_displaySize.Height, displaySize.Height);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Tiling
             m_tileSheets = new List<TileSheet>();
             m_layers = new List<Layer>();
             m_elapsedTime = 0;
-            m_size = Size.Zero;
+            m_displaySize = Size.Zero;
         }
 
         public void AddLayer(Layer layer)
@@ -69,7 +69,7 @@ namespace Tiling
 
             m_layers.Insert(layerIndex, layer);
 
-            UpdateSize();
+            UpdateDisplaySize();
         }
 
         public void RemoveLayer(Layer layer)
@@ -79,7 +79,7 @@ namespace Tiling
 
             m_layers.Remove(layer);
 
-            UpdateSize();
+            UpdateDisplaySize();
         }
 
         public void BringLayerForward(Layer layer)
@@ -176,9 +176,9 @@ namespace Tiling
 
         #region Public Properties
 
-        public Size Size
+        public Size DisplaySize
         {
-            get { return m_size; }
+            get { return m_displaySize; }
         }
 
         public ReadOnlyCollection<Layer> Layers

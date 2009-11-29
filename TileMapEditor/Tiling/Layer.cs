@@ -94,9 +94,10 @@ namespace Tiling
                 if (m_layerSize == value)
                     return;
 
+                Tile[,] tiles = new Tile[value.Width, value.Height];
+
                 int commonWidth = Math.Min(m_layerSize.Width, value.Width);
                 int commonHeight = Math.Min(m_layerSize.Height, value.Height);
-                Tile[,] tiles = new Tile[commonWidth, commonHeight];
                 for (int tileY = 0; tileY < commonHeight; tileY++)
                     for (int tileX = 0; tileX < commonWidth; tileX++)
                         tiles[tileX, tileY] = m_tiles[tileX, tileY];
@@ -110,6 +111,16 @@ namespace Tiling
         {
             get { return m_tileSize; }
             set { m_tileSize = value; }
+        }
+
+        public Size DisplaySize
+        {
+            get
+            {
+                return new Size(
+                    m_layerSize.Width * m_tileSize.Width,
+                    m_layerSize.Height * m_tileSize.Height);
+            }
         }
 
         public TileArray Tiles { get { return m_tileArray; } }

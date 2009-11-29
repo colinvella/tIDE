@@ -39,6 +39,7 @@
             this.m_verticalScrollBar.Name = "m_verticalScrollBar";
             this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 240);
             this.m_verticalScrollBar.TabIndex = 0;
+            this.m_verticalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.m_verticalScrollBar_Scroll);
             // 
             // m_horizontalScrollBar
             // 
@@ -47,6 +48,7 @@
             this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
             this.m_horizontalScrollBar.Size = new System.Drawing.Size(303, 17);
             this.m_horizontalScrollBar.TabIndex = 1;
+            this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.m_horizontalScrollBar_Scroll);
             // 
             // MapPanel
             // 

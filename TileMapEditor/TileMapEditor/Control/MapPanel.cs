@@ -58,10 +58,22 @@ namespace TileMapEditor.Control
             }
         }
 
+        private void m_horizontalScrollBar_Scroll(object sender, ScrollEventArgs scrollEventArgs)
+        {
+            m_viewPort.Location.X = scrollEventArgs.NewValue;
+            Invalidate();
+        }
+
+        private void m_verticalScrollBar_Scroll(object sender, ScrollEventArgs scrollEventArgs)
+        {
+            m_viewPort.Location.Y = scrollEventArgs.NewValue;
+            Invalidate();
+        }
+
         private void MapPanel_Resize(object sender, EventArgs eventArgs)
         {
-            m_viewPort.Size = new Tiling.Size(
-                ClientRectangle.Width, ClientRectangle.Height);
+            m_viewPort.Size.Width = ClientRectangle.Width;
+            m_viewPort.Size.Height = ClientRectangle.Height;
         }
 
         private void MapPanel_Paint(object sender, PaintEventArgs paintEventArgs)
