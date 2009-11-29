@@ -31,6 +31,8 @@ namespace TileMapEditor
 
             m_mapTreeView.Map = m_map;
             m_tilePicker.Map = m_map;
+            m_mapPanel.Map = m_map;
+
             m_selectedComponent = m_map;
         }
 
@@ -50,6 +52,8 @@ namespace TileMapEditor
                 m_mapTreeView.Map = m_map;
                 m_mapTreeView.UpdateTree();
                 m_tilePicker.Map = map;
+                m_mapPanel.Map = map;
+
                 m_selectedComponent = null;
             }
         }
@@ -237,20 +241,6 @@ namespace TileMapEditor
             m_selectedComponent = component;
         }
 
-        private void OnPaintContentPanel(object sender, PaintEventArgs paintEventArgs)
-        {
-            GdiPlusDisplayDevice gdiPlusDisplayDevice = new GdiPlusDisplayDevice();
-            gdiPlusDisplayDevice.Graphics = paintEventArgs.Graphics;
-
-            m_map.LoadTileSheets(gdiPlusDisplayDevice);
-
-            m_map.Draw(gdiPlusDisplayDevice,
-                new Tiling.Rectangle(Tiling.Location.Origin,
-                    new Tiling.Size(m_contentPanel.ClientRectangle.Width, m_contentPanel.ClientRectangle.Height)));
-
-            m_map.DisposeTileSheets(gdiPlusDisplayDevice);
-        }
-
         #endregion
 
         #region Public Mehods
@@ -261,6 +251,11 @@ namespace TileMapEditor
         }
 
         #endregion
+
+        private void OnPaintContentPanel(object sender, PaintEventArgs e)
+        {
+
+        }
 
 
     }

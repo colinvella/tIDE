@@ -30,8 +30,11 @@
         {
             System.Windows.Forms.SplitContainer m_splitContainerVertical;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
+            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
+            this.m_mapPanel = new TileMapEditor.Control.MapPanel();
             this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,11 +85,6 @@
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
-            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
-            this.m_contentPanel = new TileMapEditor.Control.CustomPanel();
-            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
-            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_splitContainerVertical.Panel1.SuspendLayout();
             m_splitContainerVertical.Panel2.SuspendLayout();
@@ -99,7 +97,6 @@
             this.m_splitContainerLeftRight.SuspendLayout();
             this.m_menuStrip.SuspendLayout();
             this.m_editToolStrip.SuspendLayout();
-            this.m_contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_splitContainerVertical
@@ -119,6 +116,27 @@
             m_splitContainerVertical.Size = new System.Drawing.Size(200, 513);
             m_splitContainerVertical.SplitterDistance = 250;
             m_splitContainerVertical.TabIndex = 1;
+            // 
+            // m_mapTreeView
+            // 
+            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_mapTreeView.Map = null;
+            this.m_mapTreeView.Name = "m_mapTreeView";
+            this.m_mapTreeView.SelectedComponent = null;
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 250);
+            this.m_mapTreeView.TabIndex = 0;
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            // 
+            // m_tilePicker
+            // 
+            this.m_tilePicker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
+            this.m_tilePicker.Map = null;
+            this.m_tilePicker.Name = "m_tilePicker";
+            this.m_tilePicker.Size = new System.Drawing.Size(200, 259);
+            this.m_tilePicker.TabIndex = 0;
             // 
             // m_toolStripContainer
             // 
@@ -152,10 +170,20 @@
             // 
             // m_splitContainerLeftRight.Panel2
             // 
-            this.m_splitContainerLeftRight.Panel2.Controls.Add(this.m_contentPanel);
+            this.m_splitContainerLeftRight.Panel2.Controls.Add(this.m_mapPanel);
             this.m_splitContainerLeftRight.Size = new System.Drawing.Size(780, 513);
             this.m_splitContainerLeftRight.SplitterDistance = 200;
             this.m_splitContainerLeftRight.TabIndex = 3;
+            // 
+            // m_mapPanel
+            // 
+            this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_mapPanel.Map = null;
+            this.m_mapPanel.Name = "m_mapPanel";
+            this.m_mapPanel.SelectedLayer = null;
+            this.m_mapPanel.Size = new System.Drawing.Size(576, 513);
+            this.m_mapPanel.TabIndex = 0;
             // 
             // m_splitter
             // 
@@ -591,59 +619,6 @@
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
             // 
-            // m_mapTreeView
-            // 
-            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
-            this.m_mapTreeView.Map = null;
-            this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.SelectedComponent = null;
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 250);
-            this.m_mapTreeView.TabIndex = 0;
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
-            // 
-            // m_tilePicker
-            // 
-            this.m_tilePicker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
-            this.m_tilePicker.Map = null;
-            this.m_tilePicker.Name = "m_tilePicker";
-            this.m_tilePicker.Size = new System.Drawing.Size(200, 259);
-            this.m_tilePicker.TabIndex = 0;
-            // 
-            // m_contentPanel
-            // 
-            this.m_contentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_contentPanel.Controls.Add(this.m_verticalScrollBar);
-            this.m_contentPanel.Controls.Add(this.m_horizontalScrollBar);
-            this.m_contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_contentPanel.Location = new System.Drawing.Point(0, 0);
-            this.m_contentPanel.Name = "m_contentPanel";
-            this.m_contentPanel.Size = new System.Drawing.Size(576, 513);
-            this.m_contentPanel.TabIndex = 2;
-            this.m_contentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintContentPanel);
-            // 
-            // m_verticalScrollBar
-            // 
-            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_verticalScrollBar.LargeChange = 1;
-            this.m_verticalScrollBar.Location = new System.Drawing.Point(557, 0);
-            this.m_verticalScrollBar.Maximum = 0;
-            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
-            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 494);
-            this.m_verticalScrollBar.TabIndex = 1;
-            // 
-            // m_horizontalScrollBar
-            // 
-            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_horizontalScrollBar.LargeChange = 1;
-            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 494);
-            this.m_horizontalScrollBar.Maximum = 0;
-            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(574, 17);
-            this.m_horizontalScrollBar.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,7 +646,6 @@
             this.m_menuStrip.PerformLayout();
             this.m_editToolStrip.ResumeLayout(false);
             this.m_editToolStrip.PerformLayout();
-            this.m_contentPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -730,10 +704,8 @@
         private System.Windows.Forms.ToolStripButton m_editUndoButton;
         private System.Windows.Forms.ToolStripButton m_editRedoButton;
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator2;
-        private System.Windows.Forms.VScrollBar m_verticalScrollBar;
-        private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
-        private TileMapEditor.Control.CustomPanel m_contentPanel;
         private System.Windows.Forms.SplitContainer m_splitContainerLeftRight;
         private TileMapEditor.Control.TilePicker m_tilePicker;
+        private TileMapEditor.Control.MapPanel m_mapPanel;
     }
 }

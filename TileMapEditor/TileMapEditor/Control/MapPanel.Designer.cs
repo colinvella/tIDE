@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
+            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.SuspendLayout();
             // 
-            // vScrollBar1
+            // m_verticalScrollBar
             // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(303, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 240);
-            this.vScrollBar1.TabIndex = 0;
+            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(303, 0);
+            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
+            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 240);
+            this.m_verticalScrollBar.TabIndex = 0;
             // 
-            // hScrollBar1
+            // m_horizontalScrollBar
             // 
-            this.hScrollBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(0, 223);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(303, 17);
-            this.hScrollBar1.TabIndex = 1;
+            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 223);
+            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(303, 17);
+            this.m_horizontalScrollBar.TabIndex = 1;
             // 
             // MapPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.hScrollBar1);
-            this.Controls.Add(this.vScrollBar1);
+            this.Controls.Add(this.m_horizontalScrollBar);
+            this.Controls.Add(this.m_verticalScrollBar);
             this.Name = "MapPanel";
             this.Size = new System.Drawing.Size(320, 240);
-            this.Load += new System.EventHandler(this.MapPanel_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MapPanel_Paint);
             this.Resize += new System.EventHandler(this.MapPanel_Resize);
             this.ResumeLayout(false);
@@ -65,7 +64,7 @@
 
         #endregion
 
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
+        private System.Windows.Forms.VScrollBar m_verticalScrollBar;
+        private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
     }
 }

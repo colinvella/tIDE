@@ -90,7 +90,6 @@
     <Compile Include="Dialog\TileSheetPropertiesDialog.Designer.cs">
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="GdiPlusDisplayDevice.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

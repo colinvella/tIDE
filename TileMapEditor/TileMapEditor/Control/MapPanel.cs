@@ -26,10 +26,36 @@ namespace TileMapEditor.Control
 
         #region Private Methods
 
-        private void MapPanel_Load(object sender, EventArgs e)
+        private void UpdateScrollBars()
         {
-            m_viewPort = new Tiling.Rectangle(Tiling.Location.Origin,
-                new Tiling.Size(ClientRectangle.Width, ClientRectangle.Height));
+            if (m_map == null)
+            {
+                m_horizontalScrollBar.Maximum = 0;
+                m_horizontalScrollBar.LargeChange = 1;
+                m_horizontalScrollBar.Value = 0;
+                m_horizontalScrollBar.Visible = false;
+
+                m_verticalScrollBar.Maximum = 0;
+                m_verticalScrollBar.LargeChange = 1;
+                m_verticalScrollBar.Value = 0;
+                m_verticalScrollBar.Visible = false;
+            }
+            else
+            {
+                Tiling.Size displaySize = m_map.DisplaySize;
+
+                m_horizontalScrollBar.Maximum = displaySize.Width;
+                m_horizontalScrollBar.LargeChange = ClientRectangle.Width;
+                m_horizontalScrollBar.Value
+                    = Math.Min(m_horizontalScrollBar.Value, displaySize.Width);
+                m_horizontalScrollBar.Visible = displaySize.Width > ClientRectangle.Width;
+
+                m_verticalScrollBar.Maximum = displaySize.Height;
+                m_verticalScrollBar.LargeChange = ClientRectangle.Height;
+                m_verticalScrollBar.Value
+                    = Math.Min(m_verticalScrollBar.Value, displaySize.Height);
+                m_verticalScrollBar.Visible = displaySize.Height > ClientRectangle.Height;
+            }
         }
 
         private void MapPanel_Resize(object sender, EventArgs eventArgs)
@@ -42,6 +68,11 @@ namespace TileMapEditor.Control
         {
             m_graphics = paintEventArgs.Graphics;
 
+            if (m_map == null)
+                return;
+
+            UpdateScrollBars();
+
             m_map.Draw(this, m_viewPort);
         }
 
@@ -52,7 +83,10 @@ namespace TileMapEditor.Control
         public MapPanel()
         {
             InitializeComponent();
+
             m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
+            m_viewPort = new Tiling.Rectangle(
+                Tiling.Location.Origin, Tiling.Size.Zero);
         }
 
         public void LoadTileSheet(TileSheet tileSheet)
@@ -112,8 +146,12 @@ namespace TileMapEditor.Control
             set
             {
                 m_map = value;
+
                 if (m_map != null && !m_map.Layers.Contains(m_selectedLayer))
                     m_selectedLayer = null;
+
+                UpdateScrollBars();
+
                 Invalidate();
             }
         }
@@ -127,7 +165,18 @@ namespace TileMapEditor.Control
             set
             {
                 if (m_map == null)
-                    throw new Exception("Map property is not set");
+                {
+                    m_selectedLayer = null;
+                    return;
+                }
+
+                if (value == null)
+                {
+                    m_selectedLayer = null;
+                    Invalidate();
+                    return;
+                }
+
                 if (!m_map.Layers.Contains(value))
                     throw new Exception("The specified Layer is not contained in the Map");
                 m_selectedLayer = value;
