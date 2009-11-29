@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label m_labelDescription;
-            System.Windows.Forms.Label m_labelId;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label m_labelDescription;
+            System.Windows.Forms.Label m_labelId;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LayerPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
@@ -51,14 +51,14 @@
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
-            m_labelDescription = new System.Windows.Forms.Label();
-            m_labelId = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            m_labelDescription = new System.Windows.Forms.Label();
+            m_labelId = new System.Windows.Forms.Label();
             this.m_customTabControl.SuspendLayout();
             this.m_tabGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_numericTileHeight)).BeginInit();
@@ -67,78 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_numericLayerWidth)).BeginInit();
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_labelDescription
-            // 
-            m_labelDescription.AutoSize = true;
-            m_labelDescription.Location = new System.Drawing.Point(6, 36);
-            m_labelDescription.Name = "m_labelDescription";
-            m_labelDescription.Size = new System.Drawing.Size(60, 13);
-            m_labelDescription.TabIndex = 2;
-            m_labelDescription.Text = "Description";
-            // 
-            // m_labelId
-            // 
-            m_labelId.AutoSize = true;
-            m_labelId.Location = new System.Drawing.Point(6, 10);
-            m_labelId.Name = "m_labelId";
-            m_labelId.Size = new System.Drawing.Size(18, 13);
-            m_labelId.TabIndex = 0;
-            m_labelId.Text = "ID";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 283);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(56, 13);
-            label1.TabIndex = 7;
-            label1.Text = "Layer Size";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(169, 283);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(12, 13);
-            label2.TabIndex = 9;
-            label2.Text = "x";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(253, 283);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(25, 13);
-            label3.TabIndex = 11;
-            label3.Text = "tiles";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(253, 309);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(33, 13);
-            label4.TabIndex = 16;
-            label4.Text = "pixels";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(169, 309);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(12, 13);
-            label5.TabIndex = 14;
-            label5.Text = "x";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(6, 309);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(47, 13);
-            label6.TabIndex = 12;
-            label6.Text = "Tile Size";
             // 
             // m_buttonOk
             // 
@@ -214,6 +142,15 @@
             this.m_tabGeneral.TabIndex = 0;
             this.m_tabGeneral.Text = " General ";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(253, 309);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(33, 13);
+            label4.TabIndex = 16;
+            label4.Text = "pixels";
+            // 
             // m_numericTileHeight
             // 
             this.m_numericTileHeight.Location = new System.Drawing.Point(187, 307);
@@ -230,11 +167,21 @@
             this.m_numericTileHeight.Name = "m_numericTileHeight";
             this.m_numericTileHeight.Size = new System.Drawing.Size(60, 20);
             this.m_numericTileHeight.TabIndex = 15;
+            this.m_numericTileHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_numericTileHeight.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(169, 309);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(12, 13);
+            label5.TabIndex = 14;
+            label5.Text = "x";
             // 
             // m_numericTileWidth
             // 
@@ -252,11 +199,30 @@
             this.m_numericTileWidth.Name = "m_numericTileWidth";
             this.m_numericTileWidth.Size = new System.Drawing.Size(60, 20);
             this.m_numericTileWidth.TabIndex = 13;
+            this.m_numericTileWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_numericTileWidth.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(6, 309);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(47, 13);
+            label6.TabIndex = 12;
+            label6.Text = "Tile Size";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(253, 283);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(25, 13);
+            label3.TabIndex = 11;
+            label3.Text = "tiles";
             // 
             // m_numericLayerHeight
             // 
@@ -274,11 +240,21 @@
             this.m_numericLayerHeight.Name = "m_numericLayerHeight";
             this.m_numericLayerHeight.Size = new System.Drawing.Size(60, 20);
             this.m_numericLayerHeight.TabIndex = 10;
+            this.m_numericLayerHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_numericLayerHeight.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(169, 283);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(12, 13);
+            label2.TabIndex = 9;
+            label2.Text = "x";
             // 
             // m_numericLayerWidth
             // 
@@ -296,11 +272,21 @@
             this.m_numericLayerWidth.Name = "m_numericLayerWidth";
             this.m_numericLayerWidth.Size = new System.Drawing.Size(60, 20);
             this.m_numericLayerWidth.TabIndex = 8;
+            this.m_numericLayerWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_numericLayerWidth.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(6, 283);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(56, 13);
+            label1.TabIndex = 7;
+            label1.Text = "Layer Size";
             // 
             // m_textBoxDescription
             // 
@@ -310,12 +296,30 @@
             this.m_textBoxDescription.Size = new System.Drawing.Size(443, 242);
             this.m_textBoxDescription.TabIndex = 3;
             // 
+            // m_labelDescription
+            // 
+            m_labelDescription.AutoSize = true;
+            m_labelDescription.Location = new System.Drawing.Point(6, 36);
+            m_labelDescription.Name = "m_labelDescription";
+            m_labelDescription.Size = new System.Drawing.Size(60, 13);
+            m_labelDescription.TabIndex = 2;
+            m_labelDescription.Text = "Description";
+            // 
             // m_textBoxId
             // 
             this.m_textBoxId.Location = new System.Drawing.Point(103, 7);
             this.m_textBoxId.Name = "m_textBoxId";
             this.m_textBoxId.Size = new System.Drawing.Size(200, 20);
             this.m_textBoxId.TabIndex = 1;
+            // 
+            // m_labelId
+            // 
+            m_labelId.AutoSize = true;
+            m_labelId.Location = new System.Drawing.Point(6, 10);
+            m_labelId.Name = "m_labelId";
+            m_labelId.Size = new System.Drawing.Size(18, 13);
+            m_labelId.TabIndex = 0;
+            m_labelId.Text = "ID";
             // 
             // m_tabCustomProperties
             // 

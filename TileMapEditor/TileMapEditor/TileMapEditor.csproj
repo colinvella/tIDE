@@ -66,6 +66,12 @@
     <Compile Include="Control\CustomPropertyGrid.Designer.cs">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\MapPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MapPanel.Designer.cs">
+      <DependentUpon>MapPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\TilePicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +113,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\CustomPropertyGrid.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MapPanel.resx">
+      <DependentUpon>MapPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\TilePicker.resx">
