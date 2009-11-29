@@ -56,7 +56,9 @@
             this.Controls.Add(this.vScrollBar1);
             this.Name = "MapPanel";
             this.Size = new System.Drawing.Size(320, 240);
+            this.Load += new System.EventHandler(this.MapPanel_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MapPanel_Paint);
+            this.Resize += new System.EventHandler(this.MapPanel_Resize);
             this.ResumeLayout(false);
 
         }

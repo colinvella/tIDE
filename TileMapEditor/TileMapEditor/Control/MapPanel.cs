@@ -11,20 +11,95 @@ using Tiling;
 
 namespace TileMapEditor.Control
 {
-    public partial class MapPanel : UserControl
+    public partial class MapPanel : UserControl, DisplayDevice
     {
+        #region Private Variables
+
         private Map m_map;
         private Layer m_selectedLayer;
+
+        private Graphics m_graphics;
+        private Dictionary<TileSheet, Bitmap> m_tileSheetBitmaps;
+        private Tiling.Rectangle m_viewPort;
+
+        #endregion
+
+        #region Private Methods
+
+        private void MapPanel_Load(object sender, EventArgs e)
+        {
+            m_viewPort = new Tiling.Rectangle(Tiling.Location.Origin,
+                new Tiling.Size(ClientRectangle.Width, ClientRectangle.Height));
+        }
+
+        private void MapPanel_Resize(object sender, EventArgs eventArgs)
+        {
+            m_viewPort.Size = new Tiling.Size(
+                ClientRectangle.Width, ClientRectangle.Height);
+        }
+
+        private void MapPanel_Paint(object sender, PaintEventArgs paintEventArgs)
+        {
+            m_graphics = paintEventArgs.Graphics;
+
+            m_map.Draw(this, m_viewPort);
+        }
+
+        #endregion
+
+        #region Public Methods
 
         public MapPanel()
         {
             InitializeComponent();
+            m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
         }
 
-        private void MapPanel_Paint(object sender, PaintEventArgs e)
+        public void LoadTileSheet(TileSheet tileSheet)
         {
-            e.Graphics.DrawLine(Pens.Black, 0, 20, 400, 20);
+            m_tileSheetBitmaps.Remove(tileSheet);
+
+            Bitmap bitmap = new Bitmap(tileSheet.ImageSource);
+            m_tileSheetBitmaps[tileSheet] = bitmap;
         }
+
+        public void DisposeTileSheet(TileSheet tileSheet)
+        {
+            m_tileSheetBitmaps.Remove(tileSheet);
+        }
+
+        public void BeginScene()
+        {
+        }
+
+        public void SetClippingRegion(Tiling.Rectangle clippingRegion)
+        {
+            if (m_graphics == null)
+                return;
+
+            m_graphics.SetClip(new RectangleF(
+                    clippingRegion.Location.X, clippingRegion.Location.Y,
+                    clippingRegion.Size.Width, clippingRegion.Size.Height));
+        }
+
+        public void DrawTile(Tile tile, Location location)
+        {
+            if (m_graphics == null)
+                return;
+
+            Tiling.Rectangle imageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
+            Bitmap bitmap = m_tileSheetBitmaps[tile.TileSheet];
+            System.Drawing.Rectangle imageBoundsGDIP = new System.Drawing.Rectangle(
+                imageBounds.Location.X, imageBounds.Location.Y,
+                imageBounds.Size.Width, imageBounds.Size.Height);
+            m_graphics.DrawImage(bitmap, location.X, location.Y, imageBoundsGDIP, GraphicsUnit.Pixel);
+        }
+
+        public void EndScene()
+        {
+        }
+
+        #endregion
 
         #region Public Properties
 
