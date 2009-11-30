@@ -71,6 +71,9 @@ namespace TileMapEditor
                 return;
             int zoom = int.Parse(toolStripDropDownItem.Tag.ToString());
             m_mapPanel.Zoom = zoom;
+
+            foreach (ToolStripMenuItem toolStripMenuItem in m_mapZoomMenuItem.DropDownItems)
+                toolStripMenuItem.Checked = toolStripMenuItem == toolStripDropDownItem;
         }
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
