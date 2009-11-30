@@ -23,7 +23,7 @@ namespace Tiling
             m_layerSize = layerSize;
             m_tileSize = tileSize;
             m_tiles = new Tile[layerSize.Width, layerSize.Height];
-            m_tileArray = new TileArray(this, m_layerSize, m_tiles);
+            m_tileArray = new TileArray(this, m_tiles);
         }
 
         public bool DependsOnTileSheet(TileSheet tileSheet)
@@ -102,6 +102,7 @@ namespace Tiling
                     for (int tileX = 0; tileX < commonWidth; tileX++)
                         tiles[tileX, tileY] = m_tiles[tileX, tileY];
                 m_tiles = tiles;
+                m_tileArray = new TileArray(this, m_tiles);
 
                 m_layerSize = value;
             }

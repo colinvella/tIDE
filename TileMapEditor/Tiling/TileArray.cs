@@ -10,23 +10,22 @@ namespace Tiling
     {
         private Layer m_layer;
         private ReadOnlyCollection<TileSheet> m_tileSheets;
-        private Size m_size;
+
         private Tile[,] m_tiles;
 
-        public TileArray(Layer layer, Size size, Tile[,] tiles)
+        public TileArray(Layer layer, Tile[,] tiles)
         {
             m_layer = layer;
             m_tileSheets = m_layer.Map.TileSheets;
             m_tiles = tiles;
-            m_size = size;
         }
 
         public Tile this[int x, int y]
         {
             get
             {
-                if (x < 0 || x >= m_size.Width
-                    || y < 0 || y >= m_size.Height)
+                if (x < 0 || x >= m_layer.LayerSize.Width
+                    || y < 0 || y >= m_layer.LayerSize.Height)
                     throw new Exception("Tile indices out of bounds");
                 return m_tiles[x, y];
             }
@@ -36,8 +35,8 @@ namespace Tiling
                 if (value.TileSheet.TileSize != m_layer.TileSize)
                     throw new Exception("Incompatible tile size");
 
-                if (x < 0 || x >= m_size.Width
-                    || y < 0 || y >= m_size.Height)
+                if (x < 0 || x >= m_layer.LayerSize.Width
+                    || y < 0 || y >= m_layer.LayerSize.Height)
                     throw new Exception("Tile indices out of bounds");
 
                 if (!(m_tileSheets.Contains(value.TileSheet)))

@@ -167,6 +167,8 @@ namespace TileMapEditor
             m_mapTreeView.SelectedComponent = tileSheet;
 
             m_tilePicker.UpdatePicker();
+
+            m_mapPanel.LoadTileSheet(tileSheet);
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)
@@ -203,6 +205,8 @@ namespace TileMapEditor
 
             m_mapTreeView.UpdateTree();
             m_tilePicker.UpdatePicker();
+
+            m_mapPanel.DisposeTileSheet(tileSheet);
         }
 
         private void OnSingleTileTool(object sender, EventArgs eventArgs)
