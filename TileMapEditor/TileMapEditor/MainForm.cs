@@ -64,6 +64,15 @@ namespace TileMapEditor
             mapPropertiesDialog.ShowDialog(this);
         }
 
+        private void OnMapZoom(object sender, EventArgs eventArgs)
+        {
+            ToolStripDropDownItem toolStripDropDownItem = (ToolStripDropDownItem)sender;
+            if (toolStripDropDownItem.Tag == null)
+                return;
+            int zoom = int.Parse(toolStripDropDownItem.Tag.ToString());
+            m_mapPanel.Zoom = zoom;
+        }
+
         private void OnLayerNew(object sender, EventArgs eventArgs)
         {
             Tiling.Size tileSize = m_map.TileSheets.Count > 0
@@ -266,12 +275,5 @@ namespace TileMapEditor
         }
 
         #endregion
-
-        private void OnPaintContentPanel(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
     }
 }

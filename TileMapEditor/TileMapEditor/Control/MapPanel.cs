@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace TileMapEditor.Control
         private Graphics m_graphics;
         private Dictionary<TileSheet, Bitmap> m_tileSheetBitmaps;
         private Tiling.Rectangle m_viewPort;
+        private int m_zoom;
 
         #endregion
 
@@ -46,13 +48,13 @@ namespace TileMapEditor.Control
                 Tiling.Size displaySize = m_map.DisplaySize;
 
                 m_horizontalScrollBar.Maximum = displaySize.Width;
-                m_horizontalScrollBar.LargeChange = clientRectangle.Width;
+                m_horizontalScrollBar.LargeChange = clientRectangle.Width / m_zoom;
                 m_horizontalScrollBar.Value
                     = Math.Min(m_horizontalScrollBar.Value, displaySize.Width);
                 m_horizontalScrollBar.Visible = displaySize.Width > clientRectangle.Width;
 
                 m_verticalScrollBar.Maximum = displaySize.Height;
-                m_verticalScrollBar.LargeChange = clientRectangle.Height;
+                m_verticalScrollBar.LargeChange = clientRectangle.Height / m_zoom;
                 m_verticalScrollBar.Value
                     = Math.Min(m_verticalScrollBar.Value, displaySize.Height);
                 m_verticalScrollBar.Visible = displaySize.Height > clientRectangle.Height;
@@ -74,8 +76,8 @@ namespace TileMapEditor.Control
         private void m_innerPanel_Resize(object sender, EventArgs e)
         {
             System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-            m_viewPort.Size.Width = clientRectangle.Width;
-            m_viewPort.Size.Height = clientRectangle.Height;
+            m_viewPort.Size.Width = clientRectangle.Width / m_zoom;
+            m_viewPort.Size.Height = clientRectangle.Height / m_zoom;
         }
 
         private void m_innerPanel_Paint(object sender, PaintEventArgs paintEventArgs)
@@ -101,6 +103,7 @@ namespace TileMapEditor.Control
             m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
+            m_zoom = 1;
         }
 
         public void LoadTileSheet(TileSheet tileSheet)
@@ -118,6 +121,9 @@ namespace TileMapEditor.Control
 
         public void BeginScene()
         {
+            m_graphics.ScaleTransform(m_zoom, m_zoom);
+            m_graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
         }
 
         public void SetClippingRegion(Tiling.Rectangle clippingRegion)
@@ -195,6 +201,19 @@ namespace TileMapEditor.Control
                     throw new Exception("The specified Layer is not contained in the Map");
                 m_selectedLayer = value;
                 Invalidate();
+            }
+        }
+
+        [Description("The zoom level of the map display"),
+         Category("Appearance"), Browsable(true), DefaultValue(1)
+        ]
+        public int Zoom
+        {
+            get { return m_zoom; }
+            set
+            {
+                m_zoom = Math.Max(1, Math.Min(value, 10));
+                Invalidate(true);
             }
         }
 

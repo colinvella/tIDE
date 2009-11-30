@@ -195,6 +195,7 @@
     <None Include="Resources\LayerBringForward.png" />
     <None Include="Resources\LayerSendBackward.png" />
     <None Include="Resources\ImageBackground.png" />
+    <None Include="Resources\MapZoom.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
