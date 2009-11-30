@@ -42,41 +42,43 @@ namespace TileMapEditor.Control
             }
             else
             {
+                System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
                 Tiling.Size displaySize = m_map.DisplaySize;
 
                 m_horizontalScrollBar.Maximum = displaySize.Width;
-                m_horizontalScrollBar.LargeChange = ClientRectangle.Width;
+                m_horizontalScrollBar.LargeChange = clientRectangle.Width;
                 m_horizontalScrollBar.Value
                     = Math.Min(m_horizontalScrollBar.Value, displaySize.Width);
-                m_horizontalScrollBar.Visible = displaySize.Width > ClientRectangle.Width;
+                m_horizontalScrollBar.Visible = displaySize.Width > clientRectangle.Width;
 
                 m_verticalScrollBar.Maximum = displaySize.Height;
-                m_verticalScrollBar.LargeChange = ClientRectangle.Height;
+                m_verticalScrollBar.LargeChange = clientRectangle.Height;
                 m_verticalScrollBar.Value
                     = Math.Min(m_verticalScrollBar.Value, displaySize.Height);
-                m_verticalScrollBar.Visible = displaySize.Height > ClientRectangle.Height;
+                m_verticalScrollBar.Visible = displaySize.Height > clientRectangle.Height;
             }
         }
 
         private void m_horizontalScrollBar_Scroll(object sender, ScrollEventArgs scrollEventArgs)
         {
             m_viewPort.Location.X = scrollEventArgs.NewValue;
-            Invalidate();
+            m_innerPanel.Invalidate();
         }
 
         private void m_verticalScrollBar_Scroll(object sender, ScrollEventArgs scrollEventArgs)
         {
             m_viewPort.Location.Y = scrollEventArgs.NewValue;
-            Invalidate();
+            m_innerPanel.Invalidate();
         }
 
-        private void MapPanel_Resize(object sender, EventArgs eventArgs)
+        private void m_innerPanel_Resize(object sender, EventArgs e)
         {
-            m_viewPort.Size.Width = ClientRectangle.Width;
-            m_viewPort.Size.Height = ClientRectangle.Height;
+            System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
+            m_viewPort.Size.Width = clientRectangle.Width;
+            m_viewPort.Size.Height = clientRectangle.Height;
         }
 
-        private void MapPanel_Paint(object sender, PaintEventArgs paintEventArgs)
+        private void m_innerPanel_Paint(object sender, PaintEventArgs paintEventArgs)
         {
             m_graphics = paintEventArgs.Graphics;
 

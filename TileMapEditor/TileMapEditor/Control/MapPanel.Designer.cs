@@ -30,6 +30,7 @@
         {
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
+            this.m_innerPanel = new TileMapEditor.Control.CustomPanel();
             this.SuspendLayout();
             // 
             // m_verticalScrollBar
@@ -50,16 +51,25 @@
             this.m_horizontalScrollBar.TabIndex = 1;
             this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.m_horizontalScrollBar_Scroll);
             // 
+            // m_innerPanel
+            // 
+            this.m_innerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_innerPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_innerPanel.Name = "m_innerPanel";
+            this.m_innerPanel.Size = new System.Drawing.Size(303, 223);
+            this.m_innerPanel.TabIndex = 2;
+            this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.m_innerPanel_Paint);
+            this.m_innerPanel.Resize += new System.EventHandler(this.m_innerPanel_Resize);
+            // 
             // MapPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_innerPanel);
             this.Controls.Add(this.m_horizontalScrollBar);
             this.Controls.Add(this.m_verticalScrollBar);
             this.Name = "MapPanel";
             this.Size = new System.Drawing.Size(320, 240);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MapPanel_Paint);
-            this.Resize += new System.EventHandler(this.MapPanel_Resize);
             this.ResumeLayout(false);
 
         }
@@ -68,5 +78,6 @@
 
         private System.Windows.Forms.VScrollBar m_verticalScrollBar;
         private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
+        private CustomPanel m_innerPanel;
     }
 }
