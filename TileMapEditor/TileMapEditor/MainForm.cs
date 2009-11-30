@@ -66,8 +66,12 @@ namespace TileMapEditor
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
         {
+            Tiling.Size tileSize = m_map.TileSheets.Count > 0
+                ? m_map.TileSheets[0].TileSize
+                : new Tiling.Size(8, 8);
+
             Layer layer = new Layer("untitled layer", m_map,
-                new Tiling.Size(1, 1), new Tiling.Size(8, 8));
+                new Tiling.Size(100, 25), tileSize);
             LayerPropertiesDialog layerPropertiesDialog = new LayerPropertiesDialog(layer);
 
             if (layerPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
@@ -83,7 +87,7 @@ namespace TileMapEditor
                 layer.Tiles[i, 0] = new StaticTile(layer, m_map.TileSheets[0], BlendMode.Alpha, i);
             // temp
 
-            m_mapPanel.Invalidate();
+            m_mapPanel.Invalidate(true);
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)

@@ -132,7 +132,7 @@ namespace TileMapEditor.Dialog
             this.Cursor = Cursors.WaitCursor;
 
             // determine tile intervals (width + spacing)
-            const int MAX_OFFSET = 128;
+            const int MAX_OFFSET = 96;
             long leastDifferenceX = long.MaxValue, leastDifferenceY = long.MaxValue;
             int intervalX = 8, intervalY = 8;
             for (int offset = 8; offset < MAX_OFFSET; offset++)
