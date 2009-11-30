@@ -74,6 +74,27 @@ namespace TileMapEditor
 
             foreach (ToolStripMenuItem toolStripMenuItem in m_mapZoomMenuItem.DropDownItems)
                 toolStripMenuItem.Checked = toolStripMenuItem == toolStripDropDownItem;
+
+            m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
+            m_mapZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
+        }
+
+        private void m_mapZoomInButton_Click(object sender, EventArgs eventArgs)
+        {
+            if (m_mapPanel.Zoom < 10)
+                ++m_mapPanel.Zoom;
+
+            m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
+            m_mapZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
+        }
+
+        private void m_mapZoomOutButton_Click(object sender, EventArgs eventArgs)
+        {
+            if (m_mapPanel.Zoom > 1)
+                --m_mapPanel.Zoom;
+
+            m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
+            m_mapZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
         }
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
