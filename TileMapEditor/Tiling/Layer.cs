@@ -50,8 +50,8 @@ namespace Tiling
             int tileYMin = mapViewPort.Location.Y / m_tileSize.Height;
 
             // determine tile-level viewport size
-            int tileColumns = mapViewPort.Size.Width / m_tileSize.Width;
-            int tileRows = mapViewPort.Size.Height / m_tileSize.Height;
+            int tileColumns = 1 + (mapViewPort.Size.Width - 1) / m_tileSize.Width;
+            int tileRows = 1 + (mapViewPort.Size.Height - 1) / m_tileSize.Height;
 
             // increment tile-level viewport size if display not tile-aligned
             if (tileInternalOffset.X != 0)

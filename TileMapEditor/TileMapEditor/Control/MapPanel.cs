@@ -48,13 +48,13 @@ namespace TileMapEditor.Control
                 Tiling.Size displaySize = m_map.DisplaySize;
 
                 m_horizontalScrollBar.Maximum = displaySize.Width;
-                m_horizontalScrollBar.LargeChange = clientRectangle.Width / m_zoom;
+                m_horizontalScrollBar.LargeChange = 1 + (clientRectangle.Width - 1) / m_zoom;
                 m_horizontalScrollBar.Value
                     = Math.Min(m_horizontalScrollBar.Value, displaySize.Width);
                 m_horizontalScrollBar.Visible = displaySize.Width > clientRectangle.Width;
 
                 m_verticalScrollBar.Maximum = displaySize.Height;
-                m_verticalScrollBar.LargeChange = clientRectangle.Height / m_zoom;
+                m_verticalScrollBar.LargeChange = 1 + (clientRectangle.Height - 1) / m_zoom;
                 m_verticalScrollBar.Value
                     = Math.Min(m_verticalScrollBar.Value, displaySize.Height);
                 m_verticalScrollBar.Visible = displaySize.Height > clientRectangle.Height;
@@ -76,8 +76,8 @@ namespace TileMapEditor.Control
         private void m_innerPanel_Resize(object sender, EventArgs e)
         {
             System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-            m_viewPort.Size.Width = clientRectangle.Width / m_zoom;
-            m_viewPort.Size.Height = clientRectangle.Height / m_zoom;
+            m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1)/ m_zoom;
+            m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
         }
 
         private void m_innerPanel_Paint(object sender, PaintEventArgs paintEventArgs)
@@ -213,6 +213,11 @@ namespace TileMapEditor.Control
             set
             {
                 m_zoom = Math.Max(1, Math.Min(value, 10));
+
+                System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
+                m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
+                m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+
                 Invalidate(true);
             }
         }
