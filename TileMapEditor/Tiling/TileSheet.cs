@@ -80,9 +80,7 @@ namespace Tiling
         {
             get
             {
-                int tileRows = (m_sheetSize.Height - m_margin.Height) / (m_tileSize.Height + m_spacing.Height);
-                int tileColumns = (m_sheetSize.Width - m_margin.Width) / (m_tileSize.Width + m_spacing.Width);
-                return tileRows * tileColumns;
+                return m_sheetSize.Width * m_sheetSize.Height;
             }
         }
     }

@@ -49,6 +49,15 @@ namespace TileMapEditor.Dialog
             m_tileSheet.Margin = new Tiling.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
             m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxPaddingX.Value, (int)m_textBoxPaddingY.Value);
 
+            if (m_bitmapImageSource != null)
+            {
+                m_tileSheet.SheetSize = new Tiling.Size(
+                    (m_bitmapImageSource.Width - m_tileSheet.Margin.Width)
+                        / (m_tileSheet.TileSize.Width + m_tileSheet.Spacing.Width),
+                    (m_bitmapImageSource.Height - m_tileSheet.Margin.Height)
+                        / (m_tileSheet.TileSize.Height + m_tileSheet.Spacing.Height));
+            }
+
             m_customPropertyGrid.StoreProperties(m_tileSheet);
 
             if (m_bitmapImageSource != null)

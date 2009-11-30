@@ -77,6 +77,13 @@ namespace TileMapEditor
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
+
+            // temp
+            for (int i = 0; i < 4; i++)
+                layer.Tiles[i, 0] = new StaticTile(layer, m_map.TileSheets[0], BlendMode.Alpha, i);
+            // temp
+
+            m_mapPanel.Invalidate();
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)
