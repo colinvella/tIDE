@@ -47,7 +47,7 @@ namespace TileMapEditor.Dialog
 
             m_tileSheet.TileSize = new Tiling.Size((int) m_textBoxTileWidth.Value, (int) m_textBoxTileHeight.Value);
             m_tileSheet.Margin = new Tiling.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
-            m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxPaddingX.Value, (int)m_textBoxPaddingY.Value);
+            m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
 
             if (m_bitmapImageSource != null)
             {
@@ -78,8 +78,8 @@ namespace TileMapEditor.Dialog
             m_textBoxTileHeight.Value = m_tileSheet.TileSize.Height;
             m_textBoxLeftMargin.Value = m_tileSheet.Margin.Width;
             m_textBoxTopMargin.Value = m_tileSheet.Margin.Height;
-            m_textBoxPaddingX.Value = m_tileSheet.Spacing.Width;
-            m_textBoxPaddingY.Value = m_tileSheet.Spacing.Height;
+            m_textBoxSpacingX.Value = m_tileSheet.Spacing.Width;
+            m_textBoxSpacingY.Value = m_tileSheet.Spacing.Height;
 
             m_customPropertyGrid.LoadProperties(m_tileSheet);
 
@@ -123,6 +123,130 @@ namespace TileMapEditor.Dialog
             }
         }
 
+        private void m_buttonAutoDetect_Click(object sender, EventArgs eventArgs)
+        {
+            if (m_bitmapImageSource == null)
+                return;
+
+            Cursor cursor = Cursor.Current;
+            this.Cursor = Cursors.WaitCursor;
+
+            // determine tile intervals (width + spacing)
+            const int MAX_OFFSET = 128;
+            long leastDifferenceX = long.MaxValue, leastDifferenceY = long.MaxValue;
+            int intervalX = 8, intervalY = 8;
+            for (int offset = 8; offset < MAX_OFFSET; offset++)
+            {
+                long differenceX = 0, differenceY = 0;
+                for (int y = 0; y < Math.Min(m_bitmapImageSource.Height, MAX_OFFSET); y++)
+                    for (int x = 0; x < Math.Min(m_bitmapImageSource.Width, MAX_OFFSET); x++)
+                    {
+                        Color color = m_bitmapImageSource.GetPixel(x, y);
+
+                        Color offsetColorX = x + offset < m_bitmapImageSource.Width ? m_bitmapImageSource.GetPixel(x + offset, y) : Color.Black;
+                        differenceX +=
+                            Math.Abs(offsetColorX.R - color.R)
+                            + Math.Abs(offsetColorX.G - color.G)
+                            + Math.Abs(offsetColorX.B - color.B);
+
+                        Color offsetColorY = y + offset < m_bitmapImageSource.Height ? m_bitmapImageSource.GetPixel(x, y + offset) : Color.Black;
+                        differenceY +=
+                            Math.Abs(offsetColorY.R - color.R)
+                            + Math.Abs(offsetColorY.G - color.G)
+                            + Math.Abs(offsetColorY.B - color.B);
+                    }
+
+                if (leastDifferenceX > differenceX)
+                {
+                    leastDifferenceX = differenceX;
+                    intervalX = offset;
+                }
+
+                if (leastDifferenceY > differenceY)
+                {
+                    leastDifferenceY = differenceY;
+                    intervalY = offset;
+                }
+            }
+
+            // determine top margin
+            int topMargin = 0;
+            bool topMarginFound = false;
+            Color colorBackground = m_bitmapImageSource.GetPixel(0, 0);
+            for (int y = 0; y < m_bitmapImageSource.Height && !topMarginFound; y++)
+            {
+                for (int x = 0; x < m_bitmapImageSource.Width; x++)
+                {
+                    if (m_bitmapImageSource.GetPixel(x, y) != colorBackground)
+                    {
+                        topMargin = y;
+                        topMarginFound = true;
+                        break;
+                    }
+                }
+            }
+
+            // determine left margin
+            int leftMargin = 0;
+            bool leftMarginFound = false;
+            for (int x = 0; x < m_bitmapImageSource.Width && !leftMarginFound; x++)
+            {
+                for (int y = topMargin; y < m_bitmapImageSource.Height; y++)
+                {
+                    if (m_bitmapImageSource.GetPixel(x, y) != colorBackground)
+                    {
+                        leftMargin = x;
+                        leftMarginFound = true;
+                        break;
+                    }
+                }
+            }
+
+            // determine spacing
+            int spacingX = 0;
+            bool foundPadding = false;
+            for (; spacingX < intervalX; spacingX++)
+            {
+                for (int x = leftMargin + intervalX - 1; x < m_bitmapImageSource.Width; x += intervalX)
+                {
+                    if (m_bitmapImageSource.GetPixel(x - spacingX, topMargin) != colorBackground)
+                    {
+                        foundPadding = true;
+                        break;
+                    }
+                }
+                if (foundPadding)
+                    break;
+            }
+
+            int spacingY = 0;
+            foundPadding = false;
+            for (; spacingY < intervalY; spacingY++)
+            {
+                for (int y = topMargin + intervalY - 1; y < m_bitmapImageSource.Height; y += intervalY)
+                {
+                    if (m_bitmapImageSource.GetPixel(leftMargin, y - spacingY) != colorBackground)
+                    {
+                        foundPadding = true;
+                        break;
+                    }
+                }
+                if (foundPadding)
+                    break;
+            }
+
+            m_textBoxTileWidth.Value = intervalX - spacingX;
+            m_textBoxTileHeight.Value = intervalY - spacingY;
+
+            m_textBoxLeftMargin.Value = leftMargin;
+            m_textBoxTopMargin.Value = topMargin;
+
+            m_textBoxSpacingX.Value = spacingX;
+            m_textBoxSpacingY.Value = spacingY;
+
+            this.Cursor = cursor;
+        }
+
         private void m_panelImage_Paint(object sender, PaintEventArgs paintEventArgs)
         {
             Graphics graphics = paintEventArgs.Graphics;
@@ -155,8 +279,8 @@ namespace TileMapEditor.Dialog
                 int marginTop = (int)m_textBoxTopMargin.Value;
                 int tileWidth = (int)m_textBoxTileWidth.Value;
                 int tileHeight = (int)m_textBoxTileHeight.Value;
-                int tilePaddingX = (int)m_textBoxPaddingX.Value;
-                int tilePaddingY = (int)m_textBoxPaddingY.Value;
+                int tilePaddingX = (int)m_textBoxSpacingX.Value;
+                int tilePaddingY = (int)m_textBoxSpacingY.Value;
 
                 for (int posY = marginTop; posY + tileHeight < imageHeight; posY += tileHeight + tilePaddingY)
                     for (int posX = marginLeft; posX + tileWidth < imageWidth; posX += tileWidth + tilePaddingX)
