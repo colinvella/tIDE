@@ -34,6 +34,10 @@ namespace TileMapEditor
             m_mapPanel.Map = m_map;
 
             m_selectedComponent = m_map;
+
+            foreach (System.Windows.Forms.Control control in m_toolStripContainer.TopToolStripPanel.Controls)
+                if (control is ToolStrip)
+                    control.Dock = DockStyle.Fill;
         }
 
         private void OnFileNew(object sender, EventArgs eventArgs)
