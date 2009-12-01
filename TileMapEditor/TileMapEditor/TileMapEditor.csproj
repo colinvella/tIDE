@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\CustomListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Control\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>

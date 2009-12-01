@@ -32,7 +32,7 @@
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_panelContent;
             System.Windows.Forms.Label m_buildingTileListLabel;
-            this.m_tileListView = new System.Windows.Forms.ListView();
+            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             this.m_tileImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             m_labelCaption = new System.Windows.Forms.Label();
