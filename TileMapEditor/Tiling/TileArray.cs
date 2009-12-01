@@ -54,5 +54,11 @@ namespace Tiling
                 m_tiles[x, y] = value;
             }
         }
+
+        public Tile this[Location location]
+        {
+            get { return this[location.X, location.Y]; }
+            set { this[location.X, location.Y] = value; }
+        }
     }
 }

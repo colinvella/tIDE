@@ -8,12 +8,18 @@ namespace Tiling
 {
     public class Layer: DescribedComponent
     {
+        #region Private Variables
+
         private Map m_map;
         private ReadOnlyCollection<TileSheet> m_tileSheets;
         private Size m_layerSize;
         private Size m_tileSize;
         private Tile[,] m_tiles;
         private TileArray m_tileArray;
+
+        #endregion
+
+        #region Public Methods
 
         public Layer(string id, Map map, Size layerSize, Size tileSize)
             : base(id)
@@ -36,6 +42,13 @@ namespace Tiling
                         return true;
                 }
             return false;
+        }
+
+        public Location GetTileLocation(Location pixelLocation)
+        {
+            return new Location(
+                pixelLocation.X / m_tileSize.Width,
+                pixelLocation.Y / m_tileSize.Height);
         }
 
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
@@ -84,6 +97,10 @@ namespace Tiling
 
         }
 
+        #endregion
+
+        #region Public Properties
+
         public Map Map { get { return m_map; } }
 
         public Size LayerSize
@@ -125,5 +142,7 @@ namespace Tiling
         }
 
         public TileArray Tiles { get { return m_tileArray; } }
+
+        #endregion
     }
 }
