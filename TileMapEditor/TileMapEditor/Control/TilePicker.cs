@@ -11,6 +11,9 @@ using Tiling;
 
 namespace TileMapEditor.Control
 {
+    public delegate void TilePickerEventHandler(
+            object sender, TilePickerEventArgs tilePickerEventArgs);
+
     public partial class TilePicker : UserControl
     {
         #region Private Variables
@@ -23,6 +26,31 @@ namespace TileMapEditor.Control
         #endregion
 
         #region Private Methods
+
+        private void OnRetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs retrieveVirtualItemEventArgs)
+        {
+            ListViewItem listViewItem = m_tileListViewItems[retrieveVirtualItemEventArgs.ItemIndex];
+
+            if (listViewItem.ImageIndex == -1)
+            {
+                // update image list and assign new image
+                Tiling.Rectangle sheetRectangle
+                    = m_tileSheet.GetTileImageBounds(retrieveVirtualItemEventArgs.ItemIndex);
+
+                System.Drawing.Rectangle pickerRectangle
+                    = new System.Drawing.Rectangle(
+                        sheetRectangle.Location.X, sheetRectangle.Location.Y,
+                        sheetRectangle.Size.Width, sheetRectangle.Size.Height);
+
+                listViewItem.ImageIndex = m_tileImageList.Images.Count;
+
+                Bitmap tileBitmap = m_tileSheetBitmap.Clone(
+                    pickerRectangle, m_tileSheetBitmap.PixelFormat);
+                m_tileImageList.Images.Add(tileBitmap);
+            }
+
+            retrieveVirtualItemEventArgs.Item = listViewItem;
+        }
 
         private void OnSelectTileSheet(object sender, EventArgs eventArgs)
         {
@@ -59,29 +87,11 @@ namespace TileMapEditor.Control
             m_tileListView.Visible = true;
         }
 
-        private void m_tileListView_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs retrieveVirtualItemEventArgs)
+        private void OnSelectTile(object sender, EventArgs eventArgs)
         {
-            ListViewItem listViewItem = m_tileListViewItems[retrieveVirtualItemEventArgs.ItemIndex];
-
-            if (listViewItem.ImageIndex == -1)
-            {
-                // update image list and assign new image
-                Tiling.Rectangle sheetRectangle
-                    = m_tileSheet.GetTileImageBounds(retrieveVirtualItemEventArgs.ItemIndex);
-
-                System.Drawing.Rectangle pickerRectangle
-                    = new System.Drawing.Rectangle(
-                        sheetRectangle.Location.X, sheetRectangle.Location.Y,
-                        sheetRectangle.Size.Width, sheetRectangle.Size.Height);
-
-                listViewItem.ImageIndex = m_tileImageList.Images.Count;
-
-                Bitmap tileBitmap = m_tileSheetBitmap.Clone(
-                    pickerRectangle, m_tileSheetBitmap.PixelFormat);
-                m_tileImageList.Images.Add(tileBitmap);
-            }
-
-            retrieveVirtualItemEventArgs.Item = listViewItem;
+            if (TileSelected != null)
+                TileSelected(this,
+                    new TilePickerEventArgs(m_tileSheet, SelectedTileIndex));
         }
 
         #endregion
@@ -142,6 +152,13 @@ namespace TileMapEditor.Control
                 m_tileListView.SelectedIndices.Add(value);
             }
         }
+
+        #endregion
+
+        #region Public Events
+
+        [Category("Behavior"), Description("Occurs when the tile is selected")]
+        public event TilePickerEventHandler TileSelected;
 
         #endregion
     }

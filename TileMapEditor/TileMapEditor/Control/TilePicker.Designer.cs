@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_panelContent;
+            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             this.m_tileImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
-            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             m_labelCaption = new System.Windows.Forms.Label();
             m_panelContent = new System.Windows.Forms.Panel();
             m_panelContent.SuspendLayout();
@@ -63,6 +63,21 @@
             m_panelContent.Size = new System.Drawing.Size(148, 128);
             m_panelContent.TabIndex = 1;
             // 
+            // m_tileListView
+            // 
+            this.m_tileListView.AutoArrange = false;
+            this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tileListView.LargeImageList = this.m_tileImageList;
+            this.m_tileListView.Location = new System.Drawing.Point(0, 21);
+            this.m_tileListView.MultiSelect = false;
+            this.m_tileListView.Name = "m_tileListView";
+            this.m_tileListView.Size = new System.Drawing.Size(148, 107);
+            this.m_tileListView.TabIndex = 1;
+            this.m_tileListView.UseCompatibleStateImageBehavior = false;
+            this.m_tileListView.VirtualMode = true;
+            this.m_tileListView.SelectedIndexChanged += new System.EventHandler(this.OnSelectTile);
+            this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.OnRetrieveVirtualItem);
+            // 
             // m_tileImageList
             // 
             this.m_tileImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -79,20 +94,6 @@
             this.m_comboBoxTileSheets.Size = new System.Drawing.Size(148, 21);
             this.m_comboBoxTileSheets.TabIndex = 0;
             this.m_comboBoxTileSheets.SelectedIndexChanged += new System.EventHandler(this.OnSelectTileSheet);
-            // 
-            // m_tileListView
-            // 
-            this.m_tileListView.AutoArrange = false;
-            this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tileListView.LargeImageList = this.m_tileImageList;
-            this.m_tileListView.Location = new System.Drawing.Point(0, 21);
-            this.m_tileListView.MultiSelect = false;
-            this.m_tileListView.Name = "m_tileListView";
-            this.m_tileListView.Size = new System.Drawing.Size(148, 107);
-            this.m_tileListView.TabIndex = 1;
-            this.m_tileListView.UseCompatibleStateImageBehavior = false;
-            this.m_tileListView.VirtualMode = true;
-            this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.m_tileListView_RetrieveVirtualItem);
             // 
             // TilePicker
             // 
