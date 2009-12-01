@@ -32,8 +32,8 @@
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_panelContent;
             this.m_tileListView = new System.Windows.Forms.ListView();
-            this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             this.m_tileImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             m_labelCaption = new System.Windows.Forms.Label();
             m_panelContent = new System.Windows.Forms.Panel();
             m_panelContent.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // m_tileListView
             // 
+            this.m_tileListView.AutoArrange = false;
             this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tileListView.LargeImageList = this.m_tileImageList;
             this.m_tileListView.Location = new System.Drawing.Point(0, 21);
@@ -76,6 +77,12 @@
             this.m_tileListView.VirtualMode = true;
             this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.m_tileListView_RetrieveVirtualItem);
             // 
+            // m_tileImageList
+            // 
+            this.m_tileImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.m_tileImageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.m_tileImageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // m_comboBoxTileSheets
             // 
             this.m_comboBoxTileSheets.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,12 +93,6 @@
             this.m_comboBoxTileSheets.Size = new System.Drawing.Size(148, 21);
             this.m_comboBoxTileSheets.TabIndex = 0;
             this.m_comboBoxTileSheets.SelectedIndexChanged += new System.EventHandler(this.OnSelectTileSheet);
-            // 
-            // m_tileImageList
-            // 
-            this.m_tileImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.m_tileImageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.m_tileImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // TilePicker
             // 
