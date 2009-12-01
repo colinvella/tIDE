@@ -137,6 +137,14 @@ namespace Tiling
             m_tileSheets.Remove(tileSheet);
         }
 
+        public TileSheet GetTileSheet(string tileSheetId)
+        {
+            foreach (TileSheet tileSheet in m_tileSheets)
+                if (tileSheet.Id == tileSheetId)
+                    return tileSheet;
+            return null;
+        }
+
         public void Update(long timeInterval)
         {
             m_elapsedTime += timeInterval;

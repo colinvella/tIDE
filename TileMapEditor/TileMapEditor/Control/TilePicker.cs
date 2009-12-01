@@ -16,6 +16,61 @@ namespace TileMapEditor.Control
         #region Private Variables
 
         private Map m_map;
+        private TileSheet m_tileSheet;
+        private List<ListViewItem> m_tileListViewItems;
+
+        #endregion
+
+        #region Private Methods
+
+        private void OnSelectTileSheet(object sender, EventArgs eventArgs)
+        {
+            if (m_comboBoxTileSheets.SelectedIndex < 0)
+                return;
+
+            string tileSheetId = m_comboBoxTileSheets.SelectedItem.ToString();
+            m_tileSheet = m_map.GetTileSheet(tileSheetId);
+            Bitmap tileSheetBitmap = new Bitmap(m_tileSheet.ImageSource);
+
+            m_tileListView.Visible = false;
+
+            m_tileImageList.Images.Clear();
+
+            System.Drawing.Size tileSize = new System.Drawing.Size(
+                m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height); 
+            m_tileImageList.ImageSize = tileSize;
+
+            m_tileListViewItems.Clear();
+            System.Drawing.Rectangle pickerRectangle
+                = new System.Drawing.Rectangle();
+            for (int tileIndex = 0; tileIndex < m_tileSheet.TileCount; tileIndex++)
+            {
+                Tiling.Rectangle sheetRectangle = m_tileSheet.GetTileImageBounds(tileIndex);
+
+                pickerRectangle.X = sheetRectangle.Location.X;
+                pickerRectangle.Y = sheetRectangle.Location.Y;
+                pickerRectangle.Width = sheetRectangle.Size.Width;
+                pickerRectangle.Height = sheetRectangle.Size.Height;
+
+                Bitmap tileBitmap = tileSheetBitmap.Clone(
+                    pickerRectangle, tileSheetBitmap.PixelFormat);
+                m_tileImageList.Images.Add(tileBitmap);
+
+                m_tileListViewItems.Add(new ListViewItem(tileIndex.ToString(), tileIndex));
+            }
+
+            m_tileListView.VirtualListSize = m_tileListViewItems.Count;
+
+            tileSheetBitmap.Dispose();
+
+            m_tileListView.Visible = true;
+        }
+
+        private void m_tileListView_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs retrieveVirtualItemEventArgs)
+        {
+            retrieveVirtualItemEventArgs.Item
+                = m_tileListViewItems[retrieveVirtualItemEventArgs.ItemIndex];
+        }
 
         #endregion
 
@@ -24,6 +79,8 @@ namespace TileMapEditor.Control
         public TilePicker()
         {
             InitializeComponent();
+
+            m_tileListViewItems = new List<ListViewItem>();
         }
 
         public void UpdatePicker()
