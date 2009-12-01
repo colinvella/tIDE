@@ -31,13 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_panelContent;
-            System.Windows.Forms.Label m_buildingTileListLabel;
-            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             this.m_tileImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
+            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             m_labelCaption = new System.Windows.Forms.Label();
             m_panelContent = new System.Windows.Forms.Panel();
-            m_buildingTileListLabel = new System.Windows.Forms.Label();
             m_panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,26 +57,11 @@
             // 
             m_panelContent.Controls.Add(this.m_tileListView);
             m_panelContent.Controls.Add(this.m_comboBoxTileSheets);
-            m_panelContent.Controls.Add(m_buildingTileListLabel);
             m_panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             m_panelContent.Location = new System.Drawing.Point(0, 20);
             m_panelContent.Name = "m_panelContent";
             m_panelContent.Size = new System.Drawing.Size(148, 128);
             m_panelContent.TabIndex = 1;
-            // 
-            // m_tileListView
-            // 
-            this.m_tileListView.AutoArrange = false;
-            this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tileListView.LargeImageList = this.m_tileImageList;
-            this.m_tileListView.Location = new System.Drawing.Point(0, 21);
-            this.m_tileListView.MultiSelect = false;
-            this.m_tileListView.Name = "m_tileListView";
-            this.m_tileListView.Size = new System.Drawing.Size(148, 107);
-            this.m_tileListView.TabIndex = 1;
-            this.m_tileListView.UseCompatibleStateImageBehavior = false;
-            this.m_tileListView.VirtualMode = true;
-            this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.m_tileListView_RetrieveVirtualItem);
             // 
             // m_tileImageList
             // 
@@ -97,16 +80,19 @@
             this.m_comboBoxTileSheets.TabIndex = 0;
             this.m_comboBoxTileSheets.SelectedIndexChanged += new System.EventHandler(this.OnSelectTileSheet);
             // 
-            // m_buildingTileListLabel
+            // m_tileListView
             // 
-            m_buildingTileListLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            m_buildingTileListLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-            m_buildingTileListLabel.Location = new System.Drawing.Point(0, 0);
-            m_buildingTileListLabel.Name = "m_buildingTileListLabel";
-            m_buildingTileListLabel.Size = new System.Drawing.Size(148, 128);
-            m_buildingTileListLabel.TabIndex = 2;
-            m_buildingTileListLabel.Text = "Building tile list...";
-            m_buildingTileListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.m_tileListView.AutoArrange = false;
+            this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tileListView.LargeImageList = this.m_tileImageList;
+            this.m_tileListView.Location = new System.Drawing.Point(0, 21);
+            this.m_tileListView.MultiSelect = false;
+            this.m_tileListView.Name = "m_tileListView";
+            this.m_tileListView.Size = new System.Drawing.Size(148, 107);
+            this.m_tileListView.TabIndex = 1;
+            this.m_tileListView.UseCompatibleStateImageBehavior = false;
+            this.m_tileListView.VirtualMode = true;
+            this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.m_tileListView_RetrieveVirtualItem);
             // 
             // TilePicker
             // 
@@ -125,7 +111,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox m_comboBoxTileSheets;
-        private System.Windows.Forms.ListView m_tileListView;
         private System.Windows.Forms.ImageList m_tileImageList;
+        private CustomListView m_tileListView;
     }
 }
