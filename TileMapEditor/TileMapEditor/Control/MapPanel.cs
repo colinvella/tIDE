@@ -24,9 +24,15 @@ namespace TileMapEditor.Control
         private Tiling.Rectangle m_viewPort;
         private int m_zoom;
 
+        private bool m_bMouseDown;
+
         #endregion
 
         #region Private Methods
+
+        private void PlaceTile()
+        {
+        }
 
         private void UpdateScrollBars()
         {
@@ -90,6 +96,23 @@ namespace TileMapEditor.Control
             UpdateScrollBars();
 
             m_map.Draw(this, m_viewPort);
+        }
+
+        private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_bMouseDown = true;
+            PlaceTile();
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (m_bMouseDown)
+                PlaceTile();
+        }
+
+        private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_bMouseDown = false;
         }
 
         #endregion

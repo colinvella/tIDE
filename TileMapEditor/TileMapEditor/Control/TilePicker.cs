@@ -125,6 +125,24 @@ namespace TileMapEditor.Control
             }
         }
 
+        [Category("Behavior"),
+         DefaultValue(-1),
+         Description("The index of the selected tile")]
+        public int SelectedTileIndex
+        {
+            get
+            {
+                return m_tileListView.SelectedIndices.Count > 0
+                    ? m_tileListView.SelectedIndices[0]
+                    : -1;
+            }
+            set
+            {
+                m_tileListView.SelectedIndices.Clear();
+                m_tileListView.SelectedIndices.Add(value);
+            }
+        }
+
         #endregion
     }
 }

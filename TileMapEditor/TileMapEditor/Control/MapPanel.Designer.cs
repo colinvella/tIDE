@@ -59,7 +59,10 @@
             this.m_innerPanel.Size = new System.Drawing.Size(303, 223);
             this.m_innerPanel.TabIndex = 2;
             this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.m_innerPanel_Paint);
+            this.m_innerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
+            this.m_innerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             this.m_innerPanel.Resize += new System.EventHandler(this.m_innerPanel_Resize);
+            this.m_innerPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
             // 
             // MapPanel
             // 
