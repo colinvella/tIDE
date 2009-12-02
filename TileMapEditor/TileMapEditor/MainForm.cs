@@ -27,8 +27,13 @@ namespace TileMapEditor
 
         private void ArrangeToolStripLayout()
         {
-            Point currentPosition = new Point();
+            List<System.Windows.Forms.Control> controls = new List<System.Windows.Forms.Control>();
             foreach (System.Windows.Forms.Control control in m_toolStripContainer.TopToolStripPanel.Controls)
+                controls.Add(control);
+            m_toolStripContainer.TopToolStripPanel.Controls.Clear();
+            
+            Point currentPosition = m_toolStripContainer.TopToolStripPanel.ClientRectangle.Location;
+            foreach (System.Windows.Forms.Control control in controls)
             {
                 currentPosition.X += control.Margin.Left;
                 currentPosition.Y += control.Margin.Top;
@@ -40,6 +45,8 @@ namespace TileMapEditor
                 }
 
                 control.Location = currentPosition;
+                m_toolStripContainer.TopToolStripPanel.Controls.Add(control);
+                currentPosition = control.Location;
 
                 currentPosition.X += control.Width + control.Margin.Right;
                 currentPosition.Y -= control.Margin.Top;
@@ -278,6 +285,14 @@ namespace TileMapEditor
             m_map.RemoveTileSheet(tileSheet);
 
             m_mapTreeView.UpdateTree();
+            m_mapTreeView.SelectedComponent = null;
+            m_selectedComponent = null;
+
+            m_tileSheetPropertiesMenuItem.Enabled
+                = m_tileSheetPropertiesButton.Enabled
+                = m_tileSheetDeleteMenuItem.Enabled
+                = m_tileSheetDeleteButton.Enabled = false;
+
             m_tilePicker.UpdatePicker();
 
             m_mapPanel.DisposeTileSheet(tileSheet);
@@ -321,6 +336,8 @@ namespace TileMapEditor
             // enable/disable tile sheet menu items as applicable
             m_tileSheetPropertiesMenuItem.Enabled
                 = m_tileSheetDeleteMenuItem.Enabled
+                = m_tileSheetPropertiesButton.Enabled
+                = m_tileSheetDeleteButton.Enabled
                 = component != null && component is TileSheet;
 
             m_selectedComponent = component;
