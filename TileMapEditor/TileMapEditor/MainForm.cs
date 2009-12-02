@@ -276,6 +276,14 @@ namespace TileMapEditor
 
             TileSheet tileSheet = (TileSheet)m_selectedComponent;
 
+            if (m_map.DependsOnTileSheet(tileSheet))
+            {
+                MessageBox.Show(this,
+                    "This Tile Sheet cannot be deleted until all tiles originating from this sheet are removed from the relevant layers.",
+                    "Delete Tile Sheet \"" + tileSheet.Id + "\"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (MessageBox.Show(this, "Are you sure you want to delete this Tile Sheet?",
                 "Delete Tile Sheet \"" + tileSheet.Id + "\"",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)

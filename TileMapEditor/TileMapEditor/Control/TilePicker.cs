@@ -55,7 +55,10 @@ namespace TileMapEditor.Control
         private void OnSelectTileSheet(object sender, EventArgs eventArgs)
         {
             if (m_comboBoxTileSheets.SelectedIndex < 0)
+            {
+                m_tileListView.VirtualListSize = 0;
                 return;
+            }
 
             string tileSheetId = m_comboBoxTileSheets.SelectedItem.ToString();
             m_tileSheet = m_map.GetTileSheet(tileSheetId);
@@ -63,9 +66,6 @@ namespace TileMapEditor.Control
             if (m_tileSheetBitmap != null)
                 m_tileSheetBitmap.Dispose();
             m_tileSheetBitmap = new Bitmap(m_tileSheet.ImageSource);
-
-            m_tileListView.Visible = false;
-            System.Threading.Thread.Sleep(0);
 
             // reset image list
             m_tileImageList.Images.Clear();
@@ -83,8 +83,6 @@ namespace TileMapEditor.Control
             }
 
             m_tileListView.VirtualListSize = m_tileListViewItems.Count;
-
-            m_tileListView.Visible = true;
         }
 
         private void OnSelectTile(object sender, EventArgs eventArgs)
@@ -119,6 +117,11 @@ namespace TileMapEditor.Control
             foreach (TileSheet tileSheet in m_map.TileSheets)
                 m_comboBoxTileSheets.Items.Add(tileSheet.Id);
             m_comboBoxTileSheets.SelectedItem = selectedItem;
+
+            if (m_comboBoxTileSheets.Items.Count > 0)
+                m_comboBoxTileSheets.SelectedIndex = 0;
+            else
+                m_tileListView.VirtualListSize = 0;
         }
 
         #endregion

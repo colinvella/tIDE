@@ -108,6 +108,18 @@ namespace Tiling
             m_layers[layerIndex - 1] = layer;
         }
 
+        public bool DependsOnTileSheet(TileSheet tileSheet)
+        {
+            if (tileSheet.Map != this)
+                return false;
+
+            foreach (Layer layer in m_layers)
+                if (layer.DependsOnTileSheet(tileSheet))
+                    return true;
+
+            return false;
+        }
+
         public void AddTileSheet(TileSheet tileSheet)
         {
             if (tileSheet.Map != this)
