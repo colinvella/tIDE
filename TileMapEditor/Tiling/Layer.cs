@@ -51,6 +51,12 @@ namespace Tiling
                 pixelLocation.Y / m_tileSize.Height);
         }
 
+        public bool IsValidLocation(Location tileLocation)
+        {
+            return tileLocation.X >= 0 && tileLocation.X < m_layerSize.Width
+                && tileLocation.Y >= 0 && tileLocation.Y < m_layerSize.Height;
+        }
+
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             // determine internal tile offset
@@ -85,10 +91,8 @@ namespace Tiling
                 {
                     Tile tile = m_tiles[tileX, tileY];
 
-                    if (tile == null)
-                        continue;
-
-                    displayDevice.DrawTile(tile, tileLocation);
+                    if (tile != null)
+                        displayDevice.DrawTile(tile, tileLocation);
 
                     tileLocation.X += m_tileSize.Width;
                 }

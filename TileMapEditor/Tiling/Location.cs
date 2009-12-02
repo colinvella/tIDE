@@ -29,5 +29,10 @@ namespace Tiling
             X = x;
             Y = y;
         }
+
+        public override string ToString()
+        {
+            return "[" + X + ", " + Y + "]";
+        }
     }
 }

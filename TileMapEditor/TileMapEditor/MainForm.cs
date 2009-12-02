@@ -63,11 +63,6 @@ namespace TileMapEditor
 
             m_selectedComponent = m_map;
 
-            /*
-            m_menuStrip.Location = new Point(m_menuStrip.Margin.Left, m_menuStrip.Margin.Right);
-            m_editToolStrip.Location = new Point(m_editToolStrip.Margin.Left, m_menuStrip.Location.Y + m_menuStrip.Height + m_menuStrip.Margin.Bottom + m_editToolStrip.Margin.Top);
-            m_mapToolStrip.Location = new Point(m_editToolStrip.Location.X + m_editToolStrip.Width + m_editToolStrip.Margin.Right + m_mapToolStrip.Margin.Left, m_editToolStrip.Location.Y);
-             */
             ArrangeToolStripLayout();
         }
 
@@ -161,7 +156,7 @@ namespace TileMapEditor
 
             // temp
             for (int i = 0; i < 4; i++)
-                layer.Tiles[i, 0] = new StaticTile(layer, m_map.TileSheets[0], BlendMode.Alpha, i);
+                layer.Tiles[2* i, i] = new StaticTile(layer, m_map.TileSheets[0], BlendMode.Alpha, i);
             // temp
 
             m_mapPanel.Invalidate(true);
@@ -306,6 +301,12 @@ namespace TileMapEditor
             m_mapPanel.DisposeTileSheet(tileSheet);
         }
 
+        private void OnPickerTileSelected(object sender, TilePickerEventArgs tilePickerEventArgs)
+        {
+            m_mapPanel.SelectedTileSheet = tilePickerEventArgs.TileSheet;
+            m_mapPanel.SelectedTileIndex = tilePickerEventArgs.TileIndex;
+        }
+
         private void OnSingleTileTool(object sender, EventArgs eventArgs)
         {
             m_editSingleTileButton.Checked = true;
@@ -335,6 +336,8 @@ namespace TileMapEditor
                 int layerIndex = m_map.Layers.IndexOf(layer);
                 m_layerBringForwardMenuItem.Enabled = layerIndex < m_map.Layers.Count - 1;
                 m_layerSendBackwardMenuItem.Enabled = layerIndex > 0;
+
+                m_mapPanel.SelectedLayer = layer;
             }
             else
                 m_layerBringForwardMenuItem.Enabled

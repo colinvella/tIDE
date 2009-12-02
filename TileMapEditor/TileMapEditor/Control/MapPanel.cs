@@ -18,6 +18,8 @@ namespace TileMapEditor.Control
 
         private Map m_map;
         private Layer m_selectedLayer;
+        private TileSheet m_selectedTileSheet;
+        private int m_selectedTileIndex;
 
         private Graphics m_graphics;
         private Dictionary<TileSheet, Bitmap> m_tileSheetBitmaps;
@@ -30,8 +32,30 @@ namespace TileMapEditor.Control
 
         #region Private Methods
 
-        private void PlaceTile()
+        private void PlaceTile(MouseEventArgs mouseEventArgs)
         {
+            if (m_selectedLayer == null)
+                return;
+            if (m_selectedTileIndex < 0)
+                return;
+
+            Location offset = new Location(
+                mouseEventArgs.Location.X,
+                mouseEventArgs.Location.Y);
+            offset.X /= m_zoom;
+            offset.Y /= m_zoom;
+
+            Location pixelLocation = m_viewPort.Location + offset;
+
+            Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
+
+            if (m_selectedLayer.IsValidLocation(tileLocation))
+            {
+                m_selectedLayer.Tiles[tileLocation]
+                    = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
+
+                m_innerPanel.Invalidate();
+            }
         }
 
         private void UpdateScrollBars()
@@ -101,13 +125,14 @@ namespace TileMapEditor.Control
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
             m_bMouseDown = true;
-            PlaceTile();
+            if (mouseEventArgs.Button == MouseButtons.Left)
+                PlaceTile(mouseEventArgs);
         }
 
         private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
-            if (m_bMouseDown)
-                PlaceTile();
+            if (m_bMouseDown && mouseEventArgs.Button == MouseButtons.Left)
+                PlaceTile(mouseEventArgs);
         }
 
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
@@ -243,6 +268,18 @@ namespace TileMapEditor.Control
 
                 Invalidate(true);
             }
+        }
+
+        public TileSheet SelectedTileSheet
+        {
+            get { return m_selectedTileSheet; }
+            set { m_selectedTileSheet = value; }
+        }
+
+        public int SelectedTileIndex
+        {
+            get { return m_selectedTileIndex; }
+            set { m_selectedTileIndex = value; }
         }
 
         #endregion

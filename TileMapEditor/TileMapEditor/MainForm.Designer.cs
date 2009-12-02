@@ -172,6 +172,7 @@
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.Size = new System.Drawing.Size(200, 246);
             this.m_tilePicker.TabIndex = 0;
+            this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
             // 
             // m_mapToolStripSeparator1
             // 
@@ -274,6 +275,8 @@
             this.m_mapPanel.Map = null;
             this.m_mapPanel.Name = "m_mapPanel";
             this.m_mapPanel.SelectedLayer = null;
+            this.m_mapPanel.SelectedTileIndex = 0;
+            this.m_mapPanel.SelectedTileSheet = null;
             this.m_mapPanel.Size = new System.Drawing.Size(576, 463);
             this.m_mapPanel.TabIndex = 0;
             // 

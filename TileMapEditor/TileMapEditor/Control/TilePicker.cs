@@ -83,6 +83,12 @@ namespace TileMapEditor.Control
             }
 
             m_tileListView.VirtualListSize = m_tileListViewItems.Count;
+
+            if (m_tileListView.Items.Count > 0)
+            {
+                m_tileListView.SelectedIndices.Clear();
+                m_tileListView.SelectedIndices.Add(0);
+            }
         }
 
         private void OnSelectTile(object sender, EventArgs eventArgs)
