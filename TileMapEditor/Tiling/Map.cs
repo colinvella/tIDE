@@ -187,7 +187,10 @@ namespace Tiling
             displayDevice.SetClippingRegion(clippingRegion);
 
             foreach (Layer layer in m_layers)
-                layer.Draw(displayDevice, displayOffset, mapViewPort);
+            {
+                Rectangle layerViewPort = layer.ConvertToLayerViewPort(mapViewPort);
+                layer.Draw(displayDevice, displayOffset, layerViewPort);
+            }
 
             displayDevice.EndScene();
         }

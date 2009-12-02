@@ -45,7 +45,15 @@ namespace TileMapEditor.Control
             offset.X /= m_zoom;
             offset.Y /= m_zoom;
 
-            Location pixelLocation = m_viewPort.Location + offset;
+            Location pixelLocation = m_viewPort.Location;
+
+            // scale due to parallax
+            pixelLocation.X *= m_selectedLayer.DisplaySize.Width;
+            pixelLocation.X /= m_map.DisplaySize.Width;
+            pixelLocation.Y *= m_selectedLayer.DisplaySize.Height;
+            pixelLocation.Y /= m_selectedLayer.DisplaySize.Height;
+
+            pixelLocation += offset;
 
             Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
 

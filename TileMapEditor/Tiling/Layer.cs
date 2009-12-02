@@ -57,6 +57,22 @@ namespace Tiling
                 && tileLocation.Y >= 0 && tileLocation.Y < m_layerSize.Height;
         }
 
+        public Rectangle ConvertToLayerViewPort(Rectangle mapViewPort)
+        {
+            Size mapDisplaySize = m_map.DisplaySize;
+
+            Rectangle layerViewport = new Rectangle(mapViewPort);
+            Size layerDisplaySize = DisplaySize;
+
+            layerViewport.Location.X *= layerDisplaySize.Width;
+            layerViewport.Location.X /= mapDisplaySize.Width;
+
+            layerViewport.Location.Y *= layerDisplaySize.Height;
+            layerViewport.Location.Y /= mapDisplaySize.Height;
+
+            return layerViewport;
+        }
+
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             // determine internal tile offset

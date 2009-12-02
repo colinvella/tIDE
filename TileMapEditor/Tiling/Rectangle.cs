@@ -15,5 +15,11 @@ namespace Tiling
             Location = location;
             Size = size;
         }
+
+        public Rectangle(Rectangle rectangle)
+        {
+            Location = rectangle.Location;
+            Size = rectangle.Size;
+        }
     }
 }
