@@ -116,6 +116,7 @@ namespace TileMapEditor.Dialog
             try
             {
                 m_bitmapImageSource = new Bitmap(openFileDialog.FileName);
+                m_customTabControl.SelectedTab = m_tabAlignment;
             }
             catch (Exception exception)
             {
