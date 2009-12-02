@@ -25,6 +25,27 @@ namespace TileMapEditor
 
         #region Private Mehods
 
+        private void ArrangeToolStripLayout()
+        {
+            Point currentPosition = new Point();
+            foreach (System.Windows.Forms.Control control in m_toolStripContainer.TopToolStripPanel.Controls)
+            {
+                currentPosition.X += control.Margin.Left;
+                currentPosition.Y += control.Margin.Top;
+
+                if (currentPosition.X + control.Width + control.Margin.Right > m_toolStripContainer.TopToolStripPanel.ClientRectangle.Width)
+                {
+                    currentPosition.X = control.Margin.Left;
+                    currentPosition.Y += control.Height + control.Margin.Bottom;
+                }
+
+                control.Location = currentPosition;
+
+                currentPosition.X += control.Width + control.Margin.Right;
+                currentPosition.Y -= control.Margin.Top;
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs eventArgs)
         {
             m_map = new Map("Untitled map");
@@ -35,9 +56,12 @@ namespace TileMapEditor
 
             m_selectedComponent = m_map;
 
-            foreach (System.Windows.Forms.Control control in m_toolStripContainer.TopToolStripPanel.Controls)
-                if (control is ToolStrip)
-                    control.Dock = DockStyle.Fill;
+            /*
+            m_menuStrip.Location = new Point(m_menuStrip.Margin.Left, m_menuStrip.Margin.Right);
+            m_editToolStrip.Location = new Point(m_editToolStrip.Margin.Left, m_menuStrip.Location.Y + m_menuStrip.Height + m_menuStrip.Margin.Bottom + m_editToolStrip.Margin.Top);
+            m_mapToolStrip.Location = new Point(m_editToolStrip.Location.X + m_editToolStrip.Width + m_editToolStrip.Margin.Right + m_mapToolStrip.Margin.Left, m_editToolStrip.Location.Y);
+             */
+            ArrangeToolStripLayout();
         }
 
         private void OnFileNew(object sender, EventArgs eventArgs)
