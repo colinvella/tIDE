@@ -324,21 +324,32 @@ namespace TileMapEditor
             bool layerSelected = component != null && component is Layer;
 
             m_layerPropertiesMenuItem.Enabled
+                = m_layerPropertiesButton.Enabled
                 = m_layerDeleteMenuItem.Enabled
+                = m_layerDeleteButton.Enabled
                 = layerSelected;
 
             if (layerSelected)
             {
                 Layer layer = (Layer)component;
                 int layerIndex = m_map.Layers.IndexOf(layer);
-                m_layerBringForwardMenuItem.Enabled = layerIndex < m_map.Layers.Count - 1;
-                m_layerSendBackwardMenuItem.Enabled = layerIndex > 0;
+
+                m_layerBringForwardMenuItem.Enabled
+                    = m_layerBringForwardButton.Enabled
+                    = layerIndex < m_map.Layers.Count - 1;
+
+                m_layerSendBackwardMenuItem.Enabled
+                    = m_layerSendBackwardButton.Enabled
+                    = layerIndex > 0;
 
                 m_mapPanel.SelectedLayer = layer;
             }
             else
                 m_layerBringForwardMenuItem.Enabled
-                    = m_layerSendBackwardMenuItem.Enabled = false;
+                    = m_layerBringForwardButton.Enabled
+                    = m_layerSendBackwardMenuItem.Enabled
+                    = m_layerSendBackwardButton.Enabled
+                    = false;
 
 
             // enable/disable tile sheet menu items as applicable

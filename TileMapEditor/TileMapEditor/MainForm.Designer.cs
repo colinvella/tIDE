@@ -109,6 +109,12 @@
             this.m_mapPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_layerNewButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerPropertiesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_layerBringForwardButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerSendBackwardButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_layerDeleteButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
@@ -257,8 +263,8 @@
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_viewToolStrip);
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_layerToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_mapToolStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_layerToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_tileSheetToolStrip);
             // 
             // m_splitContainerLeftRight
@@ -848,9 +854,9 @@
             this.m_mapToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_mapPropertiesButton,
             m_mapToolStripSeparator1});
-            this.m_mapToolStrip.Location = new System.Drawing.Point(63, 74);
+            this.m_mapToolStrip.Location = new System.Drawing.Point(109, 74);
             this.m_mapToolStrip.Name = "m_mapToolStrip";
-            this.m_mapToolStrip.Size = new System.Drawing.Size(72, 25);
+            this.m_mapToolStrip.Size = new System.Drawing.Size(41, 25);
             this.m_mapToolStrip.TabIndex = 2;
             // 
             // m_mapPropertiesButton
@@ -867,10 +873,16 @@
             // 
             this.m_layerToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.m_layerToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_layerNewButton});
-            this.m_layerToolStrip.Location = new System.Drawing.Point(12, 74);
+            this.m_layerNewButton,
+            this.m_layerPropertiesButton,
+            this.m_layerToolStripSeparator1,
+            this.m_layerBringForwardButton,
+            this.m_layerSendBackwardButton,
+            this.m_layerToolStripSeparator2,
+            this.m_layerDeleteButton});
+            this.m_layerToolStrip.Location = new System.Drawing.Point(90, 99);
             this.m_layerToolStrip.Name = "m_layerToolStrip";
-            this.m_layerToolStrip.Size = new System.Drawing.Size(35, 25);
+            this.m_layerToolStrip.Size = new System.Drawing.Size(170, 25);
             this.m_layerToolStrip.TabIndex = 4;
             // 
             // m_layerNewButton
@@ -881,6 +893,62 @@
             this.m_layerNewButton.Name = "m_layerNewButton";
             this.m_layerNewButton.Size = new System.Drawing.Size(23, 22);
             this.m_layerNewButton.Text = "New layer";
+            this.m_layerNewButton.Click += new System.EventHandler(this.OnLayerNew);
+            // 
+            // m_layerPropertiesButton
+            // 
+            this.m_layerPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerPropertiesButton.Enabled = false;
+            this.m_layerPropertiesButton.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
+            this.m_layerPropertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_layerPropertiesButton.Name = "m_layerPropertiesButton";
+            this.m_layerPropertiesButton.Size = new System.Drawing.Size(23, 22);
+            this.m_layerPropertiesButton.Text = "Layer properties";
+            this.m_layerPropertiesButton.Click += new System.EventHandler(this.OnLayerProperties);
+            // 
+            // m_layerToolStripSeparator1
+            // 
+            this.m_layerToolStripSeparator1.Name = "m_layerToolStripSeparator1";
+            this.m_layerToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_layerBringForwardButton
+            // 
+            this.m_layerBringForwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerBringForwardButton.Enabled = false;
+            this.m_layerBringForwardButton.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
+            this.m_layerBringForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_layerBringForwardButton.Name = "m_layerBringForwardButton";
+            this.m_layerBringForwardButton.Size = new System.Drawing.Size(23, 22);
+            this.m_layerBringForwardButton.Text = "Bring forward";
+            this.m_layerBringForwardButton.Click += new System.EventHandler(this.OnLayerBringForward);
+            // 
+            // m_layerSendBackwardButton
+            // 
+            this.m_layerSendBackwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerSendBackwardButton.Enabled = false;
+            this.m_layerSendBackwardButton.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
+            this.m_layerSendBackwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_layerSendBackwardButton.Name = "m_layerSendBackwardButton";
+            this.m_layerSendBackwardButton.Size = new System.Drawing.Size(23, 22);
+            this.m_layerSendBackwardButton.Text = "toolStripButton1";
+            this.m_layerSendBackwardButton.ToolTipText = "Send backward";
+            this.m_layerSendBackwardButton.Click += new System.EventHandler(this.OnLayerSendBackward);
+            // 
+            // m_layerToolStripSeparator2
+            // 
+            this.m_layerToolStripSeparator2.Name = "m_layerToolStripSeparator2";
+            this.m_layerToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_layerDeleteButton
+            // 
+            this.m_layerDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerDeleteButton.Enabled = false;
+            this.m_layerDeleteButton.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
+            this.m_layerDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_layerDeleteButton.Name = "m_layerDeleteButton";
+            this.m_layerDeleteButton.Size = new System.Drawing.Size(23, 22);
+            this.m_layerDeleteButton.Text = "Delete layer";
+            this.m_layerDeleteButton.Click += new System.EventHandler(this.OnLayerDelete);
             // 
             // m_tileSheetToolStrip
             // 
@@ -1040,5 +1108,11 @@
         private System.Windows.Forms.ToolStrip m_viewToolStrip;
         private System.Windows.Forms.ToolStripButton m_viewZoomInButton;
         private System.Windows.Forms.ToolStripButton m_viewZoomOutButton;
+        private System.Windows.Forms.ToolStripButton m_layerPropertiesButton;
+        private System.Windows.Forms.ToolStripSeparator m_layerToolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton m_layerBringForwardButton;
+        private System.Windows.Forms.ToolStripButton m_layerSendBackwardButton;
+        private System.Windows.Forms.ToolStripSeparator m_layerToolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton m_layerDeleteButton;
     }
 }
