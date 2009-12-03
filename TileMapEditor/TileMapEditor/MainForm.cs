@@ -53,6 +53,16 @@ namespace TileMapEditor
             }
         }
 
+        private void UpdateZoomControls()
+        {
+            int zoom = m_mapPanel.Zoom;
+            foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
+                toolStripMenuItem.Checked = toolStripMenuItem.Tag.ToString() == zoom.ToString();
+
+            m_viewZoomInButton.Enabled = m_mapPanel.Zoom < 10;
+            m_viewZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
+        }
+
         private void MainForm_Load(object sender, EventArgs eventArgs)
         {
             m_map = new Map("Untitled map");
@@ -88,12 +98,6 @@ namespace TileMapEditor
             }
         }
 
-        private void OnMapProperties(object sender, EventArgs eventArgs)
-        {
-            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
-            mapPropertiesDialog.ShowDialog(this);
-        }
-
         private void OnViewZoom(object sender, EventArgs eventArgs)
         {
             ToolStripDropDownItem toolStripDropDownItem = (ToolStripDropDownItem)sender;
@@ -102,38 +106,31 @@ namespace TileMapEditor
             int zoom = int.Parse(toolStripDropDownItem.Tag.ToString());
             m_mapPanel.Zoom = zoom;
 
-            foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
-                toolStripMenuItem.Checked = toolStripMenuItem == toolStripDropDownItem;
-
-            m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
-            m_mapZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
+            UpdateZoomControls();
         }
 
-        private void UpdateZoomButtons()
-        {
-            int zoom = m_mapPanel.Zoom;
-            foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
-                toolStripMenuItem.Checked = toolStripMenuItem.Tag.ToString() == zoom.ToString();
-            m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
-            m_mapZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
-        }
-
-        private void m_mapZoomInButton_Click(object sender, EventArgs eventArgs)
+        private void OnViewZoomIn(object sender, EventArgs eventArgs)
         {
             if (m_mapPanel.Zoom == 10)
                 return;
 
             ++m_mapPanel.Zoom;
-            UpdateZoomButtons();
+            UpdateZoomControls();
         }
 
-        private void m_mapZoomOutButton_Click(object sender, EventArgs eventArgs)
+        private void OnViewZoomOut(object sender, EventArgs eventArgs)
         {
             if (m_mapPanel.Zoom == 1)
                 return;
 
             --m_mapPanel.Zoom;
-            UpdateZoomButtons();
+            UpdateZoomControls();
+        }
+
+        private void OnMapProperties(object sender, EventArgs eventArgs)
+        {
+            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
+            mapPropertiesDialog.ShowDialog(this);
         }
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
