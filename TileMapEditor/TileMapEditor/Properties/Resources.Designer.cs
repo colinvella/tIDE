@@ -67,9 +67,23 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditDropper {
+            get {
+                object obj = ResourceManager.GetObject("EditDropper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditRedo {
             get {
                 object obj = ResourceManager.GetObject("EditRedo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap EditTileBlock {
+            get {
+                object obj = ResourceManager.GetObject("EditTileBlock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

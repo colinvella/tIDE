@@ -192,6 +192,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit.png" />
+    <None Include="Resources\EditDropper.png" />
+    <None Include="Resources\EditTileBlock.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
