@@ -75,6 +75,9 @@ namespace Tiling
 
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
+            if (BeforeDraw != null)
+                BeforeDraw(new LayerEventArgs(m_map, mapViewPort));
+
             // determine internal tile offset
             Location tileInternalOffset = new Location(
                 mapViewPort.Location.X % m_tileSize.Width,
@@ -115,6 +118,8 @@ namespace Tiling
                 tileLocation.Y += m_tileSize.Height;
             }
 
+            if (AfterDraw != null)
+                AfterDraw(new LayerEventArgs(m_map, mapViewPort));
         }
 
         #endregion
@@ -164,5 +169,14 @@ namespace Tiling
         public TileArray Tiles { get { return m_tileArray; } }
 
         #endregion
+
+        #region Public Events
+
+        public event LayerEventHandler BeforeDraw;
+        public event LayerEventHandler AfterDraw;
+
+        #endregion
     }
+
+    public delegate void LayerEventHandler(LayerEventArgs layerEventArgs);
 }

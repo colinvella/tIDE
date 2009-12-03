@@ -55,6 +55,7 @@
     <Compile Include="Component.cs" />
     <Compile Include="DescribedComponent.cs" />
     <Compile Include="DisplayDevice.cs" />
+    <Compile Include="LayerEventArgs.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticTile.cs" />
