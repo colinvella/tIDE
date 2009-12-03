@@ -166,11 +166,11 @@ namespace TileMapEditor.Control
             UpdateScrollBars();
             BindLayerDrawEvents();
 
-            // no translucency until after selected layer
+            m_map.Draw(this, m_viewPort);
+
+            // reset translucency
             m_colorMatrix.Matrix33 = 1.0f;
             m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-
-            m_map.Draw(this, m_viewPort);
         }
 
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
