@@ -265,20 +265,21 @@ namespace TileMapEditor.Control
                 if (m_map == null)
                 {
                     m_selectedLayer = null;
+                    Invalidate(true);
                     return;
                 }
 
                 if (value == null)
                 {
                     m_selectedLayer = null;
-                    Invalidate();
+                    Invalidate(true);
                     return;
                 }
 
                 if (!m_map.Layers.Contains(value))
                     throw new Exception("The specified Layer is not contained in the Map");
                 m_selectedLayer = value;
-                Invalidate();
+                Invalidate(true);
             }
         }
 
