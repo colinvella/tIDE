@@ -160,17 +160,28 @@ namespace TileMapEditor.Control
         {
             m_graphics = paintEventArgs.Graphics;
 
-            if (m_map == null)
-                return;
+            if (m_map != null)
+            {
 
-            UpdateScrollBars();
-            BindLayerDrawEvents();
+                UpdateScrollBars();
+                BindLayerDrawEvents();
 
-            m_map.Draw(this, m_viewPort);
+                m_map.Draw(this, m_viewPort);
 
-            // reset translucency
-            m_colorMatrix.Matrix33 = 1.0f;
-            m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                // reset translucency
+                m_colorMatrix.Matrix33 = 1.0f;
+                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+            }
+
+            if (!Enabled)
+            {
+                m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(224, SystemColors.Control)), ClientRectangle);
+                SizeF stringSize = m_graphics.MeasureString("Add layers to this map", this.Font);
+                m_graphics.DrawString("Add layers to this map", this.Font, SystemBrushes.ControlDark,
+                    (ClientRectangle.Width - (int)stringSize.Width) / 2,
+                    (ClientRectangle.Height - (int)stringSize.Height) / 2);
+            }
         }
 
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)

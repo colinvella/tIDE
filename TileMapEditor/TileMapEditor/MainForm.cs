@@ -156,6 +156,7 @@ namespace TileMapEditor
                 layer.Tiles[2* i, i] = new StaticTile(layer, m_map.TileSheets[0], BlendMode.Alpha, i);
             // temp
 
+            m_mapPanel.Enabled = true;
             m_mapPanel.Invalidate(true);
         }
 
@@ -223,6 +224,9 @@ namespace TileMapEditor
             m_map.RemoveLayer(layer);
 
             m_mapTreeView.UpdateTree();
+
+            if (m_map.Layers.Count == 0)
+                m_mapPanel.Enabled = false;
         }
 
         private void OnTileSheetNew(object sender, EventArgs eventArgs)

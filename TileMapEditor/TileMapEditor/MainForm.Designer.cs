@@ -41,11 +41,8 @@
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
             System.Windows.Forms.ToolStripSeparator m_tileSheetSeparator1;
             System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
-            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
-            this.m_mapPanel = new TileMapEditor.Control.MapPanel();
             this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_editToolStrip = new System.Windows.Forms.ToolStrip();
@@ -121,6 +118,9 @@
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
+            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
+            this.m_mapPanel = new TileMapEditor.Control.MapPanel();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_mapToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -167,28 +167,6 @@
             m_splitContainerVertical.Size = new System.Drawing.Size(200, 413);
             m_splitContainerVertical.SplitterDistance = 189;
             m_splitContainerVertical.TabIndex = 1;
-            // 
-            // m_mapTreeView
-            // 
-            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
-            this.m_mapTreeView.Map = null;
-            this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.SelectedComponent = null;
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 189);
-            this.m_mapTreeView.TabIndex = 0;
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
-            // 
-            // m_tilePicker
-            // 
-            this.m_tilePicker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
-            this.m_tilePicker.Map = null;
-            this.m_tilePicker.Name = "m_tilePicker";
-            this.m_tilePicker.Size = new System.Drawing.Size(200, 220);
-            this.m_tilePicker.TabIndex = 0;
-            this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
             // 
             // m_mapToolStripSeparator1
             // 
@@ -241,18 +219,6 @@
             this.m_splitContainerLeftRight.SplitterDistance = 200;
             this.m_splitContainerLeftRight.TabIndex = 3;
             // 
-            // m_mapPanel
-            // 
-            this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
-            this.m_mapPanel.Map = null;
-            this.m_mapPanel.Name = "m_mapPanel";
-            this.m_mapPanel.SelectedLayer = null;
-            this.m_mapPanel.SelectedTileIndex = 0;
-            this.m_mapPanel.SelectedTileSheet = null;
-            this.m_mapPanel.Size = new System.Drawing.Size(576, 413);
-            this.m_mapPanel.TabIndex = 0;
-            // 
             // m_splitter
             // 
             this.m_splitter.Location = new System.Drawing.Point(0, 0);
@@ -297,7 +263,7 @@
             this.m_editPasteButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(262, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(231, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editToolStripSeparator1
@@ -1016,6 +982,41 @@
             this.m_tileSheetDeleteButton.Size = new System.Drawing.Size(23, 22);
             this.m_tileSheetDeleteButton.Text = "Delete tile sheet";
             this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
+            // 
+            // m_mapTreeView
+            // 
+            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_mapTreeView.Map = null;
+            this.m_mapTreeView.Name = "m_mapTreeView";
+            this.m_mapTreeView.SelectedComponent = null;
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 189);
+            this.m_mapTreeView.TabIndex = 0;
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            // 
+            // m_tilePicker
+            // 
+            this.m_tilePicker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
+            this.m_tilePicker.Map = null;
+            this.m_tilePicker.Name = "m_tilePicker";
+            this.m_tilePicker.Size = new System.Drawing.Size(200, 220);
+            this.m_tilePicker.TabIndex = 0;
+            this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
+            // 
+            // m_mapPanel
+            // 
+            this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapPanel.Enabled = false;
+            this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_mapPanel.Map = null;
+            this.m_mapPanel.Name = "m_mapPanel";
+            this.m_mapPanel.SelectedLayer = null;
+            this.m_mapPanel.SelectedTileIndex = 0;
+            this.m_mapPanel.SelectedTileSheet = null;
+            this.m_mapPanel.Size = new System.Drawing.Size(576, 413);
+            this.m_mapPanel.TabIndex = 0;
             // 
             // MainForm
             // 
