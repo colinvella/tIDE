@@ -21,6 +21,7 @@ namespace TileMapEditor.Control
         private Layer m_selectedLayer;
         private TileSheet m_selectedTileSheet;
         private int m_selectedTileIndex;
+        private EditTool m_editTool;
 
         private Graphics m_graphics;
         private Dictionary<TileSheet, Bitmap> m_tileSheetBitmaps;
@@ -29,6 +30,7 @@ namespace TileMapEditor.Control
         private Brush m_veilBrush;
         private ImageAttributes m_imageAttributes;
         private ColorMatrix m_colorMatrix;
+        private Cursor m_singleTileCursor;
 
         private bool m_bMouseDown;
 
@@ -135,6 +137,8 @@ namespace TileMapEditor.Control
             System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
             m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1)/ m_zoom;
             m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+
+            UpdateScrollBars();
         }
 
         private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
@@ -210,10 +214,14 @@ namespace TileMapEditor.Control
         {
             InitializeComponent();
 
+            m_singleTileCursor = new Cursor(new System.IO.MemoryStream(Properties.Resources.EditSingleTileCursor));
+
             m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
             m_zoom = 1;
+            m_editTool = EditTool.SingleTile;
+            m_innerPanel.Cursor = m_singleTileCursor;
 
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
             m_imageAttributes = new ImageAttributes();
@@ -340,6 +348,14 @@ namespace TileMapEditor.Control
             }
         }
 
+        [Description("The current editing tool"),
+         Category("Behavior"), DefaultValue(EditTool.TileBlock)]
+        public EditTool EditTool
+        {
+            get { return m_editTool; }
+            set { m_editTool = value; }
+        }
+
         public TileSheet SelectedTileSheet
         {
             get { return m_selectedTileSheet; }
@@ -353,5 +369,13 @@ namespace TileMapEditor.Control
         }
 
         #endregion
+    }
+
+    public enum EditTool
+    {
+        SingleTile,
+        TileBlock,
+        Eraser,
+        Dropper
     }
 }

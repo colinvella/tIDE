@@ -88,6 +88,20 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditSingleTile {
+            get {
+                object obj = ResourceManager.GetObject("EditSingleTile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] EditSingleTileCursor {
+            get {
+                object obj = ResourceManager.GetObject("EditSingleTileCursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditTileBlock {
             get {
                 object obj = ResourceManager.GetObject("EditTileBlock", resourceCulture);

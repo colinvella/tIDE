@@ -263,7 +263,7 @@
             this.m_editPasteButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(231, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(262, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editToolStripSeparator1
@@ -784,7 +784,7 @@
             this.m_editSingleTileButton.Checked = true;
             this.m_editSingleTileButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_editSingleTileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editSingleTileButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editSingleTileButton.Image")));
+            this.m_editSingleTileButton.Image = global::TileMapEditor.Properties.Resources.EditSingleTile;
             this.m_editSingleTileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editSingleTileButton.Name = "m_editSingleTileButton";
             this.m_editSingleTileButton.Size = new System.Drawing.Size(23, 22);
@@ -1008,6 +1008,7 @@
             // m_mapPanel
             // 
             this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapPanel.EditTool = TileMapEditor.Control.EditTool.SingleTile;
             this.m_mapPanel.Enabled = false;
             this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
             this.m_mapPanel.Map = null;
