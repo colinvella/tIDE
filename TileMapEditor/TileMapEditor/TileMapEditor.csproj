@@ -196,7 +196,10 @@
     <None Include="Resources\EditTileBlock.png" />
     <None Include="Resources\EditEraser.png" />
     <None Include="Resources\EditSingleTile.png" />
+    <Content Include="Resources\EditDropperCursor.cur" />
+    <Content Include="Resources\EditEraserCursor.cur" />
     <Content Include="Resources\EditSingleTileCursor.cur" />
+    <Content Include="Resources\EditTileBlockCursor.cur" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
