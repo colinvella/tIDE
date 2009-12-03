@@ -248,5 +248,19 @@ namespace TileMapEditor.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap ViewZoomIn {
+            get {
+                object obj = ResourceManager.GetObject("ViewZoomIn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ViewZoomOut {
+            get {
+                object obj = ResourceManager.GetObject("ViewZoomOut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

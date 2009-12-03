@@ -34,13 +34,13 @@
             System.Windows.Forms.ToolStripSeparator m_fileSeparator1;
             System.Windows.Forms.ToolStripSeparator m_fileSeparator2;
             System.Windows.Forms.ToolStripSeparator m_editMenuSeparator1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ToolStripSeparator m_editMenuSeparator2;
             System.Windows.Forms.ToolStripSeparator m_mapSeperator1;
             System.Windows.Forms.ToolStripSeparator m_LayerSeparator1;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
             System.Windows.Forms.ToolStripSeparator m_tileSheetSeparator1;
             System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Control.TilePicker();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
@@ -48,6 +48,13 @@
             this.m_mapPanel = new TileMapEditor.Control.MapPanel();
             this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
+            this.m_viewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_editToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_editToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_mapToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_tileSheetToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +68,6 @@
             this.m_editCopyMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editPasteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editSelectAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_viewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewZoomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewZoomBy1MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewZoomBy2MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +79,8 @@
             this.m_viewZoomBy8MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewZoomBy9MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewZoomBy10MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewZoomInMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewZoomOutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,23 +98,17 @@
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_editToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_editSingleTileButton = new System.Windows.Forms.ToolStripButton();
             this.m_editTileBlockButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editUndoButton = new System.Windows.Forms.ToolStripButton();
             this.m_editRedoButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_mapToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_mapPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapZoomInButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapZoomOutButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_layerNewButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
@@ -188,51 +190,6 @@
             m_tileSheetToolStripSeparator1.Name = "m_tileSheetToolStripSeparator1";
             m_tileSheetToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // m_fileSeparator1
-            // 
-            m_fileSeparator1.Name = "m_fileSeparator1";
-            m_fileSeparator1.Size = new System.Drawing.Size(143, 6);
-            // 
-            // m_fileSeparator2
-            // 
-            m_fileSeparator2.Name = "m_fileSeparator2";
-            m_fileSeparator2.Size = new System.Drawing.Size(143, 6);
-            // 
-            // m_editMenuSeparator1
-            // 
-            m_editMenuSeparator1.Name = "m_editMenuSeparator1";
-            m_editMenuSeparator1.Size = new System.Drawing.Size(141, 6);
-            // 
-            // m_editMenuSeparator2
-            // 
-            m_editMenuSeparator2.Name = "m_editMenuSeparator2";
-            m_editMenuSeparator2.Size = new System.Drawing.Size(141, 6);
-            // 
-            // m_mapSeperator1
-            // 
-            m_mapSeperator1.Name = "m_mapSeperator1";
-            m_mapSeperator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // m_LayerSeparator1
-            // 
-            m_LayerSeparator1.Name = "m_LayerSeparator1";
-            m_LayerSeparator1.Size = new System.Drawing.Size(151, 6);
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new System.Drawing.Size(151, 6);
-            // 
-            // m_tileSheetSeparator1
-            // 
-            m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
-            m_tileSheetSeparator1.Size = new System.Drawing.Size(133, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
-            // 
             // m_toolStripContainer
             // 
             // 
@@ -312,6 +269,80 @@
             this.m_menuStrip.TabIndex = 0;
             this.m_menuStrip.Text = "Menu Strip";
             // 
+            // m_viewMenuItem
+            // 
+            this.m_viewMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_viewZoomMenuItem,
+            this.m_viewZoomInMenuItem,
+            this.m_viewZoomOutMenuItem});
+            this.m_viewMenuItem.Name = "m_viewMenuItem";
+            this.m_viewMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.m_viewMenuItem.Text = "&View";
+            // 
+            // m_editToolStrip
+            // 
+            this.m_editToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.m_editToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_editSingleTileButton,
+            this.m_editTileBlockButton,
+            this.m_editToolStripSeparator1,
+            this.m_editUndoButton,
+            this.m_editRedoButton,
+            this.m_editToolStripSeparator2,
+            this.m_editCutButton,
+            this.m_editCopyButton,
+            this.m_editPasteButton});
+            this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
+            this.m_editToolStrip.Name = "m_editToolStrip";
+            this.m_editToolStrip.Size = new System.Drawing.Size(185, 25);
+            this.m_editToolStrip.TabIndex = 1;
+            // 
+            // m_editToolStripSeparator1
+            // 
+            this.m_editToolStripSeparator1.Name = "m_editToolStripSeparator1";
+            this.m_editToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_editToolStripSeparator2
+            // 
+            this.m_editToolStripSeparator2.Name = "m_editToolStripSeparator2";
+            this.m_editToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_mapToolStrip
+            // 
+            this.m_mapToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.m_mapToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_mapPropertiesButton,
+            m_mapToolStripSeparator1,
+            this.m_mapZoomInButton,
+            this.m_mapZoomOutButton});
+            this.m_mapToolStrip.Location = new System.Drawing.Point(10, 49);
+            this.m_mapToolStrip.Name = "m_mapToolStrip";
+            this.m_mapToolStrip.Size = new System.Drawing.Size(118, 25);
+            this.m_mapToolStrip.TabIndex = 2;
+            // 
+            // m_layerToolStrip
+            // 
+            this.m_layerToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.m_layerToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_layerNewButton});
+            this.m_layerToolStrip.Location = new System.Drawing.Point(9, 74);
+            this.m_layerToolStrip.Name = "m_layerToolStrip";
+            this.m_layerToolStrip.Size = new System.Drawing.Size(35, 25);
+            this.m_layerToolStrip.TabIndex = 4;
+            // 
+            // m_tileSheetToolStrip
+            // 
+            this.m_tileSheetToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.m_tileSheetToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_tileSheetNewButton,
+            this.m_tileSheetPropertiesButton,
+            m_tileSheetToolStripSeparator1,
+            this.m_tileSheetDeleteButton});
+            this.m_tileSheetToolStrip.Location = new System.Drawing.Point(3, 99);
+            this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
+            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(87, 25);
+            this.m_tileSheetToolStrip.TabIndex = 3;
+            // 
             // m_fileMenuItem
             // 
             this.m_fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -346,6 +377,11 @@
             this.m_fileOpenMenuItem.Size = new System.Drawing.Size(146, 22);
             this.m_fileOpenMenuItem.Text = "&Open";
             // 
+            // m_fileSeparator1
+            // 
+            m_fileSeparator1.Name = "m_fileSeparator1";
+            m_fileSeparator1.Size = new System.Drawing.Size(143, 6);
+            // 
             // m_fileSaveMenuItem
             // 
             this.m_fileSaveMenuItem.Image = global::TileMapEditor.Properties.Resources.FileSave;
@@ -361,6 +397,11 @@
             this.m_fileSaveAsMenuItem.Name = "m_fileSaveAsMenuItem";
             this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(146, 22);
             this.m_fileSaveAsMenuItem.Text = "Save &As";
+            // 
+            // m_fileSeparator2
+            // 
+            m_fileSeparator2.Name = "m_fileSeparator2";
+            m_fileSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -400,6 +441,11 @@
             this.m_editRedoMenuItem.Size = new System.Drawing.Size(144, 22);
             this.m_editRedoMenuItem.Text = "&Redo";
             // 
+            // m_editMenuSeparator1
+            // 
+            m_editMenuSeparator1.Name = "m_editMenuSeparator1";
+            m_editMenuSeparator1.Size = new System.Drawing.Size(141, 6);
+            // 
             // m_editCutMenuItem
             // 
             this.m_editCutMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("m_editCutMenuItem.Image")));
@@ -427,19 +473,16 @@
             this.m_editPasteMenuItem.Size = new System.Drawing.Size(144, 22);
             this.m_editPasteMenuItem.Text = "&Paste";
             // 
+            // m_editMenuSeparator2
+            // 
+            m_editMenuSeparator2.Name = "m_editMenuSeparator2";
+            m_editMenuSeparator2.Size = new System.Drawing.Size(141, 6);
+            // 
             // m_editSelectAllMenuItem
             // 
             this.m_editSelectAllMenuItem.Name = "m_editSelectAllMenuItem";
             this.m_editSelectAllMenuItem.Size = new System.Drawing.Size(144, 22);
             this.m_editSelectAllMenuItem.Text = "Select &All";
-            // 
-            // m_viewMenuItem
-            // 
-            this.m_viewMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_viewZoomMenuItem});
-            this.m_viewMenuItem.Name = "m_viewMenuItem";
-            this.m_viewMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.m_viewMenuItem.Text = "&View";
             // 
             // m_viewZoomMenuItem
             // 
@@ -462,7 +505,7 @@
             // m_viewZoomBy1MenuItem
             // 
             this.m_viewZoomBy1MenuItem.Name = "m_viewZoomBy1MenuItem";
-            this.m_viewZoomBy1MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy1MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy1MenuItem.Tag = "1";
             this.m_viewZoomBy1MenuItem.Text = "To Scale";
             this.m_viewZoomBy1MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -470,7 +513,7 @@
             // m_viewZoomBy2MenuItem
             // 
             this.m_viewZoomBy2MenuItem.Name = "m_viewZoomBy2MenuItem";
-            this.m_viewZoomBy2MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy2MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy2MenuItem.Tag = "2";
             this.m_viewZoomBy2MenuItem.Text = "x 2";
             this.m_viewZoomBy2MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -478,7 +521,7 @@
             // m_viewZoomBy3MenuItem
             // 
             this.m_viewZoomBy3MenuItem.Name = "m_viewZoomBy3MenuItem";
-            this.m_viewZoomBy3MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy3MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy3MenuItem.Tag = "3";
             this.m_viewZoomBy3MenuItem.Text = "x 3";
             this.m_viewZoomBy3MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -486,7 +529,7 @@
             // m_viewZoomBy4MenuItem
             // 
             this.m_viewZoomBy4MenuItem.Name = "m_viewZoomBy4MenuItem";
-            this.m_viewZoomBy4MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy4MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy4MenuItem.Tag = "4";
             this.m_viewZoomBy4MenuItem.Text = "x 4";
             this.m_viewZoomBy4MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -494,7 +537,7 @@
             // m_viewZoomBy5MenuItem
             // 
             this.m_viewZoomBy5MenuItem.Name = "m_viewZoomBy5MenuItem";
-            this.m_viewZoomBy5MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy5MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy5MenuItem.Tag = "5";
             this.m_viewZoomBy5MenuItem.Text = "x 5";
             this.m_viewZoomBy5MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -502,7 +545,7 @@
             // m_viewZoomBy6MenuItem
             // 
             this.m_viewZoomBy6MenuItem.Name = "m_viewZoomBy6MenuItem";
-            this.m_viewZoomBy6MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy6MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy6MenuItem.Tag = "6";
             this.m_viewZoomBy6MenuItem.Text = "x 6";
             this.m_viewZoomBy6MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -510,7 +553,7 @@
             // m_viewZoomBy7MenuItem
             // 
             this.m_viewZoomBy7MenuItem.Name = "m_viewZoomBy7MenuItem";
-            this.m_viewZoomBy7MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy7MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy7MenuItem.Tag = "7";
             this.m_viewZoomBy7MenuItem.Text = "x 7";
             this.m_viewZoomBy7MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -518,7 +561,7 @@
             // m_viewZoomBy8MenuItem
             // 
             this.m_viewZoomBy8MenuItem.Name = "m_viewZoomBy8MenuItem";
-            this.m_viewZoomBy8MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy8MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy8MenuItem.Tag = "8";
             this.m_viewZoomBy8MenuItem.Text = "x 8";
             this.m_viewZoomBy8MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -526,7 +569,7 @@
             // m_viewZoomBy9MenuItem
             // 
             this.m_viewZoomBy9MenuItem.Name = "m_viewZoomBy9MenuItem";
-            this.m_viewZoomBy9MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy9MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy9MenuItem.Tag = "9";
             this.m_viewZoomBy9MenuItem.Text = "x 9";
             this.m_viewZoomBy9MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -534,10 +577,24 @@
             // m_viewZoomBy10MenuItem
             // 
             this.m_viewZoomBy10MenuItem.Name = "m_viewZoomBy10MenuItem";
-            this.m_viewZoomBy10MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomBy10MenuItem.Size = new System.Drawing.Size(118, 22);
             this.m_viewZoomBy10MenuItem.Tag = "10";
             this.m_viewZoomBy10MenuItem.Text = "x 10";
             this.m_viewZoomBy10MenuItem.Click += new System.EventHandler(this.OnViewZoom);
+            // 
+            // m_viewZoomInMenuItem
+            // 
+            this.m_viewZoomInMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
+            this.m_viewZoomInMenuItem.Name = "m_viewZoomInMenuItem";
+            this.m_viewZoomInMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomInMenuItem.Text = "Zoom In";
+            // 
+            // m_viewZoomOutMenuItem
+            // 
+            this.m_viewZoomOutMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
+            this.m_viewZoomOutMenuItem.Name = "m_viewZoomOutMenuItem";
+            this.m_viewZoomOutMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewZoomOutMenuItem.Text = "Zoom Out";
             // 
             // m_mapMenuItem
             // 
@@ -556,6 +613,11 @@
             this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_mapPropertiesMenuItem.Text = "Properties...";
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
+            // 
+            // m_mapSeperator1
+            // 
+            m_mapSeperator1.Name = "m_mapSeperator1";
+            m_mapSeperator1.Size = new System.Drawing.Size(149, 6);
             // 
             // m_layerMenuItem
             // 
@@ -589,6 +651,11 @@
             this.m_layerPropertiesMenuItem.Text = "Properties...";
             this.m_layerPropertiesMenuItem.Click += new System.EventHandler(this.OnLayerProperties);
             // 
+            // m_LayerSeparator1
+            // 
+            m_LayerSeparator1.Name = "m_LayerSeparator1";
+            m_LayerSeparator1.Size = new System.Drawing.Size(151, 6);
+            // 
             // m_layerBringForwardMenuItem
             // 
             this.m_layerBringForwardMenuItem.Enabled = false;
@@ -606,6 +673,11 @@
             this.m_layerSendBackwardMenuItem.Size = new System.Drawing.Size(154, 22);
             this.m_layerSendBackwardMenuItem.Text = "Send Backward";
             this.m_layerSendBackwardMenuItem.Click += new System.EventHandler(this.OnLayerSendBackward);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new System.Drawing.Size(151, 6);
             // 
             // m_layerDeleteMenuItem
             // 
@@ -644,6 +716,11 @@
             this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_tileSheetPropertiesMenuItem.Text = "Properties...";
             this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
+            // 
+            // m_tileSheetSeparator1
+            // 
+            m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
+            m_tileSheetSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // m_tileSheetDeleteMenuItem
             // 
@@ -685,30 +762,17 @@
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
+            // toolStripSeparator5
+            // 
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpAbout;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
-            // 
-            // m_editToolStrip
-            // 
-            this.m_editToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.m_editToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_editSingleTileButton,
-            this.m_editTileBlockButton,
-            this.m_editToolStripSeparator1,
-            this.m_editUndoButton,
-            this.m_editRedoButton,
-            this.m_editToolStripSeparator2,
-            this.m_editCutButton,
-            this.m_editCopyButton,
-            this.m_editPasteButton});
-            this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
-            this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(185, 25);
-            this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editSingleTileButton
             // 
@@ -733,11 +797,6 @@
             this.m_editTileBlockButton.Text = "Draw a block of tiles";
             this.m_editTileBlockButton.Click += new System.EventHandler(this.OnTileBlockTool);
             // 
-            // m_editToolStripSeparator1
-            // 
-            this.m_editToolStripSeparator1.Name = "m_editToolStripSeparator1";
-            this.m_editToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // m_editUndoButton
             // 
             this.m_editUndoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -755,11 +814,6 @@
             this.m_editRedoButton.Name = "m_editRedoButton";
             this.m_editRedoButton.Size = new System.Drawing.Size(23, 22);
             this.m_editRedoButton.Text = "Redo last change";
-            // 
-            // m_editToolStripSeparator2
-            // 
-            this.m_editToolStripSeparator2.Name = "m_editToolStripSeparator2";
-            this.m_editToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // m_editCutButton
             // 
@@ -788,19 +842,6 @@
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
             // 
-            // m_mapToolStrip
-            // 
-            this.m_mapToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.m_mapToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_mapPropertiesButton,
-            m_mapToolStripSeparator1,
-            this.m_mapZoomInButton,
-            this.m_mapZoomOutButton});
-            this.m_mapToolStrip.Location = new System.Drawing.Point(10, 49);
-            this.m_mapToolStrip.Name = "m_mapToolStrip";
-            this.m_mapToolStrip.Size = new System.Drawing.Size(87, 25);
-            this.m_mapToolStrip.TabIndex = 2;
-            // 
             // m_mapPropertiesButton
             // 
             this.m_mapPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -814,7 +855,7 @@
             // m_mapZoomInButton
             // 
             this.m_mapZoomInButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_mapZoomInButton.Image = global::TileMapEditor.Properties.Resources.MapZoomIn;
+            this.m_mapZoomInButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
             this.m_mapZoomInButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_mapZoomInButton.Name = "m_mapZoomInButton";
             this.m_mapZoomInButton.Size = new System.Drawing.Size(23, 22);
@@ -825,22 +866,12 @@
             // 
             this.m_mapZoomOutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.m_mapZoomOutButton.Enabled = false;
-            this.m_mapZoomOutButton.Image = global::TileMapEditor.Properties.Resources.MapZoomOut;
+            this.m_mapZoomOutButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
             this.m_mapZoomOutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_mapZoomOutButton.Name = "m_mapZoomOutButton";
             this.m_mapZoomOutButton.Size = new System.Drawing.Size(23, 22);
             this.m_mapZoomOutButton.Text = "Zoom out";
             this.m_mapZoomOutButton.Click += new System.EventHandler(this.m_mapZoomOutButton_Click);
-            // 
-            // m_layerToolStrip
-            // 
-            this.m_layerToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.m_layerToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_layerNewButton});
-            this.m_layerToolStrip.Location = new System.Drawing.Point(9, 74);
-            this.m_layerToolStrip.Name = "m_layerToolStrip";
-            this.m_layerToolStrip.Size = new System.Drawing.Size(35, 25);
-            this.m_layerToolStrip.TabIndex = 4;
             // 
             // m_layerNewButton
             // 
@@ -850,19 +881,6 @@
             this.m_layerNewButton.Name = "m_layerNewButton";
             this.m_layerNewButton.Size = new System.Drawing.Size(23, 22);
             this.m_layerNewButton.Text = "New layer";
-            // 
-            // m_tileSheetToolStrip
-            // 
-            this.m_tileSheetToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.m_tileSheetToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_tileSheetNewButton,
-            this.m_tileSheetPropertiesButton,
-            m_tileSheetToolStripSeparator1,
-            this.m_tileSheetDeleteButton});
-            this.m_tileSheetToolStrip.Location = new System.Drawing.Point(3, 99);
-            this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
-            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(87, 25);
-            this.m_tileSheetToolStrip.TabIndex = 3;
             // 
             // m_tileSheetNewButton
             // 
@@ -1004,5 +1022,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_viewZoomBy8MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewZoomBy9MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewZoomBy10MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewZoomInMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewZoomOutMenuItem;
     }
 }
