@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,9 @@ namespace TileMapEditor.Control
         private Dictionary<TileSheet, Bitmap> m_tileSheetBitmaps;
         private Tiling.Rectangle m_viewPort;
         private int m_zoom;
+        private Brush m_veilBrush;
+        private ImageAttributes m_imageAttributes;
+        private ColorMatrix m_colorMatrix;
 
         private bool m_bMouseDown;
 
@@ -108,6 +112,9 @@ namespace TileMapEditor.Control
             {
                 layer.BeforeDraw -= OnBeforeLayerDraw;
                 layer.BeforeDraw += OnBeforeLayerDraw;
+
+                layer.AfterDraw -= OnAfterLayerDraw;
+                layer.AfterDraw += OnAfterLayerDraw;
             }
         }
 
@@ -132,10 +139,20 @@ namespace TileMapEditor.Control
 
         private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
         {
+            if (layerEventArgs.Layer == m_selectedLayer
+                && m_map.Layers.IndexOf(layerEventArgs.Layer) > 0)
+            {
+                m_graphics.FillRectangle(m_veilBrush, ClientRectangle);
+            }
+        }
+
+        private void OnAfterLayerDraw(LayerEventArgs layerEventArgs)
+        {
             if (layerEventArgs.Layer == m_selectedLayer)
             {
-                m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(128, Color.Black)),
-                    this.ClientRectangle);
+                // set translucency for upper layers
+                m_colorMatrix.Matrix33 = 0.25f;
+                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             }
         }
 
@@ -148,6 +165,10 @@ namespace TileMapEditor.Control
 
             UpdateScrollBars();
             BindLayerDrawEvents();
+
+            // no translucency until after selected layer
+            m_colorMatrix.Matrix33 = 1.0f;
+            m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
             m_map.Draw(this, m_viewPort);
         }
@@ -181,7 +202,11 @@ namespace TileMapEditor.Control
             m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
-            m_zoom = 1;            
+            m_zoom = 1;
+
+            m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
+            m_imageAttributes = new ImageAttributes();
+            m_colorMatrix = new ColorMatrix();
         }
 
         public void LoadTileSheet(TileSheet tileSheet)
@@ -221,10 +246,13 @@ namespace TileMapEditor.Control
 
             Tiling.Rectangle imageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
             Bitmap bitmap = m_tileSheetBitmaps[tile.TileSheet];
-            System.Drawing.Rectangle imageBoundsGDIP = new System.Drawing.Rectangle(
-                imageBounds.Location.X, imageBounds.Location.Y,
-                imageBounds.Size.Width, imageBounds.Size.Height);
-            m_graphics.DrawImage(bitmap, location.X, location.Y, imageBoundsGDIP, GraphicsUnit.Pixel);
+
+            System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
+                location.X, location.Y, imageBounds.Size.Width, imageBounds.Size.Height);
+
+            m_graphics.DrawImage(bitmap,destRect,
+                imageBounds.Location.X, imageBounds.Location.Y, imageBounds.Size.Width, imageBounds.Size.Height,
+                GraphicsUnit.Pixel, m_imageAttributes);
         }
 
         public void EndScene()
