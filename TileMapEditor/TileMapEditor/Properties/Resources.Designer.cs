@@ -193,27 +193,6 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap MapZoom {
-            get {
-                object obj = ResourceManager.GetObject("MapZoom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MapZoomIn {
-            get {
-                object obj = ResourceManager.GetObject("MapZoomIn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MapZoomOut {
-            get {
-                object obj = ResourceManager.GetObject("MapZoomOut", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap TileSheet {
             get {
                 object obj = ResourceManager.GetObject("TileSheet", resourceCulture);

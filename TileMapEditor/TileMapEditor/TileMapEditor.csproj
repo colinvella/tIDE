@@ -199,9 +199,6 @@
     <None Include="Resources\LayerBringForward.png" />
     <None Include="Resources\LayerSendBackward.png" />
     <None Include="Resources\ImageBackground.png" />
-    <None Include="Resources\MapZoom.png" />
-    <None Include="Resources\MapZoomIn.png" />
-    <None Include="Resources\MapZoomOut.png" />
     <None Include="Resources\ViewZoom.png" />
     <None Include="Resources\ViewZoomIn.png" />
     <None Include="Resources\ViewZoomOut.png" />
