@@ -74,6 +74,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditEraser {
+            get {
+                object obj = ResourceManager.GetObject("EditEraser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditRedo {
             get {
                 object obj = ResourceManager.GetObject("EditRedo", resourceCulture);

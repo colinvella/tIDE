@@ -194,6 +194,7 @@
     <None Include="Resources\Edit.png" />
     <None Include="Resources\EditDropper.png" />
     <None Include="Resources\EditTileBlock.png" />
+    <None Include="Resources\EditEraser.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
