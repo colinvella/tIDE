@@ -7,16 +7,16 @@ namespace Tiling
 {
     public class LayerEventArgs
     {
-        private Map m_map;
+        private Layer m_layer;
         private Rectangle m_viewPort;
 
-        public LayerEventArgs(Map map, Rectangle viewPort)
+        public LayerEventArgs(Layer layer, Rectangle viewPort)
         {
-            m_map = map;
+            m_layer = layer;
             m_viewPort = viewPort;
         }
 
-        public Map Map { get { return m_map; } }
+        public Layer Layer { get { return m_layer; } }
 
         public Rectangle ViewPort { get { return m_viewPort; } }
     }

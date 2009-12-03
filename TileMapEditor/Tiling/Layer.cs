@@ -76,7 +76,7 @@ namespace Tiling
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             if (BeforeDraw != null)
-                BeforeDraw(new LayerEventArgs(m_map, mapViewPort));
+                BeforeDraw(new LayerEventArgs(this, mapViewPort));
 
             // determine internal tile offset
             Location tileInternalOffset = new Location(
@@ -119,7 +119,7 @@ namespace Tiling
             }
 
             if (AfterDraw != null)
-                AfterDraw(new LayerEventArgs(m_map, mapViewPort));
+                AfterDraw(new LayerEventArgs(this, mapViewPort));
         }
 
         #endregion

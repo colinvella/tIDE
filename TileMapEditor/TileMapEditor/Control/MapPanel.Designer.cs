@@ -40,7 +40,7 @@
             this.m_verticalScrollBar.Name = "m_verticalScrollBar";
             this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 240);
             this.m_verticalScrollBar.TabIndex = 0;
-            this.m_verticalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.m_verticalScrollBar_Scroll);
+            this.m_verticalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnVerticalScroll);
             // 
             // m_horizontalScrollBar
             // 
@@ -49,19 +49,20 @@
             this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
             this.m_horizontalScrollBar.Size = new System.Drawing.Size(303, 17);
             this.m_horizontalScrollBar.TabIndex = 1;
-            this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.m_horizontalScrollBar_Scroll);
+            this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnHorizontalScroll);
             // 
             // m_innerPanel
             // 
+            this.m_innerPanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_innerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_innerPanel.Location = new System.Drawing.Point(0, 0);
             this.m_innerPanel.Name = "m_innerPanel";
             this.m_innerPanel.Size = new System.Drawing.Size(303, 223);
             this.m_innerPanel.TabIndex = 2;
-            this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.m_innerPanel_Paint);
+            this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnMapPaint);
             this.m_innerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
             this.m_innerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
-            this.m_innerPanel.Resize += new System.EventHandler(this.m_innerPanel_Resize);
+            this.m_innerPanel.Resize += new System.EventHandler(this.OnResizeDisplay);
             this.m_innerPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
             // 
             // MapPanel

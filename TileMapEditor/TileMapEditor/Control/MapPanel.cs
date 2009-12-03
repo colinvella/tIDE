@@ -99,26 +99,47 @@ namespace TileMapEditor.Control
             }
         }
 
-        private void m_horizontalScrollBar_Scroll(object sender, ScrollEventArgs scrollEventArgs)
+        private void BindLayerDrawEvents()
+        {
+            if (m_map == null)
+                return;
+
+            foreach (Layer layer in m_map.Layers)
+            {
+                layer.BeforeDraw -= OnBeforeLayerDraw;
+                layer.BeforeDraw += OnBeforeLayerDraw;
+            }
+        }
+
+        private void OnHorizontalScroll(object sender, ScrollEventArgs scrollEventArgs)
         {
             m_viewPort.Location.X = scrollEventArgs.NewValue;
             m_innerPanel.Invalidate();
         }
 
-        private void m_verticalScrollBar_Scroll(object sender, ScrollEventArgs scrollEventArgs)
+        private void OnVerticalScroll(object sender, ScrollEventArgs scrollEventArgs)
         {
             m_viewPort.Location.Y = scrollEventArgs.NewValue;
             m_innerPanel.Invalidate();
         }
 
-        private void m_innerPanel_Resize(object sender, EventArgs e)
+        private void OnResizeDisplay(object sender, EventArgs e)
         {
             System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
             m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1)/ m_zoom;
             m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
         }
 
-        private void m_innerPanel_Paint(object sender, PaintEventArgs paintEventArgs)
+        private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
+        {
+            if (layerEventArgs.Layer == m_selectedLayer)
+            {
+                m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(128, Color.Black)),
+                    this.ClientRectangle);
+            }
+        }
+
+        private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
         {
             m_graphics = paintEventArgs.Graphics;
 
@@ -126,6 +147,7 @@ namespace TileMapEditor.Control
                 return;
 
             UpdateScrollBars();
+            BindLayerDrawEvents();
 
             m_map.Draw(this, m_viewPort);
         }
@@ -159,7 +181,7 @@ namespace TileMapEditor.Control
             m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
-            m_zoom = 1;
+            m_zoom = 1;            
         }
 
         public void LoadTileSheet(TileSheet tileSheet)
