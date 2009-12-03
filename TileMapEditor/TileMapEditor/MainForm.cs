@@ -376,25 +376,5 @@ namespace TileMapEditor
         }
 
         #endregion
-
-        private void m_layerPropertiesButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_layerBringForwardButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_layerSendBackwardButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_layerDeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
