@@ -202,6 +202,7 @@
     <None Include="Resources\MapZoom.png" />
     <None Include="Resources\MapZoomIn.png" />
     <None Include="Resources\MapZoomOut.png" />
+    <None Include="Resources\ViewZoom.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

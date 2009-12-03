@@ -94,7 +94,7 @@ namespace TileMapEditor
             mapPropertiesDialog.ShowDialog(this);
         }
 
-        private void OnMapZoom(object sender, EventArgs eventArgs)
+        private void OnViewZoom(object sender, EventArgs eventArgs)
         {
             ToolStripDropDownItem toolStripDropDownItem = (ToolStripDropDownItem)sender;
             if (toolStripDropDownItem.Tag == null)
@@ -102,7 +102,7 @@ namespace TileMapEditor
             int zoom = int.Parse(toolStripDropDownItem.Tag.ToString());
             m_mapPanel.Zoom = zoom;
 
-            foreach (ToolStripMenuItem toolStripMenuItem in m_mapZoomMenuItem.DropDownItems)
+            foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
                 toolStripMenuItem.Checked = toolStripMenuItem == toolStripDropDownItem;
 
             m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
@@ -112,7 +112,7 @@ namespace TileMapEditor
         private void UpdateZoomButtons()
         {
             int zoom = m_mapPanel.Zoom;
-            foreach (ToolStripMenuItem toolStripMenuItem in m_mapZoomMenuItem.DropDownItems)
+            foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
                 toolStripMenuItem.Checked = toolStripMenuItem.Tag.ToString() == zoom.ToString();
             m_mapZoomInButton.Enabled = m_mapPanel.Zoom < 10;
             m_mapZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
