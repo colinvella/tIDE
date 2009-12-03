@@ -63,13 +63,19 @@ namespace TileMapEditor.Control
 
             Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
 
-            if (m_selectedLayer.IsValidLocation(tileLocation))
-            {
-                m_selectedLayer.Tiles[tileLocation]
-                    = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
+            if (!m_selectedLayer.IsValidLocation(tileLocation))
+                return;
 
-                m_innerPanel.Invalidate();
-            }
+            Tile oldTile = m_selectedLayer.Tiles[tileLocation];
+
+            if (oldTile != null && oldTile.TileSheet == m_selectedTileSheet
+                && oldTile.TileIndex == m_selectedTileIndex)
+                return;
+
+            Tile newTile = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
+            m_selectedLayer.Tiles[tileLocation] = newTile;
+
+            m_innerPanel.Invalidate();        
         }
 
         private void UpdateScrollBars()
