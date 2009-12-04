@@ -32,21 +32,22 @@ namespace Tiling
 
             set
             {
-                if (value.TileSheet.TileSize != m_layer.TileSize)
-                    throw new Exception("Incompatible tile size");
-
                 if (x < 0 || x >= m_layer.LayerSize.Width
                     || y < 0 || y >= m_layer.LayerSize.Height)
                     throw new Exception("Tile indices out of bounds");
-
-                if (!(m_tileSheets.Contains(value.TileSheet)))
-                    throw new Exception("The tile contains an invalid TileSheet reference");
 
                 if (value == null)
                 {
                     m_tiles[x, y] = null;
                     return;
                 }
+
+                if (value.TileSheet.TileSize != m_layer.TileSize)
+                    throw new Exception("Incompatible tile size");
+
+
+                if (!(m_tileSheets.Contains(value.TileSheet)))
+                    throw new Exception("The tile contains an invalid TileSheet reference");
 
                 if (value.TileIndex < 0 || value.TileIndex >= value.TileSheet.TileCount)
                     throw new Exception("Invalid tile index");

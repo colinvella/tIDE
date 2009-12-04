@@ -310,16 +310,44 @@ namespace TileMapEditor
             m_mapPanel.SelectedTileIndex = tilePickerEventArgs.TileIndex;
         }
 
-        private void OnSingleTileTool(object sender, EventArgs eventArgs)
+        private void OnEditSingleTile(object sender, EventArgs eventArgs)
         {
             m_editSingleTileButton.Checked = true;
             m_editTileBlockButton.Checked = false;
+            m_editEraserButton.Checked = false;
+            m_editDropperButton.Checked = false;
+
+            m_mapPanel.EditTool = EditTool.SingleTile;
         }
 
-        private void OnTileBlockTool(object sender, EventArgs eventArgs)
+        private void OnEditTileBlock(object sender, EventArgs eventArgs)
         {
             m_editSingleTileButton.Checked = false;
             m_editTileBlockButton.Checked = true;
+            m_editEraserButton.Checked = false;
+            m_editDropperButton.Checked = false;
+
+            m_mapPanel.EditTool = EditTool.TileBlock;
+        }
+
+        private void OnEditEraser(object sender, EventArgs eventArgs)
+        {
+            m_editSingleTileButton.Checked = false;
+            m_editTileBlockButton.Checked = false;
+            m_editEraserButton.Checked = true;
+            m_editDropperButton.Checked = false;
+
+            m_mapPanel.EditTool = EditTool.Eraser;
+        }
+
+        private void OnEditDropper(object sender, EventArgs eventArgs)
+        {
+            m_editSingleTileButton.Checked = false;
+            m_editTileBlockButton.Checked = false;
+            m_editEraserButton.Checked = false;
+            m_editDropperButton.Checked = true;
+
+            m_mapPanel.EditTool = EditTool.Dropper;
         }
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)

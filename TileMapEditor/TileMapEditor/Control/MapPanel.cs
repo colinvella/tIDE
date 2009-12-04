@@ -42,28 +42,33 @@ namespace TileMapEditor.Control
 
         #region Private Methods
 
-        private void PlaceTile(MouseEventArgs mouseEventArgs)
+        private Location ConvertViewportOffsetToLayerLocation(Location viewPortOffset)
+        {
+            viewPortOffset.X /= m_zoom;
+            viewPortOffset.Y /= m_zoom;
+
+            Location layerLocation = m_viewPort.Location;
+
+            // scale due to parallax
+            layerLocation.X *= m_selectedLayer.DisplaySize.Width;
+            layerLocation.X /= m_map.DisplaySize.Width;
+            layerLocation.Y *= m_selectedLayer.DisplaySize.Height;
+            layerLocation.Y /= m_selectedLayer.DisplaySize.Height;
+
+            layerLocation += viewPortOffset;
+
+            return layerLocation;
+        }
+
+        private void DrawSingleTile(MouseEventArgs mouseEventArgs)
         {
             if (m_selectedLayer == null)
                 return;
             if (m_selectedTileIndex < 0)
                 return;
 
-            Location offset = new Location(
-                mouseEventArgs.Location.X,
-                mouseEventArgs.Location.Y);
-            offset.X /= m_zoom;
-            offset.Y /= m_zoom;
-
-            Location pixelLocation = m_viewPort.Location;
-
-            // scale due to parallax
-            pixelLocation.X *= m_selectedLayer.DisplaySize.Width;
-            pixelLocation.X /= m_map.DisplaySize.Width;
-            pixelLocation.Y *= m_selectedLayer.DisplaySize.Height;
-            pixelLocation.Y /= m_selectedLayer.DisplaySize.Height;
-
-            pixelLocation += offset;
+            Location pixelLocation = ConvertViewportOffsetToLayerLocation(
+                new Location(mouseEventArgs.X, mouseEventArgs.Y));
 
             Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
 
@@ -80,6 +85,26 @@ namespace TileMapEditor.Control
             m_selectedLayer.Tiles[tileLocation] = newTile;
 
             m_innerPanel.Invalidate();        
+        }
+
+        private void EraseTile(MouseEventArgs mouseEventArgs)
+        {
+            if (m_selectedLayer == null)
+                return;
+
+            Location pixelLocation = ConvertViewportOffsetToLayerLocation(
+                new Location(mouseEventArgs.X, mouseEventArgs.Y));
+
+            Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
+
+            if (!m_selectedLayer.IsValidLocation(tileLocation))
+                return;
+
+            if (m_selectedLayer.Tiles[tileLocation] != null)
+            {
+                m_selectedLayer.Tiles[tileLocation] = null;
+                m_innerPanel.Invalidate();
+            }
         }
 
         private void UpdateScrollBars()
@@ -202,13 +227,25 @@ namespace TileMapEditor.Control
         {
             m_bMouseDown = true;
             if (mouseEventArgs.Button == MouseButtons.Left)
-                PlaceTile(mouseEventArgs);
+            {
+                switch (m_editTool)
+                {
+                    case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
+                    case EditTool.Eraser: EraseTile(mouseEventArgs); break;
+                }
+            }
         }
 
         private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
             if (m_bMouseDown && mouseEventArgs.Button == MouseButtons.Left)
-                PlaceTile(mouseEventArgs);
+            {
+                switch (m_editTool)
+                {
+                    case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
+                    case EditTool.Eraser: EraseTile(mouseEventArgs); break;
+                }
+            }
         }
 
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
@@ -368,10 +405,10 @@ namespace TileMapEditor.Control
                 m_editTool = value;
                 switch (m_editTool)
                 {
-                    case EditTool.SingleTile: Cursor = m_singleTileCursor; break;
-                    case EditTool.TileBlock: Cursor = m_tileBlockCursor; break;
-                    case EditTool.Eraser: Cursor = m_eraserCursor; break;
-                    case EditTool.Dropper: Cursor = m_dropperCursor; break;
+                    case EditTool.SingleTile: m_innerPanel.Cursor = m_singleTileCursor; break;
+                    case EditTool.TileBlock: m_innerPanel.Cursor = m_tileBlockCursor; break;
+                    case EditTool.Eraser: m_innerPanel.Cursor = m_eraserCursor; break;
+                    case EditTool.Dropper: m_innerPanel.Cursor = m_dropperCursor; break;
                 }
             }
         }
