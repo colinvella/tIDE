@@ -63,7 +63,17 @@ namespace TileMapEditor
             m_viewZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
         }
 
-        private void MainForm_Load(object sender, EventArgs eventArgs)
+        private void UpdateEditToolButtons()
+        {
+            EditTool editTool = m_mapPanel.EditTool;
+
+            m_editSingleTileButton.Checked = editTool == EditTool.SingleTile;
+            m_editTileBlockButton.Checked = editTool == EditTool.TileBlock;
+            m_editEraserButton.Checked = editTool == EditTool.Eraser;
+            m_editDropperButton.Checked = editTool == EditTool.Dropper;
+        }
+
+        private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
             m_map = new Map("Untitled map");
 
@@ -312,42 +322,26 @@ namespace TileMapEditor
 
         private void OnEditSingleTile(object sender, EventArgs eventArgs)
         {
-            m_editSingleTileButton.Checked = true;
-            m_editTileBlockButton.Checked = false;
-            m_editEraserButton.Checked = false;
-            m_editDropperButton.Checked = false;
-
             m_mapPanel.EditTool = EditTool.SingleTile;
+            UpdateEditToolButtons();
         }
 
         private void OnEditTileBlock(object sender, EventArgs eventArgs)
         {
-            m_editSingleTileButton.Checked = false;
-            m_editTileBlockButton.Checked = true;
-            m_editEraserButton.Checked = false;
-            m_editDropperButton.Checked = false;
-
             m_mapPanel.EditTool = EditTool.TileBlock;
+            UpdateEditToolButtons();
         }
 
         private void OnEditEraser(object sender, EventArgs eventArgs)
         {
-            m_editSingleTileButton.Checked = false;
-            m_editTileBlockButton.Checked = false;
-            m_editEraserButton.Checked = true;
-            m_editDropperButton.Checked = false;
-
             m_mapPanel.EditTool = EditTool.Eraser;
+            UpdateEditToolButtons();
         }
 
         private void OnEditDropper(object sender, EventArgs eventArgs)
         {
-            m_editSingleTileButton.Checked = false;
-            m_editTileBlockButton.Checked = false;
-            m_editEraserButton.Checked = false;
-            m_editDropperButton.Checked = true;
-
             m_mapPanel.EditTool = EditTool.Dropper;
+            UpdateEditToolButtons();
         }
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
@@ -404,6 +398,8 @@ namespace TileMapEditor
                 m_tilePicker.SelectedTileSheet = tile.TileSheet;
                 m_tilePicker.SelectedTileIndex = tile.TileIndex;
             }
+
+            UpdateEditToolButtons();
         }
 
         #endregion

@@ -1036,7 +1036,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tile Map Editor";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Load += new System.EventHandler(this.OnMainFormLoad);
             m_splitContainerVertical.Panel1.ResumeLayout(false);
             m_splitContainerVertical.Panel2.ResumeLayout(false);
             m_splitContainerVertical.ResumeLayout(false);

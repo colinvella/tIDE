@@ -122,7 +122,10 @@ namespace TileMapEditor.Control
             
             Tile tile = m_selectedLayer.Tiles[tileLocation];
             if (TilePicked != null)
+            {
+                this.EditTool = EditTool.SingleTile;
                 TilePicked(new MapPanelEventArgs(tile));
+            }
         }
 
         private void UpdateScrollBars()
@@ -271,14 +274,6 @@ namespace TileMapEditor.Control
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
             m_bMouseDown = false;
-
-            if (mouseEventArgs.Button == MouseButtons.Left)
-            {
-                switch (m_editTool)
-                {
-                    case EditTool.Dropper: EditTool = EditTool.SingleTile; break;
-                }
-            }
         }
 
         #endregion
