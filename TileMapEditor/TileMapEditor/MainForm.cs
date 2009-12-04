@@ -238,6 +238,8 @@ namespace TileMapEditor
             if (tileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
+            TileImageCache.Instance.Refresh(tileSheet);
+
             m_map.AddTileSheet(tileSheet);
 
             m_mapTreeView.UpdateTree();

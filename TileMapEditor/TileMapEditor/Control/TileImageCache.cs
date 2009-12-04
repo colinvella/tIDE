@@ -37,16 +37,15 @@ namespace TileMapEditor.Control
 
             for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
             {
-                Bitmap tileBitmap = new Bitmap(tileSize.Width, tileSize.Height);
-
                 Tiling.Rectangle tileRectangle = tileSheet.GetTileImageBounds(tileIndex);
                 srcRect.X = tileRectangle.Location.X;
                 srcRect.Y = tileRectangle.Location.Y;
                 srcRect.Width = tileRectangle.Size.Width;
                 srcRect.Height = tileRectangle.Size.Height;
 
-                Graphics graphics = Graphics.FromImage(tileBitmap);
-                graphics.DrawImage(tileSheetBitmap, destRect, srcRect, GraphicsUnit.Pixel);
+                Bitmap tileBitmap = tileSheetBitmap.Clone(
+                     srcRect, tileSheetBitmap.PixelFormat);
+ 
                 tileBitmaps[tileIndex] = tileBitmap;
             }
 

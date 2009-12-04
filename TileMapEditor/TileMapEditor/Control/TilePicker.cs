@@ -21,7 +21,6 @@ namespace TileMapEditor.Control
         private Map m_map;
         private TileSheet m_tileSheet;
         private List<ListViewItem> m_tileListViewItems;
-        private Bitmap m_tileSheetBitmap;
 
         #endregion
 
@@ -29,13 +28,14 @@ namespace TileMapEditor.Control
 
         private void OnRetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs retrieveVirtualItemEventArgs)
         {
-            ListViewItem listViewItem = m_tileListViewItems[retrieveVirtualItemEventArgs.ItemIndex];
+            int itemIndex = retrieveVirtualItemEventArgs.ItemIndex;
+            ListViewItem listViewItem = m_tileListViewItems[itemIndex];
 
             if (listViewItem.ImageIndex == -1)
             {
                 // update image list and assign new image
                 Tiling.Rectangle sheetRectangle
-                    = m_tileSheet.GetTileImageBounds(retrieveVirtualItemEventArgs.ItemIndex);
+                    = m_tileSheet.GetTileImageBounds(itemIndex);
 
                 System.Drawing.Rectangle pickerRectangle
                     = new System.Drawing.Rectangle(
@@ -44,8 +44,8 @@ namespace TileMapEditor.Control
 
                 listViewItem.ImageIndex = m_tileImageList.Images.Count;
 
-                Bitmap tileBitmap = m_tileSheetBitmap.Clone(
-                    pickerRectangle, m_tileSheetBitmap.PixelFormat);
+                Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_tileSheet, itemIndex);
+
                 m_tileImageList.Images.Add(tileBitmap);
             }
 
@@ -62,10 +62,6 @@ namespace TileMapEditor.Control
 
             string tileSheetId = m_comboBoxTileSheets.SelectedItem.ToString();
             m_tileSheet = m_map.GetTileSheet(tileSheetId);
-
-            if (m_tileSheetBitmap != null)
-                m_tileSheetBitmap.Dispose();
-            m_tileSheetBitmap = new Bitmap(m_tileSheet.ImageSource);
 
             // reset image list
             m_tileImageList.Images.Clear();
