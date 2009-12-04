@@ -64,8 +64,16 @@ namespace TileMapEditor.Control
         {
             if (m_selectedLayer == null)
                 return;
+            if (m_selectedTileSheet == null)
+                return;
             if (m_selectedTileIndex < 0)
                 return;
+
+            if (m_selectedLayer.TileSize != m_selectedTileSheet.TileSize)
+            {
+                MessageBox.Show(this, "Incompatible tile size", "Layer Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Location pixelLocation = ConvertViewportOffsetToLayerLocation(
                 new Location(mouseEventArgs.X, mouseEventArgs.Y));
