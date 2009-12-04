@@ -219,8 +219,10 @@ namespace TileMapEditor.Control
 
         private void OnAfterLayerDraw(LayerEventArgs layerEventArgs)
         {
-            if (m_layerCompositing == LayerCompositing.DimUnselected
-                && layerEventArgs.Layer == m_selectedLayer)
+            if (layerEventArgs.Layer != m_selectedLayer)
+                return;
+
+            if (m_layerCompositing == LayerCompositing.DimUnselected)
             {
                 // set translucency for upper layers
                 m_colorMatrix.Matrix33 = 0.25f;
