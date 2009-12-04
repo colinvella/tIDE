@@ -24,7 +24,6 @@ namespace TileMapEditor.Control
         private EditTool m_editTool;
 
         private Graphics m_graphics;
-        private Dictionary<TileSheet, Bitmap> m_tileSheetBitmaps;
         private Tiling.Rectangle m_viewPort;
         private int m_zoom;
         private Brush m_veilBrush;
@@ -222,7 +221,6 @@ namespace TileMapEditor.Control
 
             m_singleTileCursor = new Cursor(new System.IO.MemoryStream(Properties.Resources.EditSingleTileCursor));
 
-            m_tileSheetBitmaps = new Dictionary<TileSheet, Bitmap>();
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
             m_zoom = 1;
@@ -236,15 +234,11 @@ namespace TileMapEditor.Control
 
         public void LoadTileSheet(TileSheet tileSheet)
         {
-            m_tileSheetBitmaps.Remove(tileSheet);
-
-            Bitmap bitmap = new Bitmap(tileSheet.ImageSource);
-            m_tileSheetBitmaps[tileSheet] = bitmap;
+            TileImageCache.Instance.Refresh(tileSheet);
         }
 
         public void DisposeTileSheet(TileSheet tileSheet)
         {
-            m_tileSheetBitmaps.Remove(tileSheet);
         }
 
         public void BeginScene()
@@ -269,7 +263,17 @@ namespace TileMapEditor.Control
             if (m_graphics == null)
                 return;
 
-            Tiling.Rectangle imageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
+            Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(
+                tile.TileSheet, tile.TileIndex);
+
+            Tiling.Size tileSize = tile.TileSheet.TileSize;
+
+            System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
+                location.X, location.Y, tileSize.Width, tileSize.Height);
+
+            m_graphics.DrawImage(tileBitmap, destRect, 0, 0, tileSize.Width, tileSize.Height, GraphicsUnit.Pixel, m_imageAttributes);
+
+/*            Tiling.Rectangle imageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
             Bitmap bitmap = m_tileSheetBitmaps[tile.TileSheet];
 
             System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
@@ -277,7 +281,7 @@ namespace TileMapEditor.Control
 
             m_graphics.DrawImage(bitmap,destRect,
                 imageBounds.Location.X, imageBounds.Location.Y, imageBounds.Size.Width, imageBounds.Size.Height,
-                GraphicsUnit.Pixel, m_imageAttributes);
+                GraphicsUnit.Pixel, m_imageAttributes);*/
         }
 
         public void EndScene()
