@@ -22,6 +22,8 @@ namespace TileMapEditor.Control
         private Layer m_selectedLayer;
         private TileSheet m_selectedTileSheet;
         private int m_selectedTileIndex;
+
+        private LayerCompositing m_layerCompositing;
         private EditTool m_editTool;
 
         private Graphics m_graphics;
@@ -207,7 +209,8 @@ namespace TileMapEditor.Control
 
         private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
         {
-            if (layerEventArgs.Layer == m_selectedLayer
+            if (m_layerCompositing == LayerCompositing.DimUnselected
+                && layerEventArgs.Layer == m_selectedLayer
                 && m_map.Layers.IndexOf(layerEventArgs.Layer) > 0)
             {
                 m_graphics.FillRectangle(m_veilBrush, ClientRectangle);
@@ -216,7 +219,8 @@ namespace TileMapEditor.Control
 
         private void OnAfterLayerDraw(LayerEventArgs layerEventArgs)
         {
-            if (layerEventArgs.Layer == m_selectedLayer)
+            if (m_layerCompositing == LayerCompositing.DimUnselected
+                && layerEventArgs.Layer == m_selectedLayer)
             {
                 // set translucency for upper layers
                 m_colorMatrix.Matrix33 = 0.25f;
@@ -300,6 +304,9 @@ namespace TileMapEditor.Control
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
             m_zoom = 1;
+
+            m_layerCompositing = LayerCompositing.DimUnselected;
+
             m_editTool = EditTool.SingleTile;
             m_innerPanel.Cursor = m_singleTileCursor;
 
@@ -426,6 +433,21 @@ namespace TileMapEditor.Control
             }
         }
 
+        [Description("The layer compositing mode for the map display"),
+         Category("Appearance"), DefaultValue(LayerCompositing.DimUnselected)]
+        public LayerCompositing LayerCompositing
+        {
+            get { return m_layerCompositing; }
+            set
+            {
+                if (m_layerCompositing != value)
+                {
+                    m_layerCompositing = value;
+                    m_innerPanel.Invalidate();
+                }
+            }
+        }
+
         [Description("The current editing tool"),
          Category("Behavior"), DefaultValue(EditTool.TileBlock)]
         public EditTool EditTool
@@ -464,6 +486,12 @@ namespace TileMapEditor.Control
         public event MapPanelEventHandler TilePicked;
 
         #endregion
+    }
+
+    public enum LayerCompositing
+    {
+        DimUnselected,
+        ShowAll
     }
 
     public enum EditTool

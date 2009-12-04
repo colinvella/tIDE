@@ -137,6 +137,26 @@ namespace TileMapEditor
             UpdateZoomControls();
         }
 
+        private void OnLayerCompositingDimUnselected(object sender, EventArgs e)
+        {
+            m_mapPanel.LayerCompositing = LayerCompositing.DimUnselected;
+
+            m_viewLayerCompositingDimUnselectedMenuItem.Checked =
+                m_viewLayerCompositingShowAllMenuItem.Enabled = true;
+            m_viewLayerCompositingShowAllMenuItem.Checked =
+                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = false;
+        }
+
+        private void OnLayerCompositingShowAll(object sender, EventArgs e)
+        {
+            m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
+
+            m_viewLayerCompositingDimUnselectedMenuItem.Checked =
+                m_viewLayerCompositingShowAllMenuItem.Enabled = false;
+            m_viewLayerCompositingShowAllMenuItem.Checked =
+                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = true;
+        }
+
         private void OnMapProperties(object sender, EventArgs eventArgs)
         {
             MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
@@ -160,11 +180,6 @@ namespace TileMapEditor
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
-
-            // temp
-            for (int i = 0; i < 4; i++)
-                layer.Tiles[2* i, i] = new StaticTile(layer, m_map.TileSheets[0], BlendMode.Alpha, i);
-            // temp
 
             m_mapPanel.Enabled = true;
             m_mapPanel.Invalidate(true);
