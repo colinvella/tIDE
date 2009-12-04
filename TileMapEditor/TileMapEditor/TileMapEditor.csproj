@@ -76,6 +76,7 @@
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\TileImageCache.cs" />
+    <Compile Include="Control\MapPanelEventArgs.cs" />
     <Compile Include="Control\TilePicker.cs">
       <SubType>UserControl</SubType>
     </Compile>

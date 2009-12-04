@@ -140,6 +140,18 @@ namespace TileMapEditor.Control
             }
         }
 
+        public TileSheet SelectedTileSheet
+        {
+            get { return m_tileSheet; }
+            set
+            {
+                if (m_tileSheet == value)
+                    return;
+
+                m_comboBoxTileSheets.SelectedText = value.Id;
+            }
+        }
+
         [Category("Behavior"),
          DefaultValue(-1),
          Description("The index of the selected tile")]

@@ -396,6 +396,16 @@ namespace TileMapEditor
             m_selectedComponent = component;
         }
 
+        private void OnMapTilePicked(MapPanelEventArgs mapPanelEventArgs)
+        {
+            Tile tile = mapPanelEventArgs.Tile;
+            if (tile != null)
+            {
+                m_tilePicker.SelectedTileSheet = tile.TileSheet;
+                m_tilePicker.SelectedTileIndex = tile.TileIndex;
+            }
+        }
+
         #endregion
 
         #region Public Mehods

@@ -107,6 +107,24 @@ namespace TileMapEditor.Control
             }
         }
 
+        private void PickTile(MouseEventArgs mouseEventArgs)
+        {
+            if (m_selectedLayer == null)
+                return;
+
+            Location pixelLocation = ConvertViewportOffsetToLayerLocation(
+                new Location(mouseEventArgs.X, mouseEventArgs.Y));
+
+            Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
+
+            if (!m_selectedLayer.IsValidLocation(tileLocation))
+                return;
+            
+            Tile tile = m_selectedLayer.Tiles[tileLocation];
+            if (TilePicked != null)
+                TilePicked(new MapPanelEventArgs(tile));
+        }
+
         private void UpdateScrollBars()
         {
             if (m_map == null)
@@ -232,6 +250,7 @@ namespace TileMapEditor.Control
                 {
                     case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
                     case EditTool.Eraser: EraseTile(mouseEventArgs); break;
+                    case EditTool.Dropper: PickTile(mouseEventArgs); break;
                 }
             }
         }
@@ -244,6 +263,7 @@ namespace TileMapEditor.Control
                 {
                     case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
                     case EditTool.Eraser: EraseTile(mouseEventArgs); break;
+                    case EditTool.Dropper: PickTile(mouseEventArgs); break;
                 }
             }
         }
@@ -251,6 +271,14 @@ namespace TileMapEditor.Control
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
             m_bMouseDown = false;
+
+            if (mouseEventArgs.Button == MouseButtons.Left)
+            {
+                switch (m_editTool)
+                {
+                    case EditTool.Dropper: EditTool = EditTool.SingleTile; break;
+                }
+            }
         }
 
         #endregion
@@ -426,6 +454,13 @@ namespace TileMapEditor.Control
         }
 
         #endregion
+
+        #region Public Events
+
+        [Category("Behavior"), Description("Occurs when the tile is picked from the map")]
+        public event MapPanelEventHandler TilePicked;
+
+        #endregion
     }
 
     public enum EditTool
@@ -435,4 +470,6 @@ namespace TileMapEditor.Control
         Eraser,
         Dropper
     }
+
+    public delegate void MapPanelEventHandler(MapPanelEventArgs mapPanelEventArgs);
 }
