@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -29,7 +30,11 @@ namespace TileMapEditor.Control
         private Brush m_veilBrush;
         private ImageAttributes m_imageAttributes;
         private ColorMatrix m_colorMatrix;
+
         private Cursor m_singleTileCursor;
+        private Cursor m_tileBlockCursor;
+        private Cursor m_eraserCursor;
+        private Cursor m_dropperCursor;
 
         private bool m_bMouseDown;
 
@@ -219,7 +224,10 @@ namespace TileMapEditor.Control
         {
             InitializeComponent();
 
-            m_singleTileCursor = new Cursor(new System.IO.MemoryStream(Properties.Resources.EditSingleTileCursor));
+            m_singleTileCursor = new Cursor(new MemoryStream(Properties.Resources.EditSingleTileCursor));
+            m_tileBlockCursor = new Cursor(new MemoryStream(Properties.Resources.EditTileBlockCursor));
+            m_eraserCursor = new Cursor(new MemoryStream(Properties.Resources.EditEraserCursor));
+            m_dropperCursor = new Cursor(new MemoryStream(Properties.Resources.EditDropperCursor));
 
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);
@@ -271,17 +279,9 @@ namespace TileMapEditor.Control
             System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
                 location.X, location.Y, tileSize.Width, tileSize.Height);
 
-            m_graphics.DrawImage(tileBitmap, destRect, 0, 0, tileSize.Width, tileSize.Height, GraphicsUnit.Pixel, m_imageAttributes);
-
-/*            Tiling.Rectangle imageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
-            Bitmap bitmap = m_tileSheetBitmaps[tile.TileSheet];
-
-            System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
-                location.X, location.Y, imageBounds.Size.Width, imageBounds.Size.Height);
-
-            m_graphics.DrawImage(bitmap,destRect,
-                imageBounds.Location.X, imageBounds.Location.Y, imageBounds.Size.Width, imageBounds.Size.Height,
-                GraphicsUnit.Pixel, m_imageAttributes);*/
+            m_graphics.DrawImage(tileBitmap, destRect,
+                0, 0, tileSize.Width, tileSize.Height,
+                GraphicsUnit.Pixel, m_imageAttributes);
         }
 
         public void EndScene()
@@ -363,7 +363,17 @@ namespace TileMapEditor.Control
         public EditTool EditTool
         {
             get { return m_editTool; }
-            set { m_editTool = value; }
+            set
+            {
+                m_editTool = value;
+                switch (m_editTool)
+                {
+                    case EditTool.SingleTile: Cursor = m_singleTileCursor; break;
+                    case EditTool.TileBlock: Cursor = m_tileBlockCursor; break;
+                    case EditTool.Eraser: Cursor = m_eraserCursor; break;
+                    case EditTool.Dropper: Cursor = m_dropperCursor; break;
+                }
+            }
         }
 
         public TileSheet SelectedTileSheet

@@ -74,10 +74,24 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] EditDropperCursor {
+            get {
+                object obj = ResourceManager.GetObject("EditDropperCursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditEraser {
             get {
                 object obj = ResourceManager.GetObject("EditEraser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] EditEraserCursor {
+            get {
+                object obj = ResourceManager.GetObject("EditEraserCursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -106,6 +120,13 @@ namespace TileMapEditor.Properties {
             get {
                 object obj = ResourceManager.GetObject("EditTileBlock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] EditTileBlockCursor {
+            get {
+                object obj = ResourceManager.GetObject("EditTileBlockCursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

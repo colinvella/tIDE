@@ -214,4 +214,13 @@
   <data name="EditSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="EditDropperCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditDropperCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EditEraserCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditEraserCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EditTileBlockCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditTileBlockCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
