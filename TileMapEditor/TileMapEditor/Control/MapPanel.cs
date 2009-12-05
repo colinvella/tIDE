@@ -33,6 +33,9 @@ namespace TileMapEditor.Control
         private ImageAttributes m_imageAttributes;
         private ColorMatrix m_colorMatrix;
 
+        private Pen m_tileGuidePen;
+        private float[] m_dashPattern;
+
         private Cursor m_singleTileCursor;
         private Cursor m_tileBlockCursor;
         private Cursor m_eraserCursor;
@@ -228,6 +231,25 @@ namespace TileMapEditor.Control
                 m_colorMatrix.Matrix33 = 0.25f;
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             }
+
+            // tile guide
+
+            Layer layer = layerEventArgs.Layer;
+            Tiling.Size layerDisplaySize = layer.DisplaySize;
+            Tiling.Size mapDisplaySize = layer.Map.DisplaySize;
+            Tiling.Rectangle viewPort = layerEventArgs.ViewPort;
+            Tiling.Size tileSize = layer.TileSize;
+            Tiling.Location scaledLocation = new Location(
+                (viewPort.Location.X * layerDisplaySize.Width) / mapDisplaySize.Width,
+                (viewPort.Location.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
+            int offsetX = scaledLocation.X % tileSize.Width;
+            int offsetY = scaledLocation.Y % tileSize.Height;
+
+            for (int y = -offsetY; y < viewPort.Size.Height; y += tileSize.Height)
+                m_graphics.DrawLine(m_tileGuidePen, 0, y, m_viewPort.Size.Width, y);
+
+            for (int x = -offsetX; x < viewPort.Size.Width; x += tileSize.Width)
+                m_graphics.DrawLine(m_tileGuidePen, x, 0, x, m_viewPort.Size.Height);
         }
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
@@ -315,6 +337,10 @@ namespace TileMapEditor.Control
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
             m_imageAttributes = new ImageAttributes();
             m_colorMatrix = new ColorMatrix();
+
+            m_dashPattern = new float[] { 1.0f, 1.0f, 1.0f, 1.0f };
+            m_tileGuidePen = new Pen(Color.Black);
+            m_tileGuidePen.DashPattern = m_dashPattern;
         }
 
         public void LoadTileSheet(TileSheet tileSheet)
@@ -430,6 +456,10 @@ namespace TileMapEditor.Control
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
                 m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
                 m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+
+                m_tileGuidePen.Width = 1.0f / m_zoom;
+                m_dashPattern[0] = m_dashPattern[1] = m_dashPattern[2] = m_dashPattern[3] = 1.0f / m_zoom;
+                m_tileGuidePen.DashPattern = m_dashPattern;
 
                 Invalidate(true);
             }
