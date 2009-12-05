@@ -63,6 +63,42 @@ namespace TileMapEditor
             m_viewZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
         }
 
+        private void UpdateLayerCompositingControls()
+        {
+            if (m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected)
+            {
+                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = false;
+                m_viewLayerCompositingShowAllMenuItem.Enabled = true;
+
+                m_viewLayerCompositingToggleButton.ToolTipText = "Show all layers";
+                m_viewLayerCompositingToggleButton.Image
+                    = Properties.Resources.ViewLayerCompositingShowAll;
+            }
+            else
+            {
+                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = true;
+                m_viewLayerCompositingShowAllMenuItem.Enabled = false;
+
+                m_viewLayerCompositingToggleButton.ToolTipText = "Dim unselected layers";
+                m_viewLayerCompositingToggleButton.Image
+                    = Properties.Resources.ViewLayerCompositingDimUnselected;
+            }
+        }
+
+        private void UpdateTileGuidesControls()
+        {
+            bool tileGuides = m_mapPanel.TileGuides;
+            m_viewTileGuidesShowMenuItem.Enabled = !tileGuides;
+            m_viewTileGuidesHideMenuItem.Enabled = tileGuides;
+
+            m_viewTileGuidesToggleButton.ToolTipText = tileGuides
+                ? "Hide tile guides" : "Show tile guides";
+
+            m_viewTileGuidesToggleButton.Image = tileGuides
+                ? Properties.Resources.VewTileGuidesHide
+                : Properties.Resources.VewTileGuidesShow;
+        }
+
         private void UpdateEditToolButtons()
         {
             EditTool editTool = m_mapPanel.EditTool;
@@ -140,74 +176,40 @@ namespace TileMapEditor
         private void OnViewLayerCompositingDimUnselected(object sender, EventArgs eventArgs)
         {
             m_mapPanel.LayerCompositing = LayerCompositing.DimUnselected;
-
-            m_viewLayerCompositingDimUnselectedMenuItem.Checked =
-                m_viewLayerCompositingShowAllMenuItem.Enabled = true;
-            m_viewLayerCompositingShowAllMenuItem.Checked =
-                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = false;
+            UpdateLayerCompositingControls();
         }
 
         private void OnViewLayerCompositingShowAll(object sender, EventArgs eventArgs)
         {
-            m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
-
-            m_viewLayerCompositingDimUnselectedMenuItem.Checked =
-                m_viewLayerCompositingShowAllMenuItem.Enabled = false;
-            m_viewLayerCompositingShowAllMenuItem.Checked =
-                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = true;
+                        m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
+            UpdateLayerCompositingControls();
         }
 
         private void OnViewLayerCompositingToggleButton(object sender, EventArgs eventArgs)
         {
-            if (m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected)
-            {
-                m_viewLayerCompositingToggleButton.ToolTipText = "Dim unselected layers";
-                m_viewLayerCompositingToggleButton.Image = Properties.Resources.ViewLayerCompositingDimUnselected;
-
-                m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
-            }
-            else
-            {
-                m_viewLayerCompositingToggleButton.ToolTipText = "Show all layers";
-                m_viewLayerCompositingToggleButton.Image = Properties.Resources.ViewLayerCompositingShowAll;
-
-                m_mapPanel.LayerCompositing = LayerCompositing.DimUnselected;
-            }
+            m_mapPanel.LayerCompositing
+                = m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected
+                ? LayerCompositing.ShowAll
+                : LayerCompositing.DimUnselected;
+            UpdateLayerCompositingControls();
         }
 
         private void OnViewTileGuidesShow(object sender, EventArgs eventArgs)
         {
             m_mapPanel.TileGuides = true;
-
-            m_viewTileGuidesShowMenuItem.Checked
-                = m_viewTileGuidesHideMenuItem.Enabled = true;
-            m_viewTileGuidesShowMenuItem.Enabled
-                = m_viewTileGuidesHideMenuItem.Checked = false;
+            UpdateTileGuidesControls();
         }
 
         private void OnViewTileGuidesHide(object sender, EventArgs eventArgs)
         {
             m_mapPanel.TileGuides = false;
-
-            m_viewTileGuidesHideMenuItem.Checked
-                = m_viewTileGuidesShowMenuItem.Enabled = true;
-            m_viewTileGuidesHideMenuItem.Enabled
-                = m_viewTileGuidesShowMenuItem.Checked = true;
+            UpdateTileGuidesControls();
         }
 
         private void OnViewTileGuidesToggleButton(object sender, EventArgs eventArgs)
         {
-            if (m_mapPanel.TileGuides)
-            {
-                m_viewTileGuidesToggleButton.ToolTipText = "Show tile guides";
-                m_viewTileGuidesToggleButton.Image = Properties.Resources.VewTileGuidesShow;
-            }
-            else
-            {
-                m_viewTileGuidesToggleButton.ToolTipText = "Hide tile guides";
-                m_viewTileGuidesToggleButton.Image = Properties.Resources.VewTileGuidesHide;
-            }
             m_mapPanel.TileGuides = !m_mapPanel.TileGuides;
+            UpdateTileGuidesControls();
         }
 
         private void OnMapProperties(object sender, EventArgs eventArgs)
