@@ -249,13 +249,6 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap TileGuide {
-            get {
-                object obj = ResourceManager.GetObject("TileGuide", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap TileSheet {
             get {
                 object obj = ResourceManager.GetObject("TileSheet", resourceCulture);
