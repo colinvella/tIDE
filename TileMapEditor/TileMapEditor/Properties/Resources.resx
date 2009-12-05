@@ -151,11 +151,17 @@
   <data name="Layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Layer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ViewLayerCompositing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewLayerCompositing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="File" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\File.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ViewZoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewZoomIn.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditTileBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditTileBlock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LayerBringForward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerBringForward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,20 +184,17 @@
   <data name="EditRedo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditRedo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="HelpAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HelpAbout.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditUndo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditUndo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TileSheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TileSheet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditTileBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditTileBlock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditUndo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditUndo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LayerDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,7 +226,7 @@
   <data name="FileSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSave.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ViewLayerCompositing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ViewLayerCompositing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VewTileGuides" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VewTileGuides.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

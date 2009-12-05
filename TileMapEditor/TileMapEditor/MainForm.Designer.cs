@@ -42,10 +42,13 @@
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
             System.Windows.Forms.ToolStripSeparator m_tileSheetSeparator1;
             System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ToolStripMenuItem m_viewTileGuidesMenuItem;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.ToolStripSeparator m_viewMenuSeparator2;
             this.m_viewLayerCompositingDimUnselectedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewLayerCompositingShowAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewTileGuidesShowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewTileGuidesHideMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
             this.m_splitter = new System.Windows.Forms.Splitter();
@@ -123,8 +126,6 @@
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewTileGuidesShowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_viewTileGuidesHideMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Control.TilePicker();
             this.m_mapPanel = new TileMapEditor.Control.MapPanel();
@@ -143,6 +144,7 @@
             m_tileSheetSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             m_viewTileGuidesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            m_viewMenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             m_splitContainerVertical.Panel1.SuspendLayout();
             m_splitContainerVertical.Panel2.SuspendLayout();
             m_splitContainerVertical.SuspendLayout();
@@ -264,6 +266,33 @@
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
             toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            // 
+            // m_viewTileGuidesMenuItem
+            // 
+            m_viewTileGuidesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_viewTileGuidesShowMenuItem,
+            this.m_viewTileGuidesHideMenuItem});
+            m_viewTileGuidesMenuItem.Image = global::TileMapEditor.Properties.Resources.VewTileGuides;
+            m_viewTileGuidesMenuItem.Name = "m_viewTileGuidesMenuItem";
+            m_viewTileGuidesMenuItem.Size = new System.Drawing.Size(174, 22);
+            m_viewTileGuidesMenuItem.Text = "Tile Guides";
+            // 
+            // m_viewTileGuidesShowMenuItem
+            // 
+            this.m_viewTileGuidesShowMenuItem.Name = "m_viewTileGuidesShowMenuItem";
+            this.m_viewTileGuidesShowMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewTileGuidesShowMenuItem.Text = "Show";
+            this.m_viewTileGuidesShowMenuItem.Click += new System.EventHandler(this.OnViewTileGuidesShow);
+            // 
+            // m_viewTileGuidesHideMenuItem
+            // 
+            this.m_viewTileGuidesHideMenuItem.Checked = true;
+            this.m_viewTileGuidesHideMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_viewTileGuidesHideMenuItem.Enabled = false;
+            this.m_viewTileGuidesHideMenuItem.Name = "m_viewTileGuidesHideMenuItem";
+            this.m_viewTileGuidesHideMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_viewTileGuidesHideMenuItem.Text = "Hide";
+            this.m_viewTileGuidesHideMenuItem.Click += new System.EventHandler(this.OnViewTileGuidesHide);
             // 
             // m_toolStripContainer
             // 
@@ -462,6 +491,7 @@
             this.m_viewZoomOutMenuItem,
             m_viewMenuSeparator1,
             m_viewLayerCompositingMenuItem,
+            m_viewMenuSeparator2,
             m_viewTileGuidesMenuItem});
             this.m_viewMenuItem.Image = global::TileMapEditor.Properties.Resources.View;
             this.m_viewMenuItem.Name = "m_viewMenuItem";
@@ -1033,31 +1063,10 @@
             this.m_tileSheetDeleteButton.Text = "Delete tile sheet";
             this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
-            // m_viewTileGuidesMenuItem
+            // m_viewMenuSeparator2
             // 
-            m_viewTileGuidesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_viewTileGuidesShowMenuItem,
-            this.m_viewTileGuidesHideMenuItem});
-            m_viewTileGuidesMenuItem.Name = "m_viewTileGuidesMenuItem";
-            m_viewTileGuidesMenuItem.Size = new System.Drawing.Size(174, 22);
-            m_viewTileGuidesMenuItem.Text = "Tile Guides";
-            // 
-            // m_viewTileGuidesShowMenuItem
-            // 
-            this.m_viewTileGuidesShowMenuItem.Name = "m_viewTileGuidesShowMenuItem";
-            this.m_viewTileGuidesShowMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.m_viewTileGuidesShowMenuItem.Text = "Show";
-            this.m_viewTileGuidesShowMenuItem.Click += new System.EventHandler(this.OnViewTileGuidesShow);
-            // 
-            // m_viewTileGuidesHideMenuItem
-            // 
-            this.m_viewTileGuidesHideMenuItem.Checked = true;
-            this.m_viewTileGuidesHideMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.m_viewTileGuidesHideMenuItem.Enabled = false;
-            this.m_viewTileGuidesHideMenuItem.Name = "m_viewTileGuidesHideMenuItem";
-            this.m_viewTileGuidesHideMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.m_viewTileGuidesHideMenuItem.Text = "Hide";
-            this.m_viewTileGuidesHideMenuItem.Click += new System.EventHandler(this.OnViewTileGuidesHide);
+            m_viewMenuSeparator2.Name = "m_viewMenuSeparator2";
+            m_viewMenuSeparator2.Size = new System.Drawing.Size(171, 6);
             // 
             // m_mapTreeView
             // 

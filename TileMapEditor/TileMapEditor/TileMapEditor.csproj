@@ -214,6 +214,7 @@
     <None Include="Resources\ViewZoomOut.png" />
     <None Include="Resources\View.png" />
     <None Include="Resources\ViewLayerCompositing.png" />
+    <None Include="Resources\VewTileGuides.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
