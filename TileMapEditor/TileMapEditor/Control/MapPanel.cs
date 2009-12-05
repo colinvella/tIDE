@@ -26,6 +26,7 @@ namespace TileMapEditor.Control
         private LayerCompositing m_layerCompositing;
         private bool m_tileGuides;
         private EditTool m_editTool;
+        private Tiling.Location m_mouseLocation;
 
         private Graphics m_graphics;
         private Tiling.Rectangle m_viewPort;
@@ -233,26 +234,35 @@ namespace TileMapEditor.Control
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             }
 
+            // alignment data
+            Layer layer = layerEventArgs.Layer;
+            Tiling.Size layerDisplaySize = layer.DisplaySize;
+            Tiling.Size mapDisplaySize = layer.Map.DisplaySize;
+            Tiling.Rectangle viewPort = layerEventArgs.ViewPort;
+            Tiling.Size tileSize = layer.TileSize;
+            Tiling.Location scaledLocation = new Location(
+                (viewPort.Location.X * layerDisplaySize.Width) / mapDisplaySize.Width,
+                (viewPort.Location.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
+            int offsetX = scaledLocation.X % tileSize.Width;
+            int offsetY = scaledLocation.Y % tileSize.Height;
+
             // tile guide
             if (m_tileGuides)
             {
-                Layer layer = layerEventArgs.Layer;
-                Tiling.Size layerDisplaySize = layer.DisplaySize;
-                Tiling.Size mapDisplaySize = layer.Map.DisplaySize;
-                Tiling.Rectangle viewPort = layerEventArgs.ViewPort;
-                Tiling.Size tileSize = layer.TileSize;
-                Tiling.Location scaledLocation = new Location(
-                    (viewPort.Location.X * layerDisplaySize.Width) / mapDisplaySize.Width,
-                    (viewPort.Location.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
-                int offsetX = scaledLocation.X % tileSize.Width;
-                int offsetY = scaledLocation.Y % tileSize.Height;
+                for (int guideY = -offsetY; guideY < viewPort.Size.Height; guideY += tileSize.Height)
+                    m_graphics.DrawLine(m_tileGuidePen, 0, guideY, m_viewPort.Size.Width, guideY);
 
-                for (int y = -offsetY; y < viewPort.Size.Height; y += tileSize.Height)
-                    m_graphics.DrawLine(m_tileGuidePen, 0, y, m_viewPort.Size.Width, y);
-
-                for (int x = -offsetX; x < viewPort.Size.Width; x += tileSize.Width)
-                    m_graphics.DrawLine(m_tileGuidePen, x, 0, x, m_viewPort.Size.Height);
+                for (int guideX = -offsetX; guideX < viewPort.Size.Width; guideX += tileSize.Width)
+                    m_graphics.DrawLine(m_tileGuidePen, guideX, 0, guideX, m_viewPort.Size.Height);
             }
+
+            // highlight tile under mouse cursor
+            int tileX = ((m_mouseLocation.X + offsetX) / tileSize.Width)
+                * tileSize.Width - offsetX;
+            int tileY = ((m_mouseLocation.Y + offsetY) / tileSize.Height)
+                * tileSize.Height - offsetY;
+
+            m_graphics.DrawRectangle(Pens.Red, tileX, tileY, tileSize.Width, tileSize.Height);
         }
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
@@ -299,6 +309,9 @@ namespace TileMapEditor.Control
 
         private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
+            m_mouseLocation.X = mouseEventArgs.X;
+            m_mouseLocation.Y = mouseEventArgs.Y;
+
             if (m_bMouseDown && mouseEventArgs.Button == MouseButtons.Left)
             {
                 switch (m_editTool)
@@ -336,6 +349,7 @@ namespace TileMapEditor.Control
 
             m_editTool = EditTool.SingleTile;
             m_innerPanel.Cursor = m_singleTileCursor;
+            m_mouseLocation = new Location();
 
             m_tileGuides = false;
 
