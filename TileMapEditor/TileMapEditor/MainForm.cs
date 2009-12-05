@@ -157,6 +157,24 @@ namespace TileMapEditor
                 m_viewLayerCompositingDimUnselectedMenuItem.Enabled = true;
         }
 
+        private void OnViewLayerCompositingToggleButton(object sender, EventArgs eventArgs)
+        {
+            if (m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected)
+            {
+                m_viewLayerCompositingToggleButton.ToolTipText = "Dim unselected layers";
+                m_viewLayerCompositingToggleButton.Image = Properties.Resources.ViewLayerCompositingDimUnselected;
+
+                m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
+            }
+            else
+            {
+                m_viewLayerCompositingToggleButton.ToolTipText = "Show all layers";
+                m_viewLayerCompositingToggleButton.Image = Properties.Resources.ViewLayerCompositingShowAll;
+
+                m_mapPanel.LayerCompositing = LayerCompositing.DimUnselected;
+            }
+        }
+
         private void OnViewTileGuidesShow(object sender, EventArgs eventArgs)
         {
             m_mapPanel.TileGuides = true;

@@ -312,6 +312,20 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ViewLayerCompositingDimUnselected {
+            get {
+                object obj = ResourceManager.GetObject("ViewLayerCompositingDimUnselected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ViewLayerCompositingShowAll {
+            get {
+                object obj = ResourceManager.GetObject("ViewLayerCompositingShowAll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ViewZoom {
             get {
                 object obj = ResourceManager.GetObject("ViewZoom", resourceCulture);
