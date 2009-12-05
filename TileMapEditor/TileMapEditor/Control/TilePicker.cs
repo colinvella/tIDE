@@ -167,6 +167,7 @@ namespace TileMapEditor.Control
             {
                 m_tileListView.SelectedIndices.Clear();
                 m_tileListView.SelectedIndices.Add(value);
+                m_tileListView.EnsureVisible(value);
             }
         }
 
