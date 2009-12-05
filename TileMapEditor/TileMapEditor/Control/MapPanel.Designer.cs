@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
+            this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
             this.m_innerPanel = new TileMapEditor.Control.CustomPanel();
             this.SuspendLayout();
             // 
@@ -50,6 +52,11 @@
             this.m_horizontalScrollBar.Size = new System.Drawing.Size(303, 17);
             this.m_horizontalScrollBar.TabIndex = 1;
             this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnHorizontalScroll);
+            // 
+            // m_animationTimer
+            // 
+            this.m_animationTimer.Enabled = true;
+            this.m_animationTimer.Tick += new System.EventHandler(this.m_animationTimer_Tick);
             // 
             // m_innerPanel
             // 
@@ -83,5 +90,6 @@
         private System.Windows.Forms.VScrollBar m_verticalScrollBar;
         private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
         private CustomPanel m_innerPanel;
+        private System.Windows.Forms.Timer m_animationTimer;
     }
 }

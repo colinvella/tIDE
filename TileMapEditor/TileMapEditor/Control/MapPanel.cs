@@ -488,6 +488,11 @@ namespace TileMapEditor.Control
         public event MapPanelEventHandler TilePicked;
 
         #endregion
+
+        private void m_animationTimer_Tick(object sender, EventArgs e)
+        {
+            m_innerPanel.Invalidate();
+        }
     }
 
     public enum LayerCompositing
