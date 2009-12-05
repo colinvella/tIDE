@@ -177,6 +177,21 @@ namespace TileMapEditor
                 = m_viewTileGuidesShowMenuItem.Checked = true;
         }
 
+        private void OnViewTileGuidesToggleButton(object sender, EventArgs eventArgs)
+        {
+            if (m_mapPanel.TileGuides)
+            {
+                m_viewTileGuidesToggleButton.ToolTipText = "Show tile guides";
+                m_viewTileGuidesToggleButton.Image = Properties.Resources.VewTileGuidesShow;
+            }
+            else
+            {
+                m_viewTileGuidesToggleButton.ToolTipText = "Hide tile guides";
+                m_viewTileGuidesToggleButton.Image = Properties.Resources.VewTileGuidesHide;
+            }
+            m_mapPanel.TileGuides = !m_mapPanel.TileGuides;
+        }
+
         private void OnMapProperties(object sender, EventArgs eventArgs)
         {
             MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);

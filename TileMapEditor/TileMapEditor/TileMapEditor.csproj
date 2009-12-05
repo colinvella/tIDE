@@ -215,6 +215,8 @@
     <None Include="Resources\View.png" />
     <None Include="Resources\ViewLayerCompositing.png" />
     <None Include="Resources\VewTileGuides.png" />
+    <None Include="Resources\VewTileGuidesShow.png" />
+    <None Include="Resources\VewTileGuidesHide.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

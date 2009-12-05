@@ -284,6 +284,20 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap VewTileGuidesHide {
+            get {
+                object obj = ResourceManager.GetObject("VewTileGuidesHide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap VewTileGuidesShow {
+            get {
+                object obj = ResourceManager.GetObject("VewTileGuidesShow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap View {
             get {
                 object obj = ResourceManager.GetObject("View", resourceCulture);
