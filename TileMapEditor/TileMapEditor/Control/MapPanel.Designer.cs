@@ -38,18 +38,18 @@
             // m_verticalScrollBar
             // 
             this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_verticalScrollBar.Location = new System.Drawing.Point(303, 0);
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(301, 0);
             this.m_verticalScrollBar.Name = "m_verticalScrollBar";
-            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 240);
+            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 238);
             this.m_verticalScrollBar.TabIndex = 0;
             this.m_verticalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnVerticalScroll);
             // 
             // m_horizontalScrollBar
             // 
             this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 223);
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 221);
             this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(303, 17);
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(301, 17);
             this.m_horizontalScrollBar.TabIndex = 1;
             this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnHorizontalScroll);
             // 
@@ -64,7 +64,7 @@
             this.m_innerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_innerPanel.Location = new System.Drawing.Point(0, 0);
             this.m_innerPanel.Name = "m_innerPanel";
-            this.m_innerPanel.Size = new System.Drawing.Size(303, 223);
+            this.m_innerPanel.Size = new System.Drawing.Size(301, 221);
             this.m_innerPanel.TabIndex = 2;
             this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnMapPaint);
             this.m_innerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
@@ -76,11 +76,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.m_innerPanel);
             this.Controls.Add(this.m_horizontalScrollBar);
             this.Controls.Add(this.m_verticalScrollBar);
             this.Name = "MapPanel";
-            this.Size = new System.Drawing.Size(320, 240);
+            this.Size = new System.Drawing.Size(318, 238);
             this.ResumeLayout(false);
 
         }
