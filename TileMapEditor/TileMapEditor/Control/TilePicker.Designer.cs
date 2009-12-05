@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_panelContent;
-            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             this.m_tileImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
+            this.m_tileListView = new TileMapEditor.Control.CustomListView();
             m_labelCaption = new System.Windows.Forms.Label();
             m_panelContent = new System.Windows.Forms.Panel();
             m_panelContent.SuspendLayout();
@@ -48,7 +48,7 @@
             m_labelCaption.Location = new System.Drawing.Point(0, 0);
             m_labelCaption.Name = "m_labelCaption";
             m_labelCaption.Padding = new System.Windows.Forms.Padding(2);
-            m_labelCaption.Size = new System.Drawing.Size(148, 20);
+            m_labelCaption.Size = new System.Drawing.Size(150, 20);
             m_labelCaption.TabIndex = 0;
             m_labelCaption.Text = "Tile Picker";
             m_labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -60,23 +60,8 @@
             m_panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             m_panelContent.Location = new System.Drawing.Point(0, 20);
             m_panelContent.Name = "m_panelContent";
-            m_panelContent.Size = new System.Drawing.Size(148, 128);
+            m_panelContent.Size = new System.Drawing.Size(150, 130);
             m_panelContent.TabIndex = 1;
-            // 
-            // m_tileListView
-            // 
-            this.m_tileListView.AutoArrange = false;
-            this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tileListView.LargeImageList = this.m_tileImageList;
-            this.m_tileListView.Location = new System.Drawing.Point(0, 21);
-            this.m_tileListView.MultiSelect = false;
-            this.m_tileListView.Name = "m_tileListView";
-            this.m_tileListView.Size = new System.Drawing.Size(148, 107);
-            this.m_tileListView.TabIndex = 1;
-            this.m_tileListView.UseCompatibleStateImageBehavior = false;
-            this.m_tileListView.VirtualMode = true;
-            this.m_tileListView.SelectedIndexChanged += new System.EventHandler(this.OnSelectTile);
-            this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.OnRetrieveVirtualItem);
             // 
             // m_tileImageList
             // 
@@ -91,19 +76,33 @@
             this.m_comboBoxTileSheets.FormattingEnabled = true;
             this.m_comboBoxTileSheets.Location = new System.Drawing.Point(0, 0);
             this.m_comboBoxTileSheets.Name = "m_comboBoxTileSheets";
-            this.m_comboBoxTileSheets.Size = new System.Drawing.Size(148, 21);
+            this.m_comboBoxTileSheets.Size = new System.Drawing.Size(150, 21);
             this.m_comboBoxTileSheets.TabIndex = 0;
             this.m_comboBoxTileSheets.SelectedIndexChanged += new System.EventHandler(this.OnSelectTileSheet);
+            // 
+            // m_tileListView
+            // 
+            this.m_tileListView.AutoArrange = false;
+            this.m_tileListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_tileListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tileListView.LargeImageList = this.m_tileImageList;
+            this.m_tileListView.Location = new System.Drawing.Point(0, 21);
+            this.m_tileListView.MultiSelect = false;
+            this.m_tileListView.Name = "m_tileListView";
+            this.m_tileListView.Size = new System.Drawing.Size(150, 109);
+            this.m_tileListView.TabIndex = 1;
+            this.m_tileListView.UseCompatibleStateImageBehavior = false;
+            this.m_tileListView.VirtualMode = true;
+            this.m_tileListView.SelectedIndexChanged += new System.EventHandler(this.OnSelectTile);
+            this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.OnRetrieveVirtualItem);
             // 
             // TilePicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(m_panelContent);
             this.Controls.Add(m_labelCaption);
             this.Name = "TilePicker";
-            this.Size = new System.Drawing.Size(148, 148);
             m_panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
