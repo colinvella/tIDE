@@ -24,6 +24,7 @@ namespace TileMapEditor.Control
         private int m_selectedTileIndex;
 
         private LayerCompositing m_layerCompositing;
+        private bool m_tileGuides;
         private EditTool m_editTool;
 
         private Graphics m_graphics;
@@ -233,23 +234,25 @@ namespace TileMapEditor.Control
             }
 
             // tile guide
+            if (m_tileGuides)
+            {
+                Layer layer = layerEventArgs.Layer;
+                Tiling.Size layerDisplaySize = layer.DisplaySize;
+                Tiling.Size mapDisplaySize = layer.Map.DisplaySize;
+                Tiling.Rectangle viewPort = layerEventArgs.ViewPort;
+                Tiling.Size tileSize = layer.TileSize;
+                Tiling.Location scaledLocation = new Location(
+                    (viewPort.Location.X * layerDisplaySize.Width) / mapDisplaySize.Width,
+                    (viewPort.Location.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
+                int offsetX = scaledLocation.X % tileSize.Width;
+                int offsetY = scaledLocation.Y % tileSize.Height;
 
-            Layer layer = layerEventArgs.Layer;
-            Tiling.Size layerDisplaySize = layer.DisplaySize;
-            Tiling.Size mapDisplaySize = layer.Map.DisplaySize;
-            Tiling.Rectangle viewPort = layerEventArgs.ViewPort;
-            Tiling.Size tileSize = layer.TileSize;
-            Tiling.Location scaledLocation = new Location(
-                (viewPort.Location.X * layerDisplaySize.Width) / mapDisplaySize.Width,
-                (viewPort.Location.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
-            int offsetX = scaledLocation.X % tileSize.Width;
-            int offsetY = scaledLocation.Y % tileSize.Height;
+                for (int y = -offsetY; y < viewPort.Size.Height; y += tileSize.Height)
+                    m_graphics.DrawLine(m_tileGuidePen, 0, y, m_viewPort.Size.Width, y);
 
-            for (int y = -offsetY; y < viewPort.Size.Height; y += tileSize.Height)
-                m_graphics.DrawLine(m_tileGuidePen, 0, y, m_viewPort.Size.Width, y);
-
-            for (int x = -offsetX; x < viewPort.Size.Width; x += tileSize.Width)
-                m_graphics.DrawLine(m_tileGuidePen, x, 0, x, m_viewPort.Size.Height);
+                for (int x = -offsetX; x < viewPort.Size.Width; x += tileSize.Width)
+                    m_graphics.DrawLine(m_tileGuidePen, x, 0, x, m_viewPort.Size.Height);
+            }
         }
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
@@ -333,6 +336,8 @@ namespace TileMapEditor.Control
 
             m_editTool = EditTool.SingleTile;
             m_innerPanel.Cursor = m_singleTileCursor;
+
+            m_tileGuides = false;
 
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
             m_imageAttributes = new ImageAttributes();
@@ -475,6 +480,21 @@ namespace TileMapEditor.Control
                 if (m_layerCompositing != value)
                 {
                     m_layerCompositing = value;
+                    m_innerPanel.Invalidate();
+                }
+            }
+        }
+
+        [Description("Show or hide the tile guides to assist editing"),
+         Category("Appearance"), DefaultValue(false)]
+        public bool TileGuides
+        {
+            get { return m_tileGuides; }
+            set
+            {
+                if (m_tileGuides != value)
+                {
+                    m_tileGuides = value;
                     m_innerPanel.Invalidate();
                 }
             }

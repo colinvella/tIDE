@@ -23,7 +23,7 @@ namespace TileMapEditor
 
         #endregion
 
-        #region Private Mehods
+        #region Private Methods
 
         private void ArrangeToolStripLayout()
         {
@@ -137,7 +137,7 @@ namespace TileMapEditor
             UpdateZoomControls();
         }
 
-        private void OnLayerCompositingDimUnselected(object sender, EventArgs e)
+        private void OnViewLayerCompositingDimUnselected(object sender, EventArgs eventArgs)
         {
             m_mapPanel.LayerCompositing = LayerCompositing.DimUnselected;
 
@@ -147,7 +147,7 @@ namespace TileMapEditor
                 m_viewLayerCompositingDimUnselectedMenuItem.Enabled = false;
         }
 
-        private void OnLayerCompositingShowAll(object sender, EventArgs e)
+        private void OnViewLayerCompositingShowAll(object sender, EventArgs eventArgs)
         {
             m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
 
@@ -155,6 +155,26 @@ namespace TileMapEditor
                 m_viewLayerCompositingShowAllMenuItem.Enabled = false;
             m_viewLayerCompositingShowAllMenuItem.Checked =
                 m_viewLayerCompositingDimUnselectedMenuItem.Enabled = true;
+        }
+
+        private void OnViewTileGuidesShow(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.TileGuides = true;
+
+            m_viewTileGuidesShowMenuItem.Checked
+                = m_viewTileGuidesHideMenuItem.Enabled = true;
+            m_viewTileGuidesShowMenuItem.Enabled
+                = m_viewTileGuidesHideMenuItem.Checked = false;
+        }
+
+        private void OnViewTileGuidesHide(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.TileGuides = false;
+
+            m_viewTileGuidesHideMenuItem.Checked
+                = m_viewTileGuidesShowMenuItem.Enabled = true;
+            m_viewTileGuidesHideMenuItem.Enabled
+                = m_viewTileGuidesShowMenuItem.Checked = true;
         }
 
         private void OnMapProperties(object sender, EventArgs eventArgs)
@@ -419,7 +439,7 @@ namespace TileMapEditor
 
         #endregion
 
-        #region Public Mehods
+        #region Public Methods
 
         public MainForm()
         {
