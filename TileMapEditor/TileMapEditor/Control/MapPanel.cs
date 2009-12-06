@@ -60,8 +60,10 @@ namespace TileMapEditor.Control
             Location layerLocation
                 = m_selectedLayer.ConvertMapToLayerLocation(m_viewPort.Location);
 
-            layerLocation.X += viewPortOffset.X / m_zoom;
-            layerLocation.Y += viewPortOffset.Y / m_zoom;
+            Tiling.Size tileSize = m_selectedLayer.TileSize;
+
+            layerLocation.X += viewPortOffset.X / (tileSize.Width * m_zoom);
+            layerLocation.Y += viewPortOffset.Y / (tileSize.Height * m_zoom);
 
             return layerLocation;
         }
@@ -81,22 +83,17 @@ namespace TileMapEditor.Control
                 return;
             }
 
-            Location pixelLocation = ConvertViewportOffsetToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y));
-
-            Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
-
-            if (!m_selectedLayer.IsValidTileLocation(tileLocation))
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
                 return;
 
-            Tile oldTile = m_selectedLayer.Tiles[tileLocation];
+            Tile oldTile = m_selectedLayer.Tiles[m_tileLayerLocation];
 
             if (oldTile != null && oldTile.TileSheet == m_selectedTileSheet
                 && oldTile.TileIndex == m_selectedTileIndex)
                 return;
 
             Tile newTile = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
-            m_selectedLayer.Tiles[tileLocation] = newTile;
+            m_selectedLayer.Tiles[m_tileLayerLocation] = newTile;
 
             m_innerPanel.Invalidate();        
         }
@@ -126,9 +123,7 @@ namespace TileMapEditor.Control
 
             for (int tileY = minY; tileY <= maxY; tileY++)
                 for (int tileX = minX; tileX <= maxX; tileX++)
-                {
                     m_selectedLayer.Tiles[tileX, tileY] = newTile;
-                }
 
             m_innerPanel.Invalidate();
         }
@@ -138,17 +133,12 @@ namespace TileMapEditor.Control
             if (m_selectedLayer == null)
                 return;
 
-            Location pixelLocation = ConvertViewportOffsetToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y));
-
-            Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
-
-            if (!m_selectedLayer.IsValidTileLocation(tileLocation))
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
                 return;
 
-            if (m_selectedLayer.Tiles[tileLocation] != null)
+            if (m_selectedLayer.Tiles[m_tileLayerLocation] != null)
             {
-                m_selectedLayer.Tiles[tileLocation] = null;
+                m_selectedLayer.Tiles[m_tileLayerLocation] = null;
                 m_innerPanel.Invalidate();
             }
         }
@@ -158,15 +148,10 @@ namespace TileMapEditor.Control
             if (m_selectedLayer == null)
                 return;
 
-            Location pixelLocation = ConvertViewportOffsetToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y));
-
-            Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
-
-            if (!m_selectedLayer.IsValidTileLocation(tileLocation))
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
                 return;
-            
-            Tile tile = m_selectedLayer.Tiles[tileLocation];
+
+            Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
             if (TilePicked != null)
             {
                 this.EditTool = EditTool.SingleTile;
@@ -296,10 +281,6 @@ namespace TileMapEditor.Control
                 m_tileDisplayLocation.X = tileOffsetX * tileSize.Width - offsetX;
                 m_tileDisplayLocation.Y = tileOffsetY * tileSize.Height - offsetY;
 
-                m_tileLayerLocation = m_viewPort.Location;
-                m_tileLayerLocation.X += tileOffsetX;
-                m_tileLayerLocation.Y += tileOffsetY;
-
                 int selectionX = 0, selectionY = 0;
                 int selectionWidth = 0, selectionHeight = 0;
                 if (m_editTool == EditTool.TileBlock && m_bMouseDown)
@@ -319,7 +300,7 @@ namespace TileMapEditor.Control
                         selectionY = m_tileDisplayLocation.Y - selectionHeight + tileSize.Height;
                     else
                         selectionY = m_tileDisplayLocation.Y;
-                                    }
+                }
                 else
                 {
                     selectionX = m_tileDisplayLocation.X;
