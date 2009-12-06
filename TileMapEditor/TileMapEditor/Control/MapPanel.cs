@@ -34,6 +34,7 @@ namespace TileMapEditor.Control
         private Brush m_veilBrush;
         private ImageAttributes m_imageAttributes;
         private ColorMatrix m_colorMatrix;
+        private Brush m_tileSelectionBrush;
 
         private Pen m_tileGuidePen;
         private float[] m_dashPattern;
@@ -262,7 +263,8 @@ namespace TileMapEditor.Control
             int tileY = ((m_mouseLocation.Y + offsetY) / tileSize.Height)
                 * tileSize.Height - offsetY;
 
-            m_graphics.DrawRectangle(Pens.Red, tileX, tileY, tileSize.Width, tileSize.Height);
+            m_graphics.FillRectangle(m_tileSelectionBrush,
+                tileX, tileY, tileSize.Width, tileSize.Height);
         }
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
@@ -356,6 +358,8 @@ namespace TileMapEditor.Control
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
             m_imageAttributes = new ImageAttributes();
             m_colorMatrix = new ColorMatrix();
+            m_tileSelectionBrush = new SolidBrush(
+                Color.FromArgb(128, SystemColors.ActiveCaption));
 
             m_dashPattern = new float[] { 1.0f, 1.0f, 1.0f, 1.0f };
             m_tileGuidePen = new Pen(Color.Black);
