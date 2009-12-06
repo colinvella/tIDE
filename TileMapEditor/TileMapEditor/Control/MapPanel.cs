@@ -57,18 +57,11 @@ namespace TileMapEditor.Control
 
         private Location ConvertViewportOffsetToLayerLocation(Location viewPortOffset)
         {
-            viewPortOffset.X /= m_zoom;
-            viewPortOffset.Y /= m_zoom;
+            Location layerLocation
+                = m_selectedLayer.ConvertMapToLayerLocation(m_viewPort.Location);
 
-            Location layerLocation = m_viewPort.Location;
-
-            // scale due to parallax
-            layerLocation.X *= m_selectedLayer.DisplaySize.Width;
-            layerLocation.X /= m_map.DisplaySize.Width;
-            layerLocation.Y *= m_selectedLayer.DisplaySize.Height;
-            layerLocation.Y /= m_selectedLayer.DisplaySize.Height;
-
-            layerLocation += viewPortOffset;
+            layerLocation.X += viewPortOffset.X / m_zoom;
+            layerLocation.Y += viewPortOffset.Y / m_zoom;
 
             return layerLocation;
         }
@@ -106,6 +99,38 @@ namespace TileMapEditor.Control
             m_selectedLayer.Tiles[tileLocation] = newTile;
 
             m_innerPanel.Invalidate();        
+        }
+
+        private void DrawTileBlock()
+        {
+            if (m_selectedLayer == null)
+                return;
+            if (m_selectedTileSheet == null)
+                return;
+            if (m_selectedTileIndex < 0)
+                return;
+
+            if (m_selectedLayer.TileSize != m_selectedTileSheet.TileSize)
+            {
+                MessageBox.Show(this, "Incompatible tile size", "Layer Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Tiling.Size layerSize = m_selectedLayer.LayerSize;
+            int minX = Math.Max(0, Math.Min(m_tileLayerLocation.X, m_dragTileStart.X));
+            int minY = Math.Max(0, Math.Min(m_tileLayerLocation.Y, m_dragTileStart.Y));
+            int maxX = Math.Min(layerSize.Width - 1, Math.Max(m_tileLayerLocation.X, m_dragTileStart.X));
+            int maxY = Math.Min(layerSize.Height - 1, Math.Max(m_tileLayerLocation.Y, m_dragTileStart.Y));
+
+            Tile newTile = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
+
+            for (int tileY = minY; tileY <= maxY; tileY++)
+                for (int tileX = minX; tileX <= maxX; tileX++)
+                {
+                    m_selectedLayer.Tiles[tileX, tileY] = newTile;
+                }
+
+            m_innerPanel.Invalidate();
         }
 
         private void EraseTile(MouseEventArgs mouseEventArgs)
@@ -275,10 +300,38 @@ namespace TileMapEditor.Control
                 m_tileLayerLocation.X += tileOffsetX;
                 m_tileLayerLocation.Y += tileOffsetY;
 
+                int selectionX = 0, selectionY = 0;
+                int selectionWidth = 0, selectionHeight = 0;
+                if (m_editTool == EditTool.TileBlock && m_bMouseDown)
+                {
+                    int deltaTileX = m_tileLayerLocation.X - m_dragTileStart.X;
+                    int deltaTileY = m_tileLayerLocation.Y - m_dragTileStart.Y;
+
+                    selectionWidth = (Math.Abs(deltaTileX) + 1) * tileSize.Width;
+                    selectionHeight = (Math.Abs(deltaTileY) + 1) * tileSize.Height;
+
+                    if (deltaTileX >= 0)
+                        selectionX = m_tileDisplayLocation.X - selectionWidth + tileSize.Width;
+                    else
+                        selectionX = m_tileDisplayLocation.X;
+
+                    if (deltaTileY >= 0)
+                        selectionY = m_tileDisplayLocation.Y - selectionHeight + tileSize.Height;
+                    else
+                        selectionY = m_tileDisplayLocation.Y;
+                                    }
+                else
+                {
+                    selectionX = m_tileDisplayLocation.X;
+                    selectionY = m_tileDisplayLocation.Y;
+                    selectionWidth = tileSize.Width;
+                    selectionHeight = tileSize.Height;
+                }
+
                 m_graphics.FillRectangle(m_tileSelectionBrush,
-                    m_tileDisplayLocation.X, m_tileDisplayLocation.Y, tileSize.Width, tileSize.Height);
+                    selectionX, selectionY, selectionWidth, selectionHeight);
                 m_graphics.DrawRectangle(m_tileSelectionPen,
-                    m_tileDisplayLocation.X, m_tileDisplayLocation.Y, tileSize.Width, tileSize.Height);
+                    selectionX, selectionY, selectionWidth, selectionHeight);
             }
         }
 
@@ -319,6 +372,7 @@ namespace TileMapEditor.Control
                 switch (m_editTool)
                 {
                     case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
+                    case EditTool.TileBlock: m_dragTileStart = m_tileLayerLocation; break;
                     case EditTool.Eraser: EraseTile(mouseEventArgs); break;
                     case EditTool.Dropper: PickTile(mouseEventArgs); break;
                 }
@@ -330,6 +384,9 @@ namespace TileMapEditor.Control
             m_mouseInside = true;
             m_mouseLocation.X = mouseEventArgs.X;
             m_mouseLocation.Y = mouseEventArgs.Y;
+
+            m_tileLayerLocation
+                = ConvertViewportOffsetToLayerLocation(m_mouseLocation);
 
             if (m_bMouseDown && mouseEventArgs.Button == MouseButtons.Left)
             {
@@ -344,6 +401,14 @@ namespace TileMapEditor.Control
 
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
+            if (mouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (m_editTool == EditTool.TileBlock)
+                {
+                    DrawTileBlock();
+                }
+            }
+
             m_bMouseDown = false;
         }
 
