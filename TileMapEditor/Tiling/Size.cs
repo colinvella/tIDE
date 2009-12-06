@@ -52,6 +52,8 @@ namespace Tiling
 
         public int Area { get { return Width * Height; } }
 
+        public bool Square { get { return Width == Height; } }
+
         public override string ToString()
         {
             return Width + " x " + Height;

@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label m_labelTileSize;
+            System.Windows.Forms.Label m_labelTileSizeBy;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label m_labelTileSizeBy;
-            System.Windows.Forms.Label m_labelTileSize;
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
@@ -51,34 +54,44 @@
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_labelId = new System.Windows.Forms.Label();
             this.m_tabAlignment = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_textBoxTileWidth = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxTileHeight = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxLeftMargin = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxSpacingY = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxTopMargin = new System.Windows.Forms.NumericUpDown();
+            this.m_textBoxSpacingX = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_comboBoxSpacing = new System.Windows.Forms.ComboBox();
+            this.m_comboBoxMargin = new System.Windows.Forms.ComboBox();
+            this.m_comboBoxTileSize = new System.Windows.Forms.ComboBox();
             this.m_buttonAutoDetect = new System.Windows.Forms.Button();
             this.m_panelImage = new TileMapEditor.Control.CustomPanel();
             this.m_trackBar = new System.Windows.Forms.TrackBar();
             this.m_labelZoom = new System.Windows.Forms.Label();
-            this.m_textBoxSpacingY = new System.Windows.Forms.NumericUpDown();
-            this.m_textBoxSpacingX = new System.Windows.Forms.NumericUpDown();
-            this.m_textBoxTopMargin = new System.Windows.Forms.NumericUpDown();
-            this.m_textBoxLeftMargin = new System.Windows.Forms.NumericUpDown();
-            this.m_textBoxTileHeight = new System.Windows.Forms.NumericUpDown();
-            this.m_textBoxTileWidth = new System.Windows.Forms.NumericUpDown();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
+            m_labelTileSize = new System.Windows.Forms.Label();
+            m_labelTileSizeBy = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            m_labelTileSizeBy = new System.Windows.Forms.Label();
-            m_labelTileSize = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             this.m_customTabControl.SuspendLayout();
             this.m_tabGeneral.SuspendLayout();
             this.m_tabAlignment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_trackBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTopMargin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxLeftMargin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileHeight)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxLeftMargin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTopMargin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingX)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_trackBar)).BeginInit();
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +103,7 @@
             this.m_buttonOk.TabIndex = 1;
             this.m_buttonOk.Text = "OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
-            this.m_buttonOk.Click += new System.EventHandler(this.m_buttonOk_Click);
+            this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_buttonCancel
             // 
@@ -124,7 +137,7 @@
             // m_timer
             // 
             this.m_timer.Enabled = true;
-            this.m_timer.Tick += new System.EventHandler(this.m_timer_Tick);
+            this.m_timer.Tick += new System.EventHandler(this.OnTimer);
             // 
             // m_customTabControl
             // 
@@ -172,7 +185,7 @@
             this.m_buttonBrowse.TabIndex = 5;
             this.m_buttonBrowse.Text = "Browse...";
             this.m_buttonBrowse.UseVisualStyleBackColor = true;
-            this.m_buttonBrowse.Click += new System.EventHandler(this.m_buttonBrowse_Click);
+            this.m_buttonBrowse.Click += new System.EventHandler(this.OnBrowse);
             // 
             // m_textBoxImageSource
             // 
@@ -218,22 +231,11 @@
             // m_tabAlignment
             // 
             this.m_tabAlignment.BackColor = System.Drawing.SystemColors.Control;
-            this.m_tabAlignment.Controls.Add(this.m_buttonAutoDetect);
+            this.m_tabAlignment.Controls.Add(this.groupBox2);
+            this.m_tabAlignment.Controls.Add(this.groupBox1);
             this.m_tabAlignment.Controls.Add(this.m_panelImage);
             this.m_tabAlignment.Controls.Add(this.m_trackBar);
             this.m_tabAlignment.Controls.Add(this.m_labelZoom);
-            this.m_tabAlignment.Controls.Add(this.m_textBoxSpacingY);
-            this.m_tabAlignment.Controls.Add(label3);
-            this.m_tabAlignment.Controls.Add(this.m_textBoxSpacingX);
-            this.m_tabAlignment.Controls.Add(label4);
-            this.m_tabAlignment.Controls.Add(this.m_textBoxTopMargin);
-            this.m_tabAlignment.Controls.Add(label1);
-            this.m_tabAlignment.Controls.Add(this.m_textBoxLeftMargin);
-            this.m_tabAlignment.Controls.Add(label2);
-            this.m_tabAlignment.Controls.Add(this.m_textBoxTileHeight);
-            this.m_tabAlignment.Controls.Add(m_labelTileSizeBy);
-            this.m_tabAlignment.Controls.Add(this.m_textBoxTileWidth);
-            this.m_tabAlignment.Controls.Add(m_labelTileSize);
             this.m_tabAlignment.Location = new System.Drawing.Point(4, 22);
             this.m_tabAlignment.Name = "m_tabAlignment";
             this.m_tabAlignment.Padding = new System.Windows.Forms.Padding(3);
@@ -241,173 +243,30 @@
             this.m_tabAlignment.TabIndex = 2;
             this.m_tabAlignment.Text = "Alignment";
             // 
-            // m_buttonAutoDetect
+            // groupBox2
             // 
-            this.m_buttonAutoDetect.Location = new System.Drawing.Point(10, 85);
-            this.m_buttonAutoDetect.Name = "m_buttonAutoDetect";
-            this.m_buttonAutoDetect.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonAutoDetect.TabIndex = 16;
-            this.m_buttonAutoDetect.Text = "Auto Detect";
-            this.m_buttonAutoDetect.UseVisualStyleBackColor = true;
-            this.m_buttonAutoDetect.Click += new System.EventHandler(this.m_buttonAutoDetect_Click);
-            // 
-            // m_panelImage
-            // 
-            this.m_panelImage.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
-            this.m_panelImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_panelImage.Location = new System.Drawing.Point(194, 7);
-            this.m_panelImage.Name = "m_panelImage";
-            this.m_panelImage.Size = new System.Drawing.Size(352, 320);
-            this.m_panelImage.TabIndex = 13;
-            this.m_panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.m_panelImage_Paint);
-            // 
-            // m_trackBar
-            // 
-            this.m_trackBar.Location = new System.Drawing.Point(59, 282);
-            this.m_trackBar.Minimum = 1;
-            this.m_trackBar.Name = "m_trackBar";
-            this.m_trackBar.Size = new System.Drawing.Size(129, 45);
-            this.m_trackBar.TabIndex = 15;
-            this.m_trackBar.Value = 1;
-            this.m_trackBar.Scroll += new System.EventHandler(this.m_trackBar_Scroll);
-            // 
-            // m_labelZoom
-            // 
-            this.m_labelZoom.AutoSize = true;
-            this.m_labelZoom.Location = new System.Drawing.Point(7, 285);
-            this.m_labelZoom.Name = "m_labelZoom";
-            this.m_labelZoom.Size = new System.Drawing.Size(34, 13);
-            this.m_labelZoom.TabIndex = 14;
-            this.m_labelZoom.Text = "Zoom";
-            // 
-            // m_textBoxSpacingY
-            // 
-            this.m_textBoxSpacingY.Location = new System.Drawing.Point(135, 59);
-            this.m_textBoxSpacingY.Maximum = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
-            this.m_textBoxSpacingY.Name = "m_textBoxSpacingY";
-            this.m_textBoxSpacingY.Size = new System.Drawing.Size(53, 20);
-            this.m_textBoxSpacingY.TabIndex = 12;
-            this.m_textBoxSpacingY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.m_textBoxSpacingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(117, 63);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(12, 13);
-            label3.TabIndex = 11;
-            label3.Text = "x";
-            // 
-            // m_textBoxSpacingX
-            // 
-            this.m_textBoxSpacingX.Location = new System.Drawing.Point(59, 59);
-            this.m_textBoxSpacingX.Maximum = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
-            this.m_textBoxSpacingX.Name = "m_textBoxSpacingX";
-            this.m_textBoxSpacingX.Size = new System.Drawing.Size(53, 20);
-            this.m_textBoxSpacingX.TabIndex = 10;
-            this.m_textBoxSpacingX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.m_textBoxSpacingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(7, 63);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(46, 13);
-            label4.TabIndex = 9;
-            label4.Text = "Spacing";
-            // 
-            // m_textBoxTopMargin
-            // 
-            this.m_textBoxTopMargin.Location = new System.Drawing.Point(136, 33);
-            this.m_textBoxTopMargin.Maximum = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
-            this.m_textBoxTopMargin.Name = "m_textBoxTopMargin";
-            this.m_textBoxTopMargin.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxTopMargin.TabIndex = 8;
-            this.m_textBoxTopMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.m_textBoxTopMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(118, 37);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(12, 13);
-            label1.TabIndex = 7;
-            label1.Text = "x";
-            // 
-            // m_textBoxLeftMargin
-            // 
-            this.m_textBoxLeftMargin.Location = new System.Drawing.Point(60, 33);
-            this.m_textBoxLeftMargin.Maximum = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
-            this.m_textBoxLeftMargin.Name = "m_textBoxLeftMargin";
-            this.m_textBoxLeftMargin.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxLeftMargin.TabIndex = 6;
-            this.m_textBoxLeftMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.m_textBoxLeftMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(7, 37);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(39, 13);
-            label2.TabIndex = 5;
-            label2.Text = "Margin";
-            // 
-            // m_textBoxTileHeight
-            // 
-            this.m_textBoxTileHeight.Location = new System.Drawing.Point(136, 7);
-            this.m_textBoxTileHeight.Maximum = new decimal(new int[] {
-            512,
-            0,
-            0,
-            0});
-            this.m_textBoxTileHeight.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.m_textBoxTileHeight.Name = "m_textBoxTileHeight";
-            this.m_textBoxTileHeight.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxTileHeight.TabIndex = 4;
-            this.m_textBoxTileHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.m_textBoxTileHeight.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.m_textBoxTileHeight.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // m_labelTileSizeBy
-            // 
-            m_labelTileSizeBy.AutoSize = true;
-            m_labelTileSizeBy.Location = new System.Drawing.Point(118, 11);
-            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
-            m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
-            m_labelTileSizeBy.TabIndex = 3;
-            m_labelTileSizeBy.Text = "x";
+            this.groupBox2.Controls.Add(this.m_textBoxTileWidth);
+            this.groupBox2.Controls.Add(m_labelTileSize);
+            this.groupBox2.Controls.Add(m_labelTileSizeBy);
+            this.groupBox2.Controls.Add(this.m_textBoxTileHeight);
+            this.groupBox2.Controls.Add(label2);
+            this.groupBox2.Controls.Add(this.m_textBoxLeftMargin);
+            this.groupBox2.Controls.Add(this.m_textBoxSpacingY);
+            this.groupBox2.Controls.Add(label1);
+            this.groupBox2.Controls.Add(label3);
+            this.groupBox2.Controls.Add(this.m_textBoxTopMargin);
+            this.groupBox2.Controls.Add(this.m_textBoxSpacingX);
+            this.groupBox2.Controls.Add(label4);
+            this.groupBox2.Location = new System.Drawing.Point(6, 148);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(195, 101);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Custom Settings";
             // 
             // m_textBoxTileWidth
             // 
-            this.m_textBoxTileWidth.Location = new System.Drawing.Point(60, 7);
+            this.m_textBoxTileWidth.Location = new System.Drawing.Point(59, 19);
             this.m_textBoxTileWidth.Maximum = new decimal(new int[] {
             512,
             0,
@@ -432,11 +291,271 @@
             // m_labelTileSize
             // 
             m_labelTileSize.AutoSize = true;
-            m_labelTileSize.Location = new System.Drawing.Point(7, 11);
+            m_labelTileSize.Location = new System.Drawing.Point(6, 21);
             m_labelTileSize.Name = "m_labelTileSize";
             m_labelTileSize.Size = new System.Drawing.Size(47, 13);
             m_labelTileSize.TabIndex = 0;
             m_labelTileSize.Text = "Tile Size";
+            // 
+            // m_labelTileSizeBy
+            // 
+            m_labelTileSizeBy.AutoSize = true;
+            m_labelTileSizeBy.Location = new System.Drawing.Point(117, 23);
+            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
+            m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
+            m_labelTileSizeBy.TabIndex = 3;
+            m_labelTileSizeBy.Text = "x";
+            // 
+            // m_textBoxTileHeight
+            // 
+            this.m_textBoxTileHeight.Location = new System.Drawing.Point(131, 19);
+            this.m_textBoxTileHeight.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.m_textBoxTileHeight.Minimum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.m_textBoxTileHeight.Name = "m_textBoxTileHeight";
+            this.m_textBoxTileHeight.Size = new System.Drawing.Size(52, 20);
+            this.m_textBoxTileHeight.TabIndex = 4;
+            this.m_textBoxTileHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxTileHeight.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.m_textBoxTileHeight.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(6, 47);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(39, 13);
+            label2.TabIndex = 5;
+            label2.Text = "Margin";
+            // 
+            // m_textBoxLeftMargin
+            // 
+            this.m_textBoxLeftMargin.Location = new System.Drawing.Point(59, 45);
+            this.m_textBoxLeftMargin.Maximum = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            this.m_textBoxLeftMargin.Name = "m_textBoxLeftMargin";
+            this.m_textBoxLeftMargin.Size = new System.Drawing.Size(52, 20);
+            this.m_textBoxLeftMargin.TabIndex = 6;
+            this.m_textBoxLeftMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxLeftMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // m_textBoxSpacingY
+            // 
+            this.m_textBoxSpacingY.Location = new System.Drawing.Point(130, 71);
+            this.m_textBoxSpacingY.Maximum = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            this.m_textBoxSpacingY.Name = "m_textBoxSpacingY";
+            this.m_textBoxSpacingY.Size = new System.Drawing.Size(53, 20);
+            this.m_textBoxSpacingY.TabIndex = 12;
+            this.m_textBoxSpacingY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxSpacingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(117, 49);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(12, 13);
+            label1.TabIndex = 7;
+            label1.Text = "x";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(116, 75);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(12, 13);
+            label3.TabIndex = 11;
+            label3.Text = "x";
+            // 
+            // m_textBoxTopMargin
+            // 
+            this.m_textBoxTopMargin.Location = new System.Drawing.Point(131, 45);
+            this.m_textBoxTopMargin.Maximum = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            this.m_textBoxTopMargin.Name = "m_textBoxTopMargin";
+            this.m_textBoxTopMargin.Size = new System.Drawing.Size(52, 20);
+            this.m_textBoxTopMargin.TabIndex = 8;
+            this.m_textBoxTopMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxTopMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // m_textBoxSpacingX
+            // 
+            this.m_textBoxSpacingX.Location = new System.Drawing.Point(58, 71);
+            this.m_textBoxSpacingX.Maximum = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            this.m_textBoxSpacingX.Name = "m_textBoxSpacingX";
+            this.m_textBoxSpacingX.Size = new System.Drawing.Size(53, 20);
+            this.m_textBoxSpacingX.TabIndex = 10;
+            this.m_textBoxSpacingX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_textBoxSpacingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(6, 73);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(46, 13);
+            label4.TabIndex = 9;
+            label4.Text = "Spacing";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_comboBoxSpacing);
+            this.groupBox1.Controls.Add(label7);
+            this.groupBox1.Controls.Add(this.m_comboBoxMargin);
+            this.groupBox1.Controls.Add(label6);
+            this.groupBox1.Controls.Add(this.m_comboBoxTileSize);
+            this.groupBox1.Controls.Add(label5);
+            this.groupBox1.Controls.Add(this.m_buttonAutoDetect);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(195, 136);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Quick Settings";
+            // 
+            // m_comboBoxSpacing
+            // 
+            this.m_comboBoxSpacing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxSpacing.FormattingEnabled = true;
+            this.m_comboBoxSpacing.Items.AddRange(new object[] {
+            "Custom",
+            "0 x 0",
+            "1 x 1",
+            "2 x 2",
+            "3 x 3",
+            "4 x 4"});
+            this.m_comboBoxSpacing.Location = new System.Drawing.Point(59, 103);
+            this.m_comboBoxSpacing.Name = "m_comboBoxSpacing";
+            this.m_comboBoxSpacing.Size = new System.Drawing.Size(124, 21);
+            this.m_comboBoxSpacing.TabIndex = 22;
+            this.m_comboBoxSpacing.SelectedIndexChanged += new System.EventHandler(this.OnSpacingCombo);
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(6, 106);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(46, 13);
+            label7.TabIndex = 21;
+            label7.Text = "Spacing";
+            // 
+            // m_comboBoxMargin
+            // 
+            this.m_comboBoxMargin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxMargin.FormattingEnabled = true;
+            this.m_comboBoxMargin.Items.AddRange(new object[] {
+            "Custom",
+            "0 x 0",
+            "1 x 1",
+            "2 x 2",
+            "3 x 3",
+            "4 x 4"});
+            this.m_comboBoxMargin.Location = new System.Drawing.Point(59, 76);
+            this.m_comboBoxMargin.Name = "m_comboBoxMargin";
+            this.m_comboBoxMargin.Size = new System.Drawing.Size(124, 21);
+            this.m_comboBoxMargin.TabIndex = 20;
+            this.m_comboBoxMargin.SelectedIndexChanged += new System.EventHandler(this.OnMarginCombo);
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(6, 79);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(39, 13);
+            label6.TabIndex = 19;
+            label6.Text = "Margin";
+            // 
+            // m_comboBoxTileSize
+            // 
+            this.m_comboBoxTileSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxTileSize.FormattingEnabled = true;
+            this.m_comboBoxTileSize.Items.AddRange(new object[] {
+            "Custom",
+            "8 x 8",
+            "16 x 16",
+            "32 x 32",
+            "64 x 64",
+            "128 x 128",
+            "256 x 256",
+            "512 x 512"});
+            this.m_comboBoxTileSize.Location = new System.Drawing.Point(59, 49);
+            this.m_comboBoxTileSize.Name = "m_comboBoxTileSize";
+            this.m_comboBoxTileSize.Size = new System.Drawing.Size(124, 21);
+            this.m_comboBoxTileSize.TabIndex = 18;
+            this.m_comboBoxTileSize.SelectedIndexChanged += new System.EventHandler(this.OnTileSizeCombo);
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(6, 52);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(47, 13);
+            label5.TabIndex = 17;
+            label5.Text = "Tile Size";
+            // 
+            // m_buttonAutoDetect
+            // 
+            this.m_buttonAutoDetect.Location = new System.Drawing.Point(6, 19);
+            this.m_buttonAutoDetect.Name = "m_buttonAutoDetect";
+            this.m_buttonAutoDetect.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonAutoDetect.TabIndex = 16;
+            this.m_buttonAutoDetect.Text = "Auto Detect";
+            this.m_buttonAutoDetect.UseVisualStyleBackColor = true;
+            this.m_buttonAutoDetect.Click += new System.EventHandler(this.m_buttonAutoDetect_Click);
+            // 
+            // m_panelImage
+            // 
+            this.m_panelImage.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
+            this.m_panelImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_panelImage.Location = new System.Drawing.Point(207, 6);
+            this.m_panelImage.Name = "m_panelImage";
+            this.m_panelImage.Size = new System.Drawing.Size(339, 321);
+            this.m_panelImage.TabIndex = 13;
+            this.m_panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPreviewPaint);
+            // 
+            // m_trackBar
+            // 
+            this.m_trackBar.Location = new System.Drawing.Point(60, 297);
+            this.m_trackBar.Minimum = 1;
+            this.m_trackBar.Name = "m_trackBar";
+            this.m_trackBar.Size = new System.Drawing.Size(129, 45);
+            this.m_trackBar.TabIndex = 15;
+            this.m_trackBar.Value = 1;
+            this.m_trackBar.Scroll += new System.EventHandler(this.m_trackBar_Scroll);
+            // 
+            // m_labelZoom
+            // 
+            this.m_labelZoom.AutoSize = true;
+            this.m_labelZoom.Location = new System.Drawing.Point(6, 303);
+            this.m_labelZoom.Name = "m_labelZoom";
+            this.m_labelZoom.Size = new System.Drawing.Size(34, 13);
+            this.m_labelZoom.TabIndex = 14;
+            this.m_labelZoom.Text = "Zoom";
             // 
             // m_tabCustomProperties
             // 
@@ -475,19 +594,23 @@
             this.Name = "TileSheetPropertiesDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tile Sheet Properties";
-            this.Load += new System.EventHandler(this.TileSheetPropertiesDialog_Load);
+            this.Load += new System.EventHandler(this.OnDialogLoad);
             this.m_customTabControl.ResumeLayout(false);
             this.m_tabGeneral.ResumeLayout(false);
             this.m_tabGeneral.PerformLayout();
             this.m_tabAlignment.ResumeLayout(false);
             this.m_tabAlignment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_trackBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTopMargin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxLeftMargin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileHeight)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTileHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxLeftMargin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxTopMargin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_textBoxSpacingX)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_trackBar)).EndInit();
             this.m_tabCustomProperties.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -522,5 +645,10 @@
         private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Timer m_timer;
         private System.Windows.Forms.Button m_buttonAutoDetect;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox m_comboBoxMargin;
+        private System.Windows.Forms.ComboBox m_comboBoxTileSize;
+        private System.Windows.Forms.ComboBox m_comboBoxSpacing;
     }
 }

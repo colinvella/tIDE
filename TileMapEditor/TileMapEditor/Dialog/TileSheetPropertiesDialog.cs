@@ -25,50 +25,51 @@ namespace TileMapEditor.Dialog
 
         #region Private Methods
 
-        private void m_buttonOk_Click(object sender, EventArgs eventArgs)
+        private void UpdateComboBoxes()
         {
-            string newId = m_textBoxId.Text;
-
-            foreach (TileSheet tileSheet in m_tileSheet.Map.TileSheets)
+            m_comboBoxTileSize.SelectedIndex = 0;
+            if (m_textBoxTileWidth.Value == m_textBoxTileHeight.Value)
             {
-                if (tileSheet == m_tileSheet)
-                    continue;
-                if (newId == tileSheet.Id)
+                switch ((int)m_textBoxTileWidth.Value)
                 {
-                    MessageBox.Show(this, "The specified Id is already used by another tile sheet",
-                        "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    case 8: m_comboBoxTileSize.SelectedIndex = 1; break;
+                    case 16: m_comboBoxTileSize.SelectedIndex = 2; break;
+                    case 32: m_comboBoxTileSize.SelectedIndex = 3; break;
+                    case 64: m_comboBoxTileSize.SelectedIndex = 4; break;
+                    case 128: m_comboBoxTileSize.SelectedIndex = 5; break;
+                    case 256: m_comboBoxTileSize.SelectedIndex = 6; break;
+                    case 512: m_comboBoxTileSize.SelectedIndex = 7; break;
                 }
             }
 
-            m_tileSheet.Id = newId;
-            m_tileSheet.Description = m_textBoxDescription.Text;
-            m_tileSheet.ImageSource = m_textBoxImageSource.Text;
-
-            m_tileSheet.TileSize = new Tiling.Size((int) m_textBoxTileWidth.Value, (int) m_textBoxTileHeight.Value);
-            m_tileSheet.Margin = new Tiling.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
-            m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
-
-            if (m_bitmapImageSource != null)
+            m_comboBoxMargin.SelectedIndex = 0;
+            if (m_textBoxTopMargin.Value == m_textBoxLeftMargin.Value)
             {
-                m_tileSheet.SheetSize = new Tiling.Size(
-                    (m_bitmapImageSource.Width - m_tileSheet.Margin.Width)
-                        / (m_tileSheet.TileSize.Width + m_tileSheet.Spacing.Width),
-                    (m_bitmapImageSource.Height - m_tileSheet.Margin.Height)
-                        / (m_tileSheet.TileSize.Height + m_tileSheet.Spacing.Height));
+                switch ((int)m_textBoxTopMargin.Value)
+                {
+                    case 0: m_comboBoxMargin.SelectedIndex = 1; break;
+                    case 1: m_comboBoxMargin.SelectedIndex = 2; break;
+                    case 2: m_comboBoxMargin.SelectedIndex = 3; break;
+                    case 3: m_comboBoxMargin.SelectedIndex = 4; break;
+                    case 4: m_comboBoxMargin.SelectedIndex = 5; break;
+                }
             }
 
-            m_customPropertyGrid.StoreProperties(m_tileSheet);
-
-            if (m_bitmapImageSource != null)
-                m_bitmapImageSource.Dispose();
-
-            DialogResult = DialogResult.OK;
-
-            Close();
+            m_comboBoxSpacing.SelectedIndex = 0;
+            if (m_textBoxSpacingX.Value == m_textBoxSpacingY.Value)
+            {
+                switch ((int)m_textBoxSpacingX.Value)
+                {
+                    case 0: m_comboBoxSpacing.SelectedIndex = 1; break;
+                    case 1: m_comboBoxSpacing.SelectedIndex = 2; break;
+                    case 2: m_comboBoxSpacing.SelectedIndex = 3; break;
+                    case 3: m_comboBoxSpacing.SelectedIndex = 4; break;
+                    case 4: m_comboBoxSpacing.SelectedIndex = 5; break;
+                }
+            }
         }
 
-        private void TileSheetPropertiesDialog_Load(object sender, EventArgs eventArgs)
+        private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_textBoxId.Text = m_tileSheet.Id;
             m_textBoxDescription.Text = m_tileSheet.Description;
@@ -80,6 +81,8 @@ namespace TileMapEditor.Dialog
             m_textBoxTopMargin.Value = m_tileSheet.Margin.Height;
             m_textBoxSpacingX.Value = m_tileSheet.Spacing.Width;
             m_textBoxSpacingY.Value = m_tileSheet.Spacing.Height;
+
+            UpdateComboBoxes();
 
             m_customPropertyGrid.LoadProperties(m_tileSheet);
 
@@ -99,7 +102,31 @@ namespace TileMapEditor.Dialog
             }
         }
 
-        private void m_buttonBrowse_Click(object sender, EventArgs eventArgs)
+        private void OnTileSizeCombo(object sender, EventArgs eventArgs)
+        {
+            if (m_comboBoxTileSize.SelectedIndex == 0)
+                return;
+            int size = 4 * 1 << m_comboBoxTileSize.SelectedIndex;
+            m_textBoxTileWidth.Value = m_textBoxTileHeight.Value = size;
+        }
+
+        private void OnMarginCombo(object sender, EventArgs eventArgs)
+        {
+            if (m_comboBoxMargin.SelectedIndex == 0)
+                return;
+            int size = m_comboBoxMargin.SelectedIndex - 1;
+            m_textBoxLeftMargin.Value = m_textBoxTopMargin.Value = size;
+        }
+
+        private void OnSpacingCombo(object sender, EventArgs eventArgs)
+        {
+            if (m_comboBoxSpacing.SelectedIndex == 0)
+                return;
+            int size = m_comboBoxSpacing.SelectedIndex - 1;
+            m_textBoxSpacingX.Value = m_textBoxSpacingY.Value = size;
+        }
+
+        private void OnBrowse(object sender, EventArgs eventArgs)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Browse for a Tile Set image";
@@ -248,7 +275,50 @@ namespace TileMapEditor.Dialog
             this.Cursor = cursor;
         }
 
-        private void m_panelImage_Paint(object sender, PaintEventArgs paintEventArgs)
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            string newId = m_textBoxId.Text;
+
+            foreach (TileSheet tileSheet in m_tileSheet.Map.TileSheets)
+            {
+                if (tileSheet == m_tileSheet)
+                    continue;
+                if (newId == tileSheet.Id)
+                {
+                    MessageBox.Show(this, "The specified Id is already used by another tile sheet",
+                        "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            m_tileSheet.Id = newId;
+            m_tileSheet.Description = m_textBoxDescription.Text;
+            m_tileSheet.ImageSource = m_textBoxImageSource.Text;
+
+            m_tileSheet.TileSize = new Tiling.Size((int)m_textBoxTileWidth.Value, (int)m_textBoxTileHeight.Value);
+            m_tileSheet.Margin = new Tiling.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
+            m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
+
+            if (m_bitmapImageSource != null)
+            {
+                m_tileSheet.SheetSize = new Tiling.Size(
+                    (m_bitmapImageSource.Width - m_tileSheet.Margin.Width)
+                        / (m_tileSheet.TileSize.Width + m_tileSheet.Spacing.Width),
+                    (m_bitmapImageSource.Height - m_tileSheet.Margin.Height)
+                        / (m_tileSheet.TileSize.Height + m_tileSheet.Spacing.Height));
+            }
+
+            m_customPropertyGrid.StoreProperties(m_tileSheet);
+
+            if (m_bitmapImageSource != null)
+                m_bitmapImageSource.Dispose();
+
+            DialogResult = DialogResult.OK;
+
+            Close();
+        }
+
+        private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
         {
             Graphics graphics = paintEventArgs.Graphics;
             //graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
@@ -301,10 +371,10 @@ namespace TileMapEditor.Dialog
 
         private void OnUpdateAlignment(object sender, EventArgs eventArgs)
         {
-            m_panelImage.Invalidate();
+            UpdateComboBoxes();
         }
 
-        private void m_timer_Tick(object sender, EventArgs eventArgs)
+        private void OnTimer(object sender, EventArgs eventArgs)
         {
             m_cycle = (m_cycle + 1) % 20;
             m_panelImage.Invalidate();
