@@ -76,6 +76,15 @@ namespace Tiling
                 (mapDisplayLocation.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
         }
 
+        public Tile PickTile(Location mapDisplayLocation)
+        {
+            Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation);
+            if (IsValidTileLocation(tileLocation))
+                return m_tiles[tileLocation.X, tileLocation.Y];
+            else
+                return null;
+        }
+
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             if (BeforeDraw != null)
