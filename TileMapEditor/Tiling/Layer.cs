@@ -44,11 +44,11 @@ namespace Tiling
             return false;
         }
 
-        public Location GetTileLocation(Location layerPixelLocation)
+        public Location GetTileLocation(Location layerDisplayLocation)
         {
             return new Location(
-                layerPixelLocation.X / m_tileSize.Width,
-                layerPixelLocation.Y / m_tileSize.Height);
+                layerDisplayLocation.X / m_tileSize.Width,
+                layerDisplayLocation.Y / m_tileSize.Height);
         }
 
         public bool IsValidTileLocation(Location tileLocation)
@@ -66,14 +66,14 @@ namespace Tiling
                 mapViewPort.Size);
         }
 
-        public Location ConvertMapToLayerLocation(Location mapPixelLocation)
+        public Location ConvertMapToLayerLocation(Location mapDisplayLocation)
         {
             Size mapDisplaySize = m_map.DisplaySize;
             Size layerDisplaySize = DisplaySize;
 
             return new Location(
-                (mapPixelLocation.X * layerDisplaySize.Width) / mapDisplaySize.Width,
-                (mapPixelLocation.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
+                (mapDisplayLocation.X * layerDisplaySize.Width) / mapDisplaySize.Width,
+                (mapDisplayLocation.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
         }
 
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
