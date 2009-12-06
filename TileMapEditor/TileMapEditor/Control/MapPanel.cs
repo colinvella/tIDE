@@ -28,6 +28,9 @@ namespace TileMapEditor.Control
         private EditTool m_editTool;
         private bool m_mouseInside;
         private Tiling.Location m_mouseLocation;
+        private Tiling.Location m_tileDisplayLocation;
+        private Tiling.Location m_tileLayerLocation;
+        private Tiling.Location m_dragTileStart;
 
         private Graphics m_graphics;
         private Tiling.Rectangle m_viewPort;
@@ -90,7 +93,7 @@ namespace TileMapEditor.Control
 
             Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
 
-            if (!m_selectedLayer.IsValidLocation(tileLocation))
+            if (!m_selectedLayer.IsValidTileLocation(tileLocation))
                 return;
 
             Tile oldTile = m_selectedLayer.Tiles[tileLocation];
@@ -115,7 +118,7 @@ namespace TileMapEditor.Control
 
             Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
 
-            if (!m_selectedLayer.IsValidLocation(tileLocation))
+            if (!m_selectedLayer.IsValidTileLocation(tileLocation))
                 return;
 
             if (m_selectedLayer.Tiles[tileLocation] != null)
@@ -135,7 +138,7 @@ namespace TileMapEditor.Control
 
             Location tileLocation = m_selectedLayer.GetTileLocation(pixelLocation);
 
-            if (!m_selectedLayer.IsValidLocation(tileLocation))
+            if (!m_selectedLayer.IsValidTileLocation(tileLocation))
                 return;
             
             Tile tile = m_selectedLayer.Tiles[tileLocation];
@@ -262,15 +265,20 @@ namespace TileMapEditor.Control
             // highlight tile under mouse cursor
             if (m_mouseInside)
             {
-                int tileX = ((m_mouseLocation.X + offsetX) / (tileSize.Width * m_zoom))
-                    * tileSize.Width - offsetX;
-                int tileY = ((m_mouseLocation.Y + offsetY) / (tileSize.Height * m_zoom))
-                    * tileSize.Height - offsetY;
+                int tileOffsetX = (m_mouseLocation.X + offsetX) / (tileSize.Width * m_zoom);
+                int tileOffsetY = (m_mouseLocation.Y + offsetY) / (tileSize.Height * m_zoom);
+
+                m_tileDisplayLocation.X = tileOffsetX * tileSize.Width - offsetX;
+                m_tileDisplayLocation.Y = tileOffsetY * tileSize.Height - offsetY;
+
+                m_tileLayerLocation = m_viewPort.Location;
+                m_tileLayerLocation.X += tileOffsetX;
+                m_tileLayerLocation.Y += tileOffsetY;
 
                 m_graphics.FillRectangle(m_tileSelectionBrush,
-                    tileX, tileY, tileSize.Width, tileSize.Height);
+                    m_tileDisplayLocation.X, m_tileDisplayLocation.Y, tileSize.Width, tileSize.Height);
                 m_graphics.DrawRectangle(m_tileSelectionPen,
-                    tileX, tileY, tileSize.Width, tileSize.Height);
+                    m_tileDisplayLocation.X, m_tileDisplayLocation.Y, tileSize.Width, tileSize.Height);
             }
         }
 
@@ -377,7 +385,10 @@ namespace TileMapEditor.Control
             m_innerPanel.Cursor = m_singleTileCursor;
             m_mouseInside = false;
             m_mouseLocation = new Location();
-
+            m_tileDisplayLocation = Tiling.Location.Origin;
+            m_tileLayerLocation = Tiling.Location.Origin;
+            m_dragTileStart = Tiling.Location.Origin;
+            
             m_tileGuides = false;
 
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));

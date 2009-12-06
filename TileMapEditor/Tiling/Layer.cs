@@ -44,33 +44,36 @@ namespace Tiling
             return false;
         }
 
-        public Location GetTileLocation(Location pixelLocation)
+        public Location GetTileLocation(Location layerPixelLocation)
         {
             return new Location(
-                pixelLocation.X / m_tileSize.Width,
-                pixelLocation.Y / m_tileSize.Height);
+                layerPixelLocation.X / m_tileSize.Width,
+                layerPixelLocation.Y / m_tileSize.Height);
         }
 
-        public bool IsValidLocation(Location tileLocation)
+        public bool IsValidTileLocation(Location tileLocation)
         {
             return tileLocation.X >= 0 && tileLocation.X < m_layerSize.Width
                 && tileLocation.Y >= 0 && tileLocation.Y < m_layerSize.Height;
         }
 
-        public Rectangle ConvertToLayerViewPort(Rectangle mapViewPort)
+        public Rectangle ConvertMapToLayerViewPort(Rectangle mapViewPort)
         {
             Size mapDisplaySize = m_map.DisplaySize;
 
-            Rectangle layerViewport = new Rectangle(mapViewPort);
+            return new Rectangle(
+                ConvertMapToLayerLocation(mapViewPort.Location),
+                mapViewPort.Size);
+        }
+
+        public Location ConvertMapToLayerLocation(Location mapPixelLocation)
+        {
+            Size mapDisplaySize = m_map.DisplaySize;
             Size layerDisplaySize = DisplaySize;
 
-            layerViewport.Location.X *= layerDisplaySize.Width;
-            layerViewport.Location.X /= mapDisplaySize.Width;
-
-            layerViewport.Location.Y *= layerDisplaySize.Height;
-            layerViewport.Location.Y /= mapDisplaySize.Height;
-
-            return layerViewport;
+            return new Location(
+                (mapPixelLocation.X * layerDisplaySize.Width) / mapDisplaySize.Width,
+                (mapPixelLocation.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
         }
 
         public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
