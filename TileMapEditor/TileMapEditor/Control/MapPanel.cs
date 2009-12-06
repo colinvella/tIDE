@@ -294,6 +294,7 @@ namespace TileMapEditor.Control
 
             if (!Enabled)
             {
+                m_graphics.Transform = new Matrix();
                 m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(224, SystemColors.Control)), ClientRectangle);
                 SizeF stringSize = m_graphics.MeasureString("Add layers to this map", this.Font);
                 m_graphics.DrawString("Add layers to this map", this.Font, SystemBrushes.ControlDark,

@@ -59,8 +59,10 @@ namespace TileMapEditor
             foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
                 toolStripMenuItem.Checked = toolStripMenuItem.Tag.ToString() == zoom.ToString();
 
-            m_viewZoomInButton.Enabled = m_mapPanel.Zoom < 10;
-            m_viewZoomOutButton.Enabled = m_mapPanel.Zoom > 1;
+            m_viewZoomComboBox.SelectedIndex = zoom - 1;
+
+            m_viewZoomInButton.Enabled = zoom < 10;
+            m_viewZoomOutButton.Enabled = zoom > 1;
         }
 
         private void UpdateLayerCompositingControls()
@@ -119,6 +121,8 @@ namespace TileMapEditor
 
             m_selectedComponent = m_map;
 
+            m_viewZoomComboBox.SelectedIndex = 0;
+
             ArrangeToolStripLayout();
         }
 
@@ -153,6 +157,13 @@ namespace TileMapEditor
             m_mapPanel.Zoom = zoom;
 
             UpdateZoomControls();
+        }
+
+        private void OnViewZoomComboBox(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.Zoom = m_viewZoomComboBox.SelectedIndex + 1;
+            UpdateZoomControls();
+            m_viewToolStrip.Focus();
         }
 
         private void OnViewZoomIn(object sender, EventArgs eventArgs)
