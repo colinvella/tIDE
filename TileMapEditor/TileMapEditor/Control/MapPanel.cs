@@ -68,7 +68,7 @@ namespace TileMapEditor.Control
             return layerLocation;
         }
 
-        private void DrawSingleTile(MouseEventArgs mouseEventArgs)
+        private void DrawSingleTile()
         {
             if (m_selectedLayer == null)
                 return;
@@ -128,7 +128,7 @@ namespace TileMapEditor.Control
             m_innerPanel.Invalidate();
         }
 
-        private void EraseTile(MouseEventArgs mouseEventArgs)
+        private void EraseTile()
         {
             if (m_selectedLayer == null)
                 return;
@@ -143,7 +143,7 @@ namespace TileMapEditor.Control
             }
         }
 
-        private void PickTile(MouseEventArgs mouseEventArgs)
+        private void PickTile()
         {
             if (m_selectedLayer == null)
                 return;
@@ -352,10 +352,10 @@ namespace TileMapEditor.Control
             {
                 switch (m_editTool)
                 {
-                    case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
+                    case EditTool.SingleTile: DrawSingleTile(); break;
                     case EditTool.TileBlock: m_dragTileStart = m_tileLayerLocation; break;
-                    case EditTool.Eraser: EraseTile(mouseEventArgs); break;
-                    case EditTool.Dropper: PickTile(mouseEventArgs); break;
+                    case EditTool.Eraser: EraseTile(); break;
+                    case EditTool.Dropper: PickTile(); break;
                 }
             }
         }
@@ -373,9 +373,9 @@ namespace TileMapEditor.Control
             {
                 switch (m_editTool)
                 {
-                    case EditTool.SingleTile: DrawSingleTile(mouseEventArgs); break;
-                    case EditTool.Eraser: EraseTile(mouseEventArgs); break;
-                    case EditTool.Dropper: PickTile(mouseEventArgs); break;
+                    case EditTool.SingleTile: DrawSingleTile(); break;
+                    case EditTool.Eraser: EraseTile(); break;
+                    case EditTool.Dropper: PickTile(); break;
                 }
             }
         }
