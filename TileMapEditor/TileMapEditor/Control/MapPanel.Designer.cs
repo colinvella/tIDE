@@ -56,7 +56,7 @@
             // m_animationTimer
             // 
             this.m_animationTimer.Enabled = true;
-            this.m_animationTimer.Tick += new System.EventHandler(this.m_animationTimer_Tick);
+            this.m_animationTimer.Tick += new System.EventHandler(this.OnAnimationTimer);
             // 
             // m_innerPanel
             // 
@@ -66,11 +66,13 @@
             this.m_innerPanel.Name = "m_innerPanel";
             this.m_innerPanel.Size = new System.Drawing.Size(301, 221);
             this.m_innerPanel.TabIndex = 2;
+            this.m_innerPanel.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnMapPaint);
             this.m_innerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
             this.m_innerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             this.m_innerPanel.Resize += new System.EventHandler(this.OnResizeDisplay);
             this.m_innerPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
+            this.m_innerPanel.MouseEnter += new System.EventHandler(this.OnMouseEnter);
             // 
             // MapPanel
             // 

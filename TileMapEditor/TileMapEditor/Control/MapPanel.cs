@@ -26,6 +26,7 @@ namespace TileMapEditor.Control
         private LayerCompositing m_layerCompositing;
         private bool m_tileGuides;
         private EditTool m_editTool;
+        private bool m_mouseInside;
         private Tiling.Location m_mouseLocation;
 
         private Graphics m_graphics;
@@ -34,6 +35,7 @@ namespace TileMapEditor.Control
         private Brush m_veilBrush;
         private ImageAttributes m_imageAttributes;
         private ColorMatrix m_colorMatrix;
+        private Pen m_tileSelectionPen;
         private Brush m_tileSelectionBrush;
 
         private Pen m_tileGuidePen;
@@ -258,13 +260,18 @@ namespace TileMapEditor.Control
             }
 
             // highlight tile under mouse cursor
-            int tileX = ((m_mouseLocation.X + offsetX) / tileSize.Width)
-                * tileSize.Width - offsetX;
-            int tileY = ((m_mouseLocation.Y + offsetY) / tileSize.Height)
-                * tileSize.Height - offsetY;
+            if (m_mouseInside)
+            {
+                int tileX = ((m_mouseLocation.X + offsetX) / (tileSize.Width * m_zoom))
+                    * tileSize.Width - offsetX;
+                int tileY = ((m_mouseLocation.Y + offsetY) / (tileSize.Height * m_zoom))
+                    * tileSize.Height - offsetY;
 
-            m_graphics.FillRectangle(m_tileSelectionBrush,
-                tileX, tileY, tileSize.Width, tileSize.Height);
+                m_graphics.FillRectangle(m_tileSelectionBrush,
+                    tileX, tileY, tileSize.Width, tileSize.Height);
+                m_graphics.DrawRectangle(m_tileSelectionPen,
+                    tileX, tileY, tileSize.Width, tileSize.Height);
+            }
         }
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
@@ -311,6 +318,7 @@ namespace TileMapEditor.Control
 
         private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
+            m_mouseInside = true;
             m_mouseLocation.X = mouseEventArgs.X;
             m_mouseLocation.Y = mouseEventArgs.Y;
 
@@ -328,6 +336,21 @@ namespace TileMapEditor.Control
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
             m_bMouseDown = false;
+        }
+
+        private void OnMouseEnter(object sender, EventArgs eventArgs)
+        {
+            m_mouseInside = true;
+        }
+
+        private void OnMouseLeave(object sender, EventArgs eventArgs)
+        {
+            m_mouseInside = false;
+        }
+
+        private void OnAnimationTimer(object sender, EventArgs eventArgs)
+        {
+            m_innerPanel.Invalidate();
         }
 
         #endregion
@@ -351,6 +374,7 @@ namespace TileMapEditor.Control
 
             m_editTool = EditTool.SingleTile;
             m_innerPanel.Cursor = m_singleTileCursor;
+            m_mouseInside = false;
             m_mouseLocation = new Location();
 
             m_tileGuides = false;
@@ -358,6 +382,7 @@ namespace TileMapEditor.Control
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
             m_imageAttributes = new ImageAttributes();
             m_colorMatrix = new ColorMatrix();
+            m_tileSelectionPen = new Pen(SystemColors.ActiveCaption);
             m_tileSelectionBrush = new SolidBrush(
                 Color.FromArgb(128, SystemColors.ActiveCaption));
 
@@ -480,7 +505,7 @@ namespace TileMapEditor.Control
                 m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
                 m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
 
-                m_tileGuidePen.Width = 1.0f / m_zoom;
+                m_tileGuidePen.Width = m_tileSelectionPen.Width = 1.0f / m_zoom;
                 m_dashPattern[0] = m_dashPattern[1] = m_dashPattern[2] = m_dashPattern[3] = 1.0f / m_zoom;
                 m_tileGuidePen.DashPattern = m_dashPattern;
 
@@ -556,11 +581,6 @@ namespace TileMapEditor.Control
         public event MapPanelEventHandler TilePicked;
 
         #endregion
-
-        private void m_animationTimer_Tick(object sender, EventArgs e)
-        {
-            m_innerPanel.Invalidate();
-        }
     }
 
     public enum LayerCompositing
