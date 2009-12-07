@@ -378,6 +378,32 @@ namespace TileMapEditor.Control
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
                 m_map.Draw(this, m_viewPort);
+
+                // border
+                Location borderCorner = -m_viewPort.Location;
+                borderCorner.X += m_map.DisplaySize.Width;
+                borderCorner.Y += m_map.DisplaySize.Height;
+
+                float inverseZoom = 1.0f / m_zoom;
+                Pen borderPen = new Pen(Color.Black);
+                borderPen.Width = inverseZoom;
+
+                Pen shadowPen = new Pen(SystemColors.ControlDarkDark);
+                shadowPen.Width = 2.0f * inverseZoom;
+
+                if (borderCorner.X >= 0 && borderCorner.X < this.ClientRectangle.Width)
+                {
+                    m_graphics.FillRectangle(SystemBrushes.ControlDark, borderCorner.X, 0, this.Width - borderCorner.X, this.Height);
+                    m_graphics.DrawLine(borderPen, borderCorner.X, 0, borderCorner.X, borderCorner.Y);
+                    m_graphics.DrawLine(shadowPen, borderCorner.X + inverseZoom, 0, borderCorner.X + inverseZoom, borderCorner.Y + inverseZoom);
+                }
+
+                if (borderCorner.Y >= 0 && borderCorner.Y < this.ClientRectangle.Height)
+                {
+                    m_graphics.FillRectangle(SystemBrushes.ControlDark, 0, borderCorner.Y, this.Width, this.Height - borderCorner.Y);
+                    m_graphics.DrawLine(borderPen, 0, borderCorner.Y, borderCorner.X, borderCorner.Y);
+                    m_graphics.DrawLine(shadowPen, 0, borderCorner.Y + inverseZoom, borderCorner.X + inverseZoom, borderCorner.Y + inverseZoom);
+                }
             }
 
             if (!Enabled)

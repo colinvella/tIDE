@@ -78,5 +78,15 @@ namespace Tiling
             corner.X -= rectangle.Size.Width - 1;
             ExtendTo(corner);
         }
+
+        public Location MaxCorner
+        {
+            get
+            {
+                return new Location(
+                    Location.X + Size.Width - 1,
+                    Location.Y + Size.Height - 1);
+            }
+        }
     }
 }

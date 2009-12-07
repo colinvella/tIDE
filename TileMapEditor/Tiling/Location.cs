@@ -14,6 +14,11 @@ namespace Tiling
         public int X;
         public int Y;
 
+        public static Location operator -(Location location)
+        {
+            return new Location(-location.X, -location.Y);
+        }
+
         public static Location operator +(Location location1, Location location2)
         {
             return new Location(location1.X + location2.X, location1.Y + location2.Y);
