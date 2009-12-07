@@ -21,6 +21,12 @@ namespace TileMapEditor.Control
 
         public bool IsEmpty() { return m_tileLocations.Count == 0; }
 
+        public bool Contains(Location tileLocation)
+        {
+            return m_bounds.Contains(tileLocation)
+                && m_tileLocations.Contains(tileLocation);
+        }
+
         public void Clear()
         {
             m_tileLocations.Clear();
