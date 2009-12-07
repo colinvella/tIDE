@@ -231,12 +231,16 @@ namespace TileMapEditor.Control
 
         private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
         {
-            if (m_layerCompositing == LayerCompositing.DimUnselected
-                && layerEventArgs.Layer == m_selectedLayer
-                && m_map.Layers.IndexOf(layerEventArgs.Layer) > 0)
+            if (layerEventArgs.Layer != m_selectedLayer)
+                return;
+
+            if (m_layerCompositing == LayerCompositing.DimUnselected)
             {
-                m_graphics.FillRectangle(m_veilBrush, ClientRectangle);
+                // set translucency for current layer
+                m_colorMatrix.Matrix33 = 1.0f;
+                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             }
+
         }
 
         private void OnAfterLayerDraw(LayerEventArgs layerEventArgs)
@@ -323,11 +327,11 @@ namespace TileMapEditor.Control
                 UpdateScrollBars();
                 BindLayerDrawEvents();
 
-                m_map.Draw(this, m_viewPort);
-
                 // reset translucency
-                m_colorMatrix.Matrix33 = 1.0f;
+                m_colorMatrix.Matrix33 = m_layerCompositing == LayerCompositing.DimUnselected ? 0.25f : 1.0f;
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                m_map.Draw(this, m_viewPort);
             }
 
             if (!Enabled)
