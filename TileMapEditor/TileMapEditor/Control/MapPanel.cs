@@ -205,13 +205,13 @@ namespace TileMapEditor.Control
                 m_horizontalScrollBar.LargeChange = 1 + (clientRectangle.Width - 1) / m_zoom;
                 m_horizontalScrollBar.Value
                     = Math.Min(m_horizontalScrollBar.Value, displaySize.Width);
-                m_horizontalScrollBar.Visible = displaySize.Width > clientRectangle.Width;
+                m_horizontalScrollBar.Visible = displaySize.Width * m_zoom > clientRectangle.Width;
 
                 m_verticalScrollBar.Maximum = displaySize.Height;
                 m_verticalScrollBar.LargeChange = 1 + (clientRectangle.Height - 1) / m_zoom;
                 m_verticalScrollBar.Value
                     = Math.Min(m_verticalScrollBar.Value, displaySize.Height);
-                m_verticalScrollBar.Visible = displaySize.Height > clientRectangle.Height;
+                m_verticalScrollBar.Visible = displaySize.Height * m_zoom > clientRectangle.Height;
             }
         }
 
