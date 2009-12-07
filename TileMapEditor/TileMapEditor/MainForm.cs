@@ -126,6 +126,33 @@ namespace TileMapEditor
             ArrangeToolStripLayout();
         }
 
+        private void OnKeyDown(object sender, KeyEventArgs keyEventArgs)
+        {
+            switch (keyEventArgs.KeyCode)
+            {
+                case Keys.T:
+                    m_mapPanel.EditTool = EditTool.SingleTile;
+                    UpdateEditToolButtons();
+                    keyEventArgs.SuppressKeyPress = true;
+                    break;
+                case Keys.B:
+                    m_mapPanel.EditTool = EditTool.TileBlock;
+                    UpdateEditToolButtons();
+                    keyEventArgs.SuppressKeyPress = true;
+                    break;
+                case Keys.E:
+                    m_mapPanel.EditTool = EditTool.Eraser;
+                    UpdateEditToolButtons();
+                    keyEventArgs.SuppressKeyPress = true;
+                    break;
+                case Keys.P:
+                    m_mapPanel.EditTool = EditTool.Dropper;
+                    UpdateEditToolButtons();
+                    keyEventArgs.SuppressKeyPress = true;
+                    break;
+            }
+        }
+
         private void OnFileNew(object sender, EventArgs eventArgs)
         {
             if (MessageBox.Show(this, "Start a new map project?", "New map", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
