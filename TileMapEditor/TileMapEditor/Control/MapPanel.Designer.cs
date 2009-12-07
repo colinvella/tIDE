@@ -85,7 +85,6 @@
             this.Name = "MapPanel";
             this.Size = new System.Drawing.Size(318, 238);
             this.ResumeLayout(false);
-
         }
 
         #endregion

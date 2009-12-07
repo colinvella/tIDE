@@ -156,6 +156,19 @@ namespace TileMapEditor
                     UpdateEditToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
+                case Keys.ControlKey:
+                    m_mapPanel.CtrlKeyPressed = true;
+                    break;
+            }
+        }
+
+        private void OnKeyUp(object sender, KeyEventArgs keyEventArgs)
+        {
+            switch (keyEventArgs.KeyCode)
+            {
+                case Keys.ControlKey:
+                    m_mapPanel.CtrlKeyPressed = false;
+                    break;
             }
         }
 
