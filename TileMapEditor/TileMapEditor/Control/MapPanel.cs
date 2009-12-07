@@ -28,7 +28,6 @@ namespace TileMapEditor.Control
         private EditTool m_editTool;
         private bool m_mouseInside;
         private Tiling.Location m_mouseLocation;
-        private Tiling.Location m_tileDisplayLocation;
         private Tiling.Location m_tileLayerLocation;
         private Tiling.Location m_dragTileStart;
 
@@ -277,11 +276,8 @@ namespace TileMapEditor.Control
             // highlight tile under mouse cursor
             if (m_mouseInside)
             {
-                int tileOffsetX = (m_mouseLocation.X + offsetX) / (tileSize.Width * m_zoom);
-                int tileOffsetY = (m_mouseLocation.Y + offsetY) / (tileSize.Height * m_zoom);
-
-                m_tileDisplayLocation.X = tileOffsetX * tileSize.Width - offsetX;
-                m_tileDisplayLocation.Y = tileOffsetY * tileSize.Height - offsetY;
+                Tiling.Rectangle tileDisplayRectangle = m_selectedLayer.GetTileDisplayRectangle(m_viewPort, m_tileLayerLocation);
+                Tiling.Location tileDisplayLocation = tileDisplayRectangle.Location;
 
                 int selectionX = 0, selectionY = 0;
                 int selectionWidth = 0, selectionHeight = 0;
@@ -294,19 +290,19 @@ namespace TileMapEditor.Control
                     selectionHeight = (Math.Abs(deltaTileY) + 1) * tileSize.Height;
 
                     if (deltaTileX >= 0)
-                        selectionX = m_tileDisplayLocation.X - selectionWidth + tileSize.Width;
+                        selectionX = tileDisplayLocation.X - selectionWidth + tileSize.Width;
                     else
-                        selectionX = m_tileDisplayLocation.X;
+                        selectionX = tileDisplayLocation.X;
 
                     if (deltaTileY >= 0)
-                        selectionY = m_tileDisplayLocation.Y - selectionHeight + tileSize.Height;
+                        selectionY = tileDisplayLocation.Y - selectionHeight + tileSize.Height;
                     else
-                        selectionY = m_tileDisplayLocation.Y;
+                        selectionY = tileDisplayLocation.Y;
                 }
                 else
                 {
-                    selectionX = m_tileDisplayLocation.X;
-                    selectionY = m_tileDisplayLocation.Y;
+                    selectionX = tileDisplayLocation.X;
+                    selectionY = tileDisplayLocation.Y;
                     selectionWidth = tileSize.Width;
                     selectionHeight = tileSize.Height;
                 }
@@ -433,7 +429,6 @@ namespace TileMapEditor.Control
             m_innerPanel.Cursor = m_singleTileCursor;
             m_mouseInside = false;
             m_mouseLocation = new Location();
-            m_tileDisplayLocation = Tiling.Location.Origin;
             m_tileLayerLocation = Tiling.Location.Origin;
             m_dragTileStart = Tiling.Location.Origin;
             

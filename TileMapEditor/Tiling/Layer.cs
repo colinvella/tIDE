@@ -76,6 +76,28 @@ namespace Tiling
                 (mapDisplayLocation.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
         }
 
+        public Location ConvertLayerToMapLocation(Location layerDisplayLocation)
+        {
+            Size mapDisplaySize = m_map.DisplaySize;
+            Size layerDisplaySize = DisplaySize;
+
+            return new Location(
+                (layerDisplayLocation.X * mapDisplaySize.Width) / layerDisplaySize.Width,
+                (layerDisplayLocation.Y * mapDisplaySize.Height) / layerDisplaySize.Height);
+        }
+
+        public Rectangle GetTileDisplayRectangle(Rectangle mapViewPort, Location tileLocation)
+        {
+            Location layerViewportLocation = ConvertLayerToMapLocation(mapViewPort.Location);
+
+            Location tileDisplayLocation = new Location(
+                tileLocation.X * m_tileSize.Width, tileLocation.Y * m_tileSize.Height);
+
+            Location tileDisplayOffset = tileDisplayLocation - layerViewportLocation;
+
+            return new Rectangle(tileDisplayOffset, m_tileSize);
+        }
+
         public Tile PickTile(Location mapDisplayLocation)
         {
             Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation);
