@@ -833,7 +833,7 @@
             this.m_editTileBlockButton.Name = "m_editTileBlockButton";
             this.m_editTileBlockButton.Size = new System.Drawing.Size(23, 22);
             this.m_editTileBlockButton.Text = "Draw a block of tiles";
-            this.m_editTileBlockButton.ToolTipText = "Lay a block of tiles";
+            this.m_editTileBlockButton.ToolTipText = "Lay a block of tiles [ B ]";
             this.m_editTileBlockButton.Click += new System.EventHandler(this.OnEditTileBlock);
             // 
             // m_editEraserButton
@@ -844,7 +844,7 @@
             this.m_editEraserButton.Name = "m_editEraserButton";
             this.m_editEraserButton.Size = new System.Drawing.Size(23, 22);
             this.m_editEraserButton.Text = "Eraser";
-            this.m_editEraserButton.ToolTipText = "Erase tiles";
+            this.m_editEraserButton.ToolTipText = "Erase tiles [ E ]";
             this.m_editEraserButton.Click += new System.EventHandler(this.OnEditEraser);
             // 
             // m_editDropperButton
@@ -855,7 +855,7 @@
             this.m_editDropperButton.Name = "m_editDropperButton";
             this.m_editDropperButton.Size = new System.Drawing.Size(23, 22);
             this.m_editDropperButton.Text = "Eye dropper";
-            this.m_editDropperButton.ToolTipText = "Pick tiles from the map";
+            this.m_editDropperButton.ToolTipText = "Pick tiles from the map [ P ]";
             this.m_editDropperButton.Click += new System.EventHandler(this.OnEditDropper);
             // 
             // m_editToolStripSeparator1
