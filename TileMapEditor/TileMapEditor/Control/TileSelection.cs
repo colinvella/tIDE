@@ -19,6 +19,8 @@ namespace TileMapEditor.Control
             m_bounds = new Rectangle(Location.Origin, Size.Zero);
         }
 
+        public bool IsEmpty() { return m_tileLocations.Count == 0; }
+
         public void Clear()
         {
             m_tileLocations.Clear();
