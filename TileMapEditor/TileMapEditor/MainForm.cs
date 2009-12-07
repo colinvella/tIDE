@@ -105,6 +105,7 @@ namespace TileMapEditor
         {
             EditTool editTool = m_mapPanel.EditTool;
 
+            m_editSelectButton.Checked = editTool == EditTool.Select;
             m_editSingleTileButton.Checked = editTool == EditTool.SingleTile;
             m_editTileBlockButton.Checked = editTool == EditTool.TileBlock;
             m_editEraserButton.Checked = editTool == EditTool.Eraser;
@@ -130,6 +131,11 @@ namespace TileMapEditor
         {
             switch (keyEventArgs.KeyCode)
             {
+                case Keys.S:
+                    m_mapPanel.EditTool = EditTool.Select;
+                    UpdateEditToolButtons();
+                    keyEventArgs.SuppressKeyPress = true;
+                    break;
                 case Keys.T:
                     m_mapPanel.EditTool = EditTool.SingleTile;
                     UpdateEditToolButtons();
@@ -426,6 +432,12 @@ namespace TileMapEditor
         {
             m_mapPanel.SelectedTileSheet = tilePickerEventArgs.TileSheet;
             m_mapPanel.SelectedTileIndex = tilePickerEventArgs.TileIndex;
+        }
+
+        private void OnEditSelectButton(object sender, EventArgs e)
+        {
+            m_mapPanel.EditTool = EditTool.Select;
+            UpdateEditToolButtons();
         }
 
         private void OnEditSingleTile(object sender, EventArgs eventArgs)

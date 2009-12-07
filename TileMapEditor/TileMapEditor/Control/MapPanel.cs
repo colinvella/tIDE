@@ -30,6 +30,7 @@ namespace TileMapEditor.Control
         private Tiling.Location m_mouseLocation;
         private Tiling.Location m_tileLayerLocation;
         private Tiling.Location m_dragTileStart;
+        private List<Tiling.Location> m_selectedTiles;
 
         private Graphics m_graphics;
         private Tiling.Rectangle m_viewPort;
@@ -436,6 +437,7 @@ namespace TileMapEditor.Control
             m_mouseLocation = new Location();
             m_tileLayerLocation = Tiling.Location.Origin;
             m_dragTileStart = Tiling.Location.Origin;
+            m_selectedTiles = new List<Location>();
             
             m_tileGuides = false;
 
@@ -651,6 +653,7 @@ namespace TileMapEditor.Control
 
     public enum EditTool
     {
+        Select,
         SingleTile,
         TileBlock,
         Eraser,

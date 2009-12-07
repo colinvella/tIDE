@@ -200,6 +200,7 @@
     <None Include="Resources\EditSingleTile.png" />
     <Content Include="Resources\EditDropperCursor.cur" />
     <Content Include="Resources\EditEraserCursor.cur" />
+    <None Include="Resources\EditSelect.png" />
     <Content Include="Resources\EditSingleTileCursor.cur" />
     <Content Include="Resources\EditTileBlockCursor.cur" />
     <Content Include="Resources\EditUndo.png" />
