@@ -84,6 +84,7 @@
       <DependentUpon>TilePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\TilePickerEventArgs.cs" />
+    <Compile Include="Control\TileSelection.cs" />
     <Compile Include="Dialog\LayerPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
