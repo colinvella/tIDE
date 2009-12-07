@@ -21,6 +21,10 @@ namespace TileMapEditor.Dialog
         private string m_imageSourceErrorMessge;
         private int m_cycle;
 
+        bool m_previewMouseDown;
+        private Tiling.Location m_previewOffset;
+        private Tiling.Location m_previewGrip;
+
         #endregion
 
         #region Private Methods
@@ -100,6 +104,10 @@ namespace TileMapEditor.Dialog
             {
                 m_imageSourceErrorMessge = exception.Message;
             }
+
+            m_previewMouseDown = false;
+            m_previewOffset = Tiling.Location.Origin;
+            m_previewGrip = Tiling.Location.Origin;
         }
 
         private void OnTileSizeCombo(object sender, EventArgs eventArgs)
@@ -151,7 +159,7 @@ namespace TileMapEditor.Dialog
             }
         }
 
-        private void m_buttonAutoDetect_Click(object sender, EventArgs eventArgs)
+        private void OnAutoDetect(object sender, EventArgs eventArgs)
         {
             if (m_bitmapImageSource == null)
                 return;
@@ -318,10 +326,60 @@ namespace TileMapEditor.Dialog
             Close();
         }
 
+        private void m_trackBar_Scroll(object sender, EventArgs eventArgs)
+        {
+            if (m_trackBar.Value == 1)
+                m_labelZoom.Text = "Zoom";
+            else
+                m_labelZoom.Text = "Zoom (x " + m_trackBar.Value + ")";
+            m_panelImage.Invalidate();
+        }
+
+        private void OnUpdateAlignment(object sender, EventArgs eventArgs)
+        {
+            UpdateComboBoxes();
+        }
+
+        private void OnPreviewMouseDown(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (mouseEventArgs.Button == MouseButtons.Left)
+            {
+                m_previewMouseDown = true;
+                m_previewGrip.X = mouseEventArgs.X;
+                m_previewGrip.Y = mouseEventArgs.Y;
+            }
+        }
+
+        private void OnPreviewMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (m_previewMouseDown && m_bitmapImageSource != null)
+            {
+                int deltaX = mouseEventArgs.X - m_previewGrip.X;
+                int deltaY = mouseEventArgs.Y - m_previewGrip.Y;
+
+                m_previewOffset.X -= deltaX;
+                m_previewOffset.Y -= deltaY;
+
+                m_previewOffset.X = Math.Min(
+                    m_bitmapImageSource.Width - m_panelImage.Width,
+                    Math.Max(0, m_previewOffset.X));
+                m_previewOffset.Y = Math.Min(
+                    m_bitmapImageSource.Height - m_panelImage.Height,
+                    Math.Max(0, m_previewOffset.Y));
+
+                m_previewGrip.X = mouseEventArgs.X;
+                m_previewGrip.Y = mouseEventArgs.Y;
+            }
+        }
+
+        private void OnPreviewMouseUp(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_previewMouseDown = false;
+        }
+
         private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
         {
             Graphics graphics = paintEventArgs.Graphics;
-            //graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
 
             if (m_bitmapImageSource == null && m_imageSourceErrorMessge == null)
             {
@@ -335,13 +393,15 @@ namespace TileMapEditor.Dialog
             else
             {
                 graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+                graphics.PixelOffsetMode = PixelOffsetMode.Half;
+
                 graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
-                //System.Drawing.Rectangle rectangleSource = new System.Drawing.Rectangle(0, 0, m_bitmapImageSource.Width, m_bitmapImageSource.Height);
+                graphics.TranslateTransform(-m_previewOffset.X, -m_previewOffset.Y);
+
                 System.Drawing.Rectangle rectangleDestination = new System.Drawing.Rectangle(0, 0, m_bitmapImageSource.Width * m_trackBar.Value, m_bitmapImageSource.Height * m_trackBar.Value);
-                //graphics.DrawImage(m_bitmapImageSource, rectangleDestination, rectangleSource, GraphicsUnit.Pixel);
                 graphics.DrawImage(m_bitmapImageSource, 0, 0);
 
-                byte intensity = m_cycle < 10 ? (byte)(255 * m_cycle / 10 ) : (byte)(255 * (20 - m_cycle) / 10);
+                byte intensity = m_cycle < 10 ? (byte)(255 * m_cycle / 10) : (byte)(255 * (20 - m_cycle) / 10);
                 Pen pen = new Pen(Color.FromArgb(128, intensity, intensity, intensity));
 
                 int imageWidth = m_bitmapImageSource.Width;
@@ -358,20 +418,6 @@ namespace TileMapEditor.Dialog
                         graphics.DrawRectangle(pen, posX, posY, tileWidth - 1, tileHeight - 1);
             }
 
-        }
-
-        private void m_trackBar_Scroll(object sender, EventArgs eventArgs)
-        {
-            if (m_trackBar.Value == 1)
-                m_labelZoom.Text = "Zoom";
-            else
-                m_labelZoom.Text = "Zoom (x " + m_trackBar.Value + ")";
-            m_panelImage.Invalidate();
-        }
-
-        private void OnUpdateAlignment(object sender, EventArgs eventArgs)
-        {
-            UpdateComboBoxes();
         }
 
         private void OnTimer(object sender, EventArgs eventArgs)
