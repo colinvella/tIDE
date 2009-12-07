@@ -550,7 +550,7 @@
             this.m_trackBar.Size = new System.Drawing.Size(129, 45);
             this.m_trackBar.TabIndex = 15;
             this.m_trackBar.Value = 1;
-            this.m_trackBar.Scroll += new System.EventHandler(this.m_trackBar_Scroll);
+            this.m_trackBar.Scroll += new System.EventHandler(this.OnZoom);
             // 
             // m_labelZoom
             // 

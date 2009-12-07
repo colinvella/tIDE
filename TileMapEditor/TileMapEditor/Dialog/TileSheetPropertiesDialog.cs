@@ -283,6 +283,58 @@ namespace TileMapEditor.Dialog
             this.Cursor = cursor;
         }
 
+        private void OnZoom(object sender, EventArgs eventArgs)
+        {
+            if (m_trackBar.Value == 1)
+                m_labelZoom.Text = "Zoom";
+            else
+                m_labelZoom.Text = "Zoom (x " + m_trackBar.Value + ")";
+            m_panelImage.Invalidate();
+        }
+
+        private void OnUpdateAlignment(object sender, EventArgs eventArgs)
+        {
+            UpdateComboBoxes();
+        }
+
+        private void OnPreviewMouseDown(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (mouseEventArgs.Button == MouseButtons.Left)
+            {
+                m_previewMouseDown = true;
+                m_previewGrip.X = mouseEventArgs.X;
+                m_previewGrip.Y = mouseEventArgs.Y;
+            }
+        }
+
+        private void OnPreviewMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (m_previewMouseDown && m_bitmapImageSource != null)
+            {
+                int deltaX = mouseEventArgs.X - m_previewGrip.X;
+                int deltaY = mouseEventArgs.Y - m_previewGrip.Y;
+
+                m_previewOffset.X -= deltaX;
+                m_previewOffset.Y -= deltaY;
+
+                m_previewOffset.X = Math.Min(m_previewOffset.X,
+                    m_bitmapImageSource.Width - m_panelImage.Width);
+                m_previewOffset.Y = Math.Min(m_previewOffset.Y,
+                    m_bitmapImageSource.Height - m_panelImage.Height);
+
+                m_previewOffset.X = Math.Max(0, m_previewOffset.X);
+                m_previewOffset.Y = Math.Max(0, m_previewOffset.Y);
+
+                m_previewGrip.X = mouseEventArgs.X;
+                m_previewGrip.Y = mouseEventArgs.Y;
+            }
+        }
+
+        private void OnPreviewMouseUp(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_previewMouseDown = false;
+        }
+
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
             string newId = m_textBoxId.Text;
@@ -324,57 +376,6 @@ namespace TileMapEditor.Dialog
             DialogResult = DialogResult.OK;
 
             Close();
-        }
-
-        private void m_trackBar_Scroll(object sender, EventArgs eventArgs)
-        {
-            if (m_trackBar.Value == 1)
-                m_labelZoom.Text = "Zoom";
-            else
-                m_labelZoom.Text = "Zoom (x " + m_trackBar.Value + ")";
-            m_panelImage.Invalidate();
-        }
-
-        private void OnUpdateAlignment(object sender, EventArgs eventArgs)
-        {
-            UpdateComboBoxes();
-        }
-
-        private void OnPreviewMouseDown(object sender, MouseEventArgs mouseEventArgs)
-        {
-            if (mouseEventArgs.Button == MouseButtons.Left)
-            {
-                m_previewMouseDown = true;
-                m_previewGrip.X = mouseEventArgs.X;
-                m_previewGrip.Y = mouseEventArgs.Y;
-            }
-        }
-
-        private void OnPreviewMouseMove(object sender, MouseEventArgs mouseEventArgs)
-        {
-            if (m_previewMouseDown && m_bitmapImageSource != null)
-            {
-                int deltaX = mouseEventArgs.X - m_previewGrip.X;
-                int deltaY = mouseEventArgs.Y - m_previewGrip.Y;
-
-                m_previewOffset.X -= deltaX;
-                m_previewOffset.Y -= deltaY;
-
-                m_previewOffset.X = Math.Min(
-                    m_bitmapImageSource.Width - m_panelImage.Width,
-                    Math.Max(0, m_previewOffset.X));
-                m_previewOffset.Y = Math.Min(
-                    m_bitmapImageSource.Height - m_panelImage.Height,
-                    Math.Max(0, m_previewOffset.Y));
-
-                m_previewGrip.X = mouseEventArgs.X;
-                m_previewGrip.Y = mouseEventArgs.Y;
-            }
-        }
-
-        private void OnPreviewMouseUp(object sender, MouseEventArgs mouseEventArgs)
-        {
-            m_previewMouseDown = false;
         }
 
         private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
