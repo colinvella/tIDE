@@ -61,6 +61,9 @@ namespace TileMapEditor.Control
                 = m_selectedLayer.ConvertMapToLayerLocation(m_viewPort.Location);
 
             Tiling.Size tileSize = m_selectedLayer.TileSize;
+            layerLocation.X /= tileSize.Width;
+            layerLocation.Y /= tileSize.Height;
+
 
             layerLocation.X += viewPortOffset.X / (tileSize.Width * m_zoom);
             layerLocation.Y += viewPortOffset.Y / (tileSize.Height * m_zoom);
