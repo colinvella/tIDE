@@ -276,41 +276,41 @@ namespace TileMapEditor.Control
             // highlight tile under mouse cursor
             if (m_mouseInside)
             {
-                Tiling.Rectangle tileDisplayRectangle = m_selectedLayer.GetTileDisplayRectangle(m_viewPort, m_tileLayerLocation);
+                Tiling.Rectangle tileDisplayRectangle
+                    = m_selectedLayer.GetTileDisplayRectangle(m_viewPort, m_tileLayerLocation);
                 Tiling.Location tileDisplayLocation = tileDisplayRectangle.Location;
 
-                int selectionX = 0, selectionY = 0;
-                int selectionWidth = 0, selectionHeight = 0;
                 if (m_editTool == EditTool.TileBlock && m_bMouseDown)
                 {
-                    int deltaTileX = m_tileLayerLocation.X - m_dragTileStart.X;
-                    int deltaTileY = m_tileLayerLocation.Y - m_dragTileStart.Y;
+                    Tiling.Rectangle tileDragRectangle
+                        = m_selectedLayer.GetTileDisplayRectangle(m_viewPort, m_dragTileStart);
+                    Tiling.Location tileDragLocation = tileDragRectangle.Location;
 
-                    selectionWidth = (Math.Abs(deltaTileX) + 1) * tileSize.Width;
-                    selectionHeight = (Math.Abs(deltaTileY) + 1) * tileSize.Height;
+                    int minX = Math.Min(tileDragLocation.X, tileDisplayLocation.X);
+                    int minY = Math.Min(tileDragLocation.Y, tileDisplayLocation.Y);
+                    int maxX = Math.Max(tileDragLocation.X, tileDisplayLocation.X);
+                    int maxY = Math.Max(tileDragLocation.Y, tileDisplayLocation.Y);
 
-                    if (deltaTileX >= 0)
-                        selectionX = tileDisplayLocation.X - selectionWidth + tileSize.Width;
-                    else
-                        selectionX = tileDisplayLocation.X;
+                    Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_selectedTileSheet, m_selectedTileIndex);
+                    for (int tileY = minY; tileY <= maxY; tileY += tileSize.Height)
+                        for (int tileX = minX; tileX <= maxX; tileX += tileSize.Width)
+                            m_graphics.DrawImage(tileBitmap, tileX, tileY);
 
-                    if (deltaTileY >= 0)
-                        selectionY = tileDisplayLocation.Y - selectionHeight + tileSize.Height;
-                    else
-                        selectionY = tileDisplayLocation.Y;
+                    int selectionWidth = maxX + tileSize.Width - minX;
+                    int selectionHeight = maxY + tileSize.Height - minY;
+                    m_graphics.FillRectangle(m_tileSelectionBrush, minX, minY, selectionWidth, selectionHeight);
+                    m_graphics.DrawRectangle(m_tileSelectionPen, minX, minY, selectionWidth, selectionHeight);
                 }
                 else
                 {
-                    selectionX = tileDisplayLocation.X;
-                    selectionY = tileDisplayLocation.Y;
-                    selectionWidth = tileSize.Width;
-                    selectionHeight = tileSize.Height;
-                }
+                    Tiling.Location location = tileDisplayRectangle.Location;
+                    Tiling.Size size = tileDisplayRectangle.Size;
 
-                m_graphics.FillRectangle(m_tileSelectionBrush,
-                    selectionX, selectionY, selectionWidth, selectionHeight);
-                m_graphics.DrawRectangle(m_tileSelectionPen,
-                    selectionX, selectionY, selectionWidth, selectionHeight);
+                    m_graphics.FillRectangle(m_tileSelectionBrush,
+                        location.X, location.Y, size.Width, size.Height);
+                    m_graphics.DrawRectangle(m_tileSelectionPen,
+                        location.X, location.Y, size.Width, size.Height);
+                }
             }
         }
 
@@ -320,7 +320,6 @@ namespace TileMapEditor.Control
 
             if (m_map != null)
             {
-
                 UpdateScrollBars();
                 BindLayerDrawEvents();
 
@@ -329,7 +328,6 @@ namespace TileMapEditor.Control
                 // reset translucency
                 m_colorMatrix.Matrix33 = 1.0f;
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-
             }
 
             if (!Enabled)
