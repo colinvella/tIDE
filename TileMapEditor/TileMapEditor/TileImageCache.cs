@@ -6,7 +6,7 @@ using System.Text;
 
 using Tiling;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor
 {
     public class TileImageCache
     {
