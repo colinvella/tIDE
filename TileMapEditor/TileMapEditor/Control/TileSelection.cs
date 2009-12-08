@@ -78,29 +78,32 @@ namespace TileMapEditor.Control
         public void Invert(Rectangle selectionContext)
         {
             Location location = selectionContext.Location;
-            int maxX = location.X + selectionContext.Size.Width - 1;
-            int maxY = location.Y + selectionContext.Size.Height - 1;
+            int maxX = location.X + selectionContext.Size.Width ;
+            int maxY = location.Y + selectionContext.Size.Height;
 
             List<Location> m_invertedSelections = new List<Location>();
 
-            for (; location.Y <= maxY; location.Y++)
-                for (location.X = selectionContext.Location.X; location.X <= maxX; location.X++)
+            Location initialLocation = Location.Origin;
+            for (; location.Y < maxY; location.Y++)
+                for (location.X = selectionContext.Location.X; location.X < maxX; location.X++)
                     if (m_bounds.Contains(location))
                     {
                         if (!m_tileLocations.Contains(location))
                         {
                             m_invertedSelections.Add(location);
-                            m_bounds.Location = location;
+                            initialLocation = location;
                         }
                     }
                     else
                     {
                         m_invertedSelections.Add(location);
-                        m_bounds.Location = location;
+                        initialLocation = location;
                     }
 
             m_tileLocations = m_invertedSelections;
 
+            m_bounds.Location = initialLocation;
+            m_bounds.Size = Size.Zero;
             foreach (Location invertedLocation in m_invertedSelections)
                 m_bounds.ExtendTo(invertedLocation);
         }
