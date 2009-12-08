@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
-    public class Rectangle
+    public struct Rectangle
     {
         public Location Location;
         public Size Size;

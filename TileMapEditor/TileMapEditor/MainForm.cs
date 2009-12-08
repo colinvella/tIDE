@@ -194,6 +194,30 @@ namespace TileMapEditor
             }
         }
 
+        private void OnEditDelete(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void OnEditSelectAll(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void OnEditClearSelection(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.TileSelection.Clear();
+        }
+
+        private void OnEditInvertSelection(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.TileSelection.Invert(new Tiling.Rectangle(
+                Tiling.Location.Origin,
+                new Tiling.Size(
+                    m_mapPanel.SelectedLayer.LayerSize.Width,
+                    m_mapPanel.SelectedLayer.LayerSize.Height)));
+        }
+
         private void OnViewZoom(object sender, EventArgs eventArgs)
         {
             ToolStripDropDownItem toolStripDropDownItem = (ToolStripDropDownItem)sender;

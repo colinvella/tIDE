@@ -88,12 +88,21 @@ namespace TileMapEditor.Control
                     if (m_bounds.Contains(location))
                     {
                         if (!m_tileLocations.Contains(location))
+                        {
                             m_invertedSelections.Add(location);
+                            m_bounds.Location = location;
+                        }
                     }
                     else
+                    {
                         m_invertedSelections.Add(location);
+                        m_bounds.Location = location;
+                    }
 
             m_tileLocations = m_invertedSelections;
+
+            foreach (Location invertedLocation in m_invertedSelections)
+                m_bounds.ExtendTo(invertedLocation);
         }
 
         public ReadOnlyCollection<Location> Locations

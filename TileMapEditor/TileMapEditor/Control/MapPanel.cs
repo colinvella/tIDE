@@ -712,6 +712,11 @@ namespace TileMapEditor.Control
             set { m_selectedTileIndex = value; }
         }
 
+        public TileSelection TileSelection
+        {
+            get { return m_tileSelection; }
+        }
+
         public bool CtrlKeyPressed
         {
             set { m_ctrlKeyPressed = value; }
