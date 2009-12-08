@@ -530,7 +530,7 @@ namespace TileMapEditor
                 return;
 
             TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
-            tileBrush.ApplyTo(layer, tileSelection.Bounds.Location);
+            tileBrush.ApplyTo(layer, tileSelection.Bounds.Location, tileSelection);
         }
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)

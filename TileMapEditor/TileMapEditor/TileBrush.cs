@@ -46,10 +46,12 @@ namespace TileMapEditor
             }
         }
 
-        public void ApplyTo(Layer layer, Location brushLocation)
+        public void ApplyTo(Layer layer, Location brushLocation,
+            TileSelection tileSelection)
         {
             Map map = layer.Map;
             Size layerTileSize = layer.TileSize;
+            tileSelection.Clear();
             foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
             {
                 Location tileLocation = brushLocation + tileBrushElement.Location;
@@ -72,6 +74,7 @@ namespace TileMapEditor
                 }
 
                 layer.Tiles[tileLocation] = tileClone;
+                tileSelection.AddLocation(tileLocation);
             }
         }
     }

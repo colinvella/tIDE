@@ -338,7 +338,8 @@ namespace TileMapEditor.Control
                     int maxX = Math.Max(tileDragLocation.X, tileDisplayLocation.X);
                     int maxY = Math.Max(tileDragLocation.Y, tileDisplayLocation.Y);
 
-                    if (m_selectedTileSheet != null && m_selectedTileIndex >= 0)
+                    if (m_editTool == EditTool.TileBlock
+                        && m_selectedTileSheet != null && m_selectedTileIndex >= 0)
                     {
                         Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_selectedTileSheet, m_selectedTileIndex);
                         for (int tileY = minY; tileY <= maxY; tileY += tileSize.Height)
