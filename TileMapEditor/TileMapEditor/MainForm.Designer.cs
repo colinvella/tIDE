@@ -115,6 +115,11 @@
             this.m_editCutButton = new System.Windows.Forms.ToolStripButton();
             this.m_editCopyButton = new System.Windows.Forms.ToolStripButton();
             this.m_editPasteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editDeleteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_editSelectAllButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editClearSelectionButton = new System.Windows.Forms.ToolStripButton();
+            this.m_editInvertSelection = new System.Windows.Forms.ToolStripButton();
             this.m_viewToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_viewZoomComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.m_viewZoomInButton = new System.Windows.Forms.ToolStripButton();
@@ -136,11 +141,6 @@
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editDeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_editSelectAllButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editClearSelectionButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editInvertSelection = new System.Windows.Forms.ToolStripButton();
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Control.TilePicker();
             this.m_mapPanel = new TileMapEditor.Control.MapPanel();
@@ -970,6 +970,7 @@
             this.m_editCopyButton.Size = new System.Drawing.Size(23, 22);
             this.m_editCopyButton.Text = "&Copy";
             this.m_editCopyButton.ToolTipText = "Copy selected area";
+            this.m_editCopyButton.Click += new System.EventHandler(this.OnEditCopy);
             // 
             // m_editPasteButton
             // 
@@ -980,6 +981,52 @@
             this.m_editPasteButton.Name = "m_editPasteButton";
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
             this.m_editPasteButton.Text = "&Paste";
+            this.m_editPasteButton.Click += new System.EventHandler(this.OnEditPaste);
+            // 
+            // m_editDeleteButton
+            // 
+            this.m_editDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editDeleteButton.Image = global::TileMapEditor.Properties.Resources.EditDelete;
+            this.m_editDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editDeleteButton.Name = "m_editDeleteButton";
+            this.m_editDeleteButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editDeleteButton.Text = "toolStripButton1";
+            this.m_editDeleteButton.ToolTipText = "Delete selected area";
+            // 
+            // m_editToolStripSeparator3
+            // 
+            this.m_editToolStripSeparator3.Name = "m_editToolStripSeparator3";
+            this.m_editToolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_editSelectAllButton
+            // 
+            this.m_editSelectAllButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editSelectAllButton.Image = global::TileMapEditor.Properties.Resources.EditSelectAll;
+            this.m_editSelectAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editSelectAllButton.Name = "m_editSelectAllButton";
+            this.m_editSelectAllButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editSelectAllButton.Text = "Select &All";
+            this.m_editSelectAllButton.ToolTipText = "Select the whole layer";
+            // 
+            // m_editClearSelectionButton
+            // 
+            this.m_editClearSelectionButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editClearSelectionButton.Image = global::TileMapEditor.Properties.Resources.EditClearSelection;
+            this.m_editClearSelectionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editClearSelectionButton.Name = "m_editClearSelectionButton";
+            this.m_editClearSelectionButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editClearSelectionButton.Text = "toolStripButton1";
+            this.m_editClearSelectionButton.ToolTipText = "Clear selection";
+            // 
+            // m_editInvertSelection
+            // 
+            this.m_editInvertSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editInvertSelection.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
+            this.m_editInvertSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editInvertSelection.Name = "m_editInvertSelection";
+            this.m_editInvertSelection.Size = new System.Drawing.Size(23, 22);
+            this.m_editInvertSelection.Text = "Invert selection";
+            this.m_editInvertSelection.ToolTipText = "Invert selection";
             // 
             // m_viewToolStrip
             // 
@@ -1211,51 +1258,6 @@
             this.m_tileSheetDeleteButton.Size = new System.Drawing.Size(23, 22);
             this.m_tileSheetDeleteButton.Text = "Delete tile sheet";
             this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
-            // 
-            // m_editDeleteButton
-            // 
-            this.m_editDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editDeleteButton.Image = global::TileMapEditor.Properties.Resources.EditDelete;
-            this.m_editDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editDeleteButton.Name = "m_editDeleteButton";
-            this.m_editDeleteButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editDeleteButton.Text = "toolStripButton1";
-            this.m_editDeleteButton.ToolTipText = "Delete selected area";
-            // 
-            // m_editToolStripSeparator3
-            // 
-            this.m_editToolStripSeparator3.Name = "m_editToolStripSeparator3";
-            this.m_editToolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // m_editSelectAllButton
-            // 
-            this.m_editSelectAllButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editSelectAllButton.Image = global::TileMapEditor.Properties.Resources.EditSelectAll;
-            this.m_editSelectAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editSelectAllButton.Name = "m_editSelectAllButton";
-            this.m_editSelectAllButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editSelectAllButton.Text = "Select &All";
-            this.m_editSelectAllButton.ToolTipText = "Select the whole layer";
-            // 
-            // m_editClearSelectionButton
-            // 
-            this.m_editClearSelectionButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editClearSelectionButton.Image = global::TileMapEditor.Properties.Resources.EditClearSelection;
-            this.m_editClearSelectionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editClearSelectionButton.Name = "m_editClearSelectionButton";
-            this.m_editClearSelectionButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editClearSelectionButton.Text = "toolStripButton1";
-            this.m_editClearSelectionButton.ToolTipText = "Clear selection";
-            // 
-            // m_editInvertSelection
-            // 
-            this.m_editInvertSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editInvertSelection.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
-            this.m_editInvertSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editInvertSelection.Name = "m_editInvertSelection";
-            this.m_editInvertSelection.Size = new System.Drawing.Size(23, 22);
-            this.m_editInvertSelection.Text = "Invert selection";
-            this.m_editInvertSelection.ToolTipText = "Invert selection";
             // 
             // m_mapTreeView
             // 

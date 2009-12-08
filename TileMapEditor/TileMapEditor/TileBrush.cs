@@ -33,13 +33,15 @@ namespace TileMapEditor
 
         public TileBrush(Layer layer, TileSelection tileSelection)
         {
-            m_size = tileSelection.Bounds.Size;
+            Rectangle selectionBounds = tileSelection.Bounds;
+            m_size = selectionBounds.Size;
             m_tileBrushElements = new List<TileBrushElement>();
             foreach (Location location in tileSelection.Locations)
             {
                 Tile tile = layer.Tiles[location];
+                Tile tileClone = tile == null ? null : tile.Clone();
                 TileBrushElement tileBrushElement = new TileBrushElement(
-                    tile.Clone(), location);
+                    tileClone, location - selectionBounds.Location);
                 m_tileBrushElements.Add(tileBrushElement);
             }
         }
@@ -47,6 +49,7 @@ namespace TileMapEditor
         public void ApplyTo(Layer layer, Location brushLocation)
         {
             Map map = layer.Map;
+            Size layerTileSize = layer.TileSize;
             foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
             {
                 Location tileLocation = brushLocation + tileBrushElement.Location;
@@ -54,10 +57,21 @@ namespace TileMapEditor
                     continue;
 
                 Tile tile = tileBrushElement.Tile;
-                if (!map.TileSheets.Contains(tile.TileSheet))
-                    continue;
+                Tile tileClone = null;
+                if (tile != null)
+                {
+                    TileSheet tileSheet = tile.TileSheet;
 
-                layer.Tiles[tileLocation] = tileBrushElement.Tile.Clone();
+                    if (tileSheet.TileSize != layerTileSize)
+                        break;
+
+                    if (!map.TileSheets.Contains(tile.TileSheet))
+                        continue;
+
+                    tileClone = tile.Clone();
+                }
+
+                layer.Tiles[tileLocation] = tileClone;
             }
         }
     }

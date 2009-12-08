@@ -501,6 +501,38 @@ namespace TileMapEditor
             UpdateEditToolButtons();
         }
 
+        private void OnEditCopy(object sender, EventArgs eventArgs)
+        {
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            if (tileSelection.IsEmpty())
+                return;
+
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            TileBrush tileBrush = new TileBrush(layer, tileSelection);
+            ClipBoardManager.Instance.StoreTileBrush(tileBrush);
+            m_editPasteMenuItem.Enabled = m_editPasteButton.Enabled = true;
+        }
+
+        private void OnEditPaste(object sender, EventArgs eventArgs)
+        {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            if (tileSelection.IsEmpty())
+                return;
+
+            if (!ClipBoardManager.Instance.HasTileBrush())
+                return;
+
+            TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
+            tileBrush.ApplyTo(layer, tileSelection.Bounds.Location);
+        }
+
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
             Tiling.Component component = mapTreeViewEventArgs.Component;

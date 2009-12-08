@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Control\CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
