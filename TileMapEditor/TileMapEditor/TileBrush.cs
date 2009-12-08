@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 
 using Tiling;
+using TileMapEditor.Control;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor
 {
     public struct TileBrushElement
     {

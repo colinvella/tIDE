@@ -84,7 +84,7 @@
       <DependentUpon>TilePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\TilePickerEventArgs.cs" />
-    <Compile Include="Control\TileSelection.cs" />
+    <Compile Include="TileSelection.cs" />
     <Compile Include="Dialog\LayerPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,7 +168,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Control\TileBrush.cs" />
+    <Compile Include="TileBrush.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Map.png" />
