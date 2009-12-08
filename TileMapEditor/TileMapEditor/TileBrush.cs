@@ -8,6 +8,7 @@ using TileMapEditor.Control;
 
 namespace TileMapEditor
 {
+    [Serializable]
     public struct TileBrushElement
     {
         private Tile m_tile;
@@ -24,6 +25,7 @@ namespace TileMapEditor
         public Location Location { get { return m_location; } }
     }
 
+    [Serializable]
     public class TileBrush
     {
         private Size m_size;
@@ -44,11 +46,18 @@ namespace TileMapEditor
 
         public void ApplyTo(Layer layer, Location brushLocation)
         {
+            Map map = layer.Map;
             foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
             {
                 Location tileLocation = brushLocation + tileBrushElement.Location;
-                if (layer.IsValidTileLocation(tileLocation))
-                    layer.Tiles[tileLocation] = tileBrushElement.Tile.Clone();
+                if (!layer.IsValidTileLocation(tileLocation))
+                    continue;
+
+                Tile tile = tileBrushElement.Tile;
+                if (!map.TileSheets.Contains(tile.TileSheet))
+                    continue;
+
+                layer.Tiles[tileLocation] = tileBrushElement.Tile.Clone();
             }
         }
     }

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Tiling
 {
-    public class AnimatedTile: Tile
+    [Serializable]
+    public class AnimatedTile : Tile
     {
         private int[] m_tileIndices;
         long m_frameInterval;

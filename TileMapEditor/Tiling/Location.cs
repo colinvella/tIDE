@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
+    [Serializable]
     public struct Location
     {
         private static Location s_origin = new Location(0, 0);

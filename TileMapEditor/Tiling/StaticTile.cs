@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Tiling
 {
-    public class StaticTile: Tile
+    [Serializable]
+    public class StaticTile : Tile
     {
         private int m_tileIndex;
 

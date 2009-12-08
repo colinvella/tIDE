@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
+    [Serializable]
     public struct Size
     {
         private static Size s_sizeZero = new Size(0, 0);

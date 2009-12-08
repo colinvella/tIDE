@@ -11,6 +11,7 @@ namespace Tiling
         Additive
     }
 
+    [Serializable]
     public abstract class Tile: Component
     {
         private Layer m_layer;
