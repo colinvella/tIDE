@@ -18,6 +18,11 @@ namespace Tiling
             m_tileIndex = tileIndex;
         }
 
+        public override Tile Clone()
+        {
+            return new StaticTile(this.Layer, this.TileSheet, this.BlendMode, m_tileIndex);
+        }
+
         public override int TileIndex { get { return m_tileIndex; } }
     }
 }

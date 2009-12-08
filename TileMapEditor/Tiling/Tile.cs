@@ -37,6 +37,8 @@ namespace Tiling
             set { m_blendMode = value; }
         }
 
+        public abstract Tile Clone();
+
         public abstract int TileIndex { get; }
     }
 }

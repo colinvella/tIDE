@@ -28,6 +28,11 @@ namespace Tiling
             m_animationInterval = frameInterval * tileIndices.Length;
         }
 
+        public override Tile Clone()
+        {
+            return new AnimatedTile(this.Layer, this.TileSheet, this.BlendMode, m_tileIndices, m_frameInterval);
+        }
+
         public override int TileIndex
         {
             get
