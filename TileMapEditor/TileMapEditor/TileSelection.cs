@@ -11,8 +11,14 @@ namespace TileMapEditor
 {
     public class TileSelection
     {
+        #region Private Variables
+
         private List<Location> m_tileLocations;
         private Rectangle m_bounds;
+
+        #endregion
+
+        #region Public Methods
 
         public TileSelection()
         {
@@ -31,6 +37,7 @@ namespace TileMapEditor
         public void Clear()
         {
             m_tileLocations.Clear();
+            m_bounds.Size = Size.Zero;
         }
 
         public void AddLocation(Location tileLocation)
@@ -109,11 +116,26 @@ namespace TileMapEditor
                 m_bounds.ExtendTo(invertedLocation);
         }
 
+        public void EraseTiles(Layer layer)
+        {
+            foreach (Location tileLocation in m_tileLocations)
+                if (layer.IsValidTileLocation(tileLocation))
+                    layer.Tiles[tileLocation] = null;
+
+            Clear();
+        }
+        
+        #endregion
+
+        #region Public Properties
+
         public ReadOnlyCollection<Location> Locations
         {
             get { return m_tileLocations.AsReadOnly(); }
         }
 
         public Rectangle Bounds { get { return new Rectangle(m_bounds); } }
+
+        #endregion
     }
 }

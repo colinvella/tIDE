@@ -194,9 +194,76 @@ namespace TileMapEditor
             }
         }
 
+        private void OnEditSelect(object sender, EventArgs e)
+        {
+            m_mapPanel.EditTool = EditTool.Select;
+            UpdateEditToolButtons();
+        }
+
+        private void OnEditSingleTile(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.SingleTile;
+            UpdateEditToolButtons();
+        }
+
+        private void OnEditTileBlock(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.TileBlock;
+            UpdateEditToolButtons();
+        }
+
+        private void OnEditEraser(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.Eraser;
+            UpdateEditToolButtons();
+        }
+
+        private void OnEditDropper(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.Dropper;
+            UpdateEditToolButtons();
+        }
+
+        private void OnEditCopy(object sender, EventArgs eventArgs)
+        {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            if (tileSelection.IsEmpty())
+                return;
+
+            TileBrush tileBrush = new TileBrush(layer, tileSelection);
+            ClipBoardManager.Instance.StoreTileBrush(tileBrush);
+
+            m_editPasteMenuItem.Enabled = m_editPasteButton.Enabled = true;
+        }
+
+        private void OnEditPaste(object sender, EventArgs eventArgs)
+        {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            if (tileSelection.IsEmpty())
+                return;
+
+            if (!ClipBoardManager.Instance.HasTileBrush())
+                return;
+
+            TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
+            tileBrush.ApplyTo(layer, tileSelection.Bounds.Location, tileSelection);
+        }
+
         private void OnEditDelete(object sender, EventArgs eventArgs)
         {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
 
+            m_mapPanel.TileSelection.EraseTiles(layer);
         }
 
         private void OnEditSelectAll(object sender, EventArgs eventArgs)
@@ -469,68 +536,6 @@ namespace TileMapEditor
         {
             m_mapPanel.SelectedTileSheet = tilePickerEventArgs.TileSheet;
             m_mapPanel.SelectedTileIndex = tilePickerEventArgs.TileIndex;
-        }
-
-        private void OnEditSelectButton(object sender, EventArgs e)
-        {
-            m_mapPanel.EditTool = EditTool.Select;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditSingleTile(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.SingleTile;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditTileBlock(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.TileBlock;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditEraser(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.Eraser;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditDropper(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.Dropper;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditCopy(object sender, EventArgs eventArgs)
-        {
-            TileSelection tileSelection = m_mapPanel.TileSelection;
-            if (tileSelection.IsEmpty())
-                return;
-
-            Layer layer = m_mapPanel.SelectedLayer;
-            if (layer == null)
-                return;
-
-            TileBrush tileBrush = new TileBrush(layer, tileSelection);
-            ClipBoardManager.Instance.StoreTileBrush(tileBrush);
-            m_editPasteMenuItem.Enabled = m_editPasteButton.Enabled = true;
-        }
-
-        private void OnEditPaste(object sender, EventArgs eventArgs)
-        {
-            Layer layer = m_mapPanel.SelectedLayer;
-            if (layer == null)
-                return;
-
-            TileSelection tileSelection = m_mapPanel.TileSelection;
-            if (tileSelection.IsEmpty())
-                return;
-
-            if (!ClipBoardManager.Instance.HasTileBrush())
-                return;
-
-            TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
-            tileBrush.ApplyTo(layer, tileSelection.Bounds.Location, tileSelection);
         }
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
