@@ -99,11 +99,6 @@ namespace TileMapEditor.Control
                 return;
             }
 
-            // determine image list indices
-            int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
-            int collectionImageIndex = m_imageList.Images.IndexOfKey("Collection.png");
-            int tileSheetImageIndex = m_imageList.Images.IndexOfKey("TileSheet.png");
-
             // map root node
             TreeNode mapNode = null;
             TreeNode layersNode = null;
@@ -111,16 +106,19 @@ namespace TileMapEditor.Control
             if (m_treeView.Nodes.Count == 0)
             {
                 // create root map node
+                int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
                 mapNode = new TreeNode(m_map.Id, mapImageIndex, mapImageIndex);
                 mapNode.Tag = m_map;
 
                 // create layer collection node
-                layersNode = new TreeNode("Layers", collectionImageIndex, collectionImageIndex);
+                int layerFolderImageIndex = m_imageList.Images.IndexOfKey("LayerFolder.png");
+                layersNode = new TreeNode("Layers", layerFolderImageIndex, layerFolderImageIndex);
                 layersNode.Tag = m_map.Layers;
                 mapNode.Nodes.Add(layersNode);
 
                 // create tilesheet collection node
-                tileSheetsNode = new TreeNode("Tile Sheets", collectionImageIndex, collectionImageIndex);
+                int tileSheetFolderImageIndex = m_imageList.Images.IndexOfKey("TileSheetFolder.png");
+                tileSheetsNode = new TreeNode("Tile Sheets", tileSheetFolderImageIndex, tileSheetFolderImageIndex);
                 tileSheetsNode.Tag = m_map.TileSheets;
                 mapNode.Nodes.Add(tileSheetsNode);
 
