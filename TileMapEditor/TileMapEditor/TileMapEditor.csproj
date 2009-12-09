@@ -76,6 +76,11 @@
     <Compile Include="Control\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plugin\IApplication.cs" />
+    <Compile Include="Plugin\IMenuItem.cs" />
+    <Compile Include="Plugin\IMenuStrip.cs" />
+    <Compile Include="Plugin\IModule.cs" />
+    <Compile Include="Plugin\Version.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Control\MapPanelEventArgs.cs" />
     <Compile Include="Control\TilePicker.cs">
@@ -241,9 +246,6 @@
       <Project>{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}</Project>
       <Name>Tiling</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Plugin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
