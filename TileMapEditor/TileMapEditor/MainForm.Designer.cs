@@ -908,7 +908,7 @@
             this.m_editToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(352, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(383, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editSelectButton
@@ -1078,6 +1078,7 @@
             this.m_editInvertSelection.Size = new System.Drawing.Size(23, 22);
             this.m_editInvertSelection.Text = "Invert selection";
             this.m_editInvertSelection.ToolTipText = "Invert selection";
+            this.m_editInvertSelection.Click += new System.EventHandler(this.OnEditInvertSelection);
             // 
             // m_viewToolStrip
             // 

@@ -83,6 +83,19 @@ namespace TileMapEditor
             m_bounds.ExtendTo(tileSelection.m_bounds);
         }
 
+        public void SelectAll(Rectangle selectionContext)
+        {
+            m_bounds = selectionContext;
+            Location location = selectionContext.Location;
+            int maxX = location.X + selectionContext.Size.Width;
+            int maxY = location.Y + selectionContext.Size.Height;
+
+            m_tileLocations.Clear();
+            for (; location.Y < maxY; location.Y++)
+                for (location.X = selectionContext.Location.X; location.X < maxX; location.X++)
+                    m_tileLocations.Add(location);
+        }
+
         public void Invert(Rectangle selectionContext)
         {
             Location location = selectionContext.Location;

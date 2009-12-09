@@ -274,7 +274,13 @@ namespace TileMapEditor
 
         private void OnEditSelectAll(object sender, EventArgs eventArgs)
         {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
 
+            Tiling.Rectangle selectionContext
+                = new Tiling.Rectangle(Tiling.Location.Origin, layer.LayerSize);
+            m_mapPanel.TileSelection.SelectAll(selectionContext);
         }
 
         private void OnEditClearSelection(object sender, EventArgs eventArgs)
