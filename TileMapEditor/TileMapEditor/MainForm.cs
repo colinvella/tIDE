@@ -491,7 +491,10 @@ namespace TileMapEditor
             TileSheetPropertiesDialog.ShowDialog(this);
 
             m_mapTreeView.UpdateTree();
+
+            TileImageCache.Instance.Refresh(tileSheet);
             m_tilePicker.UpdatePicker();
+            m_tilePicker.RefreshSelectedTileSheet();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)

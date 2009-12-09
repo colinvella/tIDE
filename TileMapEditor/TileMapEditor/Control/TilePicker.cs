@@ -54,37 +54,7 @@ namespace TileMapEditor.Control
 
         private void OnSelectTileSheet(object sender, EventArgs eventArgs)
         {
-            if (m_comboBoxTileSheets.SelectedIndex < 0)
-            {
-                m_tileListView.VirtualListSize = 0;
-                return;
-            }
-
-            string tileSheetId = m_comboBoxTileSheets.SelectedItem.ToString();
-            m_tileSheet = m_map.GetTileSheet(tileSheetId);
-
-            // reset image list
-            m_tileImageList.Images.Clear();
-            System.Drawing.Size tileSize = new System.Drawing.Size(
-                m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height); 
-            m_tileImageList.ImageSize = tileSize;
-
-            // populate item list for virtual mode with no image index
-            m_tileListViewItems.Clear();
-            for (int tileIndex = 0; tileIndex < m_tileSheet.TileCount; tileIndex++)
-            {
-                ListViewItem listViewItem = new ListViewItem(tileIndex.ToString(), -1);
-                listViewItem.ToolTipText = tileIndex.ToString();
-                m_tileListViewItems.Add(listViewItem);
-            }
-
-            m_tileListView.VirtualListSize = m_tileListViewItems.Count;
-
-            if (m_tileListView.Items.Count > 0)
-            {
-                m_tileListView.SelectedIndices.Clear();
-                m_tileListView.SelectedIndices.Add(0);
-            }
+            RefreshSelectedTileSheet();
         }
 
         private void OnSelectTile(object sender, EventArgs eventArgs)
@@ -110,6 +80,7 @@ namespace TileMapEditor.Control
             if (m_map == null)
             {
                 m_comboBoxTileSheets.Items.Clear();
+                m_tileListView.Items.Clear();
                 return;
             }
 
@@ -124,6 +95,41 @@ namespace TileMapEditor.Control
                 m_comboBoxTileSheets.SelectedIndex = 0;
             else
                 m_tileListView.VirtualListSize = 0;
+        }
+
+        public void RefreshSelectedTileSheet()
+        {
+            if (m_comboBoxTileSheets.SelectedIndex < 0)
+            {
+                m_tileListView.VirtualListSize = 0;
+                return;
+            }
+
+            string tileSheetId = m_comboBoxTileSheets.SelectedItem.ToString();
+            m_tileSheet = m_map.GetTileSheet(tileSheetId);
+
+            // reset image list
+            m_tileImageList.Images.Clear();
+            System.Drawing.Size tileSize = new System.Drawing.Size(
+                m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height);
+            m_tileImageList.ImageSize = tileSize;
+
+            // populate item list for virtual mode with no image index
+            m_tileListViewItems.Clear();
+            for (int tileIndex = 0; tileIndex < m_tileSheet.TileCount; tileIndex++)
+            {
+                ListViewItem listViewItem = new ListViewItem(tileIndex.ToString(), -1);
+                listViewItem.ToolTipText = tileIndex.ToString();
+                m_tileListViewItems.Add(listViewItem);
+            }
+
+            m_tileListView.VirtualListSize = m_tileListViewItems.Count;
+
+            if (m_tileListView.Items.Count > 0)
+            {
+                m_tileListView.SelectedIndices.Clear();
+                m_tileListView.SelectedIndices.Add(0);
+            }
         }
 
         #endregion
