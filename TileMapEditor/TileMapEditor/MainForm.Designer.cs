@@ -539,6 +539,7 @@
             this.m_editCutMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.m_editCutMenuItem.Size = new System.Drawing.Size(192, 22);
             this.m_editCutMenuItem.Text = "Cu&t";
+            this.m_editCutMenuItem.Click += new System.EventHandler(this.OnEditCut);
             // 
             // m_editCopyMenuItem
             // 
@@ -559,6 +560,7 @@
             this.m_editPasteMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.m_editPasteMenuItem.Size = new System.Drawing.Size(192, 22);
             this.m_editPasteMenuItem.Text = "&Paste";
+            this.m_editPasteMenuItem.Click += new System.EventHandler(this.OnEditPaste);
             // 
             // m_editDeleteMenuItem
             // 
@@ -1005,6 +1007,7 @@
             this.m_editCutButton.Size = new System.Drawing.Size(23, 22);
             this.m_editCutButton.Text = "C&ut";
             this.m_editCutButton.ToolTipText = "Cut selected area";
+            this.m_editCutButton.Click += new System.EventHandler(this.OnEditCut);
             // 
             // m_editCopyButton
             // 
@@ -1053,6 +1056,7 @@
             this.m_editSelectAllButton.Size = new System.Drawing.Size(23, 22);
             this.m_editSelectAllButton.Text = "Select &All";
             this.m_editSelectAllButton.ToolTipText = "Select the whole layer";
+            this.m_editSelectAllButton.Click += new System.EventHandler(this.OnEditSelectAll);
             // 
             // m_editClearSelectionButton
             // 
@@ -1063,6 +1067,7 @@
             this.m_editClearSelectionButton.Size = new System.Drawing.Size(23, 22);
             this.m_editClearSelectionButton.Text = "toolStripButton1";
             this.m_editClearSelectionButton.ToolTipText = "Clear selection";
+            this.m_editClearSelectionButton.Click += new System.EventHandler(this.OnEditClearSelection);
             // 
             // m_editInvertSelection
             // 

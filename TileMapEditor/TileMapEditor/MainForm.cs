@@ -224,6 +224,12 @@ namespace TileMapEditor
             UpdateEditToolButtons();
         }
 
+        private void OnEditCut(object sender, EventArgs eventArgs)
+        {
+            OnEditCopy(sender, eventArgs);
+            OnEditDelete(sender, eventArgs);
+        }
+
         private void OnEditCopy(object sender, EventArgs eventArgs)
         {
             Layer layer = m_mapPanel.SelectedLayer;
