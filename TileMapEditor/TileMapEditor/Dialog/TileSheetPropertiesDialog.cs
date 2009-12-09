@@ -351,6 +351,15 @@ namespace TileMapEditor.Dialog
                 }
             }
 
+            if ((m_tileSheet.TileSize.Width != m_textBoxTileWidth.Value
+                || m_tileSheet.TileSize.Height != m_textBoxTileHeight.Value)
+                && m_tileSheet.Map.DependsOnTileSheet(m_tileSheet))
+            {
+                    MessageBox.Show(this, "The tile size cannot be changed as this tile sheet is currently in use",
+                        "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             m_tileSheet.Id = newId;
             m_tileSheet.Description = m_textBoxDescription.Text;
             m_tileSheet.ImageSource = m_textBoxImageSource.Text;
