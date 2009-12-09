@@ -528,6 +528,8 @@ namespace TileMapEditor.Control
             m_dashPattern = new float[] { 1.0f, 1.0f, 1.0f, 1.0f };
             m_tileGuidePen = new Pen(Color.Black);
             m_tileGuidePen.DashPattern = m_dashPattern;
+
+            m_animationTimer.Enabled = !this.DesignMode;
         }
 
         public void LoadTileSheet(TileSheet tileSheet)

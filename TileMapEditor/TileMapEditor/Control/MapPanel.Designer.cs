@@ -55,7 +55,6 @@
             // 
             // m_animationTimer
             // 
-            this.m_animationTimer.Enabled = true;
             this.m_animationTimer.Tick += new System.EventHandler(this.OnAnimationTimer);
             // 
             // m_innerPanel
@@ -85,6 +84,7 @@
             this.Name = "MapPanel";
             this.Size = new System.Drawing.Size(318, 238);
             this.ResumeLayout(false);
+
         }
 
         #endregion
