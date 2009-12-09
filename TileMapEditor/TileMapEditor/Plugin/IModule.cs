@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
+using TileMapEditor.Plugin.Interface;
+
 namespace TileMapEditor.Plugin
 {
     interface IModule

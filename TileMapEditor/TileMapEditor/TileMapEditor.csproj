@@ -76,10 +76,13 @@
     <Compile Include="Control\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugin\IApplication.cs" />
-    <Compile Include="Plugin\IMenuItem.cs" />
-    <Compile Include="Plugin\IMenuStrip.cs" />
+    <Compile Include="Plugin\Bridge\ElementBridge.cs" />
+    <Compile Include="Plugin\Interface\IApplication.cs" />
+    <Compile Include="Plugin\Interface\IElement.cs" />
+    <Compile Include="Plugin\Interface\IMenuItem.cs" />
+    <Compile Include="Plugin\Interface\IMenuStrip.cs" />
     <Compile Include="Plugin\IModule.cs" />
+    <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
     <Compile Include="Plugin\Version.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Control\MapPanelEventArgs.cs" />
