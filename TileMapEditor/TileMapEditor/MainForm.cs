@@ -61,8 +61,8 @@ namespace TileMapEditor
 
             m_viewZoomComboBox.SelectedIndex = zoom - 1;
 
-            m_viewZoomInButton.Enabled = zoom < 10;
-            m_viewZoomOutButton.Enabled = zoom > 1;
+            m_viewZoomInMenuItem.Enabled = m_viewZoomInButton.Enabled = zoom < 10;
+            m_viewZoomOutMenuItem.Enabled = m_viewZoomOutButton.Enabled = zoom > 1;
         }
 
         private void UpdateLayerCompositingControls()

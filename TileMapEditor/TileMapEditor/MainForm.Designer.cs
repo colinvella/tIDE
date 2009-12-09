@@ -631,7 +631,8 @@
             // m_viewZoomBy1MenuItem
             // 
             this.m_viewZoomBy1MenuItem.Name = "m_viewZoomBy1MenuItem";
-            this.m_viewZoomBy1MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy1MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D0)));
+            this.m_viewZoomBy1MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy1MenuItem.Tag = "1";
             this.m_viewZoomBy1MenuItem.Text = "To Scale";
             this.m_viewZoomBy1MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -639,7 +640,7 @@
             // m_viewZoomBy2MenuItem
             // 
             this.m_viewZoomBy2MenuItem.Name = "m_viewZoomBy2MenuItem";
-            this.m_viewZoomBy2MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy2MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy2MenuItem.Tag = "2";
             this.m_viewZoomBy2MenuItem.Text = "x 2";
             this.m_viewZoomBy2MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -647,7 +648,7 @@
             // m_viewZoomBy3MenuItem
             // 
             this.m_viewZoomBy3MenuItem.Name = "m_viewZoomBy3MenuItem";
-            this.m_viewZoomBy3MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy3MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy3MenuItem.Tag = "3";
             this.m_viewZoomBy3MenuItem.Text = "x 3";
             this.m_viewZoomBy3MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -655,7 +656,7 @@
             // m_viewZoomBy4MenuItem
             // 
             this.m_viewZoomBy4MenuItem.Name = "m_viewZoomBy4MenuItem";
-            this.m_viewZoomBy4MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy4MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy4MenuItem.Tag = "4";
             this.m_viewZoomBy4MenuItem.Text = "x 4";
             this.m_viewZoomBy4MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -663,7 +664,7 @@
             // m_viewZoomBy5MenuItem
             // 
             this.m_viewZoomBy5MenuItem.Name = "m_viewZoomBy5MenuItem";
-            this.m_viewZoomBy5MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy5MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy5MenuItem.Tag = "5";
             this.m_viewZoomBy5MenuItem.Text = "x 5";
             this.m_viewZoomBy5MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -671,7 +672,7 @@
             // m_viewZoomBy6MenuItem
             // 
             this.m_viewZoomBy6MenuItem.Name = "m_viewZoomBy6MenuItem";
-            this.m_viewZoomBy6MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy6MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy6MenuItem.Tag = "6";
             this.m_viewZoomBy6MenuItem.Text = "x 6";
             this.m_viewZoomBy6MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -679,7 +680,7 @@
             // m_viewZoomBy7MenuItem
             // 
             this.m_viewZoomBy7MenuItem.Name = "m_viewZoomBy7MenuItem";
-            this.m_viewZoomBy7MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy7MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy7MenuItem.Tag = "7";
             this.m_viewZoomBy7MenuItem.Text = "x 7";
             this.m_viewZoomBy7MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -687,7 +688,7 @@
             // m_viewZoomBy8MenuItem
             // 
             this.m_viewZoomBy8MenuItem.Name = "m_viewZoomBy8MenuItem";
-            this.m_viewZoomBy8MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy8MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy8MenuItem.Tag = "8";
             this.m_viewZoomBy8MenuItem.Text = "x 8";
             this.m_viewZoomBy8MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -695,7 +696,7 @@
             // m_viewZoomBy9MenuItem
             // 
             this.m_viewZoomBy9MenuItem.Name = "m_viewZoomBy9MenuItem";
-            this.m_viewZoomBy9MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy9MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy9MenuItem.Tag = "9";
             this.m_viewZoomBy9MenuItem.Text = "x 9";
             this.m_viewZoomBy9MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -703,7 +704,7 @@
             // m_viewZoomBy10MenuItem
             // 
             this.m_viewZoomBy10MenuItem.Name = "m_viewZoomBy10MenuItem";
-            this.m_viewZoomBy10MenuItem.Size = new System.Drawing.Size(118, 22);
+            this.m_viewZoomBy10MenuItem.Size = new System.Drawing.Size(158, 22);
             this.m_viewZoomBy10MenuItem.Tag = "10";
             this.m_viewZoomBy10MenuItem.Text = "x 10";
             this.m_viewZoomBy10MenuItem.Click += new System.EventHandler(this.OnViewZoom);
@@ -712,15 +713,21 @@
             // 
             this.m_viewZoomInMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
             this.m_viewZoomInMenuItem.Name = "m_viewZoomInMenuItem";
+            this.m_viewZoomInMenuItem.ShortcutKeyDisplayString = "Ctrl++";
+            this.m_viewZoomInMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemplus)));
             this.m_viewZoomInMenuItem.Size = new System.Drawing.Size(174, 22);
             this.m_viewZoomInMenuItem.Text = "Zoom In";
+            this.m_viewZoomInMenuItem.Click += new System.EventHandler(this.OnViewZoomIn);
             // 
             // m_viewZoomOutMenuItem
             // 
             this.m_viewZoomOutMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
             this.m_viewZoomOutMenuItem.Name = "m_viewZoomOutMenuItem";
+            this.m_viewZoomOutMenuItem.ShortcutKeyDisplayString = "Ctrl+-";
+            this.m_viewZoomOutMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemMinus)));
             this.m_viewZoomOutMenuItem.Size = new System.Drawing.Size(174, 22);
             this.m_viewZoomOutMenuItem.Text = "Zoom Out";
+            this.m_viewZoomOutMenuItem.Click += new System.EventHandler(this.OnViewZoomOut);
             // 
             // m_mapMenuItem
             // 
@@ -899,7 +906,7 @@
             this.m_editToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(383, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(352, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editSelectButton
