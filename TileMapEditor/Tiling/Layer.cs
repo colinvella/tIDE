@@ -107,7 +107,7 @@ namespace Tiling
                 return null;
         }
 
-        public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
+        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             if (BeforeDraw != null)
                 BeforeDraw(new LayerEventArgs(this, mapViewPort));

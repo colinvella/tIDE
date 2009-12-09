@@ -162,24 +162,24 @@ namespace Tiling
             m_elapsedTime += timeInterval;
         }
 
-        public void LoadTileSheets(DisplayDevice displayDevice)
+        public void LoadTileSheets(IDisplayDevice displayDevice)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
                 displayDevice.LoadTileSheet(tileSheet);
         }
 
-        public void DisposeTileSheets(DisplayDevice displayDevice)
+        public void DisposeTileSheets(IDisplayDevice displayDevice)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
                 displayDevice.DisposeTileSheet(tileSheet);
         }
 
-        public void Draw(DisplayDevice displayDevice, Rectangle mapViewPort)
+        public void Draw(IDisplayDevice displayDevice, Rectangle mapViewPort)
         {
             Draw(displayDevice, Location.Origin, mapViewPort);
         }
 
-        public void Draw(DisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
+        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
         {
             displayDevice.BeginScene();
 

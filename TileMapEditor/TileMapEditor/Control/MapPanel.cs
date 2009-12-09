@@ -14,7 +14,7 @@ using Tiling;
 
 namespace TileMapEditor.Control
 {
-    public partial class MapPanel : UserControl, DisplayDevice
+    public partial class MapPanel : UserControl, IDisplayDevice
     {
         #region Private Variables
 
