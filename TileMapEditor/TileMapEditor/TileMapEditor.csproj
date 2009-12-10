@@ -76,6 +76,7 @@
     <Compile Include="Control\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
     <Compile Include="Plugin\Interface\IApplication.cs" />
