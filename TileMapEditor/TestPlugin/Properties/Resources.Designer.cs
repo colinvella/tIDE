@@ -60,9 +60,16 @@ namespace TestPlugin.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap PluginIcon {
+        internal static System.Drawing.Bitmap LargeIcon {
             get {
-                object obj = ResourceManager.GetObject("PluginIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("LargeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SmallIcon {
+            get {
+                object obj = ResourceManager.GetObject("SmallIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

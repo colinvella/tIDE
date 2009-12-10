@@ -38,7 +38,7 @@ namespace TileMapEditor.Plugin
                 {
                     IMenuItem pluginMenuItem
                         = pluginDropDownMenu.SubItems.AddItem(plugin.Name);
-                    pluginMenuItem.Image = plugin.Icon;
+                    pluginMenuItem.Image = plugin.SmallIcon;
                     pluginMenuItem.Tag = plugin;
                     pluginMenuItem.EventHandler = ShowPluginInfo;
                 }

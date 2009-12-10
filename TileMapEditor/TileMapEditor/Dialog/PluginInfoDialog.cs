@@ -24,7 +24,6 @@ namespace TileMapEditor.Dialog
 
         private void OnLoadDialog(object sender, EventArgs eventArgs)
         {
-            m_pictureBoxIcon.Image = m_plugin.Icon;
             m_labelName.Text = m_plugin.Name;
             m_labelVersion.Text = "Version " + m_plugin.Version;
             m_labelAuthor.Text = m_plugin.Author;
@@ -35,6 +34,12 @@ namespace TileMapEditor.Dialog
         {
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void OnPaint(object sender, PaintEventArgs paintEventArgse)
+        {
+            Graphics graphics = paintEventArgse.Graphics;
+            graphics.DrawImage(m_plugin.LargeIcon, 14, 14);
         }
     }
 }

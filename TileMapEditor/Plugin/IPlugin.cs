@@ -14,7 +14,8 @@ namespace TileMapEditor.Plugin
         Version Version { get; }
         string Author { get; }
         string Description { get; }
-        Bitmap Icon { get; }
+        Bitmap SmallIcon { get; }
+        Bitmap LargeIcon { get; }
 
         void Initialise(IApplication application);
         void Shutdown(IApplication application);

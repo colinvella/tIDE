@@ -31,12 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PluginInfoDialog));
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
             this.m_buttonOk = new System.Windows.Forms.Button();
-            this.m_pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_labelAuthor = new System.Windows.Forms.Label();
             this.m_labelVersion = new System.Windows.Forms.Label();
             this.m_labelName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.m_pictureBoxIcon)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,15 +62,6 @@
             this.m_buttonOk.UseVisualStyleBackColor = true;
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
-            // m_pictureBoxIcon
-            // 
-            this.m_pictureBoxIcon.Location = new System.Drawing.Point(13, 14);
-            this.m_pictureBoxIcon.Name = "m_pictureBoxIcon";
-            this.m_pictureBoxIcon.Size = new System.Drawing.Size(32, 32);
-            this.m_pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.m_pictureBoxIcon.TabIndex = 0;
-            this.m_pictureBoxIcon.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
@@ -86,6 +75,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 262);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             // 
             // m_labelAuthor
             // 
@@ -131,7 +121,6 @@
             this.ClientSize = new System.Drawing.Size(384, 262);
             this.Controls.Add(this.m_buttonOk);
             this.Controls.Add(this.m_textBoxDescription);
-            this.Controls.Add(this.m_pictureBoxIcon);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -142,7 +131,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Plugin Information";
             this.Load += new System.EventHandler(this.OnLoadDialog);
-            ((System.ComponentModel.ISupportInitialize)(this.m_pictureBoxIcon)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,7 +140,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox m_pictureBoxIcon;
         private System.Windows.Forms.Label m_labelName;
         private System.Windows.Forms.TextBox m_textBoxDescription;
         private System.Windows.Forms.Label m_labelVersion;
