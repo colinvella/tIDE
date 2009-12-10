@@ -219,6 +219,7 @@
     <None Include="Resources\EditSingleTile.png" />
     <None Include="Resources\EditClearSelection.png" />
     <None Include="Resources\EditDelete.png" />
+    <None Include="Resources\AboutBackground.png" />
     <Content Include="Resources\EditDropperCursor.cur" />
     <Content Include="Resources\EditEraserCursor.cur" />
     <None Include="Resources\EditSelect.png" />

@@ -29,63 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PluginInfoDialog));
-            this.m_labelName = new System.Windows.Forms.Label();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
-            this.m_labelVersion = new System.Windows.Forms.Label();
-            this.m_labelAuthor = new System.Windows.Forms.Label();
-            this.m_pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.m_buttonOk = new System.Windows.Forms.Button();
+            this.m_pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_labelAuthor = new System.Windows.Forms.Label();
+            this.m_labelVersion = new System.Windows.Forms.Label();
+            this.m_labelName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_pictureBoxIcon)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_labelName
-            // 
-            this.m_labelName.AutoSize = true;
-            this.m_labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_labelName.Location = new System.Drawing.Point(82, 12);
-            this.m_labelName.Name = "m_labelName";
-            this.m_labelName.Size = new System.Drawing.Size(59, 17);
-            this.m_labelName.TabIndex = 1;
-            this.m_labelName.Text = "(name)";
             // 
             // m_textBoxDescription
             // 
-            this.m_textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.m_textBoxDescription.Location = new System.Drawing.Point(12, 82);
+            this.m_textBoxDescription.BackColor = System.Drawing.SystemColors.Info;
+            this.m_textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_textBoxDescription.Location = new System.Drawing.Point(54, 101);
             this.m_textBoxDescription.Multiline = true;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.ReadOnly = true;
             this.m_textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.m_textBoxDescription.Size = new System.Drawing.Size(360, 128);
+            this.m_textBoxDescription.Size = new System.Drawing.Size(318, 120);
             this.m_textBoxDescription.TabIndex = 2;
             this.m_textBoxDescription.TabStop = false;
-            // 
-            // m_labelVersion
-            // 
-            this.m_labelVersion.AutoSize = true;
-            this.m_labelVersion.Location = new System.Drawing.Point(82, 39);
-            this.m_labelVersion.Name = "m_labelVersion";
-            this.m_labelVersion.Size = new System.Drawing.Size(47, 13);
-            this.m_labelVersion.TabIndex = 3;
-            this.m_labelVersion.Text = "(version)";
-            // 
-            // m_labelAuthor
-            // 
-            this.m_labelAuthor.AutoSize = true;
-            this.m_labelAuthor.Location = new System.Drawing.Point(82, 63);
-            this.m_labelAuthor.Name = "m_labelAuthor";
-            this.m_labelAuthor.Size = new System.Drawing.Size(43, 13);
-            this.m_labelAuthor.TabIndex = 4;
-            this.m_labelAuthor.Text = "(author)";
-            // 
-            // m_pictureBoxIcon
-            // 
-            this.m_pictureBoxIcon.Location = new System.Drawing.Point(12, 12);
-            this.m_pictureBoxIcon.Name = "m_pictureBoxIcon";
-            this.m_pictureBoxIcon.Size = new System.Drawing.Size(64, 64);
-            this.m_pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.m_pictureBoxIcon.TabIndex = 0;
-            this.m_pictureBoxIcon.TabStop = false;
             // 
             // m_buttonOk
             // 
@@ -94,9 +60,67 @@
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
             this.m_buttonOk.TabIndex = 5;
-            this.m_buttonOk.Text = "&OK";
+            this.m_buttonOk.Text = "OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
+            // 
+            // m_pictureBoxIcon
+            // 
+            this.m_pictureBoxIcon.Location = new System.Drawing.Point(13, 14);
+            this.m_pictureBoxIcon.Name = "m_pictureBoxIcon";
+            this.m_pictureBoxIcon.Size = new System.Drawing.Size(32, 32);
+            this.m_pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.m_pictureBoxIcon.TabIndex = 0;
+            this.m_pictureBoxIcon.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.m_labelAuthor);
+            this.panel1.Controls.Add(this.m_labelVersion);
+            this.panel1.Controls.Add(this.m_labelName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(384, 262);
+            this.panel1.TabIndex = 6;
+            // 
+            // m_labelAuthor
+            // 
+            this.m_labelAuthor.AutoSize = true;
+            this.m_labelAuthor.BackColor = System.Drawing.Color.Transparent;
+            this.m_labelAuthor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.m_labelAuthor.Location = new System.Drawing.Point(328, 30);
+            this.m_labelAuthor.Name = "m_labelAuthor";
+            this.m_labelAuthor.Size = new System.Drawing.Size(43, 13);
+            this.m_labelAuthor.TabIndex = 4;
+            this.m_labelAuthor.Text = "(author)";
+            this.m_labelAuthor.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // m_labelVersion
+            // 
+            this.m_labelVersion.AutoSize = true;
+            this.m_labelVersion.BackColor = System.Drawing.Color.Transparent;
+            this.m_labelVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.m_labelVersion.Location = new System.Drawing.Point(50, 30);
+            this.m_labelVersion.Name = "m_labelVersion";
+            this.m_labelVersion.Size = new System.Drawing.Size(47, 13);
+            this.m_labelVersion.TabIndex = 3;
+            this.m_labelVersion.Text = "(version)";
+            // 
+            // m_labelName
+            // 
+            this.m_labelName.AutoSize = true;
+            this.m_labelName.BackColor = System.Drawing.Color.Transparent;
+            this.m_labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_labelName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.m_labelName.Location = new System.Drawing.Point(50, 11);
+            this.m_labelName.Name = "m_labelName";
+            this.m_labelName.Size = new System.Drawing.Size(59, 17);
+            this.m_labelName.TabIndex = 1;
+            this.m_labelName.Text = "(name)";
             // 
             // PluginInfoDialog
             // 
@@ -106,12 +130,10 @@
             this.CancelButton = this.m_buttonOk;
             this.ClientSize = new System.Drawing.Size(384, 262);
             this.Controls.Add(this.m_buttonOk);
-            this.Controls.Add(this.m_labelAuthor);
-            this.Controls.Add(this.m_labelVersion);
             this.Controls.Add(this.m_textBoxDescription);
-            this.Controls.Add(this.m_labelName);
             this.Controls.Add(this.m_pictureBoxIcon);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -121,6 +143,8 @@
             this.Text = "Plugin Information";
             this.Load += new System.EventHandler(this.OnLoadDialog);
             ((System.ComponentModel.ISupportInitialize)(this.m_pictureBoxIcon)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +158,6 @@
         private System.Windows.Forms.Label m_labelVersion;
         private System.Windows.Forms.Label m_labelAuthor;
         private System.Windows.Forms.Button m_buttonOk;
+        private System.Windows.Forms.Panel panel1;
     }
 }
