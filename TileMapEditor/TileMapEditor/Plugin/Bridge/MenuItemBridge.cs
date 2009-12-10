@@ -69,6 +69,12 @@ namespace TileMapEditor.Plugin.Bridge
             set { m_toolStripMenuItem.Enabled = value; }
         }
 
+        public object Tag
+        {
+            get { return m_toolStripMenuItem.Tag; }
+            set { m_toolStripMenuItem.Tag = value; }
+        }
+
         public IMenuItemCollection SubItems
         {
             get { return this; }

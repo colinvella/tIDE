@@ -20,6 +20,8 @@ namespace TileMapEditor.Plugin.Interface
 
         IMenuItemCollection SubItems { get; }
 
+        object Tag { get; set; }
+
         EventHandler EventHandler { set; }
     }
 }

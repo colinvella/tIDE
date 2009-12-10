@@ -7,7 +7,7 @@ using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge
 {
-    internal class ElementBridge: IElement
+    internal abstract class ElementBridge: IElement
     {
 		private bool m_readOnly;
 

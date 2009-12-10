@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
+using TileMapEditor.Dialog;
 using TileMapEditor.Plugin.Interface;
 using TileMapEditor.Plugin.Bridge;
 
@@ -15,6 +16,14 @@ namespace TileMapEditor.Plugin
     {
         private Dictionary<string, IPlugin> m_plugins;
         private ApplicationBridge m_applicationBridge;
+
+        private void ShowPluginInfo(object sender, EventArgs eventArgs)
+        {
+            IPlugin plugin = (IPlugin)((ToolStripMenuItem)sender).Tag;
+
+            PluginInfoDialog pluginInfoDialog = new PluginInfoDialog(plugin);
+            pluginInfoDialog.ShowDialog();
+        }
 
         private void UpdatePluginMenu()
         {
@@ -30,6 +39,8 @@ namespace TileMapEditor.Plugin
                     IMenuItem pluginMenuItem
                         = pluginDropDownMenu.SubItems.AddItem(plugin.Name);
                     pluginMenuItem.Image = plugin.Icon;
+                    pluginMenuItem.Tag = plugin;
+                    pluginMenuItem.EventHandler = ShowPluginInfo;
                 }
             }
             else
