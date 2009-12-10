@@ -10,12 +10,13 @@ namespace TileMapEditor.Plugin.Interface
 {
     public interface IMenuItem: IElement
     {
-        IMenuItem AddSubItem(string text);
+        //IMenuItem AddSubItem(string text);
 
         string Text { get; set; }
         Image Image { get; set; }
         Keys ShortcutKeys { get; set; }
-        ReadOnlyCollection<IMenuItem> SubItems { get; }
+        IMenuItemCollection SubItems { get; }
+        //ReadOnlyCollection<IMenuItem> SubItems { get; }
         EventHandler EventHandler { set; }
     }
 }

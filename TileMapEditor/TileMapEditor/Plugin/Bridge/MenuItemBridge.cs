@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,7 +10,7 @@ using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge
 {
-    internal class MenuItemBridge: ElementBridge, IMenuItem
+    internal class MenuItemBridge: ElementBridge, IMenuItem, IMenuItemCollection
     {
         private ToolStripMenuItem m_toolStripMenuItem;
         private List<IMenuItem> m_subItems;
@@ -64,9 +65,9 @@ namespace TileMapEditor.Plugin.Bridge
             }
         }
 
-        public ReadOnlyCollection<IMenuItem> SubItems
+        public IMenuItemCollection SubItems
         {
-            get { return m_subItems.AsReadOnly(); }
+            get { return this; }
         }
 
         public EventHandler EventHandler
@@ -76,6 +77,41 @@ namespace TileMapEditor.Plugin.Bridge
                 VerifyWriteAccess();
                 m_toolStripMenuItem.Click += value;
             }
+        }
+
+        public IMenuItem AddItem(string text)
+        {
+            ToolStripMenuItem subItem = new ToolStripMenuItem(text);
+            MenuItemBridge subItemBridge = new MenuItemBridge(subItem, false);
+            m_subItems.Add(subItemBridge);
+            return subItemBridge;
+        }
+
+        public IMenuItem this[string text]
+        {
+            get
+            {
+                foreach (IMenuItem subItem in m_subItems)
+                    if (subItem.Text == text)
+                        return subItem;
+                throw new Exception("Undefined sub-item");
+            }
+        }
+
+        public IMenuItem this[int index]
+        {
+            get { return m_subItems[index]; }
+        }
+
+
+        public IEnumerator<IMenuItem> GetEnumerator()
+        {
+            return m_subItems.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return m_subItems.GetEnumerator();
         }
     }
 }

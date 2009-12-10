@@ -80,6 +80,7 @@
     <Compile Include="Plugin\Interface\IApplication.cs" />
     <Compile Include="Plugin\Interface\IElement.cs" />
     <Compile Include="Plugin\Interface\IMenuItem.cs" />
+    <Compile Include="Plugin\Interface\IMenuItemCollection.cs" />
     <Compile Include="Plugin\Interface\IMenuStrip.cs" />
     <Compile Include="Plugin\IModule.cs" />
     <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
