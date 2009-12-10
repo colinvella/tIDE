@@ -74,6 +74,11 @@ namespace TileMapEditor.Plugin
             }
         }
 
+        public void LoadPlugins()
+        {
+            LoadPlugins(PluginsPath);
+        }
+
         public void LoadPlugins(string pluginsPath)
         {
             try
@@ -112,6 +117,11 @@ namespace TileMapEditor.Plugin
             m_plugins = new Dictionary<string, IPlugin>();
             m_applicationBridge = new ApplicationBridge(menuStrip);
             PurgePluginDomain();
+        }
+
+        public string PluginsPath
+        {
+            get { return Application.ExecutablePath + Path.DirectorySeparatorChar + "Plugins"; }
         }
     }
 }

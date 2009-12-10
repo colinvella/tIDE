@@ -240,6 +240,7 @@
     <None Include="Resources\ViewLayerCompositingDimUnselected.png" />
     <None Include="Resources\ViewLayerCompositingShowAll.png" />
     <None Include="Resources\Plugin.png" />
+    <None Include="Resources\PluginReload.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
