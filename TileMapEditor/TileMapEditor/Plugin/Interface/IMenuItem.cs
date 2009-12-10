@@ -15,6 +15,7 @@ namespace TileMapEditor.Plugin.Interface
         string Text { get; set; }
         Image Image { get; set; }
         Keys ShortcutKeys { get; set; }
+        bool Enabled { get; set; }
         IMenuItemCollection SubItems { get; }
         //ReadOnlyCollection<IMenuItem> SubItems { get; }
         EventHandler EventHandler { set; }
