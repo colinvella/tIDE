@@ -12,16 +12,17 @@ namespace TileMapEditor.Plugin
 {
     public class PluginManager
     {
-        private AppDomain m_pluginDomain;
+        //private AppDomain m_pluginDomain;
         private Dictionary<string, IPlugin> m_plugins;
         private ApplicationBridge m_applicationBridge;
 
+        /*
         private void PurgePluginDomain()
         {
             if (m_pluginDomain != null)
                 AppDomain.Unload(m_pluginDomain);
             m_pluginDomain = AppDomain.CreateDomain("TileMapEditorPluginDomain");
-        }
+        }*/
 
         private void LoadPluginsFromAssembly(string assemblyPath)
         {
@@ -30,9 +31,11 @@ namespace TileMapEditor.Plugin
                 if (!File.Exists(assemblyPath))
                     throw new Exception("Plugin assembly '" + assemblyPath + "' not found");
 
-                byte[] assemblyByteCode = File.ReadAllBytes(assemblyPath);
+                /*byte[] assemblyByteCode = File.ReadAllBytes(assemblyPath);
 
-                Assembly pluginAssembly = m_pluginDomain.Load(assemblyByteCode);
+                Assembly pluginAssembly = m_pluginDomain.Load(assemblyByteCode);*/
+
+                Assembly pluginAssembly = Assembly.LoadFile(assemblyPath);
 
                 Type iPluginType = typeof(IPlugin);
                 //Type[] constructorSignature = new Type[0];
@@ -107,14 +110,14 @@ namespace TileMapEditor.Plugin
 
             m_plugins.Clear();
 
-            PurgePluginDomain();
+            //PurgePluginDomain();
         }
 
         public PluginManager(MenuStrip menuStrip)
         {
             m_plugins = new Dictionary<string, IPlugin>();
             m_applicationBridge = new ApplicationBridge(menuStrip);
-            PurgePluginDomain();
+            //PurgePluginDomain();
         }
 
         public string PluginsPath

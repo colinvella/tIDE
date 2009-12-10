@@ -8,7 +8,7 @@ using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin
 {
-    interface IPlugin
+    public interface IPlugin
     {
         string Name { get; }
         Version Version { get; }

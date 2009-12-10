@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapEditor", "TileMapEdi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Plugin\Plugin.csproj", "{2787F0CD-8BFD-4696-AAAA-629452D05A21}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs04.codeplex.com/
 		SccLocalPath0 = .
@@ -22,6 +24,9 @@ Global
 		SccProjectUniqueName3 = TestPlugin\\TestPlugin.csproj
 		SccProjectName3 = TestPlugin
 		SccLocalPath3 = TestPlugin
+		SccProjectUniqueName4 = Plugin\\Plugin.csproj
+		SccProjectName4 = Plugin
+		SccLocalPath4 = Plugin
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +45,10 @@ Global
 		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2787F0CD-8BFD-4696-AAAA-629452D05A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2787F0CD-8BFD-4696-AAAA-629452D05A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2787F0CD-8BFD-4696-AAAA-629452D05A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2787F0CD-8BFD-4696-AAAA-629452D05A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

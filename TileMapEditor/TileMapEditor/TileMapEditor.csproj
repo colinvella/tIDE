@@ -79,12 +79,6 @@
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
-    <Compile Include="Plugin\Interface\IApplication.cs" />
-    <Compile Include="Plugin\Interface\IElement.cs" />
-    <Compile Include="Plugin\Interface\IMenuItem.cs" />
-    <Compile Include="Plugin\Interface\IMenuItemCollection.cs" />
-    <Compile Include="Plugin\Interface\IMenuStrip.cs" />
-    <Compile Include="Plugin\IPlugin.cs" />
     <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
     <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Plugin\Version.cs" />
@@ -251,6 +245,10 @@
     <None Include="Resources\MapProperties.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Project>{2787F0CD-8BFD-4696-AAAA-629452D05A21}</Project>
+      <Name>Plugin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tiling\Tiling.csproj">
       <Project>{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}</Project>
       <Name>Tiling</Name>
