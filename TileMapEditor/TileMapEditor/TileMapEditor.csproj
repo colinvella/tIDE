@@ -84,8 +84,9 @@
     <Compile Include="Plugin\Interface\IMenuItem.cs" />
     <Compile Include="Plugin\Interface\IMenuItemCollection.cs" />
     <Compile Include="Plugin\Interface\IMenuStrip.cs" />
-    <Compile Include="Plugin\IModule.cs" />
+    <Compile Include="Plugin\IPlugin.cs" />
     <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
+    <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Plugin\Version.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Control\MapPanelEventArgs.cs" />

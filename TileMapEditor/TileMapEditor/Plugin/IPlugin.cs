@@ -8,15 +8,15 @@ using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin
 {
-    interface IModule
+    interface IPlugin
     {
         string Name { get; }
         Version Version { get; }
-        string Manufacturer { get; }
+        string Author { get; }
         string Description { get; }
         Bitmap Icon { get; }
 
-        void Load(IApplication application);
-        void Unload(IApplication application);
+        void Initialise(IApplication application);
+        void Shutdown(IApplication application);
     }
 }
