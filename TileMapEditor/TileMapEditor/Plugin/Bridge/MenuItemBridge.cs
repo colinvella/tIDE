@@ -13,26 +13,24 @@ namespace TileMapEditor.Plugin.Bridge
     internal class MenuItemBridge: ElementBridge, IMenuItem, IMenuItemCollection
     {
         private ToolStripMenuItem m_toolStripMenuItem;
-        private List<IMenuItem> m_subItems;
+        private List<MenuItemBridge> m_subItems;
+
+        internal ToolStripMenuItem ToolStripMenuItem
+        {
+            get { return m_toolStripMenuItem; }
+        }
 
         public MenuItemBridge(ToolStripMenuItem toolStripMenuItem, bool readOnly)
             : base(readOnly)
         {
             m_toolStripMenuItem = toolStripMenuItem;
-            m_subItems = new List<IMenuItem>();
+            m_subItems = new List<MenuItemBridge>();
 
             foreach (ToolStripItem subItem in toolStripMenuItem.DropDownItems)
             {
                 if (subItem is ToolStripMenuItem)
                     m_subItems.Add(new MenuItemBridge((ToolStripMenuItem)subItem, readOnly));
             }
-        }
-
-        public IMenuItem AddSubItem(string text)
-        {
-            VerifyWriteAccess();
-
-            throw new NotImplementedException();
         }
 
         public string Text
@@ -94,6 +92,23 @@ namespace TileMapEditor.Plugin.Bridge
             return subItemBridge;
         }
 
+        public void RemoveItem(IMenuItem menuItem)
+        {
+            MenuItemBridge subItemBridge = (MenuItemBridge)menuItem;
+
+            if (!m_subItems.Contains(subItemBridge))
+                throw new Exception(
+                    "Cannot remove a menu item that is not contained in this drop-down menu");
+
+            if (menuItem.ReadOnly)
+                throw new Exception("Cannot remove a built-in menu item");
+
+            ToolStripMenuItem subItem = subItemBridge.m_toolStripMenuItem;
+            subItem.Owner.Items.Remove(subItem);
+
+            m_subItems.Remove(subItemBridge);
+        }
+
         public IMenuItem this[string text]
         {
             get
@@ -113,7 +128,7 @@ namespace TileMapEditor.Plugin.Bridge
 
         public IEnumerator<IMenuItem> GetEnumerator()
         {
-            return m_subItems.GetEnumerator();
+            return m_subItems.Cast<IMenuItem>().GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

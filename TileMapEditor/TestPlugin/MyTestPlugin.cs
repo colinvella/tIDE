@@ -11,6 +11,8 @@ namespace TestPlugin
 {
     public class MyTestPlugin : IPlugin
     {
+        private IMenuItem m_myDropDownMenu;
+
         #region IPlugin Members
 
         public string Name
@@ -45,12 +47,13 @@ namespace TestPlugin
 
         public void Initialise(IApplication application)
         {
-            application.MenuStrip.DropDownMenus.AddItem("My dropdown menu!");
+            m_myDropDownMenu = application.MenuStrip.DropDownMenus.AddItem("My dropdown menu!");
         }
 
         public void Shutdown(IApplication application)
         {
-            
+            application.MenuStrip.DropDownMenus.RemoveItem(m_myDropDownMenu);
+            m_myDropDownMenu = null;
         }
 
         #endregion
