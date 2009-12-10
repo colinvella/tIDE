@@ -238,6 +238,7 @@
     <None Include="Resources\VewTileGuidesHide.png" />
     <None Include="Resources\ViewLayerCompositingDimUnselected.png" />
     <None Include="Resources\ViewLayerCompositingShowAll.png" />
+    <None Include="Resources\Plugin.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
