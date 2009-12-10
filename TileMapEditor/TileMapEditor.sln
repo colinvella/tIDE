@@ -5,9 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiling", "Tiling\Tiling.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapEditor", "TileMapEditor\TileMapEditor.csproj", "{23DDF477-C651-46E1-A856-46BA1D64FC6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs04.codeplex.com/
 		SccLocalPath0 = .
@@ -17,6 +19,9 @@ Global
 		SccProjectUniqueName2 = Tiling\\Tiling.csproj
 		SccProjectName2 = Tiling
 		SccLocalPath2 = Tiling
+		SccProjectUniqueName3 = TestPlugin\\TestPlugin.csproj
+		SccProjectName3 = TestPlugin
+		SccLocalPath3 = TestPlugin
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +36,10 @@ Global
 		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

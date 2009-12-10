@@ -83,10 +83,8 @@ namespace TileMapEditor.Plugin
         {
             try
             {
-                if (!File.Exists(pluginsPath))
+                if (!Directory.Exists(pluginsPath))
                     throw new Exception("Plugins path not found");
-                if ((File.GetAttributes(pluginsPath) & FileAttributes.Directory) == 0)
-                    throw new Exception("Plugins path is not a directory");
 
                 string[] directoryFiles = Directory.GetFiles(pluginsPath);
 
@@ -121,7 +119,8 @@ namespace TileMapEditor.Plugin
 
         public string PluginsPath
         {
-            get { return Application.ExecutablePath + Path.DirectorySeparatorChar + "Plugins"; }
+            get { return Path.GetDirectoryName(Application.ExecutablePath)
+                + Path.DirectorySeparatorChar + "Plugins"; }
         }
     }
 }

@@ -12,6 +12,8 @@ using Tiling;
 using TileMapEditor.Control;
 using TileMapEditor.Dialog;
 
+using TileMapEditor.Plugin;
+
 namespace TileMapEditor
 {
     public partial class MainForm : Form
@@ -20,6 +22,7 @@ namespace TileMapEditor
 
         private Map m_map;
         private Tiling.Component m_selectedComponent;
+        private PluginManager m_pluginManager;
 
         #endregion
 
@@ -125,6 +128,9 @@ namespace TileMapEditor
             m_viewZoomComboBox.SelectedIndex = 0;
 
             ArrangeToolStripLayout();
+
+            m_pluginManager = new PluginManager(m_menuStrip);
+            OnPluginsReload(this, new EventArgs());
         }
 
         private void OnKeyDown(object sender, KeyEventArgs keyEventArgs)
@@ -545,6 +551,12 @@ namespace TileMapEditor
             m_tilePicker.UpdatePicker();
 
             m_mapPanel.DisposeTileSheet(tileSheet);
+        }
+
+        private void OnPluginsReload(object sender, EventArgs eventArgs)
+        {
+            m_pluginManager.UnloadPlugins();
+            m_pluginManager.LoadPlugins();
         }
 
         private void OnPickerTileSelected(object sender, TilePickerEventArgs tilePickerEventArgs)

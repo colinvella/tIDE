@@ -21,8 +21,11 @@ namespace TileMapEditor.Plugin.Bridge
             m_toolStripMenuItem = toolStripMenuItem;
             m_subItems = new List<IMenuItem>();
 
-            foreach (ToolStripMenuItem subItem in toolStripMenuItem.DropDownItems)
-                m_subItems.Add(new MenuItemBridge(subItem, readOnly));
+            foreach (ToolStripItem subItem in toolStripMenuItem.DropDownItems)
+            {
+                if (subItem is ToolStripMenuItem)
+                    m_subItems.Add(new MenuItemBridge((ToolStripMenuItem)subItem, readOnly));
+            }
         }
 
         public IMenuItem AddSubItem(string text)
