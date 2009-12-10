@@ -6,23 +6,38 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
+using TileMapEditor.Plugin.Interface;
 using TileMapEditor.Plugin.Bridge;
 
 namespace TileMapEditor.Plugin
 {
     public class PluginManager
     {
-        //private AppDomain m_pluginDomain;
         private Dictionary<string, IPlugin> m_plugins;
         private ApplicationBridge m_applicationBridge;
 
-        /*
-        private void PurgePluginDomain()
+        private void UpdatePluginMenu()
         {
-            if (m_pluginDomain != null)
-                AppDomain.Unload(m_pluginDomain);
-            m_pluginDomain = AppDomain.CreateDomain("TileMapEditorPluginDomain");
-        }*/
+            IMenuItem pluginDropDownMenu = m_applicationBridge.MenuStrip.DropDownMenus["&Plugins"];
+
+            while (pluginDropDownMenu.SubItems.Count<IMenuItem>() > 1)
+                pluginDropDownMenu.SubItems.RemoveItem(pluginDropDownMenu.SubItems[1]);
+
+            if (m_plugins.Count > 0)
+            {
+                foreach (IPlugin plugin in m_plugins.Values)
+                {
+                    IMenuItem pluginMenuItem
+                        = pluginDropDownMenu.SubItems.AddItem(plugin.Name);
+                    pluginMenuItem.Image = plugin.Icon;
+                }
+            }
+            else
+            {
+                IMenuItem messageItem = pluginDropDownMenu.SubItems.AddItem("No plugins loaded");
+                messageItem.Enabled = false;
+            }
+        }
 
         private void LoadPluginsFromAssembly(string assemblyPath)
         {
@@ -31,31 +46,13 @@ namespace TileMapEditor.Plugin
                 if (!File.Exists(assemblyPath))
                     throw new Exception("Plugin assembly '" + assemblyPath + "' not found");
 
-                /*byte[] assemblyByteCode = File.ReadAllBytes(assemblyPath);
-
-                Assembly pluginAssembly = m_pluginDomain.Load(assemblyByteCode);*/
-
                 Assembly pluginAssembly = Assembly.LoadFile(assemblyPath);
 
                 Type iPluginType = typeof(IPlugin);
-                //Type[] constructorSignature = new Type[0];
-                //object[] constructorParameters = new object[0];
                 foreach (Type type in pluginAssembly.GetTypes())
                 {
                     if (!iPluginType.IsAssignableFrom(type))
                         continue;
-
-                    /*
-                    ConstructorInfo pluginConstructor
-                        = iPluginType.GetConstructor(constructorSignature);
-
-                    if (pluginConstructor == null)
-                        throw new Exception(
-                            "The plugin class '" + iPluginType.FullName
-                            + "' does not define a default constructor");
-
-                    object pluginObject = pluginConstructor.Invoke(constructorParameters);
-                    IPlugin plugin = (IPlugin)pluginObject;*/
 
                     object pluginObject = pluginAssembly.CreateInstance(type.FullName);
                     IPlugin plugin = (IPlugin)pluginObject;
@@ -67,6 +64,9 @@ namespace TileMapEditor.Plugin
                     plugin.Initialise(m_applicationBridge);
 
                     m_plugins[plugin.Name] = plugin;
+
+                    // update plugins menu
+                    UpdatePluginMenu();
                 }
             }
             catch (Exception innerException)
@@ -93,24 +93,46 @@ namespace TileMapEditor.Plugin
 
                 foreach (string filename in directoryFiles)
                 {
-                    LoadPluginsFromAssembly(filename);
+                    try
+                    {
+                        LoadPluginsFromAssembly(filename);
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(null,
+                            "Failed to load assembly plugin '" + Path.GetFileName(filename)
+                            + "'. Reason: " + exception.StackTrace,
+                            "Plugin Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception innerException)
             {
-                throw new Exception(
-                    "Failed to load plugins from the path ' " + pluginsPath + "'", innerException);
+                MessageBox.Show(null,
+                    "Failed to load plugins from the path ' " + pluginsPath + "'. Reason: " + innerException.StackTrace,
+                    "Plugin Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            UpdatePluginMenu();
         }
 
         public void UnloadPlugins()
         {
             foreach (IPlugin plugin in m_plugins.Values)
-                plugin.Shutdown(m_applicationBridge);
+            {
+                try
+                {
+                    plugin.Shutdown(m_applicationBridge);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(null,
+                        "A problem occured while shutting down plugin '" + plugin.Name + "'. Reason: " + exception.StackTrace,
+                        "Plugin Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
 
             m_plugins.Clear();
-
-            //PurgePluginDomain();
         }
 
         public PluginManager(MenuStrip menuStrip)

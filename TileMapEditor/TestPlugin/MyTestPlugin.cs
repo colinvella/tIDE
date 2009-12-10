@@ -39,9 +39,7 @@ namespace TestPlugin
         {
             get
             {
-                Bitmap bitmap = new Bitmap(16, 16);
-                bitmap.SetPixel(0, 0, Color.Red);
-                return bitmap;
+                return Properties.Resources.PluginIcon;
             }
         }
 
