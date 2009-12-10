@@ -20,12 +20,9 @@ namespace TileMapEditor.Plugin.Bridge
         {
             m_toolStripMenuItem = toolStripMenuItem;
             m_subItems = new List<IMenuItem>();
+
             foreach (ToolStripMenuItem subItem in toolStripMenuItem.DropDownItems)
-            {
-                MenuItemBridge subItemBridge = new MenuItemBridge(subItem, readOnly);
-                subItemBridge.Image = subItem.Image;
-                subItemBridge.ShortcutKeys = subItem.ShortcutKeys;
-            }
+                m_subItems.Add(new MenuItemBridge(subItem, readOnly));
         }
 
         public IMenuItem AddSubItem(string text)
@@ -82,6 +79,7 @@ namespace TileMapEditor.Plugin.Bridge
         public IMenuItem AddItem(string text)
         {
             ToolStripMenuItem subItem = new ToolStripMenuItem(text);
+            m_toolStripMenuItem.DropDownItems.Add(subItem);
             MenuItemBridge subItemBridge = new MenuItemBridge(subItem, false);
             m_subItems.Add(subItemBridge);
             return subItemBridge;

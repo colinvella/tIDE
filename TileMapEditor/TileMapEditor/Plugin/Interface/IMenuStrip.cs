@@ -8,8 +8,6 @@ namespace TileMapEditor.Plugin.Interface
 {
     public interface IMenuStrip
     {
-        IMenuItem AddDropDownMenu(string text);
-
-        ReadOnlyCollection<IMenuItem> DropDownMenus { get; }
+        IMenuItemCollection DropDownMenus { get; }
     }
 }
