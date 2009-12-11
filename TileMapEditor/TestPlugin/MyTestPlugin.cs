@@ -101,7 +101,7 @@ namespace TestPlugin
 
         public void OnEditorMouseDown(MouseEventArgs mouseEventArgs, Location tileLocation)
         {
-            MessageBox.Show("Tile location = " + tileLocation);
+            //MessageBox.Show("Tile location = " + tileLocation);
         }
 
         #endregion
