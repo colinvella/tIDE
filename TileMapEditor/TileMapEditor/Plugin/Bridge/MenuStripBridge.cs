@@ -31,7 +31,7 @@ namespace TileMapEditor.Plugin.Bridge
             get { return this; }
         }
 
-        public IMenuItem AddItem(string text)
+        public IMenuItem Add(string text)
         {
             ToolStripMenuItem dropDownMenu = new ToolStripMenuItem(text);
             m_menuStrip.Items.Add(dropDownMenu);
@@ -40,7 +40,7 @@ namespace TileMapEditor.Plugin.Bridge
             return dropDownMenuBridge;
         }
 
-        public void RemoveItem(IMenuItem menuItem)
+        public void Remove(IMenuItem menuItem)
         {
             MenuItemBridge subItemBridge = (MenuItemBridge)menuItem;
 

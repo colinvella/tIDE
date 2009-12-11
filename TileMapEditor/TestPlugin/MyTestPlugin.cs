@@ -55,10 +55,10 @@ namespace TestPlugin
 
         public void Initialise(IApplication application)
         {
-            m_myDropDownMenu = application.MenuStrip.DropDownMenus.AddItem("My Custom Drop-Down Menu!");
+            m_myDropDownMenu = application.MenuStrip.DropDownMenus.Add("My Custom Drop-Down Menu!");
             m_myDropDownMenu.Image = Properties.Resources.SmallIcon;
 
-            m_myMenuItem = application.MenuStrip.DropDownMenus["&File"].SubItems.AddItem("My custom menu item!");
+            m_myMenuItem = application.MenuStrip.DropDownMenus["&File"].SubItems.Add("My custom menu item!");
             m_myMenuItem.Image = Properties.Resources.SmallIcon;
             m_myMenuItem.ShortcutKeys = (Keys)(Keys.Control | Keys.Z);
             m_myMenuItem.EventHandler = MyCustomAction;
@@ -66,10 +66,10 @@ namespace TestPlugin
 
         public void Shutdown(IApplication application)
         {
-            application.MenuStrip.DropDownMenus["&File"].SubItems.RemoveItem(m_myMenuItem);
+            application.MenuStrip.DropDownMenus["&File"].SubItems.Remove(m_myMenuItem);
             m_myMenuItem = null;
 
-            application.MenuStrip.DropDownMenus.RemoveItem(m_myDropDownMenu);
+            application.MenuStrip.DropDownMenus.Remove(m_myDropDownMenu);
             m_myDropDownMenu = null;
         }
 

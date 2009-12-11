@@ -30,14 +30,14 @@ namespace TileMapEditor.Plugin
             IMenuItem pluginDropDownMenu = m_applicationBridge.MenuStrip.DropDownMenus["&Plugins"];
 
             while (pluginDropDownMenu.SubItems.Count<IMenuItem>() > 1)
-                pluginDropDownMenu.SubItems.RemoveItem(pluginDropDownMenu.SubItems[1]);
+                pluginDropDownMenu.SubItems.Remove(pluginDropDownMenu.SubItems[1]);
 
             if (m_plugins.Count > 0)
             {
                 foreach (IPlugin plugin in m_plugins.Values)
                 {
                     IMenuItem pluginMenuItem
-                        = pluginDropDownMenu.SubItems.AddItem(plugin.Name);
+                        = pluginDropDownMenu.SubItems.Add(plugin.Name);
                     pluginMenuItem.Image = plugin.SmallIcon;
                     pluginMenuItem.Tag = plugin;
                     pluginMenuItem.EventHandler = ShowPluginInfo;
@@ -45,7 +45,7 @@ namespace TileMapEditor.Plugin
             }
             else
             {
-                IMenuItem messageItem = pluginDropDownMenu.SubItems.AddItem("No plugins loaded");
+                IMenuItem messageItem = pluginDropDownMenu.SubItems.Add("No plugins loaded");
                 messageItem.Enabled = false;
             }
         }
