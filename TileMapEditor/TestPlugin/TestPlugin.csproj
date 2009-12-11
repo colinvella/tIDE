@@ -64,6 +64,10 @@
       <Project>{2787F0CD-8BFD-4696-AAAA-629452D05A21}</Project>
       <Name>Plugin</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tiling\Tiling.csproj">
+      <Project>{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}</Project>
+      <Name>Tiling</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

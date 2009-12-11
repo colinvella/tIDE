@@ -71,9 +71,10 @@ namespace TileMapEditor.Plugin.Bridge
             : base(false)
         {
             m_mapPanel = mapPanel;
-            m_mapPanel.MouseDown += OnMapPanelMouseDown;
-            m_mapPanel.MouseMove += OnMapPanelMouseMove;
-            m_mapPanel.MouseUp += OnMapPanelMouseUp;
+            Panel innerPanel = m_mapPanel.InnerPanel;
+            innerPanel.MouseDown += OnMapPanelMouseDown;
+            innerPanel.MouseMove += OnMapPanelMouseMove;
+            innerPanel.MouseUp += OnMapPanelMouseUp;
         }
 
         public Map Map { get { return m_mapPanel.Map; } }

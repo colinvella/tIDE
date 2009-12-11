@@ -582,6 +582,12 @@ namespace TileMapEditor.Control
 
         #endregion
 
+        #region Internal Properties
+
+        internal Panel InnerPanel { get { return m_innerPanel; } }
+
+        #endregion
+
         #region Public Properties
 
         [Description("The Map structure associated with this control"),

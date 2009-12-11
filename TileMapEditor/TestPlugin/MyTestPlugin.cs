@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Tiling;
+
 using TileMapEditor.Plugin;
 using TileMapEditor.Plugin.Interface;
 
@@ -75,6 +77,8 @@ namespace TestPlugin
             m_myToolBarButton2 = m_myToolBar.Buttons.Add("Button2", Properties.Resources.SmallIcon);
             m_myToolBarButton2.ToolTipText = "My second toolbar button";
             m_myToolBarButton2.Enabled = false;
+
+            application.Editor.MouseDown = OnEditorMouseDown;
         }
 
         public void Shutdown(IApplication application)
@@ -93,6 +97,11 @@ namespace TestPlugin
         public void MyCustomAction(object sender, EventArgs eventArgs)
         {
             MessageBox.Show("My custom action!");
+        }
+
+        public void OnEditorMouseDown(MouseEventArgs mouseEventArgs, Location tileLocation)
+        {
+            MessageBox.Show("Tile location = " + tileLocation);
         }
 
         #endregion
