@@ -9,7 +9,7 @@ using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge
 {
-    internal class ToolBarBridge: ElementBridge, IToolBar
+    internal class ToolBarBridge: ElementBridge, IToolBar, IToolBarButtonCollection
     {
         private ToolStrip m_toolStrip;
         private List<ToolBarButtonBridge> m_toolBarButtons;
@@ -27,6 +27,31 @@ namespace TileMapEditor.Plugin.Bridge
                 m_toolBarButtons.Add(
                     new ToolBarButtonBridge((ToolStripButton) toolStripItem , readOnly));
             }
+        }
+
+        public string Id
+        {
+            get { return m_toolStrip.Text; }
+            set
+            {
+                VerifyWriteAccess();
+                m_toolStrip.Text = value;
+            }
+        }
+
+        public bool Enabled
+        {
+            get { return m_toolStrip.Enabled; }
+            set
+            {
+                VerifyWriteAccess();
+                m_toolStrip.Enabled = value;
+            }
+        }
+
+        public IToolBarButtonCollection Buttons
+        {
+            get { return this; }
         }
 
         public IToolBarButton Add(string id, Image image)

@@ -6,12 +6,12 @@ using System.Text;
 
 namespace TileMapEditor.Plugin.Interface
 {
-    public interface IToolBar
+    public interface IToolBar: IElement
     {
-        IToolBarButton Add(string id, Image image);
-        void Remove(IToolBarButton toolBarButton);
+        string Id { get; set; }
 
-        IToolBarButton this[string id] { get; }
-        IToolBarButton this[int index] { get; }
+        bool Enabled { get; set; }
+
+        IToolBarButtonCollection Buttons { get; }
     }
 }

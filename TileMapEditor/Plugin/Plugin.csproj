@@ -58,6 +58,7 @@
     <Compile Include="Interface\IMenuStrip.cs" />
     <Compile Include="Interface\IToolBar.cs" />
     <Compile Include="Interface\IToolBarButton.cs" />
+    <Compile Include="Interface\IToolBarButtonCollection.cs" />
     <Compile Include="Interface\IToolBarCollection.cs" />
     <Compile Include="IPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
