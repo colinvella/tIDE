@@ -41,11 +41,12 @@ namespace TileMapEditor
                 if (location.X + control.Width > m_toolStripContainer.TopToolStripPanel.ClientSize.Width)
                 {
                     location.X = 0;
-                    location.Y += control.Height;
+                    location.Y = control.Bottom;
                 }
                 
                 m_toolStripContainer.TopToolStripPanel.Join((ToolStrip)control, location);
                 location.X = control.Right;
+                location.Y = control.Top;
             }
         }
 
@@ -124,6 +125,11 @@ namespace TileMapEditor
 
             m_pluginManager = new PluginManager(m_menuStrip, m_toolStripContainer, m_mapPanel);
             OnPluginsReload(this, new EventArgs());
+        }
+
+        private void OnFormResizeEnd(object sender, EventArgs eventArgs)
+        {
+            ArrangeToolStripLayout();
         }
 
         private void OnKeyDown(object sender, KeyEventArgs keyEventArgs)

@@ -436,6 +436,7 @@
             this.m_tileSheetMenuItem,
             this.m_pluginsMenuItem,
             this.m_helpMenuItem});
+            this.m_menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.m_menuStrip.Location = new System.Drawing.Point(0, 0);
             this.m_menuStrip.Name = "m_menuStrip";
             this.m_menuStrip.Size = new System.Drawing.Size(784, 24);
@@ -932,7 +933,6 @@
             this.m_editSelectAllButton,
             this.m_editClearSelectionButton,
             this.m_editInvertSelection});
-            this.m_editToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
             this.m_editToolStrip.Size = new System.Drawing.Size(352, 25);
@@ -1353,6 +1353,7 @@
             this.Load += new System.EventHandler(this.OnMainFormLoad);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyUp);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
+            this.ResizeEnd += new System.EventHandler(this.OnFormResizeEnd);
             m_splitContainerVertical.Panel1.ResumeLayout(false);
             m_splitContainerVertical.Panel2.ResumeLayout(false);
             m_splitContainerVertical.ResumeLayout(false);
