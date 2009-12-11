@@ -35,24 +35,17 @@ namespace TileMapEditor
                 controls.Add(control);
             m_toolStripContainer.TopToolStripPanel.Controls.Clear();
             
-            Point currentPosition = m_toolStripContainer.TopToolStripPanel.ClientRectangle.Location;
+            Point location = Point.Empty;
             foreach (System.Windows.Forms.Control control in controls)
             {
-                currentPosition.X += control.Margin.Left;
-                currentPosition.Y += control.Margin.Top;
-
-                if (currentPosition.X + control.Width + control.Margin.Right > m_toolStripContainer.TopToolStripPanel.ClientRectangle.Width)
+                if (location.X + control.Width > m_toolStripContainer.TopToolStripPanel.ClientSize.Width)
                 {
-                    currentPosition.X = control.Margin.Left;
-                    currentPosition.Y += control.Height + control.Margin.Bottom;
+                    location.X = 0;
+                    location.Y += control.Height;
                 }
-
-                control.Location = currentPosition;
-                m_toolStripContainer.TopToolStripPanel.Controls.Add(control);
-                currentPosition = control.Location;
-
-                currentPosition.X += control.Width + control.Margin.Right;
-                currentPosition.Y -= control.Margin.Top;
+                
+                m_toolStripContainer.TopToolStripPanel.Join((ToolStrip)control, location);
+                location.X = control.Right;
             }
         }
 
