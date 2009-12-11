@@ -121,7 +121,7 @@ namespace TileMapEditor.Plugin
             catch (Exception innerException)
             {
                 MessageBox.Show(null,
-                    "Failed to load plugins from the path ' " + pluginsPath + "'. Reason: " + innerException.StackTrace,
+                    "Failed to load plugins from the path ' " + pluginsPath + "'. Reason: " + innerException.Message,
                     "Plugin Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
