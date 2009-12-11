@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
+using TileMapEditor.Control;
 using TileMapEditor.Dialog;
 using TileMapEditor.Plugin.Interface;
 using TileMapEditor.Plugin.Bridge;
@@ -146,10 +147,10 @@ namespace TileMapEditor.Plugin
             m_plugins.Clear();
         }
 
-        public PluginManager(MenuStrip menuStrip, ToolStripContainer toolStripContainer)
+        public PluginManager(MenuStrip menuStrip, ToolStripContainer toolStripContainer, MapPanel mapPanel)
         {
             m_plugins = new Dictionary<string, IPlugin>();
-            m_applicationBridge = new ApplicationBridge(menuStrip, toolStripContainer);
+            m_applicationBridge = new ApplicationBridge(menuStrip, toolStripContainer, mapPanel);
             //PurgePluginDomain();
         }
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using TileMapEditor.Control;
 using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge
@@ -16,6 +17,8 @@ namespace TileMapEditor.Plugin.Bridge
         private ToolStripContainer m_toolStripContainer;
         private List<ToolBarBridge> m_toolBars;
 
+        private EditorBridge m_editorBridge;
+
         private void PopulateToolBars(ToolStripPanel toolStripPanel)
         {
             foreach (System.Windows.Forms.Control control in toolStripPanel.Controls)
@@ -26,7 +29,7 @@ namespace TileMapEditor.Plugin.Bridge
             }
         }
 
-        public ApplicationBridge(MenuStrip menuStrip, ToolStripContainer toolStripContainer)
+        public ApplicationBridge(MenuStrip menuStrip, ToolStripContainer toolStripContainer, MapPanel mapPanel)
             : base(false)
         {
             m_menuStripBridge = new MenuStripBridge(menuStrip);
@@ -37,6 +40,8 @@ namespace TileMapEditor.Plugin.Bridge
             PopulateToolBars(toolStripContainer.BottomToolStripPanel);
             PopulateToolBars(toolStripContainer.LeftToolStripPanel);
             PopulateToolBars(toolStripContainer.TopToolStripPanel);
+
+            m_editorBridge = new EditorBridge(mapPanel);
         }
 
         public IMenuStrip MenuStrip
@@ -47,6 +52,11 @@ namespace TileMapEditor.Plugin.Bridge
         public IToolBarCollection ToolBars
         {
             get { return this; }
+        }
+
+        public IEditor Editor
+        {
+            get { return m_editorBridge; }
         }
 
         public IToolBar Add(string id)

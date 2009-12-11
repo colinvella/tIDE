@@ -7,12 +7,9 @@ using Tiling;
 
 namespace TileMapEditor.Plugin.Interface
 {
-    public interface IApplication
+    public interface IEditor: IElement
     {
-        IMenuStrip MenuStrip { get; }
-
-        IToolBarCollection ToolBars { get; }
-
-        IEditor Editor { get; }
+        Map Map { get; }
+        Layer Layer { get; }
     }
 }

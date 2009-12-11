@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\IApplication.cs" />
+    <Compile Include="Interface\IEditor.cs" />
     <Compile Include="Interface\IElement.cs" />
     <Compile Include="Interface\IMenuItem.cs" />
     <Compile Include="Interface\IMenuItemCollection.cs" />
@@ -62,6 +63,12 @@
     <Compile Include="Interface\IToolBarCollection.cs" />
     <Compile Include="IPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tiling\Tiling.csproj">
+      <Project>{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}</Project>
+      <Name>Tiling</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
