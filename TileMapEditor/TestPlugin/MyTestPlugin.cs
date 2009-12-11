@@ -60,7 +60,7 @@ namespace TestPlugin
 
             m_myMenuItem = application.MenuStrip.DropDownMenus["&File"].SubItems.AddItem("My custom menu item!");
             m_myMenuItem.Image = Properties.Resources.SmallIcon;
-            //m_myMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Z;
+            m_myMenuItem.ShortcutKeys = (Keys)(Keys.Control | Keys.Z);
             m_myMenuItem.EventHandler = MyCustomAction;
         }
 
