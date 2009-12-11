@@ -8,9 +8,14 @@ using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge
 {
-    class ToolBarButtonBridge: ElementBridge, IToolBarButton
+    internal class ToolBarButtonBridge: ElementBridge, IToolBarButton
     {
         private ToolStripButton m_toolStripButton;
+
+        internal ToolStripButton ToolStripButton
+        {
+            get { return m_toolStripButton; }
+        }
 
         public ToolBarButtonBridge(ToolStripButton toolStripButton, bool readOnly)
             : base(readOnly)
