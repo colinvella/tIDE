@@ -83,10 +83,10 @@
       <DependentUpon>PluginInfoDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
-    <Compile Include="Plugin\Bridge\EditorBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
+    <Compile Include="Plugin\Bridge\EditorBridge.cs" />
     <Compile Include="Plugin\Bridge\ToolBarBridge.cs" />
     <Compile Include="Plugin\Bridge\ToolBarButtonBridge.cs" />
     <Compile Include="Plugin\PluginManager.cs" />
