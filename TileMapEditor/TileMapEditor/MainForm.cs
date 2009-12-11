@@ -129,7 +129,7 @@ namespace TileMapEditor
 
             ArrangeToolStripLayout();
 
-            m_pluginManager = new PluginManager(m_menuStrip);
+            m_pluginManager = new PluginManager(m_menuStrip, m_toolStripContainer);
             OnPluginsReload(this, new EventArgs());
         }
 

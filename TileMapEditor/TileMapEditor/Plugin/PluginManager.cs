@@ -146,10 +146,10 @@ namespace TileMapEditor.Plugin
             m_plugins.Clear();
         }
 
-        public PluginManager(MenuStrip menuStrip)
+        public PluginManager(MenuStrip menuStrip, ToolStripContainer toolStripContainer)
         {
             m_plugins = new Dictionary<string, IPlugin>();
-            m_applicationBridge = new ApplicationBridge(menuStrip);
+            m_applicationBridge = new ApplicationBridge(menuStrip, toolStripContainer);
             //PurgePluginDomain();
         }
 
