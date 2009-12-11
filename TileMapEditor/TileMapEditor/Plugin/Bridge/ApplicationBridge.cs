@@ -100,12 +100,18 @@ namespace TileMapEditor.Plugin.Bridge
 
         public IToolBar this[string id]
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                foreach (IToolBar toolBar in m_toolBars)
+                    if (toolBar.Id == id)
+                        return toolBar;
+                throw new Exception("Undefined toolbar");
+            }
         }
 
         public IToolBar this[int index]
         {
-            get { throw new NotImplementedException(); }
+            get { return m_toolBars[index]; }
         }
     }
 }
