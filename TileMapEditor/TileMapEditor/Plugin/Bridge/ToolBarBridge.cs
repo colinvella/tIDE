@@ -14,6 +14,8 @@ namespace TileMapEditor.Plugin.Bridge
         private ToolStrip m_toolStrip;
         private List<ToolBarButtonBridge> m_toolBarButtons;
 
+        internal ToolStrip ToolStrip { get { return m_toolStrip; } }
+
         public ToolBarBridge(ToolStrip toolStrip, bool readOnly)
             :base(readOnly)
         {
@@ -31,11 +33,11 @@ namespace TileMapEditor.Plugin.Bridge
 
         public string Id
         {
-            get { return m_toolStrip.Text; }
+            get { return m_toolStrip.Name; }
             set
             {
                 VerifyWriteAccess();
-                m_toolStrip.Text = value;
+                m_toolStrip.Name = value;
             }
         }
 
@@ -56,7 +58,7 @@ namespace TileMapEditor.Plugin.Bridge
 
         public IToolBarButton Add(string id, Image image)
         {
-            ToolStripButton toolStripButton = new ToolStripButton(id, image);
+            ToolStripButton toolStripButton = new ToolStripButton(image);
             m_toolStrip.Items.Add(toolStripButton);
             ToolBarButtonBridge toolBarButton = new ToolBarButtonBridge(toolStripButton, false);
             m_toolBarButtons.Add(toolBarButton);

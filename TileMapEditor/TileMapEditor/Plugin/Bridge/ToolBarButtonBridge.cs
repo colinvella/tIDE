@@ -25,11 +25,11 @@ namespace TileMapEditor.Plugin.Bridge
 
         public string Id
         {
-            get { return m_toolStripButton.Text; }
+            get { return m_toolStripButton.Name; }
             set
             {
                 VerifyWriteAccess();
-                m_toolStripButton.Text = value;
+                m_toolStripButton.Name = value;
             }
         }
 

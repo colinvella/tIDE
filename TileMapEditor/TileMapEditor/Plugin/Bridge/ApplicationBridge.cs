@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -11,6 +12,8 @@ namespace TileMapEditor.Plugin.Bridge
     internal class ApplicationBridge: ElementBridge, IApplication, IToolBarCollection
     {
         private MenuStripBridge m_menuStripBridge;
+
+        private ToolStripContainer m_toolStripContainer;
         private List<ToolBarBridge> m_toolBars;
 
         private void PopulateToolBars(ToolStripPanel toolStripPanel)
@@ -28,6 +31,7 @@ namespace TileMapEditor.Plugin.Bridge
         {
             m_menuStripBridge = new MenuStripBridge(menuStrip);
 
+            m_toolStripContainer = toolStripContainer;
             m_toolBars = new List<ToolBarBridge>();
             PopulateToolBars(toolStripContainer.TopToolStripPanel);
             PopulateToolBars(toolStripContainer.BottomToolStripPanel);
@@ -47,12 +51,41 @@ namespace TileMapEditor.Plugin.Bridge
 
         public IToolBar Add(string id)
         {
-            throw new NotImplementedException();
+            ToolStrip toolStrip = new ToolStrip();
+            toolStrip.Text = id;
+
+            ToolStripPanel toolStripPanel = m_toolStripContainer.TopToolStripPanel;
+
+            // position appropriately at end
+            if (toolStripPanel.Controls.Count > 0)
+            {
+                System.Windows.Forms.Control lastControl
+                    = toolStripPanel.Controls[toolStripPanel.Controls.Count - 1];
+                toolStrip.Location = new Point(lastControl.Right, lastControl.Top);
+            }
+            toolStripPanel.Controls.Add(toolStrip);
+
+            ToolBarBridge toolBarBridge = new ToolBarBridge(toolStrip, false);
+
+            m_toolBars.Add(toolBarBridge);
+            return toolBarBridge;
         }
 
         public void Remove(IToolBar toolBar)
         {
-            throw new NotImplementedException();
+            ToolBarBridge toolBarBridge = (ToolBarBridge)toolBar;
+
+            if (!m_toolBars.Contains(toolBarBridge))
+                throw new Exception(
+                    "Cannot remove a toolbar that is not in the tool strip container");
+
+            if (toolBar.ReadOnly)
+                throw new Exception("Cannot remove a built-in toolbar");
+
+            ToolStrip toolStrip = toolBarBridge.ToolStrip;
+            toolStrip.Parent.Controls.Remove(toolStrip);
+
+            m_toolBars.Remove(toolBarBridge);
         }
 
         public IToolBar this[string id]

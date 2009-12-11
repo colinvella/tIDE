@@ -14,6 +14,8 @@ namespace TestPlugin
     {
         private IMenuItem m_myDropDownMenu;
         private IMenuItem m_myMenuItem;
+        private IToolBar m_myToolBar;
+        private IToolBarButton m_myToolBarButton1, m_myToolBarButton2;
 
         #region IPlugin Members
 
@@ -62,10 +64,25 @@ namespace TestPlugin
             m_myMenuItem.Image = Properties.Resources.SmallIcon;
             m_myMenuItem.ShortcutKeys = (Keys)(Keys.Control | Keys.Z);
             m_myMenuItem.EventHandler = MyCustomAction;
+
+            m_myToolBar = application.ToolBars.Add("MyToolBar");
+
+            m_myToolBarButton1 = m_myToolBar.Buttons.Add("Button1", Properties.Resources.SmallIcon);
+            m_myToolBarButton1.ToolTipText = "My first toolbar button";
+            m_myToolBarButton1.Checked = true;
+            m_myToolBarButton1.EventHandler = MyCustomAction;
+
+            m_myToolBarButton2 = m_myToolBar.Buttons.Add("Button2", Properties.Resources.SmallIcon);
+            m_myToolBarButton2.ToolTipText = "My second toolbar button";
+            m_myToolBarButton2.Enabled = false;
         }
 
         public void Shutdown(IApplication application)
         {
+            application.ToolBars.Remove(m_myToolBar);
+            m_myToolBar = null;
+            m_myToolBarButton1 = m_myToolBarButton2 = null;
+
             application.MenuStrip.DropDownMenus["&File"].SubItems.Remove(m_myMenuItem);
             m_myMenuItem = null;
 
