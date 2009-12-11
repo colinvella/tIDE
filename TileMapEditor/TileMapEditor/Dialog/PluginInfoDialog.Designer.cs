@@ -79,12 +79,11 @@
             // 
             // m_labelAuthor
             // 
-            this.m_labelAuthor.AutoSize = true;
             this.m_labelAuthor.BackColor = System.Drawing.Color.Transparent;
             this.m_labelAuthor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.m_labelAuthor.Location = new System.Drawing.Point(328, 30);
+            this.m_labelAuthor.Location = new System.Drawing.Point(227, 30);
             this.m_labelAuthor.Name = "m_labelAuthor";
-            this.m_labelAuthor.Size = new System.Drawing.Size(43, 13);
+            this.m_labelAuthor.Size = new System.Drawing.Size(144, 13);
             this.m_labelAuthor.TabIndex = 4;
             this.m_labelAuthor.Text = "(author)";
             this.m_labelAuthor.TextAlign = System.Drawing.ContentAlignment.TopRight;
