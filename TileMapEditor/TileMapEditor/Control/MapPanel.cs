@@ -743,6 +743,7 @@ namespace TileMapEditor.Control
 
     public enum EditTool
     {
+        None,
         Select,
         SingleTile,
         TileBlock,
