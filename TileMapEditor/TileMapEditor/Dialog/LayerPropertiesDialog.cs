@@ -32,6 +32,8 @@ namespace TileMapEditor.Dialog
             m_numericTileWidth.Value = m_layer.TileSize.Width;
             m_numericTileHeight.Value = m_layer.TileSize.Height;
 
+            m_checkBoxVisible.Checked = m_layer.Visible;
+
             m_customPropertyGrid.LoadProperties(m_layer);
         }
 
@@ -56,6 +58,8 @@ namespace TileMapEditor.Dialog
 
             m_layer.LayerSize = new Tiling.Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
             m_layer.TileSize = new Tiling.Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
+
+            m_layer.Visible = m_checkBoxVisible.Checked;
 
             m_customPropertyGrid.StoreProperties(m_layer);
 
