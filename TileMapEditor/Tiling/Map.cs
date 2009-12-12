@@ -188,6 +188,9 @@ namespace Tiling
 
             foreach (Layer layer in m_layers)
             {
+                if (!layer.Visible)
+                    continue;
+                    
                 Rectangle layerViewPort = layer.ConvertMapToLayerViewPort(mapViewPort);
                 layer.Draw(displayDevice, displayOffset, layerViewPort);
             }
