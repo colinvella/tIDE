@@ -16,6 +16,7 @@ namespace Tiling
         private Size m_tileSize;
         private Tile[,] m_tiles;
         private TileArray m_tileArray;
+        private bool m_visible;
 
         #endregion
 
@@ -30,6 +31,7 @@ namespace Tiling
             m_tileSize = tileSize;
             m_tiles = new Tile[layerSize.Width, layerSize.Height];
             m_tileArray = new TileArray(this, m_tiles);
+            m_visible = true;
         }
 
         public bool DependsOnTileSheet(TileSheet tileSheet)
@@ -198,6 +200,12 @@ namespace Tiling
                     m_layerSize.Width * m_tileSize.Width,
                     m_layerSize.Height * m_tileSize.Height);
             }
+        }
+
+        public bool Visible
+        {
+            get { return m_visible; }
+            set { m_visible = value; }
         }
 
         public TileArray Tiles { get { return m_tileArray; } }
