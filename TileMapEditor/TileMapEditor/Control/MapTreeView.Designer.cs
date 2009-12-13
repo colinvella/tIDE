@@ -44,9 +44,19 @@ namespace TileMapEditor.Control
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapTreeView));
             this.m_treeView = new System.Windows.Forms.TreeView();
             this.m_imageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_contextMenuLayers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_layerNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_layerDeleteAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_contextMenuLayer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_layerPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_layerBringForwardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_layerSendBackwardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_layerDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_labelCaption = new System.Windows.Forms.Label();
             m_treePanel = new System.Windows.Forms.Panel();
             m_treePanel.SuspendLayout();
+            this.m_contextMenuLayers.SuspendLayout();
+            this.m_contextMenuLayer.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_labelCaption
@@ -96,7 +106,8 @@ namespace TileMapEditor.Control
             this.m_treeView.SelectedImageIndex = 0;
             this.m_treeView.Size = new System.Drawing.Size(150, 130);
             this.m_treeView.TabIndex = 0;
-            this.m_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.m_treeView_AfterSelect);
+            this.m_treeView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnMouseClick);
+            this.m_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnAfterSelect);
             // 
             // m_imageList
             // 
@@ -108,6 +119,74 @@ namespace TileMapEditor.Control
             this.m_imageList.Images.SetKeyName(3, "LayerFolder.png");
             this.m_imageList.Images.SetKeyName(4, "TileSheetFolder.png");
             // 
+            // m_contextMenuLayers
+            // 
+            this.m_contextMenuLayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_layerNewMenuItem,
+            this.m_layerDeleteAllMenuItem});
+            this.m_contextMenuLayers.Name = "m_contextMenuLayers";
+            this.m_contextMenuLayers.Size = new System.Drawing.Size(153, 70);
+            // 
+            // m_layerNewMenuItem
+            // 
+            this.m_layerNewMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerNew;
+            this.m_layerNewMenuItem.Name = "m_layerNewMenuItem";
+            this.m_layerNewMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_layerNewMenuItem.Text = "New...";
+            this.m_layerNewMenuItem.Click += new System.EventHandler(this.OnLayerNew);
+            // 
+            // m_layerDeleteAllMenuItem
+            // 
+            this.m_layerDeleteAllMenuItem.Name = "m_layerDeleteAllMenuItem";
+            this.m_layerDeleteAllMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_layerDeleteAllMenuItem.Text = "Delete All";
+            this.m_layerDeleteAllMenuItem.Click += new System.EventHandler(this.OnLayerDeleteAll);
+            // 
+            // m_contextMenuLayer
+            // 
+            this.m_contextMenuLayer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_layerPropertiesMenuItem,
+            this.m_layerBringForwardMenuItem,
+            this.m_layerSendBackwardMenuItem,
+            this.m_layerDeleteMenuItem});
+            this.m_contextMenuLayer.Name = "m_contextMenuLayer";
+            this.m_contextMenuLayer.Size = new System.Drawing.Size(155, 92);
+            this.m_contextMenuLayer.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuLayerOpening);
+            // 
+            // m_layerPropertiesMenuItem
+            // 
+            this.m_layerPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
+            this.m_layerPropertiesMenuItem.Name = "m_layerPropertiesMenuItem";
+            this.m_layerPropertiesMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.m_layerPropertiesMenuItem.Text = "Properties";
+            this.m_layerPropertiesMenuItem.Click += new System.EventHandler(this.OnLayerProperties);
+            // 
+            // m_layerBringForwardMenuItem
+            // 
+            this.m_layerBringForwardMenuItem.Enabled = false;
+            this.m_layerBringForwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
+            this.m_layerBringForwardMenuItem.Name = "m_layerBringForwardMenuItem";
+            this.m_layerBringForwardMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.m_layerBringForwardMenuItem.Text = "Bring Forward";
+            this.m_layerBringForwardMenuItem.Click += new System.EventHandler(this.OnLayerBringForward);
+            // 
+            // m_layerSendBackwardMenuItem
+            // 
+            this.m_layerSendBackwardMenuItem.Enabled = false;
+            this.m_layerSendBackwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
+            this.m_layerSendBackwardMenuItem.Name = "m_layerSendBackwardMenuItem";
+            this.m_layerSendBackwardMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.m_layerSendBackwardMenuItem.Text = "Send Backward";
+            this.m_layerSendBackwardMenuItem.Click += new System.EventHandler(this.OnLayerSendBackward);
+            // 
+            // m_layerDeleteMenuItem
+            // 
+            this.m_layerDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
+            this.m_layerDeleteMenuItem.Name = "m_layerDeleteMenuItem";
+            this.m_layerDeleteMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.m_layerDeleteMenuItem.Text = "Delete";
+            this.m_layerDeleteMenuItem.Click += new System.EventHandler(this.OnLayerDelete);
+            // 
             // MapTreeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,11 +195,23 @@ namespace TileMapEditor.Control
             this.Controls.Add(m_labelCaption);
             this.Name = "MapTreeView";
             m_treePanel.ResumeLayout(false);
+            this.m_contextMenuLayers.ResumeLayout(false);
+            this.m_contextMenuLayer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip m_contextMenuLayers;
+        private System.Windows.Forms.ToolStripMenuItem m_layerNewMenuItem;
+        private System.Windows.Forms.ContextMenuStrip m_contextMenuLayer;
+        private System.Windows.Forms.ToolStripMenuItem m_layerPropertiesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_layerBringForwardMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_layerSendBackwardMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_layerDeleteMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_layerDeleteAllMenuItem;
+
 
         #region Public Methods
 

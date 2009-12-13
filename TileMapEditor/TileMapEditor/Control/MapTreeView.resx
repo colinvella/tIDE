@@ -183,4 +183,10 @@
         AYABAQH4AQMBwAEDAfwBAQGAAQEB/AEBAcEBBwH+AQABgAEBDv8L
 </value>
   </data>
+  <metadata name="m_contextMenuLayers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>136, 17</value>
+  </metadata>
+  <metadata name="m_contextMenuLayer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>309, 17</value>
+  </metadata>
 </root>

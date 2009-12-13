@@ -30,6 +30,7 @@ namespace TileMapEditor.Control
             {
                 TreeNode layerNode = new TreeNode(layer.Id, layerImageIndex, layerImageIndex);
                 layerNode.Tag = layer;
+                layerNode.ContextMenuStrip = m_contextMenuLayer;
                 layersNode.Nodes.Add(layerNode);
             }
         }
@@ -47,7 +48,7 @@ namespace TileMapEditor.Control
             }
         }
 
-        private void m_treeView_AfterSelect(object sender, TreeViewEventArgs treeViewEventArgs)
+        private void OnAfterSelect(object sender, TreeViewEventArgs treeViewEventArgs)
         {
             if (ComponentChanged != null)
             {
@@ -75,6 +76,55 @@ namespace TileMapEditor.Control
             }
 
             return null;
+        }
+
+        private void OnContextMenuLayerOpening(object sender, CancelEventArgs cancelEventArgs)
+        {
+            Layer layer = (Layer)SelectedComponent;
+            int layerIndex = m_map.Layers.IndexOf(layer);
+            m_layerBringForwardMenuItem.Enabled = layerIndex < m_map.Layers.Count - 1;
+            m_layerSendBackwardMenuItem.Enabled = layerIndex > 0;
+        }
+
+        private void OnMouseClick(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_treeView.SelectedNode = m_treeView.GetNodeAt(mouseEventArgs.Location);
+        }
+
+        private void OnLayerNew(object sender, EventArgs eventArgs)
+        {
+            if (NewLayer != null)
+                NewLayer(this, eventArgs);
+        }
+
+        private void OnLayerDeleteAll(object sender, EventArgs eventArgs)
+        {
+            if (DeleteAllLayers != null)
+                DeleteAllLayers(this, eventArgs);
+        }
+
+        private void OnLayerProperties(object sender, EventArgs eventArgs)
+        {
+            if (LayerProperties != null)
+                LayerProperties(this, eventArgs);
+        }
+
+        private void OnLayerBringForward(object sender, EventArgs eventArgs)
+        {
+            if (BringLayerForward != null)
+                BringLayerForward(this, eventArgs);
+        }
+
+        private void OnLayerSendBackward(object sender, EventArgs eventArgs)
+        {
+            if (SendLayerBackward != null)
+                SendLayerBackward(this, eventArgs);
+        }
+
+        private void OnLayerDelete(object sender, EventArgs eventArgs)
+        {
+            if (DeleteLayer != null)
+                DeleteLayer(this, eventArgs);
         }
 
         #endregion
@@ -113,6 +163,7 @@ namespace TileMapEditor.Control
                 // create layer collection node
                 int layerFolderImageIndex = m_imageList.Images.IndexOfKey("LayerFolder.png");
                 layersNode = new TreeNode("Layers", layerFolderImageIndex, layerFolderImageIndex);
+                layersNode.ContextMenuStrip = m_contextMenuLayers;
                 layersNode.Tag = m_map.Layers;
                 mapNode.Nodes.Add(layersNode);
 
@@ -196,8 +247,25 @@ namespace TileMapEditor.Control
         [Category("Behavior"), Description("Occurs when the selected component node is changed")]
         public event MapTreeViewEventHandler ComponentChanged;
 
-        #endregion
+        [Category("Behavior"), Description("Occurs when a new layer is requested from the context menu")]
+        public event EventHandler NewLayer;
 
+        [Category("Behavior"), Description("Occurs when Delete of all layers is requested from the context menu")]
+        public event EventHandler DeleteAllLayers;
+
+        [Category("Behavior"), Description("Occurs when layer properties are requested from the context menu")]
+        public event EventHandler LayerProperties;
+
+        [Category("Behavior"), Description("Occurs when a layer is requested to be brought forward from the context menu")]
+        public event EventHandler BringLayerForward;
+
+        [Category("Behavior"), Description("Occurs when a layer is requested to be sent backward from the context menu")]
+        public event EventHandler SendLayerBackward;
+
+        [Category("Behavior"), Description("Occurs when a layer deletion is requested from the context menu")]
+        public event EventHandler DeleteLayer;
+
+        #endregion
     }
 
     public class MapTreeViewEventArgs
