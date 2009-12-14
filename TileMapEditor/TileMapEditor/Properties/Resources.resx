@@ -130,9 +130,6 @@
   <data name="VewTileGuidesHide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VewTileGuidesHide.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditDropperCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditDropperCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ViewLayerCompositingDimUnselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewLayerCompositingDimUnselected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -238,17 +235,11 @@
   <data name="ViewZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewZoom.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ImageBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImageBackground.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditUndo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditUndo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EditEraserCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditEraserCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="View" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\View.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,13 +250,22 @@
   <data name="ToolsEraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsEraser.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditTileBlockCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditTileBlockCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ViewZoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewZoomIn.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ToolsTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolsDropperCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsDropperCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ToolsEraserCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsEraserCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ToolsSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ToolsTileBlockCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsTileBlockCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

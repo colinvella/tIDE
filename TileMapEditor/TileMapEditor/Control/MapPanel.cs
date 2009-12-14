@@ -495,10 +495,10 @@ namespace TileMapEditor.Control
         {
             InitializeComponent();
 
-            m_singleTileCursor = new Cursor(new MemoryStream(Properties.Resources.EditSingleTileCursor));
-            m_tileBlockCursor = new Cursor(new MemoryStream(Properties.Resources.EditTileBlockCursor));
-            m_eraserCursor = new Cursor(new MemoryStream(Properties.Resources.EditEraserCursor));
-            m_dropperCursor = new Cursor(new MemoryStream(Properties.Resources.EditDropperCursor));
+            m_singleTileCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsSingleTileCursor));
+            m_tileBlockCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsTileBlockCursor));
+            m_eraserCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsEraserCursor));
+            m_dropperCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsDropperCursor));
 
             m_viewPort = new Tiling.Rectangle(
                 Tiling.Location.Origin, Tiling.Size.Zero);

@@ -220,12 +220,8 @@
     <None Include="Resources\EditClearSelection.png" />
     <None Include="Resources\EditDelete.png" />
     <None Include="Resources\AboutBackground.png" />
-    <Content Include="Resources\EditDropperCursor.cur" />
-    <Content Include="Resources\EditEraserCursor.cur" />
     <None Include="Resources\EditSelectAll.png" />
     <None Include="Resources\EditInvertSelection.png" />
-    <Content Include="Resources\EditSingleTileCursor.cur" />
-    <Content Include="Resources\EditTileBlockCursor.cur" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
@@ -251,6 +247,10 @@
     <None Include="Resources\ToolsEraser.png" />
     <None Include="Resources\ToolsDropper.png" />
     <None Include="Resources\ToolsTileBrush.png" />
+    <None Include="Resources\ToolsDropperCursor.cur" />
+    <None Include="Resources\ToolsEraserCursor.cur" />
+    <None Include="Resources\ToolsSingleTileCursor.cur" />
+    <None Include="Resources\ToolsTileBlockCursor.cur" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

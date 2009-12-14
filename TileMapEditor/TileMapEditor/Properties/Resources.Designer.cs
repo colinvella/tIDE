@@ -88,20 +88,6 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static byte[] EditDropperCursor {
-            get {
-                object obj = ResourceManager.GetObject("EditDropperCursor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        internal static byte[] EditEraserCursor {
-            get {
-                object obj = ResourceManager.GetObject("EditEraserCursor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap EditInvertSelection {
             get {
                 object obj = ResourceManager.GetObject("EditInvertSelection", resourceCulture);
@@ -120,20 +106,6 @@ namespace TileMapEditor.Properties {
             get {
                 object obj = ResourceManager.GetObject("EditSelectAll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static byte[] EditSingleTileCursor {
-            get {
-                object obj = ResourceManager.GetObject("EditSingleTileCursor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        internal static byte[] EditTileBlockCursor {
-            get {
-                object obj = ResourceManager.GetObject("EditTileBlockCursor", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -305,10 +277,24 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] ToolsDropperCursor {
+            get {
+                object obj = ResourceManager.GetObject("ToolsDropperCursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ToolsEraser {
             get {
                 object obj = ResourceManager.GetObject("ToolsEraser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] ToolsEraserCursor {
+            get {
+                object obj = ResourceManager.GetObject("ToolsEraserCursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -326,10 +312,24 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] ToolsSingleTileCursor {
+            get {
+                object obj = ResourceManager.GetObject("ToolsSingleTileCursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ToolsTileBlock {
             get {
                 object obj = ResourceManager.GetObject("ToolsTileBlock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] ToolsTileBlockCursor {
+            get {
+                object obj = ResourceManager.GetObject("ToolsTileBlockCursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
