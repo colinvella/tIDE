@@ -91,6 +91,7 @@
     <Compile Include="Plugin\Bridge\ToolBarButtonBridge.cs" />
     <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Plugin\Version.cs" />
+    <Compile Include="TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Control\MapPanelEventArgs.cs" />
     <Compile Include="Control\TilePicker.cs">
