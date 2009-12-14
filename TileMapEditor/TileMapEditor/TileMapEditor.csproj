@@ -231,6 +231,7 @@
     <None Include="Resources\EditInvertSelection.png" />
     <Content Include="Resources\EditSingleTileCursor.cur" />
     <Content Include="Resources\EditTileBlockCursor.cur" />
+    <None Include="Resources\EditTileBrush.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />

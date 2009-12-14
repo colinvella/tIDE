@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -11,12 +12,13 @@ namespace TileMapEditor
     [Serializable]
     public class TileBrush
     {
-        private Size m_size;
+        private Tiling.Size m_size;
         private List<TileBrushElement> m_tileBrushElements;
+        private Image m_imageRepresentation;
 
         public TileBrush(Layer layer, TileSelection tileSelection)
         {
-            Rectangle selectionBounds = tileSelection.Bounds;
+            Tiling.Rectangle selectionBounds = tileSelection.Bounds;
             m_size = selectionBounds.Size;
             m_tileBrushElements = new List<TileBrushElement>();
             foreach (Location location in tileSelection.Locations)
@@ -33,7 +35,7 @@ namespace TileMapEditor
             TileSelection tileSelection)
         {
             Map map = layer.Map;
-            Size layerTileSize = layer.TileSize;
+            Tiling.Size layerTileSize = layer.TileSize;
             tileSelection.Clear();
             foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
             {
@@ -60,6 +62,39 @@ namespace TileMapEditor
                 tileSelection.AddLocation(tileLocation);
             }
         }
-    }
 
+        public Image ImageRepresentation
+        {
+            get
+            {
+                if (m_imageRepresentation == null)
+                {
+                    if (m_tileBrushElements.Count == 0)
+                        return null;
+
+                    Tiling.Size tileSize
+                        = m_tileBrushElements[0].Tile.TileSheet.TileSize;
+
+                    Bitmap bitmap = new Bitmap(
+                        m_size.Width * tileSize.Width, m_size.Height * tileSize.Height);
+                    Graphics graphics = Graphics.FromImage(bitmap);
+
+                    TileImageCache tileImageCache = TileImageCache.Instance;
+
+                    foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
+                    {
+                        Tile tile = tileBrushElement.Tile;
+                        Image tileImage = tileImageCache.GetTileBitmap(tile.TileSheet, tile.TileIndex);
+                        Location location = tileBrushElement.Location;
+                        graphics.DrawImage(tileImage,
+                            location.X * tileSize.Width, location.Y * tileSize.Height);
+                    }
+
+                    m_imageRepresentation = bitmap;
+                }
+
+                return m_imageRepresentation;
+            }
+        }
+    }
 }

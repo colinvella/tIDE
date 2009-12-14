@@ -172,6 +172,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditTileBrush {
+            get {
+                object obj = ResourceManager.GetObject("EditTileBrush", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditUndo {
             get {
                 object obj = ResourceManager.GetObject("EditUndo", resourceCulture);
