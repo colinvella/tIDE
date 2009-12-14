@@ -102,11 +102,11 @@ namespace TileMapEditor
         {
             EditTool editTool = m_mapPanel.EditTool;
 
-            m_editSelectButton.Checked = editTool == EditTool.Select;
-            m_editSingleTileButton.Checked = editTool == EditTool.SingleTile;
-            m_editTileBlockButton.Checked = editTool == EditTool.TileBlock;
-            m_editEraserButton.Checked = editTool == EditTool.Eraser;
-            m_editDropperButton.Checked = editTool == EditTool.Dropper;
+            m_toolsSelectButton.Checked = editTool == EditTool.Select;
+            m_toolsSingleTileButton.Checked = editTool == EditTool.SingleTile;
+            m_toolsTileBlockButton.Checked = editTool == EditTool.TileBlock;
+            m_toolsEraserButton.Checked = editTool == EditTool.Eraser;
+            m_toolsDropperButton.Checked = editTool == EditTool.Dropper;
         }
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
