@@ -44,6 +44,7 @@ namespace TileMapEditor.Control
             {
                 TreeNode tileSheetNode = new TreeNode(tileSheet.Id, tileSheetImageIndex, tileSheetImageIndex);
                 tileSheetNode.Tag = tileSheet;
+                tileSheetNode.ContextMenuStrip = m_tileSheetContextMenuStrip;
                 tileSheetsNode.Nodes.Add(tileSheetNode);
             }
         }
@@ -93,20 +94,14 @@ namespace TileMapEditor.Control
 
         private void OnMapProperties(object sender, EventArgs eventArgs)
         {
-            if (AccessMapProperties != null)
-                AccessMapProperties(this, eventArgs);
+            if (MapProperties != null)
+                MapProperties(this, eventArgs);
         }
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
         {
             if (NewLayer != null)
                 NewLayer(this, eventArgs);
-        }
-
-        private void OnLayerDeleteAll(object sender, EventArgs eventArgs)
-        {
-            if (DeleteAllLayers != null)
-                DeleteAllLayers(this, eventArgs);
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)
@@ -131,6 +126,24 @@ namespace TileMapEditor.Control
         {
             if (DeleteLayer != null)
                 DeleteLayer(this, eventArgs);
+        }
+
+        private void OnTileSheetNew(object sender, EventArgs eventArgs)
+        {
+            if (NewTileSheet != null)
+                NewTileSheet(this, eventArgs);
+        }
+
+        private void OnTileSheetProperties(object sender, EventArgs eventArgs)
+        {
+            if (TileSheetProperties != null)
+                TileSheetProperties(this, eventArgs);
+        }
+
+        private void OnTileSheetDelete(object sender, EventArgs eventArgs)
+        {
+            if (DeleteTileSheet != null)
+                DeleteTileSheet(this, eventArgs);
         }
 
         #endregion
@@ -177,6 +190,7 @@ namespace TileMapEditor.Control
                 // create tilesheet collection node
                 int tileSheetFolderImageIndex = m_imageList.Images.IndexOfKey("TileSheetFolder.png");
                 tileSheetsNode = new TreeNode("Tile Sheets", tileSheetFolderImageIndex, tileSheetFolderImageIndex);
+                tileSheetsNode.ContextMenuStrip = m_tileSheetsContextMenuStrip;
                 tileSheetsNode.Tag = m_map.TileSheets;
                 mapNode.Nodes.Add(tileSheetsNode);
 
@@ -255,13 +269,10 @@ namespace TileMapEditor.Control
         public event MapTreeViewEventHandler ComponentChanged;
 
         [Category("Behavior"), Description("Occurs when the map properties are requested from the context menu")]
-        public event EventHandler AccessMapProperties;
+        public event EventHandler MapProperties;
 
         [Category("Behavior"), Description("Occurs when a new layer is requested from the context menu")]
         public event EventHandler NewLayer;
-
-        [Category("Behavior"), Description("Occurs when Delete of all layers is requested from the context menu")]
-        public event EventHandler DeleteAllLayers;
 
         [Category("Behavior"), Description("Occurs when layer properties are requested from the context menu")]
         public event EventHandler LayerProperties;
@@ -274,6 +285,15 @@ namespace TileMapEditor.Control
 
         [Category("Behavior"), Description("Occurs when a layer deletion is requested from the context menu")]
         public event EventHandler DeleteLayer;
+
+        [Category("Behavior"), Description("Occurs when a new tile sheet is requested from the context menu")]
+        public event EventHandler NewTileSheet;
+
+        [Category("Behavior"), Description("Occurs when tile sheet properties are requested from the context menu")]
+        public event EventHandler TileSheetProperties;
+
+        [Category("Behavior"), Description("Occurs when a tile sheet deletion is requested from the context menu")]
+        public event EventHandler DeleteTileSheet;
 
         #endregion
     }
