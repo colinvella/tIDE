@@ -340,6 +340,48 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ToolsDropper {
+            get {
+                object obj = ResourceManager.GetObject("ToolsDropper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ToolsEraser {
+            get {
+                object obj = ResourceManager.GetObject("ToolsEraser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ToolsSelect {
+            get {
+                object obj = ResourceManager.GetObject("ToolsSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ToolsSingleTile {
+            get {
+                object obj = ResourceManager.GetObject("ToolsSingleTile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ToolsTileBlock {
+            get {
+                object obj = ResourceManager.GetObject("ToolsTileBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ToolsTileBrush {
+            get {
+                object obj = ResourceManager.GetObject("ToolsTileBrush", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap VewTileGuides {
             get {
                 object obj = ResourceManager.GetObject("VewTileGuides", resourceCulture);

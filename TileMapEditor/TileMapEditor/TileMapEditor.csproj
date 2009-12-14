@@ -251,6 +251,12 @@
     <None Include="Resources\ViewLayerCompositingShowAll.png" />
     <None Include="Resources\Plugin.png" />
     <None Include="Resources\PluginReload.png" />
+    <None Include="Resources\ToolsSelect.png" />
+    <None Include="Resources\ToolsSingleTile.png" />
+    <None Include="Resources\ToolsTileBlock.png" />
+    <None Include="Resources\ToolsEraser.png" />
+    <None Include="Resources\ToolsDropper.png" />
+    <None Include="Resources\ToolsTileBrush.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
