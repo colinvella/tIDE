@@ -30,7 +30,7 @@ namespace TileMapEditor.Control
             {
                 TreeNode layerNode = new TreeNode(layer.Id, layerImageIndex, layerImageIndex);
                 layerNode.Tag = layer;
-                layerNode.ContextMenuStrip = m_contextMenuLayer;
+                layerNode.ContextMenuStrip = m_layerContextMenuStrip;
                 layersNode.Nodes.Add(layerNode);
             }
         }
@@ -89,6 +89,12 @@ namespace TileMapEditor.Control
         private void OnMouseClick(object sender, MouseEventArgs mouseEventArgs)
         {
             m_treeView.SelectedNode = m_treeView.GetNodeAt(mouseEventArgs.Location);
+        }
+
+        private void OnMapProperties(object sender, EventArgs eventArgs)
+        {
+            if (AccessMapProperties != null)
+                AccessMapProperties(this, eventArgs);
         }
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
@@ -158,12 +164,13 @@ namespace TileMapEditor.Control
                 // create root map node
                 int mapImageIndex = m_imageList.Images.IndexOfKey("Map.png");
                 mapNode = new TreeNode(m_map.Id, mapImageIndex, mapImageIndex);
+                mapNode.ContextMenuStrip = m_mapContextMenuStrip;
                 mapNode.Tag = m_map;
 
                 // create layer collection node
                 int layerFolderImageIndex = m_imageList.Images.IndexOfKey("LayerFolder.png");
                 layersNode = new TreeNode("Layers", layerFolderImageIndex, layerFolderImageIndex);
-                layersNode.ContextMenuStrip = m_contextMenuLayers;
+                layersNode.ContextMenuStrip = m_layersContextMenuStrip;
                 layersNode.Tag = m_map.Layers;
                 mapNode.Nodes.Add(layersNode);
 
@@ -246,6 +253,9 @@ namespace TileMapEditor.Control
 
         [Category("Behavior"), Description("Occurs when the selected component node is changed")]
         public event MapTreeViewEventHandler ComponentChanged;
+
+        [Category("Behavior"), Description("Occurs when the map properties are requested from the context menu")]
+        public event EventHandler AccessMapProperties;
 
         [Category("Behavior"), Description("Occurs when a new layer is requested from the context menu")]
         public event EventHandler NewLayer;

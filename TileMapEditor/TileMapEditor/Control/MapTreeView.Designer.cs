@@ -44,19 +44,21 @@ namespace TileMapEditor.Control
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapTreeView));
             this.m_treeView = new System.Windows.Forms.TreeView();
             this.m_imageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_contextMenuLayers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_layersContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_layerNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_layerDeleteAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_contextMenuLayer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_layerContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_layerPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerBringForwardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerSendBackwardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mapContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_mapPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_labelCaption = new System.Windows.Forms.Label();
             m_treePanel = new System.Windows.Forms.Panel();
             m_treePanel.SuspendLayout();
-            this.m_contextMenuLayers.SuspendLayout();
-            this.m_contextMenuLayer.SuspendLayout();
+            this.m_layersContextMenuStrip.SuspendLayout();
+            this.m_layerContextMenuStrip.SuspendLayout();
+            this.m_mapContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_labelCaption
@@ -119,13 +121,12 @@ namespace TileMapEditor.Control
             this.m_imageList.Images.SetKeyName(3, "LayerFolder.png");
             this.m_imageList.Images.SetKeyName(4, "TileSheetFolder.png");
             // 
-            // m_contextMenuLayers
+            // m_layersContextMenuStrip
             // 
-            this.m_contextMenuLayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_layerNewMenuItem,
-            this.m_layerDeleteAllMenuItem});
-            this.m_contextMenuLayers.Name = "m_contextMenuLayers";
-            this.m_contextMenuLayers.Size = new System.Drawing.Size(153, 70);
+            this.m_layersContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_layerNewMenuItem});
+            this.m_layersContextMenuStrip.Name = "m_contextMenuLayers";
+            this.m_layersContextMenuStrip.Size = new System.Drawing.Size(153, 48);
             // 
             // m_layerNewMenuItem
             // 
@@ -135,23 +136,16 @@ namespace TileMapEditor.Control
             this.m_layerNewMenuItem.Text = "New...";
             this.m_layerNewMenuItem.Click += new System.EventHandler(this.OnLayerNew);
             // 
-            // m_layerDeleteAllMenuItem
+            // m_layerContextMenuStrip
             // 
-            this.m_layerDeleteAllMenuItem.Name = "m_layerDeleteAllMenuItem";
-            this.m_layerDeleteAllMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.m_layerDeleteAllMenuItem.Text = "Delete All";
-            this.m_layerDeleteAllMenuItem.Click += new System.EventHandler(this.OnLayerDeleteAll);
-            // 
-            // m_contextMenuLayer
-            // 
-            this.m_contextMenuLayer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_layerContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_layerPropertiesMenuItem,
             this.m_layerBringForwardMenuItem,
             this.m_layerSendBackwardMenuItem,
             this.m_layerDeleteMenuItem});
-            this.m_contextMenuLayer.Name = "m_contextMenuLayer";
-            this.m_contextMenuLayer.Size = new System.Drawing.Size(155, 92);
-            this.m_contextMenuLayer.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuLayerOpening);
+            this.m_layerContextMenuStrip.Name = "m_contextMenuLayer";
+            this.m_layerContextMenuStrip.Size = new System.Drawing.Size(155, 92);
+            this.m_layerContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuLayerOpening);
             // 
             // m_layerPropertiesMenuItem
             // 
@@ -187,6 +181,21 @@ namespace TileMapEditor.Control
             this.m_layerDeleteMenuItem.Text = "Delete";
             this.m_layerDeleteMenuItem.Click += new System.EventHandler(this.OnLayerDelete);
             // 
+            // m_mapContextMenuStrip
+            // 
+            this.m_mapContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_mapPropertiesMenuItem});
+            this.m_mapContextMenuStrip.Name = "m_contextMenuMap";
+            this.m_mapContextMenuStrip.Size = new System.Drawing.Size(137, 26);
+            // 
+            // m_mapPropertiesMenuItem
+            // 
+            this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
+            this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
+            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_mapPropertiesMenuItem.Text = "Properties...";
+            this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
+            // 
             // MapTreeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,22 +204,24 @@ namespace TileMapEditor.Control
             this.Controls.Add(m_labelCaption);
             this.Name = "MapTreeView";
             m_treePanel.ResumeLayout(false);
-            this.m_contextMenuLayers.ResumeLayout(false);
-            this.m_contextMenuLayer.ResumeLayout(false);
+            this.m_layersContextMenuStrip.ResumeLayout(false);
+            this.m_layerContextMenuStrip.ResumeLayout(false);
+            this.m_mapContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ContextMenuStrip m_contextMenuLayers;
+        private System.Windows.Forms.ContextMenuStrip m_layersContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem m_layerNewMenuItem;
-        private System.Windows.Forms.ContextMenuStrip m_contextMenuLayer;
+        private System.Windows.Forms.ContextMenuStrip m_layerContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem m_layerPropertiesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerBringForwardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerSendBackwardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerDeleteMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem m_layerDeleteAllMenuItem;
+        private System.Windows.Forms.ContextMenuStrip m_mapContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem m_mapPropertiesMenuItem;
 
 
         #region Public Methods
