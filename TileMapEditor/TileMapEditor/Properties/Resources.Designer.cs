@@ -88,24 +88,10 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap EditDropper {
-            get {
-                object obj = ResourceManager.GetObject("EditDropper", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static byte[] EditDropperCursor {
             get {
                 object obj = ResourceManager.GetObject("EditDropperCursor", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap EditEraser {
-            get {
-                object obj = ResourceManager.GetObject("EditEraser", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -130,23 +116,9 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap EditSelect {
-            get {
-                object obj = ResourceManager.GetObject("EditSelect", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap EditSelectAll {
             get {
                 object obj = ResourceManager.GetObject("EditSelectAll", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap EditSingleTile {
-            get {
-                object obj = ResourceManager.GetObject("EditSingleTile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -158,24 +130,10 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap EditTileBlock {
-            get {
-                object obj = ResourceManager.GetObject("EditTileBlock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static byte[] EditTileBlockCursor {
             get {
                 object obj = ResourceManager.GetObject("EditTileBlockCursor", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap EditTileBrush {
-            get {
-                object obj = ResourceManager.GetObject("EditTileBrush", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

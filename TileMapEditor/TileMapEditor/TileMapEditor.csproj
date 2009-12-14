@@ -217,21 +217,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit.png" />
-    <None Include="Resources\EditDropper.png" />
-    <None Include="Resources\EditTileBlock.png" />
-    <None Include="Resources\EditEraser.png" />
-    <None Include="Resources\EditSingleTile.png" />
     <None Include="Resources\EditClearSelection.png" />
     <None Include="Resources\EditDelete.png" />
     <None Include="Resources\AboutBackground.png" />
     <Content Include="Resources\EditDropperCursor.cur" />
     <Content Include="Resources\EditEraserCursor.cur" />
-    <None Include="Resources\EditSelect.png" />
     <None Include="Resources\EditSelectAll.png" />
     <None Include="Resources\EditInvertSelection.png" />
     <Content Include="Resources\EditSingleTileCursor.cur" />
     <Content Include="Resources\EditTileBlockCursor.cur" />
-    <None Include="Resources\EditTileBrush.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
