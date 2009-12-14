@@ -253,6 +253,8 @@ namespace TileMapEditor.Control
 
         private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
         {
+            m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
+
             if (layerEventArgs.Layer != m_selectedLayer)
                 return;
 
@@ -291,6 +293,8 @@ namespace TileMapEditor.Control
                 for (int guideY = -offsetY; guideY < viewPort.Size.Height; guideY += tileSize.Height)
                     m_graphics.DrawLine(m_tileGuidePen, 0, guideY, m_viewPort.Size.Width, guideY);
 
+                m_graphics.PixelOffsetMode = PixelOffsetMode.None;
+
                 for (int guideX = -offsetX; guideX < viewPort.Size.Width; guideX += tileSize.Width)
                     m_graphics.DrawLine(m_tileGuidePen, guideX, 0, guideX, m_viewPort.Size.Height);
             }
@@ -305,6 +309,8 @@ namespace TileMapEditor.Control
                 tileViewPortSize.Height /= tileSize.Height;
                 tileViewPortSize.Width++;
                 tileViewPortSize.Height++;
+
+                m_graphics.PixelOffsetMode = PixelOffsetMode.None;
 
                 Location tileLocation = tileViewPortLocation;
                 for (;  tileLocation.Y <= tileViewPortLocation.Y + tileViewPortSize.Height; tileLocation.Y++)
@@ -341,11 +347,15 @@ namespace TileMapEditor.Control
                     if (m_editTool == EditTool.TileBlock
                         && m_selectedTileSheet != null && m_selectedTileIndex >= 0)
                     {
+                        m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
+
                         Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_selectedTileSheet, m_selectedTileIndex);
                         for (int tileY = minY; tileY <= maxY; tileY += tileSize.Height)
                             for (int tileX = minX; tileX <= maxX; tileX += tileSize.Width)
                                 m_graphics.DrawImage(tileBitmap, tileX, tileY);
                     }
+
+                    m_graphics.PixelOffsetMode = PixelOffsetMode.None;
 
                     int selectionWidth = maxX + tileSize.Width - minX;
                     int selectionHeight = maxY + tileSize.Height - minY;
@@ -356,6 +366,8 @@ namespace TileMapEditor.Control
                 {
                     Tiling.Location location = tileDisplayRectangle.Location;
                     Tiling.Size size = tileDisplayRectangle.Size;
+
+                    m_graphics.PixelOffsetMode = PixelOffsetMode.None;
 
                     m_graphics.FillRectangle(m_tileSelectionBrush,
                         location.X, location.Y, size.Width, size.Height);
