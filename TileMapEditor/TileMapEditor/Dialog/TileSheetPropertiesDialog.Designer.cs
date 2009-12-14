@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelTileSize;
             System.Windows.Forms.Label m_labelTileSizeBy;
             System.Windows.Forms.Label label2;
@@ -43,7 +42,6 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.m_timer = new System.Windows.Forms.Timer(this.components);
             this.m_customTabControl = new TileMapEditor.Control.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_labelImageSource = new System.Windows.Forms.Label();
@@ -214,11 +212,6 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // m_timer
-            // 
-            this.m_timer.Enabled = true;
-            this.m_timer.Tick += new System.EventHandler(this.OnTimer);
             // 
             // m_customTabControl
             // 
@@ -647,7 +640,6 @@
         private System.Windows.Forms.Label m_labelZoom;
         private System.Windows.Forms.TrackBar m_trackBar;
         private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
-        private System.Windows.Forms.Timer m_timer;
         private System.Windows.Forms.Button m_buttonAutoDetect;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;

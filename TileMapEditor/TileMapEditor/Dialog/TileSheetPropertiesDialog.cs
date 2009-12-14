@@ -19,10 +19,9 @@ namespace TileMapEditor.Dialog
         private TileSheet m_tileSheet;
         private Bitmap m_bitmapImageSource;
         private string m_imageSourceErrorMessge;
-        private int m_cycle;
 
         bool m_previewMouseDown;
-        private Tiling.Location m_previewOffset;
+        private PointF m_previewOffset;
         private Tiling.Location m_previewGrip;
 
         #endregion
@@ -92,7 +91,6 @@ namespace TileMapEditor.Dialog
 
             m_bitmapImageSource = null;
             m_imageSourceErrorMessge = null;
-            m_cycle = 0;
 
             m_bitmapImageSource = null;
             m_imageSourceErrorMessge = null;
@@ -106,7 +104,7 @@ namespace TileMapEditor.Dialog
             }
 
             m_previewMouseDown = false;
-            m_previewOffset = Tiling.Location.Origin;
+            m_previewOffset = PointF.Empty;
             m_previewGrip = Tiling.Location.Origin;
         }
 
@@ -295,6 +293,7 @@ namespace TileMapEditor.Dialog
         private void OnUpdateAlignment(object sender, EventArgs eventArgs)
         {
             UpdateComboBoxes();
+            m_panelImage.Invalidate();
         }
 
         private void OnPreviewMouseDown(object sender, MouseEventArgs mouseEventArgs)
@@ -311,22 +310,24 @@ namespace TileMapEditor.Dialog
         {
             if (m_previewMouseDown && m_bitmapImageSource != null)
             {
-                int deltaX = mouseEventArgs.X - m_previewGrip.X;
-                int deltaY = mouseEventArgs.Y - m_previewGrip.Y;
+                float deltaX = mouseEventArgs.X - m_previewGrip.X;
+                float deltaY = mouseEventArgs.Y - m_previewGrip.Y;
 
-                m_previewOffset.X -= deltaX;
-                m_previewOffset.Y -= deltaY;
+                m_previewOffset.X -= deltaX / m_trackBar.Value;
+                m_previewOffset.Y -= deltaY / m_trackBar.Value;
 
                 m_previewOffset.X = Math.Min(m_previewOffset.X,
-                    m_bitmapImageSource.Width - m_panelImage.Width);
+                    m_bitmapImageSource.Width * m_trackBar.Value - m_panelImage.Width);
                 m_previewOffset.Y = Math.Min(m_previewOffset.Y,
-                    m_bitmapImageSource.Height - m_panelImage.Height);
+                    m_bitmapImageSource.Height * m_trackBar.Value - m_panelImage.Height);
 
                 m_previewOffset.X = Math.Max(0, m_previewOffset.X);
                 m_previewOffset.Y = Math.Max(0, m_previewOffset.Y);
 
                 m_previewGrip.X = mouseEventArgs.X;
                 m_previewGrip.Y = mouseEventArgs.Y;
+
+                m_panelImage.Invalidate();
             }
         }
 
@@ -411,9 +412,6 @@ namespace TileMapEditor.Dialog
                 System.Drawing.Rectangle rectangleDestination = new System.Drawing.Rectangle(0, 0, m_bitmapImageSource.Width * m_trackBar.Value, m_bitmapImageSource.Height * m_trackBar.Value);
                 graphics.DrawImage(m_bitmapImageSource, 0, 0);
 
-                byte intensity = m_cycle < 10 ? (byte)(255 * m_cycle / 10) : (byte)(255 * (20 - m_cycle) / 10);
-                Pen pen = new Pen(Color.FromArgb(128, intensity, intensity, intensity));
-
                 int imageWidth = m_bitmapImageSource.Width;
                 int imageHeight = m_bitmapImageSource.Height;
                 int marginLeft = (int)m_textBoxLeftMargin.Value;
@@ -423,17 +421,20 @@ namespace TileMapEditor.Dialog
                 int tilePaddingX = (int)m_textBoxSpacingX.Value;
                 int tilePaddingY = (int)m_textBoxSpacingY.Value;
 
+                Pen pen = new Pen(SystemColors.ActiveCaption);
+                float fZoomInverse = 1.0f / m_trackBar.Value;
+                pen.Width = fZoomInverse;
+
+                Brush brush = new SolidBrush(Color.FromArgb(64, SystemColors.ActiveBorder));
+
                 for (int posY = marginTop; posY + tileHeight < imageHeight; posY += tileHeight + tilePaddingY)
                     for (int posX = marginLeft; posX + tileWidth < imageWidth; posX += tileWidth + tilePaddingX)
-                        graphics.DrawRectangle(pen, posX, posY, tileWidth - 1, tileHeight - 1);
+                    {
+                        graphics.FillRectangle(brush, posX, posY, tileWidth, tileHeight);
+                        graphics.DrawRectangle(pen, posX, posY, tileWidth, tileHeight);
+                    }
             }
 
-        }
-
-        private void OnTimer(object sender, EventArgs eventArgs)
-        {
-            m_cycle = (m_cycle + 1) % 20;
-            m_panelImage.Invalidate();
         }
 
         #endregion
