@@ -263,6 +263,8 @@
     <None Include="Resources\ToolsEraserCursor.cur" />
     <None Include="Resources\ToolsSingleTileCursor.cur" />
     <None Include="Resources\ToolsTileBlockCursor.cur" />
+    <None Include="Resources\ViewWindowed.png" />
+    <None Include="Resources\ViewFullScreen.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

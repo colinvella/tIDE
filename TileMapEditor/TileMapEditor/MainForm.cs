@@ -37,30 +37,6 @@ namespace TileMapEditor
 
         #region Private Methods
 
-        private void ToggleWindowMode()
-        {
-            if (m_windowMode == WindowMode.Windowed)
-            {
-                m_windowBounds = this.Bounds;
-
-                this.FormBorderStyle = FormBorderStyle.None;
-                int splitterWidth = m_splitContainerLeftRight.SplitterDistance;
-                this.Bounds = Screen.PrimaryScreen.Bounds;
-                m_splitContainerLeftRight.SplitterDistance = splitterWidth;
-
-                m_windowMode = WindowMode.Fullscreen;
-            }
-            else
-            {
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                int splitterWidth = m_splitContainerLeftRight.SplitterDistance;
-                this.Bounds = m_windowBounds;
-                m_splitContainerLeftRight.SplitterDistance = splitterWidth;
-
-                m_windowMode = WindowMode.Windowed;
-            }
-        }
-
         private void ArrangeToolStripLayout()
         {
             List<System.Windows.Forms.Control> controls = new List<System.Windows.Forms.Control>();
@@ -196,9 +172,6 @@ namespace TileMapEditor
                     m_mapPanel.EditTool = EditTool.Dropper;
                     UpdateEditToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
-                    break;
-                case Keys.F11:
-                    ToggleWindowMode();
                     break;
                 case Keys.ControlKey:
                     m_mapPanel.CtrlKeyPressed = true;
@@ -380,6 +353,41 @@ namespace TileMapEditor
 
             --m_mapPanel.Zoom;
             UpdateZoomControls();
+        }
+
+        private void OnViewWindowMode(object sender, EventArgs eventArgs)
+        {
+            if (m_windowMode == WindowMode.Windowed)
+            {
+                m_windowBounds = this.Bounds;
+
+                this.FormBorderStyle = FormBorderStyle.None;
+                int splitterWidth = m_splitContainerLeftRight.SplitterDistance;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+                m_splitContainerLeftRight.SplitterDistance = splitterWidth;
+
+                m_windowMode = WindowMode.Fullscreen;
+                m_viewWindowModeMenuItem.Image
+                    = m_viewWindowModeButton.Image
+                    = Properties.Resources.ViewWindowed;
+                m_viewWindowModeMenuItem.Text = "Windowed";
+                m_viewWindowModeButton.ToolTipText = "View in windowed mode";
+                 
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                int splitterWidth = m_splitContainerLeftRight.SplitterDistance;
+                this.Bounds = m_windowBounds;
+                m_splitContainerLeftRight.SplitterDistance = splitterWidth;
+
+                m_windowMode = WindowMode.Windowed;
+                m_viewWindowModeMenuItem.Image 
+                    = m_viewWindowModeButton.Image
+                    = Properties.Resources.ViewFullScreen;
+                m_viewWindowModeMenuItem.Text = "Full Screen";
+                m_viewWindowModeButton.ToolTipText = "View in full screen mode";
+            }
         }
 
         private void OnViewLayerCompositingDimUnselected(object sender, EventArgs eventArgs)
@@ -676,5 +684,6 @@ namespace TileMapEditor
         }
 
         #endregion
+
     }
 }

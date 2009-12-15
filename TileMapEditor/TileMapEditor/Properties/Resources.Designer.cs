@@ -382,6 +382,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ViewFullScreen {
+            get {
+                object obj = ResourceManager.GetObject("ViewFullScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ViewLayerCompositing {
             get {
                 object obj = ResourceManager.GetObject("ViewLayerCompositing", resourceCulture);
@@ -399,6 +406,13 @@ namespace TileMapEditor.Properties {
         internal static System.Drawing.Bitmap ViewLayerCompositingShowAll {
             get {
                 object obj = ResourceManager.GetObject("ViewLayerCompositingShowAll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ViewWindowed {
+            get {
+                object obj = ResourceManager.GetObject("ViewWindowed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
