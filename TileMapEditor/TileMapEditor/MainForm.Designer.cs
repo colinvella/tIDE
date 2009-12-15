@@ -503,7 +503,7 @@
             this.m_mapPropertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_mapPropertiesButton.Name = "m_mapPropertiesButton";
             this.m_mapPropertiesButton.Size = new System.Drawing.Size(23, 22);
-            this.m_mapPropertiesButton.Text = "Map properties";
+            this.m_mapPropertiesButton.Text = "Map Properties";
             this.m_mapPropertiesButton.Click += new System.EventHandler(this.OnMapProperties);
             // 
             // m_layerToolStrip
@@ -529,7 +529,8 @@
             this.m_layerNewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerNewButton.Name = "m_layerNewButton";
             this.m_layerNewButton.Size = new System.Drawing.Size(23, 22);
-            this.m_layerNewButton.Text = "New layer";
+            this.m_layerNewButton.Text = "New Layer";
+            this.m_layerNewButton.ToolTipText = "New layer";
             this.m_layerNewButton.Click += new System.EventHandler(this.OnLayerNew);
             // 
             // m_layerPropertiesButton
@@ -540,7 +541,8 @@
             this.m_layerPropertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerPropertiesButton.Name = "m_layerPropertiesButton";
             this.m_layerPropertiesButton.Size = new System.Drawing.Size(23, 22);
-            this.m_layerPropertiesButton.Text = "Layer properties";
+            this.m_layerPropertiesButton.Text = "Layer Properties";
+            this.m_layerPropertiesButton.ToolTipText = "Layer properties";
             this.m_layerPropertiesButton.Click += new System.EventHandler(this.OnLayerProperties);
             // 
             // m_layerToolStripSeparator1
@@ -556,7 +558,8 @@
             this.m_layerBringForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerBringForwardButton.Name = "m_layerBringForwardButton";
             this.m_layerBringForwardButton.Size = new System.Drawing.Size(23, 22);
-            this.m_layerBringForwardButton.Text = "Bring forward";
+            this.m_layerBringForwardButton.Text = "Bring Forward";
+            this.m_layerBringForwardButton.ToolTipText = "Bring layer forward";
             this.m_layerBringForwardButton.Click += new System.EventHandler(this.OnLayerBringForward);
             // 
             // m_layerSendBackwardButton
@@ -567,8 +570,8 @@
             this.m_layerSendBackwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerSendBackwardButton.Name = "m_layerSendBackwardButton";
             this.m_layerSendBackwardButton.Size = new System.Drawing.Size(23, 22);
-            this.m_layerSendBackwardButton.Text = "toolStripButton1";
-            this.m_layerSendBackwardButton.ToolTipText = "Send backward";
+            this.m_layerSendBackwardButton.Text = "Send Backward";
+            this.m_layerSendBackwardButton.ToolTipText = "Send layer backward";
             this.m_layerSendBackwardButton.Click += new System.EventHandler(this.OnLayerSendBackward);
             // 
             // m_layerToolStripSeparator2
@@ -584,7 +587,7 @@
             this.m_layerDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerDeleteButton.Name = "m_layerDeleteButton";
             this.m_layerDeleteButton.Size = new System.Drawing.Size(23, 22);
-            this.m_layerDeleteButton.Text = "Delete layer";
+            this.m_layerDeleteButton.Text = "Delete Layer";
             this.m_layerDeleteButton.Click += new System.EventHandler(this.OnLayerDelete);
             // 
             // m_menuStrip
@@ -1104,7 +1107,7 @@
             this.m_editMakeTileBrushButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(4, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(285, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(254, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editUndoButton
@@ -1115,7 +1118,7 @@
             this.m_editUndoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editUndoButton.Name = "m_editUndoButton";
             this.m_editUndoButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editUndoButton.Text = "Undo last change";
+            this.m_editUndoButton.Text = "Undo";
             // 
             // m_editRedoButton
             // 
@@ -1125,7 +1128,7 @@
             this.m_editRedoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editRedoButton.Name = "m_editRedoButton";
             this.m_editRedoButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editRedoButton.Text = "Redo last change";
+            this.m_editRedoButton.Text = "Redo";
             // 
             // m_editToolStripSeparator1
             // 
@@ -1139,7 +1142,7 @@
             this.m_editCutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCutButton.Name = "m_editCutButton";
             this.m_editCutButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editCutButton.Text = "C&ut";
+            this.m_editCutButton.Text = "Cut";
             this.m_editCutButton.ToolTipText = "Cut selected area";
             this.m_editCutButton.Click += new System.EventHandler(this.OnEditCut);
             // 
@@ -1150,7 +1153,7 @@
             this.m_editCopyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCopyButton.Name = "m_editCopyButton";
             this.m_editCopyButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editCopyButton.Text = "&Copy";
+            this.m_editCopyButton.Text = "Copy";
             this.m_editCopyButton.ToolTipText = "Copy selected area";
             this.m_editCopyButton.Click += new System.EventHandler(this.OnEditCopy);
             // 
@@ -1162,7 +1165,7 @@
             this.m_editPasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editPasteButton.Name = "m_editPasteButton";
             this.m_editPasteButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editPasteButton.Text = "&Paste";
+            this.m_editPasteButton.Text = "Paste";
             this.m_editPasteButton.Click += new System.EventHandler(this.OnEditPaste);
             // 
             // m_editDeleteButton
@@ -1172,7 +1175,7 @@
             this.m_editDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editDeleteButton.Name = "m_editDeleteButton";
             this.m_editDeleteButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editDeleteButton.Text = "toolStripButton1";
+            this.m_editDeleteButton.Text = "Delete";
             this.m_editDeleteButton.ToolTipText = "Delete selected area";
             this.m_editDeleteButton.Click += new System.EventHandler(this.OnEditDelete);
             // 
@@ -1188,7 +1191,7 @@
             this.m_editSelectAllButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editSelectAllButton.Name = "m_editSelectAllButton";
             this.m_editSelectAllButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editSelectAllButton.Text = "Select &All";
+            this.m_editSelectAllButton.Text = "Select All";
             this.m_editSelectAllButton.ToolTipText = "Select the whole layer";
             this.m_editSelectAllButton.Click += new System.EventHandler(this.OnEditSelectAll);
             // 
@@ -1199,7 +1202,7 @@
             this.m_editClearSelectionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editClearSelectionButton.Name = "m_editClearSelectionButton";
             this.m_editClearSelectionButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editClearSelectionButton.Text = "toolStripButton1";
+            this.m_editClearSelectionButton.Text = "Clear Selection";
             this.m_editClearSelectionButton.ToolTipText = "Clear selection";
             this.m_editClearSelectionButton.Click += new System.EventHandler(this.OnEditClearSelection);
             // 
@@ -1210,7 +1213,7 @@
             this.m_editInvertSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editInvertSelection.Name = "m_editInvertSelection";
             this.m_editInvertSelection.Size = new System.Drawing.Size(23, 22);
-            this.m_editInvertSelection.Text = "Invert selection";
+            this.m_editInvertSelection.Text = "Invert Selection";
             this.m_editInvertSelection.ToolTipText = "Invert selection";
             this.m_editInvertSelection.Click += new System.EventHandler(this.OnEditInvertSelection);
             // 
@@ -1257,7 +1260,7 @@
             this.m_viewZoomInButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_viewZoomInButton.Name = "m_viewZoomInButton";
             this.m_viewZoomInButton.Size = new System.Drawing.Size(23, 22);
-            this.m_viewZoomInButton.Text = "Zoom in";
+            this.m_viewZoomInButton.Text = "Zoom In";
             this.m_viewZoomInButton.Click += new System.EventHandler(this.OnViewZoomIn);
             // 
             // m_viewZoomOutButton
@@ -1268,7 +1271,7 @@
             this.m_viewZoomOutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_viewZoomOutButton.Name = "m_viewZoomOutButton";
             this.m_viewZoomOutButton.Size = new System.Drawing.Size(23, 22);
-            this.m_viewZoomOutButton.Text = "Zoom out";
+            this.m_viewZoomOutButton.Text = "Zoom Out";
             this.m_viewZoomOutButton.Click += new System.EventHandler(this.OnViewZoomOut);
             // 
             // m_viewSeparator1
@@ -1283,7 +1286,7 @@
             this.m_viewLayerCompositingToggleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_viewLayerCompositingToggleButton.Name = "m_viewLayerCompositingToggleButton";
             this.m_viewLayerCompositingToggleButton.Size = new System.Drawing.Size(23, 22);
-            this.m_viewLayerCompositingToggleButton.Text = "toolStripButton1";
+            this.m_viewLayerCompositingToggleButton.Text = "Layer Mode";
             this.m_viewLayerCompositingToggleButton.ToolTipText = "Show all layers";
             this.m_viewLayerCompositingToggleButton.Click += new System.EventHandler(this.OnViewLayerCompositingToggleButton);
             // 
@@ -1294,7 +1297,7 @@
             this.m_viewTileGuidesToggleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_viewTileGuidesToggleButton.Name = "m_viewTileGuidesToggleButton";
             this.m_viewTileGuidesToggleButton.Size = new System.Drawing.Size(23, 22);
-            this.m_viewTileGuidesToggleButton.Text = "Show tile guides";
+            this.m_viewTileGuidesToggleButton.Text = "Tile Guides";
             this.m_viewTileGuidesToggleButton.ToolTipText = "Show tile guides";
             this.m_viewTileGuidesToggleButton.Click += new System.EventHandler(this.OnViewTileGuidesToggleButton);
             // 
@@ -1308,7 +1311,7 @@
             this.m_tileSheetDeleteButton});
             this.m_tileSheetToolStrip.Location = new System.Drawing.Point(142, 74);
             this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
-            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(87, 25);
+            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(118, 25);
             this.m_tileSheetToolStrip.TabIndex = 3;
             // 
             // m_tileSheetNewButton
@@ -1318,7 +1321,7 @@
             this.m_tileSheetNewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_tileSheetNewButton.Name = "m_tileSheetNewButton";
             this.m_tileSheetNewButton.Size = new System.Drawing.Size(23, 22);
-            this.m_tileSheetNewButton.Text = "New tile sheet";
+            this.m_tileSheetNewButton.Text = "New Tile Sheet";
             this.m_tileSheetNewButton.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
             // m_tileSheetPropertiesButton
@@ -1329,7 +1332,7 @@
             this.m_tileSheetPropertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_tileSheetPropertiesButton.Name = "m_tileSheetPropertiesButton";
             this.m_tileSheetPropertiesButton.Size = new System.Drawing.Size(23, 22);
-            this.m_tileSheetPropertiesButton.Text = "Tile sheet properties";
+            this.m_tileSheetPropertiesButton.Text = "Tile Sheet Properties";
             this.m_tileSheetPropertiesButton.Click += new System.EventHandler(this.OnTileSheetProperties);
             // 
             // m_tileSheetDeleteButton
@@ -1340,7 +1343,7 @@
             this.m_tileSheetDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_tileSheetDeleteButton.Name = "m_tileSheetDeleteButton";
             this.m_tileSheetDeleteButton.Size = new System.Drawing.Size(23, 22);
-            this.m_tileSheetDeleteButton.Text = "Delete tile sheet";
+            this.m_tileSheetDeleteButton.Text = "Delete Tile Sheet";
             this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
             // m_editMakeTileBrushButton
@@ -1350,7 +1353,7 @@
             this.m_editMakeTileBrushButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editMakeTileBrushButton.Name = "m_editMakeTileBrushButton";
             this.m_editMakeTileBrushButton.Size = new System.Drawing.Size(23, 22);
-            this.m_editMakeTileBrushButton.Text = "toolStripButton1";
+            this.m_editMakeTileBrushButton.Text = "Make Tile Brush";
             this.m_editMakeTileBrushButton.ToolTipText = "Make a new tile brush from the current selection";
             this.m_editMakeTileBrushButton.Click += new System.EventHandler(this.OnEditMakeTileBrush);
             // 
