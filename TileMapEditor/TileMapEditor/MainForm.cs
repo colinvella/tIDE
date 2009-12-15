@@ -96,15 +96,17 @@ namespace TileMapEditor
         private void UpdateTileGuidesControls()
         {
             bool tileGuides = m_mapPanel.TileGuides;
-            m_viewTileGuidesShowMenuItem.Enabled = !tileGuides;
-            m_viewTileGuidesHideMenuItem.Enabled = tileGuides;
 
-            m_viewTileGuidesToggleButton.ToolTipText = tileGuides
+            m_viewTileGuidesButton.ToolTipText = tileGuides
                 ? "Hide tile guides" : "Show tile guides";
 
-            m_viewTileGuidesToggleButton.Image = tileGuides
-                ? Properties.Resources.VewTileGuidesHide
-                : Properties.Resources.VewTileGuidesShow;
+            m_viewTileGuidesMenuItem.Image
+                = m_viewTileGuidesButton.Image = tileGuides
+                    ? Properties.Resources.VewTileGuidesHide
+                    : Properties.Resources.VewTileGuidesShow;
+
+            m_viewTileGuidesMenuItem.Text = tileGuides
+                ? "Hide Tile Guides" : "Show Tile Guides";
         }
 
         private void UpdateEditToolButtons()
@@ -390,18 +392,6 @@ namespace TileMapEditor
             }
         }
 
-        private void OnViewLayerCompositingDimUnselected(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.LayerCompositing = LayerCompositing.DimUnselected;
-            UpdateLayerCompositingControls();
-        }
-
-        private void OnViewLayerCompositingShowAll(object sender, EventArgs eventArgs)
-        {
-                        m_mapPanel.LayerCompositing = LayerCompositing.ShowAll;
-            UpdateLayerCompositingControls();
-        }
-
         private void OnViewLayerCompositing(object sender, EventArgs eventArgs)
         {
             m_mapPanel.LayerCompositing
@@ -411,19 +401,7 @@ namespace TileMapEditor
             UpdateLayerCompositingControls();
         }
 
-        private void OnViewTileGuidesShow(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.TileGuides = true;
-            UpdateTileGuidesControls();
-        }
-
-        private void OnViewTileGuidesHide(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.TileGuides = false;
-            UpdateTileGuidesControls();
-        }
-
-        private void OnViewTileGuidesToggleButton(object sender, EventArgs eventArgs)
+        private void OnViewTileGuides(object sender, EventArgs eventArgs)
         {
             m_mapPanel.TileGuides = !m_mapPanel.TileGuides;
             UpdateTileGuidesControls();
