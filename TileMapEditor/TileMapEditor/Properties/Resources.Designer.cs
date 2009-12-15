@@ -102,6 +102,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditManageTileBrushes {
+            get {
+                object obj = ResourceManager.GetObject("EditManageTileBrushes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditRedo {
             get {
                 object obj = ResourceManager.GetObject("EditRedo", resourceCulture);

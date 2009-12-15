@@ -233,6 +233,7 @@
     <None Include="Resources\EditSelectAll.png" />
     <None Include="Resources\EditInvertSelection.png" />
     <None Include="Resources\EditMakeTileBrush.png" />
+    <None Include="Resources\EditManageTileBrushes.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
