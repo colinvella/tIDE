@@ -18,7 +18,16 @@ namespace TileMapEditor
 {
     public partial class MainForm : Form
     {
+        private enum WindowMode
+        {
+            Windowed,
+            Fullscreen
+        }
+
         #region Private Variables
+
+        private WindowMode m_windowMode;
+        private System.Drawing.Rectangle m_windowBounds;
 
         private Map m_map;
         private Tiling.Component m_selectedComponent;
@@ -27,6 +36,30 @@ namespace TileMapEditor
         #endregion
 
         #region Private Methods
+
+        private void ToggleWindowMode()
+        {
+            if (m_windowMode == WindowMode.Windowed)
+            {
+                m_windowBounds = this.Bounds;
+
+                this.FormBorderStyle = FormBorderStyle.None;
+                int splitterWidth = m_splitContainerLeftRight.SplitterDistance;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+                m_splitContainerLeftRight.SplitterDistance = splitterWidth;
+
+                m_windowMode = WindowMode.Fullscreen;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                int splitterWidth = m_splitContainerLeftRight.SplitterDistance;
+                this.Bounds = m_windowBounds;
+                m_splitContainerLeftRight.SplitterDistance = splitterWidth;
+
+                m_windowMode = WindowMode.Windowed;
+            }
+        }
 
         private void ArrangeToolStripLayout()
         {
@@ -111,6 +144,9 @@ namespace TileMapEditor
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
+            m_windowMode = WindowMode.Windowed;
+            m_windowBounds = this.Bounds;
+
             m_map = new Map("Untitled map");
 
             m_mapTreeView.Map = m_map;
@@ -160,6 +196,9 @@ namespace TileMapEditor
                     m_mapPanel.EditTool = EditTool.Dropper;
                     UpdateEditToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
+                    break;
+                case Keys.F11:
+                    ToggleWindowMode();
                     break;
                 case Keys.ControlKey:
                     m_mapPanel.CtrlKeyPressed = true;

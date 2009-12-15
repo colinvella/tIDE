@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.SplitContainer m_splitContainerVertical;
             System.Windows.Forms.ToolStripSeparator m_tileSheetToolStripSeparator1;
             System.Windows.Forms.ToolStripSeparator m_viewSeparator2;
@@ -50,7 +51,6 @@
             this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
             this.m_toolStripContainerInner = new System.Windows.Forms.ToolStripContainer();
             this.m_toolsToolStrip = new System.Windows.Forms.ToolStrip();
-            this.m_splitter = new System.Windows.Forms.Splitter();
             this.m_mapToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_layerToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -150,9 +150,11 @@
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
             this.m_editToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editManageTileBrushesButton = new System.Windows.Forms.ToolStripButton();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Control.TilePicker();
             this.m_mapPanel = new TileMapEditor.Control.MapPanel();
+            this.m_splitter = new System.Windows.Forms.Splitter();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -296,14 +298,6 @@
             this.m_toolsToolStrip.Size = new System.Drawing.Size(33, 149);
             this.m_toolsToolStrip.TabIndex = 0;
             // 
-            // m_splitter
-            // 
-            this.m_splitter.Location = new System.Drawing.Point(0, 0);
-            this.m_splitter.Name = "m_splitter";
-            this.m_splitter.Size = new System.Drawing.Size(4, 463);
-            this.m_splitter.TabIndex = 1;
-            this.m_splitter.TabStop = false;
-            // 
             // m_mapToolStrip
             // 
             this.m_mapToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -381,7 +375,7 @@
             this.m_editManageTileBrushesButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(4, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(314, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(283, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editToolStripSeparator1
@@ -1385,6 +1379,11 @@
             this.m_editManageTileBrushesButton.Text = "Manage Tile Brushes";
             this.m_editManageTileBrushesButton.ToolTipText = "Manage tile brushes";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // m_mapTreeView
             // 
             this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1431,6 +1430,14 @@
             this.m_mapPanel.Size = new System.Drawing.Size(543, 463);
             this.m_mapPanel.TabIndex = 0;
             this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
+            // 
+            // m_splitter
+            // 
+            this.m_splitter.Location = new System.Drawing.Point(0, 0);
+            this.m_splitter.Name = "m_splitter";
+            this.m_splitter.Size = new System.Drawing.Size(4, 463);
+            this.m_splitter.TabIndex = 1;
+            this.m_splitter.TabStop = false;
             // 
             // MainForm
             // 
@@ -1514,7 +1521,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetNewMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetPropertiesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetDeleteMenuItem;
-        private System.Windows.Forms.Splitter m_splitter;
         private System.Windows.Forms.ToolStripMenuItem m_layerBringForwardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerSendBackwardMenuItem;
         private Control.MapTreeView m_mapTreeView;
@@ -1591,5 +1597,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_editManageTileBrushesMenuItem;
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator3;
         private System.Windows.Forms.ToolStripButton m_editManageTileBrushesButton;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Splitter m_splitter;
     }
 }
