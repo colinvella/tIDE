@@ -302,6 +302,11 @@ namespace TileMapEditor
                     m_mapPanel.SelectedLayer.LayerSize.Height)));
         }
 
+        private void OnEditMakeTileBrush(object sender, EventArgs eventArgs)
+        {
+
+        }
+
         private void OnViewZoom(object sender, EventArgs eventArgs)
         {
             ToolStripDropDownItem toolStripDropDownItem = (ToolStripDropDownItem)sender;
