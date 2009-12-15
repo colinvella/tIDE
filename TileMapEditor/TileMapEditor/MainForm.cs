@@ -75,21 +75,21 @@ namespace TileMapEditor
         {
             if (m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected)
             {
-                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = false;
-                m_viewLayerCompositingShowAllMenuItem.Enabled = true;
-
-                m_viewLayerCompositingToggleButton.ToolTipText = "Show all layers";
-                m_viewLayerCompositingToggleButton.Image
+                m_viewLayerCompositingMenuItem.Image
+                    = m_viewLayerCompositingButton.Image
                     = Properties.Resources.ViewLayerCompositingShowAll;
+
+                m_viewLayerCompositingMenuItem.Text = "Show All Layers";
+                m_viewLayerCompositingButton.ToolTipText = "Show all layers";
             }
             else
             {
-                m_viewLayerCompositingDimUnselectedMenuItem.Enabled = true;
-                m_viewLayerCompositingShowAllMenuItem.Enabled = false;
-
-                m_viewLayerCompositingToggleButton.ToolTipText = "Dim unselected layers";
-                m_viewLayerCompositingToggleButton.Image
+                m_viewLayerCompositingMenuItem.Image
+                    = m_viewLayerCompositingButton.Image
                     = Properties.Resources.ViewLayerCompositingDimUnselected;
+
+                m_viewLayerCompositingMenuItem.Text = "Dim Unselected Layers";
+                m_viewLayerCompositingButton.ToolTipText = "Dim unselected layers";
             }
         }
 
@@ -402,7 +402,7 @@ namespace TileMapEditor
             UpdateLayerCompositingControls();
         }
 
-        private void OnViewLayerCompositingToggleButton(object sender, EventArgs eventArgs)
+        private void OnViewLayerCompositing(object sender, EventArgs eventArgs)
         {
             m_mapPanel.LayerCompositing
                 = m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected
