@@ -265,6 +265,8 @@
     <None Include="Resources\ToolsTileBlockCursor.cur" />
     <None Include="Resources\ViewWindowed.png" />
     <None Include="Resources\ViewFullScreen.png" />
+    <None Include="Resources\LayerInvisible.png" />
+    <None Include="Resources\LayerVisible.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

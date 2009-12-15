@@ -207,6 +207,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap LayerInvisible {
+            get {
+                object obj = ResourceManager.GetObject("LayerInvisible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap LayerNew {
             get {
                 object obj = ResourceManager.GetObject("LayerNew", resourceCulture);
@@ -224,6 +231,13 @@ namespace TileMapEditor.Properties {
         internal static System.Drawing.Bitmap LayerSendBackward {
             get {
                 object obj = ResourceManager.GetObject("LayerSendBackward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap LayerVisible {
+            get {
+                object obj = ResourceManager.GetObject("LayerVisible", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

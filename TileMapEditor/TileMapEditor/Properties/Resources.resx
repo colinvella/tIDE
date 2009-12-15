@@ -136,8 +136,8 @@
   <data name="ToolsDropper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsDropper.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ViewLayerCompositingDimUnselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ViewLayerCompositingDimUnselected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditMakeTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditMakeTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ToolsSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -187,9 +187,6 @@
   <data name="ToolsSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsSelect.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditMakeTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditMakeTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Map.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,6 +205,9 @@
   <data name="LayerSendBackward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerSendBackward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="VewTileGuides" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VewTileGuides.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TileSheetNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TileSheetNew.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,8 +220,8 @@
   <data name="EditRedo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditRedo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VewTileGuides" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VewTileGuides.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ToolsTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ToolsDropperCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsDropperCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -231,9 +231,6 @@
   </data>
   <data name="EditClearSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditClearSelection.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TileSheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TileSheet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FileSaveAs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSaveAs.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,17 +247,26 @@
   <data name="ViewZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewZoom.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ToolsTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ToolsTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TileSheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TileSheet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewWindowed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewWindowed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LayerInvisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LayerInvisible.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditUndo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditUndo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ViewLayerCompositing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ViewLayerCompositing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ViewFullScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewFullScreen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="View" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\View.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewLayerCompositingDimUnselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewLayerCompositingDimUnselected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ToolsTileBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsTileBlock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,16 +274,16 @@
   <data name="ToolsEraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsEraser.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ViewLayerCompositing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewLayerCompositing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EditInvertSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditInvertSelection.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FileSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSave.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ViewWindowed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ViewWindowed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ViewFullScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ViewFullScreen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LayerVisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LayerVisible.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -71,6 +71,32 @@ namespace TileMapEditor
             m_viewZoomOutMenuItem.Enabled = m_viewZoomOutButton.Enabled = zoom > 1;
         }
 
+        private void UpdateLayerVisibilityControls()
+        {
+            Layer layer = m_mapPanel.SelectedLayer;
+
+            m_layerVisibilityMenuItem.Enabled
+                = m_layerVisibilityButton.Enabled = layer != null;
+
+            if (layer == null)
+                return;
+
+            bool visible = layer.Visible;
+
+            m_layerVisibilityMenuItem.Text = visible
+                ? "Make Layer Invisible"
+                : "Make Layer Visible";
+            m_layerVisibilityButton.ToolTipText = visible
+                ? "Make layer invisible"
+                : "Make layer visible";
+
+            m_layerVisibilityMenuItem.Image
+                = m_layerVisibilityButton.Image
+                = visible
+                    ? Properties.Resources.LayerInvisible
+                    : Properties.Resources.LayerVisible;
+        }
+
         private void UpdateLayerCompositingControls()
         {
             if (m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected)
@@ -450,6 +476,15 @@ namespace TileMapEditor
             m_mapTreeView.UpdateTree();
         }
 
+        private void OnLayerVisibility(object sender, EventArgs eventArgs)
+        {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer != null)
+                layer.Visible = !layer.Visible;
+   
+            UpdateLayerVisibilityControls();
+        }
+
         private void OnLayerBringForward(object sender, EventArgs eventArgs)
         {
             if (m_selectedComponent == null
@@ -603,6 +638,8 @@ namespace TileMapEditor
 
             m_layerPropertiesMenuItem.Enabled
                 = m_layerPropertiesButton.Enabled
+                = m_layerVisibilityMenuItem.Enabled
+                = m_layerVisibilityButton.Enabled
                 = m_layerDeleteMenuItem.Enabled
                 = m_layerDeleteButton.Enabled
                 = layerSelected;
