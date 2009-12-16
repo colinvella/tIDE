@@ -42,9 +42,13 @@ namespace TileMapEditor.Dialog
 
             int imageIndex = 0;
             foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
-            {
                 m_listView.Items.Add(tileBrush.Id, imageIndex++);
-            }
+        }
+
+        private void OnSelectedIndexChanged(object sender, EventArgs eventArgs)
+        {
+            bool selected = m_listView.SelectedIndices.Count > 0;
+            m_renameButton.Enabled = m_deleteButton.Enabled = selected;
         }
 
         private void OnAfterLabelEdit(object sender, LabelEditEventArgs labelEditEventArgs)
@@ -57,11 +61,35 @@ namespace TileMapEditor.Dialog
                 if (newLabel == m_tileBrushCollection.TileBrushes[index].Id)
                 {
                     labelEditEventArgs.CancelEdit = true;
+                    MessageBox.Show(this, 
+                        "The tile brush ID '" + newLabel + "' is already in use.",
+                        "Tile Brush Dialog",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
 
             m_tileBrushCollection.TileBrushes[labelEditEventArgs.Item].Id = newLabel;
+        }
+
+        private void OnTileBrushRename(object sender, EventArgs eventArgs)
+        {
+            if (m_listView.SelectedIndices.Count == 0)
+                return;
+
+            int index = m_listView.SelectedIndices[0];
+
+            m_listView.Items[index].BeginEdit();
+        }
+
+        private void OnTileBrushDelete(object sender, EventArgs eventArgs)
+        {
+            if (m_listView.SelectedIndices.Count == 0)
+                return;
+
+            int index = m_listView.SelectedIndices[0];
+
+            m_listView.Items.RemoveAt(index);
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -81,5 +109,10 @@ namespace TileMapEditor.Dialog
             m_tileBrushCollection = tileBrushCollection;
         }
 
+        private void m_listView_MouseUp(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_contextMenuStrip.SetBounds(mouseEventArgs.X, mouseEventArgs.Y, m_contextMenuStrip.Bounds.Width, m_contextMenuStrip.Bounds.Height);
+            m_contextMenuStrip.Visible = true;
+        }
     }
 }
