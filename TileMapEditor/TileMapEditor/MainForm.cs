@@ -95,6 +95,8 @@ namespace TileMapEditor
                 = visible
                     ? Properties.Resources.LayerInvisible
                     : Properties.Resources.LayerVisible;
+
+            m_mapTreeView.UpdateTree();
         }
 
         private void UpdateLayerCompositingControls()
@@ -497,7 +499,7 @@ namespace TileMapEditor
 
             m_map.BringLayerForward(layer);
 
-            m_mapTreeView.UpdateTree(true);
+            m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
         }
 
@@ -513,7 +515,7 @@ namespace TileMapEditor
 
             m_map.SendLayerBackward(layer);
 
-            m_mapTreeView.UpdateTree(true);
+            m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
         }
 

@@ -129,10 +129,11 @@ namespace TileMapEditor.Control
             this.m_imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("m_imageList.ImageStream")));
             this.m_imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.m_imageList.Images.SetKeyName(0, "Map.png");
-            this.m_imageList.Images.SetKeyName(1, "Layer.png");
-            this.m_imageList.Images.SetKeyName(2, "TileSheet.png");
-            this.m_imageList.Images.SetKeyName(3, "LayerFolder.png");
+            this.m_imageList.Images.SetKeyName(1, "LayerFolder.png");
+            this.m_imageList.Images.SetKeyName(2, "LayerVisible.png");
+            this.m_imageList.Images.SetKeyName(3, "LayerInvisible.png");
             this.m_imageList.Images.SetKeyName(4, "TileSheetFolder.png");
+            this.m_imageList.Images.SetKeyName(5, "TileSheet.png");
             // 
             // toolStripSeparator1
             // 
@@ -237,7 +238,7 @@ namespace TileMapEditor.Control
             // 
             this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
-            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(107, 22);
             this.m_tileSheetNewMenuItem.Text = "New...";
             this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
@@ -248,13 +249,13 @@ namespace TileMapEditor.Control
             toolStripSeparator1,
             this.deleteToolStripMenuItem});
             this.m_tileSheetContextMenuStrip.Name = "m_tileSheetContextMenuStrip";
-            this.m_tileSheetContextMenuStrip.Size = new System.Drawing.Size(153, 76);
+            this.m_tileSheetContextMenuStrip.Size = new System.Drawing.Size(137, 54);
             // 
             // propertiesToolStripMenuItem
             // 
             this.propertiesToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.propertiesToolStripMenuItem.Text = "Properties...";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
             // 
@@ -262,7 +263,7 @@ namespace TileMapEditor.Control
             // 
             this.deleteToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 

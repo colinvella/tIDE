@@ -23,16 +23,31 @@ namespace TileMapEditor.Control
 
         private void UpdateLayersSubTree(TreeNode layersNode)
         {
+            /*
+            Layer selectedLayer = null;
+            Tiling.Component selectedComponent = SelectedComponent;
+            if (selectedComponent != null && selectedComponent is Layer)
+                selectedLayer = (Layer)selectedComponent;*/
+
             layersNode.Nodes.Clear();
 
-            int layerImageIndex = m_imageList.Images.IndexOfKey("Layer.png");
+            int visbileImageIndex = m_imageList.Images.IndexOfKey("LayerVisible.png");
+            int invisbileImageIndex = m_imageList.Images.IndexOfKey("LayerInvisible.png");
             foreach (Layer layer in m_map.Layers)
             {
+                int layerImageIndex = layer.Visible
+                    ? visbileImageIndex : invisbileImageIndex;
                 TreeNode layerNode = new TreeNode(layer.Id, layerImageIndex, layerImageIndex);
                 layerNode.Tag = layer;
                 layerNode.ContextMenuStrip = m_layerContextMenuStrip;
+                layerNode.ForeColor = layer.Visible
+                    ? SystemColors.ControlText : SystemColors.GrayText;
                 layersNode.Nodes.Add(layerNode);
             }
+
+            /*
+            if (selectedLayer != null)
+                SelectedComponent = selectedLayer;*/
         }
 
         private void UpdateTileSheetsSubTree(TreeNode tileSheetsNode)
@@ -157,16 +172,14 @@ namespace TileMapEditor.Control
 
         public void UpdateTree()
         {
-            UpdateTree(false);
-        }
-
-        public void UpdateTree(bool refreshLayers)
-        {
             if (m_map == null)
             {
                 m_treeView.Nodes.Clear();
                 return;
             }
+
+            Tiling.Component selectedComponent = SelectedComponent;
+
 
             // map root node
             TreeNode mapNode = null;
@@ -207,9 +220,6 @@ namespace TileMapEditor.Control
 
                 layersNode = mapNode.Nodes[0];
 
-                if (refreshLayers)
-                    layersNode.Nodes.Clear();
-
                 tileSheetsNode = mapNode.Nodes[1];
             }
 
@@ -218,6 +228,12 @@ namespace TileMapEditor.Control
 
             // tile sheets
             UpdateTileSheetsSubTree(tileSheetsNode);
+
+            if (selectedComponent != null)
+            {
+                if (SearchComponent(m_treeView.Nodes[0], selectedComponent) != null)
+                    SelectedComponent = selectedComponent;
+            }
         }
 
         #endregion
