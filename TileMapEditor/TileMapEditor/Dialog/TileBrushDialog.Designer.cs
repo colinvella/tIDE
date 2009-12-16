@@ -32,7 +32,7 @@
             this.m_okButton = new System.Windows.Forms.Button();
             this.m_applyButton = new System.Windows.Forms.Button();
             this.m_cancelButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.m_listView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // m_okButton
@@ -65,14 +65,15 @@
             this.m_cancelButton.Text = "&Cancel";
             this.m_cancelButton.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // m_listView
             // 
-            this.listView1.LabelEdit = true;
-            this.listView1.Location = new System.Drawing.Point(12, 13);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(560, 358);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.m_listView.LabelEdit = true;
+            this.m_listView.Location = new System.Drawing.Point(12, 13);
+            this.m_listView.Name = "m_listView";
+            this.m_listView.Size = new System.Drawing.Size(560, 358);
+            this.m_listView.TabIndex = 4;
+            this.m_listView.UseCompatibleStateImageBehavior = false;
+            this.m_listView.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.OnAfterLabelEdit);
             // 
             // TileBrushDialog
             // 
@@ -81,7 +82,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cancelButton;
             this.ClientSize = new System.Drawing.Size(584, 412);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.m_listView);
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_applyButton);
             this.Controls.Add(this.m_okButton);
@@ -92,7 +93,7 @@
             this.Name = "TileBrushDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Tile Brushes";
-            this.Load += new System.EventHandler(this.TileBrushDialog_Load);
+            this.Load += new System.EventHandler(this.OnDialogLoad);
             this.ResumeLayout(false);
 
         }
@@ -102,6 +103,6 @@
         private System.Windows.Forms.Button m_okButton;
         private System.Windows.Forms.Button m_applyButton;
         private System.Windows.Forms.Button m_cancelButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView m_listView;
     }
 }

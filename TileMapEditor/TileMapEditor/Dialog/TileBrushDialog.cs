@@ -13,24 +13,7 @@ namespace TileMapEditor.Dialog
     {
         private TileBrushCollection m_tileBrushCollection;
 
-        private void OnDialogOk(object sender, EventArgs eventArgs)
-        {
-            Close();
-        }
-
-        private void OnDialogApply(object sender, EventArgs eventArgs)
-        {
-
-        }
-
-        public TileBrushDialog(TileBrushCollection tileBrushCollection)
-        {
-            InitializeComponent();
-
-            m_tileBrushCollection = tileBrushCollection;
-        }
-
-        private void TileBrushDialog_Load(object sender, EventArgs e)
+        private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             int previewSize = 0;
             ImageList imageList = new ImageList();
@@ -50,18 +33,53 @@ namespace TileMapEditor.Dialog
 
                 previewSize = Math.Max(previewSize, size);
 
-                imageList.Images.Add(tileBrush.ImageRepresentation);
+                imageList.Images.Add(image);
             }
 
             imageList.ImageSize = new Size(previewSize, previewSize);
 
-            listView1.LargeImageList = imageList;
+            m_listView.LargeImageList = imageList;
 
             int imageIndex = 0;
             foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
             {
-                listView1.Items.Add(tileBrush.Id, imageIndex++);
+                m_listView.Items.Add(tileBrush.Id, imageIndex++);
             }
         }
+
+        private void OnAfterLabelEdit(object sender, LabelEditEventArgs labelEditEventArgs)
+        {
+            string newLabel = labelEditEventArgs.Label;
+            for (int index = 0; index < m_tileBrushCollection.TileBrushes.Count; index++)
+            {
+                if (index == labelEditEventArgs.Item)
+                    continue;
+                if (newLabel == m_tileBrushCollection.TileBrushes[index].Id)
+                {
+                    labelEditEventArgs.CancelEdit = true;
+                    return;
+                }
+            }
+
+            m_tileBrushCollection.TileBrushes[labelEditEventArgs.Item].Id = newLabel;
+        }
+
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            Close();
+        }
+
+        private void OnDialogApply(object sender, EventArgs eventArgs)
+        {
+            m_listView.Items[0].BeginEdit();
+        }
+
+        public TileBrushDialog(TileBrushCollection tileBrushCollection)
+        {
+            InitializeComponent();
+
+            m_tileBrushCollection = tileBrushCollection;
+        }
+
     }
 }

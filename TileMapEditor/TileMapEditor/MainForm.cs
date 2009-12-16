@@ -372,7 +372,8 @@ namespace TileMapEditor
             if (tileSelection.IsEmpty())
                 return;
 
-            TileBrush tileBrush = new TileBrush(layer, tileSelection);
+            string tileBrushId = m_tileBrushCollection.GenerateId();
+            TileBrush tileBrush = new TileBrush(tileBrushId, layer, tileSelection);
             m_tileBrushCollection.TileBrushes.Add(tileBrush);
 
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection);
