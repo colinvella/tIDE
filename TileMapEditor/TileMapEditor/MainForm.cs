@@ -661,6 +661,8 @@ namespace TileMapEditor
             // enable/disable layer menu items as applicable
             bool layerSelected = component != null && component is Layer;
 
+            m_mapPanel.Enabled = layerSelected;
+
             m_layerPropertiesMenuItem.Enabled
                 = m_layerPropertiesButton.Enabled
                 = m_layerVisibilityMenuItem.Enabled

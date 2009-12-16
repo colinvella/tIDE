@@ -54,12 +54,23 @@ namespace TileMapEditor.Control
             }
         }
 
+        private void OnBeforeSelect(object sender, TreeViewCancelEventArgs treeViewCancelEventArgs)
+        {
+            if (m_treeView.SelectedNode != null)
+                m_treeView.SelectedNode.NodeFont = m_treeView.Font;
+        }
+
         private void OnAfterSelect(object sender, TreeViewEventArgs treeViewEventArgs)
         {
+            TreeNode treeNode = m_treeView.SelectedNode;
+            if (treeNode.Tag is Layer)
+            {
+                treeNode.NodeFont = new Font(m_treeView.Font, FontStyle.Bold);
+                treeNode.Text = treeNode.Text;
+            }
+            
             if (ComponentChanged != null)
             {
-                TreeNode treeNode = m_treeView.SelectedNode;
-
                 object tag = treeNode.Tag;
                 Tiling.Component component = tag is Tiling.Component
                     ? (Tiling.Component)tag : null;
@@ -127,7 +138,7 @@ namespace TileMapEditor.Control
                 LayerProperties(this, eventArgs);
         }
 
-        private void OnlayerVisibility(object sender, EventArgs eventArgs)
+        private void OnLayerVisibility(object sender, EventArgs eventArgs)
         {
             if (LayerVisibility != null)
                 LayerVisibility(this, eventArgs);
@@ -237,10 +248,10 @@ namespace TileMapEditor.Control
             // tile sheets
             UpdateTileSheetsSubTree(tileSheetsNode);
 
-            if (selectedComponent != null)
+            if (selectedComponent != null
+                && SearchComponent(m_treeView.Nodes[0], selectedComponent) != null)
             {
-                if (SearchComponent(m_treeView.Nodes[0], selectedComponent) != null)
-                    SelectedComponent = selectedComponent;
+                SelectedComponent = selectedComponent;
             }
         }
 

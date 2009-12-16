@@ -377,59 +377,6 @@ namespace TileMapEditor.Control
             }
         }
 
-        private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
-        {
-            m_graphics = paintEventArgs.Graphics;
-
-            if (m_map != null)
-            {
-                UpdateScrollBars();
-                BindLayerDrawEvents();
-
-                // reset translucency
-                m_colorMatrix.Matrix33 = m_layerCompositing == LayerCompositing.DimUnselected ? 0.25f : 1.0f;
-                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-
-                m_map.Draw(this, m_viewPort);
-
-                // border
-                Location borderCorner = -m_viewPort.Location;
-                borderCorner.X += m_map.DisplaySize.Width;
-                borderCorner.Y += m_map.DisplaySize.Height;
-
-                float inverseZoom = 1.0f / m_zoom;
-                Pen borderPen = new Pen(Color.Black);
-                borderPen.Width = inverseZoom;
-
-                Pen shadowPen = new Pen(SystemColors.ControlDarkDark);
-                shadowPen.Width = 2.0f * inverseZoom;
-
-                if (borderCorner.X >= 0 && borderCorner.X < this.ClientRectangle.Width)
-                {
-                    m_graphics.FillRectangle(SystemBrushes.ControlDark, borderCorner.X, 0, this.Width - borderCorner.X, this.Height);
-                    m_graphics.DrawLine(borderPen, borderCorner.X, 0, borderCorner.X, borderCorner.Y);
-                    m_graphics.DrawLine(shadowPen, borderCorner.X + inverseZoom, 0, borderCorner.X + inverseZoom, borderCorner.Y + inverseZoom);
-                }
-
-                if (borderCorner.Y >= 0 && borderCorner.Y < this.ClientRectangle.Height)
-                {
-                    m_graphics.FillRectangle(SystemBrushes.ControlDark, 0, borderCorner.Y, this.Width, this.Height - borderCorner.Y);
-                    m_graphics.DrawLine(borderPen, 0, borderCorner.Y, borderCorner.X, borderCorner.Y);
-                    m_graphics.DrawLine(shadowPen, 0, borderCorner.Y + inverseZoom, borderCorner.X + inverseZoom, borderCorner.Y + inverseZoom);
-                }
-            }
-
-            if (!Enabled)
-            {
-                m_graphics.Transform = new Matrix();
-                m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(224, SystemColors.Control)), ClientRectangle);
-                SizeF stringSize = m_graphics.MeasureString("Add layers to this map", this.Font);
-                m_graphics.DrawString("Add layers to this map", this.Font, SystemBrushes.ControlDark,
-                    (ClientRectangle.Width - (int)stringSize.Width) / 2,
-                    (ClientRectangle.Height - (int)stringSize.Height) / 2);
-            }
-        }
-
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
             m_bMouseDown = true;
@@ -497,6 +444,67 @@ namespace TileMapEditor.Control
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
         {
             m_innerPanel.Invalidate();
+        }
+
+        private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
+        {
+            m_graphics = paintEventArgs.Graphics;
+
+            if (m_map != null)
+            {
+                if (m_map.Layers.Count == 0)
+                {
+                    m_graphics.Transform = new Matrix();
+                    m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(224, SystemColors.Control)), ClientRectangle);
+
+                    SizeF stringSize = m_graphics.MeasureString("Add layers to this map", this.Font);
+                    m_graphics.DrawString("Add layers to this map", this.Font, SystemBrushes.ControlDark,
+                        (ClientRectangle.Width - (int)stringSize.Width) / 2,
+                        (ClientRectangle.Height - (int)stringSize.Height) / 2);
+                    return;
+                }
+
+                UpdateScrollBars();
+                BindLayerDrawEvents();
+
+                // reset translucency
+                m_colorMatrix.Matrix33 = m_layerCompositing == LayerCompositing.DimUnselected ? 0.25f : 1.0f;
+                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                m_map.Draw(this, m_viewPort);
+
+                // border
+                Location borderCorner = -m_viewPort.Location;
+                borderCorner.X += m_map.DisplaySize.Width;
+                borderCorner.Y += m_map.DisplaySize.Height;
+
+                float inverseZoom = 1.0f / m_zoom;
+                Pen borderPen = new Pen(Color.Black);
+                borderPen.Width = inverseZoom;
+
+                Pen shadowPen = new Pen(SystemColors.ControlDarkDark);
+                shadowPen.Width = 2.0f * inverseZoom;
+
+                if (borderCorner.X >= 0 && borderCorner.X < this.ClientRectangle.Width)
+                {
+                    m_graphics.FillRectangle(SystemBrushes.ControlDark, borderCorner.X, 0, this.Width - borderCorner.X, this.Height);
+                    m_graphics.DrawLine(borderPen, borderCorner.X, 0, borderCorner.X, borderCorner.Y);
+                    m_graphics.DrawLine(shadowPen, borderCorner.X + inverseZoom, 0, borderCorner.X + inverseZoom, borderCorner.Y + inverseZoom);
+                }
+
+                if (borderCorner.Y >= 0 && borderCorner.Y < this.ClientRectangle.Height)
+                {
+                    m_graphics.FillRectangle(SystemBrushes.ControlDark, 0, borderCorner.Y, this.Width, this.Height - borderCorner.Y);
+                    m_graphics.DrawLine(borderPen, 0, borderCorner.Y, borderCorner.X, borderCorner.Y);
+                    m_graphics.DrawLine(shadowPen, 0, borderCorner.Y + inverseZoom, borderCorner.X + inverseZoom, borderCorner.Y + inverseZoom);
+                }
+            }
+
+            if (!Enabled)
+            {
+                m_graphics.Transform = new Matrix();
+                m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(64, SystemColors.ControlDarkDark)), ClientRectangle);
+            }
         }
 
         #endregion

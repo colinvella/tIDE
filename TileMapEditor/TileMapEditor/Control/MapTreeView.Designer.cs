@@ -36,11 +36,11 @@ namespace TileMapEditor.Control
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_treePanel;
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Layers");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Tile Sheets");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Map", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Layers");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Tile Sheets");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Map", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapTreeView));
             System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
@@ -51,6 +51,7 @@ namespace TileMapEditor.Control
             this.m_layerNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_layerPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_layerVisibilityMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerBringForwardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerSendBackwardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,6 @@ namespace TileMapEditor.Control
             this.m_tileSheetContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_layerVisibilityMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_labelCaption = new System.Windows.Forms.Label();
             m_treePanel = new System.Windows.Forms.Panel();
             toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -105,25 +105,26 @@ namespace TileMapEditor.Control
             this.m_treeView.ImageList = this.m_imageList;
             this.m_treeView.Location = new System.Drawing.Point(0, 0);
             this.m_treeView.Name = "m_treeView";
-            treeNode4.ImageKey = "LayerFolder.png";
-            treeNode4.Name = "Layers";
-            treeNode4.SelectedImageKey = "LayerFolder.png";
-            treeNode4.Text = "Layers";
-            treeNode5.ImageKey = "TileSheetFolder.png";
-            treeNode5.Name = "TileSheets";
-            treeNode5.SelectedImageKey = "TileSheetFolder.png";
-            treeNode5.Text = "Tile Sheets";
-            treeNode6.ImageKey = "Map.png";
-            treeNode6.Name = "Map";
-            treeNode6.SelectedImageKey = "Map.png";
-            treeNode6.Text = "Map";
+            treeNode1.ImageKey = "LayerFolder.png";
+            treeNode1.Name = "Layers";
+            treeNode1.SelectedImageKey = "LayerFolder.png";
+            treeNode1.Text = "Layers";
+            treeNode2.ImageKey = "TileSheetFolder.png";
+            treeNode2.Name = "TileSheets";
+            treeNode2.SelectedImageKey = "TileSheetFolder.png";
+            treeNode2.Text = "Tile Sheets";
+            treeNode3.ImageKey = "Map.png";
+            treeNode3.Name = "Map";
+            treeNode3.SelectedImageKey = "Map.png";
+            treeNode3.Text = "Map";
             this.m_treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.m_treeView.SelectedImageIndex = 0;
             this.m_treeView.Size = new System.Drawing.Size(150, 130);
             this.m_treeView.TabIndex = 0;
             this.m_treeView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnMouseClick);
             this.m_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnAfterSelect);
+            this.m_treeView.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.OnBeforeSelect);
             // 
             // m_imageList
             // 
@@ -177,7 +178,7 @@ namespace TileMapEditor.Control
             toolStripSeparator2,
             this.m_layerDeleteMenuItem});
             this.m_layerContextMenuStrip.Name = "m_contextMenuLayer";
-            this.m_layerContextMenuStrip.Size = new System.Drawing.Size(155, 148);
+            this.m_layerContextMenuStrip.Size = new System.Drawing.Size(155, 126);
             this.m_layerContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuLayerOpening);
             // 
             // m_layerPropertiesMenuItem
@@ -187,6 +188,14 @@ namespace TileMapEditor.Control
             this.m_layerPropertiesMenuItem.Size = new System.Drawing.Size(154, 22);
             this.m_layerPropertiesMenuItem.Text = "Properties";
             this.m_layerPropertiesMenuItem.Click += new System.EventHandler(this.OnLayerProperties);
+            // 
+            // m_layerVisibilityMenuItem
+            // 
+            this.m_layerVisibilityMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
+            this.m_layerVisibilityMenuItem.Name = "m_layerVisibilityMenuItem";
+            this.m_layerVisibilityMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.m_layerVisibilityMenuItem.Text = "Make Invisible";
+            this.m_layerVisibilityMenuItem.Click += new System.EventHandler(this.OnLayerVisibility);
             // 
             // m_layerBringForwardMenuItem
             // 
@@ -268,14 +277,6 @@ namespace TileMapEditor.Control
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
-            // 
-            // m_layerVisibilityMenuItem
-            // 
-            this.m_layerVisibilityMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
-            this.m_layerVisibilityMenuItem.Name = "m_layerVisibilityMenuItem";
-            this.m_layerVisibilityMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.m_layerVisibilityMenuItem.Text = "Make Invisible";
-            this.m_layerVisibilityMenuItem.Click += new System.EventHandler(this.OnlayerVisibility);
             // 
             // MapTreeView
             // 
