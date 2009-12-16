@@ -31,6 +31,8 @@ namespace TileMapEditor
 
         private Map m_map;
         private Tiling.Component m_selectedComponent;
+        private TileBrushCollection m_tileBrushCollection;
+
         private PluginManager m_pluginManager;
 
         #endregion
@@ -175,6 +177,7 @@ namespace TileMapEditor
             m_mapPanel.Map = m_map;
 
             m_selectedComponent = m_map;
+            m_tileBrushCollection = new TileBrushCollection();
 
             m_viewZoomComboBox.SelectedIndex = 0;
 
@@ -361,7 +364,19 @@ namespace TileMapEditor
 
         private void OnEditMakeTileBrush(object sender, EventArgs eventArgs)
         {
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
 
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            if (tileSelection.IsEmpty())
+                return;
+
+            TileBrush tileBrush = new TileBrush(layer, tileSelection);
+            m_tileBrushCollection.TileBrushes.Add(tileBrush);
+
+            TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection);
+            tileBrushDialog.ShowDialog(this);
         }
 
         private void OnViewZoom(object sender, EventArgs eventArgs)

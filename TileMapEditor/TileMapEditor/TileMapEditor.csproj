@@ -97,6 +97,7 @@
     <Compile Include="Plugin\Bridge\ToolBarButtonBridge.cs" />
     <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Plugin\Version.cs" />
+    <Compile Include="TileBrushCollection.cs" />
     <Compile Include="TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Control\MapPanelEventArgs.cs" />
@@ -226,6 +227,7 @@
     <None Include="Resources\FileSaveAs.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\TileBrush.datasource" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\EditClearSelection.png" />
     <None Include="Resources\EditDelete.png" />

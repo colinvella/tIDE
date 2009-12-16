@@ -12,14 +12,23 @@ namespace TileMapEditor
     [Serializable]
     public class TileBrush
     {
-        private Tiling.Size m_size;
+        private string m_id;
+        private Tiling.Size m_brushSize;
+        private Tiling.Size m_tileSize;
         private List<TileBrushElement> m_tileBrushElements;
         private Image m_imageRepresentation;
 
         public TileBrush(Layer layer, TileSelection tileSelection)
+            : this("Clipboard", layer, tileSelection)
         {
+        }
+
+        public TileBrush(string id, Layer layer, TileSelection tileSelection)
+        {
+            m_id = id;
             Tiling.Rectangle selectionBounds = tileSelection.Bounds;
-            m_size = selectionBounds.Size;
+            m_brushSize = selectionBounds.Size;
+            m_tileSize = layer.TileSize;
             m_tileBrushElements = new List<TileBrushElement>();
             foreach (Location location in tileSelection.Locations)
             {
@@ -36,6 +45,10 @@ namespace TileMapEditor
         {
             Map map = layer.Map;
             Tiling.Size layerTileSize = layer.TileSize;
+
+            if (layerTileSize != m_tileSize)
+                return;
+
             tileSelection.Clear();
             foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
             {
@@ -49,9 +62,6 @@ namespace TileMapEditor
                 {
                     TileSheet tileSheet = tile.TileSheet;
 
-                    if (tileSheet.TileSize != layerTileSize)
-                        break;
-
                     if (!map.TileSheets.Contains(tile.TileSheet))
                         continue;
 
@@ -63,6 +73,12 @@ namespace TileMapEditor
             }
         }
 
+        public string Id
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
+
         public Image ImageRepresentation
         {
             get
@@ -72,11 +88,8 @@ namespace TileMapEditor
                     if (m_tileBrushElements.Count == 0)
                         return null;
 
-                    Tiling.Size tileSize
-                        = m_tileBrushElements[0].Tile.TileSheet.TileSize;
-
                     Bitmap bitmap = new Bitmap(
-                        m_size.Width * tileSize.Width, m_size.Height * tileSize.Height);
+                        m_brushSize.Width * m_tileSize.Width, m_brushSize.Height * m_tileSize.Height);
                     Graphics graphics = Graphics.FromImage(bitmap);
 
                     TileImageCache tileImageCache = TileImageCache.Instance;
@@ -84,10 +97,12 @@ namespace TileMapEditor
                     foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
                     {
                         Tile tile = tileBrushElement.Tile;
+                        if (tile == null)
+                            continue;
                         Image tileImage = tileImageCache.GetTileBitmap(tile.TileSheet, tile.TileIndex);
                         Location location = tileBrushElement.Location;
                         graphics.DrawImage(tileImage,
-                            location.X * tileSize.Width, location.Y * tileSize.Height);
+                            location.X * m_tileSize.Width, location.Y * m_tileSize.Height);
                     }
 
                     m_imageRepresentation = bitmap;
