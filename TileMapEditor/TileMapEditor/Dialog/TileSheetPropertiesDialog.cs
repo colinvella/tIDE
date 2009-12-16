@@ -162,8 +162,9 @@ namespace TileMapEditor.Dialog
             if (m_bitmapImageSource == null)
                 return;
 
-            Cursor cursor = Cursor.Current;
-            this.Cursor = Cursors.WaitCursor;
+            Cursor oldCuror = Cursor;
+            Cursor = Cursors.WaitCursor;
+            this.Enabled = false;
 
             // determine tile intervals (width + spacing)
             const int MAX_OFFSET = 96;
@@ -278,7 +279,8 @@ namespace TileMapEditor.Dialog
             m_textBoxSpacingX.Value = spacingX;
             m_textBoxSpacingY.Value = spacingY;
 
-            this.Cursor = cursor;
+            this.Enabled = true;
+            Cursor = oldCuror;
         }
 
         private void OnZoom(object sender, EventArgs eventArgs)

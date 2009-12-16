@@ -59,6 +59,21 @@ namespace TileMapEditor
             }
         }
 
+        private void StartWaitCursor()
+        {
+            Application.UseWaitCursor = true;
+            // needed to allow application to process cursor message
+            Application.DoEvents();
+        }
+
+        private void StopWaitCursor()
+        {
+            Application.UseWaitCursor = false;
+            // needed to force immediate cursor change without
+            // waiting for mouse move
+            Cursor = Cursor;
+        }
+
         private void UpdateZoomControls()
         {
             int zoom = m_mapPanel.Zoom;
@@ -550,6 +565,8 @@ namespace TileMapEditor
             if (tileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
+            StartWaitCursor();
+
             TileImageCache.Instance.Refresh(tileSheet);
 
             m_map.AddTileSheet(tileSheet);
@@ -560,6 +577,8 @@ namespace TileMapEditor
             m_tilePicker.UpdatePicker();
 
             m_mapPanel.LoadTileSheet(tileSheet);
+
+            StopWaitCursor();
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)
@@ -574,11 +593,15 @@ namespace TileMapEditor
 
             TileSheetPropertiesDialog.ShowDialog(this);
 
+            StartWaitCursor();
+
             m_mapTreeView.UpdateTree();
 
             TileImageCache.Instance.Refresh(tileSheet);
             m_tilePicker.UpdatePicker();
             m_tilePicker.RefreshSelectedTileSheet();
+
+            StopWaitCursor();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)
