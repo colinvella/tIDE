@@ -90,7 +90,7 @@ namespace Tiling
 
         public Rectangle GetTileDisplayRectangle(Rectangle mapViewPort, Location tileLocation)
         {
-            Location layerViewportLocation = ConvertLayerToMapLocation(mapViewPort.Location);
+            Location layerViewportLocation = ConvertMapToLayerLocation(mapViewPort.Location);
 
             Location tileDisplayLocation = new Location(
                 tileLocation.X * m_tileSize.Width, tileLocation.Y * m_tileSize.Height);
