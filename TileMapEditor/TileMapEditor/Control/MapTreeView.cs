@@ -23,12 +23,6 @@ namespace TileMapEditor.Control
 
         private void UpdateLayersSubTree(TreeNode layersNode)
         {
-            /*
-            Layer selectedLayer = null;
-            Tiling.Component selectedComponent = SelectedComponent;
-            if (selectedComponent != null && selectedComponent is Layer)
-                selectedLayer = (Layer)selectedComponent;*/
-
             layersNode.Nodes.Clear();
 
             int visbileImageIndex = m_imageList.Images.IndexOfKey("LayerVisible.png");
@@ -44,10 +38,6 @@ namespace TileMapEditor.Control
                     ? SystemColors.ControlText : SystemColors.GrayText;
                 layersNode.Nodes.Add(layerNode);
             }
-
-            /*
-            if (selectedLayer != null)
-                SelectedComponent = selectedLayer;*/
         }
 
         private void UpdateTileSheetsSubTree(TreeNode tileSheetsNode)
@@ -97,6 +87,18 @@ namespace TileMapEditor.Control
         private void OnContextMenuLayerOpening(object sender, CancelEventArgs cancelEventArgs)
         {
             Layer layer = (Layer)SelectedComponent;
+
+            if (layer.Visible)
+            {
+                m_layerVisibilityMenuItem.Image = Properties.Resources.LayerInvisible;
+                m_layerVisibilityMenuItem.Text = "Make Invisibile";
+            }
+            else
+            {
+                m_layerVisibilityMenuItem.Image = Properties.Resources.LayerVisible;
+                m_layerVisibilityMenuItem.Text = "Make Visibile";
+            }
+
             int layerIndex = m_map.Layers.IndexOf(layer);
             m_layerBringForwardMenuItem.Enabled = layerIndex < m_map.Layers.Count - 1;
             m_layerSendBackwardMenuItem.Enabled = layerIndex > 0;
@@ -123,6 +125,12 @@ namespace TileMapEditor.Control
         {
             if (LayerProperties != null)
                 LayerProperties(this, eventArgs);
+        }
+
+        private void OnlayerVisibility(object sender, EventArgs eventArgs)
+        {
+            if (LayerVisibility != null)
+                LayerVisibility(this, eventArgs);
         }
 
         private void OnLayerBringForward(object sender, EventArgs eventArgs)
@@ -292,6 +300,9 @@ namespace TileMapEditor.Control
 
         [Category("Behavior"), Description("Occurs when layer properties are requested from the context menu")]
         public event EventHandler LayerProperties;
+
+        [Category("Behavior"), Description("Occurs when layer visibility toggling is requested from the context menu")]
+        public event EventHandler LayerVisibility;
 
         [Category("Behavior"), Description("Occurs when a layer is requested to be brought forward from the context menu")]
         public event EventHandler BringLayerForward;

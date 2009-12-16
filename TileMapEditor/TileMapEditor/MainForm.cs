@@ -84,8 +84,8 @@ namespace TileMapEditor
             bool visible = layer.Visible;
 
             m_layerVisibilityMenuItem.Text = visible
-                ? "Make Layer Invisible"
-                : "Make Layer Visible";
+                ? "Make Invisible"
+                : "Make Visible";
             m_layerVisibilityButton.ToolTipText = visible
                 ? "Make layer invisible"
                 : "Make layer visible";
