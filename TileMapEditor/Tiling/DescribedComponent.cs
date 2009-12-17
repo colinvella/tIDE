@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Tiling
 {
-    public abstract class DescribedComponent: Component
+    [Serializable]
+    public abstract class DescribedComponent : Component
     {
         #region Private Variables
 

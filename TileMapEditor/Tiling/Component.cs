@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
+    [Serializable]
     public abstract class Component
     {
         private string m_id;

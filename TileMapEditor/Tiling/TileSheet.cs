@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Tiling
 {
-    public class TileSheet: DescribedComponent
+    [Serializable]
+    public class TileSheet : DescribedComponent
     {
         private Map m_map;
         private string m_imageSource;

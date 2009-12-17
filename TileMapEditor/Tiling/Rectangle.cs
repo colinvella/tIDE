@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
+    [Serializable]
     public struct Rectangle
     {
         public Location Location;

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Tiling
 {
+    [Serializable]
     public class PropertyValue
     {
         private object m_value;

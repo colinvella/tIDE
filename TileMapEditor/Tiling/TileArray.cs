@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Tiling
 {
+    [Serializable]
     public class TileArray
     {
         private Layer m_layer;
