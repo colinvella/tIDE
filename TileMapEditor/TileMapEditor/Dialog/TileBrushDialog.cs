@@ -31,18 +31,27 @@ namespace TileMapEditor.Dialog
                     image = bitmap;
                 }
 
+                if (size > 256)
+                {
+                    image = new Bitmap(image, 256, 256);
+                    size = 256;
+                }
+
                 previewSize = Math.Max(previewSize, size);
 
                 imageList.Images.Add(image);
             }
-
             imageList.ImageSize = new Size(previewSize, previewSize);
 
             m_listView.LargeImageList = imageList;
 
             int imageIndex = 0;
             foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
-                m_listView.Items.Add(tileBrush.Id, imageIndex++);
+            {
+                ListViewItem listViewItem = new ListViewItem(tileBrush.Id, imageIndex++);
+                listViewItem.Tag = tileBrush;
+                m_listView.Items.Add(listViewItem);
+            }
         }
 
         private void OnSelectedIndexChanged(object sender, EventArgs eventArgs)
@@ -58,7 +67,7 @@ namespace TileMapEditor.Dialog
             {
                 if (index == labelEditEventArgs.Item)
                     continue;
-                if (newLabel == m_tileBrushCollection.TileBrushes[index].Id)
+                if (newLabel == m_listView.Items[index].Text)
                 {
                     labelEditEventArgs.CancelEdit = true;
                     MessageBox.Show(this, 
@@ -69,7 +78,7 @@ namespace TileMapEditor.Dialog
                 }
             }
 
-            m_tileBrushCollection.TileBrushes[labelEditEventArgs.Item].Id = newLabel;
+            m_okButton.Enabled = m_applyButton.Enabled = true;
         }
 
         private void OnTileBrushRename(object sender, EventArgs eventArgs)
@@ -89,17 +98,42 @@ namespace TileMapEditor.Dialog
 
             int index = m_listView.SelectedIndices[0];
 
+            string tileBrushId = m_listView.Items[index].Text;
+            if (MessageBox.Show(this,
+                "Are you sure you want to delete this tile brush?",
+                "Delete tile brush '" + tileBrushId + "'?",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.No)
+                return;
+
             m_listView.Items.RemoveAt(index);
+
+            m_okButton.Enabled = m_applyButton.Enabled = true;
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
+            OnDialogApply(sender, eventArgs);
             Close();
         }
 
         private void OnDialogApply(object sender, EventArgs eventArgs)
         {
-            m_listView.Items[0].BeginEdit();
+            // reset tile brush list
+            m_tileBrushCollection.TileBrushes.Clear();
+
+            // process items
+            foreach (ListViewItem listViewItem in m_listView.Items)
+            {
+                // extract corresponding brushes and apply new ids
+                TileBrush tileBrush = (TileBrush)listViewItem.Tag;
+                tileBrush.Id = listViewItem.Text;
+
+                // add to collection
+                m_tileBrushCollection.TileBrushes.Add(tileBrush);
+            }
+
+            m_okButton.Enabled = m_applyButton.Enabled = false;
         }
 
         public TileBrushDialog(TileBrushCollection tileBrushCollection)
@@ -107,12 +141,6 @@ namespace TileMapEditor.Dialog
             InitializeComponent();
 
             m_tileBrushCollection = tileBrushCollection;
-        }
-
-        private void m_listView_MouseUp(object sender, MouseEventArgs mouseEventArgs)
-        {
-            m_contextMenuStrip.SetBounds(mouseEventArgs.X, mouseEventArgs.Y, m_contextMenuStrip.Bounds.Width, m_contextMenuStrip.Bounds.Height);
-            m_contextMenuStrip.Visible = true;
         }
     }
 }

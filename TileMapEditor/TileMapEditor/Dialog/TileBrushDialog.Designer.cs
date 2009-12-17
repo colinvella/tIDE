@@ -34,11 +34,11 @@
             this.m_applyButton = new System.Windows.Forms.Button();
             this.m_cancelButton = new System.Windows.Forms.Button();
             this.m_listView = new System.Windows.Forms.ListView();
-            this.m_renameButton = new System.Windows.Forms.Button();
-            this.m_deleteButton = new System.Windows.Forms.Button();
             this.m_contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_renameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_renameButton = new System.Windows.Forms.Button();
+            this.m_deleteButton = new System.Windows.Forms.Button();
             this.m_contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,7 @@
             this.m_listView.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_listView.BackgroundImageTiled = true;
             this.m_listView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_listView.ContextMenuStrip = this.m_contextMenuStrip;
             this.m_listView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_listView.LabelEdit = true;
             this.m_listView.Location = new System.Drawing.Point(12, 12);
@@ -95,7 +96,28 @@
             this.m_listView.UseCompatibleStateImageBehavior = false;
             this.m_listView.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.OnAfterLabelEdit);
             this.m_listView.SelectedIndexChanged += new System.EventHandler(this.OnSelectedIndexChanged);
-            this.m_listView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_listView_MouseUp);
+            // 
+            // m_contextMenuStrip
+            // 
+            this.m_contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_renameMenuItem,
+            this.m_deleteMenuItem});
+            this.m_contextMenuStrip.Name = "m_contextMenuStrip";
+            this.m_contextMenuStrip.Size = new System.Drawing.Size(118, 48);
+            // 
+            // m_renameMenuItem
+            // 
+            this.m_renameMenuItem.Name = "m_renameMenuItem";
+            this.m_renameMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.m_renameMenuItem.Text = "Rename";
+            this.m_renameMenuItem.Click += new System.EventHandler(this.OnTileBrushRename);
+            // 
+            // m_deleteMenuItem
+            // 
+            this.m_deleteMenuItem.Name = "m_deleteMenuItem";
+            this.m_deleteMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.m_deleteMenuItem.Text = "Delete";
+            this.m_deleteMenuItem.Click += new System.EventHandler(this.OnTileBrushDelete);
             // 
             // m_renameButton
             // 
@@ -121,26 +143,6 @@
             this.m_deleteButton.UseVisualStyleBackColor = true;
             this.m_deleteButton.Click += new System.EventHandler(this.OnTileBrushDelete);
             // 
-            // m_contextMenuStrip
-            // 
-            this.m_contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_renameMenuItem,
-            this.m_deleteMenuItem});
-            this.m_contextMenuStrip.Name = "m_contextMenuStrip";
-            this.m_contextMenuStrip.Size = new System.Drawing.Size(118, 48);
-            // 
-            // m_renameMenuItem
-            // 
-            this.m_renameMenuItem.Name = "m_renameMenuItem";
-            this.m_renameMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.m_renameMenuItem.Text = "Rename";
-            // 
-            // m_deleteMenuItem
-            // 
-            this.m_deleteMenuItem.Name = "m_deleteMenuItem";
-            this.m_deleteMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.m_deleteMenuItem.Text = "Delete";
-            // 
             // TileBrushDialog
             // 
             this.AcceptButton = this.m_okButton;
@@ -156,7 +158,7 @@
             this.Controls.Add(this.m_okButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(200, 150);
+            this.MinimumSize = new System.Drawing.Size(450, 150);
             this.Name = "TileBrushDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tile Brushes";
