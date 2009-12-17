@@ -184,6 +184,29 @@ namespace TileMapEditor.Control
             }
         }
 
+        private void ApplyTileBrush()
+        {
+            if (m_selectedLayer == null)
+                return;
+
+            if (m_selectedTileBrush == null)
+                return;
+
+            if (m_selectedTileBrush.TileSize != m_selectedLayer.TileSize)
+            {
+                MessageBox.Show(this, "Incompatible tile size", "Apply TileBrush", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Tiling.Location brushLocation = m_tileLayerLocation;
+            Tiling.Size brushSize = m_selectedTileBrush.BrushSize;
+            brushLocation.X -= brushSize.Width / 2;
+            brushLocation.Y -= brushSize.Height / 2;
+
+            m_selectedTileBrush.ApplyTo(m_selectedLayer, brushLocation, m_tileSelection);
+            m_tileSelection.Clear();
+        }
+
         private void UpdateScrollBars()
         {
             if (m_map == null)
@@ -418,6 +441,7 @@ namespace TileMapEditor.Control
                     case EditTool.TileBlock: m_dragTileStart = m_tileLayerLocation; break;
                     case EditTool.Eraser: EraseTile(); break;
                     case EditTool.Dropper: PickTile(); break;
+                    case EditTool.TileBrush: ApplyTileBrush(); break;
                 }
             }
         }

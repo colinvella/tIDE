@@ -171,13 +171,26 @@ namespace TileMapEditor
         private void UpdateTileBrushDropDown()
         {
             m_toolsTileBrushButton.DropDown.Items.Clear();
+
+            if (m_tileBrushCollection.TileBrushes.Count == 0)
+            {
+                m_mapPanel.SelectedTileBrush = null;
+                return;
+            }
+
+            ToolStripMenuItem toolStripMenuItemLast = null;
             foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
             {
                 ToolStripMenuItem toolStripMenuItem = new ToolStripMenuItem(tileBrush.Id, tileBrush.ImageRepresentation);
                 toolStripMenuItem.Tag = tileBrush;
                 toolStripMenuItem.Click += OnToolsTileBrushSelected;
                 m_toolsTileBrushButton.DropDown.Items.Add(toolStripMenuItem);
+
+                toolStripMenuItemLast = toolStripMenuItem;
             }
+
+            toolStripMenuItemLast.Checked = true;
+            m_mapPanel.SelectedTileBrush = (TileBrush)toolStripMenuItemLast.Tag;
         }
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
@@ -368,6 +381,8 @@ namespace TileMapEditor
             {
                 UpdateTileBrushDropDown();
                 m_mapPanel.TileSelection.Clear();
+
+                OnToolsTileBrush(sender, eventArgs);
             }
         }
 
