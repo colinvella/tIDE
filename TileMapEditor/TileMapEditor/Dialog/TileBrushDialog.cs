@@ -12,9 +12,13 @@ namespace TileMapEditor.Dialog
     internal partial class TileBrushDialog : Form
     {
         private TileBrushCollection m_tileBrushCollection;
+        private TileBrush m_newTileBrush;
 
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
+            if (m_tileBrushCollection.TileBrushes.Count == 0)
+                return;
+
             int previewSize = 0;
             ImageList imageList = new ImageList();
             foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
@@ -51,6 +55,20 @@ namespace TileMapEditor.Dialog
                 ListViewItem listViewItem = new ListViewItem(tileBrush.Id, imageIndex++);
                 listViewItem.Tag = tileBrush;
                 m_listView.Items.Add(listViewItem);
+            }
+
+            if (m_newTileBrush != null)
+            {
+                foreach (ListViewItem listViewItem in m_listView.Items)
+                {
+                    if (listViewItem.Tag == m_newTileBrush)
+                    {
+                        listViewItem.EnsureVisible();
+                        listViewItem.Selected = true;
+                        listViewItem.BeginEdit();
+                        break;
+                    }
+                }
             }
         }
 
@@ -141,6 +159,15 @@ namespace TileMapEditor.Dialog
             InitializeComponent();
 
             m_tileBrushCollection = tileBrushCollection;
+            m_newTileBrush = null;
+        }
+
+        public TileBrushDialog(TileBrushCollection tileBrushCollection, TileBrush newTileBrush)
+        {
+            InitializeComponent();
+
+            m_tileBrushCollection = tileBrushCollection;
+            m_newTileBrush = newTileBrush;
         }
     }
 }

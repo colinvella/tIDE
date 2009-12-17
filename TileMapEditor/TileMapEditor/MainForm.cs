@@ -373,9 +373,15 @@ namespace TileMapEditor
                 return;
 
             string tileBrushId = m_tileBrushCollection.GenerateId();
-            TileBrush tileBrush = new TileBrush(tileBrushId, layer, tileSelection);
-            m_tileBrushCollection.TileBrushes.Add(tileBrush);
+            TileBrush newTileBrush = new TileBrush(tileBrushId, layer, tileSelection);
+            m_tileBrushCollection.TileBrushes.Add(newTileBrush);
 
+            TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection, newTileBrush);
+            tileBrushDialog.ShowDialog(this);
+        }
+
+        private void OnEditManageTileBrushes(object sender, EventArgs eventArgs)
+        {
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection);
             tileBrushDialog.ShowDialog(this);
         }
