@@ -70,6 +70,9 @@
     <Compile Include="Control\CustomPropertyGrid.Designer.cs">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\CustomToolStripSplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Control\MapPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

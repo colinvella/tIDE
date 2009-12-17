@@ -774,7 +774,8 @@ namespace TileMapEditor.Control
         SingleTile,
         TileBlock,
         Eraser,
-        Dropper
+        Dropper,
+        TileBrush
     }
 
     public delegate void MapPanelEventHandler(MapPanelEventArgs mapPanelEventArgs);

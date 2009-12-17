@@ -154,7 +154,7 @@ namespace TileMapEditor
                 ? "Hide Tile Guides" : "Show Tile Guides";
         }
 
-        private void UpdateEditToolButtons()
+        private void UpdateToolButtons()
         {
             EditTool editTool = m_mapPanel.EditTool;
 
@@ -163,6 +163,7 @@ namespace TileMapEditor
             m_toolsTileBlockButton.Checked = editTool == EditTool.TileBlock;
             m_toolsEraserButton.Checked = editTool == EditTool.Eraser;
             m_toolsDropperButton.Checked = editTool == EditTool.Dropper;
+            m_toolsTileBrushButton.Checked = editTool == EditTool.TileBrush;
         }
 
         private void UpdateTileBrushDropDowns()
@@ -205,27 +206,27 @@ namespace TileMapEditor
             {
                 case Keys.S:
                     m_mapPanel.EditTool = EditTool.Select;
-                    UpdateEditToolButtons();
+                    UpdateToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
                 case Keys.T:
                     m_mapPanel.EditTool = EditTool.SingleTile;
-                    UpdateEditToolButtons();
+                    UpdateToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
                 case Keys.B:
                     m_mapPanel.EditTool = EditTool.TileBlock;
-                    UpdateEditToolButtons();
+                    UpdateToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
                 case Keys.E:
                     m_mapPanel.EditTool = EditTool.Eraser;
-                    UpdateEditToolButtons();
+                    UpdateToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
                 case Keys.P:
                     m_mapPanel.EditTool = EditTool.Dropper;
-                    UpdateEditToolButtons();
+                    UpdateToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
                 case Keys.ControlKey:
@@ -264,36 +265,6 @@ namespace TileMapEditor
 
                 m_selectedComponent = null;
             }
-        }
-
-        private void OnEditSelect(object sender, EventArgs e)
-        {
-            m_mapPanel.EditTool = EditTool.Select;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditSingleTile(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.SingleTile;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditTileBlock(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.TileBlock;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditEraser(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.Eraser;
-            UpdateEditToolButtons();
-        }
-
-        private void OnEditDropper(object sender, EventArgs eventArgs)
-        {
-            m_mapPanel.EditTool = EditTool.Dropper;
-            UpdateEditToolButtons();
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
@@ -737,6 +708,42 @@ namespace TileMapEditor
             m_selectedComponent = component;
         }
 
+        private void OnToolsSelect(object sender, EventArgs e)
+        {
+            m_mapPanel.EditTool = EditTool.Select;
+            UpdateToolButtons();
+        }
+
+        private void OnToolsSingleTile(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.SingleTile;
+            UpdateToolButtons();
+        }
+
+        private void OnToolsTileBlock(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.TileBlock;
+            UpdateToolButtons();
+        }
+
+        private void OnToolsEraser(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.Eraser;
+            UpdateToolButtons();
+        }
+
+        private void OnToolsDropper(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.Dropper;
+            UpdateToolButtons();
+        }
+
+        private void OnToolsTileBrush(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.TileBrush;
+            UpdateToolButtons();
+        }
+
         private void OnMapTilePicked(MapPanelEventArgs mapPanelEventArgs)
         {
             Tile tile = mapPanelEventArgs.Tile;
@@ -746,7 +753,7 @@ namespace TileMapEditor
                 m_tilePicker.SelectedTileIndex = tile.TileIndex;
             }
 
-            UpdateEditToolButtons();
+            UpdateToolButtons();
         }
 
         #endregion
@@ -759,6 +766,11 @@ namespace TileMapEditor
         }
 
         #endregion
+
+        private void m_toolsTileBrushButton_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
