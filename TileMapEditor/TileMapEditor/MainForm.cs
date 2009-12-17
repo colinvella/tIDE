@@ -185,14 +185,16 @@ namespace TileMapEditor
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
 
+            m_tileBrushCollection = new TileBrushCollection();
+
             m_map = new Map("Untitled map");
 
             m_mapTreeView.Map = m_map;
             m_tilePicker.Map = m_map;
             m_mapPanel.Map = m_map;
+            m_mapPanel.TileBrushCollection = m_tileBrushCollection;
 
             m_selectedComponent = m_map;
-            m_tileBrushCollection = new TileBrushCollection();
 
             m_viewZoomComboBox.SelectedIndex = 0;
 
@@ -760,6 +762,17 @@ namespace TileMapEditor
             {
                 bool matched = toolStripMenuItem == toolStripMenuItemSelected;
                 toolStripMenuItem.Checked = matched;
+                if (matched)
+                {
+                    TileBrush tileBrush = (TileBrush)toolStripMenuItem.Tag;
+                    m_mapPanel.SelectedTileBrush = tileBrush;
+                }
+            }
+
+            if (m_mapPanel.EditTool != EditTool.TileBrush)
+            {
+                m_mapPanel.EditTool = EditTool.TileBrush;
+                UpdateToolButtons();
             }
         }
 

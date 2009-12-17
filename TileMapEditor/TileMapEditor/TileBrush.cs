@@ -15,6 +15,7 @@ namespace TileMapEditor
         private string m_id;
         private Tiling.Size m_brushSize;
         private Tiling.Size m_tileSize;
+        private Tiling.Size m_displaySize;
         private List<TileBrushElement> m_tileBrushElements;
         private Image m_imageRepresentation;
 
@@ -27,8 +28,13 @@ namespace TileMapEditor
         {
             m_id = id;
             Tiling.Rectangle selectionBounds = tileSelection.Bounds;
+
             m_brushSize = selectionBounds.Size;
             m_tileSize = layer.TileSize;
+            m_displaySize = new Tiling.Size(
+                m_brushSize.Width * m_tileSize.Width,
+                m_brushSize.Height * m_tileSize.Height);
+
             m_tileBrushElements = new List<TileBrushElement>();
             foreach (Location location in tileSelection.Locations)
             {
@@ -111,5 +117,11 @@ namespace TileMapEditor
                 return m_imageRepresentation;
             }
         }
+
+        public Tiling.Size BrushSize { get { return m_brushSize; } }
+
+        public Tiling.Size TileSize { get { return m_tileSize; } }
+
+        public Tiling.Size DisplaySize { get { return m_displaySize; } }
     }
 }

@@ -22,6 +22,8 @@ namespace TileMapEditor.Control
         private Layer m_selectedLayer;
         private TileSheet m_selectedTileSheet;
         private int m_selectedTileIndex;
+        private TileBrushCollection m_tileBrushCollection;
+        private TileBrush m_selectedTileBrush;
 
         private LayerCompositing m_layerCompositing;
         private bool m_tileGuides;
@@ -272,13 +274,6 @@ namespace TileMapEditor.Control
             if (layerEventArgs.Layer != m_selectedLayer)
                 return;
 
-            if (m_layerCompositing == LayerCompositing.DimUnselected)
-            {
-                // set translucency for upper layers
-                m_colorMatrix.Matrix33 = 0.25f;
-                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-            }
-
             // alignment data
             Layer layer = layerEventArgs.Layer;
             Tiling.Rectangle viewPort = layerEventArgs.ViewPort;
@@ -362,6 +357,29 @@ namespace TileMapEditor.Control
                     m_graphics.FillRectangle(m_tileSelectionBrush, minX, minY, selectionWidth, selectionHeight);
                     m_graphics.DrawRectangle(m_tileSelectionPen, minX, minY, selectionWidth, selectionHeight);
                 }
+                else if (m_editTool == EditTool.TileBrush)
+                {
+                    if (m_selectedTileBrush != null)
+                    {
+                        Tiling.Location location = tileDisplayRectangle.Location;
+                        Tiling.Size brushSize = m_selectedTileBrush.BrushSize;
+                        Tiling.Size displaySize = m_selectedTileBrush.DisplaySize;
+
+                        location.X -= (brushSize.Width / 2) * tileSize.Width;
+                        location.Y -= (brushSize.Height / 2) * tileSize.Height;
+
+                        m_graphics.PixelOffsetMode = PixelOffsetMode.None;
+
+                        m_colorMatrix.Matrix33 = 0.5f;
+                        m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                        System.Drawing.Rectangle destRect
+                            = new System.Drawing.Rectangle(location.X, location.Y,
+                                displaySize.Width, displaySize.Height);
+                        m_graphics.DrawImage(m_selectedTileBrush.ImageRepresentation, destRect,
+                            0, 0, displaySize.Width, displaySize.Height, GraphicsUnit.Pixel, m_imageAttributes);
+                    }
+                }
                 else
                 {
                     Tiling.Location location = tileDisplayRectangle.Location;
@@ -374,6 +392,13 @@ namespace TileMapEditor.Control
                     m_graphics.DrawRectangle(m_tileSelectionPen,
                         location.X, location.Y, size.Width, size.Height);
                 }
+            }
+
+            if (m_layerCompositing == LayerCompositing.DimUnselected)
+            {
+                // set translucency for upper layers
+                m_colorMatrix.Matrix33 = 0.25f;
+                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             }
         }
 
@@ -744,6 +769,24 @@ namespace TileMapEditor.Control
         public TileSelection TileSelection
         {
             get { return m_tileSelection; }
+        }
+
+        internal TileBrushCollection TileBrushCollection
+        {
+            set
+            {
+                if (m_tileBrushCollection != value)
+                {
+                    m_tileBrushCollection = value;
+                    m_selectedTileBrush = null;
+                }
+            }
+        }
+
+        internal TileBrush SelectedTileBrush
+        {
+            get { return m_selectedTileBrush; }
+            set { m_selectedTileBrush = value; }
         }
 
         public bool CtrlKeyPressed

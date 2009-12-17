@@ -40,6 +40,21 @@ namespace Tiling
             return new Location(location1.X - location2.X, location1.Y - location2.Y);
         }
 
+        public static Location operator *(Location location, int scale)
+        {
+            return new Location(location.X * scale, location.Y * scale);
+        }
+
+        public static Location operator *(int scale, Location location)
+        {
+            return new Location(location.X * scale, location.Y * scale);
+        }
+
+        public static Location operator /(Location location, int scale)
+        {
+            return new Location(location.X / scale, location.Y / scale);
+        }
+
         public Location(int x, int y)
         {
             X = x;
