@@ -134,6 +134,7 @@ namespace TileMapEditor.Dialog
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
             OnDialogApply(sender, eventArgs);
+            this.DialogResult = DialogResult.OK;
             Close();
         }
 

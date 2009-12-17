@@ -164,6 +164,8 @@ namespace TileMapEditor
             m_toolsEraserButton.Checked = editTool == EditTool.Eraser;
             m_toolsDropperButton.Checked = editTool == EditTool.Dropper;
             m_toolsTileBrushButton.Checked = editTool == EditTool.TileBrush;
+
+            m_mapPanel.TileSelection.Clear();
         }
 
         private void UpdateTileBrushDropDown()
