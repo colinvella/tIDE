@@ -4,7 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace Tiling
+using Tiling.Dimensions;
+using Tiling.Layers;
+
+namespace Tiling.Tiles
 {
     [Serializable]
     public class TileArray

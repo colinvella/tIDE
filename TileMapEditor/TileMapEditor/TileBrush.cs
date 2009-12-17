@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Layers;
+using Tiling.Tiles;
+
 using TileMapEditor.Control;
 
 namespace TileMapEditor
@@ -13,9 +17,9 @@ namespace TileMapEditor
     public class TileBrush
     {
         private string m_id;
-        private Tiling.Size m_brushSize;
-        private Tiling.Size m_tileSize;
-        private Tiling.Size m_displaySize;
+        private Tiling.Dimensions.Size m_brushSize;
+        private Tiling.Dimensions.Size m_tileSize;
+        private Tiling.Dimensions.Size m_displaySize;
         private List<TileBrushElement> m_tileBrushElements;
         private Image m_imageRepresentation;
 
@@ -27,11 +31,11 @@ namespace TileMapEditor
         public TileBrush(string id, Layer layer, TileSelection tileSelection)
         {
             m_id = id;
-            Tiling.Rectangle selectionBounds = tileSelection.Bounds;
+            Tiling.Dimensions.Rectangle selectionBounds = tileSelection.Bounds;
 
             m_brushSize = selectionBounds.Size;
             m_tileSize = layer.TileSize;
-            m_displaySize = new Tiling.Size(
+            m_displaySize = new Tiling.Dimensions.Size(
                 m_brushSize.Width * m_tileSize.Width,
                 m_brushSize.Height * m_tileSize.Height);
 
@@ -50,7 +54,7 @@ namespace TileMapEditor
             TileSelection tileSelection)
         {
             Map map = layer.Map;
-            Tiling.Size layerTileSize = layer.TileSize;
+            Tiling.Dimensions.Size layerTileSize = layer.TileSize;
 
             if (layerTileSize != m_tileSize)
                 return;
@@ -118,10 +122,10 @@ namespace TileMapEditor
             }
         }
 
-        public Tiling.Size BrushSize { get { return m_brushSize; } }
+        public Tiling.Dimensions.Size BrushSize { get { return m_brushSize; } }
 
-        public Tiling.Size TileSize { get { return m_tileSize; } }
+        public Tiling.Dimensions.Size TileSize { get { return m_tileSize; } }
 
-        public Tiling.Size DisplaySize { get { return m_displaySize; } }
+        public Tiling.Dimensions.Size DisplaySize { get { return m_displaySize; } }
     }
 }

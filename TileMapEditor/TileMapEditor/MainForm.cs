@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Layers;
+using Tiling.ObjectModel;
+using Tiling.Tiles;
 
 using TileMapEditor.Control;
 using TileMapEditor.Dialog;
@@ -30,7 +33,7 @@ namespace TileMapEditor
         private System.Drawing.Rectangle m_windowBounds;
 
         private Map m_map;
-        private Tiling.Component m_selectedComponent;
+        private Tiling.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
 
         private PluginManager m_pluginManager;
@@ -46,7 +49,7 @@ namespace TileMapEditor
                 controls.Add(control);
             m_toolStripContainer.TopToolStripPanel.Controls.Clear();
             
-            Point location = Point.Empty;
+            System.Drawing.Point location = System.Drawing.Point.Empty;
             foreach (System.Windows.Forms.Control control in controls)
             {
                 if (location.X + control.Width > m_toolStripContainer.TopToolStripPanel.ClientSize.Width)
@@ -343,8 +346,8 @@ namespace TileMapEditor
             if (layer == null)
                 return;
 
-            Tiling.Rectangle selectionContext
-                = new Tiling.Rectangle(Tiling.Location.Origin, layer.LayerSize);
+            Rectangle selectionContext
+                = new Rectangle(Tiling.Dimensions.Location.Origin, layer.LayerSize);
             m_mapPanel.TileSelection.SelectAll(selectionContext);
         }
 
@@ -355,9 +358,9 @@ namespace TileMapEditor
 
         private void OnEditInvertSelection(object sender, EventArgs eventArgs)
         {
-            m_mapPanel.TileSelection.Invert(new Tiling.Rectangle(
-                Tiling.Location.Origin,
-                new Tiling.Size(
+            m_mapPanel.TileSelection.Invert(new Rectangle(
+                Tiling.Dimensions.Location.Origin,
+                new Size(
                     m_mapPanel.SelectedLayer.LayerSize.Width,
                     m_mapPanel.SelectedLayer.LayerSize.Height)));
         }
@@ -488,12 +491,12 @@ namespace TileMapEditor
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
         {
-            Tiling.Size tileSize = m_map.TileSheets.Count > 0
+            Size tileSize = m_map.TileSheets.Count > 0
                 ? m_map.TileSheets[0].TileSize
-                : new Tiling.Size(8, 8);
+                : new Size(8, 8);
 
             Layer layer = new Layer("untitled layer", m_map,
-                new Tiling.Size(100, 25), tileSize);
+                new Size(100, 25), tileSize);
             LayerPropertiesDialog layerPropertiesDialog = new LayerPropertiesDialog(layer);
 
             if (layerPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
@@ -589,7 +592,7 @@ namespace TileMapEditor
         private void OnTileSheetNew(object sender, EventArgs eventArgs)
         {
             TileSheet tileSheet = new TileSheet("untitled tile sheet", m_map, "",
-                new Tiling.Size(8, 8), new Tiling.Size(8, 8));
+                new Size(8, 8), new Size(8, 8));
             TileSheetPropertiesDialog tileSheetPropertiesDialog = new TileSheetPropertiesDialog(tileSheet);
 
             if (tileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
@@ -686,7 +689,7 @@ namespace TileMapEditor
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
-            Tiling.Component component = mapTreeViewEventArgs.Component;
+            Tiling.ObjectModel.Component component = mapTreeViewEventArgs.Component;
 
             // enable/disable layer menu items as applicable
             bool layerSelected = component != null && component is Layer;

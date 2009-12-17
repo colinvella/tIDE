@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Tiling
+namespace Tiling.ObjectModel
 {
     [Serializable]
     public abstract class DescribedComponent : Component

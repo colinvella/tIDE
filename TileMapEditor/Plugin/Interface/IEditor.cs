@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Layers;
 
 namespace TileMapEditor.Plugin.Interface
 {

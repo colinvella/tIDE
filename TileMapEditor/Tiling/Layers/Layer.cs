@@ -4,7 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace Tiling
+using Tiling.Dimensions;
+using Tiling.Display;
+using Tiling.ObjectModel;
+using Tiling.Tiles;
+
+namespace Tiling.Layers
 {
     [Serializable]
     public class Layer : DescribedComponent

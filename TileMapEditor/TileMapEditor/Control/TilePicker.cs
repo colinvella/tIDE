@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Tiles;
 
 namespace TileMapEditor.Control
 {
@@ -34,7 +35,7 @@ namespace TileMapEditor.Control
             if (listViewItem.ImageIndex == -1)
             {
                 // update image list and assign new image
-                Tiling.Rectangle sheetRectangle
+                Rectangle sheetRectangle
                     = m_tileSheet.GetTileImageBounds(itemIndex);
 
                 System.Drawing.Rectangle pickerRectangle
@@ -44,7 +45,7 @@ namespace TileMapEditor.Control
 
                 listViewItem.ImageIndex = m_tileImageList.Images.Count;
 
-                Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_tileSheet, itemIndex);
+                System.Drawing.Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_tileSheet, itemIndex);
 
                 m_tileImageList.Images.Add(tileBitmap);
             }

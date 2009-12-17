@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Layers;
 
 namespace TileMapEditor.Dialog
 {
@@ -56,8 +57,8 @@ namespace TileMapEditor.Dialog
             m_layer.Id = newId;
             m_layer.Description = m_textBoxDescription.Text;
 
-            m_layer.LayerSize = new Tiling.Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
-            m_layer.TileSize = new Tiling.Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
+            m_layer.LayerSize = new Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
+            m_layer.TileSize = new Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
 
             m_layer.Visible = m_checkBoxVisible.Checked;
 

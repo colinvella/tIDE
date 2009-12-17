@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Dimensions;
 
 using TileMapEditor.Plugin;
 using TileMapEditor.Plugin.Interface;

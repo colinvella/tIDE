@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Tiles;
+
 using TileMapEditor.Control;
 
 namespace TileMapEditor

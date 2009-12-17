@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.ObjectModel;
+using Tiling.Layers;
+using Tiling.Tiles;
 
 namespace TileMapEditor.Control
 {
@@ -72,15 +75,15 @@ namespace TileMapEditor.Control
             if (ComponentChanged != null)
             {
                 object tag = treeNode.Tag;
-                Tiling.Component component = tag is Tiling.Component
-                    ? (Tiling.Component)tag : null;
+                Tiling.ObjectModel.Component component = tag is Tiling.ObjectModel.Component
+                    ? (Tiling.ObjectModel.Component)tag : null;
 
                 ComponentChanged(this,
                     new MapTreeViewEventArgs(treeNode, component));
             }
         }
 
-        private TreeNode SearchComponent(TreeNode rootNode, Tiling.Component component)
+        private TreeNode SearchComponent(TreeNode rootNode, Tiling.ObjectModel.Component component)
         {
             if (rootNode.Tag == component)
                 return rootNode;
@@ -197,7 +200,7 @@ namespace TileMapEditor.Control
                 return;
             }
 
-            Tiling.Component selectedComponent = SelectedComponent;
+            Tiling.ObjectModel.Component selectedComponent = SelectedComponent;
 
 
             // map root node
@@ -272,17 +275,17 @@ namespace TileMapEditor.Control
             }
         }
 
-        public Tiling.Component SelectedComponent
+        public Tiling.ObjectModel.Component SelectedComponent
         {
             get
             {
                 TreeNode treeNode = m_treeView.SelectedNode;
                 if (treeNode == null || treeNode.Tag == null)
                     return null;
-                if (!(treeNode.Tag is Tiling.Component))
+                if (!(treeNode.Tag is Tiling.ObjectModel.Component))
                     return null;
 
-                return (Tiling.Component)treeNode.Tag;
+                return (Tiling.ObjectModel.Component)treeNode.Tag;
             }
 
             set
@@ -339,9 +342,9 @@ namespace TileMapEditor.Control
     public class MapTreeViewEventArgs
     {
         private TreeNode m_treeNode;
-        private Tiling.Component m_component;
+        private Tiling.ObjectModel.Component m_component;
 
-        public MapTreeViewEventArgs(TreeNode treeNode, Tiling.Component component)
+        public MapTreeViewEventArgs(TreeNode treeNode, Tiling.ObjectModel.Component component)
         {
             m_treeNode = treeNode;
             m_component = component;
@@ -349,7 +352,7 @@ namespace TileMapEditor.Control
 
         public TreeNode TreeNode { get { return m_treeNode; } }
 
-        public Tiling.Component Component { get { return m_component; } }
+        public Tiling.ObjectModel.Component Component { get { return m_component; } }
     }
 
     public delegate void MapTreeViewEventHandler(

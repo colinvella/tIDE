@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Tiling
+namespace Tiling.Format
 {
-    public interface IMapFormatManager
+    public interface IFormatManager
     {
         
     }

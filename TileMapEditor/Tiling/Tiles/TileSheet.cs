@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Tiling
+using Tiling.Dimensions;
+using Tiling.ObjectModel;
+
+namespace Tiling.Tiles
 {
     [Serializable]
     public class TileSheet : DescribedComponent

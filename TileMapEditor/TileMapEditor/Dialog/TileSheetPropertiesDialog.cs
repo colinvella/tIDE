@@ -9,6 +9,8 @@ using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Dimensions;
+using Tiling.Tiles;
 
 namespace TileMapEditor.Dialog
 {
@@ -22,7 +24,7 @@ namespace TileMapEditor.Dialog
 
         bool m_previewMouseDown;
         private PointF m_previewOffset;
-        private Tiling.Location m_previewGrip;
+        private Location m_previewGrip;
 
         #endregion
 
@@ -105,7 +107,7 @@ namespace TileMapEditor.Dialog
 
             m_previewMouseDown = false;
             m_previewOffset = PointF.Empty;
-            m_previewGrip = Tiling.Location.Origin;
+            m_previewGrip = Tiling.Dimensions.Location.Origin;
         }
 
         private void OnTileSizeCombo(object sender, EventArgs eventArgs)
@@ -367,13 +369,13 @@ namespace TileMapEditor.Dialog
             m_tileSheet.Description = m_textBoxDescription.Text;
             m_tileSheet.ImageSource = m_textBoxImageSource.Text;
 
-            m_tileSheet.TileSize = new Tiling.Size((int)m_textBoxTileWidth.Value, (int)m_textBoxTileHeight.Value);
-            m_tileSheet.Margin = new Tiling.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
-            m_tileSheet.Spacing = new Tiling.Size((int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
+            m_tileSheet.TileSize = new Tiling.Dimensions.Size((int)m_textBoxTileWidth.Value, (int)m_textBoxTileHeight.Value);
+            m_tileSheet.Margin = new Tiling.Dimensions.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
+            m_tileSheet.Spacing = new Tiling.Dimensions.Size((int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
 
             if (m_bitmapImageSource != null)
             {
-                m_tileSheet.SheetSize = new Tiling.Size(
+                m_tileSheet.SheetSize = new Tiling.Dimensions.Size(
                     (m_bitmapImageSource.Width - m_tileSheet.Margin.Width)
                         / (m_tileSheet.TileSize.Width + m_tileSheet.Spacing.Width),
                     (m_bitmapImageSource.Height - m_tileSheet.Margin.Height)

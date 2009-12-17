@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Tiling
+using Tiling.Layers;
+
+namespace Tiling.Tiles
 {
     [Serializable]
     public class StaticTile : Tile

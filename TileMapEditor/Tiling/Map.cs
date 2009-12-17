@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Tiling.Dimensions;
+using Tiling.Display;
+using Tiling.Layers;
+using Tiling.ObjectModel;
+using Tiling.Tiles;
+
 namespace Tiling
 {
     [Serializable]

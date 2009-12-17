@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Tiling.ObjectModel;
+
 namespace TileMapEditor.Control
 {
     public partial class CustomPropertyGrid : UserControl
@@ -88,7 +90,7 @@ namespace TileMapEditor.Control
 
                 if (m_previousPropertyName != null && m_previousPropertyName != propertyName)
                 {
-                    Tiling.PropertyValue previousPropertyValue = m_dummyComponent.Properties[m_previousPropertyName];
+                    PropertyValue previousPropertyValue = m_dummyComponent.Properties[m_previousPropertyName];
                     m_dummyComponent.Properties.Remove(m_previousPropertyName);
                     m_dummyComponent.Properties[propertyName] = previousPropertyValue;
                     m_previousPropertyName = null;
@@ -146,12 +148,12 @@ namespace TileMapEditor.Control
             InitializeComponent();
         }
 
-        public void LoadProperties(Tiling.Component component)
+        public void LoadProperties(Tiling.ObjectModel.Component component)
         {
             m_dataGridView.Rows.Clear();
 
             m_dummyComponent.Properties.Clear();
-            foreach (KeyValuePair<string, Tiling.PropertyValue> keyValuePair
+            foreach (KeyValuePair<string, PropertyValue> keyValuePair
                 in component.Properties)
             {
                 m_dummyComponent.Properties.Add(keyValuePair.Key, keyValuePair.Value);
@@ -172,10 +174,10 @@ namespace TileMapEditor.Control
             }
         }
 
-        public void StoreProperties(Tiling.Component component)
+        public void StoreProperties(Tiling.ObjectModel.Component component)
         {
             component.Properties.Clear();
-            foreach (KeyValuePair<string, Tiling.PropertyValue> keyValuePair
+            foreach (KeyValuePair<string, PropertyValue> keyValuePair
                 in m_dummyComponent.Properties)
                 component.Properties.Add(keyValuePair.Key, keyValuePair.Value);
         }
@@ -183,7 +185,7 @@ namespace TileMapEditor.Control
         #endregion
     }
 
-    internal class DummyComponent : Tiling.Component
+    internal class DummyComponent : Tiling.ObjectModel.Component
     {
     }
 }
