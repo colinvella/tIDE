@@ -165,6 +165,13 @@ namespace TileMapEditor
             m_toolsDropperButton.Checked = editTool == EditTool.Dropper;
         }
 
+        private void UpdateTileBrushDropDowns()
+        {
+            m_toolsTileBrushButton.DropDown.Items.Clear();
+            foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
+                m_toolsTileBrushButton.DropDown.Items.Add(tileBrush.Id, tileBrush.ImageRepresentation);
+        }
+
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
             m_windowMode = WindowMode.Windowed;
@@ -378,12 +385,16 @@ namespace TileMapEditor
 
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection, newTileBrush);
             tileBrushDialog.ShowDialog(this);
+
+            UpdateTileBrushDropDowns();
         }
 
         private void OnEditManageTileBrushes(object sender, EventArgs eventArgs)
         {
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection);
             tileBrushDialog.ShowDialog(this);
+
+            UpdateTileBrushDropDowns();
         }
 
         private void OnViewZoom(object sender, EventArgs eventArgs)
