@@ -55,8 +55,10 @@
     <Compile Include="Component.cs" />
     <Compile Include="DescribedComponent.cs" />
     <Compile Include="IDisplayDevice.cs" />
+    <Compile Include="IMapFormatManager.cs" />
     <Compile Include="LayerEventArgs.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="MapFormatCompatibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticTile.cs" />
     <Compile Include="Tile.cs" />
