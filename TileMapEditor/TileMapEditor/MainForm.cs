@@ -166,11 +166,16 @@ namespace TileMapEditor
             m_toolsTileBrushButton.Checked = editTool == EditTool.TileBrush;
         }
 
-        private void UpdateTileBrushDropDowns()
+        private void UpdateTileBrushDropDown()
         {
             m_toolsTileBrushButton.DropDown.Items.Clear();
             foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
-                m_toolsTileBrushButton.DropDown.Items.Add(tileBrush.Id, tileBrush.ImageRepresentation);
+            {
+                ToolStripMenuItem toolStripMenuItem = new ToolStripMenuItem(tileBrush.Id, tileBrush.ImageRepresentation);
+                toolStripMenuItem.Tag = tileBrush;
+                toolStripMenuItem.Click += OnToolsTileBrushSelected;
+                m_toolsTileBrushButton.DropDown.Items.Add(toolStripMenuItem);
+            }
         }
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
@@ -355,9 +360,11 @@ namespace TileMapEditor
             m_tileBrushCollection.TileBrushes.Add(newTileBrush);
 
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection, newTileBrush);
-            tileBrushDialog.ShowDialog(this);
-
-            UpdateTileBrushDropDowns();
+            if (tileBrushDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                UpdateTileBrushDropDown();
+                m_mapPanel.TileSelection.Clear();
+            }
         }
 
         private void OnEditManageTileBrushes(object sender, EventArgs eventArgs)
@@ -365,7 +372,7 @@ namespace TileMapEditor
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection);
             tileBrushDialog.ShowDialog(this);
 
-            UpdateTileBrushDropDowns();
+            UpdateTileBrushDropDown();
         }
 
         private void OnViewZoom(object sender, EventArgs eventArgs)
@@ -744,6 +751,16 @@ namespace TileMapEditor
             UpdateToolButtons();
         }
 
+        private void OnToolsTileBrushSelected(object sender, EventArgs eventArgs)
+        {
+            ToolStripMenuItem toolStripMenuItemSelected = (ToolStripMenuItem)sender;
+            foreach (ToolStripMenuItem toolStripMenuItem in m_toolsTileBrushButton.DropDownItems)
+            {
+                bool matched = toolStripMenuItem == toolStripMenuItemSelected;
+                toolStripMenuItem.Checked = matched;
+            }
+        }
+
         private void OnMapTilePicked(MapPanelEventArgs mapPanelEventArgs)
         {
             Tile tile = mapPanelEventArgs.Tile;
@@ -766,11 +783,6 @@ namespace TileMapEditor
         }
 
         #endregion
-
-        private void m_toolsTileBrushButton_ButtonClick(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
