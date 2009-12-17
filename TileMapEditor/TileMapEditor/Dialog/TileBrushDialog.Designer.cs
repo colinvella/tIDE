@@ -76,6 +76,7 @@
             this.m_cancelButton.TabIndex = 5;
             this.m_cancelButton.Text = "&Cancel";
             this.m_cancelButton.UseVisualStyleBackColor = true;
+            this.m_cancelButton.Click += new System.EventHandler(this.OnDialogCancel);
             // 
             // m_listView
             // 

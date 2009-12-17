@@ -69,6 +69,8 @@ namespace TileMapEditor.Dialog
                         break;
                     }
                 }
+
+                m_okButton.Enabled = true;
             }
         }
 
@@ -152,6 +154,12 @@ namespace TileMapEditor.Dialog
             }
 
             m_okButton.Enabled = m_applyButton.Enabled = false;
+        }
+
+        private void OnDialogCancel(object sender, EventArgs eventArgs)
+        {
+            if (m_newTileBrush != null)
+                m_tileBrushCollection.TileBrushes.Remove(m_newTileBrush);
         }
 
         public TileBrushDialog(TileBrushCollection tileBrushCollection)
