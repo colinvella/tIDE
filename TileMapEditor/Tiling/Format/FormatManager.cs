@@ -11,10 +11,14 @@ namespace Tiling.Format
         private static FormatManager s_formatManager = new FormatManager();
 
         private Dictionary<string, IMapFormat> m_mapFormats;
+        private StandardFormat m_standardFormat;
 
         private FormatManager()
         {
             m_mapFormats = new Dictionary<string, IMapFormat>();
+
+            m_standardFormat = new StandardFormat();
+            m_mapFormats[m_standardFormat.Name] = m_standardFormat;
         }
 
         public static FormatManager Instance { get { return s_formatManager; } }
@@ -44,6 +48,11 @@ namespace Tiling.Format
 
                 return m_mapFormats[mapFormatName];
             }
+        }
+
+        public IMapFormat StandardFormat
+        {
+            get { return m_standardFormat; }
         }
 
         public ReadOnlyCollection<IMapFormat> MapFormats

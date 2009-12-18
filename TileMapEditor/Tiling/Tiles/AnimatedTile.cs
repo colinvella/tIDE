@@ -45,5 +45,17 @@ namespace Tiling.Tiles
                 return currentIndex;
             } 
         }
+
+        public int[] TileIndices
+        {
+            get
+            {
+                int[] tileIndices = new int[m_tileIndices.Length];
+                m_tileIndices.CopyTo(tileIndices, 0);
+                return tileIndices;
+            }
+        }
+
+        public long FrameInterval { get { return m_frameInterval; } }
     }
 }

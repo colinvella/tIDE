@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Format\FormatManager.cs" />
+    <Compile Include="Format\StandardFormat.cs" />
     <Compile Include="Tiles\AnimatedTile.cs" />
     <Compile Include="ObjectModel\Component.cs" />
     <Compile Include="ObjectModel\DescribedComponent.cs" />

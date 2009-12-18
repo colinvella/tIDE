@@ -198,6 +198,8 @@ namespace TileMapEditor
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
+            Tiling.Format.FormatManager fm = Tiling.Format.FormatManager.Instance;
+
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
 
