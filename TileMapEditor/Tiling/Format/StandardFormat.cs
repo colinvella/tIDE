@@ -17,6 +17,24 @@ namespace Tiling.Format
     {
         private CompatibilityResults m_compatibilityResults;
 
+        private void LoadProperties(Component component, XmlTextReader xmlTextReader)
+        {
+            xmlTextReader.ReadStartElement("Properties");
+
+            foreach (KeyValuePair<string, PropertyValue> keyValuePair in component.Properties)
+            {
+                /*
+                xmlTextReader.ReadStartElement("Property");
+                xmlTextReader.("Key", keyValuePair.Key);
+                xmlTextReader.at
+                xmlTextWriter.WriteAttributeString("Type", keyValuePair.Value.Type.Name);
+                xmlTextWriter.WriteCData(keyValuePair.Value);
+                xmlTextReader.ReadEndElement();*/
+            }
+
+            xmlTextReader.ReadEndElement();
+        }
+
         private void StoreProperties(Component component, XmlTextWriter xmlTextWriter)
         {
             xmlTextWriter.WriteStartElement("Properties");
