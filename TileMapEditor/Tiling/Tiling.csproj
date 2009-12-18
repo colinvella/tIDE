@@ -51,14 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Format\FormatManager.cs" />
     <Compile Include="Tiles\AnimatedTile.cs" />
     <Compile Include="ObjectModel\Component.cs" />
     <Compile Include="ObjectModel\DescribedComponent.cs" />
     <Compile Include="Display\IDisplayDevice.cs" />
-    <Compile Include="Format\IFormatManager.cs" />
+    <Compile Include="Format\IMapFormat.cs" />
     <Compile Include="Layers\LayerEventArgs.cs" />
     <Compile Include="Dimensions\Location.cs" />
-    <Compile Include="Format\FormatCompatibility.cs" />
+    <Compile Include="Format\CompatibilityResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tiles\StaticTile.cs" />
     <Compile Include="Tiles\Tile.cs" />
