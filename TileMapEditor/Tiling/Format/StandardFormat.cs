@@ -17,65 +17,104 @@ namespace Tiling.Format
     {
         private CompatibilityResults m_compatibilityResults;
 
-        private void LoadProperties(Component component, XmlTextReader xmlTextReader)
+        private void LoadProperties(XmlHelper xmlHelper, Component component)
         {
-            xmlTextReader.ReadStartElement("Properties");
+            xmlHelper.AdvanceStartElement("Properties");
+
+            while (xmlHelper.AdvanceStartRepeatedElement("Property"))
+            {
+                string propertyKey = xmlHelper.GetAttribute("Key");
+                string propertyType = xmlHelper.GetAttribute("Type");
+                xmlHelper.AdvanceStartElement("Value");
+                string propertyValue = xmlHelper.GetCData();
+                xmlHelper.AdvanceEndElement("Value");
+
+                if (propertyType == typeof(bool).Name)
+                    component.Properties[propertyKey] = bool.Parse(propertyValue);
+                else if (propertyType == typeof(int).Name)
+                    component.Properties[propertyKey] = int.Parse(propertyValue);
+                else if (propertyType == typeof(float).Name)
+                    component.Properties[propertyKey] = float.Parse(propertyValue);
+                else
+                    component.Properties[propertyKey] = propertyValue;
+            }
+        }
+
+        private void StoreProperties(Component component, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement("Properties");
 
             foreach (KeyValuePair<string, PropertyValue> keyValuePair in component.Properties)
             {
-                /*
-                xmlTextReader.ReadStartElement("Property");
-                xmlTextReader.("Key", keyValuePair.Key);
-                xmlTextReader.at
-                xmlTextWriter.WriteAttributeString("Type", keyValuePair.Value.Type.Name);
-                xmlTextWriter.WriteCData(keyValuePair.Value);
-                xmlTextReader.ReadEndElement();*/
+                xmlWriter.WriteStartElement("Property");
+                xmlWriter.WriteAttributeString("Key", keyValuePair.Key);
+                xmlWriter.WriteAttributeString("Type", keyValuePair.Value.Type.Name);
+                xmlWriter.WriteCData(keyValuePair.Value);
+                xmlWriter.WriteEndElement();
             }
 
-            xmlTextReader.ReadEndElement();
+            xmlWriter.WriteEndElement();
         }
 
-        private void StoreProperties(Component component, XmlTextWriter xmlTextWriter)
+        private void LoadTileSheet(XmlHelper xmlHelper, Map map)
         {
-            xmlTextWriter.WriteStartElement("Properties");
+            string id = xmlHelper.GetAttribute("Id");
 
-            foreach (KeyValuePair<string, PropertyValue> keyValuePair in component.Properties)
-            {
-                xmlTextWriter.WriteStartElement("Property");
-                xmlTextWriter.WriteAttributeString("Key", keyValuePair.Key);
-                xmlTextWriter.WriteAttributeString("Type", keyValuePair.Value.Type.Name);
-                xmlTextWriter.WriteCData(keyValuePair.Value);
-                xmlTextWriter.WriteEndElement();
-            }
+            xmlHelper.AdvanceStartElement("Description");
+            string description = xmlHelper.GetCData();
+            xmlHelper.AdvanceEndElement("Description");
 
-            xmlTextWriter.WriteEndElement();
+            xmlHelper.AdvanceStartElement("ImageSource");
+            string imageSource = xmlHelper.GetCData();
+            xmlHelper.AdvanceEndElement("ImageSource");
+
+            xmlHelper.AdvanceStartElement("Alignment");
+
+            Size tileSize = Size.FromString(xmlHelper.GetAttribute("TileSize"));
+            Size margin = Size.FromString(xmlHelper.GetAttribute("Margin"));
+            Size spacing = Size.FromString(xmlHelper.GetAttribute("Spacing"));
+
+            xmlHelper.AdvanceEndElement("Alignment");
+
+
+            //string tileSheetDescription = null;
+            //TileSheet tileSheet = new TileSheet(map, imageSource, null, null);
         }
 
-        private void Store(TileSheet tileSheet, XmlTextWriter xmlTextWriter)
+        private void Store(TileSheet tileSheet, XmlWriter xmlWriter)
         {
-            xmlTextWriter.WriteStartElement("TileSheet");
-            xmlTextWriter.WriteAttributeString("Id", tileSheet.Id);
+            xmlWriter.WriteStartElement("TileSheet");
+            xmlWriter.WriteAttributeString("Id", tileSheet.Id);
 
-            xmlTextWriter.WriteStartElement("Description");
-            xmlTextWriter.WriteCData(tileSheet.Description);
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("Description");
+            xmlWriter.WriteCData(tileSheet.Description);
+            xmlWriter.WriteEndElement();
 
-            xmlTextWriter.WriteStartElement("ImageSource");
-            xmlTextWriter.WriteCData(tileSheet.ImageSource);
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("ImageSource");
+            xmlWriter.WriteCData(tileSheet.ImageSource);
+            xmlWriter.WriteEndElement();
 
-            xmlTextWriter.WriteStartElement("Alignment");
-            xmlTextWriter.WriteAttributeString("TileSize", tileSheet.TileSize.ToString());
-            xmlTextWriter.WriteAttributeString("Margin", tileSheet.Margin.ToString());
-            xmlTextWriter.WriteAttributeString("Spacing", tileSheet.Spacing.ToString());
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("Alignment");
+            xmlWriter.WriteAttributeString("TileSize", tileSheet.TileSize.ToString());
+            xmlWriter.WriteAttributeString("Margin", tileSheet.Margin.ToString());
+            xmlWriter.WriteAttributeString("Spacing", tileSheet.Spacing.ToString());
+            xmlWriter.WriteEndElement();
 
-            StoreProperties(tileSheet, xmlTextWriter);
+            StoreProperties(tileSheet, xmlWriter);
 
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
         }
 
-        private void Store(ReadOnlyCollection<TileSheet> tileSheets, XmlTextWriter xmlTextWriter)
+        private void LoadTileSheets(XmlHelper xmlHelper, Map map)
+        {
+            xmlHelper.AdvanceStartElement("TileSheets");
+
+            while (xmlHelper.AdvanceStartRepeatedElement("TileSheet"))
+                LoadTileSheet(xmlHelper, map);
+
+        }
+
+        private void Store(ReadOnlyCollection<TileSheet> tileSheets, XmlWriter xmlTextWriter)
         {
             xmlTextWriter.WriteStartElement("TileSheets");
             foreach (TileSheet tileSheet in tileSheets)
@@ -83,7 +122,7 @@ namespace Tiling.Format
             xmlTextWriter.WriteEndElement();
         }
 
-        private void Store(Layer layer, XmlTextWriter xmlTextWriter)
+        private void Store(Layer layer, XmlWriter xmlTextWriter)
         {
             xmlTextWriter.WriteStartElement("Layer");
             xmlTextWriter.WriteAttributeString("Id", layer.Id);
@@ -163,7 +202,7 @@ namespace Tiling.Format
             xmlTextWriter.WriteEndElement();
         }
 
-        private void Store(ReadOnlyCollection<Layer> layers, XmlTextWriter xmlTextWriter)
+        private void Store(ReadOnlyCollection<Layer> layers, XmlWriter xmlTextWriter)
         {
             xmlTextWriter.WriteStartElement("Layers");
             foreach (Layer layer in layers)
@@ -191,6 +230,11 @@ namespace Tiling.Format
             FileStream fileStream = new FileStream("Test.xml", FileMode.Create);
             Store(map, fileStream);
             fileStream.Close();
+
+
+            // test load
+            fileStream = new FileStream("Test.xml", FileMode.Open);
+            Map map2 = Load(fileStream);
         }
 
         public CompatibilityResults DetermineCompatibility(Map map)
@@ -201,31 +245,50 @@ namespace Tiling.Format
 
         public Map Load(Stream stream)
         {
-            throw new NotImplementedException();
+            XmlTextReader xmlReader = new XmlTextReader(stream);
+            xmlReader.WhitespaceHandling = WhitespaceHandling.None;
+
+            XmlHelper xmlHelper = new XmlHelper(xmlReader);
+
+            xmlHelper.AdvanceDeclaration();
+            xmlHelper.AdvanceStartElement("Map");
+            string mapId = xmlHelper.GetAttribute("Id");
+            Map map = new Map(mapId);
+
+            xmlHelper.AdvanceStartElement("Description");
+            string mapDescription = xmlHelper.GetCData();
+            xmlHelper.AdvanceEndElement("Description");
+            map.Description = mapDescription;
+
+            LoadProperties(xmlHelper, map);
+
+            LoadTileSheets(xmlHelper, map);
+
+            return map;
         }
 
         public void Store(Map map, Stream stream)
         {
-            XmlTextWriter xmlTextWriter = new XmlTextWriter(stream, Encoding.UTF8);
-            xmlTextWriter.Formatting = Formatting.Indented;
+            XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
+            xmlWriter.Formatting = Formatting.Indented;
 
-            xmlTextWriter.WriteStartDocument();
-            xmlTextWriter.WriteStartElement("Map");
-            xmlTextWriter.WriteAttributeString("Id", map.Id);
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("Map");
+            xmlWriter.WriteAttributeString("Id", map.Id);
 
-            xmlTextWriter.WriteStartElement("Description");
-            xmlTextWriter.WriteCData(map.Description);
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("Description");
+            xmlWriter.WriteCData(map.Description);
+            xmlWriter.WriteEndElement();
 
-            Store(map.TileSheets, xmlTextWriter);
+            Store(map.TileSheets, xmlWriter);
 
-            Store(map.Layers, xmlTextWriter);
+            Store(map.Layers, xmlWriter);
 
-            StoreProperties(map, xmlTextWriter);
+            StoreProperties(map, xmlWriter);
 
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
 
-            xmlTextWriter.Flush();
+            xmlWriter.Flush();
         }
 
         public string Name

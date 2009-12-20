@@ -10,6 +10,15 @@ namespace Tiling.Dimensions
     {
         private static Size s_sizeZero = new Size(0, 0);
 
+        public static Size FromString(string value)
+        {
+            string[] elements = value.Split('x');
+            if (elements.Length != 2)
+                throw new FormatException("Size string format must be in the form 'N x N'");
+
+            return new Size(int.Parse(elements[0]), int.Parse(elements[1]));
+        }
+
         public static Size Zero { get { return s_sizeZero; } }
 
         public int Width;
