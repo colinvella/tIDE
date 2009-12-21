@@ -829,6 +829,9 @@ namespace TileMapEditor.Control
         [Category("Behavior"), Description("Occurs when the tile is picked from the map")]
         public event MapPanelEventHandler TilePicked;
 
+        [Category("Behavior"), Description("Occurs when the map is changed")]
+        public event MapPanelEventHandler MapChanged;
+
         #endregion
     }
 
