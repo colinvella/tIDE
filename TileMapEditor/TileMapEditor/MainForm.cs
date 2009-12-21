@@ -35,6 +35,7 @@ namespace TileMapEditor
         private Map m_map;
         private Tiling.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
+        private bool m_needsSaving;
 
         private PluginManager m_pluginManager;
 
@@ -77,6 +78,11 @@ namespace TileMapEditor
             // needed to force immediate cursor change without
             // waiting for mouse move
             Cursor = Cursor;
+        }
+
+        private void UpdateFileControls()
+        {
+            m_fileSaveMenuItem.Enabled = m_needsSaving;
         }
 
         private void UpdateZoomControls()
@@ -206,6 +212,7 @@ namespace TileMapEditor
             m_tileBrushCollection = new TileBrushCollection();
 
             m_map = new Map("Untitled map");
+            m_needsSaving = false;
 
             m_mapTreeView.Map = m_map;
             m_tilePicker.Map = m_map;
@@ -340,6 +347,9 @@ namespace TileMapEditor
                 return;
 
             m_mapPanel.TileSelection.EraseTiles(layer);
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnEditSelectAll(object sender, EventArgs eventArgs)
@@ -488,7 +498,12 @@ namespace TileMapEditor
         private void OnMapProperties(object sender, EventArgs eventArgs)
         {
             MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
-            mapPropertiesDialog.ShowDialog(this);
+
+            if (mapPropertiesDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                m_needsSaving = true;
+                UpdateFileControls();
+            }
         }
 
         private void OnLayerNew(object sender, EventArgs eventArgs)
@@ -511,6 +526,9 @@ namespace TileMapEditor
 
             m_mapPanel.Enabled = true;
             m_mapPanel.Invalidate(true);
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)
@@ -523,9 +541,13 @@ namespace TileMapEditor
             LayerPropertiesDialog layerPropertiesDialog
                 = new LayerPropertiesDialog(layer);
 
-            layerPropertiesDialog.ShowDialog(this);
+            if (layerPropertiesDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                m_mapTreeView.UpdateTree();
 
-            m_mapTreeView.UpdateTree();
+                m_needsSaving = true;
+                UpdateFileControls();
+            }
         }
 
         private void OnLayerVisibility(object sender, EventArgs eventArgs)
@@ -535,6 +557,9 @@ namespace TileMapEditor
                 layer.Visible = !layer.Visible;
    
             UpdateLayerVisibilityControls();
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnLayerBringForward(object sender, EventArgs eventArgs)
@@ -551,6 +576,9 @@ namespace TileMapEditor
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnLayerSendBackward(object sender, EventArgs eventArgs)
@@ -567,6 +595,9 @@ namespace TileMapEditor
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnLayerDelete(object sender, EventArgs eventArgs)
@@ -589,6 +620,9 @@ namespace TileMapEditor
 
             if (m_map.Layers.Count == 0)
                 m_mapPanel.Enabled = false;
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnTileSheetNew(object sender, EventArgs eventArgs)
@@ -614,6 +648,9 @@ namespace TileMapEditor
             m_mapPanel.LoadTileSheet(tileSheet);
 
             StopWaitCursor();
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)
@@ -626,7 +663,8 @@ namespace TileMapEditor
             TileSheetPropertiesDialog TileSheetPropertiesDialog
                 = new TileSheetPropertiesDialog(tileSheet);
 
-            TileSheetPropertiesDialog.ShowDialog(this);
+            if (TileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
 
             StartWaitCursor();
 
@@ -637,6 +675,9 @@ namespace TileMapEditor
             m_tilePicker.RefreshSelectedTileSheet();
 
             StopWaitCursor();
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)
@@ -675,6 +716,9 @@ namespace TileMapEditor
             m_tilePicker.UpdatePicker();
 
             m_mapPanel.DisposeTileSheet(tileSheet);
+
+            m_needsSaving = true;
+            UpdateFileControls();
         }
 
         private void OnPluginsReload(object sender, EventArgs eventArgs)
