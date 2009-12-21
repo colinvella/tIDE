@@ -27,5 +27,10 @@ namespace Tiling.Tiles
         }
 
         public override int TileIndex { get { return m_tileIndex; } }
+
+        public override string ToString()
+        {
+            return "Static TileIndex=" + m_tileIndex + " BlendMode=" + BlendMode;
+        }
     }
 }

@@ -157,7 +157,11 @@ namespace Tiling.Format
                 while (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
                 {
                     if (xmlReader.Name == "Null")
-                        ++tileLocation.X;
+                    {
+                        int nullCount = int.Parse(xmlHelper.GetAttribute("Count"));
+                        tileLocation.X += nullCount % layerSize.Width;
+                        //++tileLocation.X;
+                    }
                     else if (xmlReader.Name == "TileSheet")
                     {
                         string tileSheetRef = xmlHelper.GetAttribute("Ref");
@@ -238,6 +242,7 @@ namespace Tiling.Format
             xmlTextWriter.WriteStartElement("TileArray");
 
             TileSheet previousTileSheet = null;
+            int nullCount = 0;
 
             for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
             {
@@ -249,9 +254,17 @@ namespace Tiling.Format
 
                     if (currentTile == null)
                     {
-                        xmlTextWriter.WriteStartElement("Null");
-                        xmlTextWriter.WriteEndElement();
+                        //xmlTextWriter.WriteStartElement("Null");
+                        //xmlTextWriter.WriteEndElement();
+                        ++nullCount;
                         continue;
+                    }
+                    else
+                    {
+                        xmlTextWriter.WriteStartElement("Null");
+                        xmlTextWriter.WriteAttributeString("Count", nullCount.ToString());
+                        xmlTextWriter.WriteEndElement();
+                        nullCount = 0;
                     }
 
                     TileSheet currentTileSheet = currentTile.TileSheet;
@@ -299,9 +312,20 @@ namespace Tiling.Format
                         xmlTextWriter.WriteEndElement();
                     }
                 }
+
+                if (nullCount > 0)
+                {
+                    xmlTextWriter.WriteStartElement("Null");
+                    xmlTextWriter.WriteAttributeString("Count", nullCount.ToString());
+                    xmlTextWriter.WriteEndElement();
+                    nullCount = 0;
+                }
+
+                // row closing tag
                 xmlTextWriter.WriteEndElement();
             }
 
+            // tile array closing tag
             xmlTextWriter.WriteEndElement();
 
             StoreProperties(layer, xmlTextWriter);

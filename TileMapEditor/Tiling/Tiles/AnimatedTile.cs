@@ -57,5 +57,22 @@ namespace Tiling.Tiles
         }
 
         public long FrameInterval { get { return m_frameInterval; } }
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Animated Indices=");
+            foreach (int tileIndex in m_tileIndices)
+            {
+                stringBuilder.Append(tileIndex);
+                stringBuilder.Append(' ');
+            }
+            stringBuilder.Append(" Interval=");
+            stringBuilder.Append(m_frameInterval);
+            stringBuilder.Append(" BlendMode=");
+            stringBuilder.Append(BlendMode);
+
+            return stringBuilder.ToString();    
+        }
     }
 }
