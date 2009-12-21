@@ -33,7 +33,7 @@ namespace Tiling.Format
 
         public void AdvanceNamedNode(XmlNodeType xmlNodeType, string nodeName)
         {
-            AdvanceNode(XmlNodeType.Element);
+            AdvanceNode(xmlNodeType);
 
             if (m_xmlReader.Name != nodeName)
                 throw new Exception("Node '" + nodeName + "' of type '"
@@ -50,12 +50,22 @@ namespace Tiling.Format
             AdvanceNamedNode(XmlNodeType.Element, elementName);
         }
 
-        public bool AdvanceStartRepeatedElement(string elementName)
+        public bool AdvanceStartRepeatedElement(string elementName, string closingContainerName)
         {
+            // handle empty container element
+            if (m_xmlReader.NodeType == XmlNodeType.Element && m_xmlReader.IsEmptyElement
+                && m_xmlReader.Name == closingContainerName)
+                return false;
+
             XmlNodeType xmlNodeType = AdvanceNode();
 
             if (xmlNodeType == XmlNodeType.EndElement)
-                return false;
+            {
+                if (m_xmlReader.Name == closingContainerName)
+                    return false;
+                else
+                    throw new Exception("Expected closing element '" + closingContainerName + "'");
+            }
 
             if (xmlNodeType != XmlNodeType.Element
                 || (xmlNodeType == XmlNodeType.Element && m_xmlReader.Name != elementName))
@@ -68,6 +78,9 @@ namespace Tiling.Format
 
         public void AdvanceEndElement(string elementName)
         {
+            if (m_xmlReader.IsEmptyElement && m_xmlReader.Name == elementName)
+                return;
+
             AdvanceNamedNode(XmlNodeType.EndElement, elementName);
         }
 

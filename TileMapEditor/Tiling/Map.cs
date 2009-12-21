@@ -58,6 +58,15 @@ namespace Tiling
             m_displaySize = Size.Zero;
         }
 
+        public Layer GetLayer(string layerId)
+        {
+            foreach (Layer layer in m_layers)
+                if (layer.Id == layerId)
+                    return layer;
+
+            return null;
+        }
+
         public void AddLayer(Layer layer)
         {
             InsertLayer(layer, m_layers.Count);
@@ -127,6 +136,15 @@ namespace Tiling
             return false;
         }
 
+        public TileSheet GetTileSheet(string tileSheetId)
+        {
+            foreach (TileSheet tileSheet in m_tileSheets)
+                if (tileSheet.Id == tileSheetId)
+                    return tileSheet;
+
+            return null;
+        }
+
         public void AddTileSheet(TileSheet tileSheet)
         {
             if (tileSheet.Map != this)
@@ -154,14 +172,6 @@ namespace Tiling
                     throw new Exception("Cannot remove TileSheet as it is in use by Layer " + layer.Id);
 
             m_tileSheets.Remove(tileSheet);
-        }
-
-        public TileSheet GetTileSheet(string tileSheetId)
-        {
-            foreach (TileSheet tileSheet in m_tileSheets)
-                if (tileSheet.Id == tileSheetId)
-                    return tileSheet;
-            return null;
         }
 
         public void Update(long timeInterval)
