@@ -350,6 +350,8 @@ namespace TileMapEditor
             if (openFileDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
+            StartWaitCursor();
+
             string fileExtension
                 = Path.GetExtension(openFileDialog.FileName).Replace(".", "");
 
@@ -400,6 +402,8 @@ namespace TileMapEditor
                     "An error occured whilst saving the file. Details: " + exception.Message,
                     "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            StopWaitCursor();
         }
 
         private void OnFileSave(object sender, EventArgs eventArgs)
