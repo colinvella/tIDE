@@ -497,7 +497,7 @@
             this.m_layerSendBackwardButton.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
             this.m_layerSendBackwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerSendBackwardButton.Name = "m_layerSendBackwardButton";
-            this.m_layerSendBackwardButton.Size = new System.Drawing.Size(23, 20);
+            this.m_layerSendBackwardButton.Size = new System.Drawing.Size(23, 22);
             this.m_layerSendBackwardButton.Text = "Send Backward";
             this.m_layerSendBackwardButton.ToolTipText = "Send layer backward";
             this.m_layerSendBackwardButton.Click += new System.EventHandler(this.OnLayerSendBackward);
@@ -514,7 +514,7 @@
             this.m_layerDeleteButton.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
             this.m_layerDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_layerDeleteButton.Name = "m_layerDeleteButton";
-            this.m_layerDeleteButton.Size = new System.Drawing.Size(23, 20);
+            this.m_layerDeleteButton.Size = new System.Drawing.Size(23, 22);
             this.m_layerDeleteButton.Text = "Delete Layer";
             this.m_layerDeleteButton.Click += new System.EventHandler(this.OnLayerDelete);
             // 
@@ -1434,6 +1434,7 @@
             this.m_mapPanel.Size = new System.Drawing.Size(543, 513);
             this.m_mapPanel.TabIndex = 0;
             this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
+            this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
             // 
             // m_toolsTileBrushButton
             // 

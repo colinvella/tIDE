@@ -840,6 +840,12 @@ namespace TileMapEditor
             }
         }
 
+        private void OnMapChanged(object sender, EventArgs eventArgs)
+        {
+            m_needsSaving = true;
+            UpdateFileControls();
+        }
+
         private void OnMapTilePicked(MapPanelEventArgs mapPanelEventArgs)
         {
             Tile tile = mapPanelEventArgs.Tile;
@@ -862,6 +868,5 @@ namespace TileMapEditor
         }
 
         #endregion
-
     }
 }

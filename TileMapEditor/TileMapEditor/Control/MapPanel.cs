@@ -124,7 +124,10 @@ namespace TileMapEditor.Control
             Tile newTile = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
             m_selectedLayer.Tiles[m_tileLayerLocation] = newTile;
 
-            m_innerPanel.Invalidate();        
+            m_innerPanel.Invalidate();
+
+            if (MapChanged != null)
+                MapChanged(this, new EventArgs());
         }
 
         private void DrawTileBlock()
@@ -155,6 +158,9 @@ namespace TileMapEditor.Control
                     m_selectedLayer.Tiles[tileX, tileY] = newTile;
 
             m_innerPanel.Invalidate();
+
+            if (MapChanged != null)
+                MapChanged(this, new EventArgs());
         }
 
         private void EraseTile()
@@ -165,11 +171,14 @@ namespace TileMapEditor.Control
             if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
                 return;
 
-            if (m_selectedLayer.Tiles[m_tileLayerLocation] != null)
-            {
-                m_selectedLayer.Tiles[m_tileLayerLocation] = null;
-                m_innerPanel.Invalidate();
-            }
+            if (m_selectedLayer.Tiles[m_tileLayerLocation] == null)
+                return;
+
+            m_selectedLayer.Tiles[m_tileLayerLocation] = null;
+            m_innerPanel.Invalidate();
+
+            if (MapChanged != null)
+                MapChanged(this, new EventArgs());
         }
 
         private void PickTile()
@@ -181,11 +190,15 @@ namespace TileMapEditor.Control
                 return;
 
             Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
-            if (TilePicked != null)
-            {
-                this.EditTool = EditTool.SingleTile;
-                TilePicked(new MapPanelEventArgs(tile));
-            }
+
+            if (TilePicked == null)
+                return;
+
+            this.EditTool = EditTool.SingleTile;
+            TilePicked(new MapPanelEventArgs(tile));
+
+            if (MapChanged != null)
+                MapChanged(this, new EventArgs());
         }
 
         private void ApplyTileBrush()
@@ -209,6 +222,9 @@ namespace TileMapEditor.Control
 
             m_selectedTileBrush.ApplyTo(m_selectedLayer, brushLocation, m_tileSelection);
             m_tileSelection.Clear();
+
+            if (MapChanged != null)
+                MapChanged(this, new EventArgs());
         }
 
         private void UpdateScrollBars()
@@ -830,7 +846,7 @@ namespace TileMapEditor.Control
         public event MapPanelEventHandler TilePicked;
 
         [Category("Behavior"), Description("Occurs when the map is changed")]
-        public event MapPanelEventHandler MapChanged;
+        public event EventHandler MapChanged;
 
         #endregion
     }
