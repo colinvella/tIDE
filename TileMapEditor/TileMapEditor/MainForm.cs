@@ -45,6 +45,23 @@ namespace TileMapEditor
 
         #region Private Methods
 
+        private string GenerateFileDialogFilter()
+        {
+            FormatManager formatManager = FormatManager.Instance;
+
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (IMapFormat mapFormat in formatManager.MapFormats)
+            {
+                if (stringBuilder.Length > 0)
+                    stringBuilder.Append('|');
+                stringBuilder.Append(mapFormat.FileExtensionDescriptor);
+                stringBuilder.Append("|*.");
+                stringBuilder.Append(mapFormat.FileExtension);
+            }
+
+            return stringBuilder.ToString();
+        }
+
         private void ArrangeToolStripLayout()
         {
             List<System.Windows.Forms.Control> controls = new List<System.Windows.Forms.Control>();
@@ -206,6 +223,15 @@ namespace TileMapEditor
             m_mapPanel.SelectedTileBrush = (TileBrush)toolStripMenuItemLast.Tag;
         }
 
+        private void UpdateAllControls()
+        {
+            UpdateFileControls();
+            UpdateZoomControls();
+            UpdateLayerVisibilityControls();
+            UpdateToolButtons();
+            UpdateTileBrushDropDown();
+        }
+
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
             Tiling.Format.FormatManager fm = Tiling.Format.FormatManager.Instance;
@@ -305,28 +331,88 @@ namespace TileMapEditor
             }
         }
 
+        private void OnFileOpen(object sender, EventArgs eventArgs)
+        {
+            if (m_needsSaving
+                && MessageBox.Show(this,
+                    "Any unsaved changes in the current map will be lost. Do you want to continue?",
+                    "Open Map", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                return;
+
+            FormatManager formatManager = FormatManager.Instance;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Open Map";
+            openFileDialog.Filter = GenerateFileDialogFilter();
+            openFileDialog.DefaultExt = formatManager.StandardFormat.FileExtension;
+            openFileDialog.AddExtension = true;
+
+            if (openFileDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            string fileExtension
+                = Path.GetExtension(openFileDialog.FileName).Replace(".", "");
+
+            IMapFormat selectedMapFormat
+                = formatManager.GetMapFormatByExtension(fileExtension);
+
+            Map newMap = null;
+            try
+            {
+                Stream stream = new FileStream(openFileDialog.FileName, FileMode.Open);
+                newMap = selectedMapFormat.Load(stream);
+                stream.Close();
+
+                ClipBoardManager.Instance.StoreTileBrush(null);
+                m_tileBrushCollection.TileBrushes.Clear();
+
+                m_map = newMap;
+
+                foreach (TileSheet tileSheet in m_map.TileSheets)
+                    TileImageCache.Instance.Refresh(tileSheet);
+                
+                m_mapTreeView.Map = m_map;
+                m_tilePicker.Map = m_map;
+                m_mapPanel.Map = m_map;
+
+                m_mapTreeView.UpdateTree();
+                m_tilePicker.UpdatePicker();
+
+                if (m_map.Layers.Count == 0)
+                {
+                    m_selectedComponent = null;
+                    m_mapTreeView.SelectedComponent = null;
+                }
+                else
+                {
+                    m_selectedComponent = m_mapTreeView.SelectedComponent = m_map.Layers[m_map.Layers.Count - 1];
+                }
+
+                m_mapPanel.Enabled = true;
+                m_mapPanel.Invalidate(true);
+
+                m_needsSaving = false;
+                UpdateAllControls();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this,
+                    "An error occured whilst saving the file. Details: " + exception.Message,
+                    "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void OnFileSave(object sender, EventArgs eventArgs)
         {
-
         }
 
         private void OnFileSaveAs(object sender, EventArgs e)
         {
             FormatManager formatManager = FormatManager.Instance;
 
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (IMapFormat mapFormat in formatManager.MapFormats)
-            {
-                if (stringBuilder.Length > 0)
-                    stringBuilder.Append('|');
-                stringBuilder.Append(mapFormat.FileExtensionDescriptor);
-                stringBuilder.Append("|*.");
-                stringBuilder.Append(mapFormat.FileExtension);
-            }
-
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save Map";
-            saveFileDialog.Filter = stringBuilder.ToString();
+            saveFileDialog.Filter = GenerateFileDialogFilter();
             saveFileDialog.DefaultExt = formatManager.StandardFormat.FileExtension;
             saveFileDialog.AddExtension = true;
 
