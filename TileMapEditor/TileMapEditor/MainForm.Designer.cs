@@ -205,8 +205,8 @@
             // m_splitContainerVertical.Panel2
             // 
             m_splitContainerVertical.Panel2.Controls.Add(this.m_tilePicker);
-            m_splitContainerVertical.Size = new System.Drawing.Size(200, 413);
-            m_splitContainerVertical.SplitterDistance = 181;
+            m_splitContainerVertical.Size = new System.Drawing.Size(200, 438);
+            m_splitContainerVertical.SplitterDistance = 191;
             m_splitContainerVertical.TabIndex = 1;
             // 
             // m_mapTreeView
@@ -216,7 +216,7 @@
             this.m_mapTreeView.Map = null;
             this.m_mapTreeView.Name = "m_mapTreeView";
             this.m_mapTreeView.SelectedComponent = null;
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 181);
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 191);
             this.m_mapTreeView.TabIndex = 0;
             this.m_mapTreeView.NewTileSheet += new System.EventHandler(this.OnTileSheetNew);
             this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
@@ -237,7 +237,7 @@
             this.m_tilePicker.Map = null;
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.SelectedTileSheet = null;
-            this.m_tilePicker.Size = new System.Drawing.Size(200, 228);
+            this.m_tilePicker.Size = new System.Drawing.Size(200, 243);
             this.m_tilePicker.TabIndex = 0;
             this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
             // 
@@ -321,7 +321,7 @@
             // 
             this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitContainerLeftRight);
             this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitter);
-            this.m_toolStripContainer.ContentPanel.Size = new System.Drawing.Size(784, 413);
+            this.m_toolStripContainer.ContentPanel.Size = new System.Drawing.Size(784, 438);
             this.m_toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.m_toolStripContainer.Name = "m_toolStripContainer";
@@ -332,11 +332,11 @@
             // 
             // m_toolStripContainer.TopToolStripPanel
             // 
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_viewToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_mapToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_layerToolStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_tileSheetToolStrip);
             // 
             // m_splitContainerLeftRight
@@ -352,7 +352,7 @@
             // m_splitContainerLeftRight.Panel2
             // 
             this.m_splitContainerLeftRight.Panel2.Controls.Add(this.m_toolStripContainerInner);
-            this.m_splitContainerLeftRight.Size = new System.Drawing.Size(780, 413);
+            this.m_splitContainerLeftRight.Size = new System.Drawing.Size(780, 438);
             this.m_splitContainerLeftRight.SplitterDistance = 200;
             this.m_splitContainerLeftRight.TabIndex = 3;
             // 
@@ -362,7 +362,7 @@
             // m_toolStripContainerInner.ContentPanel
             // 
             this.m_toolStripContainerInner.ContentPanel.Controls.Add(this.m_mapPanel);
-            this.m_toolStripContainerInner.ContentPanel.Size = new System.Drawing.Size(543, 413);
+            this.m_toolStripContainerInner.ContentPanel.Size = new System.Drawing.Size(543, 438);
             this.m_toolStripContainerInner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_toolStripContainerInner.Location = new System.Drawing.Point(0, 0);
             this.m_toolStripContainerInner.Name = "m_toolStripContainerInner";
@@ -370,7 +370,7 @@
             // m_toolStripContainerInner.RightToolStripPanel
             // 
             this.m_toolStripContainerInner.RightToolStripPanel.Controls.Add(this.m_toolsToolStrip);
-            this.m_toolStripContainerInner.Size = new System.Drawing.Size(576, 413);
+            this.m_toolStripContainerInner.Size = new System.Drawing.Size(576, 438);
             this.m_toolStripContainerInner.TabIndex = 1;
             this.m_toolStripContainerInner.Text = "toolStripContainer1";
             this.m_toolStripContainerInner.TopToolStripPanelVisible = false;
@@ -387,7 +387,7 @@
             this.m_mapPanel.SelectedLayer = null;
             this.m_mapPanel.SelectedTileIndex = 0;
             this.m_mapPanel.SelectedTileSheet = null;
-            this.m_mapPanel.Size = new System.Drawing.Size(543, 413);
+            this.m_mapPanel.Size = new System.Drawing.Size(543, 438);
             this.m_mapPanel.TabIndex = 0;
             this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
             this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
@@ -479,7 +479,7 @@
             // 
             this.m_splitter.Location = new System.Drawing.Point(0, 0);
             this.m_splitter.Name = "m_splitter";
-            this.m_splitter.Size = new System.Drawing.Size(4, 413);
+            this.m_splitter.Size = new System.Drawing.Size(4, 438);
             this.m_splitter.TabIndex = 1;
             this.m_splitter.TabStop = false;
             // 
@@ -498,7 +498,7 @@
             this.m_pluginsMenuItem,
             this.m_helpMenuItem});
             this.m_menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.m_menuStrip.Location = new System.Drawing.Point(0, 75);
+            this.m_menuStrip.Location = new System.Drawing.Point(0, 0);
             this.m_menuStrip.Name = "m_menuStrip";
             this.m_menuStrip.Size = new System.Drawing.Size(784, 24);
             this.m_menuStrip.TabIndex = 0;
@@ -1048,7 +1048,7 @@
             this.m_editToolStripSeparator3,
             this.m_editMakeTileBrushButton,
             this.m_editManageTileBrushesButton});
-            this.m_editToolStrip.Location = new System.Drawing.Point(3, 99);
+            this.m_editToolStrip.Location = new System.Drawing.Point(9, 24);
             this.m_editToolStrip.Name = "m_editToolStrip";
             this.m_editToolStrip.Size = new System.Drawing.Size(283, 25);
             this.m_editToolStrip.TabIndex = 1;
@@ -1200,7 +1200,7 @@
             m_viewSeparator2,
             this.m_viewLayerCompositingButton,
             this.m_viewTileGuidesButton});
-            this.m_viewToolStrip.Location = new System.Drawing.Point(3, 0);
+            this.m_viewToolStrip.Location = new System.Drawing.Point(292, 24);
             this.m_viewToolStrip.Name = "m_viewToolStrip";
             this.m_viewToolStrip.Size = new System.Drawing.Size(232, 25);
             this.m_viewToolStrip.TabIndex = 5;
@@ -1288,7 +1288,7 @@
             this.m_mapToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.m_mapToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_mapPropertiesButton});
-            this.m_mapToolStrip.Location = new System.Drawing.Point(115, 25);
+            this.m_mapToolStrip.Location = new System.Drawing.Point(115, 49);
             this.m_mapToolStrip.Name = "m_mapToolStrip";
             this.m_mapToolStrip.Size = new System.Drawing.Size(35, 25);
             this.m_mapToolStrip.TabIndex = 2;
@@ -1315,7 +1315,7 @@
             this.m_layerSendBackwardButton,
             this.m_layerToolStripSeparator2,
             this.m_layerDeleteButton});
-            this.m_layerToolStrip.Location = new System.Drawing.Point(3, 50);
+            this.m_layerToolStrip.Location = new System.Drawing.Point(3, 74);
             this.m_layerToolStrip.Name = "m_layerToolStrip";
             this.m_layerToolStrip.Size = new System.Drawing.Size(162, 25);
             this.m_layerToolStrip.TabIndex = 4;
@@ -1408,7 +1408,7 @@
             this.m_tileSheetPropertiesButton,
             m_tileSheetToolStripSeparator1,
             this.m_tileSheetDeleteButton});
-            this.m_tileSheetToolStrip.Location = new System.Drawing.Point(63, 124);
+            this.m_tileSheetToolStrip.Location = new System.Drawing.Point(63, 99);
             this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
             this.m_tileSheetToolStrip.Size = new System.Drawing.Size(87, 25);
             this.m_tileSheetToolStrip.TabIndex = 3;
