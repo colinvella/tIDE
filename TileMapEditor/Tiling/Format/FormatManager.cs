@@ -39,6 +39,15 @@ namespace Tiling.Format
             m_mapFormats.Remove(mapFormat.Name);
         }
 
+        public IMapFormat GetMapFormatByExtension(string fileExtension)
+        {
+            foreach (IMapFormat mapFormat in m_mapFormats.Values)
+                if (mapFormat.FileExtension.Equals(fileExtension,
+                    StringComparison.InvariantCultureIgnoreCase))
+                    return mapFormat;
+            return null;
+        }
+
         public IMapFormat this[string mapFormatName]
         {
             get

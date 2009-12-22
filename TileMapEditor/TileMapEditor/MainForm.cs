@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -324,8 +325,33 @@ namespace TileMapEditor
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save Map";
             saveFileDialog.Filter = stringBuilder.ToString();
+            saveFileDialog.DefaultExt = formatManager.StandardFormat.FileExtension;
+            saveFileDialog.AddExtension = true;
 
-            saveFileDialog.ShowDialog(this);
+            if (saveFileDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            string fileExtension
+                = Path.GetExtension(saveFileDialog.FileName).Replace(".", "");
+
+            IMapFormat selectedMapFormat
+                = formatManager.GetMapFormatByExtension(fileExtension);
+
+            try
+            {
+                Stream stream = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                selectedMapFormat.Store(m_map, stream);
+                stream.Close();
+
+                m_needsSaving = false;
+                UpdateFileControls();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this,
+                    "An error occured whilst saving the file. Details: " + exception.Message,
+                    "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+            }
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
