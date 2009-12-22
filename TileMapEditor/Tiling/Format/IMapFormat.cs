@@ -16,6 +16,8 @@ namespace Tiling.Format
 
         string Name { get; }
 
+        string FileExtensionDescriptor { get; }
+
         string FileExtension { get; }
     }
 }

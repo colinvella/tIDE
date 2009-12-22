@@ -436,7 +436,12 @@ namespace Tiling.Format
 
         public string Name
         {
-            get { return "Map Files"; }
+            get { return "Standard Map File"; }
+        }
+
+        public string FileExtensionDescriptor
+        {
+            get { return "Map Files (*.tmex)"; }
         }
 
         public string FileExtension

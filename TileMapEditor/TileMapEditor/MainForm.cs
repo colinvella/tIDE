@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 using Tiling;
 using Tiling.Dimensions;
+using Tiling.Format;
 using Tiling.Layers;
 using Tiling.ObjectModel;
 using Tiling.Tiles;
@@ -299,6 +300,32 @@ namespace TileMapEditor
 
                 m_selectedComponent = null;
             }
+        }
+
+        private void OnFileSave(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void OnFileSaveAs(object sender, EventArgs e)
+        {
+            FormatManager formatManager = FormatManager.Instance;
+
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (IMapFormat mapFormat in formatManager.MapFormats)
+            {
+                if (stringBuilder.Length > 0)
+                    stringBuilder.Append('|');
+                stringBuilder.Append(mapFormat.FileExtensionDescriptor);
+                stringBuilder.Append("|*.");
+                stringBuilder.Append(mapFormat.FileExtension);
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save Map";
+            saveFileDialog.Filter = stringBuilder.ToString();
+
+            saveFileDialog.ShowDialog(this);
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
