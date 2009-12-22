@@ -70,33 +70,37 @@ namespace Tiling.Layers
             Size mapDisplaySize = m_map.DisplaySize;
 
             return new Rectangle(
-                ConvertMapToLayerLocation(mapViewPort.Location),
-                mapViewPort.Size);
+                ConvertMapToLayerLocation(
+                    mapViewPort.Location, mapViewPort.Size),
+                    mapViewPort.Size);
         }
 
-        public Location ConvertMapToLayerLocation(Location mapDisplayLocation)
+        public Location ConvertMapToLayerLocation(Location mapDisplayLocation, Size viewPortSize)
+        {
+            Size mapDisplaySize = m_map.DisplaySize;
+            Size layerDisplaySize = DisplaySize;
+
+            int viewPortWidth = viewPortSize.Width;
+            int viewPortHeight = viewPortSize.Height;
+
+            return new Location(
+                (mapDisplayLocation.X * (layerDisplaySize.Width - viewPortWidth)) / (mapDisplaySize.Width - viewPortWidth),
+                (mapDisplayLocation.Y * (layerDisplaySize.Height - viewPortHeight)) / (mapDisplaySize.Height - viewPortHeight));
+        }
+
+        public Location ConvertLayerToMapLocation(Location layerDisplayLocation, Size viewPortSize)
         {
             Size mapDisplaySize = m_map.DisplaySize;
             Size layerDisplaySize = DisplaySize;
 
             return new Location(
-                (mapDisplayLocation.X * layerDisplaySize.Width) / mapDisplaySize.Width,
-                (mapDisplayLocation.Y * layerDisplaySize.Height) / mapDisplaySize.Height);
-        }
-
-        public Location ConvertLayerToMapLocation(Location layerDisplayLocation)
-        {
-            Size mapDisplaySize = m_map.DisplaySize;
-            Size layerDisplaySize = DisplaySize;
-
-            return new Location(
-                (layerDisplayLocation.X * mapDisplaySize.Width) / layerDisplaySize.Width,
-                (layerDisplayLocation.Y * mapDisplaySize.Height) / layerDisplaySize.Height);
+                (layerDisplayLocation.X * (mapDisplaySize.Width - viewPortSize.Width)) / (layerDisplaySize.Width - viewPortSize.Width),
+                (layerDisplayLocation.Y * (mapDisplaySize.Height - viewPortSize.Height)) / (layerDisplaySize.Height - viewPortSize.Height));
         }
 
         public Rectangle GetTileDisplayRectangle(Rectangle mapViewPort, Location tileLocation)
         {
-            Location layerViewportLocation = ConvertMapToLayerLocation(mapViewPort.Location);
+            Location layerViewportLocation = ConvertMapToLayerLocation(mapViewPort.Location, mapViewPort.Size);
 
             Location tileDisplayLocation = new Location(
                 tileLocation.X * m_tileSize.Width, tileLocation.Y * m_tileSize.Height);
@@ -106,9 +110,9 @@ namespace Tiling.Layers
             return new Rectangle(tileDisplayOffset, m_tileSize);
         }
 
-        public Tile PickTile(Location mapDisplayLocation)
+        public Tile PickTile(Location mapDisplayLocation, Size viewPortSize)
         {
-            Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation);
+            Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation, viewPortSize);
             if (IsValidTileLocation(tileLocation))
                 return m_tiles[tileLocation.X, tileLocation.Y];
             else

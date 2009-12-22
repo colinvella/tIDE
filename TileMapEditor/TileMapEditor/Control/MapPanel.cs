@@ -66,7 +66,7 @@ namespace TileMapEditor.Control
         private Location ConvertViewportOffsetToLayerLocation(Location viewPortOffset)
         {
             Location layerLocation
-                = m_selectedLayer.ConvertMapToLayerLocation(m_viewPort.Location);
+                = m_selectedLayer.ConvertMapToLayerLocation(m_viewPort.Location, m_viewPort.Size);
 
             Tiling.Dimensions.Size tileSize = m_selectedLayer.TileSize;
             layerLocation.X /= tileSize.Width;
@@ -321,7 +321,8 @@ namespace TileMapEditor.Control
             Layer layer = layerEventArgs.Layer;
             Tiling.Dimensions.Rectangle viewPort = layerEventArgs.ViewPort;
             Tiling.Dimensions.Size tileSize = layer.TileSize;
-            Tiling.Dimensions.Location layerViewPortLocation = m_selectedLayer.ConvertMapToLayerLocation(viewPort.Location);
+            Tiling.Dimensions.Location layerViewPortLocation
+                = m_selectedLayer.ConvertMapToLayerLocation(viewPort.Location, m_viewPort.Size);
 
             // tile guide
             if (m_tileGuides)

@@ -31,7 +31,7 @@ namespace TileMapEditor.Plugin.Bridge
                 return;
 
             Location layerDisplayLocation = layer.ConvertMapToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y));
+                new Location(mouseEventArgs.X, mouseEventArgs.Y), Size.Zero);
             Location tileLocation = layer.GetTileLocation(layerDisplayLocation);
 
             m_mouseDown(mouseEventArgs, tileLocation);
@@ -47,7 +47,7 @@ namespace TileMapEditor.Plugin.Bridge
                 return;
 
             Location layerDisplayLocation = layer.ConvertMapToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y));
+                new Location(mouseEventArgs.X, mouseEventArgs.Y), Size.Zero);
             Location tileLocation = layer.GetTileLocation(layerDisplayLocation);
 
             m_mouseMove(mouseEventArgs, tileLocation);
@@ -63,7 +63,7 @@ namespace TileMapEditor.Plugin.Bridge
                 return;
 
             Location layerDisplayLocation = layer.ConvertMapToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y));
+                new Location(mouseEventArgs.X, mouseEventArgs.Y), Size.Zero);
             Location tileLocation = layer.GetTileLocation(layerDisplayLocation);
 
             m_mouseUp(mouseEventArgs, tileLocation);
