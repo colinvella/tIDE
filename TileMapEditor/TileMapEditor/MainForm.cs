@@ -84,7 +84,9 @@ namespace TileMapEditor
 
         private void UpdateFileControls()
         {
-            m_fileSaveMenuItem.Enabled = m_needsSaving;
+            m_fileSaveMenuItem.Enabled
+                = m_fileSaveButton.Enabled
+                = m_needsSaving;
         }
 
         private void UpdateZoomControls()
