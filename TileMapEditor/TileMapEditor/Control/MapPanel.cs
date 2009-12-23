@@ -819,6 +819,11 @@ namespace TileMapEditor.Control
             }
         }
 
+        public Tiling.Dimensions.Rectangle ViewPort
+        {
+            get { return m_viewPort; }
+        }
+
         public TileSheet SelectedTileSheet
         {
             get { return m_selectedTileSheet; }
