@@ -431,8 +431,8 @@ namespace TileMapEditor.Dialog
 
                 Brush brush = new SolidBrush(Color.FromArgb(64, SystemColors.ActiveBorder));
 
-                for (int posY = marginTop; posY + tileHeight < imageHeight; posY += tileHeight + tilePaddingY)
-                    for (int posX = marginLeft; posX + tileWidth < imageWidth; posX += tileWidth + tilePaddingX)
+                for (int posY = marginTop; posY + tileHeight <= imageHeight; posY += tileHeight + tilePaddingY)
+                    for (int posX = marginLeft; posX + tileWidth <= imageWidth; posX += tileWidth + tilePaddingX)
                     {
                         graphics.FillRectangle(brush, posX, posY, tileWidth, tileHeight);
                         graphics.DrawRectangle(pen, posX, posY, tileWidth, tileHeight);
