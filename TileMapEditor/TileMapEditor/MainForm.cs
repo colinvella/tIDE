@@ -1003,6 +1003,16 @@ namespace TileMapEditor
             UpdateToolButtons();
         }
 
+        private void OnTileHover(MapPanelEventArgs mapPanelEventArgs)
+        {
+            Tile tile = mapPanelEventArgs.Tile;
+            Location tileLocation = mapPanelEventArgs.Location;
+            m_tileLocationStatusLabel.Text = mapPanelEventArgs.Location.ToString();
+
+            string tileDetail = tile == null ? "" : tile.TileSheet.Id + ":" + tile.TileIndex;
+            m_tileDetailSheetStatusLabel.Text = tileDetail;
+        }
+
         #endregion
 
         #region Public Methods

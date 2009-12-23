@@ -195,7 +195,7 @@ namespace TileMapEditor.Control
                 return;
 
             this.EditTool = EditTool.SingleTile;
-            TilePicked(new MapPanelEventArgs(tile));
+            TilePicked(new MapPanelEventArgs(tile, m_tileLayerLocation));
 
             if (MapChanged != null)
                 MapChanged(this, new EventArgs());
@@ -484,6 +484,15 @@ namespace TileMapEditor.Control
                     case EditTool.Eraser: EraseTile(); break;
                     case EditTool.Dropper: PickTile(); break;
                 }
+            }
+
+            if (TileHover != null && m_selectedLayer != null)
+            {
+                Tile tile = m_selectedLayer.IsValidTileLocation(m_tileLayerLocation)
+                    ? m_selectedLayer.Tiles[m_tileLayerLocation]
+                    : null;
+                TileHover(new MapPanelEventArgs
+                    (tile, m_tileLayerLocation));
             }
         }
 
@@ -873,6 +882,9 @@ namespace TileMapEditor.Control
 
         [Category("Behavior"), Description("Occurs when the map is changed")]
         public event EventHandler MapChanged;
+
+        [Category("Behavior"), Description("Occurs when the mouse hovers over a tile")]
+        public event MapPanelEventHandler TileHover;
 
         #endregion
     }
