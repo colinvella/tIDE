@@ -522,6 +522,7 @@ namespace TileMapEditor.Control
 
             if (m_map != null)
             {
+                // handle zero layer case
                 if (m_map.Layers.Count == 0)
                 {
                     m_graphics.Transform = new Matrix();
@@ -537,13 +538,21 @@ namespace TileMapEditor.Control
                 UpdateScrollBars();
                 BindLayerDrawEvents();
 
-                // reset translucency
+                // set translucency
                 m_colorMatrix.Matrix33 = m_layerCompositing == LayerCompositing.DimUnselected ? 0.25f : 1.0f;
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
+                // draw map
                 m_map.Draw(this, m_viewPort);
 
-                // border
+                // reset transulency
+                m_colorMatrix.Matrix33 = 1.0f;
+                m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                // reset clipping region
+                m_graphics.SetClip(this.ClientRectangle);
+
+                // map border
                 Location borderCorner = -m_viewPort.Location;
                 borderCorner.X += m_map.DisplaySize.Width;
                 borderCorner.Y += m_map.DisplaySize.Height;
@@ -570,6 +579,17 @@ namespace TileMapEditor.Control
                 }
             }
 
+            // viewport border
+            Pen viewPortPen = new Pen(SystemColors.ControlDarkDark, 1.0f / m_zoom);
+            viewPortPen.DashStyle = DashStyle.Dot;
+            m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
+            m_graphics.DrawRectangle(Pens.Black, 0, 0, m_viewPort.Size.Width, m_viewPort.Size.Height);
+
+            Brush viewPortBrush = new SolidBrush(Color.FromArgb(128, SystemColors.ControlDarkDark));
+            m_graphics.FillRectangle(SystemBrushes.ControlDarkDark, 0, m_viewPort.Size.Height, ClientSize.Width, ClientSize.Height - m_viewPort.Size.Height);
+            m_graphics.FillRectangle(SystemBrushes.ControlDarkDark, m_viewPort.Size.Width, 0, ClientSize.Width - m_viewPort.Size.Width, m_viewPort.Size.Height);
+
+            // dim out control if disabled
             if (!Enabled)
             {
                 m_graphics.Transform = new Matrix();
