@@ -184,6 +184,14 @@ namespace TileMapEditor
                 ? "Hide Tile Guides" : "Show Tile Guides";
         }
 
+        private void UpdateTileSheetControls()
+        {
+            m_tileSheetPropertiesMenuItem.Enabled
+                = m_tileSheetPropertiesButton.Enabled
+                = m_tileSheetDeleteMenuItem.Enabled
+                = m_tileSheetDeleteButton.Enabled = m_mapTreeView.SelectedComponent is TileSheet;
+        }
+
         private void UpdateToolButtons()
         {
             EditTool editTool = m_mapPanel.EditTool;
@@ -228,6 +236,7 @@ namespace TileMapEditor
             UpdateFileControls();
             UpdateZoomControls();
             UpdateLayerVisibilityControls();
+            UpdateTileSheetControls();
             UpdateToolButtons();
             UpdateTileBrushDropDown();
         }
@@ -917,15 +926,10 @@ namespace TileMapEditor
                     = m_layerSendBackwardButton.Enabled
                     = false;
 
+            m_selectedComponent = component;
 
             // enable/disable tile sheet menu items as applicable
-            m_tileSheetPropertiesMenuItem.Enabled
-                = m_tileSheetDeleteMenuItem.Enabled
-                = m_tileSheetPropertiesButton.Enabled
-                = m_tileSheetDeleteButton.Enabled
-                = component != null && component is TileSheet;
-
-            m_selectedComponent = component;
+            UpdateTileSheetControls();
         }
 
         private void OnToolsSelect(object sender, EventArgs e)
@@ -1009,7 +1013,7 @@ namespace TileMapEditor
             Location tileLocation = mapPanelEventArgs.Location;
             m_tileLocationStatusLabel.Text = mapPanelEventArgs.Location.ToString();
 
-            string tileDetail = tile == null ? "" : tile.TileSheet.Id + ":" + tile.TileIndex;
+            string tileDetail = tile == null ? "" : tile.TileSheet.Id + " : " + tile.TileIndex;
             m_tileDetailSheetStatusLabel.Text = tileDetail;
         }
 
