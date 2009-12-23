@@ -83,9 +83,21 @@ namespace Tiling.Layers
             int viewPortWidth = viewPortSize.Width;
             int viewPortHeight = viewPortSize.Height;
 
-            return new Location(
-                (mapDisplayLocation.X * (layerDisplaySize.Width - viewPortWidth)) / (mapDisplaySize.Width - viewPortWidth),
-                (mapDisplayLocation.Y * (layerDisplaySize.Height - viewPortHeight)) / (mapDisplaySize.Height - viewPortHeight));
+            int layerWidthDifference = layerDisplaySize.Width - viewPortWidth;
+            int layerHeightDifference = layerDisplaySize.Height - viewPortHeight;
+
+            int mapWidthDifference = mapDisplaySize.Width - viewPortWidth;
+            int mapHeightDifference = mapDisplaySize.Height - viewPortHeight;
+
+            int layerLocationX = mapWidthDifference >= 0
+                ? mapDisplayLocation.X * layerWidthDifference / mapWidthDifference
+                : 0;
+
+            int layerLocationY = mapHeightDifference >= 0
+                ? mapDisplayLocation.Y * layerHeightDifference / mapHeightDifference
+                : 0;
+
+            return new Location(layerLocationX, layerLocationY);
         }
 
         public Location ConvertLayerToMapLocation(Location layerDisplayLocation, Size viewPortSize)
@@ -133,6 +145,18 @@ namespace Tiling.Layers
             int tileXMin = mapViewPort.Location.X / m_tileSize.Width;
             int tileYMin = mapViewPort.Location.Y / m_tileSize.Height;
 
+            // determine tile-level viewport location limits
+            if (tileXMin < 0)
+            {
+                displayOffset.X -= tileXMin * m_tileSize.Width;
+                tileXMin = 0;
+            }
+            if (tileYMin < 0)
+            {
+                displayOffset.Y -= tileYMin * m_tileSize.Height;
+                tileYMin = 0;
+            }
+
             // determine tile-level viewport size
             int tileColumns = 1 + (mapViewPort.Size.Width - 1) / m_tileSize.Width;
             int tileRows = 1 + (mapViewPort.Size.Height - 1) / m_tileSize.Height;
@@ -143,7 +167,7 @@ namespace Tiling.Layers
             if (tileInternalOffset.Y != 0)
                 ++tileRows;
 
-            // determine tile-level viewport limits
+            // determine tile-level viewport size limits
             int tileXMax = Math.Min(tileXMin + tileColumns, m_layerSize.Width);
             int tileYMax = Math.Min(tileYMin + tileRows, m_layerSize.Height);
 
