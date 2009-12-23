@@ -155,7 +155,8 @@ namespace TileMapEditor.Control
                 if (m_tileSheet == value)
                     return;
 
-                m_comboBoxTileSheets.SelectedText = value.Id;
+                m_comboBoxTileSheets.SelectedIndex = m_map.TileSheets.IndexOf(value);
+                OnSelectTileSheet(this, new EventArgs());
             }
         }
 
