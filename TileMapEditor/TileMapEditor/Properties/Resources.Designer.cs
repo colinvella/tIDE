@@ -424,6 +424,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ViewViewPort {
+            get {
+                object obj = ResourceManager.GetObject("ViewViewPort", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ViewWindowed {
             get {
                 object obj = ResourceManager.GetObject("ViewWindowed", resourceCulture);
