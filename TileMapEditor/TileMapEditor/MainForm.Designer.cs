@@ -69,15 +69,11 @@
             this.m_statusStrip = new System.Windows.Forms.StatusStrip();
             this.m_tileLocationStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_tileDetailSheetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
-            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
-            this.m_mapPanel = new TileMapEditor.Control.MapPanel();
             this.m_toolsSelectButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsSingleTileButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsTileBlockButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsEraserButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsDropperButton = new System.Windows.Forms.ToolStripButton();
-            this.m_toolsTileBrushButton = new TileMapEditor.Control.CustomToolStripSplitButton();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,7 +162,7 @@
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewViewport1920x1280MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewViewport1920x1080MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport1280x1024MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport320x200MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport320x240MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,7 +171,13 @@
             this.m_viewViewport1024x768MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport1280x720MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport1280x768MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_viewViewport1360x768MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
+            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
+            this.m_mapPanel = new TileMapEditor.Control.MapPanel();
+            this.m_toolsTileBrushButton = new TileMapEditor.Control.CustomToolStripSplitButton();
+            this.m_viewViewport1920x1200MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewViewport1600x1200MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewViewport800x600MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -535,56 +537,6 @@
             this.m_tileDetailSheetStatusLabel.Size = new System.Drawing.Size(10, 17);
             this.m_tileDetailSheetStatusLabel.Text = " ";
             // 
-            // m_mapTreeView
-            // 
-            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
-            this.m_mapTreeView.Map = null;
-            this.m_mapTreeView.Name = "m_mapTreeView";
-            this.m_mapTreeView.SelectedComponent = null;
-            this.m_mapTreeView.Size = new System.Drawing.Size(200, 201);
-            this.m_mapTreeView.TabIndex = 0;
-            this.m_mapTreeView.NewTileSheet += new System.EventHandler(this.OnTileSheetNew);
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
-            this.m_mapTreeView.LayerVisibility += new System.EventHandler(this.OnLayerVisibility);
-            this.m_mapTreeView.BringLayerForward += new System.EventHandler(this.OnLayerBringForward);
-            this.m_mapTreeView.LayerProperties += new System.EventHandler(this.OnLayerProperties);
-            this.m_mapTreeView.DeleteTileSheet += new System.EventHandler(this.OnTileSheetDelete);
-            this.m_mapTreeView.MapProperties += new System.EventHandler(this.OnMapProperties);
-            this.m_mapTreeView.SendLayerBackward += new System.EventHandler(this.OnLayerSendBackward);
-            this.m_mapTreeView.NewLayer += new System.EventHandler(this.OnLayerNew);
-            this.m_mapTreeView.DeleteLayer += new System.EventHandler(this.OnLayerDelete);
-            this.m_mapTreeView.TileSheetProperties += new System.EventHandler(this.OnTileSheetProperties);
-            // 
-            // m_tilePicker
-            // 
-            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
-            this.m_tilePicker.Map = null;
-            this.m_tilePicker.Name = "m_tilePicker";
-            this.m_tilePicker.SelectedTileSheet = null;
-            this.m_tilePicker.Size = new System.Drawing.Size(200, 258);
-            this.m_tilePicker.TabIndex = 0;
-            this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
-            // 
-            // m_mapPanel
-            // 
-            this.m_mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapPanel.EditTool = TileMapEditor.Control.EditTool.SingleTile;
-            this.m_mapPanel.Enabled = false;
-            this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
-            this.m_mapPanel.Map = null;
-            this.m_mapPanel.Name = "m_mapPanel";
-            this.m_mapPanel.SelectedLayer = null;
-            this.m_mapPanel.SelectedTileIndex = 0;
-            this.m_mapPanel.SelectedTileSheet = null;
-            this.m_mapPanel.Size = new System.Drawing.Size(543, 441);
-            this.m_mapPanel.TabIndex = 0;
-            this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
-            this.m_mapPanel.TileHover += new TileMapEditor.Control.MapPanelEventHandler(this.OnTileHover);
-            this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
-            // 
             // m_toolsSelectButton
             // 
             this.m_toolsSelectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -639,19 +591,6 @@
             this.m_toolsDropperButton.Text = "toolStripButton4";
             this.m_toolsDropperButton.ToolTipText = "Pick tiles from the map [ P ]";
             this.m_toolsDropperButton.Click += new System.EventHandler(this.OnToolsDropper);
-            // 
-            // m_toolsTileBrushButton
-            // 
-            this.m_toolsTileBrushButton.Checked = false;
-            this.m_toolsTileBrushButton.CheckState = System.Windows.Forms.CheckState.Unchecked;
-            this.m_toolsTileBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsTileBrushButton.Image = global::TileMapEditor.Properties.Resources.ToolsTileBrush;
-            this.m_toolsTileBrushButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_toolsTileBrushButton.Name = "m_toolsTileBrushButton";
-            this.m_toolsTileBrushButton.Size = new System.Drawing.Size(31, 20);
-            this.m_toolsTileBrushButton.Text = "toolStripSplitButton1";
-            this.m_toolsTileBrushButton.ToolTipText = "Lay a tile brush";
-            this.m_toolsTileBrushButton.ButtonClick += new System.EventHandler(this.OnToolsTileBrush);
             // 
             // m_fileMenuItem
             // 
@@ -1037,13 +976,15 @@
             this.m_viewViewport320x200MenuItem,
             this.m_viewViewport320x240MenuItem,
             this.m_viewViewport640x480MenuItem,
+            this.m_viewViewport800x600MenuItem,
             this.m_viewViewport848x480MenuItem,
             this.m_viewViewport1024x768MenuItem,
             this.m_viewViewport1280x720MenuItem,
             this.m_viewViewport1280x768MenuItem,
             this.m_viewViewport1280x1024MenuItem,
-            this.m_viewViewport1360x768MenuItem,
-            this.m_viewViewport1920x1280MenuItem});
+            this.m_viewViewport1600x1200MenuItem,
+            this.m_viewViewport1920x1080MenuItem,
+            this.m_viewViewport1920x1200MenuItem});
             this.m_viewViewPortMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewViewPort;
             this.m_viewViewPortMenuItem.Name = "m_viewViewPortMenuItem";
             this.m_viewViewPortMenuItem.Size = new System.Drawing.Size(174, 22);
@@ -1054,7 +995,7 @@
             this.m_viewViewPortScaleToWindowMenuItem.Checked = true;
             this.m_viewViewPortScaleToWindowMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_viewViewPortScaleToWindowMenuItem.Name = "m_viewViewPortScaleToWindowMenuItem";
-            this.m_viewViewPortScaleToWindowMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewPortScaleToWindowMenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewPortScaleToWindowMenuItem.Tag = "Scale";
             this.m_viewViewPortScaleToWindowMenuItem.Text = "Scale To Window";
             // 
@@ -1601,75 +1542,152 @@
             this.m_tileSheetDeleteButton.Text = "Delete Tile Sheet";
             this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
-            // m_viewViewport1920x1280MenuItem
+            // m_viewViewport1920x1080MenuItem
             // 
-            this.m_viewViewport1920x1280MenuItem.Name = "m_viewViewport1920x1280MenuItem";
-            this.m_viewViewport1920x1280MenuItem.Size = new System.Drawing.Size(175, 22);
-            this.m_viewViewport1920x1280MenuItem.Tag = "1920 x 1080";
-            this.m_viewViewport1920x1280MenuItem.Text = "1920 x 1080 (1080p)";
+            this.m_viewViewport1920x1080MenuItem.Name = "m_viewViewport1920x1080MenuItem";
+            this.m_viewViewport1920x1080MenuItem.Size = new System.Drawing.Size(186, 22);
+            this.m_viewViewport1920x1080MenuItem.Tag = "1920 x 1080";
+            this.m_viewViewport1920x1080MenuItem.Text = "1920 x 1080 (1080p)";
             // 
             // m_viewViewport1280x1024MenuItem
             // 
             this.m_viewViewport1280x1024MenuItem.Name = "m_viewViewport1280x1024MenuItem";
-            this.m_viewViewport1280x1024MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport1280x1024MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport1280x1024MenuItem.Tag = "1280 x 1024";
-            this.m_viewViewport1280x1024MenuItem.Text = "1280 x 1024";
+            this.m_viewViewport1280x1024MenuItem.Text = "1280 x 1024 (SXGA)";
             // 
             // m_viewViewport320x200MenuItem
             // 
             this.m_viewViewport320x200MenuItem.Name = "m_viewViewport320x200MenuItem";
-            this.m_viewViewport320x200MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport320x200MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport320x200MenuItem.Tag = "320 x 200";
-            this.m_viewViewport320x200MenuItem.Text = "320 x 200";
+            this.m_viewViewport320x200MenuItem.Text = "320 x 200 (CGA)";
             // 
             // m_viewViewport320x240MenuItem
             // 
             this.m_viewViewport320x240MenuItem.Name = "m_viewViewport320x240MenuItem";
-            this.m_viewViewport320x240MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport320x240MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport320x240MenuItem.Tag = "320 x 240";
-            this.m_viewViewport320x240MenuItem.Text = "320 x 240";
+            this.m_viewViewport320x240MenuItem.Text = "320 x 240 (QVGA)";
             // 
             // m_viewViewport640x480MenuItem
             // 
             this.m_viewViewport640x480MenuItem.Name = "m_viewViewport640x480MenuItem";
-            this.m_viewViewport640x480MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport640x480MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport640x480MenuItem.Tag = "640 x 480";
-            this.m_viewViewport640x480MenuItem.Text = "640 x 480";
+            this.m_viewViewport640x480MenuItem.Text = "640 x 480 (VGA)";
             // 
             // m_viewViewport848x480MenuItem
             // 
             this.m_viewViewport848x480MenuItem.Name = "m_viewViewport848x480MenuItem";
-            this.m_viewViewport848x480MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport848x480MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport848x480MenuItem.Tag = "848 x 480";
-            this.m_viewViewport848x480MenuItem.Text = "848 x 480";
+            this.m_viewViewport848x480MenuItem.Text = "848 x 480 (WVGA)";
             // 
             // m_viewViewport1024x768MenuItem
             // 
             this.m_viewViewport1024x768MenuItem.Name = "m_viewViewport1024x768MenuItem";
-            this.m_viewViewport1024x768MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport1024x768MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport1024x768MenuItem.Tag = "1024 x 768";
-            this.m_viewViewport1024x768MenuItem.Text = "1024 x 768";
+            this.m_viewViewport1024x768MenuItem.Text = "1024 x 768 (XGA)";
             // 
             // m_viewViewport1280x720MenuItem
             // 
             this.m_viewViewport1280x720MenuItem.Name = "m_viewViewport1280x720MenuItem";
-            this.m_viewViewport1280x720MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport1280x720MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport1280x720MenuItem.Tag = "1280 x 720";
             this.m_viewViewport1280x720MenuItem.Text = "1280 x 720 (720p)";
             // 
             // m_viewViewport1280x768MenuItem
             // 
             this.m_viewViewport1280x768MenuItem.Name = "m_viewViewport1280x768MenuItem";
-            this.m_viewViewport1280x768MenuItem.Size = new System.Drawing.Size(175, 22);
+            this.m_viewViewport1280x768MenuItem.Size = new System.Drawing.Size(186, 22);
             this.m_viewViewport1280x768MenuItem.Tag = "1280 x 768";
-            this.m_viewViewport1280x768MenuItem.Text = "1280 x 768";
+            this.m_viewViewport1280x768MenuItem.Text = "1280 x 768 (WXGA)";
             // 
-            // m_viewViewport1360x768MenuItem
+            // m_mapTreeView
             // 
-            this.m_viewViewport1360x768MenuItem.Name = "m_viewViewport1360x768MenuItem";
-            this.m_viewViewport1360x768MenuItem.Size = new System.Drawing.Size(175, 22);
-            this.m_viewViewport1360x768MenuItem.Tag = "1360 x 768";
-            this.m_viewViewport1360x768MenuItem.Text = "1360 x 768";
+            this.m_mapTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_mapTreeView.Map = null;
+            this.m_mapTreeView.Name = "m_mapTreeView";
+            this.m_mapTreeView.SelectedComponent = null;
+            this.m_mapTreeView.Size = new System.Drawing.Size(200, 201);
+            this.m_mapTreeView.TabIndex = 0;
+            this.m_mapTreeView.NewTileSheet += new System.EventHandler(this.OnTileSheetNew);
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            this.m_mapTreeView.LayerVisibility += new System.EventHandler(this.OnLayerVisibility);
+            this.m_mapTreeView.BringLayerForward += new System.EventHandler(this.OnLayerBringForward);
+            this.m_mapTreeView.LayerProperties += new System.EventHandler(this.OnLayerProperties);
+            this.m_mapTreeView.DeleteTileSheet += new System.EventHandler(this.OnTileSheetDelete);
+            this.m_mapTreeView.MapProperties += new System.EventHandler(this.OnMapProperties);
+            this.m_mapTreeView.SendLayerBackward += new System.EventHandler(this.OnLayerSendBackward);
+            this.m_mapTreeView.NewLayer += new System.EventHandler(this.OnLayerNew);
+            this.m_mapTreeView.DeleteLayer += new System.EventHandler(this.OnLayerDelete);
+            this.m_mapTreeView.TileSheetProperties += new System.EventHandler(this.OnTileSheetProperties);
+            // 
+            // m_tilePicker
+            // 
+            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
+            this.m_tilePicker.Map = null;
+            this.m_tilePicker.Name = "m_tilePicker";
+            this.m_tilePicker.SelectedTileSheet = null;
+            this.m_tilePicker.Size = new System.Drawing.Size(200, 258);
+            this.m_tilePicker.TabIndex = 0;
+            this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
+            // 
+            // m_mapPanel
+            // 
+            this.m_mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_mapPanel.EditTool = TileMapEditor.Control.EditTool.SingleTile;
+            this.m_mapPanel.Enabled = false;
+            this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_mapPanel.Map = null;
+            this.m_mapPanel.Name = "m_mapPanel";
+            this.m_mapPanel.SelectedLayer = null;
+            this.m_mapPanel.SelectedTileIndex = 0;
+            this.m_mapPanel.SelectedTileSheet = null;
+            this.m_mapPanel.Size = new System.Drawing.Size(543, 441);
+            this.m_mapPanel.TabIndex = 0;
+            this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
+            this.m_mapPanel.TileHover += new TileMapEditor.Control.MapPanelEventHandler(this.OnTileHover);
+            this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
+            // 
+            // m_toolsTileBrushButton
+            // 
+            this.m_toolsTileBrushButton.Checked = false;
+            this.m_toolsTileBrushButton.CheckState = System.Windows.Forms.CheckState.Unchecked;
+            this.m_toolsTileBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_toolsTileBrushButton.Image = global::TileMapEditor.Properties.Resources.ToolsTileBrush;
+            this.m_toolsTileBrushButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_toolsTileBrushButton.Name = "m_toolsTileBrushButton";
+            this.m_toolsTileBrushButton.Size = new System.Drawing.Size(31, 20);
+            this.m_toolsTileBrushButton.Text = "toolStripSplitButton1";
+            this.m_toolsTileBrushButton.ToolTipText = "Lay a tile brush";
+            this.m_toolsTileBrushButton.ButtonClick += new System.EventHandler(this.OnToolsTileBrush);
+            // 
+            // m_viewViewport1920x1200MenuItem
+            // 
+            this.m_viewViewport1920x1200MenuItem.Name = "m_viewViewport1920x1200MenuItem";
+            this.m_viewViewport1920x1200MenuItem.Size = new System.Drawing.Size(186, 22);
+            this.m_viewViewport1920x1200MenuItem.Tag = "1920 x 1200";
+            this.m_viewViewport1920x1200MenuItem.Text = "1920 x 1200 (WUXGA)";
+            // 
+            // m_viewViewport1600x1200MenuItem
+            // 
+            this.m_viewViewport1600x1200MenuItem.Name = "m_viewViewport1600x1200MenuItem";
+            this.m_viewViewport1600x1200MenuItem.Size = new System.Drawing.Size(186, 22);
+            this.m_viewViewport1600x1200MenuItem.Tag = "1600 x 1200";
+            this.m_viewViewport1600x1200MenuItem.Text = "1600 x 1200 (UXGA)";
+            // 
+            // m_viewViewport800x600MenuItem
+            // 
+            this.m_viewViewport800x600MenuItem.Name = "m_viewViewport800x600MenuItem";
+            this.m_viewViewport800x600MenuItem.Size = new System.Drawing.Size(186, 22);
+            this.m_viewViewport800x600MenuItem.Tag = "800 x 600";
+            this.m_viewViewport800x600MenuItem.Text = "800 x 600 (SVGA)";
             // 
             // MainForm
             // 
@@ -1849,7 +1867,7 @@
         private System.Windows.Forms.ToolStripStatusLabel m_tileDetailSheetStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewPortMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewPortScaleToWindowMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem m_viewViewport1920x1280MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewViewport1920x1080MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport320x200MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport320x240MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1280x1024MenuItem;
@@ -1858,6 +1876,8 @@
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1024x768MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1280x720MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1280x768MenuItem;
-        private System.Windows.Forms.ToolStripMenuItem m_viewViewport1360x768MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewViewport1920x1200MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewViewport1600x1200MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewViewport800x600MenuItem;
     }
 }
