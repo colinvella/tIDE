@@ -457,7 +457,15 @@ namespace TileMapEditor
 
         private void OnFileExit(object sender, EventArgs eventArgs)
         {
-            MessageBox.Show("ok");
+            if (m_needsSaving &&
+                MessageBox.Show(this,
+                    "You have unsaved changes. Are you sure you want to exit the application?", 
+                    "Exit",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        == DialogResult.No)
+                return;
+
+            Application.Exit();
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
