@@ -290,9 +290,12 @@ namespace TileMapEditor.Control
 
         private void OnResizeDisplay(object sender, EventArgs e)
         {
-            System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-            m_viewport.Size.Width = 1 + (clientRectangle.Width - 1)/ m_zoom;
-            m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+            if (m_autoScaleViewport)
+            {
+                System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
+                m_viewport.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
+                m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+            }
 
             UpdateScrollBars();
         }
@@ -834,6 +837,13 @@ namespace TileMapEditor.Control
         public Tiling.Dimensions.Rectangle Viewport
         {
             get { return m_viewport; }
+            set { m_viewport = value; }
+        }
+
+        public bool AutoScaleViewport
+        {
+            get { return m_autoScaleViewport; }
+            set { m_autoScaleViewport = value; }
         }
 
         public TileSheet SelectedTileSheet
