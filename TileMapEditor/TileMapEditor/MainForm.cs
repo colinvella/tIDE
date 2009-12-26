@@ -651,12 +651,27 @@ namespace TileMapEditor
 
         private void OnViewViewportScaleToWindow(object sender, EventArgs eventArgs)
         {
-
+            m_mapPanel.AutoScaleViewport = true;
+            foreach (ToolStripMenuItem toolStripMenuItem in m_viewViewportMenuItem.DropDownItems)
+                toolStripMenuItem.Checked
+                    = toolStripMenuItem == m_viewViewportScaleToWindowMenuItem;
         }
 
         private void OnViewViewportSetSize(object sender, EventArgs eventArgs)
         {
+            ToolStripMenuItem toolStripMenuItemSelected = (ToolStripMenuItem)sender;
+            string sizeTag = toolStripMenuItemSelected.Tag.ToString();
+            Size viewPortSize = Tiling.Dimensions.Size.FromString(sizeTag);
 
+            Rectangle viewport = new Rectangle(
+                Tiling.Dimensions.Location.Origin, viewPortSize);
+
+            m_mapPanel.AutoScaleViewport = false;
+            m_mapPanel.Viewport = viewport;
+
+            foreach (ToolStripMenuItem toolStripMenuItem in m_viewViewportMenuItem.DropDownItems)
+                toolStripMenuItem.Checked
+                    = toolStripMenuItem == toolStripMenuItemSelected;
         }
 
         private void OnMapProperties(object sender, EventArgs eventArgs)
