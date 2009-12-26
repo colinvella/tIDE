@@ -91,7 +91,7 @@
             this.m_fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileSaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileSaveAsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_fileExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editUndoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editRedoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -810,7 +810,7 @@
             this.m_fileSaveMenuItem,
             this.m_fileSaveAsMenuItem,
             m_fileSeparator2,
-            this.exitToolStripMenuItem});
+            this.m_fileExitMenuItem});
             this.m_fileMenuItem.Image = global::TileMapEditor.Properties.Resources.File;
             this.m_fileMenuItem.Name = "m_fileMenuItem";
             this.m_fileMenuItem.Size = new System.Drawing.Size(53, 20);
@@ -856,9 +856,10 @@
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.m_fileExitMenuItem.Name = "m_fileExitMenuItem";
+            this.m_fileExitMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileExitMenuItem.Text = "E&xit";
+            this.m_fileExitMenuItem.Click += new System.EventHandler(this.OnFileExit);
             // 
             // m_editMenuItem
             // 
@@ -1760,7 +1761,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_fileOpenMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_fileSaveMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_fileSaveAsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_fileExitMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editUndoMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_editRedoMenuItem;

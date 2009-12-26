@@ -419,7 +419,7 @@ namespace TileMapEditor
         {
         }
 
-        private void OnFileSaveAs(object sender, EventArgs e)
+        private void OnFileSaveAs(object sender, EventArgs eventArgs)
         {
             FormatManager formatManager = FormatManager.Instance;
 
@@ -453,6 +453,11 @@ namespace TileMapEditor
                     "An error occured whilst saving the file. Details: " + exception.Message,
                     "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);               
             }
+        }
+
+        private void OnFileExit(object sender, EventArgs eventArgs)
+        {
+            MessageBox.Show("ok");
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
