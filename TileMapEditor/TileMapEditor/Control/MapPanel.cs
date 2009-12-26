@@ -42,6 +42,7 @@ namespace TileMapEditor.Control
 
         private Graphics m_graphics;
         private Tiling.Dimensions.Rectangle m_viewPort;
+        private bool m_autoScaleViewport; 
         private int m_zoom;
         private Brush m_veilBrush;
         private ImageAttributes m_imageAttributes;
@@ -621,6 +622,8 @@ namespace TileMapEditor.Control
 
             m_viewPort = new Tiling.Dimensions.Rectangle(
                 Tiling.Dimensions.Location.Origin, Tiling.Dimensions.Size.Zero);
+            m_autoScaleViewport = true;
+
             m_zoom = 1;
 
             m_layerCompositing = LayerCompositing.DimUnselected;
