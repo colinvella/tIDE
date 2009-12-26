@@ -191,16 +191,16 @@ namespace Tiling
                 displayDevice.DisposeTileSheet(tileSheet);
         }
 
-        public void Draw(IDisplayDevice displayDevice, Rectangle mapViewPort)
+        public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport)
         {
-            Draw(displayDevice, Location.Origin, mapViewPort);
+            Draw(displayDevice, Location.Origin, mapViewport);
         }
 
-        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
+        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
         {
             displayDevice.BeginScene();
 
-            Rectangle clippingRegion = new Rectangle(displayOffset, mapViewPort.Size);
+            Rectangle clippingRegion = new Rectangle(displayOffset, mapViewport.Size);
             displayDevice.SetClippingRegion(clippingRegion);
 
             foreach (Layer layer in m_layers)
@@ -208,8 +208,8 @@ namespace Tiling
                 if (!layer.Visible)
                     continue;
                     
-                Rectangle layerViewPort = layer.ConvertMapToLayerViewPort(mapViewPort);
-                layer.Draw(displayDevice, displayOffset, layerViewPort);
+                Rectangle layerViewport = layer.ConvertMapToLayerViewport(mapViewport);
+                layer.Draw(displayDevice, displayOffset, layerViewport);
             }
 
             displayDevice.EndScene();

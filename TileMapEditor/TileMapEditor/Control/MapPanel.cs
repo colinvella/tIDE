@@ -41,7 +41,7 @@ namespace TileMapEditor.Control
         private bool m_ctrlKeyPressed;
 
         private Graphics m_graphics;
-        private Tiling.Dimensions.Rectangle m_viewPort;
+        private Tiling.Dimensions.Rectangle m_viewport;
         private bool m_autoScaleViewport; 
         private int m_zoom;
         private Brush m_veilBrush;
@@ -64,17 +64,17 @@ namespace TileMapEditor.Control
 
         #region Private Methods
 
-        private Location ConvertViewportOffsetToLayerLocation(Location viewPortOffset)
+        private Location ConvertViewportOffsetToLayerLocation(Location viewportOffset)
         {
             Location layerLocation
-                = m_selectedLayer.ConvertMapToLayerLocation(m_viewPort.Location, m_viewPort.Size);
+                = m_selectedLayer.ConvertMapToLayerLocation(m_viewport.Location, m_viewport.Size);
 
             Tiling.Dimensions.Size tileSize = m_selectedLayer.TileSize;
             layerLocation.X /= tileSize.Width;
             layerLocation.Y /= tileSize.Height;
 
-            layerLocation.X += viewPortOffset.X / (tileSize.Width * m_zoom);
-            layerLocation.Y += viewPortOffset.Y / (tileSize.Height * m_zoom);
+            layerLocation.X += viewportOffset.X / (tileSize.Width * m_zoom);
+            layerLocation.Y += viewportOffset.Y / (tileSize.Height * m_zoom);
 
             return layerLocation;
         }
@@ -278,21 +278,21 @@ namespace TileMapEditor.Control
 
         private void OnHorizontalScroll(object sender, ScrollEventArgs scrollEventArgs)
         {
-            m_viewPort.Location.X = scrollEventArgs.NewValue;
+            m_viewport.Location.X = scrollEventArgs.NewValue;
             m_innerPanel.Invalidate();
         }
 
         private void OnVerticalScroll(object sender, ScrollEventArgs scrollEventArgs)
         {
-            m_viewPort.Location.Y = scrollEventArgs.NewValue;
+            m_viewport.Location.Y = scrollEventArgs.NewValue;
             m_innerPanel.Invalidate();
         }
 
         private void OnResizeDisplay(object sender, EventArgs e)
         {
             System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-            m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1)/ m_zoom;
-            m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+            m_viewport.Size.Width = 1 + (clientRectangle.Width - 1)/ m_zoom;
+            m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
 
             UpdateScrollBars();
         }
@@ -320,45 +320,45 @@ namespace TileMapEditor.Control
 
             // alignment data
             Layer layer = layerEventArgs.Layer;
-            Tiling.Dimensions.Rectangle viewPort = layerEventArgs.ViewPort;
+            Tiling.Dimensions.Rectangle viewport = layerEventArgs.Viewport;
             Tiling.Dimensions.Size tileSize = layer.TileSize;
-            Tiling.Dimensions.Location layerViewPortLocation
-                = m_selectedLayer.ConvertMapToLayerLocation(viewPort.Location, m_viewPort.Size);
+            Tiling.Dimensions.Location layerViewportLocation
+                = m_selectedLayer.ConvertMapToLayerLocation(viewport.Location, m_viewport.Size);
 
             // tile guide
             if (m_tileGuides)
             {
-                int offsetX = layerViewPortLocation.X % tileSize.Width;
-                int offsetY = layerViewPortLocation.Y % tileSize.Height;
-                for (int guideY = -offsetY; guideY < viewPort.Size.Height; guideY += tileSize.Height)
-                    m_graphics.DrawLine(m_tileGuidePen, 0, guideY, m_viewPort.Size.Width, guideY);
+                int offsetX = layerViewportLocation.X % tileSize.Width;
+                int offsetY = layerViewportLocation.Y % tileSize.Height;
+                for (int guideY = -offsetY; guideY < viewport.Size.Height; guideY += tileSize.Height)
+                    m_graphics.DrawLine(m_tileGuidePen, 0, guideY, m_viewport.Size.Width, guideY);
 
                 m_graphics.PixelOffsetMode = PixelOffsetMode.None;
 
-                for (int guideX = -offsetX; guideX < viewPort.Size.Width; guideX += tileSize.Width)
-                    m_graphics.DrawLine(m_tileGuidePen, guideX, 0, guideX, m_viewPort.Size.Height);
+                for (int guideX = -offsetX; guideX < viewport.Size.Width; guideX += tileSize.Width)
+                    m_graphics.DrawLine(m_tileGuidePen, guideX, 0, guideX, m_viewport.Size.Height);
             }
 
             // tile selections
             if (!m_tileSelection.IsEmpty())
             {
-                Location tileViewPortLocation = new Location(
-                    layerViewPortLocation.X / tileSize.Width, layerViewPortLocation.Y / tileSize.Height);
-                Tiling.Dimensions.Size tileViewPortSize = viewPort.Size;
-                tileViewPortSize.Width /= tileSize.Width;
-                tileViewPortSize.Height /= tileSize.Height;
-                tileViewPortSize.Width++;
-                tileViewPortSize.Height++;
+                Location tileViewportLocation = new Location(
+                    layerViewportLocation.X / tileSize.Width, layerViewportLocation.Y / tileSize.Height);
+                Tiling.Dimensions.Size tileViewportSize = viewport.Size;
+                tileViewportSize.Width /= tileSize.Width;
+                tileViewportSize.Height /= tileSize.Height;
+                tileViewportSize.Width++;
+                tileViewportSize.Height++;
 
                 m_graphics.PixelOffsetMode = PixelOffsetMode.None;
 
-                Location tileLocation = tileViewPortLocation;
-                for (;  tileLocation.Y <= tileViewPortLocation.Y + tileViewPortSize.Height; tileLocation.Y++)
-                    for (tileLocation.X = tileViewPortLocation.X; tileLocation.X <= tileViewPortLocation.X + tileViewPortSize.Width; tileLocation.X++)
+                Location tileLocation = tileViewportLocation;
+                for (;  tileLocation.Y <= tileViewportLocation.Y + tileViewportSize.Height; tileLocation.Y++)
+                    for (tileLocation.X = tileViewportLocation.X; tileLocation.X <= tileViewportLocation.X + tileViewportSize.Width; tileLocation.X++)
                     {
                         if (m_tileSelection.Contains(tileLocation))
                         {
-                            Tiling.Dimensions.Rectangle tileRectangle = m_selectedLayer.GetTileDisplayRectangle(viewPort, tileLocation);
+                            Tiling.Dimensions.Rectangle tileRectangle = m_selectedLayer.GetTileDisplayRectangle(viewport, tileLocation);
                             m_graphics.FillRectangle(m_tileSelectionBrush,
                                 tileRectangle.Location.X, tileRectangle.Location.Y,
                                 tileRectangle.Size.Width, tileRectangle.Size.Height);
@@ -370,13 +370,13 @@ namespace TileMapEditor.Control
             if (m_mouseInside)
             {
                 Tiling.Dimensions.Rectangle tileDisplayRectangle
-                    = m_selectedLayer.GetTileDisplayRectangle(m_viewPort, m_tileLayerLocation);
+                    = m_selectedLayer.GetTileDisplayRectangle(m_viewport, m_tileLayerLocation);
                 Tiling.Dimensions.Location tileDisplayLocation = tileDisplayRectangle.Location;
 
                 if (m_bMouseDown && (m_editTool == EditTool.Select || m_editTool == EditTool.TileBlock) )
                 {
                     Tiling.Dimensions.Rectangle tileDragRectangle
-                        = m_selectedLayer.GetTileDisplayRectangle(m_viewPort, m_dragTileStart);
+                        = m_selectedLayer.GetTileDisplayRectangle(m_viewport, m_dragTileStart);
                     Tiling.Dimensions.Location tileDragLocation = tileDragRectangle.Location;
 
                     int minX = Math.Min(tileDragLocation.X, tileDisplayLocation.X);
@@ -553,7 +553,7 @@ namespace TileMapEditor.Control
                 m_imageAttributes.SetColorMatrix(m_colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
                 // draw map
-                m_map.Draw(this, m_viewPort);
+                m_map.Draw(this, m_viewport);
 
                 // reset transulency
                 m_colorMatrix.Matrix33 = 1.0f;
@@ -563,7 +563,7 @@ namespace TileMapEditor.Control
                 m_graphics.SetClip(this.ClientRectangle);
 
                 // map border
-                Location borderCorner = -m_viewPort.Location;
+                Location borderCorner = -m_viewport.Location;
                 borderCorner.X += m_map.DisplaySize.Width;
                 borderCorner.Y += m_map.DisplaySize.Height;
 
@@ -590,14 +590,14 @@ namespace TileMapEditor.Control
             }
 
             // viewport border
-            Pen viewPortPen = new Pen(SystemColors.ControlDarkDark, 1.0f / m_zoom);
-            viewPortPen.DashStyle = DashStyle.Dot;
+            Pen viewportPen = new Pen(SystemColors.ControlDarkDark, 1.0f / m_zoom);
+            viewportPen.DashStyle = DashStyle.Dot;
             m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
-            m_graphics.DrawRectangle(Pens.Black, 0, 0, m_viewPort.Size.Width, m_viewPort.Size.Height);
+            m_graphics.DrawRectangle(Pens.Black, 0, 0, m_viewport.Size.Width, m_viewport.Size.Height);
 
-            Brush viewPortBrush = new SolidBrush(Color.FromArgb(128, SystemColors.ControlDarkDark));
-            m_graphics.FillRectangle(SystemBrushes.ControlDarkDark, 0, m_viewPort.Size.Height, ClientSize.Width, ClientSize.Height - m_viewPort.Size.Height);
-            m_graphics.FillRectangle(SystemBrushes.ControlDarkDark, m_viewPort.Size.Width, 0, ClientSize.Width - m_viewPort.Size.Width, m_viewPort.Size.Height);
+            Brush viewportBrush = new SolidBrush(Color.FromArgb(128, SystemColors.ControlDarkDark));
+            m_graphics.FillRectangle(SystemBrushes.ControlDarkDark, 0, m_viewport.Size.Height, ClientSize.Width, ClientSize.Height - m_viewport.Size.Height);
+            m_graphics.FillRectangle(SystemBrushes.ControlDarkDark, m_viewport.Size.Width, 0, ClientSize.Width - m_viewport.Size.Width, m_viewport.Size.Height);
 
             // dim out control if disabled
             if (!Enabled)
@@ -620,7 +620,7 @@ namespace TileMapEditor.Control
             m_eraserCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsEraserCursor));
             m_dropperCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsDropperCursor));
 
-            m_viewPort = new Tiling.Dimensions.Rectangle(
+            m_viewport = new Tiling.Dimensions.Rectangle(
                 Tiling.Dimensions.Location.Origin, Tiling.Dimensions.Size.Zero);
             m_autoScaleViewport = true;
 
@@ -772,8 +772,8 @@ namespace TileMapEditor.Control
                 m_zoom = Math.Max(1, Math.Min(value, 10));
 
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-                m_viewPort.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
-                m_viewPort.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+                m_viewport.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
+                m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
 
                 m_tileGuidePen.Width = m_tileSelectionPen.Width = 1.0f / m_zoom;
                 m_dashPattern[0] = m_dashPattern[1] = m_dashPattern[2] = m_dashPattern[3] = 1.0f / m_zoom;
@@ -831,9 +831,9 @@ namespace TileMapEditor.Control
             }
         }
 
-        public Tiling.Dimensions.Rectangle ViewPort
+        public Tiling.Dimensions.Rectangle Viewport
         {
-            get { return m_viewPort; }
+            get { return m_viewport; }
         }
 
         public TileSheet SelectedTileSheet

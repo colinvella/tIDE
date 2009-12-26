@@ -65,29 +65,29 @@ namespace Tiling.Layers
                 && tileLocation.Y >= 0 && tileLocation.Y < m_layerSize.Height;
         }
 
-        public Rectangle ConvertMapToLayerViewPort(Rectangle mapViewPort)
+        public Rectangle ConvertMapToLayerViewport(Rectangle mapViewport)
         {
             Size mapDisplaySize = m_map.DisplaySize;
 
             return new Rectangle(
                 ConvertMapToLayerLocation(
-                    mapViewPort.Location, mapViewPort.Size),
-                    mapViewPort.Size);
+                    mapViewport.Location, mapViewport.Size),
+                    mapViewport.Size);
         }
 
-        public Location ConvertMapToLayerLocation(Location mapDisplayLocation, Size viewPortSize)
+        public Location ConvertMapToLayerLocation(Location mapDisplayLocation, Size viewportSize)
         {
             Size mapDisplaySize = m_map.DisplaySize;
             Size layerDisplaySize = DisplaySize;
 
-            int viewPortWidth = viewPortSize.Width;
-            int viewPortHeight = viewPortSize.Height;
+            int viewportWidth = viewportSize.Width;
+            int viewportHeight = viewportSize.Height;
 
-            int layerWidthDifference = layerDisplaySize.Width - viewPortWidth;
-            int layerHeightDifference = layerDisplaySize.Height - viewPortHeight;
+            int layerWidthDifference = layerDisplaySize.Width - viewportWidth;
+            int layerHeightDifference = layerDisplaySize.Height - viewportHeight;
 
-            int mapWidthDifference = mapDisplaySize.Width - viewPortWidth;
-            int mapHeightDifference = mapDisplaySize.Height - viewPortHeight;
+            int mapWidthDifference = mapDisplaySize.Width - viewportWidth;
+            int mapHeightDifference = mapDisplaySize.Height - viewportHeight;
 
             int layerLocationX = mapWidthDifference >= 0
                 ? mapDisplayLocation.X * layerWidthDifference / mapWidthDifference
@@ -100,19 +100,19 @@ namespace Tiling.Layers
             return new Location(layerLocationX, layerLocationY);
         }
 
-        public Location ConvertLayerToMapLocation(Location layerDisplayLocation, Size viewPortSize)
+        public Location ConvertLayerToMapLocation(Location layerDisplayLocation, Size viewportSize)
         {
             Size mapDisplaySize = m_map.DisplaySize;
             Size layerDisplaySize = DisplaySize;
 
             return new Location(
-                (layerDisplayLocation.X * (mapDisplaySize.Width - viewPortSize.Width)) / (layerDisplaySize.Width - viewPortSize.Width),
-                (layerDisplayLocation.Y * (mapDisplaySize.Height - viewPortSize.Height)) / (layerDisplaySize.Height - viewPortSize.Height));
+                (layerDisplayLocation.X * (mapDisplaySize.Width - viewportSize.Width)) / (layerDisplaySize.Width - viewportSize.Width),
+                (layerDisplayLocation.Y * (mapDisplaySize.Height - viewportSize.Height)) / (layerDisplaySize.Height - viewportSize.Height));
         }
 
-        public Rectangle GetTileDisplayRectangle(Rectangle mapViewPort, Location tileLocation)
+        public Rectangle GetTileDisplayRectangle(Rectangle mapViewport, Location tileLocation)
         {
-            Location layerViewportLocation = ConvertMapToLayerLocation(mapViewPort.Location, mapViewPort.Size);
+            Location layerViewportLocation = ConvertMapToLayerLocation(mapViewport.Location, mapViewport.Size);
 
             Location tileDisplayLocation = new Location(
                 tileLocation.X * m_tileSize.Width, tileLocation.Y * m_tileSize.Height);
@@ -122,28 +122,28 @@ namespace Tiling.Layers
             return new Rectangle(tileDisplayOffset, m_tileSize);
         }
 
-        public Tile PickTile(Location mapDisplayLocation, Size viewPortSize)
+        public Tile PickTile(Location mapDisplayLocation, Size viewportSize)
         {
-            Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation, viewPortSize);
+            Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation, viewportSize);
             if (IsValidTileLocation(tileLocation))
                 return m_tiles[tileLocation.X, tileLocation.Y];
             else
                 return null;
         }
 
-        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewPort)
+        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
         {
             if (BeforeDraw != null)
-                BeforeDraw(new LayerEventArgs(this, mapViewPort));
+                BeforeDraw(new LayerEventArgs(this, mapViewport));
 
             // determine internal tile offset
             Location tileInternalOffset = new Location(
-                mapViewPort.Location.X % m_tileSize.Width,
-                mapViewPort.Location.Y % m_tileSize.Height);
+                mapViewport.Location.X % m_tileSize.Width,
+                mapViewport.Location.Y % m_tileSize.Height);
 
             // determine tile-level viewport location
-            int tileXMin = mapViewPort.Location.X / m_tileSize.Width;
-            int tileYMin = mapViewPort.Location.Y / m_tileSize.Height;
+            int tileXMin = mapViewport.Location.X / m_tileSize.Width;
+            int tileYMin = mapViewport.Location.Y / m_tileSize.Height;
 
             // determine tile-level viewport location limits
             if (tileXMin < 0)
@@ -158,8 +158,8 @@ namespace Tiling.Layers
             }
 
             // determine tile-level viewport size
-            int tileColumns = 1 + (mapViewPort.Size.Width - 1) / m_tileSize.Width;
-            int tileRows = 1 + (mapViewPort.Size.Height - 1) / m_tileSize.Height;
+            int tileColumns = 1 + (mapViewport.Size.Width - 1) / m_tileSize.Width;
+            int tileRows = 1 + (mapViewport.Size.Height - 1) / m_tileSize.Height;
 
             // increment tile-level viewport size if display not tile-aligned
             if (tileInternalOffset.X != 0)
@@ -189,7 +189,7 @@ namespace Tiling.Layers
             }
 
             if (AfterDraw != null)
-                AfterDraw(new LayerEventArgs(this, mapViewPort));
+                AfterDraw(new LayerEventArgs(this, mapViewport));
         }
 
         #endregion

@@ -121,8 +121,8 @@
             this.m_viewWindowModeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewLayerCompositingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewTileGuidesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_viewViewPortMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_viewViewPortScaleToWindowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewViewportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_viewViewportScaleToWindowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport320x200MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport320x240MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_viewViewport640x480MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -992,7 +992,7 @@
             m_viewMenuSeparator2,
             this.m_viewLayerCompositingMenuItem,
             this.m_viewTileGuidesMenuItem,
-            this.m_viewViewPortMenuItem});
+            this.m_viewViewportMenuItem});
             this.m_viewMenuItem.Image = global::TileMapEditor.Properties.Resources.View;
             this.m_viewMenuItem.Name = "m_viewMenuItem";
             this.m_viewMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -1143,10 +1143,10 @@
             this.m_viewTileGuidesMenuItem.Text = "Tile Guides";
             this.m_viewTileGuidesMenuItem.Click += new System.EventHandler(this.OnViewTileGuides);
             // 
-            // m_viewViewPortMenuItem
+            // m_viewViewportMenuItem
             // 
-            this.m_viewViewPortMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_viewViewPortScaleToWindowMenuItem,
+            this.m_viewViewportMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_viewViewportScaleToWindowMenuItem,
             this.m_viewViewport320x200MenuItem,
             this.m_viewViewport320x240MenuItem,
             this.m_viewViewport640x480MenuItem,
@@ -1159,20 +1159,20 @@
             this.m_viewViewport1600x1200MenuItem,
             this.m_viewViewport1920x1080MenuItem,
             this.m_viewViewport1920x1200MenuItem});
-            this.m_viewViewPortMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewViewPort;
-            this.m_viewViewPortMenuItem.Name = "m_viewViewPortMenuItem";
-            this.m_viewViewPortMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.m_viewViewPortMenuItem.Text = "Viewport";
+            this.m_viewViewportMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewViewport;
+            this.m_viewViewportMenuItem.Name = "m_viewViewportMenuItem";
+            this.m_viewViewportMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.m_viewViewportMenuItem.Text = "Viewport";
             // 
-            // m_viewViewPortScaleToWindowMenuItem
+            // m_viewViewportScaleToWindowMenuItem
             // 
-            this.m_viewViewPortScaleToWindowMenuItem.Checked = true;
-            this.m_viewViewPortScaleToWindowMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.m_viewViewPortScaleToWindowMenuItem.Name = "m_viewViewPortScaleToWindowMenuItem";
-            this.m_viewViewPortScaleToWindowMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.m_viewViewPortScaleToWindowMenuItem.Tag = "Scale";
-            this.m_viewViewPortScaleToWindowMenuItem.Text = "Scale To Window";
-            this.m_viewViewPortScaleToWindowMenuItem.Click += new System.EventHandler(this.OnViewViewportScaleToWindow);
+            this.m_viewViewportScaleToWindowMenuItem.Checked = true;
+            this.m_viewViewportScaleToWindowMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_viewViewportScaleToWindowMenuItem.Name = "m_viewViewportScaleToWindowMenuItem";
+            this.m_viewViewportScaleToWindowMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.m_viewViewportScaleToWindowMenuItem.Tag = "Scale";
+            this.m_viewViewportScaleToWindowMenuItem.Text = "Scale To Window";
+            this.m_viewViewportScaleToWindowMenuItem.Click += new System.EventHandler(this.OnViewViewportScaleToWindow);
             // 
             // m_viewViewport320x200MenuItem
             // 
@@ -1870,8 +1870,8 @@
         private System.Windows.Forms.StatusStrip m_statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel m_tileLocationStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel m_tileDetailSheetStatusLabel;
-        private System.Windows.Forms.ToolStripMenuItem m_viewViewPortMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem m_viewViewPortScaleToWindowMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewViewportMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_viewViewportScaleToWindowMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1920x1080MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport320x200MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport320x240MenuItem;
