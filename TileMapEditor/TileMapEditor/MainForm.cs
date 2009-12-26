@@ -649,6 +649,16 @@ namespace TileMapEditor
             UpdateTileGuidesControls();
         }
 
+        private void OnViewViewportScaleToWindow(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void OnViewViewportSetSize(object sender, EventArgs eventArgs)
+        {
+
+        }
+
         private void OnMapProperties(object sender, EventArgs eventArgs)
         {
             MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
