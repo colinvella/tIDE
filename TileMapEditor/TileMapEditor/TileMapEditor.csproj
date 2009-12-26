@@ -272,7 +272,7 @@
     <None Include="Resources\ViewFullScreen.png" />
     <None Include="Resources\LayerInvisible.png" />
     <None Include="Resources\LayerVisible.png" />
-    <None Include="Resources\ViewViewPort.png" />
+    <None Include="Resources\ViewViewport.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
