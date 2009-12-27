@@ -254,8 +254,6 @@ namespace Tiling.Format
 
                     if (currentTile == null)
                     {
-                        //xmlTextWriter.WriteStartElement("Null");
-                        //xmlTextWriter.WriteEndElement();
                         ++nullCount;
                         continue;
                     }
@@ -436,17 +434,17 @@ namespace Tiling.Format
 
         public string Name
         {
-            get { return "Standard Map File"; }
+            get { return "TIDE Map File"; }
         }
 
         public string FileExtensionDescriptor
         {
-            get { return "Map Files (*.tmex)"; }
+            get { return "Map Files (*.tide)"; }
         }
 
         public string FileExtension
         {
-            get { return "tmex"; }
+            get { return "tide"; }
         }
     }
 }

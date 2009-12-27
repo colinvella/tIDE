@@ -38,6 +38,7 @@ namespace TileMapEditor
         private Tiling.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
         private bool m_needsSaving;
+        private string m_filename;
 
         private PluginManager m_pluginManager;
 
@@ -233,12 +234,48 @@ namespace TileMapEditor
 
         private void UpdateAllControls()
         {
+            UpdateEditorTitle();
             UpdateFileControls();
             UpdateZoomControls();
             UpdateLayerVisibilityControls();
             UpdateTileSheetControls();
             UpdateToolButtons();
             UpdateTileBrushDropDown();
+        }
+
+        private void UpdateEditorTitle()
+        {
+            string shortName = Path.GetFileNameWithoutExtension(m_filename);
+            this.Text = shortName + " - tIDE";
+        }
+
+        private bool SaveFile(string filename)
+        {
+            FormatManager formatManager = FormatManager.Instance;
+
+            string fileExtension
+                = Path.GetExtension(filename).Replace(".", "");
+
+            IMapFormat selectedMapFormat
+                = formatManager.GetMapFormatByExtension(fileExtension);
+
+            try
+            {
+                Stream stream = new FileStream(filename, FileMode.Create);
+                selectedMapFormat.Store(m_map, stream);
+                stream.Close();
+
+                m_needsSaving = false;
+                UpdateFileControls();
+                return true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this,
+                    "An error occured whilst saving the file. Details: " + exception.Message,
+                    "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
@@ -250,8 +287,10 @@ namespace TileMapEditor
 
             m_tileBrushCollection = new TileBrushCollection();
 
-            m_map = new Map("Untitled map");
+            m_map = new Map("Untitled");
             m_needsSaving = false;
+            m_filename = "Untitled.tide";
+            this.Text = "Untitled - tIDE";
 
             m_mapTreeView.Map = m_map;
             m_tilePicker.Map = m_map;
@@ -403,6 +442,7 @@ namespace TileMapEditor
                 m_mapPanel.Invalidate(true);
 
                 m_needsSaving = false;
+                m_filename = openFileDialog.FileName;
                 UpdateAllControls();
             }
             catch (Exception exception)
@@ -417,6 +457,7 @@ namespace TileMapEditor
 
         private void OnFileSave(object sender, EventArgs eventArgs)
         {
+            SaveFile(m_filename);
         }
 
         private void OnFileSaveAs(object sender, EventArgs eventArgs)
@@ -432,26 +473,11 @@ namespace TileMapEditor
             if (saveFileDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
-            string fileExtension
-                = Path.GetExtension(saveFileDialog.FileName).Replace(".", "");
-
-            IMapFormat selectedMapFormat
-                = formatManager.GetMapFormatByExtension(fileExtension);
-
-            try
+            string newFilename = saveFileDialog.FileName;
+            if (SaveFile(newFilename))
             {
-                Stream stream = new FileStream(saveFileDialog.FileName, FileMode.Create);
-                selectedMapFormat.Store(m_map, stream);
-                stream.Close();
-
-                m_needsSaving = false;
-                UpdateFileControls();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(this,
-                    "An error occured whilst saving the file. Details: " + exception.Message,
-                    "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+                m_filename = newFilename;
+                UpdateEditorTitle();
             }
         }
 

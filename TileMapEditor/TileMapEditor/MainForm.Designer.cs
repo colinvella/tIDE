@@ -1707,7 +1707,7 @@
             this.MainMenuStrip = this.m_menuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tile Map Editor .NET";
+            this.Text = "tIDE";
             this.Load += new System.EventHandler(this.OnMainFormLoad);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyUp);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
