@@ -14,6 +14,7 @@ using Tiling.Layers;
 using Tiling.ObjectModel;
 using Tiling.Tiles;
 
+using TileMapEditor.Commands;
 using TileMapEditor.Control;
 using TileMapEditor.Dialog;
 
@@ -35,6 +36,8 @@ namespace TileMapEditor
         private System.Drawing.Rectangle m_windowBounds;
 
         private Map m_map;
+
+        private CommandHistory m_commandHistory;
         private Tiling.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
         private bool m_needsSaving;
@@ -128,6 +131,17 @@ namespace TileMapEditor
             m_fileSaveMenuItem.Enabled
                 = m_fileSaveButton.Enabled
                 = m_needsSaving;
+        }
+
+        private void UpdateEditControls()
+        {
+            m_editUndoMenuItem.Enabled
+                = m_editUndoButton.Enabled = m_commandHistory.CanUndo();
+            m_editRedoMenuItem.Enabled
+                = m_editRedoButton.Enabled = m_commandHistory.CanRedo();
+
+            m_editPasteMenuItem.Enabled
+                = m_editPasteButton.Enabled = ClipBoardManager.Instance.HasTileBrush();
         }
 
         private void UpdateZoomControls()
@@ -307,6 +321,8 @@ namespace TileMapEditor
 
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
+
+            m_commandHistory = new CommandHistory();
 
             m_tileBrushCollection = new TileBrushCollection();
 
@@ -525,6 +541,16 @@ namespace TileMapEditor
         private void OnFileExit(object sender, EventArgs eventArgs)
         {
             Close();
+        }
+
+        private void OnEditUndo(object sender, EventArgs eventArgs)
+        {
+
+        }
+
+        private void OnEditRedo(object sender, EventArgs eventArgs)
+        {
+
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)

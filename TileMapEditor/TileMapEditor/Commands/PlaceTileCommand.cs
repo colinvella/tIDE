@@ -28,9 +28,9 @@ namespace TileMapEditor.Commands
 
         public override void Do()
         {
-            m_oldTile = layer.Tiles[tileLocation];
+            m_oldTile = m_layer.Tiles[m_tileLocation];
             m_layer.Tiles[m_tileLocation]
-                = new StaticTile(m_layer, m_tileSheet, BlendMode.Alpha, m_tileIndex];
+                = new StaticTile(m_layer, m_tileSheet, BlendMode.Alpha, m_tileIndex);
         }
 
         public override void Undo()

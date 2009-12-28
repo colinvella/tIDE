@@ -365,10 +365,10 @@
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_mapToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_layerToolStrip);
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_fileToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_viewToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_tileSheetToolStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_fileToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.OnCustomToolStripAdded);
             // 
             // m_splitContainerLeftRight
@@ -933,6 +933,7 @@
             this.m_editUndoMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.m_editUndoMenuItem.Size = new System.Drawing.Size(192, 22);
             this.m_editUndoMenuItem.Text = "&Undo";
+            this.m_editUndoMenuItem.Click += new System.EventHandler(this.OnEditUndo);
             // 
             // m_editRedoMenuItem
             // 
@@ -942,6 +943,7 @@
             this.m_editRedoMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
             this.m_editRedoMenuItem.Size = new System.Drawing.Size(192, 22);
             this.m_editRedoMenuItem.Text = "&Redo";
+            this.m_editRedoMenuItem.Click += new System.EventHandler(this.OnEditRedo);
             // 
             // m_editCutMenuItem
             // 
