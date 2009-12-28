@@ -67,6 +67,8 @@ namespace TileMapEditor
         {
             ToolStripPanel toolStripPanel = m_toolStripContainer.TopToolStripPanel;
 
+            toolStripPanel.ControlAdded -= this.OnCustomToolStripAdded;
+
             // determine custom toolstrips implemented by plugins
             List<ToolStrip> customToolStrips = new List<ToolStrip>();
             foreach (ToolStrip toolStrip in toolStripPanel.Controls)
@@ -89,16 +91,18 @@ namespace TileMapEditor
             // add in custom toolstrips in reverse order
             customToolStrips.Reverse();
             foreach (ToolStrip toolStrip in customToolStrips)
-                toolStripPanel.Join(toolStrip);
+                toolStripPanel.Join(toolStrip, 1);
 
             // add built-in strips in reverse order
-            toolStripPanel.Join(m_tileSheetToolStrip);
-            toolStripPanel.Join(m_layerToolStrip);
-            toolStripPanel.Join(m_mapToolStrip);
+            toolStripPanel.Join(m_tileSheetToolStrip, 1);
+            toolStripPanel.Join(m_layerToolStrip, 1);
+            toolStripPanel.Join(m_mapToolStrip, 1);            
             toolStripPanel.Join(m_viewToolStrip);
             toolStripPanel.Join(m_editToolStrip);
             toolStripPanel.Join(m_fileToolStrip);
             toolStripPanel.Join(m_menuStrip);
+
+            toolStripPanel.ControlAdded += this.OnCustomToolStripAdded;
         }
 
         private void StartWaitCursor()
@@ -337,6 +341,11 @@ namespace TileMapEditor
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                         == DialogResult.No)
                 formClosingEventArgs.Cancel = true;
+        }
+
+        private void OnCustomToolStripAdded(object sender, ControlEventArgs controlEventArgs)
+        {
+            ArrangeToolStripLayout();
         }
 
         private void OnKeyDown(object sender, KeyEventArgs keyEventArgs)
