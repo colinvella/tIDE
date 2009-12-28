@@ -91,6 +91,8 @@
     <Compile Include="Dialog\TileBrushDialog.Designer.cs">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="History\HistoryEntry.cs" />
+    <Compile Include="History\TileHistoryEntry.cs" />
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
