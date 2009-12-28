@@ -15,14 +15,16 @@ namespace TileMapEditor.History
         private Location m_tileLocation;
         private Tile m_oldTile;
         private Tile m_newTile;
+        private string m_description;
 
         public TileHistoryEntry(Layer layer, Location tileLocation,
-            Tile oldTile, Tile newTile)
+            Tile oldTile, Tile newTile, string description)
         {
             m_layer = layer;
             m_tileLocation = tileLocation;
             m_oldTile = oldTile;
             m_newTile = newTile;
+            m_description = description;
         }
 
         public override void Undo()
@@ -37,11 +39,7 @@ namespace TileMapEditor.History
 
         public override string Description
         {
-            get
-            {
-                return "Replace tile at " + m_tileLocation
-                    + " in layer " + m_layer;
-            }
+            get { return m_description; }
         }
     }
 }
