@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TileMapEditor.History
+namespace TileMapEditor.Commands
 {
-    internal abstract class HistoryEntry
+    internal abstract class Command
     {
+        public abstract void Do();
         public abstract void Undo();
-
-        public abstract void Redo();
 
         public abstract string Description { get; }
     }
