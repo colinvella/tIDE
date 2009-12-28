@@ -58,5 +58,30 @@ namespace TileMapEditor.Commands
             command.Do();
             m_undoCommandStack.Push(command);
         }
+
+        public int Count
+        {
+            get { return m_undoCommandStack.Count + m_redoCommandStack.Count; }
+        }
+
+        public string UndoDescription
+        {
+            get
+            {
+                return m_undoCommandStack.Count > 0
+                    ? m_undoCommandStack.Peek().Description
+                    : "No action to undo";
+            }
+        }
+
+        public string RedoDescription
+        {
+            get
+            {
+                return m_redoCommandStack.Count > 0
+                    ? m_redoCommandStack.Peek().Description
+                    : "No action to redo";
+            }
+        }
     }
 }

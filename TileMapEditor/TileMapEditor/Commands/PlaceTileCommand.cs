@@ -24,6 +24,9 @@ namespace TileMapEditor.Commands
             m_tileSheet = tileSheet;
             m_tileIndex = tileIndex;
             m_tileLocation = tileLocation;
+
+            m_description = "Place tile " + m_tileSheet.Id + ":" + m_tileSheet 
+                + " at " + m_tileLocation + " in layer " + m_layer.Id;
         }
 
         public override void Do()
