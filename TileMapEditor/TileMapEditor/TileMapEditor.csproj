@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TileMapEditor</RootNamespace>
-    <AssemblyName>TileMapEditor</AssemblyName>
+    <AssemblyName>tIDE</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>TileMapEditor.ico</ApplicationIcon>

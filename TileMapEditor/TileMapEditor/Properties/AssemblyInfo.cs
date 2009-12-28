@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TileMapEditor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Tiling Integrated Development Environment (tIDE)")]
+[assembly: AssemblyDescription("Tiling Integrated Development Environment")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("TileMapEditor")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2009")]
+[assembly: AssemblyCompany("Colin Vella")]
+[assembly: AssemblyProduct("tIDE")]
+[assembly: AssemblyCopyright("Copyright © Colin Vella 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
