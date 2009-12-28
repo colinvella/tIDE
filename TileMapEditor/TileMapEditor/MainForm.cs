@@ -65,24 +65,40 @@ namespace TileMapEditor
 
         private void ArrangeToolStripLayout()
         {
-            List<System.Windows.Forms.Control> controls = new List<System.Windows.Forms.Control>();
-            foreach (System.Windows.Forms.Control control in m_toolStripContainer.TopToolStripPanel.Controls)
-                controls.Add(control);
-            m_toolStripContainer.TopToolStripPanel.Controls.Clear();
-            
-            System.Drawing.Point location = System.Drawing.Point.Empty;
-            foreach (System.Windows.Forms.Control control in controls)
+            ToolStripPanel toolStripPanel = m_toolStripContainer.TopToolStripPanel;
+
+            // determine custom toolstrips implemented by plugins
+            List<ToolStrip> customToolStrips = new List<ToolStrip>();
+            foreach (ToolStrip toolStrip in toolStripPanel.Controls)
             {
-                if (location.X + control.Width > m_toolStripContainer.TopToolStripPanel.ClientSize.Width)
-                {
-                    location.X = 0;
-                    location.Y = control.Bottom;
-                }
-                
-                m_toolStripContainer.TopToolStripPanel.Join((ToolStrip)control, location);
-                location.X = control.Right;
-                location.Y = control.Top;
+                if (toolStrip != m_menuStrip
+                    && toolStrip != m_fileToolStrip
+                    && toolStrip != m_editToolStrip
+                    && toolStrip != m_viewToolStrip
+                    && toolStrip != m_mapToolStrip
+                    && toolStrip != m_layerToolStrip
+                    && toolStrip != m_tileSheetToolStrip)
+                    customToolStrips.Add(toolStrip);
             }
+
+            // clear strip panel
+            toolStripPanel.Controls.Clear();
+
+            // add strips in reverse order (for some odd reason)
+
+            // add in custom toolstrips in reverse order
+            customToolStrips.Reverse();
+            foreach (ToolStrip toolStrip in customToolStrips)
+                toolStripPanel.Join(toolStrip);
+
+            // add built-in strips in reverse order
+            toolStripPanel.Join(m_tileSheetToolStrip);
+            toolStripPanel.Join(m_layerToolStrip);
+            toolStripPanel.Join(m_mapToolStrip);
+            toolStripPanel.Join(m_viewToolStrip);
+            toolStripPanel.Join(m_editToolStrip);
+            toolStripPanel.Join(m_fileToolStrip);
+            toolStripPanel.Join(m_menuStrip);
         }
 
         private void StartWaitCursor()
@@ -307,7 +323,7 @@ namespace TileMapEditor
             OnPluginsReload(this, new EventArgs());
         }
 
-        private void OnFormResizeEnd(object sender, EventArgs eventArgs)
+        private void OnMainFormResizeEnd(object sender, EventArgs eventArgs)
         {
             ArrangeToolStripLayout();
         }

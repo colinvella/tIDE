@@ -1714,7 +1714,7 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyUp);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
-            this.ResizeEnd += new System.EventHandler(this.OnFormResizeEnd);
+            this.ResizeEnd += new System.EventHandler(this.OnMainFormResizeEnd);
             m_splitContainerVertical.Panel1.ResumeLayout(false);
             m_splitContainerVertical.Panel2.ResumeLayout(false);
             m_splitContainerVertical.ResumeLayout(false);
