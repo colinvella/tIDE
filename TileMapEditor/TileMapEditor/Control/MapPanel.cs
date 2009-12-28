@@ -100,6 +100,9 @@ namespace TileMapEditor.Control
                     m_tileSelection.AddLocation(tileLocation);
 
             m_innerPanel.Invalidate();
+
+            if (SelectionChanged != null)
+                SelectionChanged(this, new EventArgs());
         }
 
         private void DrawSingleTile()
@@ -917,6 +920,9 @@ namespace TileMapEditor.Control
 
         [Category("Behavior"), Description("Occurs when the mouse hovers over a tile")]
         public event MapPanelEventHandler TileHover;
+
+        [Category("Behavior"), Description("Occurs when the tile selection is changed")]
+        public event EventHandler SelectionChanged;
 
         #endregion
     }

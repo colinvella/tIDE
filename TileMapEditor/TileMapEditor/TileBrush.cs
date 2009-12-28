@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -127,5 +128,10 @@ namespace TileMapEditor
         public Tiling.Dimensions.Size TileSize { get { return m_tileSize; } }
 
         public Tiling.Dimensions.Size DisplaySize { get { return m_displaySize; } }
+
+        public ReadOnlyCollection<TileBrushElement> Elements
+        {
+            get { return m_tileBrushElements.AsReadOnly(); }
+        }
     }
 }

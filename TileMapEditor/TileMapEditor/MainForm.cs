@@ -618,7 +618,9 @@ namespace TileMapEditor
             if (layer == null)
                 return;
 
-            m_mapPanel.TileSelection.EraseTiles(layer);
+            //m_mapPanel.TileSelection.EraseTiles(layer);
+            Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection);
+            m_commandHistory.Do(command);
 
             m_needsSaving = true;
             UpdateFileControls();
@@ -1160,6 +1162,11 @@ namespace TileMapEditor
 
             string tileDetail = tile == null ? "" : tile.TileSheet.Id + " : " + tile.TileIndex;
             m_tileDetailSheetStatusLabel.Text = tileDetail;
+        }
+
+        private void OnTileSelectionChanged(object sender, EventArgs eventArgs)
+        {
+            UpdateEditControls();
         }
 
         #endregion

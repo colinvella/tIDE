@@ -454,6 +454,7 @@
             this.m_mapPanel.TabIndex = 0;
             this.m_mapPanel.Viewport = ((Tiling.Dimensions.Rectangle)(resources.GetObject("m_mapPanel.Viewport")));
             this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
+            this.m_mapPanel.SelectionChanged += new System.EventHandler(this.OnTileSelectionChanged);
             this.m_mapPanel.TileHover += new TileMapEditor.Control.MapPanelEventHandler(this.OnTileHover);
             this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
             // 
@@ -601,6 +602,7 @@
             // m_editCutButton
             // 
             this.m_editCutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editCutButton.Enabled = false;
             this.m_editCutButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editCutButton.Image")));
             this.m_editCutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCutButton.Name = "m_editCutButton";
@@ -612,6 +614,7 @@
             // m_editCopyButton
             // 
             this.m_editCopyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editCopyButton.Enabled = false;
             this.m_editCopyButton.Image = ((System.Drawing.Image)(resources.GetObject("m_editCopyButton.Image")));
             this.m_editCopyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCopyButton.Name = "m_editCopyButton";
@@ -634,6 +637,7 @@
             // m_editDeleteButton
             // 
             this.m_editDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editDeleteButton.Enabled = false;
             this.m_editDeleteButton.Image = global::TileMapEditor.Properties.Resources.EditDelete;
             this.m_editDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editDeleteButton.Name = "m_editDeleteButton";
@@ -1090,6 +1094,7 @@
             // 
             // m_editCutMenuItem
             // 
+            this.m_editCutMenuItem.Enabled = false;
             this.m_editCutMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("m_editCutMenuItem.Image")));
             this.m_editCutMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCutMenuItem.Name = "m_editCutMenuItem";
@@ -1100,6 +1105,7 @@
             // 
             // m_editCopyMenuItem
             // 
+            this.m_editCopyMenuItem.Enabled = false;
             this.m_editCopyMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("m_editCopyMenuItem.Image")));
             this.m_editCopyMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editCopyMenuItem.Name = "m_editCopyMenuItem";
@@ -1121,6 +1127,7 @@
             // 
             // m_editDeleteMenuItem
             // 
+            this.m_editDeleteMenuItem.Enabled = false;
             this.m_editDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.EditDelete;
             this.m_editDeleteMenuItem.Name = "m_editDeleteMenuItem";
             this.m_editDeleteMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
