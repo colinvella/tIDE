@@ -130,10 +130,6 @@ namespace TileMapEditor.Control
                 m_selectedLayer, m_selectedTileSheet,
                 m_selectedTileIndex, m_tileLayerLocation);
             m_commandHistory.Do(command);
-            /*
-            Tile newTile = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
-            m_selectedLayer.Tiles[m_tileLayerLocation] = newTile;
-            */
 
             m_innerPanel.Invalidate();
 
@@ -185,7 +181,9 @@ namespace TileMapEditor.Control
             if (m_selectedLayer.Tiles[m_tileLayerLocation] == null)
                 return;
 
-            m_selectedLayer.Tiles[m_tileLayerLocation] = null;
+            Command command = new EraseTileCommand(m_selectedLayer, m_tileLayerLocation);
+            m_commandHistory.Do(command);
+           
             m_innerPanel.Invalidate();
 
             if (MapChanged != null)
