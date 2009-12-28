@@ -312,6 +312,17 @@ namespace TileMapEditor
             ArrangeToolStripLayout();
         }
 
+        private void OnMainFormClosing(object sender, FormClosingEventArgs formClosingEventArgs)
+        {
+            if (m_needsSaving &&
+                MessageBox.Show(this,
+                    "You have unsaved changes. Are you sure you want to exit the application?",
+                    "Exit",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        == DialogResult.No)
+                formClosingEventArgs.Cancel = true;
+        }
+
         private void OnKeyDown(object sender, KeyEventArgs keyEventArgs)
         {
             switch (keyEventArgs.KeyCode)
@@ -483,15 +494,7 @@ namespace TileMapEditor
 
         private void OnFileExit(object sender, EventArgs eventArgs)
         {
-            if (m_needsSaving &&
-                MessageBox.Show(this,
-                    "You have unsaved changes. Are you sure you want to exit the application?", 
-                    "Exit",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                        == DialogResult.No)
-                return;
-
-            Application.Exit();
+            Close();
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
