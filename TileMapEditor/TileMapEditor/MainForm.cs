@@ -140,6 +140,11 @@ namespace TileMapEditor
             m_editRedoMenuItem.Enabled = m_editRedoButton.Enabled
                 = m_commandHistory.CanRedo();
 
+            m_editUndoButton.ToolTipText
+                = "Undo: " + m_commandHistory.UndoDescription;
+            m_editRedoButton.ToolTipText
+                = "Redo: " + m_commandHistory.RedoDescription;
+
             m_editCutMenuItem.Enabled = m_editCutButton.Enabled
                 = m_editCopyMenuItem.Enabled = m_editCopyButton.Enabled
                 = m_editDeleteMenuItem.Enabled = m_editDeleteButton.Enabled
@@ -438,6 +443,7 @@ namespace TileMapEditor
                 m_tilePicker.Map = map;
                 m_mapPanel.Map = map;
 
+                m_commandHistory.Clear();
                 m_selectedComponent = null;
             }
         }
@@ -506,6 +512,7 @@ namespace TileMapEditor
 
                 m_needsSaving = false;
                 m_filename = openFileDialog.FileName;
+                m_commandHistory.Clear();
                 UpdateAllControls();
             }
             catch (Exception exception)
@@ -1130,6 +1137,7 @@ namespace TileMapEditor
         {
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
         }
 
         private void OnMapTilePicked(MapPanelEventArgs mapPanelEventArgs)
