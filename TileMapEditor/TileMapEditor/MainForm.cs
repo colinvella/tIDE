@@ -328,7 +328,7 @@ namespace TileMapEditor
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
 
-            m_commandHistory = new CommandHistory();
+            m_commandHistory = CommandHistory.Instance;
 
             m_tileBrushCollection = new TileBrushCollection();
 

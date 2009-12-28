@@ -7,13 +7,20 @@ namespace TileMapEditor.Commands
 {
     internal class CommandHistory
     {
+        private static CommandHistory s_instance = new CommandHistory();
+
         private Stack<Command> m_undoCommandStack;
         private Stack<Command> m_redoCommandStack;
 
-        internal CommandHistory()
+        private CommandHistory()
         {
             m_undoCommandStack = new Stack<Command>();
             m_redoCommandStack = new Stack<Command>();
+        }
+
+        public static CommandHistory Instance
+        {
+            get { return s_instance; }
         }
 
         public bool CanUndo()
