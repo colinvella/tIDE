@@ -10,5 +10,7 @@ namespace TileMapEditor.History
         public abstract void Undo();
 
         public abstract void Redo();
+
+        public abstract string Description { get; }
     }
 }
