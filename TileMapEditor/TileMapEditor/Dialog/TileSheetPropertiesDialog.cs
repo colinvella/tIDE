@@ -413,11 +413,11 @@ namespace TileMapEditor.Dialog
                 graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
                 graphics.TranslateTransform(-m_previewOffset.X, -m_previewOffset.Y);
 
-                System.Drawing.Rectangle rectangleDestination = new System.Drawing.Rectangle(0, 0, m_bitmapImageSource.Width * m_trackBar.Value, m_bitmapImageSource.Height * m_trackBar.Value);
-                graphics.DrawImage(m_bitmapImageSource, 0, 0);
-
                 int imageWidth = m_bitmapImageSource.Width;
                 int imageHeight = m_bitmapImageSource.Height;
+
+                graphics.DrawImage(m_bitmapImageSource, 0, 0, imageWidth, imageHeight);
+
                 int marginLeft = (int)m_textBoxLeftMargin.Value;
                 int marginTop = (int)m_textBoxTopMargin.Value;
                 int tileWidth = (int)m_textBoxTileWidth.Value;

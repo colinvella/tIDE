@@ -394,7 +394,7 @@ namespace TileMapEditor.Control
                         Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(m_selectedTileSheet, m_selectedTileIndex);
                         for (int tileY = minY; tileY <= maxY; tileY += tileSize.Height)
                             for (int tileX = minX; tileX <= maxX; tileX += tileSize.Width)
-                                m_graphics.DrawImage(tileBitmap, tileX, tileY);
+                                m_graphics.DrawImage(tileBitmap, tileX, tileY, tileSize.Width, tileSize.Height);
                     }
 
                     m_graphics.PixelOffsetMode = PixelOffsetMode.None;
@@ -451,9 +451,9 @@ namespace TileMapEditor.Control
 
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
-            m_bMouseDown = true;
             if (mouseEventArgs.Button == MouseButtons.Left)
             {
+                m_bMouseDown = true; 
                 switch (m_editTool)
                 {
                     case EditTool.Select:
