@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="History\HistoryEntry.cs" />
     <Compile Include="History\LayerHistoryEntry.cs" />
+    <Compile Include="History\MapHistoryEntry.cs" />
     <Compile Include="History\TileHistoryEntry.cs" />
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
