@@ -16,6 +16,8 @@ using Tiling.Display;
 using Tiling.Layers;
 using Tiling.Tiles;
 
+using TileMapEditor.Commands;
+
 namespace TileMapEditor.Control
 {
     public partial class MapPanel : UserControl, IDisplayDevice
@@ -23,6 +25,8 @@ namespace TileMapEditor.Control
         #region Private Variables
 
         private Map m_map;
+
+        private CommandHistory m_commandHistory;
         private Layer m_selectedLayer;
         private TileSheet m_selectedTileSheet;
         private int m_selectedTileIndex;
@@ -122,8 +126,14 @@ namespace TileMapEditor.Control
                 && oldTile.TileIndex == m_selectedTileIndex)
                 return;
 
+            Command command = new PlaceTileCommand(
+                m_selectedLayer, m_selectedTileSheet,
+                m_selectedTileIndex, m_tileLayerLocation);
+            m_commandHistory.Do(command);
+            /*
             Tile newTile = new StaticTile(m_selectedLayer, m_selectedTileSheet, BlendMode.Alpha, m_selectedTileIndex);
             m_selectedLayer.Tiles[m_tileLayerLocation] = newTile;
+            */
 
             m_innerPanel.Invalidate();
 
@@ -626,6 +636,8 @@ namespace TileMapEditor.Control
         public MapPanel()
         {
             InitializeComponent();
+
+            m_commandHistory = CommandHistory.Instance;
 
             m_singleTileCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsSingleTileCursor));
             m_tileBlockCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsTileBlockCursor));
