@@ -325,6 +325,8 @@ namespace TileMapEditor
 
             m_pluginManager = new PluginManager(m_menuStrip, m_toolStripContainer, m_mapPanel);
             OnPluginsReload(this, new EventArgs());
+
+            ArrangeToolStripLayout();
         }
 
         private void OnMainFormResizeEnd(object sender, EventArgs eventArgs)

@@ -66,13 +66,6 @@ namespace TileMapEditor.Plugin.Bridge
 
             ToolStripPanel toolStripPanel = m_toolStripContainer.TopToolStripPanel;
 
-            // position appropriately at end
-            if (toolStripPanel.Controls.Count > 0)
-            {
-                System.Windows.Forms.Control lastControl
-                    = toolStripPanel.Controls[toolStripPanel.Controls.Count - 1];
-                toolStrip.Location = new Point(lastControl.Right, lastControl.Top);
-            }
             toolStripPanel.Controls.Add(toolStrip);
 
             ToolBarBridge toolBarBridge = new ToolBarBridge(toolStrip, false);
