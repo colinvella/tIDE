@@ -195,7 +195,6 @@ namespace TileMapEditor.Control
             if (TilePicked == null)
                 return;
 
-            this.EditTool = EditTool.SingleTile;
             TilePicked(new MapPanelEventArgs(tile, m_tileLayerLocation));
 
             if (MapChanged != null)
@@ -465,9 +464,16 @@ namespace TileMapEditor.Control
                     case EditTool.SingleTile: DrawSingleTile(); break;
                     case EditTool.TileBlock: m_dragTileStart = m_tileLayerLocation; break;
                     case EditTool.Eraser: EraseTile(); break;
-                    case EditTool.Dropper: PickTile(); break;
+                    case EditTool.Dropper:
+                        PickTile();
+                        this.EditTool = EditTool.SingleTile;
+                        break;
                     case EditTool.TileBrush: ApplyTileBrush(); break;
                 }
+            }
+            else if (mouseEventArgs.Button == MouseButtons.Right)
+            {
+                PickTile();
             }
         }
 
@@ -486,7 +492,10 @@ namespace TileMapEditor.Control
                 {
                     case EditTool.SingleTile: DrawSingleTile(); break;
                     case EditTool.Eraser: EraseTile(); break;
-                    case EditTool.Dropper: PickTile(); break;
+                    case EditTool.Dropper:
+                        PickTile();
+                        this.EditTool = EditTool.SingleTile;
+                        break;
                 }
             }
 
