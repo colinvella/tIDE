@@ -135,13 +135,18 @@ namespace TileMapEditor
 
         private void UpdateEditControls()
         {
-            m_editUndoMenuItem.Enabled
-                = m_editUndoButton.Enabled = m_commandHistory.CanUndo();
-            m_editRedoMenuItem.Enabled
-                = m_editRedoButton.Enabled = m_commandHistory.CanRedo();
+            m_editUndoMenuItem.Enabled = m_editUndoButton.Enabled
+                = m_commandHistory.CanUndo();
+            m_editRedoMenuItem.Enabled = m_editRedoButton.Enabled
+                = m_commandHistory.CanRedo();
 
-            m_editPasteMenuItem.Enabled
-                = m_editPasteButton.Enabled = ClipBoardManager.Instance.HasTileBrush();
+            m_editCutMenuItem.Enabled = m_editCutButton.Enabled
+                = m_editCopyMenuItem.Enabled = m_editCopyButton.Enabled
+                = m_editDeleteMenuItem.Enabled = m_editDeleteButton.Enabled
+                = !m_mapPanel.TileSelection.IsEmpty();
+
+            m_editPasteMenuItem.Enabled = m_editPasteButton.Enabled
+                = ClipBoardManager.Instance.HasTileBrush();
         }
 
         private void UpdateZoomControls()
@@ -273,6 +278,7 @@ namespace TileMapEditor
         {
             UpdateEditorTitle();
             UpdateFileControls();
+            UpdateEditControls();
             UpdateZoomControls();
             UpdateLayerVisibilityControls();
             UpdateTileSheetControls();
@@ -545,12 +551,16 @@ namespace TileMapEditor
 
         private void OnEditUndo(object sender, EventArgs eventArgs)
         {
-
+            if (m_commandHistory.CanUndo())
+                m_commandHistory.Undo();
+            UpdateAllControls();
         }
 
         private void OnEditRedo(object sender, EventArgs eventArgs)
         {
-
+            if (m_commandHistory.CanRedo())
+                m_commandHistory.Redo();
+            UpdateAllControls();
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
@@ -572,7 +582,7 @@ namespace TileMapEditor
             TileBrush tileBrush = new TileBrush(layer, tileSelection);
             ClipBoardManager.Instance.StoreTileBrush(tileBrush);
 
-            m_editPasteMenuItem.Enabled = m_editPasteButton.Enabled = true;
+            UpdateEditControls();
         }
 
         private void OnEditPaste(object sender, EventArgs eventArgs)
@@ -590,6 +600,9 @@ namespace TileMapEditor
 
             TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
             tileBrush.ApplyTo(layer, tileSelection.Bounds.Location, tileSelection);
+            m_needsSaving = true;
+
+            UpdateFileControls();
         }
 
         private void OnEditDelete(object sender, EventArgs eventArgs)
@@ -602,6 +615,7 @@ namespace TileMapEditor
 
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
         }
 
         private void OnEditSelectAll(object sender, EventArgs eventArgs)
