@@ -88,19 +88,22 @@ namespace TileMapEditor
 
             // add strips in reverse order (for some odd reason)
 
+            toolStripPanel.Join(m_menuStrip);
+
+            toolStripPanel.Join(m_viewToolStrip, 1);
+            toolStripPanel.Join(m_editToolStrip, 1);
+            toolStripPanel.Join(m_fileToolStrip, 1);
+
             // add in custom toolstrips in reverse order
             customToolStrips.Reverse();
             foreach (ToolStrip toolStrip in customToolStrips)
-                toolStripPanel.Join(toolStrip, 1);
+                toolStripPanel.Join(toolStrip, 2);
 
             // add built-in strips in reverse order
-            toolStripPanel.Join(m_tileSheetToolStrip, 1);
-            toolStripPanel.Join(m_layerToolStrip, 1);
-            toolStripPanel.Join(m_mapToolStrip, 1);            
-            toolStripPanel.Join(m_viewToolStrip);
-            toolStripPanel.Join(m_editToolStrip);
-            toolStripPanel.Join(m_fileToolStrip);
-            toolStripPanel.Join(m_menuStrip);
+            toolStripPanel.Join(m_tileSheetToolStrip, 2);
+            toolStripPanel.Join(m_layerToolStrip, 2);
+            toolStripPanel.Join(m_mapToolStrip, 2);      
+
 
             toolStripPanel.ControlAdded += this.OnCustomToolStripAdded;
         }
