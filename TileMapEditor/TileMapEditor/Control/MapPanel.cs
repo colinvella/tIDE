@@ -95,9 +95,15 @@ namespace TileMapEditor.Control
             int maxY = Math.Min(layerSize.Height - 1, Math.Max(m_tileLayerLocation.Y, m_dragTileStart.Y));
 
             Location tileLocation = new Location(minX, minY);
+            TileSelection tileSelection = new TileSelection();
             for (; tileLocation.Y <= maxY; tileLocation.Y++)
                 for (tileLocation.X = minX; tileLocation.X <= maxX; tileLocation.X++)
-                    m_tileSelection.AddLocation(tileLocation);
+                    tileSelection.AddLocation(tileLocation);
+
+            Command command = new SelectionCommand(
+                m_selectedLayer, m_tileSelection, tileSelection,
+                !m_ctrlKeyPressed);
+            m_commandHistory.Do(command);
 
             m_innerPanel.Invalidate();
 
@@ -470,8 +476,6 @@ namespace TileMapEditor.Control
                 switch (m_editTool)
                 {
                     case EditTool.Select:
-                        if (!m_ctrlKeyPressed)
-                            m_tileSelection.Clear();
                         m_dragTileStart = m_tileLayerLocation;
                         break;
                     case EditTool.SingleTile: DrawSingleTile(); break;

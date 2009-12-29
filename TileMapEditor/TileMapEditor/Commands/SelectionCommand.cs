@@ -24,6 +24,11 @@ namespace TileMapEditor.Commands
             m_oldTileSelection = new TileSelection(currentTileSelection);
             m_newTileSelection = new TileSelection(newTileSelection);
             m_replace = replace;
+
+            if (m_replace)
+                m_description = newTileSelection.IsEmpty() ? "Clear selection" : "Select tiles";
+            else
+                m_description = "Select more tiles";
         }
 
         public override void Do()
