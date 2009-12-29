@@ -12,10 +12,9 @@ namespace TileMapEditor.Commands
         public abstract void Do();
         public abstract void Undo();
 
-        public string Description
+        public virtual string Description
         {
             get { return m_description; }
-            set { m_description = value; }
         }
     }
 }

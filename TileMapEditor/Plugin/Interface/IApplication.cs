@@ -9,6 +9,8 @@ namespace TileMapEditor.Plugin.Interface
 {
     public interface IApplication
     {
+        void Execute(ICommand command);
+
         IMenuStrip MenuStrip { get; }
 
         IToolBarCollection ToolBars { get; }

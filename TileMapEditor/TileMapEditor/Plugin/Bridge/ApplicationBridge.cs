@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using TileMapEditor.Commands;
 using TileMapEditor.Control;
 using TileMapEditor.Plugin.Interface;
 
@@ -12,8 +13,8 @@ namespace TileMapEditor.Plugin.Bridge
 {
     internal class ApplicationBridge: ElementBridge, IApplication, IToolBarCollection
     {
+        private CommandHistory m_commandHistory;
         private MenuStripBridge m_menuStripBridge;
-
         private ToolStripContainer m_toolStripContainer;
         private List<ToolBarBridge> m_toolBars;
 
@@ -29,9 +30,12 @@ namespace TileMapEditor.Plugin.Bridge
             }
         }
 
-        public ApplicationBridge(MenuStrip menuStrip, ToolStripContainer toolStripContainer, MapPanel mapPanel)
+        public ApplicationBridge(MenuStrip menuStrip,
+            ToolStripContainer toolStripContainer, MapPanel mapPanel)
             : base(false)
         {
+            m_commandHistory = CommandHistory.Instance;
+
             m_menuStripBridge = new MenuStripBridge(menuStrip);
 
             m_toolStripContainer = toolStripContainer;
@@ -42,6 +46,11 @@ namespace TileMapEditor.Plugin.Bridge
             PopulateToolBars(toolStripContainer.TopToolStripPanel);
 
             m_editorBridge = new EditorBridge(mapPanel);
+        }
+
+        public void Execute(ICommand command)
+        {
+            m_commandHistory.Do(new CommandBridge(command));
         }
 
         public IMenuStrip MenuStrip

@@ -100,6 +100,7 @@
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
+    <Compile Include="Plugin\Bridge\CommandBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
     <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />

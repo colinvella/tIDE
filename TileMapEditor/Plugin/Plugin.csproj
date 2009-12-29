@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\IApplication.cs" />
+    <Compile Include="Interface\ICommand.cs" />
     <Compile Include="Interface\IEditor.cs" />
     <Compile Include="Interface\IElement.cs" />
     <Compile Include="Interface\IMenuItem.cs" />
