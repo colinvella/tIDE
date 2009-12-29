@@ -231,8 +231,10 @@ namespace TileMapEditor.Control
             brushLocation.X -= brushSize.Width / 2;
             brushLocation.Y -= brushSize.Height / 2;
 
-            m_selectedTileBrush.ApplyTo(m_selectedLayer, brushLocation, m_tileSelection);
-            m_tileSelection.Clear();
+            Command command = new PasteCommand(
+                m_selectedLayer, m_selectedTileBrush,
+                brushLocation, new TileSelection(), false);
+            m_commandHistory.Do(command);
 
             if (MapChanged != null)
                 MapChanged(this, new EventArgs());

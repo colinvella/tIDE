@@ -29,7 +29,7 @@ namespace TileMapEditor.Commands
 
             m_description = fromClipboard
                 ? "Paste copied tiles" : "Paste tile brush \"" + tileBrush.Id + "\"";
-            m_description += " into layer \"" + m_layer.Id + "\"";
+            m_description += " at " + m_brushLocation + " in layer \"" + m_layer.Id + "\"";
         }
 
         public override void Do()
