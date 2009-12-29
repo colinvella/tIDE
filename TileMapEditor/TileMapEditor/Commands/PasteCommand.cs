@@ -36,16 +36,20 @@ namespace TileMapEditor.Commands
 
         public override void Do()
         {
-            m_oldTiles = new TileBrush(m_layer, m_tileSelection);
+            TileSelection tileSelection = new TileSelection();
+            m_tileBrush.GenerateSelection(m_brushLocation, tileSelection);
+            m_oldTiles = new TileBrush(m_layer, tileSelection);
 
             m_tileBrush.ApplyTo(m_layer, m_brushLocation, m_tileSelection);
+            if (!m_fromClipboard)
+                m_tileSelection.Clear();
         }
 
         public override void Undo()
         {
             m_oldTiles.ApplyTo(m_layer, m_brushLocation, m_tileSelection);
-            if (!m_fromClipboard)
-                m_tileSelection.Clear();
+            
+            m_tileSelection.Clear();
         }
     }
 }
