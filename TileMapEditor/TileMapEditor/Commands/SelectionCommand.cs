@@ -28,6 +28,8 @@ namespace TileMapEditor.Commands
 
         public override void Do()
         {
+            if (m_replace)
+                m_currentTileSelection.Clear();
             m_currentTileSelection.Merge(m_newTileSelection);
         }
 
