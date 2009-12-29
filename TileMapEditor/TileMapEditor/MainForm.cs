@@ -572,8 +572,23 @@ namespace TileMapEditor
 
         private void OnEditCut(object sender, EventArgs eventArgs)
         {
-            OnEditCopy(sender, eventArgs);
-            OnEditDelete(sender, eventArgs);
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            if (tileSelection.IsEmpty())
+                return;
+
+            TileBrush tileBrush = new TileBrush(layer, tileSelection);
+            ClipBoardManager.Instance.StoreTileBrush(tileBrush);
+
+            Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection, true);
+            m_commandHistory.Do(command);
+
+            m_needsSaving = true;
+            UpdateFileControls();
+            UpdateEditControls();
         }
 
         private void OnEditCopy(object sender, EventArgs eventArgs)
@@ -619,7 +634,7 @@ namespace TileMapEditor
                 return;
 
             //m_mapPanel.TileSelection.EraseTiles(layer);
-            Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection);
+            Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection, false);
             m_commandHistory.Do(command);
 
             m_needsSaving = true;
