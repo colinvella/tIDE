@@ -84,6 +84,14 @@ namespace TileMapEditor
             }
         }
 
+        public void GenerateSelection(Location brushLocation,
+            TileSelection tileSelection)
+        {
+            tileSelection.Clear();
+            foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
+                tileSelection.AddLocation(brushLocation + tileBrushElement.Location);
+        }
+
         public string Id
         {
             get { return m_id; }

@@ -13,13 +13,15 @@ namespace TileMapEditor.Commands
     {
         private Layer m_layer;
         private Location m_selectionLocation;
+        private TileSelection m_tileSelection;
         private TileBrush m_tileBrush;
 
         public DeleteSelectionCommand(Layer layer, TileSelection tileSelection, bool isCut)
         {
             m_layer = layer;
             m_selectionLocation = tileSelection.Bounds.Location;
-            m_tileBrush = new TileBrush(m_layer, tileSelection);
+            m_tileSelection = tileSelection;
+            m_tileBrush = new TileBrush(m_layer, m_tileSelection);
 
             m_description = isCut ? "Cut " : "Erase ";
             m_description += "selection from layer \"" + m_layer.Id + "\"";
@@ -36,6 +38,7 @@ namespace TileMapEditor.Commands
 
         public override void Undo()
         {
+            m_tileBrush.ApplyTo(m_layer, m_selectionLocation, m_tileSelection);
             foreach (TileBrushElement tileBrushElement in m_tileBrush.Elements)
             {
                 Location location = m_selectionLocation + tileBrushElement.Location;
