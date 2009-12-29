@@ -70,6 +70,16 @@ namespace TileMapEditor
 
         public void Merge(TileSelection tileSelection)
         {
+            if (tileSelection.IsEmpty())
+                return;
+
+            if (m_tileLocations.Count == 0)
+            {
+                m_bounds = tileSelection.Bounds;
+                m_tileLocations.AddRange(tileSelection.m_tileLocations);
+                return;
+            }
+
             if (m_bounds.Intersects(tileSelection.m_bounds))
             {
                 // overlapping - add with bounds testing for speed
@@ -81,7 +91,6 @@ namespace TileMapEditor
 
                     m_tileLocations.Add(tileLocation);
                 }
-
             }
             else
             {

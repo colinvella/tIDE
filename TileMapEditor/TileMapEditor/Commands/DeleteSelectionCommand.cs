@@ -20,7 +20,7 @@ namespace TileMapEditor.Commands
         {
             m_layer = layer;
             m_selectionLocation = tileSelection.Bounds.Location;
-            m_tileSelection = new TileSelection(m_tileSelection);
+            m_tileSelection = tileSelection;
             m_tileBrush = null;
 
             m_description = isCut ? "Cut " : "Erase ";
