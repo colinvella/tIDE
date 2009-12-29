@@ -15,6 +15,7 @@ namespace TileMapEditor.Commands
         private TileBrush m_tileBrush;
         private Location m_brushLocation;
         private TileSelection m_tileSelection;
+        private bool m_fromClipboard;
         private TileBrush m_oldTiles;
 
         public PasteCommand(Layer layer,
@@ -25,6 +26,7 @@ namespace TileMapEditor.Commands
             m_tileBrush = tileBrush;
             m_brushLocation = brushLocation;
             m_tileSelection = tileSelection;
+            m_fromClipboard = fromClipboard;
             m_oldTiles = null;
 
             m_description = fromClipboard
@@ -34,16 +36,16 @@ namespace TileMapEditor.Commands
 
         public override void Do()
         {
-            TileSelection tileSelection = new TileSelection();
-            m_tileBrush.GenerateSelection(m_brushLocation, tileSelection);
-            m_oldTiles = new TileBrush(m_layer, tileSelection);
+            m_oldTiles = new TileBrush(m_layer, m_tileSelection);
 
             m_tileBrush.ApplyTo(m_layer, m_brushLocation, m_tileSelection);
         }
 
         public override void Undo()
         {
-            m_oldTiles.ApplyTo(m_layer, m_brushLocation, new TileSelection());
+            m_oldTiles.ApplyTo(m_layer, m_brushLocation, m_tileSelection);
+            if (!m_fromClipboard)
+                m_tileSelection.Clear();
         }
     }
 }

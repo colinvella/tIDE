@@ -29,6 +29,12 @@ namespace TileMapEditor
             m_bounds = new Rectangle(Location.Origin, Size.Zero);
         }
 
+        public TileSelection(TileSelection tileSelection)
+        {
+            m_tileLocations = new List<Location>(tileSelection.m_tileLocations);
+            m_bounds = tileSelection.m_bounds;
+        }
+
         public bool IsEmpty() { return m_tileLocations.Count == 0; }
 
         public bool Contains(Location tileLocation)

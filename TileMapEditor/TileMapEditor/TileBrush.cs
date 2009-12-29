@@ -60,6 +60,7 @@ namespace TileMapEditor
             if (layerTileSize != m_tileSize)
                 return;
 
+            
             tileSelection.Clear();
             foreach (TileBrushElement tileBrushElement in m_tileBrushElements)
             {

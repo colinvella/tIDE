@@ -20,8 +20,8 @@ namespace TileMapEditor.Commands
         {
             m_layer = layer;
             m_selectionLocation = tileSelection.Bounds.Location;
-            m_tileSelection = tileSelection;
-            m_tileBrush = new TileBrush(m_layer, m_tileSelection);
+            m_tileSelection = new TileSelection(m_tileSelection);
+            m_tileBrush = null;
 
             m_description = isCut ? "Cut " : "Erase ";
             m_description += "selection from layer \"" + m_layer.Id + "\"";
@@ -29,21 +29,13 @@ namespace TileMapEditor.Commands
 
         public override void Do()
         {
-            foreach (TileBrushElement tileBrushElement in m_tileBrush.Elements)
-            {
-                Location location = m_selectionLocation + tileBrushElement.Location;
-                m_layer.Tiles[location] = null;
-            }
+            m_tileBrush = new TileBrush(m_layer, m_tileSelection);
+            m_tileSelection.EraseTiles(m_layer);
         }
 
         public override void Undo()
         {
             m_tileBrush.ApplyTo(m_layer, m_selectionLocation, m_tileSelection);
-            foreach (TileBrushElement tileBrushElement in m_tileBrush.Elements)
-            {
-                Location location = m_selectionLocation + tileBrushElement.Location;
-                m_layer.Tiles[location] = tileBrushElement.Tile;
-            }
         }
     }
 }
