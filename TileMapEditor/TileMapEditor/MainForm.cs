@@ -621,10 +621,13 @@ namespace TileMapEditor
                 return;
 
             TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
-            tileBrush.ApplyTo(layer, tileSelection.Bounds.Location, tileSelection);
-            m_needsSaving = true;
+            Command command = new PasteCommand(layer, tileBrush,
+                tileSelection.Bounds.Location, tileSelection, true);
+            m_commandHistory.Do(command);
 
+            m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
         }
 
         private void OnEditDelete(object sender, EventArgs eventArgs)
