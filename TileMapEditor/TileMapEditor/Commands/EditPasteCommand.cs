@@ -9,7 +9,7 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Commands
 {
-    internal class PasteCommand: Command
+    internal class EditPasteCommand: Command
     {
         private Layer m_layer;
         private TileBrush m_tileBrush;
@@ -18,7 +18,7 @@ namespace TileMapEditor.Commands
         private bool m_fromClipboard;
         private TileBrush m_oldTiles;
 
-        public PasteCommand(Layer layer,
+        public EditPasteCommand(Layer layer,
             TileBrush tileBrush, Location brushLocation,
             TileSelection tileSelection, bool fromClipboard)
         {

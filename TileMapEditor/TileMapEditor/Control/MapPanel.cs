@@ -237,7 +237,7 @@ namespace TileMapEditor.Control
             brushLocation.X -= brushSize.Width / 2;
             brushLocation.Y -= brushSize.Height / 2;
 
-            Command command = new PasteCommand(
+            Command command = new EditPasteCommand(
                 m_selectedLayer, m_selectedTileBrush,
                 brushLocation, new TileSelection(), false);
             m_commandHistory.Do(command);

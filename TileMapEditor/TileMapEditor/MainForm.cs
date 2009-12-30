@@ -622,7 +622,7 @@ namespace TileMapEditor
                 return;
 
             TileBrush tileBrush = ClipBoardManager.Instance.RetrieveTileBrush();
-            Command command = new PasteCommand(layer, tileBrush,
+            Command command = new EditPasteCommand(layer, tileBrush,
                 tileSelection.Bounds.Location, tileSelection, true);
             m_commandHistory.Do(command);
 
