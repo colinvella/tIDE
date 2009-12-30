@@ -287,6 +287,9 @@ namespace TileMapEditor
             UpdateTileSheetControls();
             UpdateToolButtons();
             UpdateTileBrushDropDown();
+
+            m_mapTreeView.UpdateTree();
+            m_tilePicker.UpdatePicker();
         }
 
         private void UpdateEditorTitle()
@@ -634,7 +637,6 @@ namespace TileMapEditor
             if (layer == null)
                 return;
 
-            //m_mapPanel.TileSelection.EraseTiles(layer);
             Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection, false);
             m_commandHistory.Do(command);
 
@@ -952,9 +954,8 @@ namespace TileMapEditor
 
             StartWaitCursor();
 
-            TileImageCache.Instance.Refresh(tileSheet);
-
-            m_map.AddTileSheet(tileSheet);
+            Command command = new NewTileSheetCommand(m_map, tileSheet);
+            m_commandHistory.Do(command);
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = tileSheet;
@@ -967,6 +968,7 @@ namespace TileMapEditor
 
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)
