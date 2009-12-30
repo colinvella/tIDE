@@ -9,13 +9,13 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Commands
 {
-    internal class EraseTileCommand: Command
+    internal class ToolsEraseTileCommand: Command
     {
         private Layer m_layer; 
         private Location m_tileLocation;
         private Tile m_oldTile;
 
-        public EraseTileCommand(Layer layer, Location tileLocation)
+        public ToolsEraseTileCommand(Layer layer, Location tileLocation)
         {
             m_layer = layer;
             m_tileLocation = tileLocation;

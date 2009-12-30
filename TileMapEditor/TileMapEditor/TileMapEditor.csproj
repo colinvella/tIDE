@@ -60,7 +60,7 @@
     <Compile Include="Commands\TileSheetDeleteCommand.cs" />
     <Compile Include="Commands\EditDeleteCommand.cs" />
     <Compile Include="Commands\ToolsTileBlockCommand.cs" />
-    <Compile Include="Commands\EraseTileCommand.cs" />
+    <Compile Include="Commands\ToolsEraseTileCommand.cs" />
     <Compile Include="Commands\TileSheetNewCommand.cs" />
     <Compile Include="Commands\EditPasteCommand.cs" />
     <Compile Include="Commands\ToolsPlaceTileCommand.cs" />
