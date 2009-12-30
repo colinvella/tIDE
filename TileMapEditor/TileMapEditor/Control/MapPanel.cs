@@ -167,7 +167,7 @@ namespace TileMapEditor.Control
             int maxX = Math.Min(layerSize.Width - 1, Math.Max(m_tileLayerLocation.X, m_dragTileStart.X));
             int maxY = Math.Min(layerSize.Height - 1, Math.Max(m_tileLayerLocation.Y, m_dragTileStart.Y));
 
-            Command command = new DrawTileBlockCommand(
+            Command command = new ToolsTileBlockCommand(
                 m_selectedLayer, m_selectedTileSheet, m_selectedTileIndex,
                 new Location(minX, minY),
                 new Tiling.Dimensions.Size(maxX - minX + 1, maxY - minY + 1));

@@ -59,7 +59,7 @@
     <Compile Include="Commands\CommandHistory.cs" />
     <Compile Include="Commands\TileSheetDeleteCommand.cs" />
     <Compile Include="Commands\EditDeleteCommand.cs" />
-    <Compile Include="Commands\DrawTileBlockCommand.cs" />
+    <Compile Include="Commands\ToolsTileBlockCommand.cs" />
     <Compile Include="Commands\EraseTileCommand.cs" />
     <Compile Include="Commands\TileSheetNewCommand.cs" />
     <Compile Include="Commands\PasteCommand.cs" />
