@@ -135,7 +135,7 @@ namespace TileMapEditor.Control
                 && oldTile.TileIndex == m_selectedTileIndex)
                 return;
 
-            Command command = new PlaceTileCommand(
+            Command command = new ToolsPlaceTileCommand(
                 m_selectedLayer, m_selectedTileSheet,
                 m_selectedTileIndex, m_tileLayerLocation);
             m_commandHistory.Do(command);

@@ -63,7 +63,7 @@
     <Compile Include="Commands\EraseTileCommand.cs" />
     <Compile Include="Commands\TileSheetNewCommand.cs" />
     <Compile Include="Commands\PasteCommand.cs" />
-    <Compile Include="Commands\PlaceTileCommand.cs" />
+    <Compile Include="Commands\ToolsPlaceTileCommand.cs" />
     <Compile Include="Commands\ToolsSelectCommand.cs" />
     <Compile Include="Control\CustomListView.cs">
       <SubType>Component</SubType>

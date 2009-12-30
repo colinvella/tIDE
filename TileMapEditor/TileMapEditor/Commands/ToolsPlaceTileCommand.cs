@@ -9,7 +9,7 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Commands
 {
-    internal class PlaceTileCommand: Command
+    internal class ToolsPlaceTileCommand: Command
     {
         private Layer m_layer; 
         private TileSheet m_tileSheet;
@@ -17,7 +17,7 @@ namespace TileMapEditor.Commands
         private Location m_tileLocation;
         private Tile m_oldTile;
 
-        public PlaceTileCommand(Layer layer, TileSheet tileSheet,
+        public ToolsPlaceTileCommand(Layer layer, TileSheet tileSheet,
             int tileIndex, Location tileLocation)
         {
             m_layer = layer;
