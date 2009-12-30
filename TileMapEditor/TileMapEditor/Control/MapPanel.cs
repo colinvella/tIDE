@@ -100,7 +100,7 @@ namespace TileMapEditor.Control
                 for (tileLocation.X = minX; tileLocation.X <= maxX; tileLocation.X++)
                     tileSelection.AddLocation(tileLocation);
 
-            Command command = new SelectionCommand(
+            Command command = new ToolsSelectCommand(
                 m_selectedLayer, m_tileSelection, tileSelection,
                 !m_ctrlKeyPressed);
             m_commandHistory.Do(command);

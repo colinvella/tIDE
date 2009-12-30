@@ -7,7 +7,7 @@ using Tiling.Layers;
 
 namespace TileMapEditor.Commands
 {
-    internal class SelectionCommand: Command
+    internal class ToolsSelectCommand: Command
     {
         private Layer m_layer;
         private TileSelection m_currentTileSelection;
@@ -15,7 +15,7 @@ namespace TileMapEditor.Commands
         private TileSelection m_newTileSelection;
         private bool m_replace;
 
-        public SelectionCommand(Layer layer,
+        public ToolsSelectCommand(Layer layer,
             TileSelection currentTileSelection, TileSelection newTileSelection,
             bool replace)
         {
