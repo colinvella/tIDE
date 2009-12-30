@@ -57,6 +57,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\EditCutCommand.cs" />
     <Compile Include="Commands\TileSheetDeleteCommand.cs" />
     <Compile Include="Commands\EditDeleteCommand.cs" />
     <Compile Include="Commands\ToolsTileBlockCommand.cs" />
