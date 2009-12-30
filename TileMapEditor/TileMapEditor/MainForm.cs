@@ -584,7 +584,7 @@ namespace TileMapEditor
             TileBrush tileBrush = new TileBrush(layer, tileSelection);
             ClipBoardManager.Instance.StoreTileBrush(tileBrush);
 
-            Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection, true);
+            Command command = new EditDeleteCommand(layer, m_mapPanel.TileSelection, true);
             m_commandHistory.Do(command);
 
             m_needsSaving = true;
@@ -637,7 +637,7 @@ namespace TileMapEditor
             if (layer == null)
                 return;
 
-            Command command = new DeleteSelectionCommand(layer, m_mapPanel.TileSelection, false);
+            Command command = new EditDeleteCommand(layer, m_mapPanel.TileSelection, false);
             m_commandHistory.Do(command);
 
             m_needsSaving = true;

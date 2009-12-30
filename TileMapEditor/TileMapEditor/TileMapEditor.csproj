@@ -58,7 +58,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
     <Compile Include="Commands\TileSheetDeleteCommand.cs" />
-    <Compile Include="Commands\DeleteSelectionCommand.cs" />
+    <Compile Include="Commands\EditDeleteCommand.cs" />
     <Compile Include="Commands\DrawTileBlockCommand.cs" />
     <Compile Include="Commands\EraseTileCommand.cs" />
     <Compile Include="Commands\TileSheetNewCommand.cs" />

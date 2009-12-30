@@ -9,14 +9,14 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Commands
 {
-    internal class DeleteSelectionCommand: Command
+    internal class EditDeleteCommand: Command
     {
         private Layer m_layer;
         private Location m_selectionLocation;
         private TileSelection m_tileSelection;
         private TileBrush m_tileBrush;
 
-        public DeleteSelectionCommand(Layer layer, TileSelection tileSelection, bool isCut)
+        public EditDeleteCommand(Layer layer, TileSelection tileSelection, bool isCut)
         {
             m_layer = layer;
             m_selectionLocation = tileSelection.Bounds.Location;
