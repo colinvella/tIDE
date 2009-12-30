@@ -16,15 +16,14 @@ namespace TileMapEditor.Commands
         private TileSelection m_tileSelection;
         private TileBrush m_tileBrush;
 
-        public EditDeleteCommand(Layer layer, TileSelection tileSelection, bool isCut)
+        public EditDeleteCommand(Layer layer, TileSelection tileSelection)
         {
             m_layer = layer;
             m_selectionLocation = tileSelection.Bounds.Location;
             m_tileSelection = tileSelection;
             m_tileBrush = null;
 
-            m_description = isCut ? "Cut " : "Erase ";
-            m_description += "selection from layer \"" + m_layer.Id + "\"";
+            m_description = "Erase selection from layer \"" + m_layer.Id + "\"";
         }
 
         public override void Do()

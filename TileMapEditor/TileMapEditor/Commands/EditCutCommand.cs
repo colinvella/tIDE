@@ -15,25 +15,24 @@ namespace TileMapEditor.Commands
         private Location m_selectionLocation;
         private TileSelection m_tileSelection;
         private TileBrush m_previousClipboardContent;
-        private TileBrush m_tileBrush;
+        private TileBrush m_oldTiles;
 
-        public EditCutCommand(Layer layer, TileSelection tileSelection, bool isCut)
+        public EditCutCommand(Layer layer, TileSelection tileSelection)
         {
             m_layer = layer;
             m_selectionLocation = tileSelection.Bounds.Location;
             m_tileSelection = tileSelection;
-            m_tileBrush = null;
+            m_oldTiles = null;
 
-            m_description = isCut ? "Cut " : "Erase ";
-            m_description += "selection from layer \"" + m_layer.Id + "\"";
+            m_description = "Cut selection from layer \"" + m_layer.Id + "\"";
         }
 
         public override void Do()
         {
             ClipBoardManager clipBoardManager = ClipBoardManager.Instance;
             m_previousClipboardContent = clipBoardManager.RetrieveTileBrush();
-            m_tileBrush = new TileBrush(m_layer, m_tileSelection);
-            clipBoardManager.StoreTileBrush(m_tileBrush);
+            m_oldTiles = new TileBrush(m_layer, m_tileSelection);
+            clipBoardManager.StoreTileBrush(m_oldTiles);
             m_tileSelection.EraseTiles(m_layer);
         }
 
@@ -41,7 +40,7 @@ namespace TileMapEditor.Commands
         {
             ClipBoardManager clipBoardManager = ClipBoardManager.Instance;
             clipBoardManager.StoreTileBrush(m_previousClipboardContent);
-            m_tileBrush.ApplyTo(m_layer, m_selectionLocation, m_tileSelection);
+            m_oldTiles.ApplyTo(m_layer, m_selectionLocation, m_tileSelection);
         }
     }
 }
