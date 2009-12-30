@@ -57,10 +57,11 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\TileSheetDeleteCommand.cs" />
     <Compile Include="Commands\DeleteSelectionCommand.cs" />
     <Compile Include="Commands\DrawTileBlockCommand.cs" />
     <Compile Include="Commands\EraseTileCommand.cs" />
-    <Compile Include="Commands\NewTileSheetCommand.cs" />
+    <Compile Include="Commands\TileSheetNewCommand.cs" />
     <Compile Include="Commands\PasteCommand.cs" />
     <Compile Include="Commands\PlaceTileCommand.cs" />
     <Compile Include="Commands\SelectionCommand.cs" />

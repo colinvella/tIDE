@@ -954,7 +954,7 @@ namespace TileMapEditor
 
             StartWaitCursor();
 
-            Command command = new NewTileSheetCommand(m_map, tileSheet);
+            Command command = new TileSheetNewCommand(m_map, tileSheet);
             m_commandHistory.Do(command);
 
             m_mapTreeView.UpdateTree();
@@ -1020,7 +1020,8 @@ namespace TileMapEditor
                 == DialogResult.No)
                 return;
 
-            m_map.RemoveTileSheet(tileSheet);
+            Command command = new TileSheetDeleteCommand(m_map, tileSheet);
+            m_commandHistory.Do(command);
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = null;

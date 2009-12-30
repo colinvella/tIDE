@@ -8,12 +8,12 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Commands
 {
-    internal class NewTileSheetCommand: Command
+    internal class TileSheetNewCommand: Command
     {
         private Map m_map;
         private TileSheet m_newTileSheet;
 
-        public NewTileSheetCommand(Map map, TileSheet newTileSheet)
+        public TileSheetNewCommand(Map map, TileSheet newTileSheet)
         {
             m_map = map;
             m_newTileSheet = newTileSheet;
