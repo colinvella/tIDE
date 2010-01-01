@@ -599,8 +599,8 @@ namespace TileMapEditor
             if (tileSelection.IsEmpty())
                 return;
 
-            TileBrush tileBrush = new TileBrush(layer, tileSelection);
-            ClipBoardManager.Instance.StoreTileBrush(tileBrush);
+            Command command = new EditCopyCommand(layer, tileSelection);
+            m_commandHistory.Do(command);
 
             UpdateEditControls();
         }
