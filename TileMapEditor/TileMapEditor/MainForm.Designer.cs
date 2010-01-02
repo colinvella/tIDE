@@ -73,7 +73,7 @@
             this.m_editToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editSelectAllButton = new System.Windows.Forms.ToolStripButton();
             this.m_editClearSelectionButton = new System.Windows.Forms.ToolStripButton();
-            this.m_editInvertSelection = new System.Windows.Forms.ToolStripButton();
+            this.m_editInvertSelectionButton = new System.Windows.Forms.ToolStripButton();
             this.m_editToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editMakeTileBrushButton = new System.Windows.Forms.ToolStripButton();
             this.m_editManageTileBrushesButton = new System.Windows.Forms.ToolStripButton();
@@ -563,7 +563,7 @@
             this.m_editToolStripSeparator2,
             this.m_editSelectAllButton,
             this.m_editClearSelectionButton,
-            this.m_editInvertSelection,
+            this.m_editInvertSelectionButton,
             this.m_editToolStripSeparator3,
             this.m_editMakeTileBrushButton,
             this.m_editManageTileBrushesButton});
@@ -673,16 +673,16 @@
             this.m_editClearSelectionButton.ToolTipText = "Clear selection";
             this.m_editClearSelectionButton.Click += new System.EventHandler(this.OnEditClearSelection);
             // 
-            // m_editInvertSelection
+            // m_editInvertSelectionButton
             // 
-            this.m_editInvertSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editInvertSelection.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
-            this.m_editInvertSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_editInvertSelection.Name = "m_editInvertSelection";
-            this.m_editInvertSelection.Size = new System.Drawing.Size(23, 22);
-            this.m_editInvertSelection.Text = "Invert Selection";
-            this.m_editInvertSelection.ToolTipText = "Invert selection";
-            this.m_editInvertSelection.Click += new System.EventHandler(this.OnEditInvertSelection);
+            this.m_editInvertSelectionButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editInvertSelectionButton.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
+            this.m_editInvertSelectionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_editInvertSelectionButton.Name = "m_editInvertSelectionButton";
+            this.m_editInvertSelectionButton.Size = new System.Drawing.Size(23, 22);
+            this.m_editInvertSelectionButton.Text = "Invert Selection";
+            this.m_editInvertSelectionButton.ToolTipText = "Invert selection";
+            this.m_editInvertSelectionButton.Click += new System.EventHandler(this.OnEditInvertSelection);
             // 
             // m_editToolStripSeparator3
             // 
@@ -692,6 +692,7 @@
             // m_editMakeTileBrushButton
             // 
             this.m_editMakeTileBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editMakeTileBrushButton.Enabled = false;
             this.m_editMakeTileBrushButton.Image = global::TileMapEditor.Properties.Resources.EditMakeTileBrush;
             this.m_editMakeTileBrushButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editMakeTileBrushButton.Name = "m_editMakeTileBrushButton";
@@ -703,6 +704,7 @@
             // m_editManageTileBrushesButton
             // 
             this.m_editManageTileBrushesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_editManageTileBrushesButton.Enabled = false;
             this.m_editManageTileBrushesButton.Image = global::TileMapEditor.Properties.Resources.EditManageTileBrushes;
             this.m_editManageTileBrushesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_editManageTileBrushesButton.Name = "m_editManageTileBrushesButton";
@@ -1137,6 +1139,7 @@
             // 
             // m_editSelectAllMenuItem
             // 
+            this.m_editSelectAllMenuItem.Enabled = false;
             this.m_editSelectAllMenuItem.Image = global::TileMapEditor.Properties.Resources.EditSelectAll;
             this.m_editSelectAllMenuItem.Name = "m_editSelectAllMenuItem";
             this.m_editSelectAllMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
@@ -1146,6 +1149,7 @@
             // 
             // m_editClearSelectionMenuItem
             // 
+            this.m_editClearSelectionMenuItem.Enabled = false;
             this.m_editClearSelectionMenuItem.Image = global::TileMapEditor.Properties.Resources.EditClearSelection;
             this.m_editClearSelectionMenuItem.Name = "m_editClearSelectionMenuItem";
             this.m_editClearSelectionMenuItem.Size = new System.Drawing.Size(192, 22);
@@ -1154,6 +1158,7 @@
             // 
             // m_editInvertSelectionMenuItem
             // 
+            this.m_editInvertSelectionMenuItem.Enabled = false;
             this.m_editInvertSelectionMenuItem.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
             this.m_editInvertSelectionMenuItem.Name = "m_editInvertSelectionMenuItem";
             this.m_editInvertSelectionMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
@@ -1163,6 +1168,7 @@
             // 
             // m_editMakeTileBrushMenuItem
             // 
+            this.m_editMakeTileBrushMenuItem.Enabled = false;
             this.m_editMakeTileBrushMenuItem.Image = global::TileMapEditor.Properties.Resources.EditMakeTileBrush;
             this.m_editMakeTileBrushMenuItem.Name = "m_editMakeTileBrushMenuItem";
             this.m_editMakeTileBrushMenuItem.Size = new System.Drawing.Size(192, 22);
@@ -1171,10 +1177,12 @@
             // 
             // m_editManageTileBrushesMenuItem
             // 
+            this.m_editManageTileBrushesMenuItem.Enabled = false;
             this.m_editManageTileBrushesMenuItem.Image = global::TileMapEditor.Properties.Resources.EditManageTileBrushes;
             this.m_editManageTileBrushesMenuItem.Name = "m_editManageTileBrushesMenuItem";
             this.m_editManageTileBrushesMenuItem.Size = new System.Drawing.Size(192, 22);
             this.m_editManageTileBrushesMenuItem.Text = "Manage Tile Brushes...";
+            this.m_editManageTileBrushesMenuItem.Click += new System.EventHandler(this.OnEditManageTileBrushes);
             // 
             // m_viewMenuItem
             // 
@@ -1854,7 +1862,7 @@
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator2;
         private System.Windows.Forms.ToolStripButton m_editSelectAllButton;
         private System.Windows.Forms.ToolStripButton m_editClearSelectionButton;
-        private System.Windows.Forms.ToolStripButton m_editInvertSelection;
+        private System.Windows.Forms.ToolStripButton m_editInvertSelectionButton;
         private System.Windows.Forms.ToolStripMenuItem m_pluginsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_pluginsReloadMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

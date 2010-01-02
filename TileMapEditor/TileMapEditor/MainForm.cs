@@ -135,6 +135,12 @@ namespace TileMapEditor
 
         private void UpdateEditControls()
         {
+            Layer selectedLayer = m_mapPanel.SelectedLayer;
+            TileSelection tileSelection = m_mapPanel.TileSelection;
+            bool selectedLayerAndTiles
+                = selectedLayer != null && !tileSelection.IsEmpty();
+
+            // undo, redo
             m_editUndoMenuItem.Enabled = m_editUndoButton.Enabled
                 = m_commandHistory.CanUndo();
             m_editRedoMenuItem.Enabled = m_editRedoButton.Enabled
@@ -145,13 +151,35 @@ namespace TileMapEditor
             m_editRedoButton.ToolTipText
                 = "Redo: " + m_commandHistory.RedoDescription;
 
+            // cut, copy, paste
+
             m_editCutMenuItem.Enabled = m_editCutButton.Enabled
                 = m_editCopyMenuItem.Enabled = m_editCopyButton.Enabled
                 = m_editDeleteMenuItem.Enabled = m_editDeleteButton.Enabled
-                = !m_mapPanel.TileSelection.IsEmpty();
+                = selectedLayerAndTiles;
 
             m_editPasteMenuItem.Enabled = m_editPasteButton.Enabled
                 = ClipBoardManager.Instance.HasTileBrush();
+
+            // selection
+
+            m_editSelectAllMenuItem.Enabled
+                = m_editSelectAllButton.Enabled
+                = m_editClearSelectionMenuItem.Enabled
+                = m_editClearSelectionButton.Enabled
+                = m_editInvertSelectionMenuItem.Enabled
+                = m_editInvertSelectionButton.Enabled
+                = selectedLayer != null;
+
+            // tile brushes
+
+            m_editMakeTileBrushMenuItem.Enabled
+                = m_editMakeTileBrushButton.Enabled
+                = selectedLayerAndTiles;
+
+            m_editManageTileBrushesMenuItem.Enabled
+                = m_editManageTileBrushesButton.Enabled
+                = m_tileBrushCollection.TileBrushes.Count > 0;
         }
 
         private void UpdateZoomControls()
@@ -214,6 +242,33 @@ namespace TileMapEditor
                 m_viewLayerCompositingMenuItem.Text = "Dim Unselected Layers";
                 m_viewLayerCompositingButton.ToolTipText = "Dim unselected layers";
             }
+        }
+
+        private void UpdateLayerOrderingControls()
+        {
+            Layer layer = m_mapPanel.SelectedLayer;
+
+            if (layer == null)
+                return;
+
+            int layerIndex = m_map.Layers.IndexOf(layer);
+
+            m_layerBringForwardMenuItem.Enabled
+                = m_layerBringForwardButton.Enabled
+                = layerIndex < m_map.Layers.Count - 1;
+
+            m_layerSendBackwardMenuItem.Enabled
+                = m_layerSendBackwardButton.Enabled
+                = layerIndex > 0;
+        }
+
+        private void UpdateLayerControls()
+        {
+            UpdateLayerOrderingControls();
+
+            UpdateLayerVisibilityControls();
+
+            UpdateLayerCompositingControls();
         }
 
         private void UpdateTileGuidesControls()
@@ -1083,26 +1138,18 @@ namespace TileMapEditor
             if (layerSelected)
             {
                 Layer layer = (Layer)component;
-                int layerIndex = m_map.Layers.IndexOf(layer);
-
-                m_layerBringForwardMenuItem.Enabled
-                    = m_layerBringForwardButton.Enabled
-                    = layerIndex < m_map.Layers.Count - 1;
-
-                m_layerSendBackwardMenuItem.Enabled
-                    = m_layerSendBackwardButton.Enabled
-                    = layerIndex > 0;
 
                 m_mapPanel.SelectedLayer = layer;
             }
             else
-                m_layerBringForwardMenuItem.Enabled
-                    = m_layerBringForwardButton.Enabled
-                    = m_layerSendBackwardMenuItem.Enabled
-                    = m_layerSendBackwardButton.Enabled
-                    = false;
+            {
+                m_mapPanel.SelectedLayer = null;
+            }
 
             m_selectedComponent = component;
+
+            UpdateEditControls();
+            UpdateLayerOrderingControls();
 
             // enable/disable tile sheet menu items as applicable
             UpdateTileSheetControls();
