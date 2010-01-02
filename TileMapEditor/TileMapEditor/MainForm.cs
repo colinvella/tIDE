@@ -648,23 +648,37 @@ namespace TileMapEditor
             if (layer == null)
                 return;
 
-            Rectangle selectionContext
-                = new Rectangle(Tiling.Dimensions.Location.Origin, layer.LayerSize);
-            m_mapPanel.TileSelection.SelectAll(selectionContext);
+            Command command = new EditChangeSelectionCommand(layer,
+                m_mapPanel.TileSelection, ChangeSelectionType.SelectAll);
+            m_commandHistory.Do(command);
+
+            UpdateEditControls();
         }
 
         private void OnEditClearSelection(object sender, EventArgs eventArgs)
         {
-            m_mapPanel.TileSelection.Clear();
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            Command command = new EditChangeSelectionCommand(layer,
+                m_mapPanel.TileSelection, ChangeSelectionType.Clear);
+            m_commandHistory.Do(command);
+
+            UpdateEditControls();
         }
 
         private void OnEditInvertSelection(object sender, EventArgs eventArgs)
         {
-            m_mapPanel.TileSelection.Invert(new Rectangle(
-                Tiling.Dimensions.Location.Origin,
-                new Size(
-                    m_mapPanel.SelectedLayer.LayerSize.Width,
-                    m_mapPanel.SelectedLayer.LayerSize.Height)));
+            Layer layer = m_mapPanel.SelectedLayer;
+            if (layer == null)
+                return;
+
+            Command command = new EditChangeSelectionCommand(layer,
+                m_mapPanel.TileSelection, ChangeSelectionType.Invert);
+            m_commandHistory.Do(command);
+
+            UpdateEditControls();
         }
 
         private void OnEditMakeTileBrush(object sender, EventArgs eventArgs)
