@@ -51,6 +51,15 @@ namespace TileMapEditor
             }
         }
 
+        public TileBrush(TileBrush tileBrush)
+        {
+            m_id = tileBrush.m_id;
+            m_brushSize = tileBrush.m_brushSize;
+            m_displaySize = tileBrush.m_displaySize;
+            m_tileBrushElements = new List<TileBrushElement>(tileBrush.m_tileBrushElements);
+            m_imageRepresentation = tileBrush.m_imageRepresentation;
+        }
+
         public void ApplyTo(Layer layer, Location brushLocation,
             TileSelection tileSelection)
         {

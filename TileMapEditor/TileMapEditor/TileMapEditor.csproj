@@ -60,6 +60,7 @@
     <Compile Include="Commands\EditChangeSelectionCommand.cs" />
     <Compile Include="Commands\EditCopyCommand.cs" />
     <Compile Include="Commands\EditCutCommand.cs" />
+    <Compile Include="Commands\EditTileBrushesCommand.cs" />
     <Compile Include="Commands\TileSheetDeleteCommand.cs" />
     <Compile Include="Commands\EditDeleteCommand.cs" />
     <Compile Include="Commands\ToolsTileBlockCommand.cs" />

@@ -14,6 +14,13 @@ namespace TileMapEditor
             m_tileBrushes = new List<TileBrush>();
         }
 
+        public TileBrushCollection(TileBrushCollection tileBrushCollection)
+        {
+            m_tileBrushes = new List<TileBrush>();
+            foreach (TileBrush tileBrush in tileBrushCollection.TileBrushes)
+                m_tileBrushes.Add(new TileBrush(tileBrush));
+        }
+
         public string GenerateId()
         {
             List<string> currentIds = new List<string>();
