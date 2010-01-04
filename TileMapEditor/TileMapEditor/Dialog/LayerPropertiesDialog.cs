@@ -65,6 +65,9 @@ namespace TileMapEditor.Dialog
             if (m_isNewLayer)
             {
                 m_layer.Id = newId;
+                m_layer.Description = m_textBoxDescription.Text;
+                m_layer.LayerSize = newLayerSize;
+                m_layer.TileSize = newTileSize;
                 command = new LayerNewCommand(m_layer.Map, m_layer);
             }
             else

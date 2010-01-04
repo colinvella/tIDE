@@ -1018,15 +1018,13 @@ namespace TileMapEditor
         {
             TileSheet tileSheet = new TileSheet("untitled tile sheet", m_map, "",
                 new Size(8, 8), new Size(8, 8));
-            TileSheetPropertiesDialog tileSheetPropertiesDialog = new TileSheetPropertiesDialog(tileSheet);
+            TileSheetPropertiesDialog tileSheetPropertiesDialog
+                = new TileSheetPropertiesDialog(tileSheet, true, m_mapTreeView);
 
             if (tileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
             StartWaitCursor();
-
-            Command command = new TileSheetNewCommand(m_map, tileSheet, m_mapTreeView);
-            m_commandHistory.Do(command);
 
             m_mapPanel.LoadTileSheet(tileSheet);
 
@@ -1047,14 +1045,13 @@ namespace TileMapEditor
 
             TileSheet tileSheet = (TileSheet)m_selectedComponent;
             TileSheetPropertiesDialog TileSheetPropertiesDialog
-                = new TileSheetPropertiesDialog(tileSheet);
+                = new TileSheetPropertiesDialog(tileSheet, false, m_mapTreeView);
 
             if (TileSheetPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
             StartWaitCursor();
 
-            TileImageCache.Instance.Refresh(tileSheet);
             m_tilePicker.UpdatePicker();
             m_tilePicker.RefreshSelectedTileSheet();
 
@@ -1064,6 +1061,7 @@ namespace TileMapEditor
             UpdateFileControls();
             UpdateEditControls();
             UpdateTileSheetControls();
+            m_mapTreeView.UpdateTree();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)

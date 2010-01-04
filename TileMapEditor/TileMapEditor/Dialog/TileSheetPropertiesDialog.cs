@@ -12,6 +12,9 @@ using Tiling;
 using Tiling.Dimensions;
 using Tiling.Tiles;
 
+using TileMapEditor.Commands;
+using TileMapEditor.Control;
+
 namespace TileMapEditor.Dialog
 {
     public partial class TileSheetPropertiesDialog : Form
@@ -19,6 +22,8 @@ namespace TileMapEditor.Dialog
         #region Private Variables
 
         private TileSheet m_tileSheet;
+        private bool m_isNewTileSheet;
+        private MapTreeView m_mapTreeView;
         private Bitmap m_bitmapImageSource;
         private string m_imageSourceErrorMessge;
 
@@ -365,27 +370,50 @@ namespace TileMapEditor.Dialog
                 return;
             }
 
-            m_tileSheet.Id = newId;
-            m_tileSheet.Description = m_textBoxDescription.Text;
-            m_tileSheet.ImageSource = m_textBoxImageSource.Text;
+            Tiling.Dimensions.Size newTileSize = new Tiling.Dimensions.Size(
+                (int)m_textBoxTileWidth.Value, (int)m_textBoxTileHeight.Value);
 
-            m_tileSheet.TileSize = new Tiling.Dimensions.Size((int)m_textBoxTileWidth.Value, (int)m_textBoxTileHeight.Value);
-            m_tileSheet.Margin = new Tiling.Dimensions.Size((int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
-            m_tileSheet.Spacing = new Tiling.Dimensions.Size((int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
+            Tiling.Dimensions.Size newMargin = new Tiling.Dimensions.Size(
+                (int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
 
+            Tiling.Dimensions.Size newSpacing = new Tiling.Dimensions.Size(
+                (int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
+
+            Tiling.Dimensions.Size newSheetSize = Tiling.Dimensions.Size.Zero;
             if (m_bitmapImageSource != null)
             {
-                m_tileSheet.SheetSize = new Tiling.Dimensions.Size(
-                    (m_bitmapImageSource.Width - m_tileSheet.Margin.Width)
-                        / (m_tileSheet.TileSize.Width + m_tileSheet.Spacing.Width),
-                    (m_bitmapImageSource.Height - m_tileSheet.Margin.Height)
-                        / (m_tileSheet.TileSize.Height + m_tileSheet.Spacing.Height));
+                newSheetSize.Width = (m_bitmapImageSource.Width - newMargin.Width)
+                        / (newTileSize.Width + newSpacing.Width);
+                newSheetSize.Height = (m_bitmapImageSource.Height - newMargin.Height)
+                        / (newTileSize.Height + newSpacing.Height);
             }
-
-            m_customPropertyGrid.StoreProperties(m_tileSheet);
 
             if (m_bitmapImageSource != null)
                 m_bitmapImageSource.Dispose();
+
+            Command command = null;
+
+            if (m_isNewTileSheet)
+            {
+                m_tileSheet.Id = newId;
+                m_tileSheet.Description = m_textBoxDescription.Text;
+                m_tileSheet.TileSize = newTileSize;
+                m_tileSheet.Margin = newMargin;
+                m_tileSheet.Spacing = newSpacing;
+                m_tileSheet.SheetSize = newSheetSize;
+                m_tileSheet.ImageSource = m_textBoxImageSource.Text;
+                m_tileSheet.Properties.Clear();
+                m_tileSheet.Properties.CopyFrom(m_customPropertyGrid.NewProperties);
+                command = new TileSheetNewCommand(m_tileSheet.Map, m_tileSheet, m_mapTreeView);
+            }
+            else
+            {
+                command = new TileSheetPropertiesCommand(m_tileSheet, newId, m_textBoxDescription.Text,
+                    newTileSize, newMargin, newSpacing, newSheetSize, m_textBoxImageSource.Text,
+                    m_customPropertyGrid.NewProperties);
+            }
+
+            CommandHistory.Instance.Do(command);
 
             DialogResult = DialogResult.OK;
 
@@ -445,11 +473,13 @@ namespace TileMapEditor.Dialog
 
         #region Public Methods
 
-        public TileSheetPropertiesDialog(TileSheet tileSheet)
+        public TileSheetPropertiesDialog(TileSheet tileSheet, bool isNewTileSheet, MapTreeView mapTreeView)
         {
             InitializeComponent();
 
             m_tileSheet = tileSheet;
+            m_isNewTileSheet = isNewTileSheet;
+            m_mapTreeView = mapTreeView;
         }
 
         #endregion
