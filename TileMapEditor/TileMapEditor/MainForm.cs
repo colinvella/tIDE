@@ -1002,21 +1002,16 @@ namespace TileMapEditor
 
             Layer layer = (Layer)m_selectedComponent;
 
-            if (MessageBox.Show(this, "Are you sure you want to delete this Layer?",
-                "Delete Layer \"" + layer.Id + "\"",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
-                == DialogResult.No)
-                return;
-
-            m_map.RemoveLayer(layer);
-
-            m_mapTreeView.UpdateTree();
+            Command command = new LayerDeleteCommand(m_map, layer, m_mapTreeView);
+            m_commandHistory.Do(command);
 
             if (m_map.Layers.Count == 0)
                 m_mapPanel.Enabled = false;
 
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateLayerControls();
         }
 
         private void OnTileSheetNew(object sender, EventArgs eventArgs)
@@ -1165,7 +1160,7 @@ namespace TileMapEditor
             UpdateTileSheetControls();
         }
 
-        private void OnToolsSelect(object sender, EventArgs e)
+        private void OnToolsSelect(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.Select;
             UpdateToolButtons();
