@@ -15,7 +15,7 @@ namespace TileMapEditor.Control
     {
         #region Private Variables
 
-        private DummyComponent m_dummyComponent = new DummyComponent();
+        private Tiling.ObjectModel.PropertyCollection m_newProperties;
         private string m_previousPropertyName = null;
 
         #endregion
@@ -90,9 +90,9 @@ namespace TileMapEditor.Control
 
                 if (m_previousPropertyName != null && m_previousPropertyName != propertyName)
                 {
-                    PropertyValue previousPropertyValue = m_dummyComponent.Properties[m_previousPropertyName];
-                    m_dummyComponent.Properties.Remove(m_previousPropertyName);
-                    m_dummyComponent.Properties[propertyName] = previousPropertyValue;
+                    PropertyValue previousPropertyValue = m_newProperties[m_previousPropertyName];
+                    m_newProperties.Remove(m_previousPropertyName);
+                    m_newProperties[propertyName] = previousPropertyValue;
                     m_previousPropertyName = null;
                 }
 
@@ -104,7 +104,7 @@ namespace TileMapEditor.Control
 
                 if (cellValue == null)
                 {
-                    m_dummyComponent.Properties[propertyName] = null;
+                    m_newProperties[propertyName] = null;
                     return;
                 }
 
@@ -115,28 +115,28 @@ namespace TileMapEditor.Control
                 cell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
                 if (propertyValue.Trim().Equals(bool.TrueString, StringComparison.CurrentCultureIgnoreCase))
-                    cell.Value = m_dummyComponent.Properties[propertyName] = true;
+                    cell.Value = m_newProperties[propertyName] = true;
                 else if (propertyValue.Trim().Equals(bool.FalseString, StringComparison.CurrentCultureIgnoreCase))
-                    cell.Value = m_dummyComponent.Properties[propertyName] = false;
+                    cell.Value = m_newProperties[propertyName] = false;
                 else if (int.TryParse(propertyValue.Trim(), out propertyValueInt))
                 {
-                    cell.Value = m_dummyComponent.Properties[propertyName] = propertyValueInt;
+                    cell.Value = m_newProperties[propertyName] = propertyValueInt;
                     cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 }
                 else if (float.TryParse(propertyValue.Trim(), out propertyValueFloat))
                 {
-                    cell.Value = m_dummyComponent.Properties[propertyName] = propertyValueFloat;
+                    cell.Value = m_newProperties[propertyName] = propertyValueFloat;
                     cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 }
                 else
-                    cell.Value = m_dummyComponent.Properties[propertyName] = propertyValue;
+                    cell.Value = m_newProperties[propertyName] = propertyValue;
             }
         }
 
         private void m_dataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs dataGridViewRowEventArgs)
         {
             string propertyName = dataGridViewRowEventArgs.Row.Cells[0].Value.ToString();
-            m_dummyComponent.Properties.Remove(propertyName);
+            m_newProperties.Remove(propertyName);
         }
 
         #endregion
@@ -146,17 +146,19 @@ namespace TileMapEditor.Control
         public CustomPropertyGrid()
         {
             InitializeComponent();
+
+            m_newProperties = new Tiling.ObjectModel.PropertyCollection();
         }
 
         public void LoadProperties(Tiling.ObjectModel.Component component)
         {
             m_dataGridView.Rows.Clear();
 
-            m_dummyComponent.Properties.Clear();
+            m_newProperties.Clear();
             foreach (KeyValuePair<string, PropertyValue> keyValuePair
                 in component.Properties)
             {
-                m_dummyComponent.Properties.Add(keyValuePair.Key, keyValuePair.Value);
+                m_newProperties.Add(keyValuePair.Key, keyValuePair.Value);
 
                 DataGridViewRow row = new DataGridViewRow();
                 DataGridViewTextBoxCell nameCell = new DataGridViewTextBoxCell();
@@ -177,15 +179,18 @@ namespace TileMapEditor.Control
         public void StoreProperties(Tiling.ObjectModel.Component component)
         {
             component.Properties.Clear();
-            foreach (KeyValuePair<string, PropertyValue> keyValuePair
-                in m_dummyComponent.Properties)
-                component.Properties.Add(keyValuePair.Key, keyValuePair.Value);
+            component.Properties.CopyFrom(m_newProperties);
         }
 
         #endregion
-    }
 
-    internal class DummyComponent : Tiling.ObjectModel.Component
-    {
+        #region Public Properties
+
+        public Tiling.ObjectModel.PropertyCollection NewProperties
+        {
+            get { return m_newProperties; }
+        }
+
+        #endregion
     }
 }

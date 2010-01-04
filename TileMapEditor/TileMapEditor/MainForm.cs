@@ -890,6 +890,8 @@ namespace TileMapEditor
             {
                 m_needsSaving = true;
                 UpdateFileControls();
+                UpdateEditControls();
+                m_mapTreeView.UpdateTree();
             }
         }
 

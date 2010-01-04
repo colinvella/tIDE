@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 using Tiling;
 
+using TileMapEditor.Commands;
+
 namespace TileMapEditor.Dialog
 {
     public partial class MapPropertiesDialog : Form
@@ -24,11 +26,9 @@ namespace TileMapEditor.Dialog
 
         private void m_buttonOk_Click(object sender, EventArgs eventArgs)
         {
-            m_map.Id = m_textBoxId.Text;
-
-            m_map.Description = m_textBoxDescription.Text;
-
-            m_customPropertyGrid.StoreProperties(m_map);
+            Command command = new MapPropertiesCommand(m_map, m_textBoxId.Text, m_textBoxDescription.Text,
+                m_customPropertyGrid.NewProperties);
+            CommandHistory.Instance.Do(command);
 
             DialogResult = DialogResult.OK;
 

@@ -79,6 +79,11 @@ namespace Tiling.ObjectModel
             m_value = value;
         }
 
+        public PropertyValue(PropertyValue propertyValue)
+        {
+            m_value = propertyValue.m_value;
+        }
+
         public Type Type { get { return m_value.GetType(); } }
 
         public override string ToString()

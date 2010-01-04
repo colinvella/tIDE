@@ -9,18 +9,18 @@ namespace Tiling.ObjectModel
     public abstract class Component
     {
         private string m_id;
-        private Dictionary<string, PropertyValue> m_properties;
+        private PropertyCollection m_propertyCollection;
 
         public Component()
         {
             m_id = Guid.NewGuid().ToString();
-            m_properties = new Dictionary<string, PropertyValue>();
+            m_propertyCollection = new PropertyCollection();
         }
 
         public Component(string id)
         {
             m_id = id;
-            m_properties = new Dictionary<string, PropertyValue>();
+            m_propertyCollection = new PropertyCollection();
         }
 
         public override string ToString()
@@ -34,6 +34,6 @@ namespace Tiling.ObjectModel
             set { m_id = value; }
         }
 
-        public Dictionary<string, PropertyValue> Properties { get { return m_properties; } }
+        public PropertyCollection Properties { get { return m_propertyCollection; } }
     }
 }
