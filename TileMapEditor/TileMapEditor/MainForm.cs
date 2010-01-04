@@ -903,13 +903,10 @@ namespace TileMapEditor
 
             Layer layer = new Layer("untitled layer", m_map,
                 new Size(100, 25), tileSize);
-            LayerPropertiesDialog layerPropertiesDialog = new LayerPropertiesDialog(layer);
+            LayerPropertiesDialog layerPropertiesDialog = new LayerPropertiesDialog(layer, true);
 
             if (layerPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
-
-            Command command = new LayerNewCommand(m_map, layer);
-            m_commandHistory.Do(command);
 
             m_mapPanel.Enabled = true;
 
@@ -930,7 +927,7 @@ namespace TileMapEditor
 
             Layer layer = (Layer)m_selectedComponent;
             LayerPropertiesDialog layerPropertiesDialog
-                = new LayerPropertiesDialog(layer);
+                = new LayerPropertiesDialog(layer, false);
 
             if (layerPropertiesDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -966,16 +963,16 @@ namespace TileMapEditor
                 return;
 
             Layer layer = (Layer)m_selectedComponent;
-            LayerPropertiesDialog layerPropertiesDialog
-                = new LayerPropertiesDialog(layer);
 
-            m_map.BringLayerForward(layer);
-
-            m_mapTreeView.UpdateTree();
-            m_mapTreeView.SelectedComponent = layer;
+            Command command = new LayerOrderCommand(layer, LayerOrderCommandType.BringForward);
+            m_commandHistory.Do(command);
 
             m_needsSaving = true;
+            m_mapTreeView.UpdateTree();
+            m_mapTreeView.SelectedComponent = layer;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateLayerControls();
         }
 
         private void OnLayerSendBackward(object sender, EventArgs eventArgs)
@@ -985,16 +982,16 @@ namespace TileMapEditor
                 return;
 
             Layer layer = (Layer)m_selectedComponent;
-            LayerPropertiesDialog layerPropertiesDialog
-                = new LayerPropertiesDialog(layer);
 
-            m_map.SendLayerBackward(layer);
-
-            m_mapTreeView.UpdateTree();
-            m_mapTreeView.SelectedComponent = layer;
+            Command command = new LayerOrderCommand(layer, LayerOrderCommandType.SendBackward);
+            m_commandHistory.Do(command);
 
             m_needsSaving = true;
+            m_mapTreeView.UpdateTree();
+            m_mapTreeView.SelectedComponent = layer;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateLayerControls();
         }
 
         private void OnLayerDelete(object sender, EventArgs eventArgs)

@@ -20,6 +20,7 @@ namespace TileMapEditor.Dialog
         #region Private Variables
 
         private Layer m_layer;
+        private bool m_isNewLayer;
 
         #endregion
 
@@ -59,9 +60,18 @@ namespace TileMapEditor.Dialog
             Size newLayerSize = new Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
             Size newTileSize = new Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
 
-            Command command = new LayerPropertiesCommand(m_layer, newId, m_textBoxDescription.Text,
-                newLayerSize, newTileSize, m_checkBoxVisible.Checked,
-                m_customPropertyGrid.NewProperties);
+            Command command = null;
+
+            if (m_isNewLayer)
+            {
+                m_layer.Id = newId;
+                command = new LayerNewCommand(m_layer.Map, m_layer);
+            }
+            else
+                command = new LayerPropertiesCommand(m_layer, newId, m_textBoxDescription.Text,
+                    newLayerSize, newTileSize, m_checkBoxVisible.Checked,
+                    m_customPropertyGrid.NewProperties);
+
             CommandHistory.Instance.Do(command);
 
             DialogResult = DialogResult.OK;
@@ -73,11 +83,12 @@ namespace TileMapEditor.Dialog
 
         #region Public Methods
 
-        public LayerPropertiesDialog(Layer layer)
+        public LayerPropertiesDialog(Layer layer, bool isNewLayer)
         {
             InitializeComponent();
 
             m_layer = layer;
+            m_isNewLayer = isNewLayer;
         }
 
         #endregion
