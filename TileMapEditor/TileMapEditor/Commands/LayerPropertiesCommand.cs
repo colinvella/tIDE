@@ -34,7 +34,6 @@ namespace TileMapEditor.Commands
 
             m_newId = newId;
             m_newDescription = newDescription;
-            m_newProperties = newProperties;
             m_newLayerSize = newLayerSize;
             m_newTileSize = newTileSize;
             m_newVisibility = newVisibility;
