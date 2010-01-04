@@ -11,6 +11,8 @@ using Tiling;
 using Tiling.Dimensions;
 using Tiling.Layers;
 
+using TileMapEditor.Commands;
+
 namespace TileMapEditor.Dialog
 {
     public partial class LayerPropertiesDialog : Form
@@ -54,15 +56,13 @@ namespace TileMapEditor.Dialog
                 }
             }
 
-            m_layer.Id = newId;
-            m_layer.Description = m_textBoxDescription.Text;
+            Size newLayerSize = new Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
+            Size newTileSize = new Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
 
-            m_layer.LayerSize = new Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
-            m_layer.TileSize = new Size((int)m_numericTileWidth.Value, (int)m_numericTileHeight.Value);
-
-            m_layer.Visible = m_checkBoxVisible.Checked;
-
-            m_customPropertyGrid.StoreProperties(m_layer);
+            Command command = new LayerPropertiesCommand(m_layer, newId, m_textBoxDescription.Text,
+                newLayerSize, newTileSize, m_checkBoxVisible.Checked,
+                m_customPropertyGrid.NewProperties);
+            CommandHistory.Instance.Do(command);
 
             DialogResult = DialogResult.OK;
 

@@ -938,6 +938,8 @@ namespace TileMapEditor
 
                 m_needsSaving = true;
                 UpdateFileControls();
+                UpdateEditControls();
+                UpdateLayerControls();
             }
         }
 
