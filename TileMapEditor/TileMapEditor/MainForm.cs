@@ -748,7 +748,6 @@ namespace TileMapEditor
 
             string tileBrushId = m_tileBrushCollection.GenerateId();
             TileBrush newTileBrush = new TileBrush(tileBrushId, layer, tileSelection);
-            m_tileBrushCollection.TileBrushes.Add(newTileBrush);
 
             TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection, newTileBrush);
             if (tileBrushDialog.ShowDialog(this) == DialogResult.OK)
@@ -757,6 +756,9 @@ namespace TileMapEditor
                 m_mapPanel.TileSelection.Clear();
 
                 OnToolsTileBrush(sender, eventArgs);
+
+                UpdateTileBrushDropDown();
+                UpdateEditControls();
             }
         }
 
@@ -766,6 +768,7 @@ namespace TileMapEditor
             tileBrushDialog.ShowDialog(this);
 
             UpdateTileBrushDropDown();
+            UpdateEditControls();
         }
 
         private void OnViewZoom(object sender, EventArgs eventArgs)

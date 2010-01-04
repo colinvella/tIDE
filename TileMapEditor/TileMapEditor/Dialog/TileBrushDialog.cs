@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using TileMapEditor.Commands;
+
 namespace TileMapEditor.Dialog
 {
     internal partial class TileBrushDialog : Form
@@ -16,12 +18,20 @@ namespace TileMapEditor.Dialog
 
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
-            if (m_tileBrushCollection.TileBrushes.Count == 0)
+            if (m_newTileBrush == null
+                && m_tileBrushCollection.TileBrushes.Count == 0)
                 return;
+
+            List<TileBrush> tileBrushes = new List<TileBrush>();
+            foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
+                tileBrushes.Add(new TileBrush(tileBrush));
+
+            if (m_newTileBrush != null)
+                tileBrushes.Add(m_newTileBrush);
 
             int previewSize = 0;
             ImageList imageList = new ImageList();
-            foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
+            foreach (TileBrush tileBrush in tileBrushes)
             {
                 Image image = tileBrush.ImageRepresentation;
 
@@ -50,7 +60,7 @@ namespace TileMapEditor.Dialog
             m_listView.LargeImageList = imageList;
 
             int imageIndex = 0;
-            foreach (TileBrush tileBrush in m_tileBrushCollection.TileBrushes)
+            foreach (TileBrush tileBrush in tileBrushes)
             {
                 ListViewItem listViewItem = new ListViewItem(tileBrush.Id, imageIndex++);
                 listViewItem.Tag = tileBrush;
@@ -59,6 +69,8 @@ namespace TileMapEditor.Dialog
 
             if (m_newTileBrush != null)
             {
+                m_applyButton.Enabled = m_okButton.Enabled = true;
+
                 foreach (ListViewItem listViewItem in m_listView.Items)
                 {
                     if (listViewItem.Tag == m_newTileBrush)
@@ -69,8 +81,6 @@ namespace TileMapEditor.Dialog
                         break;
                     }
                 }
-
-                m_okButton.Enabled = true;
             }
         }
 
@@ -97,6 +107,9 @@ namespace TileMapEditor.Dialog
                     return;
                 }
             }
+
+            TileBrush tileBrush = (TileBrush)m_listView.Items[labelEditEventArgs.Item].Tag;
+            tileBrush.Id = labelEditEventArgs.Label;
 
             m_okButton.Enabled = m_applyButton.Enabled = true;
         }
@@ -140,19 +153,28 @@ namespace TileMapEditor.Dialog
 
         private void OnDialogApply(object sender, EventArgs eventArgs)
         {
-            // reset tile brush list
-            m_tileBrushCollection.TileBrushes.Clear();
-
-            // process items
-            foreach (ListViewItem listViewItem in m_listView.Items)
+            Command command = null;
+            if (m_newTileBrush != null)
             {
-                // extract corresponding brushes and apply new ids
-                TileBrush tileBrush = (TileBrush)listViewItem.Tag;
-                tileBrush.Id = listViewItem.Text;
-
-                // add to collection
-                m_tileBrushCollection.TileBrushes.Add(tileBrush);
+                command = new EditTileBrushesCommand(m_tileBrushCollection, m_newTileBrush);
             }
+            else
+            {
+                TileBrushCollection newTileBrushCollection = new TileBrushCollection();
+
+                foreach (ListViewItem listViewItem in m_listView.Items)
+                {
+                    // extract corresponding brushes and apply new ids
+                    TileBrush newTileBrush = (TileBrush)listViewItem.Tag;
+
+                    // add to collection
+                    newTileBrushCollection.TileBrushes.Add(newTileBrush);
+                }
+
+                command = new EditTileBrushesCommand(m_tileBrushCollection, newTileBrushCollection);
+            }
+
+            CommandHistory.Instance.Do(command);
 
             m_okButton.Enabled = m_applyButton.Enabled = false;
         }
