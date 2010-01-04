@@ -57,6 +57,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\LayerVisibilityCommand.cs" />
     <Compile Include="Commands\LayerPropertiesCommand.cs" />
     <Compile Include="Commands\LayerNewCommand.cs" />
     <Compile Include="Commands\EditChangeSelectionCommand.cs" />

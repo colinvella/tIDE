@@ -946,13 +946,17 @@ namespace TileMapEditor
         private void OnLayerVisibility(object sender, EventArgs eventArgs)
         {
             Layer layer = m_mapPanel.SelectedLayer;
-            if (layer != null)
-                layer.Visible = !layer.Visible;
-   
-            UpdateLayerVisibilityControls();
+
+            if (layer == null)
+                return;
+
+            Command command = new LayerVisibilityCommand(layer, !layer.Visible);
+            m_commandHistory.Do(command);
 
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateLayerVisibilityControls();
         }
 
         private void OnLayerBringForward(object sender, EventArgs eventArgs)
