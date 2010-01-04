@@ -57,6 +57,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\TileSheetPropertiesCommand.cs" />
     <Compile Include="Commands\LayerDeleteCommand.cs" />
     <Compile Include="Commands\LayerOrderCommand.cs" />
     <Compile Include="Commands\LayerVisibilityCommand.cs" />
