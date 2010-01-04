@@ -908,16 +908,18 @@ namespace TileMapEditor
             if (layerPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
-            m_map.AddLayer(layer);
+            Command command = new LayerNewCommand(m_map, layer);
+            m_commandHistory.Do(command);
+
+            m_mapPanel.Enabled = true;
 
             m_mapTreeView.UpdateTree();
             m_mapTreeView.SelectedComponent = layer;
 
-            m_mapPanel.Enabled = true;
-            m_mapPanel.Invalidate(true);
-
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateLayerControls();
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)
