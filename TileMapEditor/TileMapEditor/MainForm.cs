@@ -1025,13 +1025,8 @@ namespace TileMapEditor
 
             StartWaitCursor();
 
-            Command command = new TileSheetNewCommand(m_map, tileSheet);
+            Command command = new TileSheetNewCommand(m_map, tileSheet, m_mapTreeView);
             m_commandHistory.Do(command);
-
-            m_mapTreeView.UpdateTree();
-            m_mapTreeView.SelectedComponent = tileSheet;
-
-            m_tilePicker.UpdatePicker();
 
             m_mapPanel.LoadTileSheet(tileSheet);
 
@@ -1040,6 +1035,8 @@ namespace TileMapEditor
             m_needsSaving = true;
             UpdateFileControls();
             UpdateEditControls();
+            UpdateTileSheetControls();
+            m_tilePicker.UpdatePicker();
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)
@@ -1057,8 +1054,6 @@ namespace TileMapEditor
 
             StartWaitCursor();
 
-            m_mapTreeView.UpdateTree();
-
             TileImageCache.Instance.Refresh(tileSheet);
             m_tilePicker.UpdatePicker();
             m_tilePicker.RefreshSelectedTileSheet();
@@ -1067,6 +1062,8 @@ namespace TileMapEditor
 
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateTileSheetControls();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)
@@ -1091,12 +1088,8 @@ namespace TileMapEditor
                 == DialogResult.No)
                 return;
 
-            Command command = new TileSheetDeleteCommand(m_map, tileSheet);
+            Command command = new TileSheetDeleteCommand(m_map, tileSheet, m_mapTreeView);
             m_commandHistory.Do(command);
-
-            m_mapTreeView.UpdateTree();
-            m_mapTreeView.SelectedComponent = null;
-            m_selectedComponent = null;
 
             m_tileSheetPropertiesMenuItem.Enabled
                 = m_tileSheetPropertiesButton.Enabled
@@ -1109,6 +1102,9 @@ namespace TileMapEditor
 
             m_needsSaving = true;
             UpdateFileControls();
+            UpdateEditControls();
+            UpdateTileSheetControls();
+            m_selectedComponent = m_mapTreeView.SelectedComponent;
         }
 
         private void OnPluginsReload(object sender, EventArgs eventArgs)

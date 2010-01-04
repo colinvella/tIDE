@@ -6,17 +6,21 @@ using System.Text;
 using Tiling;
 using Tiling.Tiles;
 
+using TileMapEditor.Control;
+
 namespace TileMapEditor.Commands
 {
     internal class TileSheetNewCommand: Command
     {
         private Map m_map;
         private TileSheet m_newTileSheet;
+        private MapTreeView m_mapTreeView;
 
-        public TileSheetNewCommand(Map map, TileSheet newTileSheet)
+        public TileSheetNewCommand(Map map, TileSheet newTileSheet, MapTreeView mapTreeView)
         {
             m_map = map;
             m_newTileSheet = newTileSheet;
+            m_mapTreeView = mapTreeView;
             m_description = "Add new tile sheet \"" + newTileSheet.Id + "\"";
         }
 
@@ -24,11 +28,14 @@ namespace TileMapEditor.Commands
         {
             TileImageCache.Instance.Refresh(m_newTileSheet);
             m_map.AddTileSheet(m_newTileSheet);
+            m_mapTreeView.UpdateTree();
+            m_mapTreeView.SelectedComponent = m_newTileSheet;
         }
 
         public override void Undo()
         {
             m_map.RemoveTileSheet(m_newTileSheet);
+            m_mapTreeView.UpdateTree();
         }
     }
 }
