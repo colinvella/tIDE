@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TileProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TileProperties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="EditClearSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditClearSelection.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,8 +142,8 @@
   <data name="ToolsDropper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsDropper.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditMakeTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditMakeTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TileProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TileProperties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ToolsSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -169,8 +166,14 @@
   <data name="ViewViewport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewViewport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AboutSide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutSide.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TileSheetProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TileSheetProperties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolsEraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsEraser.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plugin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plugin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -198,6 +201,9 @@
   </data>
   <data name="ViewLayerCompositingShowAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewLayerCompositingShowAll.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditMakeTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditMakeTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Map.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +286,8 @@
   <data name="ToolsTileBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsTileBlock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ToolsEraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ToolsEraser.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TilePropertiesIndicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TilePropertiesIndicator.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ViewLayerCompositing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewLayerCompositing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,7 +298,7 @@
   <data name="FileSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSave.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TilePropertiesIndicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TilePropertiesIndicator.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AboutPluginBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutPluginBackground.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

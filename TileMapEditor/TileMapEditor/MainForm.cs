@@ -1111,6 +1111,12 @@ namespace TileMapEditor
             m_pluginManager.LoadPlugins();
         }
 
+        private void OnHelpAbout(object sender, EventArgs eventArgs)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog(this);
+        }
+
         private void OnPickerTileSelected(object sender, TilePickerEventArgs tilePickerEventArgs)
         {
             m_mapPanel.SelectedTileSheet = tilePickerEventArgs.TileSheet;
@@ -1265,6 +1271,5 @@ namespace TileMapEditor
         }
 
         #endregion
-
     }
 }

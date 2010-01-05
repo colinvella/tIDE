@@ -64,7 +64,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
+            this.panel1.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutPluginBackground;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.m_labelAuthor);
