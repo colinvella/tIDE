@@ -470,6 +470,12 @@ namespace TileMapEditor.Control
 
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
+            m_mouseLocation.X = mouseEventArgs.X;
+            m_mouseLocation.Y = mouseEventArgs.Y;
+
+            m_tileLayerLocation
+                = ConvertViewportOffsetToLayerLocation(m_mouseLocation);
+
             if (mouseEventArgs.Button == MouseButtons.Left)
             {
                 m_bMouseDown = true; 
@@ -488,9 +494,18 @@ namespace TileMapEditor.Control
                     case EditTool.TileBrush: ApplyTileBrush(); break;
                 }
             }
-            else if (mouseEventArgs.Button == MouseButtons.Right)
+            else if (mouseEventArgs.Button == MouseButtons.Middle)
             {
                 PickTile();
+            }
+            else if (mouseEventArgs.Button == MouseButtons.Right)
+            {
+                if (m_selectedLayer != null)
+                {
+                    Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
+                    m_tilePropertiesMenuItem.Enabled = tile != null;
+                    m_tileContextMenuStrip.Show(PointToScreen(mouseEventArgs.Location));
+                }
             }
         }
 
@@ -548,6 +563,11 @@ namespace TileMapEditor.Control
         private void OnMouseLeave(object sender, EventArgs eventArgs)
         {
             m_mouseInside = false;
+        }
+
+        private void OnTileProperties(object sender, EventArgs eventArgs)
+        {
+            MessageBox.Show("ok");
         }
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)

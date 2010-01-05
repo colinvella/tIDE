@@ -270,6 +270,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TileProperties {
+            get {
+                object obj = ResourceManager.GetObject("TileProperties", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileSheet {
             get {
                 object obj = ResourceManager.GetObject("TileSheet", resourceCulture);

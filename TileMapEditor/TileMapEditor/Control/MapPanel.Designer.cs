@@ -32,7 +32,10 @@
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
+            this.m_tileContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_tilePropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_innerPanel = new TileMapEditor.Control.CustomPanel();
+            this.m_tileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_verticalScrollBar
@@ -56,6 +59,21 @@
             // m_animationTimer
             // 
             this.m_animationTimer.Tick += new System.EventHandler(this.OnAnimationTimer);
+            // 
+            // m_tileContextMenuStrip
+            // 
+            this.m_tileContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_tilePropertiesMenuItem});
+            this.m_tileContextMenuStrip.Name = "m_tileContextMenuStrip";
+            this.m_tileContextMenuStrip.Size = new System.Drawing.Size(159, 48);
+            // 
+            // m_tilePropertiesMenuItem
+            // 
+            this.m_tilePropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileProperties;
+            this.m_tilePropertiesMenuItem.Name = "m_tilePropertiesMenuItem";
+            this.m_tilePropertiesMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.m_tilePropertiesMenuItem.Text = "Tile Properties...";
+            this.m_tilePropertiesMenuItem.Click += new System.EventHandler(this.OnTileProperties);
             // 
             // m_innerPanel
             // 
@@ -83,6 +101,7 @@
             this.Controls.Add(this.m_verticalScrollBar);
             this.Name = "MapPanel";
             this.Size = new System.Drawing.Size(318, 238);
+            this.m_tileContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -93,5 +112,7 @@
         private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
         private CustomPanel m_innerPanel;
         private System.Windows.Forms.Timer m_animationTimer;
+        private System.Windows.Forms.ContextMenuStrip m_tileContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem m_tilePropertiesMenuItem;
     }
 }
