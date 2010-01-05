@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     class CustomToolStripSplitButton: ToolStripSplitButton
     {

@@ -6,7 +6,7 @@ using System.Text;
 using Tiling;
 using Tiling.Tiles;
 
-using TileMapEditor.Control;
+using TileMapEditor.Controls;
 
 namespace TileMapEditor.Commands
 {

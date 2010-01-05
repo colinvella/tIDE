@@ -7,7 +7,7 @@ using Tiling;
 using Tiling.Dimensions;
 using Tiling.Tiles;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public class MapPanelEventArgs
     {

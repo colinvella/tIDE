@@ -10,7 +10,7 @@ using Tiling.Dimensions;
 using Tiling.Layers;
 using Tiling.Tiles;
 
-using TileMapEditor.Control;
+using TileMapEditor.Controls;
 
 namespace TileMapEditor
 {

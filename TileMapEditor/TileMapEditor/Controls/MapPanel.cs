@@ -17,9 +17,9 @@ using Tiling.Layers;
 using Tiling.Tiles;
 
 using TileMapEditor.Commands;
-using TileMapEditor.Dialog;
+using TileMapEditor.Dialogs;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public partial class MapPanel : UserControl, IDisplayDevice
     {

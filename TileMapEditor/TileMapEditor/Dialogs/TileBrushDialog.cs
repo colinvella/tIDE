@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 using TileMapEditor.Commands;
 
-namespace TileMapEditor.Dialog
+namespace TileMapEditor.Dialogs
 {
     internal partial class TileBrushDialog : Form
     {

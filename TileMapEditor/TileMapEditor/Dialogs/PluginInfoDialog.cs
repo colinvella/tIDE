@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 using TileMapEditor.Plugin;
 
-namespace TileMapEditor.Dialog
+namespace TileMapEditor.Dialogs
 {
     public partial class PluginInfoDialog : Form
     {

@@ -6,7 +6,7 @@ using System.Text;
 using Tiling;
 using Tiling.Tiles;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public class TilePickerEventArgs
     {

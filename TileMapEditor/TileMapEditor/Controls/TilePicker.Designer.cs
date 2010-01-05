@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Control
+﻿namespace TileMapEditor.Controls
 {
     partial class TilePicker
     {
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelCaption;
             System.Windows.Forms.Panel m_panelContent;
-            this.m_tileListView = new TileMapEditor.Control.CustomListView();
+            this.m_tileListView = new TileMapEditor.Controls.CustomListView();
             this.m_tileImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             m_labelCaption = new System.Windows.Forms.Label();

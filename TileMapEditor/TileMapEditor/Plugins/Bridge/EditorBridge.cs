@@ -8,7 +8,7 @@ using Tiling;
 using Tiling.Dimensions;
 using Tiling.Layers;
 
-using TileMapEditor.Control;
+using TileMapEditor.Controls;
 using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge

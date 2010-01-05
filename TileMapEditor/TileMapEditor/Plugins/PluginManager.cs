@@ -6,8 +6,8 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Control;
-using TileMapEditor.Dialog;
+using TileMapEditor.Controls;
+using TileMapEditor.Dialogs;
 using TileMapEditor.Plugin.Interface;
 using TileMapEditor.Plugin.Bridge;
 

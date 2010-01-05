@@ -174,10 +174,10 @@
             this.m_fileOpenButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
-            this.m_mapTreeView = new TileMapEditor.Control.MapTreeView();
-            this.m_tilePicker = new TileMapEditor.Control.TilePicker();
-            this.m_mapPanel = new TileMapEditor.Control.MapPanel();
-            this.m_toolsTileBrushButton = new TileMapEditor.Control.CustomToolStripSplitButton();
+            this.m_mapTreeView = new TileMapEditor.Controls.MapTreeView();
+            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
+            this.m_mapPanel = new TileMapEditor.Controls.MapPanel();
+            this.m_toolsTileBrushButton = new TileMapEditor.Controls.CustomToolStripSplitButton();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -1683,7 +1683,7 @@
             this.m_mapTreeView.Size = new System.Drawing.Size(200, 178);
             this.m_mapTreeView.TabIndex = 0;
             this.m_mapTreeView.NewTileSheet += new System.EventHandler(this.OnTileSheetNew);
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Control.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Controls.MapTreeViewEventHandler(this.OnTreeComponentChanged);
             this.m_mapTreeView.LayerVisibility += new System.EventHandler(this.OnLayerVisibility);
             this.m_mapTreeView.BringLayerForward += new System.EventHandler(this.OnLayerBringForward);
             this.m_mapTreeView.LayerProperties += new System.EventHandler(this.OnLayerProperties);
@@ -1703,14 +1703,14 @@
             this.m_tilePicker.SelectedTileSheet = null;
             this.m_tilePicker.Size = new System.Drawing.Size(200, 231);
             this.m_tilePicker.TabIndex = 0;
-            this.m_tilePicker.TileSelected += new TileMapEditor.Control.TilePickerEventHandler(this.OnPickerTileSelected);
+            this.m_tilePicker.TileSelected += new TileMapEditor.Controls.TilePickerEventHandler(this.OnPickerTileSelected);
             // 
             // m_mapPanel
             // 
             this.m_mapPanel.AutoScaleViewport = true;
             this.m_mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_mapPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_mapPanel.EditTool = TileMapEditor.Control.EditTool.SingleTile;
+            this.m_mapPanel.EditTool = TileMapEditor.Controls.EditTool.SingleTile;
             this.m_mapPanel.Enabled = false;
             this.m_mapPanel.Location = new System.Drawing.Point(0, 0);
             this.m_mapPanel.Map = null;
@@ -1721,10 +1721,10 @@
             this.m_mapPanel.Size = new System.Drawing.Size(543, 391);
             this.m_mapPanel.TabIndex = 0;
             this.m_mapPanel.Viewport = ((Tiling.Dimensions.Rectangle)(resources.GetObject("m_mapPanel.Viewport")));
-            this.m_mapPanel.TilePropertiesChanged += new TileMapEditor.Control.MapPanelEventHandler(this.OnTilePropertiesChanged);
-            this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
+            this.m_mapPanel.TilePropertiesChanged += new TileMapEditor.Controls.MapPanelEventHandler(this.OnTilePropertiesChanged);
+            this.m_mapPanel.TilePicked += new TileMapEditor.Controls.MapPanelEventHandler(this.OnMapTilePicked);
             this.m_mapPanel.SelectionChanged += new System.EventHandler(this.OnTileSelectionChanged);
-            this.m_mapPanel.TileHover += new TileMapEditor.Control.MapPanelEventHandler(this.OnTileHover);
+            this.m_mapPanel.TileHover += new TileMapEditor.Controls.MapPanelEventHandler(this.OnTileHover);
             this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
             // 
             // m_toolsTileBrushButton
@@ -1831,7 +1831,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetDeleteMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerBringForwardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerSendBackwardMenuItem;
-        private Control.MapTreeView m_mapTreeView;
+        private Controls.MapTreeView m_mapTreeView;
         private System.Windows.Forms.ToolStrip m_editToolStrip;
         private System.Windows.Forms.ToolStripButton m_editCutButton;
         private System.Windows.Forms.ToolStripButton m_editCopyButton;
@@ -1840,8 +1840,8 @@
         private System.Windows.Forms.ToolStripButton m_editRedoButton;
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator1;
         private System.Windows.Forms.SplitContainer m_splitContainerLeftRight;
-        private TileMapEditor.Control.TilePicker m_tilePicker;
-        private TileMapEditor.Control.MapPanel m_mapPanel;
+        private TileMapEditor.Controls.TilePicker m_tilePicker;
+        private TileMapEditor.Controls.MapPanel m_mapPanel;
         private System.Windows.Forms.ToolStrip m_mapToolStrip;
         private System.Windows.Forms.ToolStripButton m_mapPropertiesButton;
         private System.Windows.Forms.ToolStrip m_tileSheetToolStrip;
@@ -1894,7 +1894,7 @@
         private System.Windows.Forms.ToolStripButton m_toolsTileBlockButton;
         private System.Windows.Forms.ToolStripButton m_toolsEraserButton;
         private System.Windows.Forms.ToolStripButton m_toolsDropperButton;
-        private TileMapEditor.Control.CustomToolStripSplitButton m_toolsTileBrushButton;
+        private TileMapEditor.Controls.CustomToolStripSplitButton m_toolsTileBrushButton;
         private System.Windows.Forms.ToolStripContainer m_toolStripContainerInner;
         private System.Windows.Forms.ToolStripMenuItem m_editMakeTileBrushMenuItem;
         private System.Windows.Forms.ToolStripButton m_editMakeTileBrushButton;

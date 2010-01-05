@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialog
+﻿namespace TileMapEditor.Dialogs
 {
     partial class MapPropertiesDialog
     {
@@ -33,14 +33,14 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.m_customTabControl = new TileMapEditor.Control.CustomTabControl();
+            this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
             this.m_labelDescription = new System.Windows.Forms.Label();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_labelId = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
-            this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
+            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
             this.m_customTabControl.SuspendLayout();
             this.m_tabGeneral.SuspendLayout();
             this.m_tabCustomProperties.SuspendLayout();
@@ -204,13 +204,13 @@
         private System.Windows.Forms.Button m_buttonCancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private TileMapEditor.Control.CustomTabControl m_customTabControl;
+        private TileMapEditor.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxDescription;
         private System.Windows.Forms.Label m_labelDescription;
         private System.Windows.Forms.TextBox m_textBoxId;
         private System.Windows.Forms.Label m_labelId;
-        private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
+        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
     }
 }

@@ -13,7 +13,7 @@ using Tiling.Layers;
 
 using TileMapEditor.Commands;
 
-namespace TileMapEditor.Dialog
+namespace TileMapEditor.Dialogs
 {
     public partial class LayerPropertiesDialog : Form
     {

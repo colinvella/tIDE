@@ -11,7 +11,7 @@ using Tiling;
 
 using TileMapEditor.Commands;
 
-namespace TileMapEditor.Dialog
+namespace TileMapEditor.Dialogs
 {
     public partial class MapPropertiesDialog : Form
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using TileMapEditor.Commands;
-using TileMapEditor.Control;
+using TileMapEditor.Controls;
 using TileMapEditor.Plugin.Interface;
 
 namespace TileMapEditor.Plugin.Bridge

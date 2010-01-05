@@ -10,7 +10,7 @@ using Tiling;
 using Tiling.Dimensions;
 using Tiling.Tiles;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public delegate void TilePickerEventHandler(
             object sender, TilePickerEventArgs tilePickerEventArgs);

@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialog
+﻿namespace TileMapEditor.Dialogs
 {
     partial class TilePropertiesDialog
     {
@@ -35,7 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
-            this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
+            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
             m_labelId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -138,7 +138,7 @@
         private System.Windows.Forms.Button m_buttonCancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
+        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.TextBox m_textBoxId;
     }
 }

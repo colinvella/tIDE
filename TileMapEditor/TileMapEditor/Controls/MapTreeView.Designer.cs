@@ -1,6 +1,6 @@
 ﻿using Tiling;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     partial class MapTreeView
     {

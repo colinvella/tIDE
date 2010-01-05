@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialog
+﻿namespace TileMapEditor.Dialogs
 {
     partial class LayerPropertiesDialog
     {
@@ -41,7 +41,7 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.m_customTabControl = new TileMapEditor.Control.CustomTabControl();
+            this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_numericTileHeight = new System.Windows.Forms.NumericUpDown();
             this.m_numericTileWidth = new System.Windows.Forms.NumericUpDown();
@@ -50,7 +50,7 @@
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
-            this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
+            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
             this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -389,12 +389,12 @@
         private System.Windows.Forms.Button m_buttonCancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private TileMapEditor.Control.CustomTabControl m_customTabControl;
+        private TileMapEditor.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxDescription;
         private System.Windows.Forms.TextBox m_textBoxId;
-        private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
+        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.NumericUpDown m_numericLayerHeight;
         private System.Windows.Forms.NumericUpDown m_numericLayerWidth;
         private System.Windows.Forms.NumericUpDown m_numericTileHeight;

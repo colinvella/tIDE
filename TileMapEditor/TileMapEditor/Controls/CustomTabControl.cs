@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public class CustomTabControl: TabControl
     {

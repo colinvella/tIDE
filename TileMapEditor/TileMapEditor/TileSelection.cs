@@ -8,7 +8,7 @@ using Tiling;
 using Tiling.Dimensions;
 using Tiling.Layers;
 
-using TileMapEditor.Control;
+using TileMapEditor.Controls;
 
 namespace TileMapEditor
 {

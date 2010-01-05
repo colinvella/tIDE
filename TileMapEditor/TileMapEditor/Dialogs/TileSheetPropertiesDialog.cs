@@ -13,9 +13,9 @@ using Tiling.Dimensions;
 using Tiling.Tiles;
 
 using TileMapEditor.Commands;
-using TileMapEditor.Control;
+using TileMapEditor.Controls;
 
-namespace TileMapEditor.Dialog
+namespace TileMapEditor.Dialogs
 {
     public partial class TileSheetPropertiesDialog : Form
     {

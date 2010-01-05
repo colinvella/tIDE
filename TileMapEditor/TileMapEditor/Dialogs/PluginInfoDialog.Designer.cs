@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialog
+﻿namespace TileMapEditor.Dialogs
 {
     partial class PluginInfoDialog
     {

@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Control
+﻿namespace TileMapEditor.Controls
 {
     partial class MapPanel
     {
@@ -34,7 +34,7 @@
             this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
             this.m_tileContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_tilePropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_innerPanel = new TileMapEditor.Control.CustomPanel();
+            this.m_innerPanel = new TileMapEditor.Controls.CustomPanel();
             this.m_tileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 

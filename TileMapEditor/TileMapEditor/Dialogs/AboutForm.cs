@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace TileMapEditor.Dialog
+namespace TileMapEditor.Dialogs
 {
     partial class AboutForm : Form
     {

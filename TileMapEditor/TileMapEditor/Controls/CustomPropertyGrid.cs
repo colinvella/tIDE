@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 using Tiling.ObjectModel;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public partial class CustomPropertyGrid : UserControl
     {

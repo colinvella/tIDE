@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialog
+﻿namespace TileMapEditor.Dialogs
 {
     partial class TileSheetPropertiesDialog
     {
@@ -42,7 +42,7 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.m_customTabControl = new TileMapEditor.Control.CustomTabControl();
+            this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_labelImageSource = new System.Windows.Forms.Label();
             this.m_buttonBrowse = new System.Windows.Forms.Button();
@@ -64,11 +64,11 @@
             this.m_comboBoxMargin = new System.Windows.Forms.ComboBox();
             this.m_comboBoxTileSize = new System.Windows.Forms.ComboBox();
             this.m_buttonAutoDetect = new System.Windows.Forms.Button();
-            this.m_panelImage = new TileMapEditor.Control.CustomPanel();
+            this.m_panelImage = new TileMapEditor.Controls.CustomPanel();
             this.m_trackBar = new System.Windows.Forms.TrackBar();
             this.m_labelZoom = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
-            this.m_customPropertyGrid = new TileMapEditor.Control.CustomPropertyGrid();
+            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
             m_labelTileSize = new System.Windows.Forms.Label();
             m_labelTileSizeBy = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -619,7 +619,7 @@
         private System.Windows.Forms.Button m_buttonCancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private TileMapEditor.Control.CustomTabControl m_customTabControl;
+        private TileMapEditor.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxDescription;
@@ -635,11 +635,11 @@
         private System.Windows.Forms.NumericUpDown m_textBoxSpacingX;
         private System.Windows.Forms.NumericUpDown m_textBoxTopMargin;
         private System.Windows.Forms.NumericUpDown m_textBoxLeftMargin;
-        private TileMapEditor.Control.CustomPanel m_panelImage;
+        private TileMapEditor.Controls.CustomPanel m_panelImage;
         private System.Windows.Forms.TextBox m_textBoxImageSource;
         private System.Windows.Forms.Label m_labelZoom;
         private System.Windows.Forms.TrackBar m_trackBar;
-        private TileMapEditor.Control.CustomPropertyGrid m_customPropertyGrid;
+        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Button m_buttonAutoDetect;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;

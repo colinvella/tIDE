@@ -15,8 +15,8 @@ using Tiling.ObjectModel;
 using Tiling.Tiles;
 
 using TileMapEditor.Commands;
-using TileMapEditor.Control;
-using TileMapEditor.Dialog;
+using TileMapEditor.Controls;
+using TileMapEditor.Dialogs;
 
 using TileMapEditor.Plugin;
 

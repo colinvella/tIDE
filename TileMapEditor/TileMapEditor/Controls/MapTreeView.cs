@@ -12,7 +12,7 @@ using Tiling.ObjectModel;
 using Tiling.Layers;
 using Tiling.Tiles;
 
-namespace TileMapEditor.Control
+namespace TileMapEditor.Controls
 {
     public partial class MapTreeView : UserControl
     {
