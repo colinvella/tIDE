@@ -277,6 +277,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TilePropertiesIndicator {
+            get {
+                object obj = ResourceManager.GetObject("TilePropertiesIndicator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileSheet {
             get {
                 object obj = ResourceManager.GetObject("TileSheet", resourceCulture);

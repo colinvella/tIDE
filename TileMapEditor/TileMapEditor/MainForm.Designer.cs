@@ -52,7 +52,9 @@
             this.m_toolStripContainerInner = new System.Windows.Forms.ToolStripContainer();
             this.m_statusStrip = new System.Windows.Forms.StatusStrip();
             this.m_tileLocationStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_tileDetailSheetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_tileSheetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_tileIndexStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_tilePropertiesStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_mapPanel = new TileMapEditor.Control.MapPanel();
             this.m_toolsToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_toolsSelectButton = new System.Windows.Forms.ToolStripButton();
@@ -417,7 +419,9 @@
             this.m_statusStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.m_statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_tileLocationStatusLabel,
-            this.m_tileDetailSheetStatusLabel});
+            this.m_tileSheetStatusLabel,
+            this.m_tileIndexStatusLabel,
+            this.m_tilePropertiesStatusLabel});
             this.m_statusStrip.Location = new System.Drawing.Point(0, 0);
             this.m_statusStrip.Name = "m_statusStrip";
             this.m_statusStrip.Size = new System.Drawing.Size(576, 22);
@@ -427,15 +431,31 @@
             // 
             this.m_tileLocationStatusLabel.BackColor = System.Drawing.SystemColors.Control;
             this.m_tileLocationStatusLabel.Name = "m_tileLocationStatusLabel";
-            this.m_tileLocationStatusLabel.Size = new System.Drawing.Size(10, 17);
-            this.m_tileLocationStatusLabel.Text = " ";
+            this.m_tileLocationStatusLabel.Size = new System.Drawing.Size(26, 17);
+            this.m_tileLocationStatusLabel.Text = "Pos";
             // 
-            // m_tileDetailSheetStatusLabel
+            // m_tileSheetStatusLabel
             // 
-            this.m_tileDetailSheetStatusLabel.Margin = new System.Windows.Forms.Padding(32, 3, 0, 2);
-            this.m_tileDetailSheetStatusLabel.Name = "m_tileDetailSheetStatusLabel";
-            this.m_tileDetailSheetStatusLabel.Size = new System.Drawing.Size(10, 17);
-            this.m_tileDetailSheetStatusLabel.Text = " ";
+            this.m_tileSheetStatusLabel.Margin = new System.Windows.Forms.Padding(64, 3, 0, 2);
+            this.m_tileSheetStatusLabel.Name = "m_tileSheetStatusLabel";
+            this.m_tileSheetStatusLabel.Size = new System.Drawing.Size(26, 17);
+            this.m_tileSheetStatusLabel.Text = "Tsh";
+            // 
+            // m_tileIndexStatusLabel
+            // 
+            this.m_tileIndexStatusLabel.Margin = new System.Windows.Forms.Padding(32, 3, 0, 2);
+            this.m_tileIndexStatusLabel.Name = "m_tileIndexStatusLabel";
+            this.m_tileIndexStatusLabel.Size = new System.Drawing.Size(22, 17);
+            this.m_tileIndexStatusLabel.Text = "Idx";
+            // 
+            // m_tilePropertiesStatusLabel
+            // 
+            this.m_tilePropertiesStatusLabel.Image = global::TileMapEditor.Properties.Resources.TilePropertiesIndicator;
+            this.m_tilePropertiesStatusLabel.Margin = new System.Windows.Forms.Padding(32, 3, 0, 2);
+            this.m_tilePropertiesStatusLabel.Name = "m_tilePropertiesStatusLabel";
+            this.m_tilePropertiesStatusLabel.Size = new System.Drawing.Size(16, 17);
+            this.m_tilePropertiesStatusLabel.ToolTipText = "This tile has custom properties";
+            this.m_tilePropertiesStatusLabel.Visible = false;
             // 
             // m_mapPanel
             // 
@@ -453,6 +473,7 @@
             this.m_mapPanel.Size = new System.Drawing.Size(543, 391);
             this.m_mapPanel.TabIndex = 0;
             this.m_mapPanel.Viewport = ((Tiling.Dimensions.Rectangle)(resources.GetObject("m_mapPanel.Viewport")));
+            this.m_mapPanel.TilePropertiesChanged += new TileMapEditor.Control.MapPanelEventHandler(this.OnTilePropertiesChanged);
             this.m_mapPanel.TilePicked += new TileMapEditor.Control.MapPanelEventHandler(this.OnMapTilePicked);
             this.m_mapPanel.SelectionChanged += new System.EventHandler(this.OnTileSelectionChanged);
             this.m_mapPanel.TileHover += new TileMapEditor.Control.MapPanelEventHandler(this.OnTileHover);
@@ -569,7 +590,7 @@
             this.m_editManageTileBrushesButton});
             this.m_editToolStrip.Location = new System.Drawing.Point(3, 0);
             this.m_editToolStrip.Name = "m_editToolStrip";
-            this.m_editToolStrip.Size = new System.Drawing.Size(314, 25);
+            this.m_editToolStrip.Size = new System.Drawing.Size(283, 25);
             this.m_editToolStrip.TabIndex = 1;
             // 
             // m_editUndoButton
@@ -1893,7 +1914,7 @@
         private System.Windows.Forms.ToolStripButton m_fileSaveAsButton;
         private System.Windows.Forms.StatusStrip m_statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel m_tileLocationStatusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel m_tileDetailSheetStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel m_tileSheetStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewportMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewportScaleToWindowMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1920x1080MenuItem;
@@ -1908,5 +1929,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1920x1200MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport1600x1200MenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_viewViewport800x600MenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel m_tileIndexStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel m_tilePropertiesStatusLabel;
     }
 }

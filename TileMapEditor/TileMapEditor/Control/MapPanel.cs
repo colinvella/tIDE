@@ -17,6 +17,7 @@ using Tiling.Layers;
 using Tiling.Tiles;
 
 using TileMapEditor.Commands;
+using TileMapEditor.Dialog;
 
 namespace TileMapEditor.Control
 {
@@ -502,9 +503,12 @@ namespace TileMapEditor.Control
             {
                 if (m_selectedLayer != null)
                 {
-                    Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
-                    m_tilePropertiesMenuItem.Enabled = tile != null;
-                    m_tileContextMenuStrip.Show(PointToScreen(mouseEventArgs.Location));
+                    if (m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
+                    {
+                        Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
+                        m_tilePropertiesMenuItem.Enabled = tile != null;
+                        m_tileContextMenuStrip.Show(PointToScreen(mouseEventArgs.Location));
+                    }
                 }
             }
         }
@@ -567,7 +571,23 @@ namespace TileMapEditor.Control
 
         private void OnTileProperties(object sender, EventArgs eventArgs)
         {
-            MessageBox.Show("ok");
+            if (m_selectedLayer == null)
+                return;
+
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
+                return;
+
+            Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
+            if (tile == null)
+                return;
+
+            TilePropertiesDialog tilePropertiesDialog = new TilePropertiesDialog(tile);
+
+            if (tilePropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            if (TilePropertiesChanged != null)
+                TilePropertiesChanged(new MapPanelEventArgs(tile, m_tileLayerLocation));
         }
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
@@ -949,6 +969,9 @@ namespace TileMapEditor.Control
 
         [Category("Behavior"), Description("Occurs when the tile selection is changed")]
         public event EventHandler SelectionChanged;
+
+        [Category("Behavior"), Description("Occurs when the properties of a tile are changed")]
+        public event MapPanelEventHandler TilePropertiesChanged;
 
         #endregion
     }

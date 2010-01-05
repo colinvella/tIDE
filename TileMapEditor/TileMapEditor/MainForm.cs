@@ -1234,14 +1234,24 @@ namespace TileMapEditor
         {
             Tile tile = mapPanelEventArgs.Tile;
             Location tileLocation = mapPanelEventArgs.Location;
-            m_tileLocationStatusLabel.Text = mapPanelEventArgs.Location.ToString();
+            m_tileLocationStatusLabel.Text = "Pos " + mapPanelEventArgs.Location.ToString();
 
-            string tileDetail = tile == null ? "" : tile.TileSheet.Id + " : " + tile.TileIndex;
-            m_tileDetailSheetStatusLabel.Text = tileDetail;
+            m_tileSheetStatusLabel.Text = tile == null ? "" : "Tsh " + tile.TileSheet.Id;
+
+            m_tileIndexStatusLabel.Text = tile == null ? "" : "Idx " + tile.TileIndex;
+
+            m_tilePropertiesStatusLabel.Visible = tile != null && tile.Properties.Count > 0;
         }
 
         private void OnTileSelectionChanged(object sender, EventArgs eventArgs)
         {
+            UpdateEditControls();
+        }
+
+        private void OnTilePropertiesChanged(MapPanelEventArgs mapPanelEventArgs)
+        {
+            m_needsSaving = true;
+            UpdateFileControls();
             UpdateEditControls();
         }
 
@@ -1255,5 +1265,6 @@ namespace TileMapEditor
         }
 
         #endregion
+
     }
 }

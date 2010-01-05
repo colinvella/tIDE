@@ -57,6 +57,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\TilePropertiesCommand.cs" />
     <Compile Include="Commands\TileSheetPropertiesCommand.cs" />
     <Compile Include="Commands\LayerDeleteCommand.cs" />
     <Compile Include="Commands\LayerOrderCommand.cs" />
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="Control\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\TilePropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\TilePropertiesDialog.Designer.cs">
+      <DependentUpon>TilePropertiesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\PluginInfoDialog.cs">
       <SubType>Form</SubType>
@@ -176,6 +183,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\TilePicker.resx">
       <DependentUpon>TilePicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\TilePropertiesDialog.resx">
+      <DependentUpon>TilePropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\LayerPropertiesDialog.resx">
@@ -296,6 +307,7 @@
     <None Include="Resources\LayerVisible.png" />
     <None Include="Resources\ViewViewport.png" />
     <None Include="Resources\TileProperties.png" />
+    <None Include="Resources\TilePropertiesIndicator.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
