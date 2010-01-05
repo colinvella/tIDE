@@ -125,16 +125,16 @@
     <Compile Include="Dialogs\TileBrushDialog.Designer.cs">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugins\Bridge\ApplicationBridge.cs" />
-    <Compile Include="Plugins\Bridge\CommandBridge.cs" />
-    <Compile Include="Plugins\Bridge\ElementBridge.cs" />
-    <Compile Include="Plugins\Bridge\MenuStripBridge.cs" />
-    <Compile Include="Plugins\Bridge\MenuItemBridge.cs" />
-    <Compile Include="Plugins\Bridge\EditorBridge.cs" />
-    <Compile Include="Plugins\Bridge\ToolBarBridge.cs" />
-    <Compile Include="Plugins\Bridge\ToolBarButtonBridge.cs" />
-    <Compile Include="Plugins\PluginManager.cs" />
-    <Compile Include="Plugins\Version.cs" />
+    <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
+    <Compile Include="Plugin\Bridge\CommandBridge.cs" />
+    <Compile Include="Plugin\Bridge\ElementBridge.cs" />
+    <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
+    <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
+    <Compile Include="Plugin\Bridge\EditorBridge.cs" />
+    <Compile Include="Plugin\Bridge\ToolBarBridge.cs" />
+    <Compile Include="Plugin\Bridge\ToolBarButtonBridge.cs" />
+    <Compile Include="Plugin\PluginManager.cs" />
+    <Compile Include="Plugin\Version.cs" />
     <Compile Include="TileBrushCollection.cs" />
     <Compile Include="TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
