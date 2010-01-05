@@ -77,86 +77,86 @@
     <Compile Include="Commands\EditPasteCommand.cs" />
     <Compile Include="Commands\ToolsPlaceTileCommand.cs" />
     <Compile Include="Commands\ToolsSelectCommand.cs" />
-    <Compile Include="Control\CustomListView.cs">
+    <Compile Include="Controls\CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\CustomPanel.cs">
+    <Compile Include="Controls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\CustomTabControl.cs">
+    <Compile Include="Controls\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\CustomPropertyGrid.cs">
+    <Compile Include="Controls\CustomPropertyGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\CustomPropertyGrid.Designer.cs">
+    <Compile Include="Controls\CustomPropertyGrid.Designer.cs">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\CustomToolStripSplitButton.cs">
+    <Compile Include="Controls\CustomToolStripSplitButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\MapPanel.cs">
+    <Compile Include="Controls\MapPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\MapPanel.Designer.cs">
+    <Compile Include="Controls\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\AboutForm.cs">
+    <Compile Include="Dialogs\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\AboutForm.Designer.cs">
+    <Compile Include="Dialogs\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\TilePropertiesDialog.cs">
+    <Compile Include="Dialogs\TilePropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\TilePropertiesDialog.Designer.cs">
+    <Compile Include="Dialogs\TilePropertiesDialog.Designer.cs">
       <DependentUpon>TilePropertiesDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\PluginInfoDialog.cs">
+    <Compile Include="Dialogs\PluginInfoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\PluginInfoDialog.Designer.cs">
+    <Compile Include="Dialogs\PluginInfoDialog.Designer.cs">
       <DependentUpon>PluginInfoDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\TileBrushDialog.cs">
+    <Compile Include="Dialogs\TileBrushDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\TileBrushDialog.Designer.cs">
+    <Compile Include="Dialogs\TileBrushDialog.Designer.cs">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
-    <Compile Include="Plugin\Bridge\CommandBridge.cs" />
-    <Compile Include="Plugin\Bridge\ElementBridge.cs" />
-    <Compile Include="Plugin\Bridge\MenuStripBridge.cs" />
-    <Compile Include="Plugin\Bridge\MenuItemBridge.cs" />
-    <Compile Include="Plugin\Bridge\EditorBridge.cs" />
-    <Compile Include="Plugin\Bridge\ToolBarBridge.cs" />
-    <Compile Include="Plugin\Bridge\ToolBarButtonBridge.cs" />
-    <Compile Include="Plugin\PluginManager.cs" />
-    <Compile Include="Plugin\Version.cs" />
+    <Compile Include="Plugins\Bridge\ApplicationBridge.cs" />
+    <Compile Include="Plugins\Bridge\CommandBridge.cs" />
+    <Compile Include="Plugins\Bridge\ElementBridge.cs" />
+    <Compile Include="Plugins\Bridge\MenuStripBridge.cs" />
+    <Compile Include="Plugins\Bridge\MenuItemBridge.cs" />
+    <Compile Include="Plugins\Bridge\EditorBridge.cs" />
+    <Compile Include="Plugins\Bridge\ToolBarBridge.cs" />
+    <Compile Include="Plugins\Bridge\ToolBarButtonBridge.cs" />
+    <Compile Include="Plugins\PluginManager.cs" />
+    <Compile Include="Plugins\Version.cs" />
     <Compile Include="TileBrushCollection.cs" />
     <Compile Include="TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
-    <Compile Include="Control\MapPanelEventArgs.cs" />
-    <Compile Include="Control\TilePicker.cs">
+    <Compile Include="Controls\MapPanelEventArgs.cs" />
+    <Compile Include="Controls\TilePicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\TilePicker.Designer.cs">
+    <Compile Include="Controls\TilePicker.Designer.cs">
       <DependentUpon>TilePicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\TilePickerEventArgs.cs" />
+    <Compile Include="Controls\TilePickerEventArgs.cs" />
     <Compile Include="TileSelection.cs" />
-    <Compile Include="Dialog\LayerPropertiesDialog.cs">
+    <Compile Include="Dialogs\LayerPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\LayerPropertiesDialog.Designer.cs">
+    <Compile Include="Dialogs\LayerPropertiesDialog.Designer.cs">
       <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\TileSheetPropertiesDialog.cs">
+    <Compile Include="Dialogs\TileSheetPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\TileSheetPropertiesDialog.Designer.cs">
+    <Compile Include="Dialogs\TileSheetPropertiesDialog.Designer.cs">
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -165,53 +165,53 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\MapPropertiesDialog.cs">
+    <Compile Include="Dialogs\MapPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\MapPropertiesDialog.Designer.cs">
+    <Compile Include="Dialogs\MapPropertiesDialog.Designer.cs">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\MapTreeView.cs">
+    <Compile Include="Controls\MapTreeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\MapTreeView.Designer.cs">
+    <Compile Include="Controls\MapTreeView.Designer.cs">
       <DependentUpon>MapTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Control\CustomPropertyGrid.resx">
+    <EmbeddedResource Include="Controls\CustomPropertyGrid.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\MapPanel.resx">
+    <EmbeddedResource Include="Controls\MapPanel.resx">
       <DependentUpon>MapPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\TilePicker.resx">
+    <EmbeddedResource Include="Controls\TilePicker.resx">
       <DependentUpon>TilePicker.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\AboutForm.resx">
+    <EmbeddedResource Include="Dialogs\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\TilePropertiesDialog.resx">
+    <EmbeddedResource Include="Dialogs\TilePropertiesDialog.resx">
       <DependentUpon>TilePropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\LayerPropertiesDialog.resx">
+    <EmbeddedResource Include="Dialogs\LayerPropertiesDialog.resx">
       <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\PluginInfoDialog.resx">
+    <EmbeddedResource Include="Dialogs\PluginInfoDialog.resx">
       <DependentUpon>PluginInfoDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\TileBrushDialog.resx">
+    <EmbeddedResource Include="Dialogs\TileBrushDialog.resx">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\TileSheetPropertiesDialog.resx">
+    <EmbeddedResource Include="Dialogs\TileSheetPropertiesDialog.resx">
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -219,11 +219,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\MapPropertiesDialog.resx">
+    <EmbeddedResource Include="Dialogs\MapPropertiesDialog.resx">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\MapTreeView.resx">
+    <EmbeddedResource Include="Controls\MapTreeView.resx">
       <DependentUpon>MapTreeView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
