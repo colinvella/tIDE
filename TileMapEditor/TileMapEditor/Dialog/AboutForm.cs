@@ -10,15 +10,34 @@ namespace TileMapEditor.Dialog
 {
     partial class AboutForm : Form
     {
+        private double m_fadeDirection;
+
+        private void OnTimer(object sender, EventArgs eventArgs)
+        {
+            Opacity += m_fadeDirection;
+            if (Opacity >= 1.0)
+                m_timer.Enabled = false;
+            else if (Opacity <= 0.0)
+                Close();
+        }
+
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            m_fadeDirection = -0.05;
+            m_timer.Enabled = true;
+        }
+
         public AboutForm()
         {
             InitializeComponent();
             this.Text = String.Format("About {0} {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
+            this.m_labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0} {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.m_labelCopyright.Text = AssemblyCopyright;
+            this.m_labelCompanyName.Text = AssemblyCompany;
+            this.m_textBoxDescription.Text = AssemblyDescription;
+
+            m_fadeDirection = 0.05;
         }
 
         #region Assembly Attribute Accessors
@@ -100,5 +119,7 @@ namespace TileMapEditor.Dialog
             }
         }
         #endregion
+
+
     }
 }

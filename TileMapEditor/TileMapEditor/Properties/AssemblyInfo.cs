@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Colin Vella")]
 [assembly: AssemblyProduct("tIDE")]
-[assembly: AssemblyCopyright("Copyright © Colin Vella 2009")]
+[assembly: AssemblyCopyright("Copyright © Colin Vella 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

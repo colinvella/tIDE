@@ -14,13 +14,7 @@ namespace TileMapEditor.Dialog
     public partial class PluginInfoDialog : Form
     {
         private IPlugin m_plugin;
-
-        public PluginInfoDialog(IPlugin plugin)
-        {
-            InitializeComponent();
-
-            m_plugin = plugin;
-        }
+        private double m_fadeDirection;
 
         private void OnLoadDialog(object sender, EventArgs eventArgs)
         {
@@ -32,14 +26,31 @@ namespace TileMapEditor.Dialog
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            m_fadeDirection = -0.05;
+            m_timer.Enabled = true;
         }
 
         private void OnPaint(object sender, PaintEventArgs paintEventArgse)
         {
             Graphics graphics = paintEventArgse.Graphics;
             graphics.DrawImage(m_plugin.LargeIcon, 14, 14);
+        }
+
+        private void OnTimer(object sender, EventArgs eventArgs)
+        {
+            Opacity += m_fadeDirection;
+            if (Opacity >= 1.0)
+                m_timer.Enabled = false;
+            else if (Opacity <= 0.0)
+                Close();
+        }
+
+        public PluginInfoDialog(IPlugin plugin)
+        {
+            InitializeComponent();
+
+            m_plugin = plugin;
+            m_fadeDirection = 0.05;
         }
     }
 }
