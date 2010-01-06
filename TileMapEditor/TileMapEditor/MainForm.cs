@@ -17,7 +17,7 @@ using Tiling.Tiles;
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
 using TileMapEditor.Dialogs;
-
+using TileMapEditor.Help;
 using TileMapEditor.Plugin;
 
 namespace TileMapEditor
@@ -44,6 +44,8 @@ namespace TileMapEditor
         private string m_filename;
 
         private PluginManager m_pluginManager;
+
+        private HelpForm m_helpForm;
 
         #endregion
 
@@ -1109,6 +1111,16 @@ namespace TileMapEditor
         {
             m_pluginManager.UnloadPlugins();
             m_pluginManager.LoadPlugins();
+        }
+
+        private void OnHelpContents(object sender, EventArgs eventArgs)
+        {
+            if (m_helpForm == null || m_helpForm.IsDisposed)
+                m_helpForm = new HelpForm();
+            if (m_helpForm.Visible)
+                m_helpForm.BringToFront();
+            else
+                m_helpForm.Show();
         }
 
         private void OnHelpAbout(object sender, EventArgs eventArgs)

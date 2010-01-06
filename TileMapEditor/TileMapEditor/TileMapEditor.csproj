@@ -125,6 +125,12 @@
     <Compile Include="Dialogs\TileBrushDialog.Designer.cs">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\CommandBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
@@ -215,6 +221,10 @@
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Help\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -288,6 +298,7 @@
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\Help\GettingStarted.rtf" />
     <None Include="Resources\LayerBringForward.png" />
     <None Include="Resources\LayerSendBackward.png" />
     <None Include="Resources\ImageBackground.png" />

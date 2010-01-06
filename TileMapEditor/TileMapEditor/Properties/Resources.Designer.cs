@@ -193,6 +193,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpGettingStarted {
+            get {
+                object obj = ResourceManager.GetObject("HelpGettingStarted", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ImageBackground {
             get {
                 object obj = ResourceManager.GetObject("ImageBackground", resourceCulture);
