@@ -297,10 +297,13 @@
     <None Include="Resources\EditManageTileBrushes.png" />
     <None Include="Resources\AboutSide.png" />
     <None Include="Resources\AboutPluginBackground.png" />
+    <None Include="Resources\HelpSearch.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
+    <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\Help\CommandReference.rtf" />
     <None Include="Resources\Help\GettingStarted.rtf" />
     <None Include="Resources\LayerBringForward.png" />
     <None Include="Resources\LayerSendBackward.png" />
@@ -334,6 +337,8 @@
     <None Include="Resources\ViewViewport.png" />
     <None Include="Resources\TileProperties.png" />
     <None Include="Resources\TilePropertiesIndicator.png" />
+    <None Include="Resources\HelpIndex.png" />
+    <None Include="Resources\HelpContents.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

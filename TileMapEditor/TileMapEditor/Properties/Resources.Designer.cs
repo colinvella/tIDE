@@ -193,10 +193,38 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpCommandReference {
+            get {
+                object obj = ResourceManager.GetObject("HelpCommandReference", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HelpContents {
+            get {
+                object obj = ResourceManager.GetObject("HelpContents", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static byte[] HelpGettingStarted {
             get {
                 object obj = ResourceManager.GetObject("HelpGettingStarted", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HelpIndex {
+            get {
+                object obj = ResourceManager.GetObject("HelpIndex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HelpSearch {
+            get {
+                object obj = ResourceManager.GetObject("HelpSearch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
