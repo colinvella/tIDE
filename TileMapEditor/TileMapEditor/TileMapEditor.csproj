@@ -83,6 +83,9 @@
     <Compile Include="Controls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\CustomRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>

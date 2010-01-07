@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Getting Started");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("tIDE", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Getting Started");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Command Reference");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14});
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
-            this.m_contentRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
@@ -69,13 +71,16 @@
             this.m_topicTreeView.Location = new System.Drawing.Point(4, 4);
             this.m_topicTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
             this.m_topicTreeView.Name = "m_topicTreeView";
-            treeNode5.Name = "GettingStarted";
-            treeNode5.Tag = "HelpGettingStarted";
-            treeNode5.Text = "Getting Started";
-            treeNode6.Name = "tIDE";
-            treeNode6.Text = "tIDE";
+            treeNode13.Name = "GettingStarted";
+            treeNode13.Tag = "HelpGettingStarted";
+            treeNode13.Text = "Getting Started";
+            treeNode14.Name = "CommandReference";
+            treeNode14.Tag = "HelpCommandReference";
+            treeNode14.Text = "Command Reference";
+            treeNode15.Name = "tIDE";
+            treeNode15.Text = "tIDE Help Topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode15});
             this.m_topicTreeView.Size = new System.Drawing.Size(190, 379);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
@@ -106,6 +111,7 @@
             this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
             this.m_contentRichTextBox.TabIndex = 0;
             this.m_contentRichTextBox.Text = "Content Pane";
+            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // m_toolStripContainer
             // 
@@ -148,7 +154,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer m_splitContainer;
-        private System.Windows.Forms.RichTextBox m_contentRichTextBox;
+        private TileMapEditor.Controls.CustomRichTextBox m_contentRichTextBox;
         private System.Windows.Forms.ToolStripContainer m_toolStripContainer;
         private System.Windows.Forms.Panel m_contentPanel;
         private System.Windows.Forms.TreeView m_topicTreeView;
