@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Getting Started");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Command Reference");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Getting Started");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Command Reference");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
-            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
             this.m_splitContainer.SuspendLayout();
@@ -71,16 +71,16 @@
             this.m_topicTreeView.Location = new System.Drawing.Point(4, 4);
             this.m_topicTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
             this.m_topicTreeView.Name = "m_topicTreeView";
-            treeNode13.Name = "GettingStarted";
-            treeNode13.Tag = "HelpGettingStarted";
-            treeNode13.Text = "Getting Started";
-            treeNode14.Name = "CommandReference";
-            treeNode14.Tag = "HelpCommandReference";
-            treeNode14.Text = "Command Reference";
-            treeNode15.Name = "tIDE";
-            treeNode15.Text = "tIDE Help Topics";
+            treeNode1.Name = "GettingStarted";
+            treeNode1.Tag = "HelpGettingStarted";
+            treeNode1.Text = "Getting Started";
+            treeNode2.Name = "CommandReference";
+            treeNode2.Tag = "HelpCommandReference";
+            treeNode2.Text = "Command Reference";
+            treeNode3.Name = "tIDE";
+            treeNode3.Text = "tIDE Help Topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode15});
+            treeNode3});
             this.m_topicTreeView.Size = new System.Drawing.Size(190, 379);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
@@ -99,20 +99,6 @@
             this.m_contentPanel.Size = new System.Drawing.Size(382, 379);
             this.m_contentPanel.TabIndex = 1;
             // 
-            // m_contentRichTextBox
-            // 
-            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
-            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
-            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
-            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
-            this.m_contentRichTextBox.ReadOnly = true;
-            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
-            this.m_contentRichTextBox.TabIndex = 0;
-            this.m_contentRichTextBox.Text = "Content Pane";
-            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
-            // 
             // m_toolStripContainer
             // 
             // 
@@ -127,6 +113,21 @@
             this.m_toolStripContainer.Size = new System.Drawing.Size(584, 412);
             this.m_toolStripContainer.TabIndex = 1;
             this.m_toolStripContainer.Text = "toolStripContainer1";
+            // 
+            // m_contentRichTextBox
+            // 
+            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
+            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.m_contentRichTextBox.DetectUrls = true;
+            this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
+            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
+            this.m_contentRichTextBox.ReadOnly = true;
+            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
+            this.m_contentRichTextBox.TabIndex = 0;
+            this.m_contentRichTextBox.Text = "Content Pane";
+            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // HelpForm
             // 

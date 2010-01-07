@@ -18,6 +18,44 @@ namespace TileMapEditor.Help
             InitializeComponent();
         }
 
+        private void ProcessHelpLinks()
+        {
+            int textPos = -1;
+            while (true)
+            {
+                ++textPos;
+                textPos = m_contentRichTextBox.Find("[", textPos, RichTextBoxFinds.None);
+                if (textPos == -1)
+                    break;
+
+                int start = textPos;
+                int textStart = start + 1;
+
+                ++textPos;
+                textPos = m_contentRichTextBox.Find("#", textPos, RichTextBoxFinds.None);
+                if (textPos == -1)
+                    break;
+
+                int hash = textPos;
+
+                ++textPos;
+                textPos = m_contentRichTextBox.Find("]", textPos, RichTextBoxFinds.None);
+                if (textPos == -1)
+                    break;
+
+                int end = textPos;
+
+                string linkText = m_contentRichTextBox.Text.Substring(textStart, hash - textStart);
+
+                int urlStart = hash + 1;
+                string linkUrl = m_contentRichTextBox.Text.Substring(urlStart, end - urlStart);
+
+                m_contentRichTextBox.Select(start, end - start + 1);
+                m_contentRichTextBox.SelectedText = " ";
+                m_contentRichTextBox.InsertLink(linkText, linkUrl);
+            }
+        }
+
         private void LoadHelpContent(string resourceName)
         {
             Type resourcesType = typeof(Properties.Resources);
@@ -41,48 +79,10 @@ namespace TileMapEditor.Help
 
             byte[] content = (byte[])propertyValue;
 
-            string rtf = new System.Text.ASCIIEncoding().GetString(content);
-            m_contentRichTextBox.Rtf = rtf;
-
             try
             {
                 m_contentRichTextBox.LoadFile(new MemoryStream(content), RichTextBoxStreamType.RichText);
-
-                int textPos = -1;
-                //string rtf = m_contentRichTextBox.Rtf;
-                while (true)
-                {
-                    ++textPos;
-                    textPos = m_contentRichTextBox.Find("[", textPos, RichTextBoxFinds.None);
-                    if (textPos == -1)
-                        break;
-
-                    int start = textPos;
-                    int textStart = start + 1;
-
-                    ++textPos;
-                    textPos = m_contentRichTextBox.Find("#", textPos, RichTextBoxFinds.None);
-                    if (textPos == -1)
-                        break;
-
-                    int hash = textPos;
-
-                    ++textPos;
-                    textPos = m_contentRichTextBox.Find("]", textPos, RichTextBoxFinds.None);
-                    if (textPos == -1)
-                        break;
-
-                    int end = textPos;
-
-                    string linkText = m_contentRichTextBox.Text.Substring(textStart, hash - textStart);
-
-                    int urlStart = hash + 1;
-                    string linkUrl = m_contentRichTextBox.Text.Substring(urlStart, end - urlStart);
-
-                    m_contentRichTextBox.Select(start, end - start + 1);
-                    m_contentRichTextBox.SelectedText = " ";
-                    m_contentRichTextBox.InsertLink(linkText, linkUrl, start);
-                }
+                ProcessHelpLinks();
             }
             catch (Exception exception)
             {
@@ -108,14 +108,25 @@ namespace TileMapEditor.Help
             }
 
             string resourceName = treeNode.Tag.ToString();
-
             LoadHelpContent(resourceName);
         }
 
         private void OnHelpLink(object sender, LinkClickedEventArgs linkClickedEventArgs)
         {
-            string resourceName = linkClickedEventArgs.LinkText.Replace("http://", "");
-            LoadHelpContent(resourceName);
+            string resourceName = linkClickedEventArgs.LinkText;
+
+            if (resourceName.Contains('#'))
+            {
+                resourceName = resourceName.Split('#')[1];
+                LoadHelpContent(resourceName);
+            }
+            else if (resourceName.StartsWith("http://"))
+            {
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo.FileName = "iexplore";
+                proc.StartInfo.Arguments = resourceName;
+                proc.Start();
+            }
         }
     }
 }
