@@ -149,21 +149,31 @@ namespace TileMapEditor.Help
 
         private void BuildIndex()
         {
+            UseWaitCursor = true;
+            Application.DoEvents();
             foreach (TreeNode topicNode in m_topicTreeView.Nodes)
                 BuildIndex(topicNode);
+            UseWaitCursor = false;
         }
 
         private void HighlightKeywords(string keyword)
         {
             int pos = -1;
+            int firstSelection = -1;
             while (true)
             {
                 pos = m_contentRichTextBox.Find(keyword, pos + 1, RichTextBoxFinds.WholeWord);
                 if (pos == -1)
                     break;
+
+                if (firstSelection == -1)
+                    firstSelection = pos;
+
                 m_contentRichTextBox.Select(pos, keyword.Length);
                 m_contentRichTextBox.SelectionBackColor = Color.Yellow;
             }
+            m_contentRichTextBox.Select(firstSelection, 0);
+            m_contentRichTextBox.ScrollToCaret();
         }
 
         private void OnHelpFormLoad(object sender, EventArgs eventArgs)
@@ -171,7 +181,7 @@ namespace TileMapEditor.Help
             m_contentIndex = new Dictionary<string, List<string>>();
 
             List<char> delimeters = new List<char>();
-            for (char ch = '\0'; ch < (char)255; ch++)
+            for (char ch = '\0'; ch < char.MaxValue; ch++)
                 if (!char.IsLetterOrDigit(ch))
                     delimeters.Add(ch);
             m_delimeters = delimeters.ToArray();
