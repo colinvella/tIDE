@@ -169,8 +169,25 @@ namespace TileMapEditor.Help
                 m_contentRichTextBox.Select(pos, keyword.Length);
                 m_contentRichTextBox.SelectionBackColor = Color.Yellow;
             }
-            m_contentRichTextBox.Select(firstSelection, 0);
-            m_contentRichTextBox.ScrollToCaret();
+            if (firstSelection > -1)
+            {
+                m_contentRichTextBox.Select(firstSelection, 0);
+                m_contentRichTextBox.ScrollToCaret();
+            }
+        }
+
+        private string BuildFriendlyResourceName(string resourceName)
+        {
+            string nodeName = "";
+            foreach (char ch in resourceName)
+            {
+                if (char.IsUpper(ch))
+                    nodeName += " ";
+                nodeName += ch;
+            }
+            if (nodeName.StartsWith(" Help "))
+                nodeName = nodeName.Substring(6);
+            return nodeName;
         }
 
         private void OnHelpFormLoad(object sender, EventArgs eventArgs)
@@ -188,6 +205,18 @@ namespace TileMapEditor.Help
         {
             Hide();
             formClosingEventArgs.Cancel = true;
+        }
+
+        private void OnHelpContents(object sender, EventArgs eventArgs)
+        {
+            m_topicTreeView.Visible = true;
+            m_indexTreeView.Visible = false;
+            m_searchTextbox.Visible = false;
+            m_searchListView.Visible = false;
+
+            m_helpContentsButton.Checked = true;
+            m_helpIndexButton.Checked = false;
+            m_helpSearchButton.Checked = false;
         }
 
         private void OnHelpIndex(object sender, EventArgs eventArgs)
@@ -213,15 +242,7 @@ namespace TileMapEditor.Help
                     wordNode.Tag = keyValuePair.Key;
                     foreach (string resourceName in keyValuePair.Value)
                     {
-                        string nodeName = "";
-                        foreach (char ch in resourceName)
-                        {
-                            if (char.IsUpper(ch))
-                                nodeName += " ";
-                            nodeName += ch;
-                        }
-                        if (nodeName.StartsWith(" Help "))
-                            nodeName = nodeName.Substring(6);
+                        string nodeName = BuildFriendlyResourceName(resourceName);
 
                         TreeNode resourceNode = new TreeNode(nodeName);
                         resourceNode.NodeFont = fontResource;
@@ -240,19 +261,55 @@ namespace TileMapEditor.Help
 
             m_topicTreeView.Visible = false;
             m_indexTreeView.Visible = true;
+            m_searchTextbox.Visible = false;
+            m_searchListView.Visible = false;
 
             m_helpContentsButton.Checked = false;
             m_helpIndexButton.Checked = true;
-
+            m_helpSearchButton.Checked = false;
         }
 
-        private void OnHelpContents(object sender, EventArgs eventArgs)
+        private void OnHelpSearch(object sender, EventArgs eventArgs)
         {
-            m_topicTreeView.Visible = true;
-            m_indexTreeView.Visible = false;
+            if (m_contentIndex.Count == 0)
+            {
+                Cursor = Cursors.WaitCursor;
+                Application.DoEvents();
 
-            m_helpContentsButton.Checked = true;
+                BuildIndex();
+
+                Cursor = Cursors.Default;
+            }
+
+            m_topicTreeView.Visible = false;
+            m_indexTreeView.Visible = false;
+            m_searchTextbox.Visible = true;
+            m_searchListView.Visible = true;
+
+            m_helpContentsButton.Checked = false;
             m_helpIndexButton.Checked = false;
+            m_helpSearchButton.Checked = true;
+
+            m_searchTextbox.Focus();
+        }
+
+        private void OnTopicSelect(object sender, TreeViewEventArgs treeViewEventArgs)
+        {
+            TreeNode treeNode = treeViewEventArgs.Node;
+
+            m_contentRichTextBox.Clear();
+
+            if (treeNode.Tag == null)
+            {
+                m_contentRichTextBox.Text = "No content associated with this node";
+                return;
+            }
+
+            string resourceName = treeNode.Tag.ToString();
+            ShowHelpContent(resourceName);
+
+            m_indexTreeView.SelectedNode = null;
+            m_searchListView.SelectedIndices.Clear();
         }
 
         private void OnIndexSelect(object sender, TreeViewEventArgs treeViewEventArgs)
@@ -279,23 +336,70 @@ namespace TileMapEditor.Help
             HighlightKeywords(treeNode.Parent.Tag.ToString());
 
             m_topicTreeView.SelectedNode = null;
+            m_searchListView.SelectedIndices.Clear();
         }
 
-        private void OnTopicSelect(object sender, TreeViewEventArgs treeViewEventArgs)
+        private void OnEnterSearchTextBox(object sender, EventArgs eventArgs)
         {
-            TreeNode treeNode = treeViewEventArgs.Node;
+            if (m_searchTextbox.ForeColor != SystemColors.ControlText)
+            {
+                m_searchTextbox.Clear();
+                m_searchTextbox.ForeColor = SystemColors.ControlText;
+            }
+        }
+
+        private void OnSearchTextChanged(object sender, EventArgs eventArgs)
+        {
+            string[] keywords = m_searchTextbox.Text.Split(new char[] { ' ' });
+
+            Dictionary<string, byte> searchResults = new Dictionary<string,byte>();
+            foreach (string keyword in keywords)
+            {
+                if (!m_contentIndex.ContainsKey(keyword))
+                    continue;
+
+                List<string> resourceNames = m_contentIndex[keyword];
+                foreach (string resourceName in resourceNames)
+                    searchResults[resourceName] = byte.MaxValue;
+            }
+
+            m_searchListView.Clear();
+            foreach (string resourceName in searchResults.Keys)
+            {
+                string nodeName = BuildFriendlyResourceName(resourceName);
+                ListViewItem listViewItem = new ListViewItem(nodeName);
+                listViewItem.Tag = resourceName;
+                m_searchListView.Items.Add(listViewItem);
+            }
+
+            m_topicTreeView.SelectedNode = null;
+            m_indexTreeView.SelectedNode = null;
+        }
+
+        private void OnSearchResult(object sender, ListViewItemSelectionChangedEventArgs listViewItemSelectionChangedEventArgs)
+        {
+            if (listViewItemSelectionChangedEventArgs.ItemIndex == -1)
+                return;
+
+            ListViewItem listViewItem = listViewItemSelectionChangedEventArgs.Item;
 
             m_contentRichTextBox.Clear();
 
-            if (treeNode.Tag == null)
+            if (listViewItem.Tag == null)
             {
                 m_contentRichTextBox.Text = "No content associated with this node";
                 return;
             }
 
-            string resourceName = treeNode.Tag.ToString();
+            string resourceName = listViewItem.Tag.ToString();
+
             ShowHelpContent(resourceName);
 
+            string[] keywords = m_searchTextbox.Text.Split(new char[] { ' ' });
+            foreach (string keyword in keywords)
+                HighlightKeywords(keyword);
+
+            m_topicTreeView.SelectedNode = null;
             m_indexTreeView.SelectedNode = null;
         }
 

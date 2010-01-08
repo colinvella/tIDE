@@ -39,13 +39,15 @@
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
             this.m_indexTreeView = new System.Windows.Forms.TreeView();
+            this.m_searchListView = new System.Windows.Forms.ListView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
-            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
-            this.m_helpSearchButton = new System.Windows.Forms.ToolStripButton();
-            this.m_helpIndexButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpContentsButton = new System.Windows.Forms.ToolStripButton();
+            this.m_helpIndexButton = new System.Windows.Forms.ToolStripButton();
+            this.m_helpSearchButton = new System.Windows.Forms.ToolStripButton();
+            this.m_searchTextbox = new System.Windows.Forms.ToolStripTextBox();
+            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
             this.m_splitContainer.SuspendLayout();
@@ -66,6 +68,7 @@
             // 
             this.m_splitContainer.Panel1.Controls.Add(this.m_topicTreeView);
             this.m_splitContainer.Panel1.Controls.Add(this.m_indexTreeView);
+            this.m_splitContainer.Panel1.Controls.Add(this.m_searchListView);
             // 
             // m_splitContainer.Panel2
             // 
@@ -114,6 +117,16 @@
             this.m_indexTreeView.Visible = false;
             this.m_indexTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnIndexSelect);
             // 
+            // m_searchListView
+            // 
+            this.m_searchListView.Location = new System.Drawing.Point(4, 4);
+            this.m_searchListView.Name = "m_searchListView";
+            this.m_searchListView.Size = new System.Drawing.Size(190, 379);
+            this.m_searchListView.TabIndex = 2;
+            this.m_searchListView.UseCompatibleStateImageBehavior = false;
+            this.m_searchListView.View = System.Windows.Forms.View.List;
+            this.m_searchListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.OnSearchResult);
+            // 
             // m_contentPanel
             // 
             this.m_contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -127,6 +140,80 @@
             this.m_contentPanel.Padding = new System.Windows.Forms.Padding(1);
             this.m_contentPanel.Size = new System.Drawing.Size(382, 379);
             this.m_contentPanel.TabIndex = 1;
+            // 
+            // m_toolStripContainer
+            // 
+            // 
+            // m_toolStripContainer.ContentPanel
+            // 
+            this.m_toolStripContainer.ContentPanel.AutoScroll = true;
+            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitContainer);
+            this.m_toolStripContainer.ContentPanel.Size = new System.Drawing.Size(584, 387);
+            this.m_toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_toolStripContainer.LeftToolStripPanelVisible = false;
+            this.m_toolStripContainer.Location = new System.Drawing.Point(0, 0);
+            this.m_toolStripContainer.Name = "m_toolStripContainer";
+            this.m_toolStripContainer.RightToolStripPanelVisible = false;
+            this.m_toolStripContainer.Size = new System.Drawing.Size(584, 412);
+            this.m_toolStripContainer.TabIndex = 1;
+            // 
+            // m_toolStripContainer.TopToolStripPanel
+            // 
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_toolStrip);
+            // 
+            // m_toolStrip
+            // 
+            this.m_toolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.m_toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_helpContentsButton,
+            this.m_helpIndexButton,
+            this.m_helpSearchButton,
+            this.m_searchTextbox});
+            this.m_toolStrip.Location = new System.Drawing.Point(3, 0);
+            this.m_toolStrip.Name = "m_toolStrip";
+            this.m_toolStrip.Size = new System.Drawing.Size(204, 25);
+            this.m_toolStrip.TabIndex = 0;
+            // 
+            // m_helpContentsButton
+            // 
+            this.m_helpContentsButton.Checked = true;
+            this.m_helpContentsButton.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_helpContentsButton.Image = global::TileMapEditor.Properties.Resources.HelpContents;
+            this.m_helpContentsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_helpContentsButton.Name = "m_helpContentsButton";
+            this.m_helpContentsButton.Size = new System.Drawing.Size(75, 22);
+            this.m_helpContentsButton.Text = "Contents";
+            this.m_helpContentsButton.Click += new System.EventHandler(this.OnHelpContents);
+            // 
+            // m_helpIndexButton
+            // 
+            this.m_helpIndexButton.Image = global::TileMapEditor.Properties.Resources.HelpIndex;
+            this.m_helpIndexButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_helpIndexButton.Name = "m_helpIndexButton";
+            this.m_helpIndexButton.Size = new System.Drawing.Size(55, 22);
+            this.m_helpIndexButton.Text = "Index";
+            this.m_helpIndexButton.Click += new System.EventHandler(this.OnHelpIndex);
+            // 
+            // m_helpSearchButton
+            // 
+            this.m_helpSearchButton.Image = global::TileMapEditor.Properties.Resources.HelpSearch;
+            this.m_helpSearchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_helpSearchButton.Name = "m_helpSearchButton";
+            this.m_helpSearchButton.Size = new System.Drawing.Size(62, 22);
+            this.m_helpSearchButton.Text = "Search";
+            this.m_helpSearchButton.Click += new System.EventHandler(this.OnHelpSearch);
+            // 
+            // m_searchTextbox
+            // 
+            this.m_searchTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_searchTextbox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.m_searchTextbox.Name = "m_searchTextbox";
+            this.m_searchTextbox.Size = new System.Drawing.Size(200, 25);
+            this.m_searchTextbox.Text = "enter search criteria here";
+            this.m_searchTextbox.ToolTipText = "Enter search criteria here";
+            this.m_searchTextbox.Visible = false;
+            this.m_searchTextbox.Enter += new System.EventHandler(this.OnEnterSearchTextBox);
+            this.m_searchTextbox.TextChanged += new System.EventHandler(this.OnSearchTextChanged);
             // 
             // m_contentRichTextBox
             // 
@@ -142,63 +229,6 @@
             this.m_contentRichTextBox.TabIndex = 0;
             this.m_contentRichTextBox.Text = "Content Pane";
             this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
-            // 
-            // m_toolStripContainer
-            // 
-            // 
-            // m_toolStripContainer.ContentPanel
-            // 
-            this.m_toolStripContainer.ContentPanel.AutoScroll = true;
-            this.m_toolStripContainer.ContentPanel.Controls.Add(this.m_splitContainer);
-            this.m_toolStripContainer.ContentPanel.Size = new System.Drawing.Size(584, 387);
-            this.m_toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_toolStripContainer.Location = new System.Drawing.Point(0, 0);
-            this.m_toolStripContainer.Name = "m_toolStripContainer";
-            this.m_toolStripContainer.Size = new System.Drawing.Size(584, 412);
-            this.m_toolStripContainer.TabIndex = 1;
-            this.m_toolStripContainer.Text = "toolStripContainer1";
-            // 
-            // m_toolStripContainer.TopToolStripPanel
-            // 
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_toolStrip);
-            // 
-            // m_toolStrip
-            // 
-            this.m_toolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.m_toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_helpSearchButton,
-            this.m_helpIndexButton,
-            this.m_helpContentsButton});
-            this.m_toolStrip.Location = new System.Drawing.Point(3, 0);
-            this.m_toolStrip.Name = "m_toolStrip";
-            this.m_toolStrip.Size = new System.Drawing.Size(204, 25);
-            this.m_toolStrip.TabIndex = 0;
-            // 
-            // m_helpSearchButton
-            // 
-            this.m_helpSearchButton.Image = global::TileMapEditor.Properties.Resources.HelpSearch;
-            this.m_helpSearchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_helpSearchButton.Name = "m_helpSearchButton";
-            this.m_helpSearchButton.Size = new System.Drawing.Size(62, 22);
-            this.m_helpSearchButton.Text = "Search";
-            // 
-            // m_helpIndexButton
-            // 
-            this.m_helpIndexButton.Image = global::TileMapEditor.Properties.Resources.HelpIndex;
-            this.m_helpIndexButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_helpIndexButton.Name = "m_helpIndexButton";
-            this.m_helpIndexButton.Size = new System.Drawing.Size(55, 22);
-            this.m_helpIndexButton.Text = "Index";
-            this.m_helpIndexButton.Click += new System.EventHandler(this.OnHelpIndex);
-            // 
-            // m_helpContentsButton
-            // 
-            this.m_helpContentsButton.Image = global::TileMapEditor.Properties.Resources.HelpContents;
-            this.m_helpContentsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_helpContentsButton.Name = "m_helpContentsButton";
-            this.m_helpContentsButton.Size = new System.Drawing.Size(75, 22);
-            this.m_helpContentsButton.Text = "Contents";
-            this.m_helpContentsButton.Click += new System.EventHandler(this.OnHelpContents);
             // 
             // HelpForm
             // 
@@ -241,5 +271,7 @@
         private System.Windows.Forms.ToolStripButton m_helpIndexButton;
         private System.Windows.Forms.ToolStripButton m_helpContentsButton;
         private System.Windows.Forms.TreeView m_indexTreeView;
+        private System.Windows.Forms.ToolStripTextBox m_searchTextbox;
+        private System.Windows.Forms.ListView m_searchListView;
     }
 }
