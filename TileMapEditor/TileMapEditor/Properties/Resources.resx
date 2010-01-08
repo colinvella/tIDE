@@ -316,4 +316,7 @@
   <data name="ToolsTileBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsTileBlock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HelpFileCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\FileCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
