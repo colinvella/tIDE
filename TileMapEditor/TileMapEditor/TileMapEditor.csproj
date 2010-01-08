@@ -286,7 +286,6 @@
     <None Include="Resources\FileSaveAs.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\DataSources\TileBrush.datasource" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\EditClearSelection.png" />
     <None Include="Resources\EditDelete.png" />
