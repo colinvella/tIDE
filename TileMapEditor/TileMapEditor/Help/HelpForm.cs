@@ -149,11 +149,8 @@ namespace TileMapEditor.Help
 
         private void BuildIndex()
         {
-            UseWaitCursor = true;
-            Application.DoEvents();
             foreach (TreeNode topicNode in m_topicTreeView.Nodes)
                 BuildIndex(topicNode);
-            UseWaitCursor = false;
         }
 
         private void HighlightKeywords(string keyword)
@@ -187,10 +184,19 @@ namespace TileMapEditor.Help
             m_delimeters = delimeters.ToArray();
         }
 
+        private void OnHelpClosing(object sender, FormClosingEventArgs formClosingEventArgs)
+        {
+            Hide();
+            formClosingEventArgs.Cancel = true;
+        }
+
         private void OnHelpIndex(object sender, EventArgs eventArgs)
         {
             if (m_contentIndex.Count == 0)
             {
+                Cursor = Cursors.WaitCursor;
+                Application.DoEvents();
+
                 BuildIndex();
 
                 m_indexTreeView.Nodes.Clear();
@@ -227,6 +233,9 @@ namespace TileMapEditor.Help
                 }
                 m_indexTreeView.Sort();
                 m_indexTreeView.ExpandAll();
+
+                Application.DoEvents();
+                Cursor = Cursors.Default;
             }
 
             m_topicTreeView.Visible = false;
@@ -234,6 +243,7 @@ namespace TileMapEditor.Help
 
             m_helpContentsButton.Checked = false;
             m_helpIndexButton.Checked = true;
+
         }
 
         private void OnHelpContents(object sender, EventArgs eventArgs)

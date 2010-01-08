@@ -208,6 +208,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "tIDE Help";
             this.Load += new System.EventHandler(this.OnHelpFormLoad);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnHelpClosing);
             this.m_splitContainer.Panel1.ResumeLayout(false);
             this.m_splitContainer.Panel2.ResumeLayout(false);
             this.m_splitContainer.ResumeLayout(false);

@@ -1115,7 +1115,7 @@ namespace TileMapEditor
 
         private void OnHelpContents(object sender, EventArgs eventArgs)
         {
-            if (m_helpForm == null || m_helpForm.IsDisposed)
+            if (m_helpForm == null)
                 m_helpForm = new HelpForm();
             if (m_helpForm.Visible)
                 m_helpForm.BringToFront();
