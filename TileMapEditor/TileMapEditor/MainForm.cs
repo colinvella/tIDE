@@ -384,6 +384,17 @@ namespace TileMapEditor
             }
         }
 
+        private void ShowHelp(HelpMode helpMode)
+        {
+            if (m_helpForm == null)
+                m_helpForm = new HelpForm();
+            if (m_helpForm.Visible)
+                m_helpForm.BringToFront();
+            else
+                m_helpForm.Show();
+            m_helpForm.HelpMode = helpMode;
+        }
+
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
             Tiling.Format.FormatManager fm = Tiling.Format.FormatManager.Instance;
@@ -1115,12 +1126,17 @@ namespace TileMapEditor
 
         private void OnHelpContents(object sender, EventArgs eventArgs)
         {
-            if (m_helpForm == null)
-                m_helpForm = new HelpForm();
-            if (m_helpForm.Visible)
-                m_helpForm.BringToFront();
-            else
-                m_helpForm.Show();
+            ShowHelp(HelpMode.Contents);
+        }
+
+        private void OnHelpIndex(object sender, EventArgs eventArgs)
+        {
+            ShowHelp(HelpMode.Index);
+        }
+
+        private void OnHelpSearch(object sender, EventArgs eventArgs)
+        {
+            ShowHelp(HelpMode.Search);
         }
 
         private void OnHelpAbout(object sender, EventArgs eventArgs)

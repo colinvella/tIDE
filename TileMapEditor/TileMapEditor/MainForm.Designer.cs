@@ -1671,6 +1671,7 @@
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
             this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.indexToolStripMenuItem.Text = "&Index";
+            this.indexToolStripMenuItem.Click += new System.EventHandler(this.OnHelpIndex);
             // 
             // searchToolStripMenuItem
             // 
@@ -1678,6 +1679,7 @@
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "&Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.OnHelpSearch);
             // 
             // aboutToolStripMenuItem
             // 

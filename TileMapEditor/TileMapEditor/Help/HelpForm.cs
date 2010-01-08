@@ -13,13 +13,9 @@ namespace TileMapEditor.Help
 {
     public partial class HelpForm : Form
     {
+        private HelpMode m_helpMode;
         private Dictionary<string, List<string>> m_contentIndex;
         private char[] m_delimeters;
-
-        public HelpForm()
-        {
-            InitializeComponent();
-        }
 
         private void ProcessHelpLinks()
         {
@@ -422,5 +418,34 @@ namespace TileMapEditor.Help
                 proc.Start();
             }
         }
+
+        internal HelpForm()
+        {
+            InitializeComponent();
+
+            m_helpMode = HelpMode.Contents;
+        }
+
+        internal HelpMode HelpMode
+        {
+            get { return m_helpMode; }
+            set
+            {
+                m_helpMode = value;
+                switch (m_helpMode)
+                {
+                    case HelpMode.Contents: OnHelpContents(this, EventArgs.Empty); break;
+                    case HelpMode.Index: OnHelpIndex(this, EventArgs.Empty); break;
+                    case HelpMode.Search: OnHelpSearch(this, EventArgs.Empty); break;
+                }
+            }
+        }
+    }
+
+    internal enum HelpMode
+    {
+        Contents,
+        Index,
+        Search
     }
 }
