@@ -1658,6 +1658,7 @@
             // 
             // contentsToolStripMenuItem
             // 
+            this.contentsToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpContents;
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
             this.contentsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -1666,12 +1667,14 @@
             // 
             // indexToolStripMenuItem
             // 
+            this.indexToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpIndex;
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
             this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
+            this.searchToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpSearch;
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "&Search";
