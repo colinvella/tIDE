@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace TileMapEditor.Controls
         private Map m_map;
         private TileSheet m_tileSheet;
         private List<ListViewItem> m_tileListViewItems;
+        private Dictionary<TileSheet, FileSystemWatcher> m_watchers;
 
         #endregion
 
@@ -65,6 +67,36 @@ namespace TileMapEditor.Controls
                     new TilePickerEventArgs(m_tileSheet, SelectedTileIndex));
         }
 
+        private void UpdateWatchers()
+        {
+            foreach (FileSystemWatcher fileSystemWatcher in m_watchers.Values)
+                fileSystemWatcher.EnableRaisingEvents = false;
+            m_watchers.Clear();
+
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+            {
+                string folder = Path.GetDirectoryName(tileSheet.ImageSource);
+                string fileName = Path.GetFileName(tileSheet.ImageSource);
+                FileSystemWatcher fileSystemWatcher = new FileSystemWatcher(folder, fileName);
+                m_watchers[tileSheet] = fileSystemWatcher;
+                fileSystemWatcher.Changed += this.OnTileSheetImageSourceChanged;
+                fileSystemWatcher.EnableRaisingEvents = true;
+            }
+        }
+
+        private void OnTileSheetImageSourceChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
+        {
+            System.Threading.Thread.Sleep(1000);
+
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+                if (tileSheet.ImageSource == fileSystemEventArgs.FullPath)
+                    TileImageCache.Instance.Refresh(tileSheet);
+
+            this.Invoke(new MethodInvoker(UpdatePicker));
+            this.Invoke(new MethodInvoker(RefreshSelectedTileSheet));
+            this.Invoke(new MethodInvoker(m_tileListView.Invalidate));
+        }
+
         #endregion
 
         #region Public Methods
@@ -74,6 +106,7 @@ namespace TileMapEditor.Controls
             InitializeComponent();
 
             m_tileListViewItems = new List<ListViewItem>();
+            m_watchers = new Dictionary<TileSheet, FileSystemWatcher>();
         }
 
         public void UpdatePicker()
@@ -96,6 +129,8 @@ namespace TileMapEditor.Controls
                 m_comboBoxTileSheets.SelectedIndex = 0;
             else
                 m_tileListView.VirtualListSize = 0;
+
+            UpdateWatchers();
         }
 
         public void RefreshSelectedTileSheet()
