@@ -90,11 +90,22 @@ namespace TileMapEditor.Controls
 
         private void OnTileSheetImageSourceChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
-            System.Threading.Thread.Sleep(1000);
-
             foreach (TileSheet tileSheet in m_map.TileSheets)
                 if (tileSheet.ImageSource == fileSystemEventArgs.FullPath)
-                    TileImageCache.Instance.Refresh(tileSheet);
+                {
+                    for (int tries = 0; tries < 10; tries++)
+                    {
+                        try
+                        {
+                            System.Threading.Thread.Sleep(10);
+                            TileImageCache.Instance.Refresh(tileSheet);
+                            break;
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
 
             this.Invoke(new MethodInvoker(UpdatePicker));
             this.Invoke(new MethodInvoker(RefreshSelectedTileSheet));
