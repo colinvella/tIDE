@@ -210,13 +210,10 @@ namespace TileMapEditor.Controls
 
             Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
 
-            if (TilePicked == null)
-                return;
+            if (TilePicked != null)
+                TilePicked(new MapPanelEventArgs(tile, m_tileLayerLocation));
 
-            TilePicked(new MapPanelEventArgs(tile, m_tileLayerLocation));
-
-            if (MapChanged != null)
-                MapChanged(this, new EventArgs());
+            this.EditTool = tile == null ? EditTool.Eraser : EditTool.SingleTile;
         }
 
         private void ApplyTileBrush()
@@ -490,7 +487,6 @@ namespace TileMapEditor.Controls
                     case EditTool.Eraser: EraseTile(); break;
                     case EditTool.Dropper:
                         PickTile();
-                        this.EditTool = EditTool.SingleTile;
                         break;
                     case EditTool.TileBrush: ApplyTileBrush(); break;
                 }
@@ -530,7 +526,6 @@ namespace TileMapEditor.Controls
                     case EditTool.Eraser: EraseTile(); break;
                     case EditTool.Dropper:
                         PickTile();
-                        this.EditTool = EditTool.SingleTile;
                         break;
                 }
             }
