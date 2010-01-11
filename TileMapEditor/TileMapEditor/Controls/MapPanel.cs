@@ -584,6 +584,19 @@ namespace TileMapEditor.Controls
                 TilePropertiesChanged(new MapPanelEventArgs(tile, m_tileLayerLocation));
         }
 
+        private void OnTileAnimation(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedLayer == null)
+                return;
+
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
+                return;
+
+            TileAnimationDialog tileAnimationDialog = new TileAnimationDialog(
+                m_map, m_selectedLayer, m_tileLayerLocation);
+            tileAnimationDialog.ShowDialog(this);
+        }
+
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
         {
             m_innerPanel.Invalidate();
