@@ -23,6 +23,7 @@ namespace TileMapEditor.Controls
         private Map m_map;
         private TileSheet m_tileSheet;
         private List<ListViewItem> m_tileListViewItems;
+        private bool m_autoUpdate;
         private Dictionary<TileSheet, FileSystemWatcher> m_watchers;
 
         #endregion
@@ -73,6 +74,9 @@ namespace TileMapEditor.Controls
                 fileSystemWatcher.EnableRaisingEvents = false;
             m_watchers.Clear();
 
+            if (!m_autoUpdate)
+                return;
+
             foreach (TileSheet tileSheet in m_map.TileSheets)
             {
                 string folder = Path.GetDirectoryName(tileSheet.ImageSource);
@@ -106,6 +110,8 @@ namespace TileMapEditor.Controls
             InitializeComponent();
 
             m_tileListViewItems = new List<ListViewItem>();
+
+            m_autoUpdate = false;
             m_watchers = new Dictionary<TileSheet, FileSystemWatcher>();
         }
 
@@ -211,6 +217,22 @@ namespace TileMapEditor.Controls
                 m_tileListView.SelectedIndices.Clear();
                 m_tileListView.SelectedIndices.Add(value);
                 m_tileListView.EnsureVisible(value);
+            }
+        }
+
+        [Category("Behavior"),
+         DefaultValue(-1),
+         Description("Automatically update tile sheets when they are updated on disk")]
+        public bool AutoUpdate
+        {
+            get
+            {
+                return m_autoUpdate;
+            }
+            set
+            {
+                m_autoUpdate = value;
+                UpdateWatchers();
             }
         }
 

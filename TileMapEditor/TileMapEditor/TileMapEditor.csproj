@@ -339,6 +339,8 @@
     <None Include="Resources\TilePropertiesIndicator.png" />
     <None Include="Resources\HelpIndex.png" />
     <None Include="Resources\HelpContents.png" />
+    <None Include="Resources\TileSheetAutoUpdateDisable.png" />
+    <None Include="Resources\TileSheetAutoUpdateEnable.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

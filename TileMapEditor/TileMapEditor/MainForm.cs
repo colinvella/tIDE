@@ -295,6 +295,21 @@ namespace TileMapEditor
                 = m_tileSheetPropertiesButton.Enabled
                 = m_tileSheetDeleteMenuItem.Enabled
                 = m_tileSheetDeleteButton.Enabled = m_mapTreeView.SelectedComponent is TileSheet;
+
+            if (m_tilePicker.AutoUpdate)
+            {
+                m_tileSheetAutoUpdateMenuItem.Image = m_tileSheetAutoUpdateButton.Image
+                    = Properties.Resources.TileSheetAutoUpdateDisable;
+                m_tileSheetAutoUpdateMenuItem.Text = "Disable Auto Update";
+                m_tileSheetAutoUpdateButton.ToolTipText = "Disable automatic update of tile sheets from disk";
+            }
+            else
+            {
+                m_tileSheetAutoUpdateMenuItem.Image = m_tileSheetAutoUpdateButton.Image
+                    = Properties.Resources.TileSheetAutoUpdateEnable;
+                m_tileSheetAutoUpdateMenuItem.Text = "Enable Auto Update";
+                m_tileSheetAutoUpdateButton.ToolTipText = "Enable automatic update of tile sheets from disk";
+            }
         }
 
         private void UpdateToolButtons()
@@ -1075,6 +1090,12 @@ namespace TileMapEditor
             UpdateEditControls();
             UpdateTileSheetControls();
             m_mapTreeView.UpdateTree();
+        }
+
+        private void OnTileSheetAutoUpdate(object sender, EventArgs eventArgs)
+        {
+            m_tilePicker.AutoUpdate = !m_tilePicker.AutoUpdate;
+            UpdateTileSheetControls();
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)

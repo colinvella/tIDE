@@ -347,6 +347,20 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TileSheetAutoUpdateDisable {
+            get {
+                object obj = ResourceManager.GetObject("TileSheetAutoUpdateDisable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TileSheetAutoUpdateEnable {
+            get {
+                object obj = ResourceManager.GetObject("TileSheetAutoUpdateEnable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileSheetDelete {
             get {
                 object obj = ResourceManager.GetObject("TileSheetDelete", resourceCulture);
