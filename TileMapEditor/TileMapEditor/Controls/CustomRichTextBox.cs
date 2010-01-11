@@ -154,13 +154,18 @@ namespace TileMapEditor.Controls
 		/// them invisible.
 		/// When clicked on, the whole link text and hyperlink string are given in the
 		/// LinkClickedEventArgs.
+        /// Note: Any existing text selection is replaced by this link
 		/// </summary>
 		/// <param name="text">Text to be inserted</param>
 		/// <param name="hyperlink">Invisible hyperlink string to be inserted</param>
 		public void InsertLink(string text, string hyperlink)
 		{
-			InsertLink(text, hyperlink, this.SelectionStart);
-		}
+            int position = this.SelectionStart;
+            this.SelectedRtf = @"{\rtf1\ansi " + text + @"\v #" + hyperlink + @"\v0}";
+            this.Select(position, text.Length + hyperlink.Length + 1);
+            this.SetSelectionLink(true);
+            this.Select(position + text.Length + hyperlink.Length + 1, 0);
+        }
 
 		/// <summary>
 		/// Insert a given text at a given position as a link. The link text is followed by

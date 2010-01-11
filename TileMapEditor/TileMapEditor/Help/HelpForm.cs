@@ -50,7 +50,6 @@ namespace TileMapEditor.Help
                 string linkUrl = m_contentRichTextBox.Text.Substring(urlStart, end - urlStart);
 
                 m_contentRichTextBox.Select(start, end - start + 1);
-                m_contentRichTextBox.SelectedText = " ";
                 m_contentRichTextBox.InsertLink(linkText, linkUrl);
             }
         }
