@@ -33,13 +33,13 @@
             System.Windows.Forms.SplitContainer m_splitContainerOuter;
             System.Windows.Forms.SplitContainer m_splitContainerInner;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileAnimationDialog));
-            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
-            this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
-            this.m_animationListView = new System.Windows.Forms.ListView();
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_imageListAnimation = new System.Windows.Forms.ImageList(this.components);
+            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
+            this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
+            this.m_animationListView = new System.Windows.Forms.ListView();
             m_customPanel = new TileMapEditor.Controls.CustomPanel();
             m_splitContainerOuter = new System.Windows.Forms.SplitContainer();
             m_splitContainerInner = new System.Windows.Forms.SplitContainer();
@@ -51,6 +51,46 @@
             m_splitContainerInner.Panel2.SuspendLayout();
             m_splitContainerInner.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // m_buttonOk
+            // 
+            this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Enabled = false;
+            this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
+            this.m_buttonOk.Name = "m_buttonOk";
+            this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonOk.TabIndex = 1;
+            this.m_buttonOk.Text = "&Ok";
+            this.m_buttonOk.UseVisualStyleBackColor = true;
+            // 
+            // m_buttonApply
+            // 
+            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonApply.Enabled = false;
+            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
+            this.m_buttonApply.Name = "m_buttonApply";
+            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonApply.TabIndex = 2;
+            this.m_buttonApply.Text = "&Apply";
+            this.m_buttonApply.UseVisualStyleBackColor = true;
+            // 
+            // m_buttonCancel
+            // 
+            this.m_buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_buttonCancel.Location = new System.Drawing.Point(497, 377);
+            this.m_buttonCancel.Name = "m_buttonCancel";
+            this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonCancel.TabIndex = 3;
+            this.m_buttonCancel.Text = "&Cancel";
+            this.m_buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // m_imageListAnimation
+            // 
+            this.m_imageListAnimation.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.m_imageListAnimation.ImageSize = new System.Drawing.Size(16, 16);
+            this.m_imageListAnimation.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // m_customPanel
             // 
@@ -123,52 +163,14 @@
             // 
             this.m_animationListView.AllowDrop = true;
             this.m_animationListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_animationListView.LargeImageList = this.m_imageListAnimation;
             this.m_animationListView.Location = new System.Drawing.Point(0, 0);
             this.m_animationListView.Name = "m_animationListView";
             this.m_animationListView.Size = new System.Drawing.Size(370, 175);
             this.m_animationListView.TabIndex = 0;
             this.m_animationListView.UseCompatibleStateImageBehavior = false;
             this.m_animationListView.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
-            // 
-            // m_buttonOk
-            // 
-            this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.m_buttonOk.Enabled = false;
-            this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
-            this.m_buttonOk.Name = "m_buttonOk";
-            this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonOk.TabIndex = 1;
-            this.m_buttonOk.Text = "&Ok";
-            this.m_buttonOk.UseVisualStyleBackColor = true;
-            // 
-            // m_buttonApply
-            // 
-            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonApply.Enabled = false;
-            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
-            this.m_buttonApply.Name = "m_buttonApply";
-            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonApply.TabIndex = 2;
-            this.m_buttonApply.Text = "&Apply";
-            this.m_buttonApply.UseVisualStyleBackColor = true;
-            // 
-            // m_buttonCancel
-            // 
-            this.m_buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_buttonCancel.Location = new System.Drawing.Point(497, 377);
-            this.m_buttonCancel.Name = "m_buttonCancel";
-            this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonCancel.TabIndex = 3;
-            this.m_buttonCancel.Text = "&Cancel";
-            this.m_buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // m_imageListAnimation
-            // 
-            this.m_imageListAnimation.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.m_imageListAnimation.ImageSize = new System.Drawing.Size(16, 16);
-            this.m_imageListAnimation.TransparentColor = System.Drawing.Color.Transparent;
+            this.m_animationListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
             // 
             // TileAnimationDialog
             // 

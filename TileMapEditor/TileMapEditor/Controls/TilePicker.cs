@@ -114,9 +114,6 @@ namespace TileMapEditor.Controls
 
         private void OnItemDrag(object sender, ItemDragEventArgs itemDragEventArgs)
         {
-            if (TileDrag == null)
-                return;
-
             if (m_comboBoxTileSheets.SelectedIndex < 0)
                 return;
 
@@ -126,6 +123,8 @@ namespace TileMapEditor.Controls
 
             if (TileDrag != null)
                 TileDrag(this, tileDragEventArgs);
+
+            m_tileListView.DoDragDrop(tileDragEventArgs, DragDropEffects.Copy);
         }
 
         #endregion
