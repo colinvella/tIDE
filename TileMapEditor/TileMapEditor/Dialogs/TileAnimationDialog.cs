@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -18,11 +19,27 @@ namespace TileMapEditor.Dialogs
 {
     public partial class TileAnimationDialog : Form
     {
+        private struct IconInfo
+        {
+            public bool fIcon;
+            public int xHotspot;
+            public int yHotspot;
+            public IntPtr hbmMask;
+            public IntPtr hbmColor;
+        }
+
         private Map m_map;
         private Layer m_layer;
         private Location m_tileLocation;
         private TileSheet m_draggedTileSheet;
         private int m_draggedTileIndex;
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr CreateIconIndirect(ref IconInfo icon);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool GetIconInfo(IntPtr hIcon, ref IconInfo pIconInfo);
 
         private void AddTileFrame(TileSheet tileSheet, int tileIndex)
         {
@@ -65,10 +82,27 @@ namespace TileMapEditor.Dialogs
             m_tilePicker.UpdatePicker();
         }
 
+        private void OnDialogMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (mouseEventArgs.Button == MouseButtons.None
+                && Cursor != Cursors.Default)
+                Cursor = Cursors.Default;
+        }
+
         private void OnTileDrag(object sender, TileDragEventArgs tileDragEventArgs)
         {
             m_draggedTileSheet = tileDragEventArgs.TileSheet;
             m_draggedTileIndex = tileDragEventArgs.TileIndex;
+
+            Bitmap tileImage = TileImageCache.Instance.GetTileBitmap(m_draggedTileSheet, m_draggedTileIndex);
+
+            IconInfo tmp = new IconInfo();
+            GetIconInfo(tileImage.GetHicon(), ref tmp);
+            tmp.xHotspot = tileImage.Width / 2;
+            tmp.yHotspot = tileImage.Height / 2;
+            tmp.fIcon = false;
+
+            Cursor = new Cursor(CreateIconIndirect(ref tmp));
         }
 
         private void OnTileDragEnter(object sender, DragEventArgs dragEventArgs)
@@ -88,6 +122,8 @@ namespace TileMapEditor.Dialogs
             AddTileFrame(m_draggedTileSheet, m_draggedTileIndex);
             m_draggedTileSheet = null;
             m_draggedTileIndex = -1;
+
+            Cursor = Cursors.Default;
         }
 
         public TileAnimationDialog(Map map, Layer layer, Location tileLocation)

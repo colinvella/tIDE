@@ -95,6 +95,7 @@
             this.m_tileListView.VirtualMode = true;
             this.m_tileListView.SelectedIndexChanged += new System.EventHandler(this.OnSelectTile);
             this.m_tileListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.OnRetrieveVirtualItem);
+            this.m_tileListView.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.OnDragGiveFeedback);
             this.m_tileListView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.OnItemDrag);
             // 
             // TilePicker

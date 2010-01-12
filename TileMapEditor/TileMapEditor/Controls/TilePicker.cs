@@ -127,6 +127,11 @@ namespace TileMapEditor.Controls
             m_tileListView.DoDragDrop(tileDragEventArgs, DragDropEffects.Copy);
         }
 
+        private void OnDragGiveFeedback(object sender, GiveFeedbackEventArgs giveFeedbackEventArgs)
+        {
+            giveFeedbackEventArgs.UseDefaultCursors = false;
+        }
+
         #endregion
 
         #region Public Methods
