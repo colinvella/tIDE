@@ -39,7 +39,7 @@
             this.m_imageListAnimation = new System.Windows.Forms.ImageList(this.components);
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
-            this.m_animationListView = new System.Windows.Forms.ListView();
+            this.m_animationListView = new TileMapEditor.Controls.CustomListView();
             m_customPanel = new TileMapEditor.Controls.CustomPanel();
             m_splitContainerOuter = new System.Windows.Forms.SplitContainer();
             m_splitContainerInner = new System.Windows.Forms.SplitContainer();
@@ -205,7 +205,7 @@
         private System.Windows.Forms.Button m_buttonCancel;
         private TileMapEditor.Controls.TilePicker m_tilePicker;
         private TileMapEditor.Controls.CustomPanel m_previewPanel;
-        private System.Windows.Forms.ListView m_animationListView;
+        private TileMapEditor.Controls.CustomListView m_animationListView;
         private System.Windows.Forms.ImageList m_imageListAnimation;
 
     }
