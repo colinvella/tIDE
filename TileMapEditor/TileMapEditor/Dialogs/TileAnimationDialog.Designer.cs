@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label m_frameIntervalLabel;
             TileMapEditor.Controls.CustomPanel m_customPanel;
             System.Windows.Forms.SplitContainer m_splitContainerOuter;
             System.Windows.Forms.SplitContainer m_splitContainerInner;
@@ -39,13 +40,17 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_frameContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_frameDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_frameIntervalTextbox = new System.Windows.Forms.NumericUpDown();
+            this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
             this.m_animationListView = new TileMapEditor.Controls.CustomListView();
+            m_frameIntervalLabel = new System.Windows.Forms.Label();
             m_customPanel = new TileMapEditor.Controls.CustomPanel();
             m_splitContainerOuter = new System.Windows.Forms.SplitContainer();
             m_splitContainerInner = new System.Windows.Forms.SplitContainer();
             this.m_frameContextMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_frameIntervalTextbox)).BeginInit();
             m_customPanel.SuspendLayout();
             m_splitContainerOuter.Panel1.SuspendLayout();
             m_splitContainerOuter.Panel2.SuspendLayout();
@@ -111,6 +116,34 @@
             this.m_frameDeleteMenuItem.Size = new System.Drawing.Size(143, 22);
             this.m_frameDeleteMenuItem.Text = "Delete Frame";
             this.m_frameDeleteMenuItem.Click += new System.EventHandler(this.OnDeleteFrame);
+            // 
+            // m_frameIntervalLabel
+            // 
+            m_frameIntervalLabel.AutoSize = true;
+            m_frameIntervalLabel.Location = new System.Drawing.Point(12, 382);
+            m_frameIntervalLabel.Name = "m_frameIntervalLabel";
+            m_frameIntervalLabel.Size = new System.Drawing.Size(96, 13);
+            m_frameIntervalLabel.TabIndex = 5;
+            m_frameIntervalLabel.Text = "Frame Interval (ms)";
+            // 
+            // m_frameIntervalTextbox
+            // 
+            this.m_frameIntervalTextbox.Location = new System.Drawing.Point(114, 380);
+            this.m_frameIntervalTextbox.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.m_frameIntervalTextbox.Name = "m_frameIntervalTextbox";
+            this.m_frameIntervalTextbox.Size = new System.Drawing.Size(91, 20);
+            this.m_frameIntervalTextbox.TabIndex = 6;
+            this.m_frameIntervalTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_animationTimer
+            // 
+            this.m_animationTimer.Enabled = true;
+            this.m_animationTimer.Interval = 1;
+            this.m_animationTimer.Tick += new System.EventHandler(this.OnAnimationTimer);
             // 
             // m_customPanel
             // 
@@ -180,6 +213,7 @@
             this.m_previewPanel.Name = "m_previewPanel";
             this.m_previewPanel.Size = new System.Drawing.Size(370, 180);
             this.m_previewPanel.TabIndex = 0;
+            this.m_previewPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPreviewPaint);
             this.m_previewPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
             // 
             // m_animationListView
@@ -204,6 +238,8 @@
             this.CancelButton = this.m_buttonCancel;
             this.ClientSize = new System.Drawing.Size(584, 412);
             this.Controls.Add(this.m_buttonCancel);
+            this.Controls.Add(m_frameIntervalLabel);
+            this.Controls.Add(this.m_frameIntervalTextbox);
             this.Controls.Add(this.m_buttonApply);
             this.Controls.Add(this.m_buttonOk);
             this.Controls.Add(m_customPanel);
@@ -215,6 +251,7 @@
             this.Load += new System.EventHandler(this.TileAnimationDialog_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
             this.m_frameContextMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_frameIntervalTextbox)).EndInit();
             m_customPanel.ResumeLayout(false);
             m_splitContainerOuter.Panel1.ResumeLayout(false);
             m_splitContainerOuter.Panel2.ResumeLayout(false);
@@ -223,6 +260,7 @@
             m_splitContainerInner.Panel2.ResumeLayout(false);
             m_splitContainerInner.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -237,6 +275,8 @@
         private System.Windows.Forms.ImageList m_imageListAnimation;
         private System.Windows.Forms.ContextMenuStrip m_frameContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem m_frameDeleteMenuItem;
+        private System.Windows.Forms.NumericUpDown m_frameIntervalTextbox;
+        private System.Windows.Forms.Timer m_animationTimer;
 
     }
 }

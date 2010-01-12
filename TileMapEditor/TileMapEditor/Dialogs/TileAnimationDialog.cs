@@ -33,6 +33,7 @@ namespace TileMapEditor.Dialogs
         private Location m_tileLocation;
         private TileSheet m_draggedTileSheet;
         private int m_draggedTileIndex;
+        private int m_animationIndex;
 
         [DllImport("user32.dll")]
         private static extern IntPtr CreateIconIndirect(ref IconInfo icon);
@@ -94,15 +95,8 @@ namespace TileMapEditor.Dialogs
             m_draggedTileSheet = tileDragEventArgs.TileSheet;
             m_draggedTileIndex = tileDragEventArgs.TileIndex;
 
-            Bitmap tileImage = new Bitmap(
-                TileImageCache.Instance.GetTileBitmap(m_draggedTileSheet, m_draggedTileIndex));
-            /*for (int pixelY = 0; pixelY < tileImage.Height; pixelY++)
-                for (int pixelX = 0; pixelX < tileImage.Width;pixelX++)
-                {
-                    Color color = tileImage.GetPixel(pixelX, pixelY);
-                    Color color2 = Color.FromArgb(color.A/2, color.R, color.G, color.B);
-                    tileImage.SetPixel(pixelX, pixelY, color2);
-                }*/
+            Bitmap tileImage = TileImageCache.Instance.GetTileBitmap(
+                m_draggedTileSheet, m_draggedTileIndex);
 
             IconInfo iconInfo = new IconInfo();
             GetIconInfo(tileImage.GetHicon(), ref iconInfo);
@@ -151,6 +145,30 @@ namespace TileMapEditor.Dialogs
                 listViewItem.Text = "Frame #" + (frameIndex++);
         }
 
+        private void OnAnimationTimer(object sender, EventArgs eventArgs)
+        {
+            long animationLength = m_animationListView.Items.Count * (long)m_frameIntervalTextbox.Value;
+            if (animationLength == 0)
+                return;
+
+            long animationTime = (long)(DateTime.Now - new DateTime(0)).TotalMilliseconds;
+
+            animationTime = animationTime % animationLength;
+            m_animationIndex = m_frameIntervalTextbox.Value == 0
+                ? 0 : (int)(animationTime / m_frameIntervalTextbox.Value);
+            m_previewPanel.Invalidate();
+        }
+
+        private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
+        {
+            if (m_animationListView.Items.Count == 0)
+                return;
+
+            Graphics graphics = paintEventArgs.Graphics;
+            Image tileImage = m_imageListAnimation.Images[m_animationListView.Items[m_animationIndex].ImageIndex];
+            graphics.DrawImage(tileImage, 0, 0);
+        }
+
         public TileAnimationDialog(Map map, Layer layer, Location tileLocation)
         {
             InitializeComponent();
@@ -163,12 +181,21 @@ namespace TileMapEditor.Dialogs
             if (tile != null)
             {
                 if (tile is StaticTile)
+                {
+                    m_frameIntervalTextbox.Value = 250;
                     AddTileFrame(tile.TileSheet, tile.TileIndex);
+                }
                 else if (tile is AnimatedTile)
                 {
-                    foreach (StaticTile tileFrame in (tile as AnimatedTile).TileFrames)
+                    AnimatedTile animatedTile = tile as AnimatedTile;
+                    m_frameIntervalTextbox.Value = animatedTile.FrameInterval;
+                    foreach (StaticTile tileFrame in animatedTile.TileFrames)
                         AddTileFrame(tileFrame.TileSheet, tileFrame.TileIndex);
                 }
+            }
+            else
+            {
+                m_frameIntervalTextbox.Value = 250;
             }
         }
     }
