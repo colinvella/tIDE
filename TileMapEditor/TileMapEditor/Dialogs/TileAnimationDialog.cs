@@ -21,11 +21,11 @@ namespace TileMapEditor.Dialogs
     {
         private struct IconInfo
         {
-            public bool fIcon;
-            public int xHotspot;
-            public int yHotspot;
-            public IntPtr hbmMask;
-            public IntPtr hbmColor;
+            public bool Icon;
+            public int HotSpotX;
+            public int HotSpotY;
+            public IntPtr BitMaskHandle;
+            public IntPtr PixelData;
         }
 
         private Map m_map;
@@ -94,15 +94,23 @@ namespace TileMapEditor.Dialogs
             m_draggedTileSheet = tileDragEventArgs.TileSheet;
             m_draggedTileIndex = tileDragEventArgs.TileIndex;
 
-            Bitmap tileImage = TileImageCache.Instance.GetTileBitmap(m_draggedTileSheet, m_draggedTileIndex);
+            Bitmap tileImage = new Bitmap(
+                TileImageCache.Instance.GetTileBitmap(m_draggedTileSheet, m_draggedTileIndex));
+            for (int pixelY = 0; pixelY < tileImage.Height; pixelY++)
+                for (int pixelX = 0; pixelX < tileImage.Width;pixelX++)
+                {
+                    Color color = tileImage.GetPixel(pixelX, pixelY);
+                    Color color2 = Color.FromArgb(color.A/2, color.R, color.G, color.B);
+                    tileImage.SetPixel(pixelX, pixelY, color2);
+                }
 
-            IconInfo tmp = new IconInfo();
-            GetIconInfo(tileImage.GetHicon(), ref tmp);
-            tmp.xHotspot = tileImage.Width / 2;
-            tmp.yHotspot = tileImage.Height / 2;
-            tmp.fIcon = false;
+            IconInfo iconInfo = new IconInfo();
+            GetIconInfo(tileImage.GetHicon(), ref iconInfo);
+            iconInfo.HotSpotX = tileImage.Width / 2;
+            iconInfo.HotSpotY = tileImage.Height / 2;
+            iconInfo.Icon = false;
 
-            Cursor = new Cursor(CreateIconIndirect(ref tmp));
+            Cursor = new Cursor(CreateIconIndirect(ref iconInfo));
         }
 
         private void OnTileDragEnter(object sender, DragEventArgs dragEventArgs)
