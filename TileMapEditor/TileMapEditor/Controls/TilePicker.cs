@@ -112,6 +112,22 @@ namespace TileMapEditor.Controls
             this.Invoke(new MethodInvoker(m_tileListView.Invalidate));
         }
 
+        private void OnItemDrag(object sender, ItemDragEventArgs itemDragEventArgs)
+        {
+            if (TileDrag == null)
+                return;
+
+            if (m_comboBoxTileSheets.SelectedIndex < 0)
+                return;
+
+            TileDragEventArgs tileDragEventArgs = new TileDragEventArgs(
+                m_map.TileSheets[m_comboBoxTileSheets.SelectedIndex],
+                m_tileListView.SelectedIndices[0]);
+
+            if (TileDrag != null)
+                TileDrag(this, tileDragEventArgs);
+        }
+
         #endregion
 
         #region Public Methods
@@ -254,6 +270,27 @@ namespace TileMapEditor.Controls
         [Category("Behavior"), Description("Occurs when the tile is selected")]
         public event TilePickerEventHandler TileSelected;
 
+        [Category("Behavior"), Description("Occurs when a tile is dragged from the picker")]
+        public event TileDragEventHandler TileDrag;
+
         #endregion
     }
+
+    public class TileDragEventArgs
+    {
+        private TileSheet m_tileSheet;
+        private int m_tileIndex;
+
+        public TileDragEventArgs(TileSheet tileSheet, int tileIndex)
+        {
+            m_tileSheet = tileSheet;
+            m_tileIndex = tileIndex;
+        }
+
+        public TileSheet TileSheet { get { return m_tileSheet; } }
+
+        public int TileIndex { get { return m_tileIndex; } }
+    }
+
+    public delegate void TileDragEventHandler(object sender, TileDragEventArgs tileDragEventArgs);
 }

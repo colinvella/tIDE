@@ -200,8 +200,10 @@ namespace Tiling.Format
                             = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
                                 ? BlendMode.Alpha : BlendMode.Additive;
 
+                        // TODO fix!
+                        /*
                         AnimatedTile animatedTile
-                            = new AnimatedTile(layer, tileSheet, blendMode, indexList.ToArray(), frameInterval);
+                            = new AnimatedTile(layer, blendMode, indexList.ToArray(), frameInterval);
 
                         layer.Tiles[tileLocation] = animatedTile;
 
@@ -209,7 +211,7 @@ namespace Tiling.Format
                         {
                             LoadProperties(xmlHelper, animatedTile);
                             xmlHelper.AdvanceEndElement("Animated");
-                        }
+                        }*/
 
                         ++tileLocation.X;
                     }
@@ -293,11 +295,12 @@ namespace Tiling.Format
 
                         AnimatedTile animatedTile = (AnimatedTile)currentTile;
                         StringBuilder stringBuilder = new StringBuilder();
-                        foreach (int frameIndex in animatedTile.TileIndices)
+                        //TODO FIX!
+                        /*foreach (int frameIndex in animatedTile.TileIndices)
                         {
                             stringBuilder.Append(frameIndex);
                             stringBuilder.Append(" ");
-                        }
+                        }*/
                         xmlTextWriter.WriteAttributeString("Indices", stringBuilder.ToString().Trim());
 
                         xmlTextWriter.WriteAttributeString("Interval", animatedTile.FrameInterval.ToString());
@@ -351,6 +354,7 @@ namespace Tiling.Format
         {
             m_compatibilityResults = new CompatibilityResults(true, new List<string>());
 
+            /*
             // test
             Map map = new Map("test");
             map.Description = "12345";
@@ -374,6 +378,7 @@ namespace Tiling.Format
             // test load
             fileStream = new FileStream("Test.xml", FileMode.Open);
             Map map2 = Load(fileStream);
+             */ 
         }
 
         public CompatibilityResults DetermineCompatibility(Map map)

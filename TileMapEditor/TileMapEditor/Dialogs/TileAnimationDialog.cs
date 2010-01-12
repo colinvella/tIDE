@@ -12,6 +12,8 @@ using Tiling.Dimensions;
 using Tiling.Layers;
 using Tiling.Tiles;
 
+using TileMapEditor.Controls;
+
 namespace TileMapEditor.Dialogs
 {
     public partial class TileAnimationDialog : Form
@@ -19,11 +21,24 @@ namespace TileMapEditor.Dialogs
         private Map m_map;
         private Layer m_layer;
         private Location m_tileLocation;
+        private TileSheet m_draggedTileSheet;
+        private int m_draggedTileIndex;
 
         private void TileAnimationDialog_Load(object sender, EventArgs eventArgs)
         {
             m_tilePicker.Map = m_map;
             m_tilePicker.UpdatePicker();
+        }
+
+        private void OnTileDrag(object sender, TileDragEventArgs tileDragEventArgs)
+        {
+            m_draggedTileSheet = tileDragEventArgs.TileSheet;
+            m_draggedTileIndex = tileDragEventArgs.TileIndex;
+        }
+
+        private void OnTileDragDrop(object sender, DragEventArgs dragEventArgs)
+        {
+            MessageBox.Show(dragEventArgs.Data.ToString());
         }
 
         public TileAnimationDialog(Map map, Layer layer, Location tileLocation)
@@ -33,6 +48,8 @@ namespace TileMapEditor.Dialogs
             m_map = map;
             m_layer = layer;
             m_tileLocation = tileLocation;
+
+            Tile tile = m_layer.Tiles[m_tileLocation];
         }
     }
 }

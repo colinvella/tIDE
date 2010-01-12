@@ -10,11 +10,17 @@ namespace Tiling.Tiles
     [Serializable]
     public class StaticTile : Tile
     {
+        private TileSheet m_tileSheet;
         private int m_tileIndex;
 
         public StaticTile(Layer layer, TileSheet tileSheet, BlendMode blendMode, int tileIndex)
-            : base(layer, tileSheet, blendMode)
+            : base(layer, blendMode)
         {
+            if (!layer.Map.TileSheets.Contains(tileSheet))
+                throw new Exception("The specified TileSheet is not in the parent map");
+
+            m_tileSheet = tileSheet;
+
             if (tileIndex < 0 || tileIndex >= tileSheet.TileCount)
                 throw new Exception("The specified Tile Index is out of range");
 
@@ -25,6 +31,8 @@ namespace Tiling.Tiles
         {
             return new StaticTile(this.Layer, this.TileSheet, this.BlendMode, m_tileIndex);
         }
+
+        public override TileSheet TileSheet { get { return m_tileSheet; } }
 
         public override int TileIndex { get { return m_tileIndex; } }
 

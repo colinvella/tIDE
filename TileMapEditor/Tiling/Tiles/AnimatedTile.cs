@@ -10,49 +10,55 @@ namespace Tiling.Tiles
     [Serializable]
     public class AnimatedTile : Tile
     {
-        private int[] m_tileIndices;
+        private StaticTile[] m_tileFrames;
         long m_frameInterval;
         long m_animationInterval;
 
-        public AnimatedTile(Layer layer, TileSheet tileSheet, BlendMode blendMode, int[] tileIndices, long frameInterval)
-            : base(layer, tileSheet, blendMode)
+        public AnimatedTile(Layer layer, BlendMode blendMode, StaticTile[] tileFrames, long frameInterval)
+            : base(layer, blendMode)
         {
             if (frameInterval <= 0)
                 throw new Exception("Frame interval must be strictly positive");
 
-            foreach (int tileIndex in tileIndices)
-                if (tileIndex < 0 || tileIndex >= tileSheet.TileCount)
-                    throw new Exception("The specified Tile Index is out of range");
-
-            m_tileIndices = new int[tileIndices.Length];
-            Array.Copy(tileIndices, m_tileIndices, tileIndices.Length);
+            m_tileFrames = new StaticTile[tileFrames.Length];
+            tileFrames.CopyTo(m_tileFrames, 0);
 
             m_frameInterval = frameInterval;
-            m_animationInterval = frameInterval * tileIndices.Length;
+            m_animationInterval = frameInterval * tileFrames.Length;
         }
 
         public override Tile Clone()
         {
-            return new AnimatedTile(this.Layer, this.TileSheet, this.BlendMode, m_tileIndices, m_frameInterval);
+            return new AnimatedTile(this.Layer, this.BlendMode, m_tileFrames, m_frameInterval);
+        }
+
+        public override TileSheet TileSheet
+        {
+            get
+            {
+                long animationTime = Layer.Map.ElapsedTime % m_animationInterval;
+                int currentIndex = (int)(animationTime / m_frameInterval);
+                return m_tileFrames[currentIndex].TileSheet;
+            }
         }
 
         public override int TileIndex
         {
             get
             {
-                int animationTime = (int) (Layer.Map.ElapsedTime % m_animationInterval);
-                int currentIndex = animationTime / m_tileIndices.Length;
+                long animationTime = Layer.Map.ElapsedTime % m_animationInterval;
+                int currentIndex = (int) (animationTime / m_frameInterval);
                 return currentIndex;
             } 
         }
 
-        public int[] TileIndices
+        public StaticTile[] TileFrames
         {
             get
             {
-                int[] tileIndices = new int[m_tileIndices.Length];
-                m_tileIndices.CopyTo(tileIndices, 0);
-                return tileIndices;
+                StaticTile[] tileFrames = new StaticTile[m_tileFrames.Length];
+                m_tileFrames.CopyTo(tileFrames, 0);
+                return tileFrames;
             }
         }
 
@@ -61,10 +67,10 @@ namespace Tiling.Tiles
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("Animated Indices=");
-            foreach (int tileIndex in m_tileIndices)
+            stringBuilder.Append("Animated Frames=");
+            foreach (StaticTile tileFrame in m_tileFrames)
             {
-                stringBuilder.Append(tileIndex);
+                stringBuilder.Append(tileFrame.ToString());
                 stringBuilder.Append(' ');
             }
             stringBuilder.Append(" Interval=");
