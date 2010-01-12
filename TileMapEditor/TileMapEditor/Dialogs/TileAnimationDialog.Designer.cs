@@ -37,12 +37,15 @@
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
+            this.m_frameContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.m_frameDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
             this.m_animationListView = new TileMapEditor.Controls.CustomListView();
             m_customPanel = new TileMapEditor.Controls.CustomPanel();
             m_splitContainerOuter = new System.Windows.Forms.SplitContainer();
             m_splitContainerInner = new System.Windows.Forms.SplitContainer();
+            this.m_frameContextMenuStrip.SuspendLayout();
             m_customPanel.SuspendLayout();
             m_splitContainerOuter.Panel1.SuspendLayout();
             m_splitContainerOuter.Panel2.SuspendLayout();
@@ -94,6 +97,20 @@
             this.m_buttonCancel.Text = "&Cancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
             this.m_buttonCancel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
+            // 
+            // m_frameContextMenuStrip
+            // 
+            this.m_frameContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_frameDeleteMenuItem});
+            this.m_frameContextMenuStrip.Name = "m_frameContextMenuStrip";
+            this.m_frameContextMenuStrip.Size = new System.Drawing.Size(144, 26);
+            // 
+            // m_frameDeleteMenuItem
+            // 
+            this.m_frameDeleteMenuItem.Name = "m_frameDeleteMenuItem";
+            this.m_frameDeleteMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.m_frameDeleteMenuItem.Text = "Delete Frame";
+            this.m_frameDeleteMenuItem.Click += new System.EventHandler(this.OnDeleteFrame);
             // 
             // m_customPanel
             // 
@@ -156,6 +173,7 @@
             // 
             // m_previewPanel
             // 
+            this.m_previewPanel.AllowDrop = true;
             this.m_previewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_previewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_previewPanel.Location = new System.Drawing.Point(0, 0);
@@ -167,6 +185,7 @@
             // m_animationListView
             // 
             this.m_animationListView.AllowDrop = true;
+            this.m_animationListView.ContextMenuStrip = this.m_frameContextMenuStrip;
             this.m_animationListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_animationListView.LargeImageList = this.m_imageListAnimation;
             this.m_animationListView.Location = new System.Drawing.Point(0, 0);
@@ -195,6 +214,7 @@
             this.Text = "Tile Animation";
             this.Load += new System.EventHandler(this.TileAnimationDialog_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
+            this.m_frameContextMenuStrip.ResumeLayout(false);
             m_customPanel.ResumeLayout(false);
             m_splitContainerOuter.Panel1.ResumeLayout(false);
             m_splitContainerOuter.Panel2.ResumeLayout(false);
@@ -215,6 +235,8 @@
         private TileMapEditor.Controls.CustomPanel m_previewPanel;
         private TileMapEditor.Controls.CustomListView m_animationListView;
         private System.Windows.Forms.ImageList m_imageListAnimation;
+        private System.Windows.Forms.ContextMenuStrip m_frameContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem m_frameDeleteMenuItem;
 
     }
 }

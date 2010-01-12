@@ -96,13 +96,13 @@ namespace TileMapEditor.Dialogs
 
             Bitmap tileImage = new Bitmap(
                 TileImageCache.Instance.GetTileBitmap(m_draggedTileSheet, m_draggedTileIndex));
-            for (int pixelY = 0; pixelY < tileImage.Height; pixelY++)
+            /*for (int pixelY = 0; pixelY < tileImage.Height; pixelY++)
                 for (int pixelX = 0; pixelX < tileImage.Width;pixelX++)
                 {
                     Color color = tileImage.GetPixel(pixelX, pixelY);
                     Color color2 = Color.FromArgb(color.A/2, color.R, color.G, color.B);
                     tileImage.SetPixel(pixelX, pixelY, color2);
-                }
+                }*/
 
             IconInfo iconInfo = new IconInfo();
             GetIconInfo(tileImage.GetHicon(), ref iconInfo);
@@ -132,6 +132,23 @@ namespace TileMapEditor.Dialogs
             m_draggedTileIndex = -1;
 
             Cursor = Cursors.Default;
+        }
+
+        private void OnDeleteFrame(object sender, EventArgs eventArgs)
+        {
+            if (m_animationListView.SelectedIndices.Count == 0)
+                return;
+
+            List<ListViewItem> listViewItems = new List<ListViewItem>();
+            foreach (ListViewItem listViewItem in m_animationListView.SelectedItems)
+                listViewItems.Add(listViewItem);
+
+            foreach (ListViewItem listViewItem in listViewItems)
+                m_animationListView.Items.Remove(listViewItem);
+
+            int frameIndex = 0;
+            foreach (ListViewItem listViewItem in m_animationListView.Items)
+                listViewItem.Text = "Frame #" + (frameIndex++);
         }
 
         public TileAnimationDialog(Map map, Layer layer, Location tileLocation)
