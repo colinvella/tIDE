@@ -26,6 +26,15 @@ namespace TileMapEditor.Dialogs
 
         private void AddTileFrame(TileSheet tileSheet, int tileIndex)
         {
+            StaticTile newTileFrame = new StaticTile(m_layer, tileSheet, BlendMode.Alpha, tileIndex);
+
+            if (m_imageListAnimation.Images.Count == 0)
+            {
+                m_imageListAnimation.ImageSize = new System.Drawing.Size(
+                    newTileFrame.TileSheet.TileSize.Width, newTileFrame.TileSheet.TileSize.Height);
+            }
+
+            // determine or add new image index
             int imageListIndex = -1;
             foreach (ListViewItem listViewItem in m_animationListView.Items)
             {
@@ -43,8 +52,10 @@ namespace TileMapEditor.Dialogs
                 m_imageListAnimation.Images.Add(tileImage);
                 imageListIndex = m_imageListAnimation.Images.Count - 1;
             }
-            ListViewItem newListViewItem = new ListViewItem("Frame #" + m_animationListView.Items.Count, imageListIndex);
-            newListViewItem.Tag = new StaticTile(m_layer, tileSheet, BlendMode.Alpha, tileIndex);
+
+            ListViewItem newListViewItem = new ListViewItem(
+                "Frame #" + m_animationListView.Items.Count, imageListIndex);
+            newListViewItem.Tag = newTileFrame;
             m_animationListView.Items.Add(newListViewItem);
         }
 
@@ -67,6 +78,13 @@ namespace TileMapEditor.Dialogs
 
         private void OnTileDragDrop(object sender, DragEventArgs dragEventArgs)
         {
+            if (m_draggedTileSheet.TileSize != m_layer.TileSize)
+            {
+                MessageBox.Show(this, "Incompatible tile size", "Tile Animation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             AddTileFrame(m_draggedTileSheet, m_draggedTileIndex);
             m_draggedTileSheet = null;
             m_draggedTileIndex = -1;
