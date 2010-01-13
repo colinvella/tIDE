@@ -237,6 +237,7 @@ namespace Tiling
         public long ElapsedTime
         {
             get { return m_elapsedTime; }
+            set { m_elapsedTime = value; }
         }
 
         #endregion

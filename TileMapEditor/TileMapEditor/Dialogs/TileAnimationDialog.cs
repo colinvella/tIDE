@@ -13,6 +13,7 @@ using Tiling.Dimensions;
 using Tiling.Layers;
 using Tiling.Tiles;
 
+using TileMapEditor.Commands;
 using TileMapEditor.Controls;
 
 namespace TileMapEditor.Dialogs
@@ -125,6 +126,7 @@ namespace TileMapEditor.Dialogs
             m_draggedTileSheet = null;
             m_draggedTileIndex = -1;
 
+            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
             Cursor = Cursors.Default;
         }
 
@@ -143,6 +145,27 @@ namespace TileMapEditor.Dialogs
             int frameIndex = 0;
             foreach (ListViewItem listViewItem in m_animationListView.Items)
                 listViewItem.Text = "Frame #" + (frameIndex++);
+
+            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
+        }
+
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            OnDialogApply(sender, eventArgs);
+        }
+
+        private void OnDialogApply(object sender, EventArgs eventArgs)
+        {
+            List<StaticTile> tileFrames = new List<StaticTile>();
+            foreach (ListViewItem listViewItem in m_animationListView.Items)
+                tileFrames.Add((StaticTile)listViewItem.Tag);
+            AnimatedTile animatedTile = new AnimatedTile(
+                m_layer, BlendMode.Alpha, tileFrames.ToArray(), (long)m_frameIntervalTextbox.Value);
+
+            Command command = new TileAnimationCommand(m_layer, m_tileLocation, animatedTile);
+            CommandHistory.Instance.Do(command);
+
+            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
         }
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
@@ -151,7 +174,8 @@ namespace TileMapEditor.Dialogs
             if (animationLength == 0)
                 return;
 
-            long animationTime = (long)(DateTime.Now - new DateTime(0)).TotalMilliseconds;
+            DateTime dtNow = DateTime.Now;
+            long animationTime = dtNow.Second * 1000L + dtNow.Millisecond;
 
             animationTime = animationTime % animationLength;
             m_animationIndex = m_frameIntervalTextbox.Value == 0

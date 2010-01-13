@@ -65,6 +65,8 @@ namespace TileMapEditor.Controls
 
         private bool m_bMouseDown;
 
+        private DateTime m_dtStart;
+
         #endregion
 
         #region Private Methods
@@ -599,6 +601,8 @@ namespace TileMapEditor.Controls
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
         {
+            DateTime dtNow = DateTime.Now;
+            m_map.ElapsedTime = (long)(dtNow - m_dtStart).TotalMilliseconds;
             m_innerPanel.Invalidate();
         }
 
@@ -730,6 +734,8 @@ namespace TileMapEditor.Controls
             m_tileGuidePen.DashPattern = m_dashPattern;
 
             m_animationTimer.Enabled = !this.DesignMode;
+
+            m_dtStart = DateTime.Now;
         }
 
         public void LoadTileSheet(TileSheet tileSheet)

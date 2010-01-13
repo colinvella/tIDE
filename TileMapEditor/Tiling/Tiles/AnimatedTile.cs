@@ -29,7 +29,10 @@ namespace Tiling.Tiles
 
         public override Tile Clone()
         {
-            return new AnimatedTile(this.Layer, this.BlendMode, m_tileFrames, m_frameInterval);
+            List<StaticTile> tileFrames = new List<StaticTile>(m_tileFrames.Length);
+            foreach (StaticTile tileFrame in m_tileFrames)
+                tileFrames.Add((StaticTile)tileFrame.Clone());
+            return new AnimatedTile(this.Layer, this.BlendMode, tileFrames.ToArray(), m_frameInterval);
         }
 
         public override TileSheet TileSheet
@@ -48,7 +51,7 @@ namespace Tiling.Tiles
             {
                 long animationTime = Layer.Map.ElapsedTime % m_animationInterval;
                 int currentIndex = (int) (animationTime / m_frameInterval);
-                return currentIndex;
+                return m_tileFrames[currentIndex].TileIndex;
             } 
         }
 
