@@ -34,8 +34,8 @@
             this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
             this.m_tileContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_tilePropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_innerPanel = new TileMapEditor.Controls.CustomPanel();
             this.tileAnimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_innerPanel = new TileMapEditor.Controls.CustomPanel();
             this.m_tileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,14 @@
             this.m_tilePropertiesMenuItem.Text = "Tile Properties...";
             this.m_tilePropertiesMenuItem.Click += new System.EventHandler(this.OnTileProperties);
             // 
+            // tileAnimationToolStripMenuItem
+            // 
+            this.tileAnimationToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimation;
+            this.tileAnimationToolStripMenuItem.Name = "tileAnimationToolStripMenuItem";
+            this.tileAnimationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.tileAnimationToolStripMenuItem.Text = "Tile Animation...";
+            this.tileAnimationToolStripMenuItem.Click += new System.EventHandler(this.OnTileAnimation);
+            // 
             // m_innerPanel
             // 
             this.m_innerPanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
@@ -92,13 +100,6 @@
             this.m_innerPanel.Resize += new System.EventHandler(this.OnResizeDisplay);
             this.m_innerPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
             this.m_innerPanel.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            // 
-            // tileAnimationToolStripMenuItem
-            // 
-            this.tileAnimationToolStripMenuItem.Name = "tileAnimationToolStripMenuItem";
-            this.tileAnimationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.tileAnimationToolStripMenuItem.Text = "Tile Animation...";
-            this.tileAnimationToolStripMenuItem.Click += new System.EventHandler(this.OnTileAnimation);
             // 
             // MapPanel
             // 
