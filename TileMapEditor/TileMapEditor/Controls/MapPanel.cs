@@ -516,6 +516,9 @@ namespace TileMapEditor.Controls
             m_mouseLocation.X = mouseEventArgs.X;
             m_mouseLocation.Y = mouseEventArgs.Y;
 
+            if (m_selectedLayer == null)
+                return;
+
             m_tileLayerLocation
                 = ConvertViewportOffsetToLayerLocation(m_mouseLocation);
 
@@ -531,7 +534,7 @@ namespace TileMapEditor.Controls
                 }
             }
 
-            if (TileHover != null && m_selectedLayer != null)
+            if (TileHover != null)
             {
                 Tile tile = m_selectedLayer.IsValidTileLocation(m_tileLayerLocation)
                     ? m_selectedLayer.Tiles[m_tileLayerLocation]

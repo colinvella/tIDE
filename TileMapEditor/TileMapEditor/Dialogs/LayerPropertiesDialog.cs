@@ -26,7 +26,7 @@ namespace TileMapEditor.Dialogs
 
         #region Private Methods
 
-        private void LayerPropertiesDialog_Load(object sender, EventArgs eventArgs)
+        private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_textBoxId.Text = m_layer.Id;
             m_textBoxDescription.Text = m_layer.Description;
@@ -41,7 +41,12 @@ namespace TileMapEditor.Dialogs
             m_customPropertyGrid.LoadProperties(m_layer);
         }
 
-        private void m_buttonOk_Click(object sender, EventArgs eventArgs)
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            OnDialogApply(sender, eventArgs);
+        }
+
+        private void OnDialogApply(object sender, EventArgs e)
         {
             string newId = m_textBoxId.Text;
 
@@ -76,10 +81,6 @@ namespace TileMapEditor.Dialogs
                     m_customPropertyGrid.NewProperties);
 
             CommandHistory.Instance.Do(command);
-
-            DialogResult = DialogResult.OK;
-
-            Close();
         }
 
         #endregion

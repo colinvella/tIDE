@@ -43,6 +43,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
+            this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
             this.m_numericTileHeight = new System.Windows.Forms.NumericUpDown();
             this.m_numericTileWidth = new System.Windows.Forms.NumericUpDown();
             this.m_numericLayerHeight = new System.Windows.Forms.NumericUpDown();
@@ -51,7 +52,7 @@
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             // 
             // label4
             // 
+            label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             label4.AutoSize = true;
             label4.Location = new System.Drawing.Point(253, 309);
             label4.Name = "label4";
@@ -80,6 +82,7 @@
             // 
             // label5
             // 
+            label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             label5.AutoSize = true;
             label5.Location = new System.Drawing.Point(169, 309);
             label5.Name = "label5";
@@ -89,6 +92,7 @@
             // 
             // label6
             // 
+            label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             label6.AutoSize = true;
             label6.Location = new System.Drawing.Point(6, 309);
             label6.Name = "label6";
@@ -98,6 +102,7 @@
             // 
             // label3
             // 
+            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(253, 283);
             label3.Name = "label3";
@@ -107,6 +112,7 @@
             // 
             // label2
             // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(169, 283);
             label2.Name = "label2";
@@ -116,6 +122,7 @@
             // 
             // label1
             // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(6, 283);
             label1.Name = "label1";
@@ -143,22 +150,24 @@
             // 
             // m_buttonOk
             // 
-            this.m_buttonOk.Location = new System.Drawing.Point(12, 377);
+            this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
             this.m_buttonOk.TabIndex = 1;
-            this.m_buttonOk.Text = "OK";
+            this.m_buttonOk.Text = "&OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
-            this.m_buttonOk.Click += new System.EventHandler(this.m_buttonOk_Click);
             // 
             // m_buttonCancel
             // 
+            this.m_buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_buttonCancel.Location = new System.Drawing.Point(497, 377);
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.m_buttonCancel.TabIndex = 2;
-            this.m_buttonCancel.Text = "Cancel";
+            this.m_buttonCancel.Text = "&Cancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -182,6 +191,9 @@
             // 
             // m_customTabControl
             // 
+            this.m_customTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
             this.m_customTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
@@ -216,8 +228,20 @@
             this.m_tabGeneral.TabIndex = 0;
             this.m_tabGeneral.Text = " General ";
             // 
+            // m_checkBoxVisible
+            // 
+            this.m_checkBoxVisible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_checkBoxVisible.AutoSize = true;
+            this.m_checkBoxVisible.Location = new System.Drawing.Point(490, 308);
+            this.m_checkBoxVisible.Name = "m_checkBoxVisible";
+            this.m_checkBoxVisible.Size = new System.Drawing.Size(56, 17);
+            this.m_checkBoxVisible.TabIndex = 17;
+            this.m_checkBoxVisible.Text = "Visible";
+            this.m_checkBoxVisible.UseVisualStyleBackColor = true;
+            // 
             // m_numericTileHeight
             // 
+            this.m_numericTileHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.m_numericTileHeight.Location = new System.Drawing.Point(187, 307);
             this.m_numericTileHeight.Maximum = new decimal(new int[] {
             512,
@@ -241,6 +265,7 @@
             // 
             // m_numericTileWidth
             // 
+            this.m_numericTileWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.m_numericTileWidth.Location = new System.Drawing.Point(103, 307);
             this.m_numericTileWidth.Maximum = new decimal(new int[] {
             512,
@@ -264,6 +289,7 @@
             // 
             // m_numericLayerHeight
             // 
+            this.m_numericLayerHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.m_numericLayerHeight.Location = new System.Drawing.Point(187, 281);
             this.m_numericLayerHeight.Maximum = new decimal(new int[] {
             1024,
@@ -287,6 +313,7 @@
             // 
             // m_numericLayerWidth
             // 
+            this.m_numericLayerWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.m_numericLayerWidth.Location = new System.Drawing.Point(103, 281);
             this.m_numericLayerWidth.Maximum = new decimal(new int[] {
             1024,
@@ -310,6 +337,9 @@
             // 
             // m_textBoxDescription
             // 
+            this.m_textBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textBoxDescription.Location = new System.Drawing.Point(103, 33);
             this.m_textBoxDescription.Multiline = true;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
@@ -318,9 +348,11 @@
             // 
             // m_textBoxId
             // 
+            this.m_textBoxId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textBoxId.Location = new System.Drawing.Point(103, 7);
             this.m_textBoxId.Name = "m_textBoxId";
-            this.m_textBoxId.Size = new System.Drawing.Size(200, 20);
+            this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
             this.m_textBoxId.TabIndex = 1;
             // 
             // m_tabCustomProperties
@@ -336,21 +368,24 @@
             // 
             // m_customPropertyGrid
             // 
-            this.m_customPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_customPropertyGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_customPropertyGrid.Location = new System.Drawing.Point(3, 3);
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.Size = new System.Drawing.Size(546, 327);
             this.m_customPropertyGrid.TabIndex = 0;
             // 
-            // m_checkBoxVisible
+            // button2
             // 
-            this.m_checkBoxVisible.AutoSize = true;
-            this.m_checkBoxVisible.Location = new System.Drawing.Point(490, 308);
-            this.m_checkBoxVisible.Name = "m_checkBoxVisible";
-            this.m_checkBoxVisible.Size = new System.Drawing.Size(56, 17);
-            this.m_checkBoxVisible.TabIndex = 17;
-            this.m_checkBoxVisible.Text = "Visible";
-            this.m_checkBoxVisible.UseVisualStyleBackColor = true;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(416, 377);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "&Apply";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.OnDialogApply);
             // 
             // LayerPropertiesDialog
             // 
@@ -359,18 +394,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_buttonCancel;
             this.ClientSize = new System.Drawing.Size(584, 412);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.m_customTabControl);
             this.Controls.Add(this.m_buttonCancel);
             this.Controls.Add(this.m_buttonOk);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LayerPropertiesDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Layer Properties";
-            this.Load += new System.EventHandler(this.LayerPropertiesDialog_Load);
+            this.Load += new System.EventHandler(this.OnDialogLoad);
             this.m_customTabControl.ResumeLayout(false);
             this.m_tabGeneral.ResumeLayout(false);
             this.m_tabGeneral.PerformLayout();
@@ -400,5 +434,6 @@
         private System.Windows.Forms.NumericUpDown m_numericTileHeight;
         private System.Windows.Forms.NumericUpDown m_numericTileWidth;
         private System.Windows.Forms.CheckBox m_checkBoxVisible;
+        private System.Windows.Forms.Button button2;
     }
 }
