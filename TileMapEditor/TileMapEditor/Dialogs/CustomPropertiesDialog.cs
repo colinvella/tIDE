@@ -13,21 +13,21 @@ using TileMapEditor.Commands;
 
 namespace TileMapEditor.Dialogs
 {
-    public partial class TilePropertiesDialog : Form
+    public partial class CustomPropertiesDialog : Form
     {
-        private Tile m_tile;
+        private Tiling.ObjectModel.Component m_component;
 
-        public TilePropertiesDialog(Tile tile)
+        public CustomPropertiesDialog(string dialogTitle, Tiling.ObjectModel.Component component)
         {
             InitializeComponent();
 
-            m_tile = tile;
+            this.Text = dialogTitle;
+            m_component = component;
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
-            Command command = new TilePropertiesCommand(m_tile, m_textBoxId.Text,
-                m_customPropertyGrid.NewProperties);
+            Command command = new CustomPropertiesCommand(m_component, m_customPropertyGrid.NewProperties);
             CommandHistory.Instance.Do(command);
 
             DialogResult = DialogResult.OK;
@@ -37,8 +37,7 @@ namespace TileMapEditor.Dialogs
 
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
-            m_textBoxId.Text = m_tile.Id;
-            m_customPropertyGrid.LoadProperties(m_tile);
+            m_customPropertyGrid.LoadProperties(m_component);
         }
     }
 }
