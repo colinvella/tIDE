@@ -596,7 +596,12 @@ namespace TileMapEditor.Controls
 
             TileAnimationDialog tileAnimationDialog = new TileAnimationDialog(
                 m_map, m_selectedLayer, m_tileLayerLocation);
-            tileAnimationDialog.ShowDialog(this);
+
+            if (tileAnimationDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            if (MapChanged != null)
+                MapChanged(this, EventArgs.Empty);
         }
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
