@@ -17,6 +17,7 @@ namespace TileMapEditor.Controls
 
         private Tiling.ObjectModel.PropertyCollection m_newProperties;
         private string m_previousPropertyName = null;
+        private PropertyValue m_previousPropertyValue = null;
 
         #endregion
 
@@ -84,6 +85,8 @@ namespace TileMapEditor.Controls
 
             DataGridViewCell cell = m_dataGridView[columnIndex, rowIndex];
 
+            CustomPropertyEventArgs customPropertyEventArgs = null;
+
             if (columnIndex == 0)
             {
                 string propertyName = cellValue.ToString().Trim();
@@ -93,6 +96,12 @@ namespace TileMapEditor.Controls
                     PropertyValue previousPropertyValue = m_newProperties[m_previousPropertyName];
                     m_newProperties.Remove(m_previousPropertyName);
                     m_newProperties[propertyName] = previousPropertyValue;
+
+                    // prepare event args - name change
+                    customPropertyEventArgs = new CustomPropertyEventArgs(
+                        propertyName, m_previousPropertyName,
+                        previousPropertyValue, previousPropertyValue);
+                    
                     m_previousPropertyName = null;
                 }
 
@@ -101,36 +110,57 @@ namespace TileMapEditor.Controls
             else if (columnIndex == 1)
             {
                 string propertyName = m_dataGridView[0, rowIndex].Value.ToString();
+                PropertyValue newPropertyValue = null;
 
                 if (cellValue == null)
                 {
                     m_newProperties[propertyName] = null;
-                    return;
-                }
-
-                string propertyValue = cellValue.ToString();
-                int propertyValueInt = 0;
-                float propertyValueFloat = 0.0f;
-
-                cell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-                if (propertyValue.Trim().Equals(bool.TrueString, StringComparison.CurrentCultureIgnoreCase))
-                    cell.Value = m_newProperties[propertyName] = true;
-                else if (propertyValue.Trim().Equals(bool.FalseString, StringComparison.CurrentCultureIgnoreCase))
-                    cell.Value = m_newProperties[propertyName] = false;
-                else if (int.TryParse(propertyValue.Trim(), out propertyValueInt))
-                {
-                    cell.Value = m_newProperties[propertyName] = propertyValueInt;
-                    cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                }
-                else if (float.TryParse(propertyValue.Trim(), out propertyValueFloat))
-                {
-                    cell.Value = m_newProperties[propertyName] = propertyValueFloat;
-                    cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                 }
                 else
-                    cell.Value = m_newProperties[propertyName] = propertyValue;
+                {
+                    string propertyValue = cellValue.ToString();
+                    int propertyValueInt = 0;
+                    float propertyValueFloat = 0.0f;
+
+                    cell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                    if (propertyValue.Trim().Equals(bool.TrueString, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        cell.Value = m_newProperties[propertyName] = true;
+                        newPropertyValue = true;
+                    }
+                    else if (propertyValue.Trim().Equals(bool.FalseString, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        cell.Value = m_newProperties[propertyName] = false;
+                        newPropertyValue = false;
+                    }
+                    else if (int.TryParse(propertyValue.Trim(), out propertyValueInt))
+                    {
+                        cell.Value = m_newProperties[propertyName] = propertyValueInt;
+                        cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                        newPropertyValue = propertyValueInt;
+                    }
+                    else if (float.TryParse(propertyValue.Trim(), out propertyValueFloat))
+                    {
+                        cell.Value = m_newProperties[propertyName] = propertyValueFloat;
+                        cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                        newPropertyValue = propertyValueFloat;
+                    }
+                    else
+                    {
+                        cell.Value = m_newProperties[propertyName] = propertyValue;
+                        newPropertyValue = propertyValue;
+                    }
+                }
+
+                // prepare event args - value change
+                customPropertyEventArgs = new CustomPropertyEventArgs(
+                    propertyName, propertyName,
+                    newPropertyValue, m_previousPropertyValue);
             }
+
+            if (PropertyChanged != null)
+                PropertyChanged(this, customPropertyEventArgs);
         }
 
         private void m_dataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs dataGridViewRowEventArgs)
@@ -190,6 +220,12 @@ namespace TileMapEditor.Controls
         {
             get { return m_newProperties; }
         }
+
+        #endregion
+
+        #region Public Events
+
+        public event CustomPropertyEventHandler PropertyChanged;
 
         #endregion
     }
