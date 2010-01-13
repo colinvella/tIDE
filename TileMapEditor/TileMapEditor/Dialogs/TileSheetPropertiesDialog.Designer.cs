@@ -40,8 +40,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_labelImageSource = new System.Windows.Forms.Label();
@@ -69,6 +67,7 @@
             this.m_labelZoom = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
+            this.m_buttonApply = new System.Windows.Forms.Button();
             m_labelTileSize = new System.Windows.Forms.Label();
             m_labelTileSizeBy = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -176,45 +175,32 @@
             // 
             // m_buttonOk
             // 
-            this.m_buttonOk.Location = new System.Drawing.Point(12, 377);
+            this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
             this.m_buttonOk.TabIndex = 1;
-            this.m_buttonOk.Text = "OK";
+            this.m_buttonOk.Text = "&OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_buttonCancel
             // 
+            this.m_buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_buttonCancel.Location = new System.Drawing.Point(497, 377);
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.m_buttonCancel.TabIndex = 2;
-            this.m_buttonCancel.Text = "Cancel";
+            this.m_buttonCancel.Text = "&Cancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(70, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(150, 119);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // m_customTabControl
             // 
+            this.m_customTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabAlignment);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
@@ -244,6 +230,7 @@
             // 
             // m_labelImageSource
             // 
+            this.m_labelImageSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.m_labelImageSource.AutoSize = true;
             this.m_labelImageSource.Location = new System.Drawing.Point(6, 309);
             this.m_labelImageSource.Name = "m_labelImageSource";
@@ -253,6 +240,7 @@
             // 
             // m_buttonBrowse
             // 
+            this.m_buttonBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.m_buttonBrowse.Location = new System.Drawing.Point(471, 304);
             this.m_buttonBrowse.Name = "m_buttonBrowse";
             this.m_buttonBrowse.Size = new System.Drawing.Size(75, 23);
@@ -263,6 +251,8 @@
             // 
             // m_textBoxImageSource
             // 
+            this.m_textBoxImageSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textBoxImageSource.Location = new System.Drawing.Point(103, 306);
             this.m_textBoxImageSource.Name = "m_textBoxImageSource";
             this.m_textBoxImageSource.ReadOnly = true;
@@ -271,6 +261,9 @@
             // 
             // m_textBoxDescription
             // 
+            this.m_textBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textBoxDescription.Location = new System.Drawing.Point(103, 33);
             this.m_textBoxDescription.Multiline = true;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
@@ -288,9 +281,11 @@
             // 
             // m_textBoxId
             // 
+            this.m_textBoxId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_textBoxId.Location = new System.Drawing.Point(103, 7);
             this.m_textBoxId.Name = "m_textBoxId";
-            this.m_textBoxId.Size = new System.Drawing.Size(200, 20);
+            this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
             this.m_textBoxId.TabIndex = 1;
             // 
             // m_labelId
@@ -523,6 +518,9 @@
             // 
             // m_panelImage
             // 
+            this.m_panelImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_panelImage.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_panelImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_panelImage.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -567,11 +565,24 @@
             // 
             // m_customPropertyGrid
             // 
-            this.m_customPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_customPropertyGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_customPropertyGrid.Location = new System.Drawing.Point(3, 3);
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.Size = new System.Drawing.Size(546, 327);
             this.m_customPropertyGrid.TabIndex = 0;
+            // 
+            // m_buttonApply
+            // 
+            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
+            this.m_buttonApply.Name = "m_buttonApply";
+            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonApply.TabIndex = 4;
+            this.m_buttonApply.Text = "&Apply";
+            this.m_buttonApply.UseVisualStyleBackColor = true;
+            this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
             // 
             // TileSheetPropertiesDialog
             // 
@@ -580,6 +591,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_buttonCancel;
             this.ClientSize = new System.Drawing.Size(584, 412);
+            this.Controls.Add(this.m_buttonApply);
             this.Controls.Add(this.m_customTabControl);
             this.Controls.Add(this.m_buttonCancel);
             this.Controls.Add(this.m_buttonOk);
@@ -617,8 +629,6 @@
 
         private System.Windows.Forms.Button m_buttonOk;
         private System.Windows.Forms.Button m_buttonCancel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private TileMapEditor.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
@@ -646,5 +656,6 @@
         private System.Windows.Forms.ComboBox m_comboBoxMargin;
         private System.Windows.Forms.ComboBox m_comboBoxTileSize;
         private System.Windows.Forms.ComboBox m_comboBoxSpacing;
+        private System.Windows.Forms.Button m_buttonApply;
     }
 }

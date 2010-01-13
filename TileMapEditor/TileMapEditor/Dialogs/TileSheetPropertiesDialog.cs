@@ -347,6 +347,11 @@ namespace TileMapEditor.Dialogs
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
+            OnDialogApply(sender, eventArgs);
+        }
+
+        private void OnDialogApply(object sender, EventArgs eventArgs)
+        {
             string newId = m_textBoxId.Text;
 
             foreach (TileSheet tileSheet in m_tileSheet.Map.TileSheets)
@@ -414,10 +419,6 @@ namespace TileMapEditor.Dialogs
             }
 
             CommandHistory.Instance.Do(command);
-
-            DialogResult = DialogResult.OK;
-
-            Close();
         }
 
         private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
