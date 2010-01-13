@@ -228,7 +228,7 @@ namespace TileMapEditor.Controls
                     return;
 
                 m_comboBoxTileSheets.SelectedIndex = m_map.TileSheets.IndexOf(value);
-                OnSelectTileSheet(this, new EventArgs());
+                OnSelectTileSheet(this, EventArgs.Empty);
             }
         }
 

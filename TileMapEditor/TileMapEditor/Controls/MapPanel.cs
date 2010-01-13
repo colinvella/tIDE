@@ -110,7 +110,7 @@ namespace TileMapEditor.Controls
             m_innerPanel.Invalidate();
 
             if (SelectionChanged != null)
-                SelectionChanged(this, new EventArgs());
+                SelectionChanged(this, EventArgs.Empty);
         }
 
         private void DrawSingleTile()
@@ -145,7 +145,7 @@ namespace TileMapEditor.Controls
             m_innerPanel.Invalidate();
 
             if (MapChanged != null)
-                MapChanged(this, new EventArgs());
+                MapChanged(this, EventArgs.Empty);
         }
 
         private void DrawTileBlock()
@@ -178,7 +178,7 @@ namespace TileMapEditor.Controls
             m_innerPanel.Invalidate();
 
             if (MapChanged != null)
-                MapChanged(this, new EventArgs());
+                MapChanged(this, EventArgs.Empty);
         }
 
         private void EraseTile()
@@ -198,7 +198,7 @@ namespace TileMapEditor.Controls
             m_innerPanel.Invalidate();
 
             if (MapChanged != null)
-                MapChanged(this, new EventArgs());
+                MapChanged(this, EventArgs.Empty);
         }
 
         private void PickTile()
@@ -242,7 +242,7 @@ namespace TileMapEditor.Controls
             m_commandHistory.Do(command);
 
             if (MapChanged != null)
-                MapChanged(this, new EventArgs());
+                MapChanged(this, EventArgs.Empty);
         }
 
         private void UpdateScrollBars()
