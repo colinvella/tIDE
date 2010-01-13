@@ -410,6 +410,8 @@ namespace TileMapEditor.Dialogs
                 m_tileSheet.Properties.Clear();
                 m_tileSheet.Properties.CopyFrom(m_customPropertyGrid.NewProperties);
                 command = new TileSheetNewCommand(m_tileSheet.Map, m_tileSheet, m_mapTreeView);
+
+                m_isNewTileSheet = false;
             }
             else
             {
