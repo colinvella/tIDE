@@ -24,15 +24,16 @@ namespace TileMapEditor.Dialogs
             m_map = map;
         }
 
-        private void m_buttonOk_Click(object sender, EventArgs eventArgs)
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            OnDialogApply(this, eventArgs);
+        }
+
+        private void OnDialogApply(object sender, EventArgs e)
         {
             Command command = new MapPropertiesCommand(m_map, m_textBoxId.Text, m_textBoxDescription.Text,
                 m_customPropertyGrid.NewProperties);
             CommandHistory.Instance.Do(command);
-
-            DialogResult = DialogResult.OK;
-
-            Close();
         }
 
         private void MapPropertiesDialog_Load(object sender, EventArgs eventArgs)
