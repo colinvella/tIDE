@@ -8,7 +8,7 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Controls
 {
-    public class TilePickerEventArgs
+    public class TilePickerEventArgs: EventArgs
     {
         private TileSheet m_tileSheet;
         private int m_tileIndex;

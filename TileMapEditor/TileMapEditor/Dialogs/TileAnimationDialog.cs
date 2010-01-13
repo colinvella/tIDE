@@ -91,10 +91,10 @@ namespace TileMapEditor.Dialogs
                 Cursor = Cursors.Default;
         }
 
-        private void OnTileDrag(object sender, TileDragEventArgs tileDragEventArgs)
+        private void OnTileDrag(object sender, TilePickerEventArgs tilePickerEventArgs)
         {
-            m_draggedTileSheet = tileDragEventArgs.TileSheet;
-            m_draggedTileIndex = tileDragEventArgs.TileIndex;
+            m_draggedTileSheet = tilePickerEventArgs.TileSheet;
+            m_draggedTileIndex = tilePickerEventArgs.TileIndex;
 
             Bitmap tileImage = TileImageCache.Instance.GetTileBitmap(
                 m_draggedTileSheet, m_draggedTileIndex);

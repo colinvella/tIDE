@@ -13,9 +13,6 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Controls
 {
-    public delegate void TilePickerEventHandler(
-            object sender, TilePickerEventArgs tilePickerEventArgs);
-
     public partial class TilePicker : UserControl
     {
         #region Private Variables
@@ -117,14 +114,14 @@ namespace TileMapEditor.Controls
             if (m_comboBoxTileSheets.SelectedIndex < 0)
                 return;
 
-            TileDragEventArgs tileDragEventArgs = new TileDragEventArgs(
+            TilePickerEventArgs tilePickerEventArgs = new TilePickerEventArgs(
                 m_map.TileSheets[m_comboBoxTileSheets.SelectedIndex],
                 m_tileListView.SelectedIndices[0]);
 
             if (TileDrag != null)
-                TileDrag(this, tileDragEventArgs);
+                TileDrag(this, tilePickerEventArgs);
 
-            m_tileListView.DoDragDrop(tileDragEventArgs, DragDropEffects.Copy);
+            m_tileListView.DoDragDrop(tilePickerEventArgs, DragDropEffects.Copy);
         }
 
         private void OnDragGiveFeedback(object sender, GiveFeedbackEventArgs giveFeedbackEventArgs)
@@ -275,26 +272,10 @@ namespace TileMapEditor.Controls
         public event TilePickerEventHandler TileSelected;
 
         [Category("Behavior"), Description("Occurs when a tile is dragged from the picker")]
-        public event TileDragEventHandler TileDrag;
+        public event TilePickerEventHandler TileDrag;
 
         #endregion
     }
 
-    public class TileDragEventArgs
-    {
-        private TileSheet m_tileSheet;
-        private int m_tileIndex;
-
-        public TileDragEventArgs(TileSheet tileSheet, int tileIndex)
-        {
-            m_tileSheet = tileSheet;
-            m_tileIndex = tileIndex;
-        }
-
-        public TileSheet TileSheet { get { return m_tileSheet; } }
-
-        public int TileIndex { get { return m_tileIndex; } }
-    }
-
-    public delegate void TileDragEventHandler(object sender, TileDragEventArgs tileDragEventArgs);
+    public delegate void TilePickerEventHandler(object sender, TilePickerEventArgs tilePickerEventArgs);
 }

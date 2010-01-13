@@ -108,7 +108,7 @@
             this.m_tilePicker.SelectedTileSheet = null;
             this.m_tilePicker.Size = new System.Drawing.Size(186, 359);
             this.m_tilePicker.TabIndex = 0;
-            this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TileDragEventHandler(this.OnTileDrag);
+            this.m_tilePicker.TileDrag += this.OnTileDrag;
             // 
             // m_splitContainerInner
             // 

@@ -9,7 +9,7 @@ using Tiling.Tiles;
 
 namespace TileMapEditor.Controls
 {
-    public class MapPanelEventArgs
+    public class MapPanelEventArgs: EventArgs
     {
         private Tile m_tile;
         private Location m_location;
