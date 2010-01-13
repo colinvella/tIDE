@@ -25,19 +25,27 @@ namespace TileMapEditor.Dialogs
             m_component = component;
         }
 
-        private void OnDialogOk(object sender, EventArgs eventArgs)
-        {
-            Command command = new CustomPropertiesCommand(m_component, m_customPropertyGrid.NewProperties);
-            CommandHistory.Instance.Do(command);
-
-            DialogResult = DialogResult.OK;
-
-            Close();
-        }
-
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_customPropertyGrid.LoadProperties(m_component);
+        }
+
+        private void OnPropertyChangedOrDeleted(object sender,
+            TileMapEditor.Controls.CustomPropertyEventArgs customPropertyEventArgs)
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+        }
+
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            OnDialogApply(sender, eventArgs);
+        }
+
+        private void OnDialogApply(object sender, EventArgs eventArgs)
+        {
+            Command command = new CustomPropertiesCommand(m_component, m_customPropertyGrid.NewProperties);
+            CommandHistory.Instance.Do(command);
+            m_buttonOk.Enabled = m_buttonApply.Enabled = false;
         }
     }
 }

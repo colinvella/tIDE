@@ -52,10 +52,10 @@
             this.m_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.m_dataGridView.Size = new System.Drawing.Size(421, 150);
             this.m_dataGridView.TabIndex = 0;
-            this.m_dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.m_dataGridView_CellBeginEdit);
-            this.m_dataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_dataGridView_CellValidated);
-            this.m_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.m_dataGridView_UserDeletedRow);
-            this.m_dataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.m_dataGridView_CellValidating);
+            this.m_dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.OnCellBeginEdit);
+            this.m_dataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnCellValidated);
+            this.m_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserDeletedRow);
+            this.m_dataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.OnCellValidating);
             // 
             // PropertyName
             // 

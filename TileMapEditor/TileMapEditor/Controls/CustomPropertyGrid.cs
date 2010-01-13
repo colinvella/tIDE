@@ -23,7 +23,8 @@ namespace TileMapEditor.Controls
 
         #region Private Methods
 
-        private void m_dataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs dataGridViewCellCancelEventArgs)
+        private void OnCellBeginEdit(object sender,
+            DataGridViewCellCancelEventArgs dataGridViewCellCancelEventArgs)
         {
             int rowIndex = dataGridViewCellCancelEventArgs.RowIndex;
             int columnIndex = dataGridViewCellCancelEventArgs.ColumnIndex;
@@ -35,7 +36,7 @@ namespace TileMapEditor.Controls
             }
         }
 
-        private void m_dataGridView_CellValidating(object sender,
+        private void OnCellValidating(object sender,
             DataGridViewCellValidatingEventArgs dataGridViewCellValidatingEventArgs)
         {
             int rowIndex = dataGridViewCellValidatingEventArgs.RowIndex;
@@ -73,7 +74,8 @@ namespace TileMapEditor.Controls
             }
         }
 
-        private void m_dataGridView_CellValidated(object sender, DataGridViewCellEventArgs dataGridViewCellEventArgs)
+        private void OnCellValidated(object sender,
+            DataGridViewCellEventArgs dataGridViewCellEventArgs)
         {
             int rowIndex = dataGridViewCellEventArgs.RowIndex;
             int columnIndex = dataGridViewCellEventArgs.ColumnIndex;
@@ -163,10 +165,17 @@ namespace TileMapEditor.Controls
                 PropertyChanged(this, customPropertyEventArgs);
         }
 
-        private void m_dataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs dataGridViewRowEventArgs)
+        private void OnUserDeletedRow(object sender,
+            DataGridViewRowEventArgs dataGridViewRowEventArgs)
         {
             string propertyName = dataGridViewRowEventArgs.Row.Cells[0].Value.ToString();
+            string propertyValue = dataGridViewRowEventArgs.Row.Cells[1].Value.ToString();
             m_newProperties.Remove(propertyName);
+
+            if (PropertyDeleted != null)
+                PropertyDeleted(
+                    this, new CustomPropertyEventArgs(null, propertyName,
+                    null, propertyValue)); 
         }
 
         #endregion
@@ -225,7 +234,11 @@ namespace TileMapEditor.Controls
 
         #region Public Events
 
+        [Category("Behavior"), Description("Occurs when a property name or value is changed")]
         public event CustomPropertyEventHandler PropertyChanged;
+
+        [Category("Behavior"), Description("Occurs when a property is deleted")]
+        public event CustomPropertyEventHandler PropertyDeleted;
 
         #endregion
     }

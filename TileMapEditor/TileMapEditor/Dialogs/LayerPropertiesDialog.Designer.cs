@@ -156,6 +156,7 @@
             this.m_buttonOk.TabIndex = 1;
             this.m_buttonOk.Text = "&OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
+            this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_buttonCancel
             // 
