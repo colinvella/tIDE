@@ -113,12 +113,19 @@ namespace TileMapEditor.Dialogs
             }
             catch (Exception exception)
             {
+                m_bitmapImageSource = null;
                 m_imageSourceErrorMessge = exception.Message;
             }
 
             m_previewMouseDown = false;
             m_previewOffset = PointF.Empty;
             m_previewGrip = Tiling.Dimensions.Location.Origin;
+
+            if (!m_isNewTileSheet)
+            {
+                m_buttonOk.Enabled = m_buttonApply.Enabled = false;
+                m_buttonCancel.Text = "&Close";
+            }
         }
 
         private void OnTileSizeCombo(object sender, EventArgs eventArgs)
@@ -378,6 +385,13 @@ namespace TileMapEditor.Dialogs
 
         private void OnDialogApply(object sender, EventArgs eventArgs)
         {
+            if (m_bitmapImageSource == null)
+            {
+                MessageBox.Show(this, "No image source selected", "Tile Sheet Properties",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string newId = m_textBoxId.Text;
 
             foreach (TileSheet tileSheet in m_tileSheet.Map.TileSheets)
