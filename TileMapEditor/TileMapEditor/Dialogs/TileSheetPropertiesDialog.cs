@@ -365,6 +365,12 @@ namespace TileMapEditor.Dialogs
             MarkAsModified();
         }
 
+        private void OnPropertyChangedOrDeleted(object sender,
+            CustomPropertyEventArgs customPropertyEventArgs)
+        {
+            MarkAsModified();
+        }
+
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
             OnDialogApply(sender, eventArgs);
@@ -507,11 +513,5 @@ namespace TileMapEditor.Dialogs
         }
 
         #endregion
-
-        private void OnPropertyChangedOrDeleted(object sender,
-            CustomPropertyEventArgs customPropertyEventArgs)
-        {
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
-        }
     }
 }
