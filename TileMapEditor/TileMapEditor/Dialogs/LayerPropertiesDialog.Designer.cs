@@ -39,6 +39,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LayerPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
+            this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
@@ -50,7 +51,6 @@
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_buttonApply = new System.Windows.Forms.Button();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -150,6 +150,7 @@
             // 
             this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Enabled = false;
             this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
@@ -166,8 +167,20 @@
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.m_buttonCancel.TabIndex = 2;
-            this.m_buttonCancel.Text = "&Cancel";
+            this.m_buttonCancel.Text = "&Close";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // m_buttonApply
+            // 
+            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonApply.Enabled = false;
+            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
+            this.m_buttonApply.Name = "m_buttonApply";
+            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonApply.TabIndex = 4;
+            this.m_buttonApply.Text = "&Apply";
+            this.m_buttonApply.UseVisualStyleBackColor = true;
+            this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
             // 
             // m_customTabControl
             // 
@@ -218,6 +231,7 @@
             this.m_checkBoxVisible.TabIndex = 17;
             this.m_checkBoxVisible.Text = "Visible";
             this.m_checkBoxVisible.UseVisualStyleBackColor = true;
+            this.m_checkBoxVisible.CheckedChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_numericTileHeight
             // 
@@ -242,6 +256,7 @@
             0,
             0,
             0});
+            this.m_numericTileHeight.ValueChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_numericTileWidth
             // 
@@ -266,6 +281,7 @@
             0,
             0,
             0});
+            this.m_numericTileWidth.ValueChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_numericLayerHeight
             // 
@@ -290,6 +306,7 @@
             0,
             0,
             0});
+            this.m_numericLayerHeight.ValueChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_numericLayerWidth
             // 
@@ -314,6 +331,7 @@
             0,
             0,
             0});
+            this.m_numericLayerWidth.ValueChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_textBoxDescription
             // 
@@ -325,6 +343,7 @@
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.Size = new System.Drawing.Size(443, 242);
             this.m_textBoxDescription.TabIndex = 3;
+            this.m_textBoxDescription.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_textBoxId
             // 
@@ -334,6 +353,7 @@
             this.m_textBoxId.Name = "m_textBoxId";
             this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
             this.m_textBoxId.TabIndex = 1;
+            this.m_textBoxId.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_tabCustomProperties
             // 
@@ -355,17 +375,8 @@
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.Size = new System.Drawing.Size(546, 327);
             this.m_customPropertyGrid.TabIndex = 0;
-            // 
-            // m_buttonApply
-            // 
-            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
-            this.m_buttonApply.Name = "m_buttonApply";
-            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonApply.TabIndex = 4;
-            this.m_buttonApply.Text = "&Apply";
-            this.m_buttonApply.UseVisualStyleBackColor = true;
-            this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
+            this.m_customPropertyGrid.PropertyDeleted += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // LayerPropertiesDialog
             // 

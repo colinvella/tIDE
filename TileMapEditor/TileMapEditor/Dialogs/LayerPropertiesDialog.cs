@@ -26,6 +26,24 @@ namespace TileMapEditor.Dialogs
 
         #region Private Methods
 
+        private void MarkAsModified()
+        {
+            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
+            m_buttonCancel.Text = "&Cancel";
+            m_buttonCancel.DialogResult = DialogResult.Cancel;
+        }
+
+        private void OnFieldChanged(object sender, EventArgs e)
+        {
+            MarkAsModified();
+        }
+
+        private void OnPropertyChangedOrDeleted(object sender,
+            TileMapEditor.Controls.CustomPropertyEventArgs customPropertyEventArgs)
+        {
+            MarkAsModified();
+        }
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_textBoxId.Text = m_layer.Id;
@@ -39,6 +57,13 @@ namespace TileMapEditor.Dialogs
             m_checkBoxVisible.Checked = m_layer.Visible;
 
             m_customPropertyGrid.LoadProperties(m_layer);
+
+            if (!m_isNewLayer)
+            {
+                m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+                m_buttonCancel.Text = "&Close";
+                m_buttonCancel.DialogResult = DialogResult.OK;
+            }
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -83,6 +108,10 @@ namespace TileMapEditor.Dialogs
                     m_customPropertyGrid.NewProperties);
 
             CommandHistory.Instance.Do(command);
+
+            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+            m_buttonCancel.Text = "&Close";
+            m_buttonCancel.DialogResult = DialogResult.OK;
         }
 
         #endregion
