@@ -121,6 +121,8 @@ namespace TileMapEditor.Dialogs
                 return;
             int size = 4 * 1 << m_comboBoxTileSize.SelectedIndex;
             m_textBoxTileWidth.Value = m_textBoxTileHeight.Value = size;
+
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
         }
 
         private void OnMarginCombo(object sender, EventArgs eventArgs)
@@ -129,6 +131,8 @@ namespace TileMapEditor.Dialogs
                 return;
             int size = m_comboBoxMargin.SelectedIndex - 1;
             m_textBoxLeftMargin.Value = m_textBoxTopMargin.Value = size;
+
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
         }
 
         private void OnSpacingCombo(object sender, EventArgs eventArgs)
@@ -137,6 +141,8 @@ namespace TileMapEditor.Dialogs
                 return;
             int size = m_comboBoxSpacing.SelectedIndex - 1;
             m_textBoxSpacingX.Value = m_textBoxSpacingY.Value = size;
+
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
         }
 
         private void OnBrowse(object sender, EventArgs eventArgs)
@@ -286,6 +292,8 @@ namespace TileMapEditor.Dialogs
             m_textBoxSpacingX.Value = spacingX;
             m_textBoxSpacingY.Value = spacingY;
 
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+
             this.Enabled = true;
             Cursor = oldCuror;
         }
@@ -303,6 +311,7 @@ namespace TileMapEditor.Dialogs
         {
             UpdateComboBoxes();
             m_panelImage.Invalidate();
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
         }
 
         private void OnPreviewMouseDown(object sender, MouseEventArgs mouseEventArgs)
@@ -343,6 +352,11 @@ namespace TileMapEditor.Dialogs
         private void OnPreviewMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
             m_previewMouseDown = false;
+        }
+
+        private void OnFieldChanged(object sender, EventArgs eventArgs)
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -393,9 +407,6 @@ namespace TileMapEditor.Dialogs
                         / (newTileSize.Height + newSpacing.Height);
             }
 
-            if (m_bitmapImageSource != null)
-                m_bitmapImageSource.Dispose();
-
             Command command = null;
 
             if (m_isNewTileSheet)
@@ -421,6 +432,9 @@ namespace TileMapEditor.Dialogs
             }
 
             CommandHistory.Instance.Do(command);
+
+            m_buttonOk.Enabled = m_buttonApply.Enabled = false;
+            m_buttonCancel.DialogResult = DialogResult.OK;
         }
 
         private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
@@ -486,5 +500,11 @@ namespace TileMapEditor.Dialogs
         }
 
         #endregion
+
+        private void OnPropertyChangedOrDeleted(object sender,
+            CustomPropertyEventArgs customPropertyEventArgs)
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+        }
     }
 }

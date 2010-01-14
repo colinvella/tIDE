@@ -177,6 +177,7 @@
             // 
             this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Enabled = false;
             this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
@@ -258,6 +259,7 @@
             this.m_textBoxImageSource.ReadOnly = true;
             this.m_textBoxImageSource.Size = new System.Drawing.Size(362, 20);
             this.m_textBoxImageSource.TabIndex = 4;
+            this.m_textBoxImageSource.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_textBoxDescription
             // 
@@ -269,6 +271,7 @@
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.Size = new System.Drawing.Size(443, 265);
             this.m_textBoxDescription.TabIndex = 3;
+            this.m_textBoxDescription.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_labelDescription
             // 
@@ -287,6 +290,7 @@
             this.m_textBoxId.Name = "m_textBoxId";
             this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
             this.m_textBoxId.TabIndex = 1;
+            this.m_textBoxId.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_labelId
             // 
@@ -572,10 +576,12 @@
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.Size = new System.Drawing.Size(546, 327);
             this.m_customPropertyGrid.TabIndex = 0;
+            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // m_buttonApply
             // 
             this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonApply.Enabled = false;
             this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
             this.m_buttonApply.Name = "m_buttonApply";
             this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
