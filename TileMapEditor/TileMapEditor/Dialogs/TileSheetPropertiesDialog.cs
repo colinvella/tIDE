@@ -35,6 +35,12 @@ namespace TileMapEditor.Dialogs
 
         #region Private Methods
 
+        private void MarkAsModified()
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            m_buttonCancel.Text = "&Cancel";
+        }
+
         private void UpdateComboBoxes()
         {
             m_comboBoxTileSize.SelectedIndex = 0;
@@ -122,7 +128,7 @@ namespace TileMapEditor.Dialogs
             int size = 4 * 1 << m_comboBoxTileSize.SelectedIndex;
             m_textBoxTileWidth.Value = m_textBoxTileHeight.Value = size;
 
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnMarginCombo(object sender, EventArgs eventArgs)
@@ -132,7 +138,7 @@ namespace TileMapEditor.Dialogs
             int size = m_comboBoxMargin.SelectedIndex - 1;
             m_textBoxLeftMargin.Value = m_textBoxTopMargin.Value = size;
 
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnSpacingCombo(object sender, EventArgs eventArgs)
@@ -142,7 +148,7 @@ namespace TileMapEditor.Dialogs
             int size = m_comboBoxSpacing.SelectedIndex - 1;
             m_textBoxSpacingX.Value = m_textBoxSpacingY.Value = size;
 
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnBrowse(object sender, EventArgs eventArgs)
@@ -292,7 +298,7 @@ namespace TileMapEditor.Dialogs
             m_textBoxSpacingX.Value = spacingX;
             m_textBoxSpacingY.Value = spacingY;
 
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            MarkAsModified();
 
             this.Enabled = true;
             Cursor = oldCuror;
@@ -311,7 +317,7 @@ namespace TileMapEditor.Dialogs
         {
             UpdateComboBoxes();
             m_panelImage.Invalidate();
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnPreviewMouseDown(object sender, MouseEventArgs mouseEventArgs)
@@ -356,7 +362,7 @@ namespace TileMapEditor.Dialogs
 
         private void OnFieldChanged(object sender, EventArgs eventArgs)
         {
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -434,6 +440,7 @@ namespace TileMapEditor.Dialogs
             CommandHistory.Instance.Do(command);
 
             m_buttonOk.Enabled = m_buttonApply.Enabled = false;
+            m_buttonCancel.Text = "&Close";
             m_buttonCancel.DialogResult = DialogResult.OK;
         }
 
