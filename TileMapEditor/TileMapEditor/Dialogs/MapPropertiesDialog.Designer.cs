@@ -209,7 +209,7 @@
             this.Name = "MapPropertiesDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Map Properties";
-            this.Load += new System.EventHandler(this.MapPropertiesDialog_Load);
+            this.Load += new System.EventHandler(this.OnDialogLoad);
             this.m_customTabControl.ResumeLayout(false);
             this.m_tabGeneral.ResumeLayout(false);
             this.m_tabGeneral.PerformLayout();
