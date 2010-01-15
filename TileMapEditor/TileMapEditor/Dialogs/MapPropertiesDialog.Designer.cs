@@ -33,6 +33,7 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.m_labelId = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_customTabControl.SuspendLayout();
             this.m_tabGeneral.SuspendLayout();
             this.m_tabCustomProperties.SuspendLayout();
@@ -51,6 +51,7 @@
             // 
             this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Enabled = false;
             this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
@@ -67,7 +68,7 @@
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.m_buttonCancel.TabIndex = 2;
-            this.m_buttonCancel.Text = "&Cancel";
+            this.m_buttonCancel.Text = "&Close";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -88,6 +89,18 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // m_buttonApply
+            // 
+            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonApply.Enabled = false;
+            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
+            this.m_buttonApply.Name = "m_buttonApply";
+            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonApply.TabIndex = 4;
+            this.m_buttonApply.Text = "&Apply";
+            this.m_buttonApply.UseVisualStyleBackColor = true;
+            this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
             // 
             // m_customTabControl
             // 
@@ -127,6 +140,7 @@
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.Size = new System.Drawing.Size(443, 294);
             this.m_textBoxDescription.TabIndex = 3;
+            this.m_textBoxDescription.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_labelDescription
             // 
@@ -145,6 +159,7 @@
             this.m_textBoxId.Name = "m_textBoxId";
             this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
             this.m_textBoxId.TabIndex = 1;
+            this.m_textBoxId.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_labelId
             // 
@@ -175,17 +190,7 @@
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.Size = new System.Drawing.Size(540, 321);
             this.m_customPropertyGrid.TabIndex = 0;
-            // 
-            // m_buttonApply
-            // 
-            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
-            this.m_buttonApply.Name = "m_buttonApply";
-            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonApply.TabIndex = 4;
-            this.m_buttonApply.Text = "&Apply";
-            this.m_buttonApply.UseVisualStyleBackColor = true;
-            this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
+            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // MapPropertiesDialog
             // 
