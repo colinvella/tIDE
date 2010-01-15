@@ -43,6 +43,11 @@ namespace Tiling.Tiles
                 int currentIndex = (int)(animationTime / m_frameInterval);
                 return m_tileFrames[currentIndex].BlendMode;
             }
+            set
+            {
+                foreach (StaticTile tileFrame in m_tileFrames)
+                    tileFrame.BlendMode = value;
+            }
         }
 
         public override TileSheet TileSheet

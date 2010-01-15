@@ -12,16 +12,19 @@ namespace TileMapEditor.Commands
     {
         private Tile m_tile;
         private string m_oldId, m_newId;
+        private BlendMode m_oldBlendMode, m_newBlendMode;
         private PropertyCollection m_oldProperties, m_newProperties;
 
-        public TilePropertiesCommand(Tile tile, string newId, PropertyCollection newProperties)
+        public TilePropertiesCommand(Tile tile, string newId, BlendMode newBlendMode, PropertyCollection newProperties)
         {
             m_tile = tile;
 
             m_oldId = tile.Id;
+            m_oldBlendMode = tile.BlendMode;
             m_oldProperties = new PropertyCollection(tile.Properties);
 
             m_newId = newId;
+            m_newBlendMode = newBlendMode;
             m_newProperties = newProperties;
 
             m_description = "Change tile properties";
@@ -30,6 +33,7 @@ namespace TileMapEditor.Commands
         public override void Do()
         {
             m_tile.Id = m_newId;
+            m_tile.BlendMode = m_newBlendMode;
             m_tile.Properties.Clear();
             m_tile.Properties.CopyFrom(m_newProperties);
         }
@@ -37,6 +41,7 @@ namespace TileMapEditor.Commands
         public override void Undo()
         {
             m_tile.Id = m_oldId;
+            m_tile.BlendMode = m_oldBlendMode;
             m_tile.Properties.Clear();
             m_tile.Properties.CopyFrom(m_oldProperties);
         }

@@ -27,7 +27,7 @@ namespace Tiling.Tiles
 
         public Layer Layer { get { return m_layer; } }
 
-        public abstract BlendMode BlendMode { get; }
+        public abstract BlendMode BlendMode { get; set; }
 
         public abstract TileSheet TileSheet { get; }
 

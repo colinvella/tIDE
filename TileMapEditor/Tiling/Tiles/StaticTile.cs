@@ -38,6 +38,7 @@ namespace Tiling.Tiles
         public override BlendMode BlendMode
         {
             get { return m_blendMode; }
+            set { m_blendMode = value; }
         }
 
         public override TileSheet TileSheet { get { return m_tileSheet; } }
