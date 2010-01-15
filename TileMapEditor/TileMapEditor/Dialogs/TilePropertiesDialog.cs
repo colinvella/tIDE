@@ -43,7 +43,8 @@ namespace TileMapEditor.Dialogs
 
         private void OnDialogApply(object sender, EventArgs e)
         {
-            Command command = new TilePropertiesCommand(m_tile, m_textBoxId.Text, m_tile.BlendMode,
+            Command command = new TilePropertiesCommand(m_tile, m_textBoxId.Text,
+                (BlendMode) m_comboBoxBlendMode.SelectedIndex,
                 m_customPropertyGrid.NewProperties);
             CommandHistory.Instance.Do(command);
 

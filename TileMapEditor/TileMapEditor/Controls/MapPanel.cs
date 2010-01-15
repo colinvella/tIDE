@@ -580,10 +580,10 @@ namespace TileMapEditor.Controls
             if (tile == null)
                 return;
 
-            CustomPropertiesDialog customPropertiesDialog
-                = new CustomPropertiesDialog("Tile Properties", tile);
+            TilePropertiesDialog tilePropertiesDialog
+                = new TilePropertiesDialog(tile);
 
-            if (customPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
+            if (tilePropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
             if (TilePropertiesChanged != null)
