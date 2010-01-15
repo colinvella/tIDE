@@ -10,14 +10,17 @@ namespace Tiling.Tiles
     [Serializable]
     public class StaticTile : Tile
     {
+        private BlendMode m_blendMode;
         private TileSheet m_tileSheet;
         private int m_tileIndex;
 
         public StaticTile(Layer layer, TileSheet tileSheet, BlendMode blendMode, int tileIndex)
-            : base(layer, blendMode)
+            : base(layer)
         {
             if (!layer.Map.TileSheets.Contains(tileSheet))
                 throw new Exception("The specified TileSheet is not in the parent map");
+
+            m_blendMode = blendMode;
 
             m_tileSheet = tileSheet;
 
@@ -30,6 +33,11 @@ namespace Tiling.Tiles
         public override Tile Clone()
         {
             return new StaticTile(this.Layer, this.TileSheet, this.BlendMode, m_tileIndex);
+        }
+
+        public override BlendMode BlendMode
+        {
+            get { return m_blendMode; }
         }
 
         public override TileSheet TileSheet { get { return m_tileSheet; } }

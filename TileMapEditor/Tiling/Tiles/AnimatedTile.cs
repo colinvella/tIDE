@@ -14,8 +14,8 @@ namespace Tiling.Tiles
         long m_frameInterval;
         long m_animationInterval;
 
-        public AnimatedTile(Layer layer, BlendMode blendMode, StaticTile[] tileFrames, long frameInterval)
-            : base(layer, blendMode)
+        public AnimatedTile(Layer layer, StaticTile[] tileFrames, long frameInterval)
+            : base(layer)
         {
             if (frameInterval <= 0)
                 throw new Exception("Frame interval must be strictly positive");
@@ -32,7 +32,17 @@ namespace Tiling.Tiles
             List<StaticTile> tileFrames = new List<StaticTile>(m_tileFrames.Length);
             foreach (StaticTile tileFrame in m_tileFrames)
                 tileFrames.Add((StaticTile)tileFrame.Clone());
-            return new AnimatedTile(this.Layer, this.BlendMode, tileFrames.ToArray(), m_frameInterval);
+            return new AnimatedTile(this.Layer, tileFrames.ToArray(), m_frameInterval);
+        }
+
+        public override BlendMode BlendMode
+        {
+            get
+            {
+                long animationTime = Layer.Map.ElapsedTime % m_animationInterval;
+                int currentIndex = (int)(animationTime / m_frameInterval);
+                return m_tileFrames[currentIndex].BlendMode;
+            }
         }
 
         public override TileSheet TileSheet

@@ -160,7 +160,7 @@ namespace TileMapEditor.Dialogs
             foreach (ListViewItem listViewItem in m_animationListView.Items)
                 tileFrames.Add((StaticTile)listViewItem.Tag);
             AnimatedTile animatedTile = new AnimatedTile(
-                m_layer, BlendMode.Alpha, tileFrames.ToArray(), (long)m_frameIntervalTextbox.Value);
+                m_layer, tileFrames.ToArray(), (long)m_frameIntervalTextbox.Value);
 
             Command command = new TileAnimationCommand(m_layer, m_tileLocation, animatedTile);
             CommandHistory.Instance.Do(command);

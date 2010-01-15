@@ -19,21 +19,15 @@ namespace Tiling.Tiles
     public abstract class Tile: Component
     {
         private Layer m_layer;
-        private BlendMode m_blendMode;
 
-        public Tile(Layer layer, BlendMode blendMode)
+        public Tile(Layer layer)
         {
             m_layer = layer;
-            m_blendMode = blendMode;
         }
 
         public Layer Layer { get { return m_layer; } }
 
-        public BlendMode BlendMode
-        {
-            get { return m_blendMode; }
-            set { m_blendMode = value; }
-        }
+        public abstract BlendMode BlendMode { get; }
 
         public abstract TileSheet TileSheet { get; }
 
