@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label m_labelId;
-            System.Windows.Forms.Label m_labelBlendMode;
-            System.Windows.Forms.Label m_labelTileSheet;
             System.Windows.Forms.Label m_labelTileIndex;
+            System.Windows.Forms.Label m_labelTileSheet;
+            System.Windows.Forms.Label m_labelBlendMode;
+            System.Windows.Forms.Label m_labelId;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
@@ -40,16 +40,16 @@
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
+            this.m_textBoxTileIndex = new System.Windows.Forms.TextBox();
+            this.m_textBoxTileSheet = new System.Windows.Forms.TextBox();
+            this.m_comboBoxBlendMode = new System.Windows.Forms.ComboBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_comboBoxBlendMode = new System.Windows.Forms.ComboBox();
-            this.m_textBoxTileSheet = new System.Windows.Forms.TextBox();
-            this.m_textBoxTileIndex = new System.Windows.Forms.TextBox();
-            m_labelId = new System.Windows.Forms.Label();
-            m_labelBlendMode = new System.Windows.Forms.Label();
-            m_labelTileSheet = new System.Windows.Forms.Label();
             m_labelTileIndex = new System.Windows.Forms.Label();
+            m_labelTileSheet = new System.Windows.Forms.Label();
+            m_labelBlendMode = new System.Windows.Forms.Label();
+            m_labelId = new System.Windows.Forms.Label();
             this.m_customTabControl.SuspendLayout();
             this.m_tabGeneral.SuspendLayout();
             this.m_tabCustomProperties.SuspendLayout();
@@ -142,6 +142,66 @@
             this.m_tabGeneral.TabIndex = 0;
             this.m_tabGeneral.Text = " General ";
             // 
+            // m_textBoxTileIndex
+            // 
+            this.m_textBoxTileIndex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_textBoxTileIndex.Location = new System.Drawing.Point(103, 307);
+            this.m_textBoxTileIndex.Name = "m_textBoxTileIndex";
+            this.m_textBoxTileIndex.ReadOnly = true;
+            this.m_textBoxTileIndex.Size = new System.Drawing.Size(443, 20);
+            this.m_textBoxTileIndex.TabIndex = 7;
+            // 
+            // m_labelTileIndex
+            // 
+            m_labelTileIndex.AutoSize = true;
+            m_labelTileIndex.Location = new System.Drawing.Point(6, 310);
+            m_labelTileIndex.Name = "m_labelTileIndex";
+            m_labelTileIndex.Size = new System.Drawing.Size(53, 13);
+            m_labelTileIndex.TabIndex = 6;
+            m_labelTileIndex.Text = "Tile Index";
+            // 
+            // m_labelTileSheet
+            // 
+            m_labelTileSheet.AutoSize = true;
+            m_labelTileSheet.Location = new System.Drawing.Point(6, 284);
+            m_labelTileSheet.Name = "m_labelTileSheet";
+            m_labelTileSheet.Size = new System.Drawing.Size(55, 13);
+            m_labelTileSheet.TabIndex = 5;
+            m_labelTileSheet.Text = "Tile Sheet";
+            // 
+            // m_textBoxTileSheet
+            // 
+            this.m_textBoxTileSheet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_textBoxTileSheet.Location = new System.Drawing.Point(103, 277);
+            this.m_textBoxTileSheet.Name = "m_textBoxTileSheet";
+            this.m_textBoxTileSheet.ReadOnly = true;
+            this.m_textBoxTileSheet.Size = new System.Drawing.Size(443, 20);
+            this.m_textBoxTileSheet.TabIndex = 4;
+            // 
+            // m_comboBoxBlendMode
+            // 
+            this.m_comboBoxBlendMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxBlendMode.FormattingEnabled = true;
+            this.m_comboBoxBlendMode.Items.AddRange(new object[] {
+            "Alpha",
+            "Additive"});
+            this.m_comboBoxBlendMode.Location = new System.Drawing.Point(103, 34);
+            this.m_comboBoxBlendMode.Name = "m_comboBoxBlendMode";
+            this.m_comboBoxBlendMode.Size = new System.Drawing.Size(121, 21);
+            this.m_comboBoxBlendMode.TabIndex = 3;
+            this.m_comboBoxBlendMode.SelectedIndexChanged += new System.EventHandler(this.OnFieldChanged);
+            // 
+            // m_labelBlendMode
+            // 
+            m_labelBlendMode.AutoSize = true;
+            m_labelBlendMode.Location = new System.Drawing.Point(6, 37);
+            m_labelBlendMode.Name = "m_labelBlendMode";
+            m_labelBlendMode.Size = new System.Drawing.Size(64, 13);
+            m_labelBlendMode.TabIndex = 2;
+            m_labelBlendMode.Text = "Blend Mode";
+            // 
             // m_textBoxId
             // 
             this.m_textBoxId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -182,65 +242,6 @@
             this.m_customPropertyGrid.Size = new System.Drawing.Size(540, 321);
             this.m_customPropertyGrid.TabIndex = 0;
             this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
-            // 
-            // m_labelBlendMode
-            // 
-            m_labelBlendMode.AutoSize = true;
-            m_labelBlendMode.Location = new System.Drawing.Point(6, 37);
-            m_labelBlendMode.Name = "m_labelBlendMode";
-            m_labelBlendMode.Size = new System.Drawing.Size(64, 13);
-            m_labelBlendMode.TabIndex = 2;
-            m_labelBlendMode.Text = "Blend Mode";
-            // 
-            // m_comboBoxBlendMode
-            // 
-            this.m_comboBoxBlendMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_comboBoxBlendMode.FormattingEnabled = true;
-            this.m_comboBoxBlendMode.Items.AddRange(new object[] {
-            "Alpha",
-            "Additive"});
-            this.m_comboBoxBlendMode.Location = new System.Drawing.Point(103, 34);
-            this.m_comboBoxBlendMode.Name = "m_comboBoxBlendMode";
-            this.m_comboBoxBlendMode.Size = new System.Drawing.Size(121, 21);
-            this.m_comboBoxBlendMode.TabIndex = 3;
-            // 
-            // m_textBoxTileSheet
-            // 
-            this.m_textBoxTileSheet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_textBoxTileSheet.Location = new System.Drawing.Point(103, 277);
-            this.m_textBoxTileSheet.Name = "m_textBoxTileSheet";
-            this.m_textBoxTileSheet.ReadOnly = true;
-            this.m_textBoxTileSheet.Size = new System.Drawing.Size(443, 20);
-            this.m_textBoxTileSheet.TabIndex = 4;
-            // 
-            // m_labelTileSheet
-            // 
-            m_labelTileSheet.AutoSize = true;
-            m_labelTileSheet.Location = new System.Drawing.Point(6, 284);
-            m_labelTileSheet.Name = "m_labelTileSheet";
-            m_labelTileSheet.Size = new System.Drawing.Size(55, 13);
-            m_labelTileSheet.TabIndex = 5;
-            m_labelTileSheet.Text = "Tile Sheet";
-            // 
-            // m_labelTileIndex
-            // 
-            m_labelTileIndex.AutoSize = true;
-            m_labelTileIndex.Location = new System.Drawing.Point(6, 310);
-            m_labelTileIndex.Name = "m_labelTileIndex";
-            m_labelTileIndex.Size = new System.Drawing.Size(53, 13);
-            m_labelTileIndex.TabIndex = 6;
-            m_labelTileIndex.Text = "Tile Index";
-            // 
-            // m_textBoxTileIndex
-            // 
-            this.m_textBoxTileIndex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_textBoxTileIndex.Location = new System.Drawing.Point(103, 307);
-            this.m_textBoxTileIndex.Name = "m_textBoxTileIndex";
-            this.m_textBoxTileIndex.ReadOnly = true;
-            this.m_textBoxTileIndex.Size = new System.Drawing.Size(443, 20);
-            this.m_textBoxTileIndex.TabIndex = 7;
             // 
             // TilePropertiesDialog
             // 
