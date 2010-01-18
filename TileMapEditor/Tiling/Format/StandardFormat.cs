@@ -56,6 +56,94 @@ namespace Tiling.Format
             xmlWriter.WriteEndElement();
         }
 
+        private StaticTile LoadStaticTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
+        {
+            int tileIndex = int.Parse(xmlHelper.GetAttribute("Index"));
+            BlendMode blendMode
+                = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
+                    ? BlendMode.Alpha : BlendMode.Additive;
+
+            StaticTile staticTile = new StaticTile(layer, tileSheet, blendMode, tileIndex);
+
+            if (!xmlHelper.XmlReader.IsEmptyElement)
+            {
+                LoadProperties(xmlHelper, staticTile);
+                xmlHelper.AdvanceEndElement("Static");
+            }
+
+            return staticTile;
+        }
+
+        private void StoreStaticTile(StaticTile staticTile, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement("Static");
+            xmlWriter.WriteAttributeString("Index", staticTile.TileIndex.ToString());
+            xmlWriter.WriteAttributeString("BlendMode", staticTile.BlendMode.ToString());
+
+            if (staticTile.Properties.Count > 0)
+                StoreProperties(staticTile, xmlWriter);
+
+            xmlWriter.WriteEndElement();
+        }
+
+        private AnimatedTile LoadAnimatedTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
+        {
+            int frameInterval = int.Parse(xmlHelper.GetAttribute("Interval"));
+
+            xmlHelper.AdvanceStartElement("Frames");
+
+            Map map = layer.Map;
+            List<StaticTile> tileFrames = new List<StaticTile>();
+
+            while (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
+            {
+                if (xmlHelper.XmlReader.Name == "StaticTile")
+                    tileFrames.Add(LoadStaticTile(xmlHelper, layer, tileSheet));
+                else if (xmlHelper.XmlReader.Name == "TileSheet")
+                {
+                    string tileSheetRef = xmlHelper.GetAttribute("Ref");
+                    tileSheet = map.GetTileSheet(tileSheetRef);
+                }
+            }
+
+            AnimatedTile animatedTile
+                = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
+
+            if (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
+                LoadProperties(xmlHelper, animatedTile);
+
+            xmlHelper.AdvanceEndElement("Animated");
+
+            return animatedTile;
+        }
+
+        private void StoreAnimatedTile(AnimatedTile animatedTile, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement("Animated");
+            xmlWriter.WriteAttributeString("Interval", animatedTile.FrameInterval.ToString());
+
+            xmlWriter.WriteStartElement("Frames");
+            TileSheet tileSheet = null;
+            foreach (StaticTile tileFrame in animatedTile.TileFrames)
+            {
+                if (tileSheet != tileFrame.TileSheet)
+                {
+                    xmlWriter.WriteStartElement("TileSheet");
+                    xmlWriter.WriteAttributeString("Ref", tileFrame.TileSheet.Id);
+                    xmlWriter.WriteEndElement();
+
+                    tileSheet = tileFrame.TileSheet;
+                }
+                StoreStaticTile(tileFrame, xmlWriter);
+            }
+            xmlWriter.WriteEndElement(); // Frames
+
+            if (animatedTile.Properties.Count > 0)
+                StoreProperties(animatedTile, xmlWriter);
+
+            xmlWriter.WriteEndElement();
+        }
+
         private void LoadTileSheet(XmlHelper xmlHelper, Map map)
         {
             string id = xmlHelper.GetAttribute("Id");
@@ -160,7 +248,6 @@ namespace Tiling.Format
                     {
                         int nullCount = int.Parse(xmlHelper.GetAttribute("Count"));
                         tileLocation.X += nullCount % layerSize.Width;
-                        //++tileLocation.X;
                     }
                     else if (xmlReader.Name == "TileSheet")
                     {
@@ -169,49 +256,13 @@ namespace Tiling.Format
                     }
                     else if (xmlReader.Name == "Static")
                     {
-                        int tileIndex = int.Parse(xmlHelper.GetAttribute("Index"));
-                        BlendMode blendMode
-                            = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
-                                ? BlendMode.Alpha : BlendMode.Additive;
-
-                        Tile tile = new StaticTile(layer, tileSheet, blendMode, tileIndex);
-                        layer.Tiles[tileLocation] = tile;
-
-                        if (!xmlReader.IsEmptyElement)
-                        {
-                            LoadProperties(xmlHelper, tile);
-                            xmlHelper.AdvanceEndElement("Static");
-                        }
+                        layer.Tiles[tileLocation] = LoadStaticTile(xmlHelper, layer, tileSheet);
 
                         ++tileLocation.X;
                     }
                     else if (xmlReader.Name == "Animated")
                     {
-                        string tileIndicesValue = xmlHelper.GetAttribute("Indices");
-                        List<int> indexList = new List<int>();
-                        foreach (string tileIndexValue in tileIndicesValue.Trim().Split(' '))
-                        {
-                            indexList.Add(int.Parse(tileIndexValue));
-                        }
-
-                        int frameInterval = int.Parse(xmlHelper.GetAttribute("Interval"));
-
-                        BlendMode blendMode
-                            = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
-                                ? BlendMode.Alpha : BlendMode.Additive;
-
-                        // TODO fix!
-                        /*
-                        AnimatedTile animatedTile
-                            = new AnimatedTile(layer, blendMode, indexList.ToArray(), frameInterval);
-
-                        layer.Tiles[tileLocation] = animatedTile;
-
-                        if (!xmlReader.IsEmptyElement)
-                        {
-                            LoadProperties(xmlHelper, animatedTile);
-                            xmlHelper.AdvanceEndElement("Animated");
-                        }*/
+                        layer.Tiles[tileLocation] = LoadAnimatedTile(xmlHelper, layer, tileSheet);
 
                         ++tileLocation.X;
                     }
@@ -280,14 +331,7 @@ namespace Tiling.Format
 
                     if (currentTile is StaticTile)
                     {
-                        xmlTextWriter.WriteStartElement("Static");
-                        xmlTextWriter.WriteAttributeString("Index", currentTile.TileIndex.ToString());
-                        xmlTextWriter.WriteAttributeString("BlendMode", currentTile.BlendMode.ToString());
-
-                        if (currentTile.Properties.Count > 0)
-                            StoreProperties(currentTile, xmlTextWriter);
-
-                        xmlTextWriter.WriteEndElement();
+                        StoreStaticTile((StaticTile)currentTile, xmlTextWriter);
                     }
                     else if (currentTile is AnimatedTile)
                     {
