@@ -7,25 +7,39 @@ using System.Text;
 namespace Tiling.Format
 {
     [Serializable]
+    public enum CompatibilityLevel
+    {
+        Full,
+        Partial,
+        None
+    }
+
+    [Serializable]
     public class CompatibilityResults
     {
-        private bool m_compatible;
-        private List<string> m_incompatiblities;
+        private CompatibilityLevel m_compatibilityLevel;
+        private List<string> m_remarks;
 
-        public CompatibilityResults(bool compatible, List<string> incompatiblities)
+        public CompatibilityResults(CompatibilityLevel compatibilityLevel, List<string> remarks)
         {
-            m_compatible = compatible;
-            m_incompatiblities = new List<string>(incompatiblities);
+            m_compatibilityLevel = compatibilityLevel;
+            m_remarks = new List<string>(remarks);
         }
 
-        public bool Compatible
+        public CompatibilityResults(CompatibilityLevel compatibilityLevel)
         {
-            get { return m_compatible; }
+            m_compatibilityLevel = compatibilityLevel;
+            m_remarks = new List<string>();
         }
 
-        public ReadOnlyCollection<string> Incompatiblities
+        public CompatibilityLevel CompatibilityLevel
         {
-            get { return m_incompatiblities.AsReadOnly(); }
+            get { return m_compatibilityLevel; }
+        }
+
+        public ReadOnlyCollection<string> Remarks
+        {
+            get { return m_remarks.AsReadOnly(); }
         }
     }
 }

@@ -352,7 +352,7 @@ namespace Tiling.Format
 
         internal StandardFormat()
         {
-            m_compatibilityResults = new CompatibilityResults(true, new List<string>());
+            m_compatibilityResults = new CompatibilityResults(CompatibilityLevel.Full);
 
             /*
             // test
