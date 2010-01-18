@@ -333,6 +333,20 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TileAnimationFrameDelete {
+            get {
+                object obj = ResourceManager.GetObject("TileAnimationFrameDelete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TileAnimationFrameProperties {
+            get {
+                object obj = ResourceManager.GetObject("TileAnimationFrameProperties", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileProperties {
             get {
                 object obj = ResourceManager.GetObject("TileProperties", resourceCulture);

@@ -130,6 +130,20 @@ namespace TileMapEditor.Dialogs
             Cursor = Cursors.Default;
         }
 
+        private void OnFrameProperties(object sender, EventArgs eventArgs)
+        {
+            if (m_animationListView.SelectedIndices.Count == 0)
+                return;
+
+            StaticTile tileFrame = (StaticTile)m_animationListView.SelectedItems[0].Tag;
+            TilePropertiesDialog tilePropertiesDialog = new TilePropertiesDialog(tileFrame);
+
+            if (tilePropertiesDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                m_buttonApply.Enabled = m_buttonOk.Enabled = true;
+            }
+        }
+
         private void OnDeleteFrame(object sender, EventArgs eventArgs)
         {
             if (m_animationListView.SelectedIndices.Count == 0)
