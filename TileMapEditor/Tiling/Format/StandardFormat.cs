@@ -97,7 +97,7 @@ namespace Tiling.Format
 
             while (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
             {
-                if (xmlHelper.XmlReader.Name == "StaticTile")
+                if (xmlHelper.XmlReader.Name == "Static")
                     tileFrames.Add(LoadStaticTile(xmlHelper, layer, tileSheet));
                 else if (xmlHelper.XmlReader.Name == "TileSheet")
                 {
@@ -109,10 +109,9 @@ namespace Tiling.Format
             AnimatedTile animatedTile
                 = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
 
+            // end of this element or optional props
             if (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
                 LoadProperties(xmlHelper, animatedTile);
-
-            xmlHelper.AdvanceEndElement("Animated");
 
             return animatedTile;
         }
@@ -209,12 +208,12 @@ namespace Tiling.Format
                 LoadTileSheet(xmlHelper, map);
         }
 
-        private void StoreTileSheets(ReadOnlyCollection<TileSheet> tileSheets, XmlWriter xmlTextWriter)
+        private void StoreTileSheets(ReadOnlyCollection<TileSheet> tileSheets, XmlWriter xmlWriter)
         {
-            xmlTextWriter.WriteStartElement("TileSheets");
+            xmlWriter.WriteStartElement("TileSheets");
             foreach (TileSheet tileSheet in tileSheets)
-                StoreTileSheet(tileSheet, xmlTextWriter);
-            xmlTextWriter.WriteEndElement();
+                StoreTileSheet(tileSheet, xmlWriter);
+            xmlWriter.WriteEndElement();
         }
 
         private void LoadLayer(XmlHelper xmlHelper, Map map)
@@ -278,28 +277,28 @@ namespace Tiling.Format
             map.AddLayer(layer);
         }
 
-        private void StoreLayer(Layer layer, XmlWriter xmlTextWriter)
+        private void StoreLayer(Layer layer, XmlWriter xmlWriter)
         {
-            xmlTextWriter.WriteStartElement("Layer");
-            xmlTextWriter.WriteAttributeString("Id", layer.Id);
+            xmlWriter.WriteStartElement("Layer");
+            xmlWriter.WriteAttributeString("Id", layer.Id);
 
-            xmlTextWriter.WriteStartElement("Description");
-            xmlTextWriter.WriteCData(layer.Description);
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("Description");
+            xmlWriter.WriteCData(layer.Description);
+            xmlWriter.WriteEndElement();
 
-            xmlTextWriter.WriteStartElement("Dimensions");
-            xmlTextWriter.WriteAttributeString("LayerSize", layer.LayerSize.ToString());
-            xmlTextWriter.WriteAttributeString("TileSize", layer.TileSize.ToString());
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteStartElement("Dimensions");
+            xmlWriter.WriteAttributeString("LayerSize", layer.LayerSize.ToString());
+            xmlWriter.WriteAttributeString("TileSize", layer.TileSize.ToString());
+            xmlWriter.WriteEndElement();
 
-            xmlTextWriter.WriteStartElement("TileArray");
+            xmlWriter.WriteStartElement("TileArray");
 
             TileSheet previousTileSheet = null;
             int nullCount = 0;
 
             for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
             {
-                xmlTextWriter.WriteStartElement("Row");
+                xmlWriter.WriteStartElement("Row");
 
                 for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
                 {
@@ -310,11 +309,11 @@ namespace Tiling.Format
                         ++nullCount;
                         continue;
                     }
-                    else
+                    else if (nullCount > 0)
                     {
-                        xmlTextWriter.WriteStartElement("Null");
-                        xmlTextWriter.WriteAttributeString("Count", nullCount.ToString());
-                        xmlTextWriter.WriteEndElement();
+                        xmlWriter.WriteStartElement("Null");
+                        xmlWriter.WriteAttributeString("Count", nullCount.ToString());
+                        xmlWriter.WriteEndElement();
                         nullCount = 0;
                     }
 
@@ -322,60 +321,42 @@ namespace Tiling.Format
 
                     if (previousTileSheet != currentTileSheet)
                     {
-                        xmlTextWriter.WriteStartElement("TileSheet");
-                        xmlTextWriter.WriteAttributeString("Ref", currentTileSheet == null ? "" : currentTileSheet.Id);
-                        xmlTextWriter.WriteEndElement();
+                        xmlWriter.WriteStartElement("TileSheet");
+                        xmlWriter.WriteAttributeString("Ref", currentTileSheet == null ? "" : currentTileSheet.Id);
+                        xmlWriter.WriteEndElement();
 
                         previousTileSheet = currentTileSheet;
                     }
 
                     if (currentTile is StaticTile)
                     {
-                        StoreStaticTile((StaticTile)currentTile, xmlTextWriter);
+                        StoreStaticTile((StaticTile)currentTile, xmlWriter);
                     }
                     else if (currentTile is AnimatedTile)
                     {
-                        xmlTextWriter.WriteStartElement("Animated");
-
                         AnimatedTile animatedTile = (AnimatedTile)currentTile;
-                        StringBuilder stringBuilder = new StringBuilder();
-                        //TODO FIX!
-                        /*foreach (int frameIndex in animatedTile.TileIndices)
-                        {
-                            stringBuilder.Append(frameIndex);
-                            stringBuilder.Append(" ");
-                        }*/
-                        xmlTextWriter.WriteAttributeString("Indices", stringBuilder.ToString().Trim());
-
-                        xmlTextWriter.WriteAttributeString("Interval", animatedTile.FrameInterval.ToString());
-
-                        xmlTextWriter.WriteAttributeString("BlendMode", currentTile.BlendMode.ToString());
-
-                        if (currentTile.Properties.Count > 0)
-                            StoreProperties(currentTile, xmlTextWriter);
-
-                        xmlTextWriter.WriteEndElement();
+                        StoreAnimatedTile(animatedTile, xmlWriter);
                     }
                 }
 
                 if (nullCount > 0)
                 {
-                    xmlTextWriter.WriteStartElement("Null");
-                    xmlTextWriter.WriteAttributeString("Count", nullCount.ToString());
-                    xmlTextWriter.WriteEndElement();
+                    xmlWriter.WriteStartElement("Null");
+                    xmlWriter.WriteAttributeString("Count", nullCount.ToString());
+                    xmlWriter.WriteEndElement();
                     nullCount = 0;
                 }
 
                 // row closing tag
-                xmlTextWriter.WriteEndElement();
+                xmlWriter.WriteEndElement();
             }
 
             // tile array closing tag
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
 
-            StoreProperties(layer, xmlTextWriter);
+            StoreProperties(layer, xmlWriter);
 
-            xmlTextWriter.WriteEndElement();
+            xmlWriter.WriteEndElement();
         }
 
         private void LoadLayers(XmlHelper xmlHelper, Map map)
@@ -397,32 +378,6 @@ namespace Tiling.Format
         internal StandardFormat()
         {
             m_compatibilityResults = new CompatibilityResults(CompatibilityLevel.Full);
-
-            /*
-            // test
-            Map map = new Map("test");
-            map.Description = "12345";
-            map.Properties["foo"] = "bar";
-
-            TileSheet ts = new TileSheet("ts 1", map, "foo.png", new Size(20, 10), new Size(16, 16));
-            map.AddTileSheet(ts);
-
-            Layer layer = new Layer("layer 1", map, new Size(40, 15), new Size(16, 16));
-            map.AddLayer(layer);
-            layer.Tiles[2, 1] = new StaticTile(layer, ts, BlendMode.Additive, 3);
-            layer.Tiles[2, 1].Properties["goo"] = 34.2f;
-
-            layer.Tiles[4, 3] = new AnimatedTile(layer, ts, BlendMode.Additive, new int[3] { 9, 8, 7 }, 10);
-
-            FileStream fileStream = new FileStream("Test.xml", FileMode.Create);
-            Store(map, fileStream);
-            fileStream.Close();
-
-
-            // test load
-            fileStream = new FileStream("Test.xml", FileMode.Open);
-            Map map2 = Load(fileStream);
-             */ 
         }
 
         public CompatibilityResults DetermineCompatibility(Map map)

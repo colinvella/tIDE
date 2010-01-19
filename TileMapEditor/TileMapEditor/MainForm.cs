@@ -602,8 +602,8 @@ namespace TileMapEditor
             catch (Exception exception)
             {
                 MessageBox.Show(this,
-                    "An error occured whilst saving the file. Details: " + exception.Message,
-                    "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "An error occured whilst opening the file. Details: " + exception.Message,
+                    "Open Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             StopWaitCursor();
