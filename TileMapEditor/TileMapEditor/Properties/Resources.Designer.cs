@@ -207,6 +207,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpEditCommandReference {
+            get {
+                object obj = ResourceManager.GetObject("HelpEditCommandReference", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpFileCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpFileCommandReference", resourceCulture);
@@ -231,6 +238,36 @@ namespace TileMapEditor.Properties {
         /// <summary>
         ///   Looks up a localized string similar to a
         ///and
+        ///are
+        ///as
+        ///available
+        ///accordingly
+        ///application
+        ///categories
+        ///com
+        ///convenience
+        ///distinct
+        ///each
+        ///fall
+        ///for
+        ///full
+        ///further
+        ///getting
+        ///google
+        ///grouped
+        ///http
+        ///in
+        ///indexing
+        ///is
+        ///management
+        ///number
+        ///of
+        ///started
+        ///the
+        ///this
+        ///under
+        ///www
+        ///
         ///.
         /// </summary>
         internal static string HelpKeywordBlacklist {
