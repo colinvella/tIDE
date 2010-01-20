@@ -16,6 +16,7 @@ namespace TileMapEditor.Help
         private HelpMode m_helpMode;
         private Dictionary<string, List<string>> m_contentIndex;
         private char[] m_delimeters;
+        private Dictionary<string, byte> m_keywordBlacklist;
 
         private void ProcessHelpLinks()
         {
@@ -116,6 +117,9 @@ namespace TileMapEditor.Help
 
             foreach (string word in words)
             {
+                if (m_keywordBlacklist.ContainsKey(word))
+                    continue;
+
                 List<string> resourceNames = null;
                 if (m_contentIndex.ContainsKey(word))
                     resourceNames = m_contentIndex[word];
@@ -189,11 +193,20 @@ namespace TileMapEditor.Help
         {
             m_contentIndex = new Dictionary<string, List<string>>();
 
+            // build delimeter list for keyword tokenization
             List<char> delimeters = new List<char>();
             for (char ch = '\0'; ch < char.MaxValue; ch++)
                 if (!char.IsLetterOrDigit(ch))
                     delimeters.Add(ch);
             m_delimeters = delimeters.ToArray();
+
+            // get keyword blacklist
+            m_keywordBlacklist = new Dictionary<string, byte>();
+            string[] blacklistedKeywords = Properties.Resources.HelpKeywordBlacklist.Split(
+                new string[]{"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
+            byte by = byte.MaxValue;
+            foreach (string blacklistedKeyword in blacklistedKeywords)
+                m_keywordBlacklist[blacklistedKeyword] = by;
         }
 
         private void OnHelpClosing(object sender, FormClosingEventArgs formClosingEventArgs)

@@ -228,6 +228,17 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to a
+        ///and
+        ///.
+        /// </summary>
+        internal static string HelpKeywordBlacklist {
+            get {
+                return ResourceManager.GetString("HelpKeywordBlacklist", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap HelpSearch {
             get {
                 object obj = ResourceManager.GetObject("HelpSearch", resourceCulture);
