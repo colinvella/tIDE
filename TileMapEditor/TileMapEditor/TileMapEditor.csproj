@@ -367,7 +367,6 @@
     <None Include="Resources\TileAnimation.png" />
     <None Include="Resources\TileAnimationFrameDelete.png" />
     <None Include="Resources\TileAnimationFrameProperties.png" />
-    <None Include="Resources\KeywordBlacklist.txt" />
     <None Include="Resources\Help\KeywordBlacklist.txt" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
