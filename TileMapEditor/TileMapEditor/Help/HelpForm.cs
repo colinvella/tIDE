@@ -117,6 +117,8 @@ namespace TileMapEditor.Help
 
             foreach (string word in words)
             {
+                if (word.Contains('#'))
+                    continue;
                 if (m_keywordBlacklist.ContainsKey(word))
                     continue;
 
@@ -196,7 +198,7 @@ namespace TileMapEditor.Help
             // build delimeter list for keyword tokenization
             List<char> delimeters = new List<char>();
             for (char ch = '\0'; ch < char.MaxValue; ch++)
-                if (!char.IsLetterOrDigit(ch))
+                if (!char.IsLetterOrDigit(ch) && ch != '#')
                     delimeters.Add(ch);
             m_delimeters = delimeters.ToArray();
 
