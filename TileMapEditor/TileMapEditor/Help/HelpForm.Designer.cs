@@ -45,13 +45,13 @@
             this.m_indexTreeView = new System.Windows.Forms.TreeView();
             this.m_searchListView = new System.Windows.Forms.ListView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
-            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_helpContentsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpIndexButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpSearchButton = new System.Windows.Forms.ToolStripButton();
             this.m_searchTextbox = new System.Windows.Forms.ToolStripTextBox();
+            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
             this.m_splitContainer.SuspendLayout();
@@ -83,10 +83,8 @@
             // 
             // m_topicTreeView
             // 
-            this.m_topicTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_topicTreeView.Location = new System.Drawing.Point(4, 4);
+            this.m_topicTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_topicTreeView.Location = new System.Drawing.Point(0, 0);
             this.m_topicTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
             this.m_topicTreeView.Name = "m_topicTreeView";
             treeNode1.Name = "GettingStarted";
@@ -108,30 +106,29 @@
             treeNode6.Text = "tIDE Help Topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6});
-            this.m_topicTreeView.Size = new System.Drawing.Size(190, 379);
+            this.m_topicTreeView.Size = new System.Drawing.Size(194, 387);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
             // 
             // m_indexTreeView
             // 
-            this.m_indexTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_indexTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_indexTreeView.Location = new System.Drawing.Point(4, 4);
+            this.m_indexTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_indexTreeView.Location = new System.Drawing.Point(0, 0);
             this.m_indexTreeView.Name = "m_indexTreeView";
             this.m_indexTreeView.ShowLines = false;
             this.m_indexTreeView.ShowPlusMinus = false;
-            this.m_indexTreeView.Size = new System.Drawing.Size(190, 379);
+            this.m_indexTreeView.Size = new System.Drawing.Size(194, 387);
             this.m_indexTreeView.TabIndex = 1;
             this.m_indexTreeView.Visible = false;
             this.m_indexTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnIndexSelect);
             // 
             // m_searchListView
             // 
-            this.m_searchListView.Location = new System.Drawing.Point(4, 4);
+            this.m_searchListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_searchListView.Location = new System.Drawing.Point(0, 0);
             this.m_searchListView.Name = "m_searchListView";
-            this.m_searchListView.Size = new System.Drawing.Size(190, 379);
+            this.m_searchListView.Size = new System.Drawing.Size(194, 387);
             this.m_searchListView.TabIndex = 2;
             this.m_searchListView.UseCompatibleStateImageBehavior = false;
             this.m_searchListView.View = System.Windows.Forms.View.List;
@@ -150,21 +147,6 @@
             this.m_contentPanel.Padding = new System.Windows.Forms.Padding(1);
             this.m_contentPanel.Size = new System.Drawing.Size(382, 379);
             this.m_contentPanel.TabIndex = 1;
-            // 
-            // m_contentRichTextBox
-            // 
-            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
-            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.m_contentRichTextBox.DetectUrls = true;
-            this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
-            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
-            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
-            this.m_contentRichTextBox.ReadOnly = true;
-            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
-            this.m_contentRichTextBox.TabIndex = 0;
-            this.m_contentRichTextBox.Text = "Content Pane";
-            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // m_toolStripContainer
             // 
@@ -239,6 +221,21 @@
             this.m_searchTextbox.Visible = false;
             this.m_searchTextbox.Enter += new System.EventHandler(this.OnEnterSearchTextBox);
             this.m_searchTextbox.TextChanged += new System.EventHandler(this.OnSearchTextChanged);
+            // 
+            // m_contentRichTextBox
+            // 
+            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
+            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.m_contentRichTextBox.DetectUrls = true;
+            this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
+            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
+            this.m_contentRichTextBox.ReadOnly = true;
+            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
+            this.m_contentRichTextBox.TabIndex = 0;
+            this.m_contentRichTextBox.Text = "Content Pane";
+            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // HelpForm
             // 
