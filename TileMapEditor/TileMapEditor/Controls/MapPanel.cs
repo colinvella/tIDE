@@ -610,6 +610,9 @@ namespace TileMapEditor.Controls
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
         {
+            if (m_map == null)
+                return;
+
             DateTime dtNow = DateTime.Now;
             m_map.ElapsedTime = (long)(dtNow - m_dtStart).TotalMilliseconds;
             m_innerPanel.Invalidate();
