@@ -237,38 +237,72 @@ namespace TileMapEditor.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to a
+        ///all
+        ///allow
+        ///allows
+        ///also
+        ///an
         ///and
+        ///any
+        ///arbitrary
         ///are
         ///as
+        ///at
+        ///assigned
         ///available
         ///accordingly
         ///application
+        ///be
+        ///before
+        ///can
         ///categories
+        ///clears
         ///com
         ///convenience
+        ///copied
+        ///copies
+        ///creation
+        ///current
+        ///currently
+        ///cuts
+        ///deletion
+        ///discarded
+        ///displayed
         ///distinct
         ///each
+        ///editing
+        ///executes
+        ///exception
+        ///exits
         ///fall
         ///for
+        ///from
+        ///functions
         ///full
         ///further
         ///getting
         ///google
         ///grouped
         ///http
+        ///if
         ///in
+        ///into
         ///indexing
         ///is
+        ///it
+        ///last
+        ///length
+        ///list
+        ///makes
         ///management
+        ///modification
         ///number
         ///of
-        ///started
-        ///the
-        ///this
-        ///under
-        ///www
-        ///
-        ///.
+        ///one
+        ///opening
+        ///opens
+        ///optionally
+        ///o [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HelpKeywordBlacklist {
             get {
@@ -280,6 +314,13 @@ namespace TileMapEditor.Properties {
             get {
                 object obj = ResourceManager.GetObject("HelpSearch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] HelpViewCommandReference {
+            get {
+                object obj = ResourceManager.GetObject("HelpViewCommandReference", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
