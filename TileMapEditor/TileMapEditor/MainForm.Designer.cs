@@ -157,6 +157,7 @@
             this.m_viewViewport1920x1200MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mapPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mapStatisticsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_layerPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -183,6 +184,7 @@
             this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
+            this.m_mapStatisticsButton = new System.Windows.Forms.ToolStripButton();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -756,10 +758,11 @@
             // 
             this.m_mapToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.m_mapToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_mapPropertiesButton});
+            this.m_mapPropertiesButton,
+            this.m_mapStatisticsButton});
             this.m_mapToolStrip.Location = new System.Drawing.Point(3, 25);
             this.m_mapToolStrip.Name = "m_mapToolStrip";
-            this.m_mapToolStrip.Size = new System.Drawing.Size(35, 25);
+            this.m_mapToolStrip.Size = new System.Drawing.Size(89, 25);
             this.m_mapToolStrip.TabIndex = 2;
             // 
             // m_mapPropertiesButton
@@ -769,7 +772,7 @@
             this.m_mapPropertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_mapPropertiesButton.Name = "m_mapPropertiesButton";
             this.m_mapPropertiesButton.Size = new System.Drawing.Size(23, 22);
-            this.m_mapPropertiesButton.Text = "Map Properties";
+            this.m_mapPropertiesButton.Text = "Map properties";
             this.m_mapPropertiesButton.Click += new System.EventHandler(this.OnMapProperties);
             // 
             // m_layerToolStrip
@@ -784,7 +787,7 @@
             this.m_layerSendBackwardButton,
             this.m_layerToolStripSeparator2,
             this.m_layerDeleteButton});
-            this.m_layerToolStrip.Location = new System.Drawing.Point(38, 25);
+            this.m_layerToolStrip.Location = new System.Drawing.Point(92, 25);
             this.m_layerToolStrip.Name = "m_layerToolStrip";
             this.m_layerToolStrip.Size = new System.Drawing.Size(162, 25);
             this.m_layerToolStrip.TabIndex = 4;
@@ -1528,7 +1531,8 @@
             // m_mapMenuItem
             // 
             this.m_mapMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_mapPropertiesMenuItem});
+            this.m_mapPropertiesMenuItem,
+            this.m_mapStatisticsMenuItem});
             this.m_mapMenuItem.Image = global::TileMapEditor.Properties.Resources.Map;
             this.m_mapMenuItem.Name = "m_mapMenuItem";
             this.m_mapMenuItem.Size = new System.Drawing.Size(59, 20);
@@ -1538,9 +1542,17 @@
             // 
             this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
-            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_mapPropertiesMenuItem.Text = "Properties...";
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
+            // 
+            // m_mapStatisticsMenuItem
+            // 
+            this.m_mapStatisticsMenuItem.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsMenuItem.Name = "m_mapStatisticsMenuItem";
+            this.m_mapStatisticsMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_mapStatisticsMenuItem.Text = "Statistics...";
+            this.m_mapStatisticsMenuItem.Click += new System.EventHandler(this.OnMapStatistics);
             // 
             // m_layerMenuItem
             // 
@@ -1790,6 +1802,16 @@
             this.m_fileSaveAsButton.ToolTipText = "Save map as...";
             this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
             // 
+            // m_mapStatisticsButton
+            // 
+            this.m_mapStatisticsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_mapStatisticsButton.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_mapStatisticsButton.Name = "m_mapStatisticsButton";
+            this.m_mapStatisticsButton.Size = new System.Drawing.Size(23, 22);
+            this.m_mapStatisticsButton.Text = "Map statistics";
+            this.m_mapStatisticsButton.Click += new System.EventHandler(this.OnMapStatistics);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1985,5 +2007,7 @@
         private System.Windows.Forms.HelpProvider m_helpProvider;
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetAutoUpdateMenuItem;
         private System.Windows.Forms.ToolStripButton m_tileSheetAutoUpdateButton;
+        private System.Windows.Forms.ToolStripMenuItem m_mapStatisticsMenuItem;
+        private System.Windows.Forms.ToolStripButton m_mapStatisticsButton;
     }
 }

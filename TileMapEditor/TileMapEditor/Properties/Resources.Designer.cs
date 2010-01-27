@@ -236,24 +236,30 @@ namespace TileMapEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a
+        ///   Looks up a localized string similar to 1
+        ///10
+        ///a
+        ///accordingly
         ///all
         ///allow
+        ///allowed
         ///allows
         ///also
         ///an
         ///and
         ///any
+        ///application
         ///arbitrary
         ///are
         ///as
-        ///at
         ///assigned
+        ///at
+        ///automatically
         ///available
-        ///accordingly
-        ///application
         ///be
         ///before
+        ///between
+        ///by
         ///can
         ///categories
         ///clears
@@ -266,43 +272,35 @@ namespace TileMapEditor.Properties {
         ///currently
         ///cuts
         ///deletion
+        ///delineate
+        ///desired
         ///discarded
         ///displayed
         ///distinct
         ///each
         ///editing
         ///executes
+        ///except
         ///exception
         ///exits
+        ///extensive
+        ///facilitate
+        ///facilitates
         ///fall
+        ///first
         ///for
         ///from
         ///functions
-        ///full
         ///further
         ///getting
+        ///gives
         ///google
         ///grouped
         ///http
         ///if
         ///in
         ///into
-        ///indexing
-        ///is
-        ///it
-        ///last
-        ///length
-        ///list
-        ///makes
-        ///management
-        ///modification
-        ///number
-        ///of
-        ///one
-        ///opening
-        ///opens
-        ///optionally
-        ///o [rest of string was truncated]&quot;;.
+        ///i [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HelpKeywordBlacklist {
             get {
@@ -397,6 +395,13 @@ namespace TileMapEditor.Properties {
         internal static System.Drawing.Bitmap MapProperties {
             get {
                 object obj = ResourceManager.GetObject("MapProperties", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MapStatistics {
+            get {
+                object obj = ResourceManager.GetObject("MapStatistics", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

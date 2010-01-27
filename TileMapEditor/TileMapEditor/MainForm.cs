@@ -923,6 +923,10 @@ namespace TileMapEditor
             }
         }
 
+        private void OnMapStatistics(object sender, EventArgs eventArgs)
+        {
+        }
+
         private void OnLayerNew(object sender, EventArgs eventArgs)
         {
             Size tileSize = m_map.TileSheets.Count > 0
