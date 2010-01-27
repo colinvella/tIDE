@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using Tiling;
+using Tiling.Layers;
 using Tiling.ObjectModel;
 
 using TileMapEditor.Commands;
@@ -18,6 +19,7 @@ namespace TileMapEditor.Dialogs
     public partial class MapStatisticsDialog : Form
     {
         private Map m_map;
+        private Font m_headerFont;
         private Font m_propertyNameFont;
         private Font m_propertyValueFont;
 
@@ -48,15 +50,25 @@ namespace TileMapEditor.Dialogs
             m_textBoxStatistics.SelectionIndent = oldIndent;
         }
 
+        private void DisplayLayer(Layer layer)
+        {
+            // map details
+            m_textBoxStatistics.SelectionFont = m_headerFont;
+            m_textBoxStatistics.AppendText("Layer ");
+            m_textBoxStatistics.AppendText(layer.Map.Layers.IndexOf(layer).ToString());
+            m_textBoxStatistics.AppendLine(" Details");
+            m_textBoxStatistics.AppendLine();
+        }
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
-            Font headerFont = new Font(this.Font.FontFamily, this.Font.Size * 1.5f, FontStyle.Bold);
+            m_headerFont = new Font(this.Font.FontFamily, this.Font.Size * 1.5f, FontStyle.Bold);
 
             m_propertyNameFont = new Font(this.Font, FontStyle.Bold);
             m_propertyValueFont = this.Font;
 
             // map details
-            m_textBoxStatistics.SelectionFont = headerFont;
+            m_textBoxStatistics.SelectionFont = m_headerFont;
             m_textBoxStatistics.AppendLine("Map Details");
             m_textBoxStatistics.AppendLine();
 
@@ -87,6 +99,11 @@ namespace TileMapEditor.Dialogs
             // custom properties
             m_textBoxStatistics.AppendLine();
             DisplayCustomProperties(m_map, 0);
+
+            // layers
+            m_textBoxStatistics.AppendLine();
+            foreach (Layer layer in m_map.Layers)
+                DisplayLayer(layer);
         }
 
         public MapStatisticsDialog(Map map)
