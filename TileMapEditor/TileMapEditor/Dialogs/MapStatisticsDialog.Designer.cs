@@ -32,7 +32,7 @@
             this.m_buttonClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.m_textBoxStatistics = new System.Windows.Forms.TextBox();
+            this.m_textBoxStatistics = new TileMapEditor.Controls.CustomRichTextBox();
             this.SuspendLayout();
             // 
             // m_buttonClose
@@ -67,13 +67,17 @@
             // 
             // m_textBoxStatistics
             // 
-            this.m_textBoxStatistics.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_textBoxStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_textBoxStatistics.BackColor = System.Drawing.SystemColors.Window;
+            this.m_textBoxStatistics.DetectUrls = true;
             this.m_textBoxStatistics.Location = new System.Drawing.Point(12, 12);
-            this.m_textBoxStatistics.Multiline = true;
             this.m_textBoxStatistics.Name = "m_textBoxStatistics";
             this.m_textBoxStatistics.ReadOnly = true;
             this.m_textBoxStatistics.Size = new System.Drawing.Size(560, 359);
             this.m_textBoxStatistics.TabIndex = 3;
+            this.m_textBoxStatistics.Text = "";
             // 
             // MapStatisticsDialog
             // 
@@ -92,7 +96,6 @@
             this.Text = "Map Statistics";
             this.Load += new System.EventHandler(this.OnDialogLoad);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -101,6 +104,6 @@
         private System.Windows.Forms.Button m_buttonClose;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox m_textBoxStatistics;
+        private TileMapEditor.Controls.CustomRichTextBox m_textBoxStatistics;
     }
 }

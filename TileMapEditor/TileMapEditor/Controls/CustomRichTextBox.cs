@@ -253,5 +253,15 @@ namespace TileMapEditor.Controls
 			Marshal.FreeCoTaskMem(lpar);
 			return state;
 		}
+
+        public void AppendLine()
+        {
+            AppendText("\n");
+        }
+
+        public void AppendLine(string text)
+        {
+            AppendText(text + "\n");
+        }
 	}
 }
