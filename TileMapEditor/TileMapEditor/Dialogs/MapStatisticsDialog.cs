@@ -52,9 +52,10 @@ namespace TileMapEditor.Dialogs
 
         private void DisplayLayerStatistics(Layer layer)
         {
-            // map details
+            // layer details
+            m_textBoxStatistics.InsertImage(Properties.Resources.Layer);
             m_textBoxStatistics.SelectionFont = m_headerFont;
-            m_textBoxStatistics.AppendText("Layer ");
+            m_textBoxStatistics.AppendText(" Layer ");
             m_textBoxStatistics.AppendText(layer.Map.Layers.IndexOf(layer).ToString());
             m_textBoxStatistics.AppendLine(" Details");
             m_textBoxStatistics.AppendLine();
@@ -106,6 +107,51 @@ namespace TileMapEditor.Dialogs
             DisplayCustomProperties(layer);
 
             // compute tile usage statistics
+            Dictionary<TileSheet, int> tileSheetUsage = new Dictionary<TileSheet, int>();
+            int nullTiles = 0;
+            foreach (TileSheet tileSheet in layer.Map.TileSheets)
+                tileSheetUsage[tileSheet] = 0;
+            
+            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                {
+                    Tile tile = layer.Tiles[tileX, tileY];
+                    if (tile == null)
+                        ++nullTiles;
+                    else
+                        ++tileSheetUsage[tile.TileSheet];
+                }
+            int totalTiles = layer.LayerSize.Area;
+
+            m_textBoxStatistics.AppendLine();
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendLine("Tile Sheet Usage");
+            m_textBoxStatistics.SelectionBullet = true;
+            m_textBoxStatistics.SelectionTabs = new int[] { 400 };
+            foreach (TileSheet tileSheet in layer.Map.TileSheets)
+            {
+                m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+                m_textBoxStatistics.AppendText(tileSheet.Id);
+                m_textBoxStatistics.AppendText("\t");
+
+                int usage = tileSheetUsage[tileSheet];
+                m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+                m_textBoxStatistics.AppendText(usage.ToString());
+                m_textBoxStatistics.AppendText(" (");
+                m_textBoxStatistics.AppendText((Math.Round((usage * 100.0) / totalTiles)).ToString());
+                m_textBoxStatistics.AppendLine("%)");
+            }
+
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Clear Tiles\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendText(nullTiles.ToString());
+            m_textBoxStatistics.AppendText(" (");
+            m_textBoxStatistics.AppendText(((nullTiles * 100) / totalTiles).ToString());
+            m_textBoxStatistics.AppendLine("%)");
+
+            m_textBoxStatistics.SelectionBullet = false;
         }
 
         private void DisplayTileSheetStatistics(TileSheet tileSheet)
