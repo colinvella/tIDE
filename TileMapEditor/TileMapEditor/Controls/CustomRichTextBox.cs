@@ -11,43 +11,15 @@ using System.Windows.Forms;
 namespace TileMapEditor.Controls
 {
 	public class CustomRichTextBox : RichTextBox
-	{
+    {
+        #region Privte Constants
+
         private const string RTF_HEADER = @"{\rtf1\ansi\ansicpg1252\deff0\deflang1033";
+        private const string RTF_IMAGE_POST = @"}";
         private const string FF_UNKNOWN = "UNKNOWN";
         private const int HMM_PER_INCH = 2540;
         private const int TWIPS_PER_INCH = 1440;
         private const int MM_ANISOTROPIC = 8;
-        private string RTF_IMAGE_POST = @"}";
-
-		#region Interop-Defines
-		[ StructLayout( LayoutKind.Sequential )]
-		private struct CHARFORMAT2_STRUCT
-		{
-			public UInt32	cbSize; 
-			public UInt32   dwMask; 
-			public UInt32   dwEffects; 
-			public Int32    yHeight; 
-			public Int32    yOffset; 
-			public Int32	crTextColor; 
-			public byte     bCharSet; 
-			public byte     bPitchAndFamily; 
-			[MarshalAs(UnmanagedType.ByValArray, SizeConst=32)]
-			public char[]   szFaceName; 
-			public UInt16	wWeight;
-			public UInt16	sSpacing;
-			public int		crBackColor; // Color.ToArgb() -> int
-			public int		lcid;
-			public int		dwReserved;
-			public Int16	sStyle;
-			public Int16	wKerning;
-			public byte		bUnderlineType;
-			public byte		bAnimation;
-			public byte		bRevAuthor;
-			public byte		bReserved1;
-		}
-
-		[DllImport("user32.dll", CharSet=CharSet.Auto)]
-		private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
 		private const int WM_USER			 = 0x0400;
 		private const int EM_GETCHARFORMAT	 = WM_USER+58;
@@ -64,29 +36,28 @@ namespace TileMapEditor.Controls
 		private const UInt32 CFE_PROTECTED	= 0x0010;
 		private const UInt32 CFE_LINK		= 0x0020;
 		private const UInt32 CFE_AUTOCOLOR	= 0x40000000;
-		private const UInt32 CFE_SUBSCRIPT	= 0x00010000;		/* Superscript and subscript are */
-		private const UInt32 CFE_SUPERSCRIPT= 0x00020000;		/*  mutually exclusive			 */
+		private const UInt32 CFE_SUBSCRIPT	= 0x00010000;		
+		private const UInt32 CFE_SUPERSCRIPT= 0x00020000;		
 
-		private const int CFM_SMALLCAPS		= 0x0040;			/* (*)	*/
-		private const int CFM_ALLCAPS		= 0x0080;			/* Displayed by 3.0	*/
-		private const int CFM_HIDDEN		= 0x0100;			/* Hidden by 3.0 */
-		private const int CFM_OUTLINE		= 0x0200;			/* (*)	*/
-		private const int CFM_SHADOW		= 0x0400;			/* (*)	*/
-		private const int CFM_EMBOSS		= 0x0800;			/* (*)	*/
-		private const int CFM_IMPRINT		= 0x1000;			/* (*)	*/
+		private const int CFM_SMALLCAPS		= 0x0040;			
+		private const int CFM_ALLCAPS		= 0x0080;			
+		private const int CFM_HIDDEN		= 0x0100;			
+		private const int CFM_OUTLINE		= 0x0200;			
+		private const int CFM_SHADOW		= 0x0400;			
+		private const int CFM_EMBOSS		= 0x0800;			
+		private const int CFM_IMPRINT		= 0x1000;			
 		private const int CFM_DISABLED		= 0x2000;
 		private const int CFM_REVISED		= 0x4000;
 
 		private const int CFM_BACKCOLOR		= 0x04000000;
 		private const int CFM_LCID			= 0x02000000;
-		private const int CFM_UNDERLINETYPE	= 0x00800000;		/* Many displayed by 3.0 */
+		private const int CFM_UNDERLINETYPE	= 0x00800000;		
 		private const int CFM_WEIGHT		= 0x00400000;
-		private const int CFM_SPACING		= 0x00200000;		/* Displayed by 3.0	*/
-		private const int CFM_KERNING		= 0x00100000;		/* (*)	*/
-		private const int CFM_STYLE			= 0x00080000;		/* (*)	*/
-		private const int CFM_ANIMATION		= 0x00040000;		/* (*)	*/
+		private const int CFM_SPACING		= 0x00200000;		
+		private const int CFM_KERNING		= 0x00100000;		
+		private const int CFM_STYLE			= 0x00080000;		
+		private const int CFM_ANIMATION		= 0x00040000;		
 		private const int CFM_REVAUTHOR		= 0x00008000;
-
 
 		private const UInt32 CFM_BOLD		= 0x00000001;
 		private const UInt32 CFM_ITALIC		= 0x00000002;
@@ -104,17 +75,19 @@ namespace TileMapEditor.Controls
 
 		private const byte CFU_UNDERLINENONE		= 0x00000000;
 		private const byte CFU_UNDERLINE			= 0x00000001;
-		private const byte CFU_UNDERLINEWORD		= 0x00000002; /* (*) displayed as ordinary underline	*/
-		private const byte CFU_UNDERLINEDOUBLE		= 0x00000003; /* (*) displayed as ordinary underline	*/
+		private const byte CFU_UNDERLINEWORD		= 0x00000002; 
+		private const byte CFU_UNDERLINEDOUBLE		= 0x00000003; 
 		private const byte CFU_UNDERLINEDOTTED		= 0x00000004;
 		private const byte CFU_UNDERLINEDASH		= 0x00000005;
 		private const byte CFU_UNDERLINEDASHDOT		= 0x00000006;
 		private const byte CFU_UNDERLINEDASHDOTDOT	= 0x00000007;
 		private const byte CFU_UNDERLINEWAVE		= 0x00000008;
 		private const byte CFU_UNDERLINETHICK		= 0x00000009;
-		private const byte CFU_UNDERLINEHAIRLINE	= 0x0000000A; /* (*) displayed as ordinary underline	*/
+		private const byte CFU_UNDERLINEHAIRLINE	= 0x0000000A; 
 
 		#endregion
+
+        #region Private Enumerations
 
         private enum EmfToWmfBitsFlags
         {
@@ -123,6 +96,36 @@ namespace TileMapEditor.Controls
             EmfToWmfBitsFlagsIncludePlaceable = 0x00000002,
             EmfToWmfBitsFlagsNoXORClip = 0x00000004
         };
+
+        #endregion
+
+        #region Private Structures
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct CHARFORMAT2_STRUCT
+        {
+            public UInt32 cbSize;
+            public UInt32 dwMask;
+            public UInt32 dwEffects;
+            public Int32 yHeight;
+            public Int32 yOffset;
+            public Int32 crTextColor;
+            public byte bCharSet;
+            public byte bPitchAndFamily;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+            public char[] szFaceName;
+            public UInt16 wWeight;
+            public UInt16 sSpacing;
+            public int crBackColor; // Color.ToArgb() -> int
+            public int lcid;
+            public int dwReserved;
+            public Int16 sStyle;
+            public Int16 wKerning;
+            public byte bUnderlineType;
+            public byte bAnimation;
+            public byte bRevAuthor;
+            public byte bReserved1;
+        }
 
         private struct RtfFontFamilyDef
         {
@@ -136,177 +139,191 @@ namespace TileMapEditor.Controls
             public const string BiDirect = @"\fbidi";
         }
 
-        private HybridDictionary rtfFontFamily;
-        private float xDpi;
-        private float yDpi;
+        #endregion
+
+        #region Private Variables
+
+        private HybridDictionary m_rtfFontFamily;
+        private float m_xDpi;
+        private float m_yDpi;
+
+        #endregion
+
+        #region Private Static Methods
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
         [DllImportAttribute("gdiplus.dll")]
         private static extern uint GdipEmfToWmfBits(IntPtr _hEmf, uint _bufferSize,
             byte[] _buffer, int _mappingMode, EmfToWmfBitsFlags _flags);
 
-        private string GetFontTable(Font _font)
+        #endregion
+
+        #region Private Methods
+
+        private void SetSelectionStyle(UInt32 mask, UInt32 effect)
         {
+            CHARFORMAT2_STRUCT cf = new CHARFORMAT2_STRUCT();
+            cf.cbSize = (UInt32)Marshal.SizeOf(cf);
+            cf.dwMask = mask;
+            cf.dwEffects = effect;
 
-            StringBuilder _fontTable = new StringBuilder();
+            IntPtr wpar = new IntPtr(SCF_SELECTION);
+            IntPtr lpar = Marshal.AllocCoTaskMem(Marshal.SizeOf(cf));
+            Marshal.StructureToPtr(cf, lpar, false);
 
-            // Append table control string
-            _fontTable.Append(@"{\fonttbl{\f0");
-            _fontTable.Append(@"\");
+            IntPtr res = SendMessage(Handle, EM_SETCHARFORMAT, wpar, lpar);
 
-            // If the font's family corresponds to an RTF family, append the
-            // RTF family name, else, append the RTF for unknown font family.
-            if (rtfFontFamily.Contains(_font.FontFamily.Name))
-                _fontTable.Append(rtfFontFamily[_font.FontFamily.Name]);
+            Marshal.FreeCoTaskMem(lpar);
+        }
+
+        private int GetSelectionStyle(UInt32 mask, UInt32 effect)
+        {
+            CHARFORMAT2_STRUCT cf = new CHARFORMAT2_STRUCT();
+            cf.cbSize = (UInt32)Marshal.SizeOf(cf);
+            cf.szFaceName = new char[32];
+
+            IntPtr wpar = new IntPtr(SCF_SELECTION);
+            IntPtr lpar = Marshal.AllocCoTaskMem(Marshal.SizeOf(cf));
+            Marshal.StructureToPtr(cf, lpar, false);
+
+            IntPtr res = SendMessage(Handle, EM_GETCHARFORMAT, wpar, lpar);
+
+            cf = (CHARFORMAT2_STRUCT)Marshal.PtrToStructure(lpar, typeof(CHARFORMAT2_STRUCT));
+
+            int state;
+            // dwMask holds the information which properties are consistent throughout the selection:
+            if ((cf.dwMask & mask) == mask)
+            {
+                if ((cf.dwEffects & effect) == effect)
+                    state = 1;
+                else
+                    state = 0;
+            }
             else
-                _fontTable.Append(rtfFontFamily[FF_UNKNOWN]);
+            {
+                state = -1;
+            }
 
-            // \fcharset specifies the character set of a font in the font table.
-            // 0 is for ANSI.
-            _fontTable.Append(@"\fcharset0 ");
-
-            // Append the name of the font
-            _fontTable.Append(_font.Name);
-
-            // Close control string
-            _fontTable.Append(@";}}");
-
-            return _fontTable.ToString();
+            Marshal.FreeCoTaskMem(lpar);
+            return state;
         }
 
-        private string GetImagePrefix(Image _image)
+        private string GetFontTable(Font font)
         {
+            StringBuilder stringBuilder = new StringBuilder();
 
-            StringBuilder _rtf = new StringBuilder();
+            stringBuilder.Append(@"{\fonttbl{\f0");
+            stringBuilder.Append(@"\");
 
-            // Calculate the current width of the image in (0.01)mm
-            int picw = (int)Math.Round((_image.Width / xDpi) * HMM_PER_INCH);
+            if (m_rtfFontFamily.Contains(font.FontFamily.Name))
+                stringBuilder.Append(m_rtfFontFamily[font.FontFamily.Name]);
+            else
+                stringBuilder.Append(m_rtfFontFamily[FF_UNKNOWN]);
 
-            // Calculate the current height of the image in (0.01)mm
-            int pich = (int)Math.Round((_image.Height / yDpi) * HMM_PER_INCH);
+            // set ANSII char set
+            stringBuilder.Append(@"\fcharset0 ");
+            stringBuilder.Append(font.Name);
+            stringBuilder.Append(@";}}");
 
-            // Calculate the target width of the image in twips
-            int picwgoal = (int)Math.Round((_image.Width / xDpi) * TWIPS_PER_INCH);
-
-            // Calculate the target height of the image in twips
-            int pichgoal = (int)Math.Round((_image.Height / yDpi) * TWIPS_PER_INCH);
-
-            // Append values to RTF string
-            _rtf.Append(@"{\pict\wmetafile8");
-            _rtf.Append(@"\picw");
-            _rtf.Append(picw);
-            _rtf.Append(@"\pich");
-            _rtf.Append(pich);
-            _rtf.Append(@"\picwgoal");
-            _rtf.Append(picwgoal);
-            _rtf.Append(@"\pichgoal");
-            _rtf.Append(pichgoal);
-            _rtf.Append(" ");
-
-            return _rtf.ToString();
+            return stringBuilder.ToString();
         }
 
-        private string GetRtfImage(Image _image)
+        private string GenerateRtfImagePrefix(Image image)
         {
+            StringBuilder stringBuilder = new StringBuilder();
 
-            StringBuilder _rtf = null;
+            int sourceWidthMM = (int)Math.Round((image.Width / m_xDpi) * HMM_PER_INCH);
+            int sourceHeightMM = (int)Math.Round((image.Height / m_yDpi) * HMM_PER_INCH);
 
-            // Used to store the enhanced metafile
-            MemoryStream _stream = null;
+            int destWidthTwips = (int)Math.Round((image.Width / m_xDpi) * TWIPS_PER_INCH);
+            int destHeightTwips = (int)Math.Round((image.Height / m_yDpi) * TWIPS_PER_INCH);
 
-            // Used to create the metafile and draw the image
-            Graphics _graphics = null;
+            stringBuilder.Append(@"{\pict\wmetafile8");
+            stringBuilder.Append(@"\picw");
+            stringBuilder.Append(sourceWidthMM);
+            stringBuilder.Append(@"\pich");
+            stringBuilder.Append(sourceHeightMM);
+            stringBuilder.Append(@"\picwgoal");
+            stringBuilder.Append(destWidthTwips);
+            stringBuilder.Append(@"\pichgoal");
+            stringBuilder.Append(destHeightTwips);
+            stringBuilder.Append(" ");
 
-            // The enhanced metafile
-            Metafile _metaFile = null;
+            return stringBuilder.ToString();
+        }
 
-            // Handle to the device context used to create the metafile
-            IntPtr _hdc;
+        private string GenerateImageRtf(Image image)
+        {
+            MemoryStream metaFileStream = null;
+            Graphics graphics = null;
+            Metafile metaFile = null;
 
             try
             {
-                _rtf = new StringBuilder();
-                _stream = new MemoryStream();
+                StringBuilder stringBuilder = new StringBuilder();
+                metaFileStream = new MemoryStream();
 
-                // Get a graphics context from the RichTextBox
-                using (_graphics = this.CreateGraphics())
+                using (graphics = this.CreateGraphics())
                 {
-
-                    // Get the device context from the graphics context
-                    _hdc = _graphics.GetHdc();
-
-                    // Create a new Enhanced Metafile from the device context
-                    _metaFile = new Metafile(_stream, _hdc);
-
-                    // Release the device context
-                    _graphics.ReleaseHdc(_hdc);
+                    IntPtr hdc = graphics.GetHdc();
+                    metaFile = new Metafile(metaFileStream, hdc);
+                    graphics.ReleaseHdc(hdc);
                 }
 
-                // Get a graphics context from the Enhanced Metafile
-                using (_graphics = Graphics.FromImage(_metaFile))
+                using (graphics = Graphics.FromImage(metaFile))
                 {
-
-                    // Draw the image on the Enhanced Metafile
-                    _graphics.DrawImage(_image, new Rectangle(0, 0, _image.Width, _image.Height));
-
+                    graphics.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height));
                 }
 
-                // Get the handle of the Enhanced Metafile
-                IntPtr _hEmf = _metaFile.GetHenhmetafile();
+                IntPtr hMetaFile = metaFile.GetHenhmetafile();
 
-                // A call to EmfToWmfBits with a null buffer return the size of the
-                // buffer need to store the WMF bits.  Use this to get the buffer
-                // size.
-                uint _bufferSize = GdipEmfToWmfBits(_hEmf, 0, null, MM_ANISOTROPIC,
+                // get size (buller = null)
+                uint bufferSize = GdipEmfToWmfBits(hMetaFile, 0, null, MM_ANISOTROPIC,
+                    EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault);
+                byte[] buffer = new byte[bufferSize];
+
+                // do copy (buffer != null, return ignored)
+                GdipEmfToWmfBits(hMetaFile, bufferSize, buffer, MM_ANISOTROPIC,
                     EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault);
 
-                // Create an array to hold the bits
-                byte[] _buffer = new byte[_bufferSize];
+                stringBuilder.Append(BitConverter.ToString(buffer).Replace("-", ""));
 
-                // A call to EmfToWmfBits with a valid buffer copies the bits into the
-                // buffer an returns the number of bits in the WMF.  
-                uint _convertedSize = GdipEmfToWmfBits(_hEmf, _bufferSize, _buffer, MM_ANISOTROPIC,
-                    EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault);
-
-                // Append the bits to the RTF string
-                for (int i = 0; i < _buffer.Length; ++i)
-                {
-                    _rtf.Append(String.Format("{0:X2}", _buffer[i]));
-                }
-
-                return _rtf.ToString();
+                return stringBuilder.ToString();
             }
             finally
             {
-                if (_graphics != null)
-                    _graphics.Dispose();
-                if (_metaFile != null)
-                    _metaFile.Dispose();
-                if (_stream != null)
-                    _stream.Close();
+                if (graphics != null)
+                    graphics.Dispose();
+                if (metaFile != null)
+                    metaFile.Dispose();
+                if (metaFileStream != null)
+                    metaFileStream.Close();
             }
         }
 
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Constructs a new CustomRichTextBox component
+        /// </summary>
         public CustomRichTextBox()
 		{
-            rtfFontFamily = new HybridDictionary();
-            rtfFontFamily.Add(FontFamily.GenericMonospace.Name, RtfFontFamilyDef.Modern);
-            rtfFontFamily.Add(FontFamily.GenericSansSerif, RtfFontFamilyDef.Swiss);
-            rtfFontFamily.Add(FontFamily.GenericSerif, RtfFontFamilyDef.Roman);
-            rtfFontFamily.Add(FF_UNKNOWN, RtfFontFamilyDef.Unknown);
+            m_rtfFontFamily = new HybridDictionary();
+            m_rtfFontFamily.Add(FontFamily.GenericMonospace.Name, RtfFontFamilyDef.Modern);
+            m_rtfFontFamily.Add(FontFamily.GenericSansSerif, RtfFontFamilyDef.Swiss);
+            m_rtfFontFamily.Add(FontFamily.GenericSerif, RtfFontFamilyDef.Roman);
+            m_rtfFontFamily.Add(FF_UNKNOWN, RtfFontFamilyDef.Unknown);
 
             using (Graphics _graphics = this.CreateGraphics())
             {
-                xDpi = _graphics.DpiX;
-                yDpi = _graphics.DpiY;
+                m_xDpi = _graphics.DpiX;
+                m_yDpi = _graphics.DpiY;
             }
         }
-
-		[DefaultValue(false)]
-		public new bool DetectUrls
-		{
-			get { return base.DetectUrls; }
-			set { base.DetectUrls = value; }
-		}
 
 		/// <summary>
 		/// Insert a given text as a link into the RichTextBox at the current insert position.
@@ -330,7 +347,7 @@ namespace TileMapEditor.Controls
 			this.SelectionStart = position;
 			this.SelectedText = text;
 			this.Select(position, text.Length);
-			this.SetSelectionLink(true);
+			this.SelectionLink = true;
 			this.Select(position + text.Length, 0);
 		}
 		
@@ -349,7 +366,7 @@ namespace TileMapEditor.Controls
             int position = this.SelectionStart;
             this.SelectedRtf = @"{\rtf1\ansi " + text + @"\v #" + hyperlink + @"\v0}";
             this.Select(position, text.Length + hyperlink.Length + 1);
-            this.SetSelectionLink(true);
+            this.SelectionLink = true;
             this.Select(position + text.Length + hyperlink.Length + 1, 0);
         }
 
@@ -370,108 +387,81 @@ namespace TileMapEditor.Controls
 			this.SelectionStart = position;
 			this.SelectedRtf = @"{\rtf1\ansi "+text+@"\v #"+hyperlink+@"\v0}";
 			this.Select(position, text.Length + hyperlink.Length + 1);
-			this.SetSelectionLink(true);
+            this.SelectionLink = true;
 			this.Select(position + text.Length + hyperlink.Length + 1, 0);
 		}
 
-		/// <summary>
-		/// Set the current selection's link style
-		/// </summary>
-		/// <param name="link">true: set link style, false: clear link style</param>
-		public void SetSelectionLink(bool link)
-		{
-			SetSelectionStyle(CFM_LINK, link ? CFE_LINK : 0);
-		}
-		/// <summary>
-		/// Get the link style for the current selection
-		/// </summary>
-		/// <returns>0: link style not set, 1: link style set, -1: mixed</returns>
-		public int GetSelectionLink()
-		{
-			return GetSelectionStyle(CFM_LINK, CFE_LINK);
-		}
-
-
-		private void SetSelectionStyle(UInt32 mask, UInt32 effect)
-		{
-			CHARFORMAT2_STRUCT cf = new CHARFORMAT2_STRUCT();
-			cf.cbSize = (UInt32)Marshal.SizeOf(cf);
-			cf.dwMask = mask;
-			cf.dwEffects = effect;
-
-			IntPtr wpar = new IntPtr(SCF_SELECTION);
-			IntPtr lpar = Marshal.AllocCoTaskMem( Marshal.SizeOf( cf ) ); 
-			Marshal.StructureToPtr(cf, lpar, false);
-
-			IntPtr res = SendMessage(Handle, EM_SETCHARFORMAT, wpar, lpar);
-
-			Marshal.FreeCoTaskMem(lpar);
-		}
-
-		private int GetSelectionStyle(UInt32 mask, UInt32 effect)
-		{
-			CHARFORMAT2_STRUCT cf = new CHARFORMAT2_STRUCT();
-			cf.cbSize = (UInt32)Marshal.SizeOf(cf);
-			cf.szFaceName = new char[32];
-
-			IntPtr wpar = new IntPtr(SCF_SELECTION);
-			IntPtr lpar = 	Marshal.AllocCoTaskMem( Marshal.SizeOf( cf ) ); 
-			Marshal.StructureToPtr(cf, lpar, false);
-
-			IntPtr res = SendMessage(Handle, EM_GETCHARFORMAT, wpar, lpar);
-
-			cf = (CHARFORMAT2_STRUCT)Marshal.PtrToStructure(lpar, typeof(CHARFORMAT2_STRUCT));
-
-			int state;
-			// dwMask holds the information which properties are consistent throughout the selection:
-			if ((cf.dwMask & mask) == mask) 
-			{
-				if ((cf.dwEffects & effect) == effect)
-					state = 1;
-				else
-					state = 0;
-			}
-			else
-			{
-				state = -1;
-			}
-			
-			Marshal.FreeCoTaskMem(lpar);
-			return state;
-		}
-
+        /// <summary>
+        /// Starts a new line of text
+        /// </summary>
         public void AppendLine()
         {
             AppendText("\n");
         }
 
+        /// <summary>
+        /// Appends the given text followed by a new line
+        /// </summary>
+        /// <param name="text">Text to output</param>
         public void AppendLine(string text)
         {
             AppendText(text + "\n");
         }
 
-        public void InsertImage(Image _image)
+        /// <summary>
+        /// Inserts the given image into the current selectiosn
+        /// </summary>
+        /// <param name="image">Image to insert</param>
+        public void InsertImage(Image image)
         {
-            StringBuilder _rtf = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
 
-            // Append the RTF header
-            _rtf.Append(RTF_HEADER);
+            stringBuilder.Append(RTF_HEADER);
+            stringBuilder.Append(GetFontTable(this.Font));
+            stringBuilder.Append(GenerateRtfImagePrefix(image));
+            stringBuilder.Append(GenerateImageRtf(image));
+            stringBuilder.Append(RTF_IMAGE_POST);
 
-            // Create the font table using the RichTextBox's current font and append
-            // it to the RTF string
-            _rtf.Append(GetFontTable(this.Font));
-
-            // Create the image control string and append it to the RTF string
-            _rtf.Append(GetImagePrefix(_image));
-
-            // Create the Windows Metafile and append its bytes in HEX format
-            _rtf.Append(GetRtfImage(_image));
-
-            // Close the RTF image control string
-            _rtf.Append(RTF_IMAGE_POST);
-
-            this.SelectedRtf = _rtf.ToString();
+            this.SelectedRtf = stringBuilder.ToString();
         }
 
-	}
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Indicates if, or set the current selection is a link or otherwise
+        /// </summary>
+        public bool SelectionLink
+        {
+            get
+            {
+                return GetSelectionStyle(CFM_LINK, CFE_LINK) == 1;
+            }
+            set
+            {
+                SetSelectionStyle(CFM_LINK, value ? CFE_LINK : 0);
+            }
+        }
+
+        /// <summary>
+        /// Indicates if the current selection is a partial link
+        /// </summary>
+        public bool SelectionLinkMixed
+        {
+            get
+            {
+                return GetSelectionStyle(CFM_LINK, CFE_LINK) == -1;
+            }
+        }
+
+        [DefaultValue(false)]
+        public new bool DetectUrls
+        {
+            get { return base.DetectUrls; }
+            set { base.DetectUrls = value; }
+        }
+
+        #endregion
+    }
 }
