@@ -1,13 +1,24 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace TileMapEditor.Controls
 {
 	public class CustomRichTextBox : RichTextBox
 	{
+        private const string RTF_HEADER = @"{\rtf1\ansi\ansicpg1252\deff0\deflang1033";
+        private const string FF_UNKNOWN = "UNKNOWN";
+        private const int HMM_PER_INCH = 2540;
+        private const int TWIPS_PER_INCH = 1440;
+        private const int MM_ANISOTROPIC = 8;
+        private string RTF_IMAGE_POST = @"}";
+
 		#region Interop-Defines
 		[ StructLayout( LayoutKind.Sequential )]
 		private struct CHARFORMAT2_STRUCT
@@ -46,7 +57,6 @@ namespace TileMapEditor.Controls
 		private const int SCF_WORD		= 0x0002;
 		private const int SCF_ALL		= 0x0004;
 
-		#region CHARFORMAT2 Flags
 		private const UInt32 CFE_BOLD		= 0x0001;
 		private const UInt32 CFE_ITALIC		= 0x0002;
 		private const UInt32 CFE_UNDERLINE	= 0x0004;
@@ -106,14 +116,190 @@ namespace TileMapEditor.Controls
 
 		#endregion
 
-		#endregion
+        private enum EmfToWmfBitsFlags
+        {
+            EmfToWmfBitsFlagsDefault = 0x00000000,
+            EmfToWmfBitsFlagsEmbedEmf = 0x00000001,
+            EmfToWmfBitsFlagsIncludePlaceable = 0x00000002,
+            EmfToWmfBitsFlagsNoXORClip = 0x00000004
+        };
+
+        private struct RtfFontFamilyDef
+        {
+            public const string Unknown = @"\fnil";
+            public const string Roman = @"\froman";
+            public const string Swiss = @"\fswiss";
+            public const string Modern = @"\fmodern";
+            public const string Script = @"\fscript";
+            public const string Decor = @"\fdecor";
+            public const string Technical = @"\ftech";
+            public const string BiDirect = @"\fbidi";
+        }
+
+        private HybridDictionary rtfFontFamily;
+        private float xDpi;
+        private float yDpi;
+
+        [DllImportAttribute("gdiplus.dll")]
+        private static extern uint GdipEmfToWmfBits(IntPtr _hEmf, uint _bufferSize,
+            byte[] _buffer, int _mappingMode, EmfToWmfBitsFlags _flags);
+
+        private string GetFontTable(Font _font)
+        {
+
+            StringBuilder _fontTable = new StringBuilder();
+
+            // Append table control string
+            _fontTable.Append(@"{\fonttbl{\f0");
+            _fontTable.Append(@"\");
+
+            // If the font's family corresponds to an RTF family, append the
+            // RTF family name, else, append the RTF for unknown font family.
+            if (rtfFontFamily.Contains(_font.FontFamily.Name))
+                _fontTable.Append(rtfFontFamily[_font.FontFamily.Name]);
+            else
+                _fontTable.Append(rtfFontFamily[FF_UNKNOWN]);
+
+            // \fcharset specifies the character set of a font in the font table.
+            // 0 is for ANSI.
+            _fontTable.Append(@"\fcharset0 ");
+
+            // Append the name of the font
+            _fontTable.Append(_font.Name);
+
+            // Close control string
+            _fontTable.Append(@";}}");
+
+            return _fontTable.ToString();
+        }
+
+        private string GetImagePrefix(Image _image)
+        {
+
+            StringBuilder _rtf = new StringBuilder();
+
+            // Calculate the current width of the image in (0.01)mm
+            int picw = (int)Math.Round((_image.Width / xDpi) * HMM_PER_INCH);
+
+            // Calculate the current height of the image in (0.01)mm
+            int pich = (int)Math.Round((_image.Height / yDpi) * HMM_PER_INCH);
+
+            // Calculate the target width of the image in twips
+            int picwgoal = (int)Math.Round((_image.Width / xDpi) * TWIPS_PER_INCH);
+
+            // Calculate the target height of the image in twips
+            int pichgoal = (int)Math.Round((_image.Height / yDpi) * TWIPS_PER_INCH);
+
+            // Append values to RTF string
+            _rtf.Append(@"{\pict\wmetafile8");
+            _rtf.Append(@"\picw");
+            _rtf.Append(picw);
+            _rtf.Append(@"\pich");
+            _rtf.Append(pich);
+            _rtf.Append(@"\picwgoal");
+            _rtf.Append(picwgoal);
+            _rtf.Append(@"\pichgoal");
+            _rtf.Append(pichgoal);
+            _rtf.Append(" ");
+
+            return _rtf.ToString();
+        }
+
+        private string GetRtfImage(Image _image)
+        {
+
+            StringBuilder _rtf = null;
+
+            // Used to store the enhanced metafile
+            MemoryStream _stream = null;
+
+            // Used to create the metafile and draw the image
+            Graphics _graphics = null;
+
+            // The enhanced metafile
+            Metafile _metaFile = null;
+
+            // Handle to the device context used to create the metafile
+            IntPtr _hdc;
+
+            try
+            {
+                _rtf = new StringBuilder();
+                _stream = new MemoryStream();
+
+                // Get a graphics context from the RichTextBox
+                using (_graphics = this.CreateGraphics())
+                {
+
+                    // Get the device context from the graphics context
+                    _hdc = _graphics.GetHdc();
+
+                    // Create a new Enhanced Metafile from the device context
+                    _metaFile = new Metafile(_stream, _hdc);
+
+                    // Release the device context
+                    _graphics.ReleaseHdc(_hdc);
+                }
+
+                // Get a graphics context from the Enhanced Metafile
+                using (_graphics = Graphics.FromImage(_metaFile))
+                {
+
+                    // Draw the image on the Enhanced Metafile
+                    _graphics.DrawImage(_image, new Rectangle(0, 0, _image.Width, _image.Height));
+
+                }
+
+                // Get the handle of the Enhanced Metafile
+                IntPtr _hEmf = _metaFile.GetHenhmetafile();
+
+                // A call to EmfToWmfBits with a null buffer return the size of the
+                // buffer need to store the WMF bits.  Use this to get the buffer
+                // size.
+                uint _bufferSize = GdipEmfToWmfBits(_hEmf, 0, null, MM_ANISOTROPIC,
+                    EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault);
+
+                // Create an array to hold the bits
+                byte[] _buffer = new byte[_bufferSize];
+
+                // A call to EmfToWmfBits with a valid buffer copies the bits into the
+                // buffer an returns the number of bits in the WMF.  
+                uint _convertedSize = GdipEmfToWmfBits(_hEmf, _bufferSize, _buffer, MM_ANISOTROPIC,
+                    EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault);
+
+                // Append the bits to the RTF string
+                for (int i = 0; i < _buffer.Length; ++i)
+                {
+                    _rtf.Append(String.Format("{0:X2}", _buffer[i]));
+                }
+
+                return _rtf.ToString();
+            }
+            finally
+            {
+                if (_graphics != null)
+                    _graphics.Dispose();
+                if (_metaFile != null)
+                    _metaFile.Dispose();
+                if (_stream != null)
+                    _stream.Close();
+            }
+        }
 
         public CustomRichTextBox()
 		{
-			// Otherwise, non-standard links get lost when user starts typing
-			// next to a non-standard link
-			//this.DetectUrls = false;
-		}
+            rtfFontFamily = new HybridDictionary();
+            rtfFontFamily.Add(FontFamily.GenericMonospace.Name, RtfFontFamilyDef.Modern);
+            rtfFontFamily.Add(FontFamily.GenericSansSerif, RtfFontFamilyDef.Swiss);
+            rtfFontFamily.Add(FontFamily.GenericSerif, RtfFontFamilyDef.Roman);
+            rtfFontFamily.Add(FF_UNKNOWN, RtfFontFamilyDef.Unknown);
+
+            using (Graphics _graphics = this.CreateGraphics())
+            {
+                xDpi = _graphics.DpiX;
+                yDpi = _graphics.DpiY;
+            }
+        }
 
 		[DefaultValue(false)]
 		public new bool DetectUrls
@@ -263,5 +449,29 @@ namespace TileMapEditor.Controls
         {
             AppendText(text + "\n");
         }
+
+        public void InsertImage(Image _image)
+        {
+            StringBuilder _rtf = new StringBuilder();
+
+            // Append the RTF header
+            _rtf.Append(RTF_HEADER);
+
+            // Create the font table using the RichTextBox's current font and append
+            // it to the RTF string
+            _rtf.Append(GetFontTable(this.Font));
+
+            // Create the image control string and append it to the RTF string
+            _rtf.Append(GetImagePrefix(_image));
+
+            // Create the Windows Metafile and append its bytes in HEX format
+            _rtf.Append(GetRtfImage(_image));
+
+            // Close the RTF image control string
+            _rtf.Append(RTF_IMAGE_POST);
+
+            this.SelectedRtf = _rtf.ToString();
+        }
+
 	}
 }

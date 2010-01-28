@@ -115,8 +115,9 @@ namespace TileMapEditor.Dialogs
         private void DisplayMapStatistics(Map map)
         {
             // map details
+            m_textBoxStatistics.InsertImage(Properties.Resources.Map);
             m_textBoxStatistics.SelectionFont = m_headerFont;
-            m_textBoxStatistics.AppendLine("Map Details");
+            m_textBoxStatistics.AppendLine(" Map Details");
             m_textBoxStatistics.AppendLine();
 
             // set indentation
