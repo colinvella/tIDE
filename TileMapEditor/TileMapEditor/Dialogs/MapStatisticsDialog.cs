@@ -75,11 +75,11 @@ namespace TileMapEditor.Dialogs
             m_textBoxStatistics.AppendText("Description\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
-            m_textBoxStatistics.AppendLine(layer.Description.Length == 0 ? "(no description)" : m_map.Description);
+            m_textBoxStatistics.AppendLine(layer.Description.Length == 0 ? "(no description)" : layer.Description);
 
             // layer size
             m_textBoxStatistics.SelectionFont = m_propertyNameFont;
-            m_textBoxStatistics.AppendText("Layer Size\t");
+            m_textBoxStatistics.AppendText("Size\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
             m_textBoxStatistics.AppendText(layer.LayerSize.ToString());
@@ -152,10 +152,118 @@ namespace TileMapEditor.Dialogs
             m_textBoxStatistics.AppendLine("%)");
 
             m_textBoxStatistics.SelectionBullet = false;
+
+            m_textBoxStatistics.AppendLine();
         }
 
         private void DisplayTileSheetStatistics(TileSheet tileSheet)
         {
+            // tile sheet details
+            m_textBoxStatistics.InsertImage(Properties.Resources.TileSheet);
+            m_textBoxStatistics.SelectionFont = m_headerFont;
+            m_textBoxStatistics.AppendText(" Tile Sheet ");
+            m_textBoxStatistics.AppendText(tileSheet.Map.TileSheets.IndexOf(tileSheet).ToString());
+            m_textBoxStatistics.AppendLine(" Details");
+            m_textBoxStatistics.AppendLine();
+
+            // set indentation
+            m_textBoxStatistics.SelectionTabs = new int[] { 170 };
+
+            // tile sheet id
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("ID\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendLine(tileSheet.Id);
+
+            // tile sheet description
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Description\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendLine(tileSheet.Description.Length == 0 ? "(no description)" : tileSheet.Description);
+
+            // image source
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Image Source\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendLine(tileSheet.ImageSource);
+
+            // sheet size
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Sheet Size\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendText(tileSheet.SheetSize.ToString());
+            m_textBoxStatistics.AppendText(" (");
+            m_textBoxStatistics.AppendText(tileSheet.TileCount.ToString());
+            m_textBoxStatistics.AppendLine(") tiles");
+
+            // tile size
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Tile Size\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendText(tileSheet.TileSize.ToString());
+            m_textBoxStatistics.AppendLine(" pixels");
+
+            // margin
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Left, Top Margin\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendText(tileSheet.Margin.ToString());
+            m_textBoxStatistics.AppendLine(" pixels");
+
+            // spacing
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendText("Hor, Ver Spacing\t");
+
+            m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+            m_textBoxStatistics.AppendText(tileSheet.Spacing.ToString());
+            m_textBoxStatistics.AppendLine(" pixels");
+
+            // custom properties
+            m_textBoxStatistics.AppendLine();
+            DisplayCustomProperties(tileSheet);
+
+            // compute tile usage statistics per layer
+
+            m_textBoxStatistics.AppendLine();
+            m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+            m_textBoxStatistics.AppendLine("Tile Sheet Usage");
+            m_textBoxStatistics.SelectionBullet = true;
+            m_textBoxStatistics.SelectionTabs = new int[] { 400 };
+
+            foreach (Layer layer in tileSheet.Map.Layers)
+            {
+                int totalTiles = layer.LayerSize.Area;
+
+                int tileSheetTiles = 0;
+                for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+                    for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                    {
+                        Tile tile = layer.Tiles[tileX, tileY];
+                        if (tile != null && tile.TileSheet == tileSheet)
+                            ++tileSheetTiles;
+                    }
+
+                m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+                m_textBoxStatistics.AppendText("Layer ");
+                m_textBoxStatistics.AppendText(tileSheet.Map.Layers.IndexOf(layer).ToString());
+                m_textBoxStatistics.AppendText("\t");
+
+                m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+                m_textBoxStatistics.AppendText(tileSheetTiles.ToString());
+                m_textBoxStatistics.AppendText(" (");
+                m_textBoxStatistics.AppendText((Math.Round((tileSheetTiles * 100.0) / totalTiles)).ToString());
+                m_textBoxStatistics.AppendLine("%)");
+            }
+
+            m_textBoxStatistics.SelectionBullet = false;
+
+            m_textBoxStatistics.AppendLine();
         }
 
         private void DisplayMapStatistics(Map map)
