@@ -85,6 +85,39 @@ namespace TileMapEditor.Controls
             return layerLocation;
         }
 
+        private void PerformAutoScroll()
+        {
+            int deltaX = Math.Max(1, m_selectedLayer.TileSize.Width / 8);
+            int deltaY = Math.Max(1, m_selectedLayer.TileSize.Height / 8);
+
+            if (m_mouseLocation.X < m_selectedLayer.TileSize.Width)
+            {
+                int newScrollValue = Math.Max(m_horizontalScrollBar.Minimum, m_horizontalScrollBar.Value - deltaX);
+                m_horizontalScrollBar.Value = newScrollValue;
+                OnHorizontalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
+            }
+            else if (m_mouseLocation.X > m_viewport.Size.Width - m_selectedLayer.TileSize.Width)
+            {
+                int newScrollValue = Math.Min(m_horizontalScrollBar.Maximum, m_horizontalScrollBar.Value + deltaX);
+                m_horizontalScrollBar.Value = newScrollValue;
+                OnHorizontalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
+            }
+
+
+            if (m_mouseLocation.Y < m_selectedLayer.TileSize.Height)
+            {
+                int newScrollValue = Math.Max(m_verticalScrollBar.Minimum, m_verticalScrollBar.Value - deltaY);
+                m_verticalScrollBar.Value = newScrollValue;
+                OnVerticalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
+            }
+            else if (m_mouseLocation.Y > m_viewport.Size.Height - m_selectedLayer.TileSize.Height)
+            {
+                int newScrollValue = Math.Min(m_verticalScrollBar.Maximum, m_verticalScrollBar.Value + deltaY);
+                m_verticalScrollBar.Value = newScrollValue;
+                OnVerticalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
+            }
+        }
+
         private void SelectTiles()
         {
             if (m_selectedLayer == null)
@@ -518,6 +551,8 @@ namespace TileMapEditor.Controls
 
             if (m_selectedLayer == null)
                 return;
+
+            PerformAutoScroll();
 
             m_tileLayerLocation
                 = ConvertViewportOffsetToLayerLocation(m_mouseLocation);
