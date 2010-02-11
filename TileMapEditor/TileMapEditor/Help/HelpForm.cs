@@ -142,7 +142,8 @@ namespace TileMapEditor.Help
             {
                 string resourceName = topicNode.Tag.ToString();
                 byte[] resourceContent = LoadHelpContent(resourceName);
-                BuildIndex(resourceName, resourceContent);
+                if (resourceContent != null)
+                    BuildIndex(resourceName, resourceContent);
             }
             foreach (TreeNode subTopicNode in topicNode.Nodes)
                 BuildIndex(subTopicNode);

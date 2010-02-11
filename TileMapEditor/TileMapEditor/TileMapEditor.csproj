@@ -336,6 +336,8 @@
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
     <None Include="Resources\Help\CommandReference.rtf" />
+    <None Include="Resources\Help\Features.rtf" />
+    <None Include="Resources\Help\tIDE.rtf" />
     <None Include="Resources\Help\ViewCommandReference.rtf" />
     <None Include="Resources\Help\EditCommandReference.rtf" />
     <None Include="Resources\Help\FileCommandReference.rtf" />

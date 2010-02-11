@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Getting Started");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("File Command Reference");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Edit Command Reference");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("View Command Reference");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Command Reference", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Features");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Getting Started");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("File Command Reference");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Edit Command Reference");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("View Command Reference");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Command Reference", new System.Windows.Forms.TreeNode[] {
             treeNode3,
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
+            treeNode4,
             treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode6});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
@@ -87,25 +89,29 @@
             this.m_topicTreeView.Location = new System.Drawing.Point(0, 0);
             this.m_topicTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
             this.m_topicTreeView.Name = "m_topicTreeView";
-            treeNode1.Name = "GettingStarted";
-            treeNode1.Tag = "HelpGettingStarted";
-            treeNode1.Text = "Getting Started";
-            treeNode2.Name = "FileCommandReference";
-            treeNode2.Tag = "HelpFileCommandReference";
-            treeNode2.Text = "File Command Reference";
-            treeNode3.Name = "EditCommandReference";
-            treeNode3.Tag = "HelpEditCommandReference";
-            treeNode3.Text = "Edit Command Reference";
-            treeNode4.Name = "ViewCommandReference";
-            treeNode4.Tag = "HelpViewCommandReference";
-            treeNode4.Text = "View Command Reference";
-            treeNode5.Name = "CommandReference";
-            treeNode5.Tag = "HelpCommandReference";
-            treeNode5.Text = "Command Reference";
-            treeNode6.Name = "tIDE";
-            treeNode6.Text = "tIDE Help Topics";
+            treeNode1.Name = "Features";
+            treeNode1.Tag = "HelpFeatures";
+            treeNode1.Text = "Features";
+            treeNode2.Name = "GettingStarted";
+            treeNode2.Tag = "HelpGettingStarted";
+            treeNode2.Text = "Getting Started";
+            treeNode3.Name = "FileCommandReference";
+            treeNode3.Tag = "HelpFileCommandReference";
+            treeNode3.Text = "File Command Reference";
+            treeNode4.Name = "EditCommandReference";
+            treeNode4.Tag = "HelpEditCommandReference";
+            treeNode4.Text = "Edit Command Reference";
+            treeNode5.Name = "ViewCommandReference";
+            treeNode5.Tag = "HelpViewCommandReference";
+            treeNode5.Text = "View Command Reference";
+            treeNode6.Name = "CommandReference";
+            treeNode6.Tag = "HelpCommandReference";
+            treeNode6.Text = "Command Reference";
+            treeNode7.Name = "tIDE";
+            treeNode7.Tag = "HelptIDE";
+            treeNode7.Text = "tIDE Help Topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode7});
             this.m_topicTreeView.Size = new System.Drawing.Size(194, 387);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
@@ -232,6 +238,7 @@
             this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
             this.m_contentRichTextBox.Name = "m_contentRichTextBox";
             this.m_contentRichTextBox.ReadOnly = true;
+            this.m_contentRichTextBox.SelectionLink = false;
             this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
             this.m_contentRichTextBox.TabIndex = 0;
             this.m_contentRichTextBox.Text = "Content Pane";

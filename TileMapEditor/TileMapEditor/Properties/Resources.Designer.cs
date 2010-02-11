@@ -214,6 +214,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpFeatures {
+            get {
+                object obj = ResourceManager.GetObject("HelpFeatures", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpFileCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpFileCommandReference", resourceCulture);
@@ -312,6 +319,13 @@ namespace TileMapEditor.Properties {
             get {
                 object obj = ResourceManager.GetObject("HelpSearch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static byte[] HelptIDE {
+            get {
+                object obj = ResourceManager.GetObject("HelptIDE", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
