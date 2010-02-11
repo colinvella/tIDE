@@ -315,6 +315,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpMapCommandReference {
+            get {
+                object obj = ResourceManager.GetObject("HelpMapCommandReference", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap HelpSearch {
             get {
                 object obj = ResourceManager.GetObject("HelpSearch", resourceCulture);
