@@ -34,15 +34,17 @@
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Edit Command Reference");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("View Command Reference");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Map Command Reference");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Command Reference", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Layer Command Reference");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Command Reference", new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode4,
             treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
-            treeNode7});
+            treeNode8});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
@@ -109,14 +111,17 @@
             treeNode6.Name = "MapCommandReference";
             treeNode6.Tag = "HelpMapCommandReference";
             treeNode6.Text = "Map Command Reference";
-            treeNode7.Name = "CommandReference";
-            treeNode7.Tag = "HelpCommandReference";
-            treeNode7.Text = "Command Reference";
-            treeNode8.Name = "tIDE";
-            treeNode8.Tag = "HelptIDE";
-            treeNode8.Text = "tIDE Help Topics";
+            treeNode7.Name = "LayerCommandReference";
+            treeNode7.Tag = "HelpLayerCommandReference";
+            treeNode7.Text = "Layer Command Reference";
+            treeNode8.Name = "CommandReference";
+            treeNode8.Tag = "HelpCommandReference";
+            treeNode8.Text = "Command Reference";
+            treeNode9.Name = "tIDE";
+            treeNode9.Tag = "HelptIDE";
+            treeNode9.Text = "tIDE Help Topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8});
+            treeNode9});
             this.m_topicTreeView.Size = new System.Drawing.Size(194, 387);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);

@@ -337,6 +337,7 @@
     <Content Include="Resources\Help.png" />
     <None Include="Resources\Help\CommandReference.rtf" />
     <None Include="Resources\Help\Features.rtf" />
+    <None Include="Resources\Help\LayerCommandReference.rtf" />
     <None Include="Resources\Help\MapCommandReference.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />
     <None Include="Resources\Help\ViewCommandReference.rtf" />
