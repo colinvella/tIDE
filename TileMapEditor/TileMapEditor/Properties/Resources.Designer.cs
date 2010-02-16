@@ -532,6 +532,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TileSheetRemoveDependencies {
+            get {
+                object obj = ResourceManager.GetObject("TileSheetRemoveDependencies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ToolsDropper {
             get {
                 object obj = ResourceManager.GetObject("ToolsDropper", resourceCulture);

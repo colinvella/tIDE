@@ -291,10 +291,18 @@ namespace TileMapEditor
 
         private void UpdateTileSheetControls()
         {
+            // properties and delete enabled if tile sheet selected
             m_tileSheetPropertiesMenuItem.Enabled
                 = m_tileSheetPropertiesButton.Enabled
                 = m_tileSheetDeleteMenuItem.Enabled
-                = m_tileSheetDeleteButton.Enabled = m_mapTreeView.SelectedComponent is TileSheet;
+                = m_tileSheetDeleteButton.Enabled
+                = m_mapTreeView.SelectedComponent is TileSheet;
+
+            // dependency button enabled if tile sheet selected and has dependencies
+            m_tileSheetRemoveDependenciesMenuItem.Enabled
+                = m_tileSheetRemoveDependenciesButton.Enabled
+                = m_mapTreeView.SelectedComponent is TileSheet
+                    && m_map.DependsOnTileSheet((TileSheet)m_mapTreeView.SelectedComponent);
 
             if (m_tilePicker.AutoUpdate)
             {
@@ -1104,6 +1112,27 @@ namespace TileMapEditor
             UpdateTileSheetControls();
         }
 
+        private void OnTileSheetRemoveDependencies(object sender, EventArgs e)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is TileSheet))
+                return;
+
+            TileSheet tileSheet = (TileSheet)m_selectedComponent;
+
+            if (MessageBox.Show(this,
+                "Remove all dependencies on this tile sheet?",
+                "Remove dependencies on Tile Sheet \"" + tileSheet.Id + "\"", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                return;
+
+            Command command = new TileSheetRemoveDependencyCommand(m_map, tileSheet);
+            m_commandHistory.Do(command);
+
+            UpdateEditControls();
+            m_tileSheetRemoveDependenciesMenuItem.Enabled
+                = m_tileSheetRemoveDependenciesButton.Enabled = false;
+        }
+
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)
         {
             if (m_selectedComponent == null
@@ -1114,11 +1143,9 @@ namespace TileMapEditor
 
             if (m_map.DependsOnTileSheet(tileSheet))
             {
-                if (MessageBox.Show(this,
-                    "At least one layer is using tiles from this Tile Sheet and hence it cannot be deleted. Click YES to clear these tiles or NO to back out.",
-                    "Delete Tile Sheet \"" + tileSheet.Id + "\"", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                    return;
-                m_map.RemoveTileSheetDependency(tileSheet);
+                MessageBox.Show("At least one layer is using tiles from this Tile Sheet. Use the Remove Dependencies command or manually clear or replace these tiles",
+                     "Delete Tile Sheet \"" + tileSheet.Id + "\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
             if (MessageBox.Show(this, "Are you sure you want to delete this Tile Sheet?",

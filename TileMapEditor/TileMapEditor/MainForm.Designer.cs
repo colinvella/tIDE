@@ -170,6 +170,7 @@
             this.m_tileSheetNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetAutoUpdateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_tileSheetRemoveDependenciesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_pluginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_pluginReloadMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,6 +186,7 @@
             this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
+            this.m_tileSheetRemoveDependenciesButton = new System.Windows.Forms.ToolStripButton();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -341,7 +343,7 @@
             // m_tileSheetSeparator1
             // 
             m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
-            m_tileSheetSeparator1.Size = new System.Drawing.Size(176, 6);
+            m_tileSheetSeparator1.Size = new System.Drawing.Size(191, 6);
             // 
             // toolStripSeparator5
             // 
@@ -358,7 +360,7 @@
             // m_tileSheetSeparator2
             // 
             m_tileSheetSeparator2.Name = "m_tileSheetSeparator2";
-            m_tileSheetSeparator2.Size = new System.Drawing.Size(176, 6);
+            m_tileSheetSeparator2.Size = new System.Drawing.Size(191, 6);
             // 
             // m_tileSheetToolStripSeparator2
             // 
@@ -987,10 +989,11 @@
             m_tileSheetToolStripSeparator1,
             this.m_tileSheetAutoUpdateButton,
             m_tileSheetToolStripSeparator2,
+            this.m_tileSheetRemoveDependenciesButton,
             this.m_tileSheetDeleteButton});
             this.m_tileSheetToolStrip.Location = new System.Drawing.Point(34, 75);
             this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
-            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(116, 25);
+            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(170, 25);
             this.m_tileSheetToolStrip.TabIndex = 3;
             // 
             // m_tileSheetNewButton
@@ -1642,6 +1645,7 @@
             m_tileSheetSeparator1,
             this.m_tileSheetAutoUpdateMenuItem,
             m_tileSheetSeparator2,
+            this.m_tileSheetRemoveDependenciesMenuItem,
             this.m_tileSheetDeleteMenuItem});
             this.m_tileSheetMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheet;
             this.m_tileSheetMenuItem.Name = "m_tileSheetMenuItem";
@@ -1652,7 +1656,7 @@
             // 
             this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
-            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.m_tileSheetNewMenuItem.Size = new System.Drawing.Size(194, 22);
             this.m_tileSheetNewMenuItem.Text = "New...";
             this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
@@ -1661,7 +1665,7 @@
             this.m_tileSheetPropertiesMenuItem.Enabled = false;
             this.m_tileSheetPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesMenuItem.Name = "m_tileSheetPropertiesMenuItem";
-            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.m_tileSheetPropertiesMenuItem.Size = new System.Drawing.Size(194, 22);
             this.m_tileSheetPropertiesMenuItem.Text = "Properties...";
             this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
             // 
@@ -1669,16 +1673,25 @@
             // 
             this.m_tileSheetAutoUpdateMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateEnable;
             this.m_tileSheetAutoUpdateMenuItem.Name = "m_tileSheetAutoUpdateMenuItem";
-            this.m_tileSheetAutoUpdateMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.m_tileSheetAutoUpdateMenuItem.Size = new System.Drawing.Size(194, 22);
             this.m_tileSheetAutoUpdateMenuItem.Text = "Enable Auto Update";
             this.m_tileSheetAutoUpdateMenuItem.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
+            // 
+            // m_tileSheetRemoveDependenciesMenuItem
+            // 
+            this.m_tileSheetRemoveDependenciesMenuItem.Enabled = false;
+            this.m_tileSheetRemoveDependenciesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesMenuItem.Name = "m_tileSheetRemoveDependenciesMenuItem";
+            this.m_tileSheetRemoveDependenciesMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.m_tileSheetRemoveDependenciesMenuItem.Text = "Remove Dependencies";
+            this.m_tileSheetRemoveDependenciesMenuItem.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
             // 
             // m_tileSheetDeleteMenuItem
             // 
             this.m_tileSheetDeleteMenuItem.Enabled = false;
             this.m_tileSheetDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteMenuItem.Name = "m_tileSheetDeleteMenuItem";
-            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.m_tileSheetDeleteMenuItem.Size = new System.Drawing.Size(194, 22);
             this.m_tileSheetDeleteMenuItem.Text = "Delete";
             this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
@@ -1811,6 +1824,18 @@
             this.m_fileSaveAsButton.Text = "Save Map As";
             this.m_fileSaveAsButton.ToolTipText = "Save map as...";
             this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
+            // 
+            // m_tileSheetRemoveDependenciesButton
+            // 
+            this.m_tileSheetRemoveDependenciesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetRemoveDependenciesButton.Enabled = false;
+            this.m_tileSheetRemoveDependenciesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_tileSheetRemoveDependenciesButton.Name = "m_tileSheetRemoveDependenciesButton";
+            this.m_tileSheetRemoveDependenciesButton.Size = new System.Drawing.Size(23, 22);
+            this.m_tileSheetRemoveDependenciesButton.Text = "toolStripButton1";
+            this.m_tileSheetRemoveDependenciesButton.ToolTipText = "Remove dependencies on this Tile Sheet";
+            this.m_tileSheetRemoveDependenciesButton.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
             // 
             // MainForm
             // 
@@ -2009,5 +2034,7 @@
         private System.Windows.Forms.ToolStripButton m_tileSheetAutoUpdateButton;
         private System.Windows.Forms.ToolStripMenuItem m_mapStatisticsMenuItem;
         private System.Windows.Forms.ToolStripButton m_mapStatisticsButton;
+        private System.Windows.Forms.ToolStripMenuItem m_tileSheetRemoveDependenciesMenuItem;
+        private System.Windows.Forms.ToolStripButton m_tileSheetRemoveDependenciesButton;
     }
 }
