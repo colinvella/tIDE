@@ -35,29 +35,35 @@
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("View Command Reference");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Map Command Reference");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Layer Command Reference");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Command Reference", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Tile Sheet Command Reference");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Plugin Command Reference");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Help Command Reference");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Command Reference", new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode4,
             treeNode5,
             treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
-            treeNode8});
+            treeNode11});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
             this.m_indexTreeView = new System.Windows.Forms.TreeView();
             this.m_searchListView = new System.Windows.Forms.ListView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
-            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_helpContentsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpIndexButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpSearchButton = new System.Windows.Forms.ToolStripButton();
             this.m_searchTextbox = new System.Windows.Forms.ToolStripTextBox();
+            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
             this.m_splitContainer.SuspendLayout();
@@ -114,14 +120,23 @@
             treeNode7.Name = "LayerCommandReference";
             treeNode7.Tag = "HelpLayerCommandReference";
             treeNode7.Text = "Layer Command Reference";
-            treeNode8.Name = "CommandReference";
-            treeNode8.Tag = "HelpCommandReference";
-            treeNode8.Text = "Command Reference";
-            treeNode9.Name = "tIDE";
-            treeNode9.Tag = "HelptIDE";
-            treeNode9.Text = "tIDE Help Topics";
+            treeNode8.Name = "TileSheetCommandReference";
+            treeNode8.Tag = "HelpTileSheetCommandReference";
+            treeNode8.Text = "Tile Sheet Command Reference";
+            treeNode9.Name = "PluginCommandReference";
+            treeNode9.Tag = "HelpPluginCommandReference";
+            treeNode9.Text = "Plugin Command Reference";
+            treeNode10.Name = "HelpCommandReference";
+            treeNode10.Tag = "HelpHelpCommandReference";
+            treeNode10.Text = "Help Command Reference";
+            treeNode11.Name = "CommandReference";
+            treeNode11.Tag = "HelpCommandReference";
+            treeNode11.Text = "Command Reference";
+            treeNode12.Name = "tIDE";
+            treeNode12.Tag = "HelptIDE";
+            treeNode12.Text = "tIDE Help Topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9});
+            treeNode12});
             this.m_topicTreeView.Size = new System.Drawing.Size(194, 387);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
@@ -163,22 +178,6 @@
             this.m_contentPanel.Padding = new System.Windows.Forms.Padding(1);
             this.m_contentPanel.Size = new System.Drawing.Size(382, 379);
             this.m_contentPanel.TabIndex = 1;
-            // 
-            // m_contentRichTextBox
-            // 
-            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
-            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.m_contentRichTextBox.DetectUrls = true;
-            this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
-            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
-            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
-            this.m_contentRichTextBox.ReadOnly = true;
-            this.m_contentRichTextBox.SelectionLink = false;
-            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
-            this.m_contentRichTextBox.TabIndex = 0;
-            this.m_contentRichTextBox.Text = "Content Pane";
-            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // m_toolStripContainer
             // 
@@ -253,6 +252,22 @@
             this.m_searchTextbox.Visible = false;
             this.m_searchTextbox.Enter += new System.EventHandler(this.OnEnterSearchTextBox);
             this.m_searchTextbox.TextChanged += new System.EventHandler(this.OnSearchTextChanged);
+            // 
+            // m_contentRichTextBox
+            // 
+            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
+            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.m_contentRichTextBox.DetectUrls = true;
+            this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
+            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
+            this.m_contentRichTextBox.ReadOnly = true;
+            this.m_contentRichTextBox.SelectionLink = false;
+            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
+            this.m_contentRichTextBox.TabIndex = 0;
+            this.m_contentRichTextBox.Text = "Content Pane";
+            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // HelpForm
             // 
