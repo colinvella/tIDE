@@ -389,6 +389,7 @@ namespace TileMapEditor.Dialogs
             {
                 MessageBox.Show(this, "No image source selected", "Tile Sheet Properties",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult = DialogResult.None;
                 return;
             }
 
@@ -402,6 +403,7 @@ namespace TileMapEditor.Dialogs
                 {
                     MessageBox.Show(this, "The specified Id is already used by another tile sheet",
                         "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult = DialogResult.None;
                     return;
                 }
             }
@@ -412,7 +414,8 @@ namespace TileMapEditor.Dialogs
             {
                     MessageBox.Show(this, "The tile size cannot be changed as this tile sheet is currently in use",
                         "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                    DialogResult = DialogResult.None;
+                    return;
             }
 
             Tiling.Dimensions.Size newTileSize = new Tiling.Dimensions.Size(
