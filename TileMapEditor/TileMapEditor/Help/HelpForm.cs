@@ -106,6 +106,32 @@ namespace TileMapEditor.Help
             }
         }
 
+        private void SelectContentNode(string resourceName)
+        {
+            Stack<TreeNode> nodeStack = new Stack<TreeNode>();
+            foreach (TreeNode treeNode in m_topicTreeView.Nodes)
+                nodeStack.Push(treeNode);
+
+            while (nodeStack.Count > 0)
+            {
+                TreeNode treeNode = nodeStack.Pop();
+                if (treeNode.Tag != null && (string)treeNode.Tag == resourceName)
+                {
+                    m_topicTreeView.SelectedNode = treeNode;
+                    treeNode.EnsureVisible();
+                    m_topicTreeView.Select();
+                    return;
+                }
+                else
+                {
+                    foreach (TreeNode childNode in treeNode.Nodes)
+                        nodeStack.Push(childNode);
+                }
+            }
+
+            m_topicTreeView.SelectedNode = null;
+        }
+
         private void BuildIndex(string resourceName, byte[] resourceContent)
         {
             RichTextBox richTextBox = new RichTextBox();
@@ -422,7 +448,7 @@ namespace TileMapEditor.Help
             {
                 resourceName = resourceName.Split('#')[1];
                 ShowHelpContent(resourceName);
-                m_topicTreeView.SelectedNode = null;
+                SelectContentNode(resourceName);
                 m_indexTreeView.SelectedNode = null;
             }
             else if (resourceName.StartsWith("http://"))
