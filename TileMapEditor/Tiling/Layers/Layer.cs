@@ -131,6 +131,17 @@ namespace Tiling.Layers
                 return null;
         }
 
+        public void RemoveTileSheetDependency(TileSheet tileSheet)
+        {
+            for (int y = 0; y < m_layerSize.Height; y++)
+                for (int x = 0; x < m_layerSize.Width; x++)
+                {
+                    Tile tile = m_tiles[x, y];
+                    if (tile != null && tile.DependsOnTileSheet(tileSheet))
+                        m_tiles[x, y] = null;
+                }
+        }
+
         public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
         {
             if (BeforeDraw != null)

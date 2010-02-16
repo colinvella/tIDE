@@ -174,6 +174,12 @@ namespace Tiling
             m_tileSheets.Remove(tileSheet);
         }
 
+        public void RemoveTileSheetDependency(TileSheet tileSheet)
+        {
+            foreach (Layer layer in m_layers)
+                layer.RemoveTileSheetDependency(tileSheet);
+        }
+
         public void Update(long timeInterval)
         {
             m_elapsedTime += timeInterval;
