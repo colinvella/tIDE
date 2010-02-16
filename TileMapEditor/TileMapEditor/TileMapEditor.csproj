@@ -57,6 +57,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\TileSheetRemoveDependencyCommand.cs" />
     <Compile Include="Commands\CustomPropertiesCommand.cs" />
     <Compile Include="Commands\TileAnimationCommand.cs" />
     <Compile Include="Commands\TilePropertiesCommand.cs" />

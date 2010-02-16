@@ -1114,10 +1114,11 @@ namespace TileMapEditor
 
             if (m_map.DependsOnTileSheet(tileSheet))
             {
-                MessageBox.Show(this,
-                    "This Tile Sheet cannot be deleted until all tiles originating from this sheet are removed from the relevant layers.",
-                    "Delete Tile Sheet \"" + tileSheet.Id + "\"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (MessageBox.Show(this,
+                    "At least one layer is using tiles from this Tile Sheet and hence it cannot be deleted. Click YES to clear these tiles or NO to back out.",
+                    "Delete Tile Sheet \"" + tileSheet.Id + "\"", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                    return;
+                m_map.RemoveTileSheetDependency(tileSheet);
             }
 
             if (MessageBox.Show(this, "Are you sure you want to delete this Tile Sheet?",
