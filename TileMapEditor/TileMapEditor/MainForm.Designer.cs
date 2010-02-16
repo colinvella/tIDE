@@ -83,6 +83,7 @@
             this.m_editManageTileBrushesButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_mapPropertiesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_mapStatisticsButton = new System.Windows.Forms.ToolStripButton();
             this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_layerNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_layerPropertiesButton = new System.Windows.Forms.ToolStripButton();
@@ -170,8 +171,8 @@
             this.m_tileSheetPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetAutoUpdateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_pluginsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_pluginsReloadMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_pluginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_pluginReloadMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -184,7 +185,6 @@
             this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
-            this.m_mapStatisticsButton = new System.Windows.Forms.ToolStripButton();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -762,7 +762,7 @@
             this.m_mapStatisticsButton});
             this.m_mapToolStrip.Location = new System.Drawing.Point(3, 25);
             this.m_mapToolStrip.Name = "m_mapToolStrip";
-            this.m_mapToolStrip.Size = new System.Drawing.Size(89, 25);
+            this.m_mapToolStrip.Size = new System.Drawing.Size(58, 25);
             this.m_mapToolStrip.TabIndex = 2;
             // 
             // m_mapPropertiesButton
@@ -774,6 +774,16 @@
             this.m_mapPropertiesButton.Size = new System.Drawing.Size(23, 22);
             this.m_mapPropertiesButton.Text = "Map properties";
             this.m_mapPropertiesButton.Click += new System.EventHandler(this.OnMapProperties);
+            // 
+            // m_mapStatisticsButton
+            // 
+            this.m_mapStatisticsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_mapStatisticsButton.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_mapStatisticsButton.Name = "m_mapStatisticsButton";
+            this.m_mapStatisticsButton.Size = new System.Drawing.Size(23, 22);
+            this.m_mapStatisticsButton.Text = "Map statistics";
+            this.m_mapStatisticsButton.Click += new System.EventHandler(this.OnMapStatistics);
             // 
             // m_layerToolStrip
             // 
@@ -787,7 +797,7 @@
             this.m_layerSendBackwardButton,
             this.m_layerToolStripSeparator2,
             this.m_layerDeleteButton});
-            this.m_layerToolStrip.Location = new System.Drawing.Point(92, 25);
+            this.m_layerToolStrip.Location = new System.Drawing.Point(61, 25);
             this.m_layerToolStrip.Name = "m_layerToolStrip";
             this.m_layerToolStrip.Size = new System.Drawing.Size(162, 25);
             this.m_layerToolStrip.TabIndex = 4;
@@ -1038,7 +1048,7 @@
             this.m_mapMenuItem,
             this.m_layerMenuItem,
             this.m_tileSheetMenuItem,
-            this.m_pluginsMenuItem,
+            this.m_pluginMenuItem,
             this.m_helpMenuItem});
             this.m_menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.m_menuStrip.Location = new System.Drawing.Point(0, 100);
@@ -1542,7 +1552,7 @@
             // 
             this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
-            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_mapPropertiesMenuItem.Text = "Properties...";
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
             // 
@@ -1550,7 +1560,7 @@
             // 
             this.m_mapStatisticsMenuItem.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
             this.m_mapStatisticsMenuItem.Name = "m_mapStatisticsMenuItem";
-            this.m_mapStatisticsMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_mapStatisticsMenuItem.Size = new System.Drawing.Size(136, 22);
             this.m_mapStatisticsMenuItem.Text = "Statistics...";
             this.m_mapStatisticsMenuItem.Click += new System.EventHandler(this.OnMapStatistics);
             // 
@@ -1672,23 +1682,23 @@
             this.m_tileSheetDeleteMenuItem.Text = "Delete";
             this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
-            // m_pluginsMenuItem
+            // m_pluginMenuItem
             // 
-            this.m_pluginsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_pluginsReloadMenuItem,
+            this.m_pluginMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_pluginReloadMenuItem,
             this.toolStripSeparator1});
-            this.m_pluginsMenuItem.Image = global::TileMapEditor.Properties.Resources.Plugin;
-            this.m_pluginsMenuItem.Name = "m_pluginsMenuItem";
-            this.m_pluginsMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.m_pluginsMenuItem.Text = "&Plugins";
+            this.m_pluginMenuItem.Image = global::TileMapEditor.Properties.Resources.Plugin;
+            this.m_pluginMenuItem.Name = "m_pluginMenuItem";
+            this.m_pluginMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.m_pluginMenuItem.Text = "&Plugin";
             // 
-            // m_pluginsReloadMenuItem
+            // m_pluginReloadMenuItem
             // 
-            this.m_pluginsReloadMenuItem.Image = global::TileMapEditor.Properties.Resources.PluginReload;
-            this.m_pluginsReloadMenuItem.Name = "m_pluginsReloadMenuItem";
-            this.m_pluginsReloadMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.m_pluginsReloadMenuItem.Text = "Reload Plugins";
-            this.m_pluginsReloadMenuItem.Click += new System.EventHandler(this.OnPluginsReload);
+            this.m_pluginReloadMenuItem.Image = global::TileMapEditor.Properties.Resources.PluginReload;
+            this.m_pluginReloadMenuItem.Name = "m_pluginReloadMenuItem";
+            this.m_pluginReloadMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_pluginReloadMenuItem.Text = "Reload Plugins";
+            this.m_pluginReloadMenuItem.Click += new System.EventHandler(this.OnPluginsReload);
             // 
             // toolStripSeparator1
             // 
@@ -1801,16 +1811,6 @@
             this.m_fileSaveAsButton.Text = "Save Map As";
             this.m_fileSaveAsButton.ToolTipText = "Save map as...";
             this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
-            // 
-            // m_mapStatisticsButton
-            // 
-            this.m_mapStatisticsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_mapStatisticsButton.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
-            this.m_mapStatisticsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_mapStatisticsButton.Name = "m_mapStatisticsButton";
-            this.m_mapStatisticsButton.Size = new System.Drawing.Size(23, 22);
-            this.m_mapStatisticsButton.Text = "Map statistics";
-            this.m_mapStatisticsButton.Click += new System.EventHandler(this.OnMapStatistics);
             // 
             // MainForm
             // 
@@ -1957,8 +1957,8 @@
         private System.Windows.Forms.ToolStripButton m_editSelectAllButton;
         private System.Windows.Forms.ToolStripButton m_editClearSelectionButton;
         private System.Windows.Forms.ToolStripButton m_editInvertSelectionButton;
-        private System.Windows.Forms.ToolStripMenuItem m_pluginsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem m_pluginsReloadMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_pluginMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_pluginReloadMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStrip m_toolsToolStrip;
         private System.Windows.Forms.ToolStripButton m_toolsSelectButton;
