@@ -1204,6 +1204,16 @@ namespace TileMapEditor
         {
             m_mapPanel.SelectedTileSheet = tilePickerEventArgs.TileSheet;
             m_mapPanel.SelectedTileIndex = tilePickerEventArgs.TileIndex;
+
+            m_mapPanel.TileSelection.Clear();
+
+            if (m_mapPanel.EditTool == EditTool.Select
+                || m_mapPanel.EditTool == EditTool.Dropper
+                || m_mapPanel.EditTool == EditTool.Eraser)
+            {
+                m_mapPanel.EditTool = EditTool.SingleTile;
+                UpdateToolButtons();
+            }
         }
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
@@ -1252,24 +1262,28 @@ namespace TileMapEditor
         private void OnToolsSingleTile(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.SingleTile;
+            m_mapPanel.TileSelection.Clear();
             UpdateToolButtons();
         }
 
         private void OnToolsTileBlock(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.TileBlock;
+            m_mapPanel.TileSelection.Clear();
             UpdateToolButtons();
         }
 
         private void OnToolsEraser(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.Eraser;
+            m_mapPanel.TileSelection.Clear();
             UpdateToolButtons();
         }
 
         private void OnToolsDropper(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.Dropper;
+            m_mapPanel.TileSelection.Clear();
             UpdateToolButtons();
         }
 
