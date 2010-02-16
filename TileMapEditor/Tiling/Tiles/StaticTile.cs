@@ -30,6 +30,11 @@ namespace Tiling.Tiles
             m_tileIndex = tileIndex;
         }
 
+        public override bool DependsOnTileSheet(TileSheet tileSheet)
+        {
+            return m_tileSheet == tileSheet;
+        }
+
         public override Tile Clone()
         {
             return new StaticTile(this.Layer, this.TileSheet, this.BlendMode, m_tileIndex);

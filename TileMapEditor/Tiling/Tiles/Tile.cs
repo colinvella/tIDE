@@ -25,6 +25,10 @@ namespace Tiling.Tiles
             m_layer = layer;
         }
 
+        public abstract bool DependsOnTileSheet(TileSheet tileSheet);
+
+        public abstract Tile Clone();
+
         public Layer Layer { get { return m_layer; } }
 
         public abstract BlendMode BlendMode { get; set; }
@@ -32,7 +36,5 @@ namespace Tiling.Tiles
         public abstract TileSheet TileSheet { get; }
 
         public abstract int TileIndex { get; }
-
-        public abstract Tile Clone();
 }
 }

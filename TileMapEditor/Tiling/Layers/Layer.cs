@@ -46,7 +46,7 @@ namespace Tiling.Layers
                 for (int x = 0; x < m_layerSize.Width; x++)
                 {
                     Tile tile = m_tiles[x, y];
-                    if (tile != null && tile.TileSheet == tileSheet)
+                    if (tile != null && tile.DependsOnTileSheet(tileSheet))
                         return true;
                 }
             return false;

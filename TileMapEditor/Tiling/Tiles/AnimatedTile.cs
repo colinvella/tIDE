@@ -27,6 +27,14 @@ namespace Tiling.Tiles
             m_animationInterval = frameInterval * tileFrames.Length;
         }
 
+        public override bool DependsOnTileSheet(TileSheet tileSheet)
+        {
+            foreach (StaticTile tileFrame in m_tileFrames)
+                if (tileFrame.DependsOnTileSheet(tileSheet))
+                    return true;
+            return false;
+        }
+
         public override Tile Clone()
         {
             List<StaticTile> tileFrames = new List<StaticTile>(m_tileFrames.Length);
