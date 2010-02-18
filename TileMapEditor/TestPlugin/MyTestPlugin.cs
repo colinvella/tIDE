@@ -60,22 +60,22 @@ namespace TestPlugin
 
         public void Initialise(IApplication application)
         {
-            m_myDropDownMenu = application.MenuStrip.DropDownMenus.Add("My Custom Drop-Down Menu!");
-            m_myDropDownMenu.Image = Properties.Resources.SmallIcon;
+            m_myDropDownMenu = application.MenuStrip.DropDownMenus.Add("My Custom Menu");
+            m_myDropDownMenu.Image = Properties.Resources.Menu;
 
-            m_myMenuItem = application.MenuStrip.DropDownMenus["&File"].SubItems.Add("My custom menu item!");
-            m_myMenuItem.Image = Properties.Resources.SmallIcon;
+            m_myMenuItem = application.MenuStrip.DropDownMenus["My Custom Menu"].SubItems.Add("My Menu Item 1");
+            m_myMenuItem.Image = Properties.Resources.Action;
             m_myMenuItem.ShortcutKeys = (Keys)(Keys.Control | Keys.Z);
             m_myMenuItem.EventHandler = MyCustomAction;
 
             m_myToolBar = application.ToolBars.Add("MyToolBar");
 
-            m_myToolBarButton1 = m_myToolBar.Buttons.Add("Button1", Properties.Resources.SmallIcon);
-            m_myToolBarButton1.ToolTipText = "My first toolbar button";
+            m_myToolBarButton1 = m_myToolBar.Buttons.Add("Button1", Properties.Resources.Action);
+            m_myToolBarButton1.ToolTipText = "My ToolStrip Button 1";
             m_myToolBarButton1.Checked = true;
             m_myToolBarButton1.EventHandler = MyCustomAction;
 
-            m_myToolBarButton2 = m_myToolBar.Buttons.Add("Button2", Properties.Resources.SmallIcon);
+            m_myToolBarButton2 = m_myToolBar.Buttons.Add("Button2", Properties.Resources.Action);
             m_myToolBarButton2.ToolTipText = "My second toolbar button";
             m_myToolBarButton2.Enabled = false;
 

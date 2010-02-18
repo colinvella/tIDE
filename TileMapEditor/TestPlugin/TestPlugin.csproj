@@ -82,6 +82,12 @@
   <ItemGroup>
     <None Include="Resources\LargeIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Action.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -91,6 +97,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>REM copy $(TargetPath) $(SolutionDir)TileMapEditor\bin\Debug\Plugins</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)TileMapEditor\bin\Debug\Plugins</PostBuildEvent>
   </PropertyGroup>
 </Project>
