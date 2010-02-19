@@ -46,6 +46,8 @@
             System.Windows.Forms.ToolStripLabel m_viewZoomLabel;
             System.Windows.Forms.ToolStripSeparator m_tileSheetSeparator2;
             System.Windows.Forms.ToolStripSeparator m_tileSheetToolStripSeparator2;
+            System.Windows.Forms.ToolStripSeparator m_fileSeparator3;
+            System.Windows.Forms.ToolStripSeparator m_fileToolStripSeparator2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.m_mapTreeView = new TileMapEditor.Controls.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
@@ -105,6 +107,7 @@
             this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetAutoUpdateButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetRemoveDependenciesButton = new System.Windows.Forms.ToolStripButton();
             this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,6 +115,9 @@
             this.m_fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileSaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileSaveAsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_filePageSetupMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_filePrintPreviewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_filePrintMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editUndoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,8 +191,10 @@
             this.m_fileOpenButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
             this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
+            this.m_filePageSetupButton = new System.Windows.Forms.ToolStripButton();
+            this.m_filePrintPreviewButton = new System.Windows.Forms.ToolStripButton();
+            this.m_filePrintButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
-            this.m_tileSheetRemoveDependenciesButton = new System.Windows.Forms.ToolStripButton();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -205,6 +213,8 @@
             m_viewZoomLabel = new System.Windows.Forms.ToolStripLabel();
             m_tileSheetSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             m_tileSheetToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            m_fileSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            m_fileToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             m_splitContainerVertical.Panel1.SuspendLayout();
             m_splitContainerVertical.Panel2.SuspendLayout();
             m_splitContainerVertical.SuspendLayout();
@@ -298,12 +308,12 @@
             // m_fileSeparator1
             // 
             m_fileSeparator1.Name = "m_fileSeparator1";
-            m_fileSeparator1.Size = new System.Drawing.Size(143, 6);
+            m_fileSeparator1.Size = new System.Drawing.Size(152, 6);
             // 
             // m_fileSeparator2
             // 
             m_fileSeparator2.Name = "m_fileSeparator2";
-            m_fileSeparator2.Size = new System.Drawing.Size(143, 6);
+            m_fileSeparator2.Size = new System.Drawing.Size(152, 6);
             // 
             // m_editMenuSeparator1
             // 
@@ -366,6 +376,16 @@
             // 
             m_tileSheetToolStripSeparator2.Name = "m_tileSheetToolStripSeparator2";
             m_tileSheetToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_fileSeparator3
+            // 
+            m_fileSeparator3.Name = "m_fileSeparator3";
+            m_fileSeparator3.Size = new System.Drawing.Size(152, 6);
+            // 
+            // m_fileToolStripSeparator2
+            // 
+            m_fileToolStripSeparator2.Name = "m_fileToolStripSeparator2";
+            m_fileToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // m_toolStripContainer
             // 
@@ -991,9 +1011,9 @@
             m_tileSheetToolStripSeparator2,
             this.m_tileSheetRemoveDependenciesButton,
             this.m_tileSheetDeleteButton});
-            this.m_tileSheetToolStrip.Location = new System.Drawing.Point(34, 75);
+            this.m_tileSheetToolStrip.Location = new System.Drawing.Point(11, 75);
             this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
-            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(170, 25);
+            this.m_tileSheetToolStrip.Size = new System.Drawing.Size(139, 25);
             this.m_tileSheetToolStrip.TabIndex = 3;
             // 
             // m_tileSheetNewButton
@@ -1027,6 +1047,18 @@
             this.m_tileSheetAutoUpdateButton.Text = "TileSheet Auto Update";
             this.m_tileSheetAutoUpdateButton.ToolTipText = "Enable automatic update of tile sheets from disk";
             this.m_tileSheetAutoUpdateButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
+            // 
+            // m_tileSheetRemoveDependenciesButton
+            // 
+            this.m_tileSheetRemoveDependenciesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetRemoveDependenciesButton.Enabled = false;
+            this.m_tileSheetRemoveDependenciesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_tileSheetRemoveDependenciesButton.Name = "m_tileSheetRemoveDependenciesButton";
+            this.m_tileSheetRemoveDependenciesButton.Size = new System.Drawing.Size(23, 22);
+            this.m_tileSheetRemoveDependenciesButton.Text = "toolStripButton1";
+            this.m_tileSheetRemoveDependenciesButton.ToolTipText = "Remove dependencies on this Tile Sheet";
+            this.m_tileSheetRemoveDependenciesButton.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
             // 
             // m_tileSheetDeleteButton
             // 
@@ -1069,6 +1101,10 @@
             this.m_fileSaveMenuItem,
             this.m_fileSaveAsMenuItem,
             m_fileSeparator2,
+            this.m_filePageSetupMenuItem,
+            this.m_filePrintPreviewMenuItem,
+            this.m_filePrintMenuItem,
+            m_fileSeparator3,
             this.m_fileExitMenuItem});
             this.m_fileMenuItem.Image = global::TileMapEditor.Properties.Resources.File;
             this.m_fileMenuItem.Name = "m_fileMenuItem";
@@ -1081,8 +1117,8 @@
             this.m_fileNewMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileNewMenuItem.Name = "m_fileNewMenuItem";
             this.m_fileNewMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.m_fileNewMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.m_fileNewMenuItem.Text = "&New";
+            this.m_fileNewMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_fileNewMenuItem.Text = "&New...";
             this.m_fileNewMenuItem.Click += new System.EventHandler(this.OnFileNew);
             // 
             // m_fileOpenMenuItem
@@ -1091,8 +1127,8 @@
             this.m_fileOpenMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileOpenMenuItem.Name = "m_fileOpenMenuItem";
             this.m_fileOpenMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.m_fileOpenMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.m_fileOpenMenuItem.Text = "&Open";
+            this.m_fileOpenMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_fileOpenMenuItem.Text = "&Open...";
             this.m_fileOpenMenuItem.Click += new System.EventHandler(this.OnFileOpen);
             // 
             // m_fileSaveMenuItem
@@ -1102,21 +1138,46 @@
             this.m_fileSaveMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_fileSaveMenuItem.Name = "m_fileSaveMenuItem";
             this.m_fileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.m_fileSaveMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileSaveMenuItem.Size = new System.Drawing.Size(155, 22);
             this.m_fileSaveMenuItem.Text = "&Save";
             // 
             // m_fileSaveAsMenuItem
             // 
             this.m_fileSaveAsMenuItem.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
             this.m_fileSaveAsMenuItem.Name = "m_fileSaveAsMenuItem";
-            this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.m_fileSaveAsMenuItem.Text = "Save &As";
+            this.m_fileSaveAsMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_fileSaveAsMenuItem.Text = "Save &As...";
             this.m_fileSaveAsMenuItem.Click += new System.EventHandler(this.OnFileSaveAs);
+            // 
+            // m_filePageSetupMenuItem
+            // 
+            this.m_filePageSetupMenuItem.Image = global::TileMapEditor.Properties.Resources.FilePageSetup;
+            this.m_filePageSetupMenuItem.Name = "m_filePageSetupMenuItem";
+            this.m_filePageSetupMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_filePageSetupMenuItem.Text = "Page Setup...";
+            this.m_filePageSetupMenuItem.Click += new System.EventHandler(this.OnPageSetup);
+            // 
+            // m_filePrintPreviewMenuItem
+            // 
+            this.m_filePrintPreviewMenuItem.Image = global::TileMapEditor.Properties.Resources.FilePrintPreview;
+            this.m_filePrintPreviewMenuItem.Name = "m_filePrintPreviewMenuItem";
+            this.m_filePrintPreviewMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_filePrintPreviewMenuItem.Text = "Print Preview...";
+            this.m_filePrintPreviewMenuItem.Click += new System.EventHandler(this.OnPrintPreview);
+            // 
+            // m_filePrintMenuItem
+            // 
+            this.m_filePrintMenuItem.Image = global::TileMapEditor.Properties.Resources.FilePrint;
+            this.m_filePrintMenuItem.Name = "m_filePrintMenuItem";
+            this.m_filePrintMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.m_filePrintMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_filePrintMenuItem.Text = "Print...";
+            this.m_filePrintMenuItem.Click += new System.EventHandler(this.OnPrint);
             // 
             // m_fileExitMenuItem
             // 
             this.m_fileExitMenuItem.Name = "m_fileExitMenuItem";
-            this.m_fileExitMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.m_fileExitMenuItem.Size = new System.Drawing.Size(155, 22);
             this.m_fileExitMenuItem.Text = "E&xit";
             this.m_fileExitMenuItem.Click += new System.EventHandler(this.OnFileExit);
             // 
@@ -1774,10 +1835,14 @@
             this.m_fileOpenButton,
             m_fileToolStripSeparator1,
             this.m_fileSaveButton,
-            this.m_fileSaveAsButton});
-            this.m_fileToolStrip.Location = new System.Drawing.Point(13, 124);
+            this.m_fileSaveAsButton,
+            m_fileToolStripSeparator2,
+            this.m_filePageSetupButton,
+            this.m_filePrintPreviewButton,
+            this.m_filePrintButton});
+            this.m_fileToolStrip.Location = new System.Drawing.Point(3, 124);
             this.m_fileToolStrip.Name = "m_fileToolStrip";
-            this.m_fileToolStrip.Size = new System.Drawing.Size(110, 25);
+            this.m_fileToolStrip.Size = new System.Drawing.Size(216, 25);
             this.m_fileToolStrip.TabIndex = 6;
             // 
             // m_fileNewButton
@@ -1825,17 +1890,37 @@
             this.m_fileSaveAsButton.ToolTipText = "Save map as...";
             this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
             // 
-            // m_tileSheetRemoveDependenciesButton
+            // m_filePageSetupButton
             // 
-            this.m_tileSheetRemoveDependenciesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetRemoveDependenciesButton.Enabled = false;
-            this.m_tileSheetRemoveDependenciesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
-            this.m_tileSheetRemoveDependenciesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.m_tileSheetRemoveDependenciesButton.Name = "m_tileSheetRemoveDependenciesButton";
-            this.m_tileSheetRemoveDependenciesButton.Size = new System.Drawing.Size(23, 22);
-            this.m_tileSheetRemoveDependenciesButton.Text = "toolStripButton1";
-            this.m_tileSheetRemoveDependenciesButton.ToolTipText = "Remove dependencies on this Tile Sheet";
-            this.m_tileSheetRemoveDependenciesButton.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
+            this.m_filePageSetupButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_filePageSetupButton.Image = global::TileMapEditor.Properties.Resources.FilePageSetup;
+            this.m_filePageSetupButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_filePageSetupButton.Name = "m_filePageSetupButton";
+            this.m_filePageSetupButton.Size = new System.Drawing.Size(23, 22);
+            this.m_filePageSetupButton.Text = "Page Setup";
+            this.m_filePageSetupButton.ToolTipText = "Configure page settings for printing";
+            this.m_filePageSetupButton.Click += new System.EventHandler(this.OnPageSetup);
+            // 
+            // m_filePrintPreviewButton
+            // 
+            this.m_filePrintPreviewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_filePrintPreviewButton.Image = global::TileMapEditor.Properties.Resources.FilePrintPreview;
+            this.m_filePrintPreviewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_filePrintPreviewButton.Name = "m_filePrintPreviewButton";
+            this.m_filePrintPreviewButton.Size = new System.Drawing.Size(23, 22);
+            this.m_filePrintPreviewButton.Text = "Print Preview";
+            this.m_filePrintPreviewButton.ToolTipText = "Print preview";
+            this.m_filePrintPreviewButton.Click += new System.EventHandler(this.OnPrintPreview);
+            // 
+            // m_filePrintButton
+            // 
+            this.m_filePrintButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_filePrintButton.Image = global::TileMapEditor.Properties.Resources.FilePrint;
+            this.m_filePrintButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_filePrintButton.Name = "m_filePrintButton";
+            this.m_filePrintButton.Size = new System.Drawing.Size(23, 22);
+            this.m_filePrintButton.Text = "Print";
+            this.m_filePrintButton.Click += new System.EventHandler(this.OnPrint);
             // 
             // MainForm
             // 
@@ -2036,5 +2121,11 @@
         private System.Windows.Forms.ToolStripButton m_mapStatisticsButton;
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetRemoveDependenciesMenuItem;
         private System.Windows.Forms.ToolStripButton m_tileSheetRemoveDependenciesButton;
+        private System.Windows.Forms.ToolStripMenuItem m_filePageSetupMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_filePrintMenuItem;
+        private System.Windows.Forms.ToolStripButton m_filePageSetupButton;
+        private System.Windows.Forms.ToolStripButton m_filePrintButton;
+        private System.Windows.Forms.ToolStripMenuItem m_filePrintPreviewMenuItem;
+        private System.Windows.Forms.ToolStripButton m_filePrintPreviewButton;
     }
 }

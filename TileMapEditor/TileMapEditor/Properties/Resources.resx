@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TileAnimationFrameDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TileAnimationFrameDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ToolsEraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsEraser.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,9 +136,6 @@
   <data name="ViewViewport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewViewport.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AboutBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AboutBackground.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ImageBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImageBackground.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,11 +148,14 @@
   <data name="ViewLayerCompositingShowAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewLayerCompositingShowAll.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ViewZoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewZoomIn.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TileSheetDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TileSheetDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TileAnimationFrameDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TileAnimationFrameDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LayerNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LayerNew.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HelpFeatures" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\Features.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -163,8 +166,8 @@
   <data name="ViewZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewZoom.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HelptIDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\tIDE.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="HelpContents" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HelpContents.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,20 +187,29 @@
   <data name="HelpLayerCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\LayerCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="FilePageSetup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilePageSetup.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HelpGettingStarted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\GettingStarted.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="VewTileGuidesShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VewTileGuidesShow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TileSheetRemoveDependencies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TileSheetRemoveDependencies.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EditRedo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditRedo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HelpCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help\CommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="HelpMapCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\MapCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ViewLayerCompositingDimUnselected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewLayerCompositingDimUnselected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilePrint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilePrint.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HelpSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HelpSearch.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,14 +229,20 @@
   <data name="AboutSide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AboutSide.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Plugin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plugin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelpCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\CommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="VewTileGuides" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VewTileGuides.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LayerBringForward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerBringForward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HelptIDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help\tIDE.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LayerInvisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LayerInvisible.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FileSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSave.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,9 +259,6 @@
   <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LayerNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LayerNew.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PluginReload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PluginReload.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -252,9 +267,6 @@
   </data>
   <data name="HelpTileSheetCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\TileSheetCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="HelpMapCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help\MapCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ToolsDropperCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsDropperCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -286,23 +298,23 @@
   <data name="ToolsTileBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolsTileBlock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ToolsSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ToolsSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ViewLayerCompositing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewLayerCompositing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VewTileGuidesHide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VewTileGuidesHide.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Plugin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plugin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AboutBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutBackground.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TileSheetAutoUpdateDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TileSheetAutoUpdateDisable.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LayerVisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerVisible.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelpHelpCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\HelpCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LayerDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,6 +337,9 @@
   <data name="EditMakeTileBrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditMakeTileBrush.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HelpPluginCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\PluginCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="TileProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TileProperties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -343,11 +358,11 @@
   <data name="EditDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LayerInvisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LayerInvisible.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ViewZoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ViewZoomIn.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ToolsSingleTileCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToolsSingleTileCursor.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FileOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileOpen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,13 +376,7 @@
   <data name="MapProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MapProperties.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TileSheetRemoveDependencies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TileSheetRemoveDependencies.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HelpHelpCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help\HelpCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="HelpPluginCommandReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help\PluginCommandReference.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="FilePrintPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilePrintPreview.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

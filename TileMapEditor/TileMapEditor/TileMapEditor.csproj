@@ -167,6 +167,7 @@
     <Compile Include="Plugin\Bridge\ToolBarButtonBridge.cs" />
     <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Plugin\Version.cs" />
+    <Compile Include="PrintManager.cs" />
     <Compile Include="TileBrushCollection.cs" />
     <Compile Include="TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
@@ -335,6 +336,9 @@
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
+    <None Include="Resources\FilePrint.png" />
+    <None Include="Resources\FilePageSetup.png" />
+    <None Include="Resources\FilePrintPreview.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
     <None Include="Resources\Help\CommandReference.rtf" />

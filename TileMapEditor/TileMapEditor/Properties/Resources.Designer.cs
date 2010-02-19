@@ -165,6 +165,27 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap FilePageSetup {
+            get {
+                object obj = ResourceManager.GetObject("FilePageSetup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FilePrint {
+            get {
+                object obj = ResourceManager.GetObject("FilePrint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FilePrintPreview {
+            get {
+                object obj = ResourceManager.GetObject("FilePrintPreview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap FileSave {
             get {
                 object obj = ResourceManager.GetObject("FileSave", resourceCulture);

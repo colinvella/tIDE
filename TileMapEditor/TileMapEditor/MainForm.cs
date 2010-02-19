@@ -643,6 +643,20 @@ namespace TileMapEditor
             }
         }
 
+        private void OnPageSetup(object sender, EventArgs e)
+        {
+            PrintManager.Instance.ShowPageSetupDialog(this);
+        }
+
+        private void OnPrintPreview(object sender, EventArgs e)
+        {
+        }
+
+        private void OnPrint(object sender, EventArgs eventArgs)
+        {
+
+        }
+
         private void OnFileExit(object sender, EventArgs eventArgs)
         {
             Close();
