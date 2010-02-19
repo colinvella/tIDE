@@ -785,6 +785,22 @@ namespace TileMapEditor.Controls
             m_dtStart = DateTime.Now;
         }
 
+        public Image GenerateImage()
+        {
+            Bitmap bitmap = new Bitmap(m_map.DisplaySize.Width, m_map.DisplaySize.Height);
+            Graphics graphics = Graphics.FromImage(bitmap);
+
+            Graphics oldGraphics = m_graphics;
+            m_graphics = graphics;
+
+            Tiling.Dimensions.Rectangle viewport = new Tiling.Dimensions.Rectangle(m_map.DisplaySize);
+            m_map.Draw(this, viewport);
+
+            m_graphics = oldGraphics;
+
+            return bitmap;
+        }
+
         public void LoadTileSheet(TileSheet tileSheet)
         {
             TileImageCache.Instance.Refresh(tileSheet);

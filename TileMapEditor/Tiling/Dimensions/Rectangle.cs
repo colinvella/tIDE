@@ -17,6 +17,12 @@ namespace Tiling.Dimensions
             Size = size;
         }
 
+        public Rectangle(Size size)
+        {
+            Location = Location.Origin;
+            Size = size;
+        }
+
         public Rectangle(Rectangle rectangle)
         {
             Location = rectangle.Location;
