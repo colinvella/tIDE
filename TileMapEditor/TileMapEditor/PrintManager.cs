@@ -20,6 +20,8 @@ namespace TileMapEditor
         private Rectangle m_sourceBounds;
         private int m_currentPage;
         private Font m_captionFont;
+        private ImageAttributes m_colourImageAttributes;
+        private ImageAttributes m_grayscaleImageAttributes;
 
         private PrintManager()
         {
@@ -32,6 +34,18 @@ namespace TileMapEditor
             m_sourceBounds = Rectangle.Empty;
             m_currentPage = 0;
             m_captionFont = new Font(SystemFonts.CaptionFont, FontStyle.Regular);
+
+            m_colourImageAttributes = new ImageAttributes();
+
+            float fWR = 0.2989f, fWG = 0.5870f, fWB = 0.1140f;
+            ColorMatrix grayscaleMatrix = new ColorMatrix(new float[][] {
+                new float[] {  fWR,  fWR,  fWR, 0.0f, 0.0f },
+                new float[] {  fWG,  fWG,  fWG, 0.0f, 0.0f },
+                new float[] {  fWB,  fWB,  fWB, 0.0f, 0.0f },
+                new float[] { 0.0f, 0.0f, 0.0f, 1.0f, 0.0f },
+                new float[] { 0.0f, 0.0f, 0.0f, 0.0f, 1.0f }});
+            m_grayscaleImageAttributes = new ImageAttributes();
+            m_grayscaleImageAttributes.SetColorMatrix(grayscaleMatrix);
         }
 
         private void OnBeginPrint(object sender, PrintEventArgs printEventArgs)
@@ -39,29 +53,6 @@ namespace TileMapEditor
             // handle portrait / landscape settings
             if (m_pageSettings.Landscape)
                 m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
-
-            // colour settings
-            if (!m_pageSettings.Color)
-            {
-                Bitmap grayscaleBitmap = new Bitmap(m_printContent.Width, m_printContent.Height);
-                Graphics graphics = Graphics.FromImage(grayscaleBitmap);
-                float fWeight = 1.0f / 3.0f;
-                ColorMatrix colorMatrix = new ColorMatrix(new float[][] {
-                    new float[] {fWeight, fWeight, fWeight, 0.0f, 0.0f },
-                    new float[] {fWeight, fWeight, fWeight, 0.0f, 0.0f },
-                    new float[] {fWeight, fWeight, fWeight, 0.0f, 0.0f },
-                    new float[] {   0.0f,    0.0f,    0.0f, 1.0f, 0.0f },
-                    new float[] {   0.0f,    0.0f,    0.0f, 0.0f, 1.0f }});
-                ImageAttributes imageAttributes = new ImageAttributes();
-                imageAttributes.SetColorMatrix(colorMatrix);
-                int width = m_printContent.Width;
-                int height = m_printContent.Height;
-                Rectangle destRect = new Rectangle(Point.Empty, m_printContent.Size);
-                graphics.DrawImage(m_printContent,
-                    new Point[] {Point.Empty, new Point(width, 0), new Point(0, height)},
-                    destRect, GraphicsUnit.Pixel, imageAttributes);
-                m_printContent = grayscaleBitmap;
-            }
 
             m_sourceBounds = Rectangle.Empty;
             m_currentPage = 1;
@@ -77,22 +68,32 @@ namespace TileMapEditor
             if (m_sourceBounds == Rectangle.Empty)
             {
                 m_sourceBounds.Size = marginBounds.Size;
-                m_sourceBounds.Inflate(0, -16);
+                m_sourceBounds.Size = new Size(m_sourceBounds.Width, m_sourceBounds.Height - m_captionFont.Height);
             }
+
+            Rectangle destinationBounds = marginBounds;
+            destinationBounds.Size = new Size(destinationBounds.Width, destinationBounds.Height - m_captionFont.Height);
 
             int pagesAcross = (m_printContent.Width + m_sourceBounds.Width - 1) / m_sourceBounds.Width;
             int pagesDown = (m_printContent.Height + m_sourceBounds.Height - 1) / m_sourceBounds.Height;
             int pageCount = pagesAcross * pagesDown;
 
-            graphics.DrawImage(m_printContent, marginBounds, m_sourceBounds, GraphicsUnit.Pixel);
+            // handle colour settings
+            ImageAttributes imageAttributes = m_pageSettings.Color
+                ? m_colourImageAttributes : m_grayscaleImageAttributes;
+
+            graphics.DrawImage(m_printContent, destinationBounds,
+                m_sourceBounds.X, m_sourceBounds.Y, m_sourceBounds.Width, m_sourceBounds.Height,
+                GraphicsUnit.Pixel, imageAttributes);
+
             graphics.DrawString("Page " + m_currentPage + " of " + pageCount,
-                m_captionFont, Brushes.Black, leftMargin, m_sourceBounds.Height + 4.0f);
+                m_captionFont, Brushes.Black, leftMargin, destinationBounds.Bottom);
 
             // handle paging
             ++m_currentPage;
-            m_sourceBounds.Offset(marginBounds.Width, 0);
+            m_sourceBounds.Offset(destinationBounds.Width, 0);
             if (m_sourceBounds.Left >= m_printContent.Width)
-                m_sourceBounds.Offset(-m_sourceBounds.Left, marginBounds.Height);
+                m_sourceBounds.Offset(-m_sourceBounds.Left, destinationBounds.Height);
 
             printPageEventArgs.HasMorePages = m_sourceBounds.Top <= m_printContent.Height;
         }
