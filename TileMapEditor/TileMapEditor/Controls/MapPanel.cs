@@ -98,7 +98,10 @@ namespace TileMapEditor.Controls
             }
             else if (m_mouseLocation.X > m_viewport.Size.Width - m_selectedLayer.TileSize.Width)
             {
-                int newScrollValue = Math.Min(m_horizontalScrollBar.Maximum, m_horizontalScrollBar.Value + deltaX);
+                int newScrollValue = Math.Min(
+                    m_horizontalScrollBar.Maximum - m_horizontalScrollBar.LargeChange,
+                    m_horizontalScrollBar.Value + deltaX);
+                newScrollValue = Math.Max(m_horizontalScrollBar.Minimum, newScrollValue);
                 m_horizontalScrollBar.Value = newScrollValue;
                 OnHorizontalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
             }
@@ -112,7 +115,10 @@ namespace TileMapEditor.Controls
             }
             else if (m_mouseLocation.Y > m_viewport.Size.Height - m_selectedLayer.TileSize.Height)
             {
-                int newScrollValue = Math.Min(m_verticalScrollBar.Maximum, m_verticalScrollBar.Value + deltaY);
+                int newScrollValue = Math.Min(
+                    m_verticalScrollBar.Maximum - m_verticalScrollBar.LargeChange,
+                    m_verticalScrollBar.Value + deltaY);
+                newScrollValue = Math.Max(m_verticalScrollBar.Minimum, newScrollValue);
                 m_verticalScrollBar.Value = newScrollValue;
                 OnVerticalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
             }
