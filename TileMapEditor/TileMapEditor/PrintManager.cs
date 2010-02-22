@@ -57,13 +57,28 @@ namespace TileMapEditor
                 = pageSetupDialog.AllowOrientation
                 = pageSetupDialog.AllowPaper
                 = pageSetupDialog.AllowPrinter = true;
-            pageSetupDialog.ShowDialog(owner);
+            pageSetupDialog.Document = m_printDocument;
+
+            // handle .NET measurement bug
+            Margins originalMargins = m_printDocument.DefaultPageSettings.Margins;
+            if(System.Globalization.RegionInfo.CurrentRegion.IsMetric)
+            {
+                m_printDocument.DefaultPageSettings.Margins = PrinterUnitConvert.Convert(
+                    m_printDocument.DefaultPageSettings.Margins, PrinterUnit.Display,
+                    PrinterUnit.TenthsOfAMillimeter);
+            }
+
+            if (pageSetupDialog.ShowDialog(owner) != DialogResult.OK)
+                m_printDocument.DefaultPageSettings.Margins = originalMargins;
         }
 
         internal void ShowPrintPreviewDialog(IWin32Window owner, Image printContent)
         {
             m_printContent = printContent;
             m_sourceBounds = Rectangle.Empty;
+
+            if (m_pageSettings.Landscape)
+                m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
             printPreviewDialog.ShowIcon = false;
@@ -75,6 +90,9 @@ namespace TileMapEditor
         {
             m_printContent = printContent;
             m_sourceBounds = Rectangle.Empty;
+
+            if (m_pageSettings.Landscape)
+                m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
             PrintDialog printDialog = new PrintDialog();
             printDialog.UseEXDialog = true;
