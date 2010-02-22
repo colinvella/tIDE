@@ -1258,6 +1258,15 @@ namespace TileMapEditor
                 = m_layerDeleteButton.Enabled
                 = layerSelected;
 
+            // print commands
+            m_filePageSetupMenuItem.Enabled
+                = m_filePageSetupButton.Enabled
+                = m_filePrintPreviewMenuItem.Enabled
+                = m_filePrintPreviewButton.Enabled
+                = m_filePrintMenuItem.Enabled
+                = m_filePrintButton.Enabled
+                = layerSelected;
+
             if (layerSelected)
             {
                 Layer layer = (Layer)component;

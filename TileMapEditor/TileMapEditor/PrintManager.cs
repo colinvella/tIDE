@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
@@ -35,9 +36,34 @@ namespace TileMapEditor
 
         private void OnBeginPrint(object sender, PrintEventArgs printEventArgs)
         {
+            // handle portrait / landscape settings
             if (m_pageSettings.Landscape)
                 m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
+            // colour settings
+            if (!m_pageSettings.Color)
+            {
+                Bitmap grayscaleBitmap = new Bitmap(m_printContent.Width, m_printContent.Height);
+                Graphics graphics = Graphics.FromImage(grayscaleBitmap);
+                float fWeight = 1.0f / 3.0f;
+                ColorMatrix colorMatrix = new ColorMatrix(new float[][] {
+                    new float[] {fWeight, fWeight, fWeight, 0.0f, 0.0f },
+                    new float[] {fWeight, fWeight, fWeight, 0.0f, 0.0f },
+                    new float[] {fWeight, fWeight, fWeight, 0.0f, 0.0f },
+                    new float[] {   0.0f,    0.0f,    0.0f, 1.0f, 0.0f },
+                    new float[] {   0.0f,    0.0f,    0.0f, 0.0f, 1.0f }});
+                ImageAttributes imageAttributes = new ImageAttributes();
+                imageAttributes.SetColorMatrix(colorMatrix);
+                int width = m_printContent.Width;
+                int height = m_printContent.Height;
+                Rectangle destRect = new Rectangle(Point.Empty, m_printContent.Size);
+                graphics.DrawImage(m_printContent,
+                    new Point[] {Point.Empty, new Point(width, 0), new Point(0, height)},
+                    destRect, GraphicsUnit.Pixel, imageAttributes);
+                m_printContent = grayscaleBitmap;
+            }
+
+            m_sourceBounds = Rectangle.Empty;
             m_currentPage = 1;
         }
 
