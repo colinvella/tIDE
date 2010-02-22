@@ -650,11 +650,22 @@ namespace TileMapEditor
 
         private void OnPrintPreview(object sender, EventArgs e)
         {
+            Layer selectedLayer = m_mapPanel.SelectedLayer;
+            if (selectedLayer == null)
+                return;
+
+            PrintManager.Instance.ShowPrintPreviewDialog(this,
+                m_mapPanel.GenerateImage(selectedLayer));
         }
 
         private void OnPrint(object sender, EventArgs eventArgs)
         {
+            Layer selectedLayer = m_mapPanel.SelectedLayer;
+            if (selectedLayer == null)
+                return;
 
+            PrintManager.Instance.Print(this,
+                m_mapPanel.GenerateImage(selectedLayer));
         }
 
         private void OnFileExit(object sender, EventArgs eventArgs)

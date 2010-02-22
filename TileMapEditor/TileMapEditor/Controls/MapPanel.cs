@@ -785,7 +785,7 @@ namespace TileMapEditor.Controls
             m_dtStart = DateTime.Now;
         }
 
-        public Image GenerateImage()
+        public Image GenerateImage(Layer layer)
         {
             Bitmap bitmap = new Bitmap(m_map.DisplaySize.Width, m_map.DisplaySize.Height);
             Graphics graphics = Graphics.FromImage(bitmap);
@@ -793,8 +793,8 @@ namespace TileMapEditor.Controls
             Graphics oldGraphics = m_graphics;
             m_graphics = graphics;
 
-            Tiling.Dimensions.Rectangle viewport = new Tiling.Dimensions.Rectangle(m_map.DisplaySize);
-            m_map.Draw(this, viewport);
+            Tiling.Dimensions.Rectangle viewport = new Tiling.Dimensions.Rectangle(layer.DisplaySize);
+            layer.Draw(this, Tiling.Dimensions.Location.Origin, viewport);
 
             m_graphics = oldGraphics;
 
