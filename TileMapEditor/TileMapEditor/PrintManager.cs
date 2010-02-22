@@ -17,15 +17,28 @@ namespace TileMapEditor
         private PrintDocument m_printDocument;
         private Image m_printContent;
         private Rectangle m_sourceBounds;
+        private int m_currentPage;
+        private Font m_captionFont;
 
         private PrintManager()
         {
             m_printerSettings = new PrinterSettings();
             m_pageSettings = new PageSettings(m_printerSettings);
             m_printDocument = new PrintDocument();
+            m_printDocument.BeginPrint += new PrintEventHandler(OnBeginPrint);
             m_printDocument.PrintPage += new PrintPageEventHandler(OnPrintPage);
             m_printContent = null;
             m_sourceBounds = Rectangle.Empty;
+            m_currentPage = 0;
+            m_captionFont = new Font(SystemFonts.CaptionFont, FontStyle.Regular);
+        }
+
+        private void OnBeginPrint(object sender, PrintEventArgs printEventArgs)
+        {
+            if (m_pageSettings.Landscape)
+                m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
+
+            m_currentPage = 1;
         }
 
         private void OnPrintPage(object sender, PrintPageEventArgs printPageEventArgs)
@@ -36,11 +49,21 @@ namespace TileMapEditor
             int topMargin = marginBounds.Top;
 
             if (m_sourceBounds == Rectangle.Empty)
+            {
                 m_sourceBounds.Size = marginBounds.Size;
+                m_sourceBounds.Inflate(0, -16);
+            }
+
+            int pagesAcross = (m_printContent.Width + m_sourceBounds.Width - 1) / m_sourceBounds.Width;
+            int pagesDown = (m_printContent.Height + m_sourceBounds.Height - 1) / m_sourceBounds.Height;
+            int pageCount = pagesAcross * pagesDown;
 
             graphics.DrawImage(m_printContent, marginBounds, m_sourceBounds, GraphicsUnit.Pixel);
+            graphics.DrawString("Page " + m_currentPage + " of " + pageCount,
+                m_captionFont, Brushes.Black, leftMargin, m_sourceBounds.Height + 4.0f);
 
             // handle paging
+            ++m_currentPage;
             m_sourceBounds.Offset(marginBounds.Width, 0);
             if (m_sourceBounds.Left >= m_printContent.Width)
                 m_sourceBounds.Offset(-m_sourceBounds.Left, marginBounds.Height);
@@ -77,9 +100,6 @@ namespace TileMapEditor
             m_printContent = printContent;
             m_sourceBounds = Rectangle.Empty;
 
-            if (m_pageSettings.Landscape)
-                m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
-
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
             printPreviewDialog.ShowIcon = false;
             printPreviewDialog.Document = m_printDocument;
@@ -90,9 +110,6 @@ namespace TileMapEditor
         {
             m_printContent = printContent;
             m_sourceBounds = Rectangle.Empty;
-
-            if (m_pageSettings.Landscape)
-                m_printContent.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
             PrintDialog printDialog = new PrintDialog();
             printDialog.UseEXDialog = true;
