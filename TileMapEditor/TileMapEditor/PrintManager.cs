@@ -140,12 +140,12 @@ namespace TileMapEditor
 
             PrintDialog printDialog = new PrintDialog();
             printDialog.UseEXDialog = true;
-            printDialog.AllowCurrentPage
-                = printDialog.AllowPrintToFile
-                = printDialog.AllowSelection
+            printDialog.AllowPrintToFile
                 = printDialog.AllowSomePages
                 = true;
+            printDialog.PrinterSettings = m_printerSettings;
             printDialog.Document = m_printDocument;
+            
             if (printDialog.ShowDialog(owner) == DialogResult.OK)
                 m_printDocument.Print();
         }
