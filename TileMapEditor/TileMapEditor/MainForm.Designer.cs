@@ -268,6 +268,7 @@
             this.m_mapTreeView.TabIndex = 0;
             this.m_mapTreeView.NewTileSheet += new System.EventHandler(this.OnTileSheetNew);
             this.m_mapTreeView.ComponentChanged += new TileMapEditor.Controls.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            this.m_mapTreeView.MapStatistics += new System.EventHandler(this.OnMapStatistics);
             this.m_mapTreeView.LayerVisibility += new System.EventHandler(this.OnLayerVisibility);
             this.m_mapTreeView.BringLayerForward += new System.EventHandler(this.OnLayerBringForward);
             this.m_mapTreeView.LayerProperties += new System.EventHandler(this.OnLayerProperties);
@@ -1842,7 +1843,7 @@
             this.m_filePrintButton});
             this.m_fileToolStrip.Location = new System.Drawing.Point(3, 124);
             this.m_fileToolStrip.Name = "m_fileToolStrip";
-            this.m_fileToolStrip.Size = new System.Drawing.Size(216, 25);
+            this.m_fileToolStrip.Size = new System.Drawing.Size(185, 25);
             this.m_fileToolStrip.TabIndex = 6;
             // 
             // m_fileNewButton
