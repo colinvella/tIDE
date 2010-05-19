@@ -9,6 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Plugin\Plugin.csproj", "{2787F0CD-8BFD-4696-AAAA-629452D05A21}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{5A92BF55-75D9-42FE-9A3D-F44B77F2CF77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TileSheets", "TileSheets", "{FAC8407A-A75A-44EC-8ADB-5D4E46372CF5}"
+	ProjectSection(SolutionItems) = preProject
+		Assets\TileSheets\TileSheet01.pdn = Assets\TileSheets\TileSheet01.pdn
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{961826DA-DCD8-4117-92D0-272E551B87F0}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 5
@@ -52,5 +61,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FAC8407A-A75A-44EC-8ADB-5D4E46372CF5} = {5A92BF55-75D9-42FE-9A3D-F44B77F2CF77}
+		{961826DA-DCD8-4117-92D0-272E551B87F0} = {5A92BF55-75D9-42FE-9A3D-F44B77F2CF77}
 	EndGlobalSection
 EndGlobal
