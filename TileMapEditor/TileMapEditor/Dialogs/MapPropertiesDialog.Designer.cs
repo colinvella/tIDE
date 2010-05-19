@@ -61,7 +61,7 @@
             // m_buttonCancel
             // 
             this.m_buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.m_buttonCancel.Location = new System.Drawing.Point(497, 377);
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
@@ -111,6 +111,7 @@
             // 
             // m_textBoxDescription
             // 
+            this.m_textBoxDescription.AcceptsReturn = true;
             this.m_textBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));

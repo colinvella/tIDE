@@ -591,7 +591,7 @@ namespace TileMapEditor
 
             Map map = new Map("Untitled Map");
 
-            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(map);
+            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(map, true);
 
             if (mapPropertiesDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -1016,7 +1016,7 @@ namespace TileMapEditor
 
         private void OnMapProperties(object sender, EventArgs eventArgs)
         {
-            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map);
+            MapPropertiesDialog mapPropertiesDialog = new MapPropertiesDialog(m_map, false);
 
             if (mapPropertiesDialog.ShowDialog(this) == DialogResult.OK)
             {

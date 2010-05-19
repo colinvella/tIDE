@@ -16,7 +16,14 @@ namespace TileMapEditor.Dialogs
 {
     public partial class MapPropertiesDialog : Form
     {
+        #region Private Variables
+
         private Map m_map;
+        private bool m_isNewMap;
+
+        #endregion
+
+        #region Private Methods
 
         private void MarkAsModified()
         {
@@ -31,9 +38,14 @@ namespace TileMapEditor.Dialogs
             m_textBoxDescription.Text = m_map.Description;
             m_customPropertyGrid.LoadProperties(m_map);
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-            m_buttonCancel.Text = "&Close";
-            m_buttonCancel.DialogResult = DialogResult.OK;
+            if (m_isNewMap)
+                MarkAsModified();
+            else
+            {
+                m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+                m_buttonCancel.Text = "&Close";
+                m_buttonCancel.DialogResult = DialogResult.OK;
+            }
         }
 
         private void OnFieldChanged(object sender, EventArgs eventArgs)
@@ -63,11 +75,18 @@ namespace TileMapEditor.Dialogs
             m_buttonCancel.DialogResult = DialogResult.OK;
         }
 
-        public MapPropertiesDialog(Map map)
+        #endregion
+
+        #region Public Methods
+
+        public MapPropertiesDialog(Map map, bool isNewMap)
         {
             InitializeComponent();
 
             m_map = map;
+            m_isNewMap = isNewMap;
         }
+
+        #endregion
     }
 }
