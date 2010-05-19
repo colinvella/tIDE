@@ -62,6 +62,7 @@ namespace TileMapEditor.Controls
             this.m_tileSheetContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mapStatisticsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_labelCaption = new System.Windows.Forms.Label();
             m_treePanel = new System.Windows.Forms.Panel();
             toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -226,15 +227,16 @@ namespace TileMapEditor.Controls
             // m_mapContextMenuStrip
             // 
             this.m_mapContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_mapPropertiesMenuItem});
+            this.m_mapPropertiesMenuItem,
+            this.m_mapStatisticsMenuItem});
             this.m_mapContextMenuStrip.Name = "m_contextMenuMap";
-            this.m_mapContextMenuStrip.Size = new System.Drawing.Size(137, 26);
+            this.m_mapContextMenuStrip.Size = new System.Drawing.Size(153, 70);
             // 
             // m_mapPropertiesMenuItem
             // 
             this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
-            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.m_mapPropertiesMenuItem.Size = new System.Drawing.Size(152, 22);
             this.m_mapPropertiesMenuItem.Text = "Properties...";
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
             // 
@@ -278,6 +280,14 @@ namespace TileMapEditor.Controls
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
+            // m_mapStatisticsMenuItem
+            // 
+            this.m_mapStatisticsMenuItem.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsMenuItem.Name = "m_mapStatisticsMenuItem";
+            this.m_mapStatisticsMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.m_mapStatisticsMenuItem.Text = "Statistics...";
+            this.m_mapStatisticsMenuItem.Click += new System.EventHandler(this.OnMapStatistics);
+            // 
             // MapTreeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +322,7 @@ namespace TileMapEditor.Controls
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerVisibilityMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_mapStatisticsMenuItem;
 
 
         #region Public Methods

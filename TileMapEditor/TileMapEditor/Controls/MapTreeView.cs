@@ -129,6 +129,12 @@ namespace TileMapEditor.Controls
                 MapProperties(this, eventArgs);
         }
 
+        private void OnMapStatistics(object sender, EventArgs eventArgs)
+        {
+            if (MapStatistics != null)
+                MapStatistics(this, eventArgs);
+        }
+
         private void OnLayerNew(object sender, EventArgs eventArgs)
         {
             if (NewLayer != null)
@@ -308,6 +314,9 @@ namespace TileMapEditor.Controls
 
         [Category("Behavior"), Description("Occurs when the map properties are requested from the context menu")]
         public event EventHandler MapProperties;
+
+        [Category("Behavior"), Description("Occurs when the map statistics are requested from the context menu")]
+        public event EventHandler MapStatistics;
 
         [Category("Behavior"), Description("Occurs when a new layer is requested from the context menu")]
         public event EventHandler NewLayer;
