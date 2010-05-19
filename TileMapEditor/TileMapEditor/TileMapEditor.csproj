@@ -347,6 +347,7 @@
     <None Include="Resources\Help\HelpCommandReference.rtf" />
     <None Include="Resources\Help\LayerCommandReference.rtf" />
     <None Include="Resources\Help\MapCommandReference.rtf" />
+    <None Include="Resources\Help\MapPropertiesDialog.rtf" />
     <None Include="Resources\Help\PluginCommandReference.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />
     <None Include="Resources\Help\TileSheetCommandReference.rtf" />
