@@ -59,7 +59,7 @@
             // m_labelCompanyName
             // 
             this.m_labelCompanyName.AutoSize = true;
-            this.m_labelCompanyName.Location = new System.Drawing.Point(141, 112);
+            this.m_labelCompanyName.Location = new System.Drawing.Point(11, 114);
             this.m_labelCompanyName.Name = "m_labelCompanyName";
             this.m_labelCompanyName.Size = new System.Drawing.Size(82, 13);
             this.m_labelCompanyName.TabIndex = 4;
@@ -68,7 +68,7 @@
             // m_labelCopyright
             // 
             this.m_labelCopyright.AutoSize = true;
-            this.m_labelCopyright.Location = new System.Drawing.Point(141, 95);
+            this.m_labelCopyright.Location = new System.Drawing.Point(11, 97);
             this.m_labelCopyright.Name = "m_labelCopyright";
             this.m_labelCopyright.Size = new System.Drawing.Size(51, 13);
             this.m_labelCopyright.TabIndex = 3;
@@ -111,12 +111,12 @@
             // 
             this.m_textBoxDescription.BackColor = System.Drawing.SystemColors.Info;
             this.m_textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_textBoxDescription.Location = new System.Drawing.Point(144, 140);
+            this.m_textBoxDescription.Location = new System.Drawing.Point(14, 140);
             this.m_textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.m_textBoxDescription.Multiline = true;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.ReadOnly = true;
-            this.m_textBoxDescription.Size = new System.Drawing.Size(243, 119);
+            this.m_textBoxDescription.Size = new System.Drawing.Size(370, 119);
             this.m_textBoxDescription.TabIndex = 5;
             this.m_textBoxDescription.TabStop = false;
             this.m_textBoxDescription.Text = "Description";
