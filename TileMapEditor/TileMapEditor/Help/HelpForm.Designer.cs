@@ -47,10 +47,12 @@
             treeNode8,
             treeNode9,
             treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Dialog Box Reference");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
-            treeNode11});
+            treeNode11,
+            treeNode12});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
@@ -102,9 +104,11 @@
             treeNode1.Name = "Features";
             treeNode1.Tag = "HelpFeatures";
             treeNode1.Text = "Features";
+            treeNode1.ToolTipText = "Features of this application";
             treeNode2.Name = "GettingStarted";
             treeNode2.Tag = "HelpGettingStarted";
             treeNode2.Text = "Getting Started";
+            treeNode2.ToolTipText = "Tips to quickly start using tIDE";
             treeNode3.Name = "FileCommandReference";
             treeNode3.Tag = "HelpFileCommandReference";
             treeNode3.Text = "File Command Reference";
@@ -132,11 +136,18 @@
             treeNode11.Name = "CommandReference";
             treeNode11.Tag = "HelpCommandReference";
             treeNode11.Text = "Command Reference";
-            treeNode12.Name = "tIDE";
-            treeNode12.Tag = "HelptIDE";
-            treeNode12.Text = "tIDE Help Topics";
+            treeNode11.ToolTipText = "A reference for all menu and toolbar commands";
+            treeNode12.Name = "DialogBoxReference";
+            treeNode12.Tag = "HelpDialogBoxReference";
+            treeNode12.Text = "Dialog Box Reference";
+            treeNode12.ToolTipText = "A reference for all dialog boxes";
+            treeNode13.Name = "tIDE";
+            treeNode13.Tag = "HelptIDE";
+            treeNode13.Text = "tIDE Help Topics";
+            treeNode13.ToolTipText = "Overview of all the help topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode12});
+            treeNode13});
+            this.m_topicTreeView.ShowNodeToolTips = true;
             this.m_topicTreeView.Size = new System.Drawing.Size(194, 387);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);

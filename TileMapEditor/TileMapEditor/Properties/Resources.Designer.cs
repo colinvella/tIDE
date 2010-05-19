@@ -228,6 +228,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpDialogBoxReference {
+            get {
+                object obj = ResourceManager.GetObject("HelpDialogBoxReference", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpEditCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpEditCommandReference", resourceCulture);
