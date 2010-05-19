@@ -14,9 +14,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TileSheets", "TileSheets", "{FAC8407A-A75A-44EC-8ADB-5D4E46372CF5}"
 	ProjectSection(SolutionItems) = preProject
 		Assets\TileSheets\TileSheet01.pdn = Assets\TileSheets\TileSheet01.pdn
+		Assets\TileSheets\TileSheet01.png = Assets\TileSheets\TileSheet01.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{961826DA-DCD8-4117-92D0-272E551B87F0}"
+	ProjectSection(SolutionItems) = preProject
+		Assets\Maps\Map01.tide = Assets\Maps\Map01.tide
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
