@@ -397,6 +397,7 @@
     <None Include="Resources\Help\KeywordBlacklist.txt" />
     <None Include="Resources\MapStatistics.png" />
     <None Include="Resources\TileSheetRemoveDependencies.png" />
+    <None Include="Resources\Legal.txt" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />

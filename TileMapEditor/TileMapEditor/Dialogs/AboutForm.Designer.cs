@@ -59,7 +59,7 @@
             // m_labelCompanyName
             // 
             this.m_labelCompanyName.AutoSize = true;
-            this.m_labelCompanyName.Location = new System.Drawing.Point(11, 114);
+            this.m_labelCompanyName.Location = new System.Drawing.Point(11, 104);
             this.m_labelCompanyName.Name = "m_labelCompanyName";
             this.m_labelCompanyName.Size = new System.Drawing.Size(82, 13);
             this.m_labelCompanyName.TabIndex = 4;
@@ -68,7 +68,7 @@
             // m_labelCopyright
             // 
             this.m_labelCopyright.AutoSize = true;
-            this.m_labelCopyright.Location = new System.Drawing.Point(11, 97);
+            this.m_labelCopyright.Location = new System.Drawing.Point(11, 87);
             this.m_labelCopyright.Name = "m_labelCopyright";
             this.m_labelCopyright.Size = new System.Drawing.Size(51, 13);
             this.m_labelCopyright.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.m_labelProductName.AutoSize = true;
             this.m_labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_labelProductName.ForeColor = System.Drawing.Color.White;
-            this.m_labelProductName.Location = new System.Drawing.Point(139, 14);
+            this.m_labelProductName.Location = new System.Drawing.Point(64, 16);
             this.m_labelProductName.Name = "m_labelProductName";
             this.m_labelProductName.Size = new System.Drawing.Size(160, 25);
             this.m_labelProductName.TabIndex = 2;
@@ -87,12 +87,13 @@
             // 
             // labelVersion
             // 
+            this.labelVersion.AutoSize = true;
             this.labelVersion.ForeColor = System.Drawing.Color.White;
-            this.labelVersion.Location = new System.Drawing.Point(141, 39);
+            this.labelVersion.Location = new System.Drawing.Point(66, 42);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(0, 17);
+            this.labelVersion.Size = new System.Drawing.Size(42, 13);
             this.labelVersion.TabIndex = 0;
             this.labelVersion.Text = "Version";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,12 +112,13 @@
             // 
             this.m_textBoxDescription.BackColor = System.Drawing.SystemColors.Info;
             this.m_textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_textBoxDescription.Location = new System.Drawing.Point(14, 140);
+            this.m_textBoxDescription.Location = new System.Drawing.Point(14, 126);
             this.m_textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.m_textBoxDescription.Multiline = true;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.ReadOnly = true;
-            this.m_textBoxDescription.Size = new System.Drawing.Size(370, 119);
+            this.m_textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.m_textBoxDescription.Size = new System.Drawing.Size(373, 133);
             this.m_textBoxDescription.TabIndex = 5;
             this.m_textBoxDescription.TabStop = false;
             this.m_textBoxDescription.Text = "Description";

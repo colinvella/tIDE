@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Tilemap Integrated Development Environment (tIDE)")]
-[assembly: AssemblyDescription("Tilemap Integrated Development Environment")]
+[assembly: AssemblyDescription("Tilemap Integrated Development Environment.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Colin Vella")]
 [assembly: AssemblyProduct("tIDE")]

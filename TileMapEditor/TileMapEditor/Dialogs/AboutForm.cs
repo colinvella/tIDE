@@ -30,12 +30,13 @@ namespace TileMapEditor.Dialogs
         public AboutForm()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0} {0}", AssemblyTitle);
+            this.Text = String.Format("About {0}", AssemblyTitle);
             this.m_labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0} {0}", AssemblyVersion);
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.m_labelCopyright.Text = AssemblyCopyright;
             this.m_labelCompanyName.Text = AssemblyCompany;
-            this.m_textBoxDescription.Text = AssemblyDescription;
+            //this.m_textBoxDescription.Text = AssemblyDescription;
+            this.m_textBoxDescription.Text = Properties.Resources.Legal;
 
             m_fadeDirection = 0.05;
         }

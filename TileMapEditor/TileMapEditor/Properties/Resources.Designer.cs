@@ -469,6 +469,25 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Microsoft Reciprocal License (Ms-RL)
+        ///
+        ///This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
+        ///
+        ///1. Definitions
+        ///
+        ///The terms &quot;reproduce,&quot; &quot;reproduction,&quot; &quot;derivative works,&quot; and &quot;distribution&quot; have the same meaning here as under U.S. copyright law.
+        ///
+        ///A &quot;contribution&quot; is the original software, or any additions or changes to the software.
+        ///
+        ///A &quot;contributor&quot; is any person that distributes its contribu [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Legal {
+            get {
+                return ResourceManager.GetString("Legal", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap Map {
             get {
                 object obj = ResourceManager.GetObject("Map", resourceCulture);
