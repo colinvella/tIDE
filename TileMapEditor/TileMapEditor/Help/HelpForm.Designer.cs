@@ -47,12 +47,14 @@
             treeNode8,
             treeNode9,
             treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Dialog Box Reference");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Map Properties Dialog");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Dialog Box Reference", new System.Windows.Forms.TreeNode[] {
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("tIDE Help Topics", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode11,
-            treeNode12});
+            treeNode13});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
             this.m_topicTreeView = new System.Windows.Forms.TreeView();
@@ -87,6 +89,7 @@
             this.m_splitContainer.Panel1.Controls.Add(this.m_topicTreeView);
             this.m_splitContainer.Panel1.Controls.Add(this.m_indexTreeView);
             this.m_splitContainer.Panel1.Controls.Add(this.m_searchListView);
+            this.m_splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 4);
             // 
             // m_splitContainer.Panel2
             // 
@@ -98,7 +101,7 @@
             // m_topicTreeView
             // 
             this.m_topicTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_topicTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_topicTreeView.Location = new System.Drawing.Point(4, 4);
             this.m_topicTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 0, 4);
             this.m_topicTreeView.Name = "m_topicTreeView";
             treeNode1.Name = "Features";
@@ -137,18 +140,22 @@
             treeNode11.Tag = "HelpCommandReference";
             treeNode11.Text = "Command Reference";
             treeNode11.ToolTipText = "A reference for all menu and toolbar commands";
-            treeNode12.Name = "DialogBoxReference";
-            treeNode12.Tag = "HelpDialogBoxReference";
-            treeNode12.Text = "Dialog Box Reference";
-            treeNode12.ToolTipText = "A reference for all dialog boxes";
-            treeNode13.Name = "tIDE";
-            treeNode13.Tag = "HelptIDE";
-            treeNode13.Text = "tIDE Help Topics";
-            treeNode13.ToolTipText = "Overview of all the help topics";
+            treeNode12.Name = "MapPropertiesDialog";
+            treeNode12.Tag = "HelpMapPropertiesDialog";
+            treeNode12.Text = "Map Properties Dialog";
+            treeNode12.ToolTipText = "Map Properties dialog box";
+            treeNode13.Name = "DialogBoxReference";
+            treeNode13.Tag = "HelpDialogBoxReference";
+            treeNode13.Text = "Dialog Box Reference";
+            treeNode13.ToolTipText = "A reference for all dialog boxes";
+            treeNode14.Name = "tIDE";
+            treeNode14.Tag = "HelptIDE";
+            treeNode14.Text = "tIDE Help Topics";
+            treeNode14.ToolTipText = "Overview of all the help topics";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13});
+            treeNode14});
             this.m_topicTreeView.ShowNodeToolTips = true;
-            this.m_topicTreeView.Size = new System.Drawing.Size(194, 387);
+            this.m_topicTreeView.Size = new System.Drawing.Size(190, 379);
             this.m_topicTreeView.TabIndex = 0;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
             // 
@@ -156,11 +163,11 @@
             // 
             this.m_indexTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_indexTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_indexTreeView.Location = new System.Drawing.Point(0, 0);
+            this.m_indexTreeView.Location = new System.Drawing.Point(4, 4);
             this.m_indexTreeView.Name = "m_indexTreeView";
             this.m_indexTreeView.ShowLines = false;
             this.m_indexTreeView.ShowPlusMinus = false;
-            this.m_indexTreeView.Size = new System.Drawing.Size(194, 387);
+            this.m_indexTreeView.Size = new System.Drawing.Size(190, 379);
             this.m_indexTreeView.TabIndex = 1;
             this.m_indexTreeView.Visible = false;
             this.m_indexTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnIndexSelect);
@@ -168,9 +175,9 @@
             // m_searchListView
             // 
             this.m_searchListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_searchListView.Location = new System.Drawing.Point(0, 0);
+            this.m_searchListView.Location = new System.Drawing.Point(4, 4);
             this.m_searchListView.Name = "m_searchListView";
-            this.m_searchListView.Size = new System.Drawing.Size(194, 387);
+            this.m_searchListView.Size = new System.Drawing.Size(190, 379);
             this.m_searchListView.TabIndex = 2;
             this.m_searchListView.UseCompatibleStateImageBehavior = false;
             this.m_searchListView.View = System.Windows.Forms.View.List;
@@ -181,12 +188,13 @@
             this.m_contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_contentPanel.BackColor = System.Drawing.SystemColors.Window;
             this.m_contentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_contentPanel.Controls.Add(this.m_contentRichTextBox);
             this.m_contentPanel.Location = new System.Drawing.Point(0, 4);
-            this.m_contentPanel.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.m_contentPanel.Margin = new System.Windows.Forms.Padding(0);
             this.m_contentPanel.Name = "m_contentPanel";
-            this.m_contentPanel.Padding = new System.Windows.Forms.Padding(1);
+            this.m_contentPanel.Padding = new System.Windows.Forms.Padding(4);
             this.m_contentPanel.Size = new System.Drawing.Size(382, 379);
             this.m_contentPanel.TabIndex = 1;
             // 
@@ -270,12 +278,12 @@
             this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.m_contentRichTextBox.DetectUrls = true;
             this.m_contentRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_contentRichTextBox.Location = new System.Drawing.Point(1, 1);
-            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.m_contentRichTextBox.Location = new System.Drawing.Point(4, 4);
+            this.m_contentRichTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.m_contentRichTextBox.Name = "m_contentRichTextBox";
             this.m_contentRichTextBox.ReadOnly = true;
             this.m_contentRichTextBox.SelectionLink = false;
-            this.m_contentRichTextBox.Size = new System.Drawing.Size(378, 375);
+            this.m_contentRichTextBox.Size = new System.Drawing.Size(372, 369);
             this.m_contentRichTextBox.TabIndex = 0;
             this.m_contentRichTextBox.Text = "Content Pane";
             this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
