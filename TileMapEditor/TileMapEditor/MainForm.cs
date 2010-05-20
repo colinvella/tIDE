@@ -636,7 +636,7 @@ namespace TileMapEditor
             Map newMap = null;
             try
             {
-                Stream stream = new FileStream(openFileDialog.FileName, FileMode.Open);
+                Stream stream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
                 newMap = selectedMapFormat.Load(stream);
                 stream.Close();
 
