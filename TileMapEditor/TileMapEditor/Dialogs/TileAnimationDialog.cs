@@ -80,8 +80,36 @@ namespace TileMapEditor.Dialogs
 
         private void TileAnimationDialog_Load(object sender, EventArgs eventArgs)
         {
+            Tile tile = m_layer.Tiles[m_tileLocation];
+            if (tile != null)
+            {
+                if (tile is StaticTile)
+                {
+                    m_frameIntervalTextbox.Value = 250;
+                    AddTileFrame(tile.TileSheet, tile.TileIndex);
+                }
+                else if (tile is AnimatedTile)
+                {
+                    AnimatedTile animatedTile = tile as AnimatedTile;
+                    m_frameIntervalTextbox.Value = animatedTile.FrameInterval;
+                    foreach (StaticTile tileFrame in animatedTile.TileFrames)
+                        AddTileFrame(tileFrame.TileSheet, tileFrame.TileIndex);
+                }
+            }
+            else
+            {
+                m_frameIntervalTextbox.Value = 250;
+            }
+
             m_tilePicker.Map = m_map;
             m_tilePicker.UpdatePicker();
+
+            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+        }
+
+        private void OnFrameIntervalChanged(object sender, EventArgs eventArgs)
+        {
+            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
         }
 
         private void OnDialogMouseMove(object sender, MouseEventArgs mouseEventArgs)
@@ -214,27 +242,6 @@ namespace TileMapEditor.Dialogs
             m_map = map;
             m_layer = layer;
             m_tileLocation = tileLocation;
-
-            Tile tile = m_layer.Tiles[m_tileLocation];
-            if (tile != null)
-            {
-                if (tile is StaticTile)
-                {
-                    m_frameIntervalTextbox.Value = 250;
-                    AddTileFrame(tile.TileSheet, tile.TileIndex);
-                }
-                else if (tile is AnimatedTile)
-                {
-                    AnimatedTile animatedTile = tile as AnimatedTile;
-                    m_frameIntervalTextbox.Value = animatedTile.FrameInterval;
-                    foreach (StaticTile tileFrame in animatedTile.TileFrames)
-                        AddTileFrame(tileFrame.TileSheet, tileFrame.TileIndex);
-                }
-            }
-            else
-            {
-                m_frameIntervalTextbox.Value = 250;
-            }
         }
     }
 }
