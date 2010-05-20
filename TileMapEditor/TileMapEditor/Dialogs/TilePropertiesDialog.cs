@@ -57,6 +57,8 @@ namespace TileMapEditor.Dialogs
         {
             m_textBoxId.Text = m_tile.Id;
             m_comboBoxBlendMode.SelectedIndex = (int)m_tile.BlendMode;
+            m_textBoxTileSheet.Text = m_tile.TileSheet.Id;
+            m_textBoxTileIndex.Text = m_tile.TileIndex.ToString();
             m_customPropertyGrid.LoadProperties(m_tile);
 
             m_buttonApply.Enabled = m_buttonOk.Enabled = false;
