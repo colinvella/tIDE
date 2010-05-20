@@ -341,6 +341,7 @@
     <None Include="Resources\FilePrintPreview.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\Help\AboutDialog.rtf" />
     <None Include="Resources\Help\CommandReference.rtf" />
     <None Include="Resources\Help\DialogBoxReference.rtf" />
     <None Include="Resources\Help\Features.rtf" />
@@ -349,6 +350,7 @@
     <None Include="Resources\Help\MapCommandReference.rtf" />
     <None Include="Resources\Help\MapPropertiesDialog.rtf" />
     <None Include="Resources\Help\PluginCommandReference.rtf" />
+    <None Include="Resources\Help\PluginInfoDialog.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />
     <None Include="Resources\Help\TileSheetCommandReference.rtf" />
     <None Include="Resources\Help\ViewCommandReference.rtf" />
