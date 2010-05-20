@@ -64,7 +64,7 @@
           <Static Index="22" BlendMode="Alpha" />
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="32" BlendMode="Alpha" />
@@ -85,7 +85,7 @@
               <Static Index="33" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="40" BlendMode="Alpha" />
@@ -106,7 +106,7 @@
               <Static Index="39" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="32" BlendMode="Alpha" />
@@ -127,7 +127,7 @@
               <Static Index="33" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="40" BlendMode="Alpha" />
@@ -148,7 +148,7 @@
               <Static Index="39" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="32" BlendMode="Alpha" />
@@ -169,7 +169,7 @@
               <Static Index="33" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="40" BlendMode="Alpha" />
@@ -190,7 +190,7 @@
               <Static Index="39" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="32" BlendMode="Alpha" />
@@ -211,7 +211,7 @@
               <Static Index="33" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="250">
+          <Animated Interval="100">
             <Frames>
               <TileSheet Ref="untitled tile sheet" />
               <Static Index="40" BlendMode="Alpha" />
