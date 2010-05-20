@@ -2,7 +2,7 @@
 <Map Id="Untitled">
   <Description><![CDATA[]]></Description>
   <TileSheets>
-    <TileSheet Id="untitled tile sheet">
+    <TileSheet Id="TileSheet01">
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\TileSheet01.png]]></ImageSource>
       <Alignment SheetSize="16 x 16" TileSize="32 x 32" Margin="0 x 0" Spacing="0 x 0" />
@@ -10,8 +10,8 @@
     </TileSheet>
   </TileSheets>
   <Layers>
-    <Layer Id="untitled layer">
-      <Description><![CDATA[]]></Description>
+    <Layer Id="Foreground">
+      <Description><![CDATA[Foreground layer]]></Description>
       <Dimensions LayerSize="100 x 25" TileSize="32 x 32" />
       <TileArray>
         <Row>
@@ -30,11 +30,50 @@
           <Null Count="100" />
         </Row>
         <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
+          <Null Count="100" />
+        </Row>
+        <Row>
           <Null Count="7" />
-          <TileSheet Ref="untitled tile sheet" />
+          <TileSheet Ref="TileSheet01" />
           <Static Index="28" BlendMode="Alpha" />
           <Static Index="29" BlendMode="Alpha" />
-          <Null Count="91" />
+          <Null Count="16" />
+          <Static Index="28" BlendMode="Alpha" />
+          <Static Index="29" BlendMode="Alpha" />
+          <Null Count="73" />
         </Row>
         <Row>
           <Null Count="4" />
@@ -47,7 +86,12 @@
           <Static Index="20" BlendMode="Alpha" />
           <Static Index="21" BlendMode="Alpha" />
           <Static Index="5" BlendMode="Alpha" />
-          <Null Count="83" />
+          <Null Count="7" />
+          <Static Index="4" BlendMode="Alpha" />
+          <Static Index="1" BlendMode="Alpha" />
+          <Static Index="1" BlendMode="Alpha" />
+          <Static Index="19" BlendMode="Alpha" />
+          <Null Count="72" />
         </Row>
         <Row>
           <Null Count="2" />
@@ -66,7 +110,7 @@
           <Static Index="3" BlendMode="Alpha" />
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="32" BlendMode="Alpha" />
               <Static Index="33" BlendMode="Alpha" />
               <Static Index="34" BlendMode="Alpha" />
@@ -87,7 +131,7 @@
           </Animated>
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="40" BlendMode="Alpha" />
               <Static Index="39" BlendMode="Alpha" />
               <Static Index="38" BlendMode="Alpha" />
@@ -108,7 +152,7 @@
           </Animated>
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="32" BlendMode="Alpha" />
               <Static Index="33" BlendMode="Alpha" />
               <Static Index="34" BlendMode="Alpha" />
@@ -129,7 +173,7 @@
           </Animated>
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="40" BlendMode="Alpha" />
               <Static Index="39" BlendMode="Alpha" />
               <Static Index="38" BlendMode="Alpha" />
@@ -150,7 +194,7 @@
           </Animated>
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="32" BlendMode="Alpha" />
               <Static Index="33" BlendMode="Alpha" />
               <Static Index="34" BlendMode="Alpha" />
@@ -171,7 +215,7 @@
           </Animated>
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="40" BlendMode="Alpha" />
               <Static Index="39" BlendMode="Alpha" />
               <Static Index="38" BlendMode="Alpha" />
@@ -192,7 +236,7 @@
           </Animated>
           <Animated Interval="100">
             <Frames>
-              <TileSheet Ref="untitled tile sheet" />
+              <TileSheet Ref="TileSheet01" />
               <Static Index="32" BlendMode="Alpha" />
               <Static Index="33" BlendMode="Alpha" />
               <Static Index="34" BlendMode="Alpha" />
@@ -211,28 +255,13 @@
               <Static Index="33" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Animated Interval="100">
-            <Frames>
-              <TileSheet Ref="untitled tile sheet" />
-              <Static Index="40" BlendMode="Alpha" />
-              <Static Index="39" BlendMode="Alpha" />
-              <Static Index="38" BlendMode="Alpha" />
-              <Static Index="37" BlendMode="Alpha" />
-              <Static Index="36" BlendMode="Alpha" />
-              <Static Index="35" BlendMode="Alpha" />
-              <Static Index="34" BlendMode="Alpha" />
-              <Static Index="33" BlendMode="Alpha" />
-              <Static Index="32" BlendMode="Alpha" />
-              <Static Index="33" BlendMode="Alpha" />
-              <Static Index="34" BlendMode="Alpha" />
-              <Static Index="35" BlendMode="Alpha" />
-              <Static Index="36" BlendMode="Alpha" />
-              <Static Index="37" BlendMode="Alpha" />
-              <Static Index="38" BlendMode="Alpha" />
-              <Static Index="39" BlendMode="Alpha" />
-            </Frames>
-          </Animated>
-          <Null Count="75" />
+          <Static Index="2" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="18" BlendMode="Alpha" />
+          <Static Index="24" BlendMode="Alpha" />
+          <Static Index="25" BlendMode="Alpha" />
+          <Null Count="70" />
         </Row>
         <Row>
           <Null Count="2" />
@@ -240,7 +269,7 @@
           <Null Count="1" />
           <Static Index="8" BlendMode="Alpha" />
           <Static Index="9" BlendMode="Alpha" />
-          <Null Count="1" />
+          <Static Index="28" BlendMode="Alpha" />
           <Static Index="26" BlendMode="Alpha" />
           <Static Index="26" BlendMode="Alpha" />
           <Static Index="27" BlendMode="Alpha" />
@@ -251,7 +280,33 @@
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
-          <Null Count="83" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Animated Interval="100">
+            <Frames>
+              <TileSheet Ref="TileSheet01" />
+              <Static Index="45" BlendMode="Alpha" />
+              <Static Index="46" BlendMode="Alpha" />
+              <Static Index="47" BlendMode="Alpha" />
+              <Static Index="48" BlendMode="Alpha" />
+              <Static Index="49" BlendMode="Alpha" />
+              <Static Index="50" BlendMode="Alpha" />
+              <Static Index="51" BlendMode="Alpha" />
+              <Static Index="52" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="2" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="23" BlendMode="Alpha" />
+          <Static Index="19" BlendMode="Alpha" />
+          <Null Count="69" />
         </Row>
         <Row>
           <Static Index="1" BlendMode="Alpha" />
@@ -271,7 +326,35 @@
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
-          <Null Count="83" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Animated Interval="100">
+            <Frames>
+              <TileSheet Ref="TileSheet01" />
+              <Static Index="45" BlendMode="Alpha" />
+              <Static Index="46" BlendMode="Alpha" />
+              <Static Index="47" BlendMode="Alpha" />
+              <Static Index="48" BlendMode="Alpha" />
+              <Static Index="49" BlendMode="Alpha" />
+              <Static Index="50" BlendMode="Alpha" />
+              <Static Index="51" BlendMode="Alpha" />
+              <Static Index="52" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="2" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="18" BlendMode="Alpha" />
+          <Static Index="24" BlendMode="Alpha" />
+          <Static Index="25" BlendMode="Alpha" />
+          <Null Count="67" />
         </Row>
         <Row>
           <Static Index="0" BlendMode="Alpha" />
@@ -291,7 +374,37 @@
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
-          <Null Count="83" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Animated Interval="100">
+            <Frames>
+              <TileSheet Ref="TileSheet01" />
+              <Static Index="45" BlendMode="Alpha" />
+              <Static Index="46" BlendMode="Alpha" />
+              <Static Index="47" BlendMode="Alpha" />
+              <Static Index="48" BlendMode="Alpha" />
+              <Static Index="49" BlendMode="Alpha" />
+              <Static Index="50" BlendMode="Alpha" />
+              <Static Index="51" BlendMode="Alpha" />
+              <Static Index="52" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="2" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="23" BlendMode="Alpha" />
+          <Static Index="1" BlendMode="Alpha" />
+          <Static Index="1" BlendMode="Alpha" />
+          <Null Count="65" />
         </Row>
         <Row>
           <Static Index="0" BlendMode="Alpha" />
@@ -311,46 +424,75 @@
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
-          <Null Count="83" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="41" BlendMode="Alpha" />
+          <Animated Interval="100">
+            <Frames>
+              <TileSheet Ref="TileSheet01" />
+              <Static Index="45" BlendMode="Alpha" />
+              <Static Index="46" BlendMode="Alpha" />
+              <Static Index="47" BlendMode="Alpha" />
+              <Static Index="48" BlendMode="Alpha" />
+              <Static Index="49" BlendMode="Alpha" />
+              <Static Index="50" BlendMode="Alpha" />
+              <Static Index="51" BlendMode="Alpha" />
+              <Static Index="52" BlendMode="Alpha" />
+            </Frames>
+          </Animated>
+          <Static Index="41" BlendMode="Alpha" />
+          <Static Index="2" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Null Count="65" />
         </Row>
         <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
-        </Row>
-        <Row>
-          <Null Count="100" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="42" BlendMode="Alpha" />
+          <Static Index="43" BlendMode="Alpha" />
+          <Static Index="43" BlendMode="Alpha" />
+          <Static Index="43" BlendMode="Alpha" />
+          <Static Index="43" BlendMode="Alpha" />
+          <Static Index="43" BlendMode="Alpha" />
+          <Static Index="44" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Static Index="0" BlendMode="Alpha" />
+          <Null Count="65" />
         </Row>
       </TileArray>
       <Properties />
