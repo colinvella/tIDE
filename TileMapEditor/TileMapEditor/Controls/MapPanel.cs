@@ -92,13 +92,13 @@ namespace TileMapEditor.Controls
             int deltaX = Math.Max(1, m_selectedLayer.TileSize.Width / 8);
             int deltaY = Math.Max(1, m_selectedLayer.TileSize.Height / 8);
 
-            if (m_mouseLocation.X < m_selectedLayer.TileSize.Width)
+            if (m_mouseLocation.X < m_selectedLayer.TileSize.Width * m_zoom)
             {
                 int newScrollValue = Math.Max(m_horizontalScrollBar.Minimum, m_horizontalScrollBar.Value - deltaX);
                 m_horizontalScrollBar.Value = newScrollValue;
                 OnHorizontalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
             }
-            else if (m_mouseLocation.X > m_viewport.Size.Width - m_selectedLayer.TileSize.Width)
+            else if (m_mouseLocation.X > (m_viewport.Size.Width - m_selectedLayer.TileSize.Width) * m_zoom)
             {
                 int newScrollValue = Math.Min(
                     m_horizontalScrollBar.Maximum - m_horizontalScrollBar.LargeChange,
@@ -109,13 +109,13 @@ namespace TileMapEditor.Controls
             }
 
 
-            if (m_mouseLocation.Y < m_selectedLayer.TileSize.Height)
+            if (m_mouseLocation.Y < m_selectedLayer.TileSize.Height * m_zoom)
             {
                 int newScrollValue = Math.Max(m_verticalScrollBar.Minimum, m_verticalScrollBar.Value - deltaY);
                 m_verticalScrollBar.Value = newScrollValue;
                 OnVerticalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
             }
-            else if (m_mouseLocation.Y > m_viewport.Size.Height - m_selectedLayer.TileSize.Height)
+            else if (m_mouseLocation.Y > (m_viewport.Size.Height - m_selectedLayer.TileSize.Height) * m_zoom)
             {
                 int newScrollValue = Math.Min(
                     m_verticalScrollBar.Maximum - m_verticalScrollBar.LargeChange,
@@ -553,6 +553,9 @@ namespace TileMapEditor.Controls
 
         private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
+            // needed for mouse wheel event to work
+            this.Focus();
+
             m_mouseInside = true;
             m_mouseLocation.X = mouseEventArgs.X;
             m_mouseLocation.Y = mouseEventArgs.Y;
@@ -604,9 +607,6 @@ namespace TileMapEditor.Controls
         private void OnMouseEnter(object sender, EventArgs eventArgs)
         {
             m_mouseInside = true;
-
-            // needed for mouse wheel event to work
-            this.Focus();
         }
 
         private void OnMouseLeave(object sender, EventArgs eventArgs)
@@ -627,6 +627,9 @@ namespace TileMapEditor.Controls
 
             if (ZoomChanged != null)
                 ZoomChanged(sender, EventArgs.Empty);
+
+            // needed for mouse wheel event to work
+            this.Focus();
         }
 
         private void OnTileProperties(object sender, EventArgs eventArgs)
