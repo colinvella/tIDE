@@ -602,11 +602,19 @@ namespace TileMapEditor.Controls
         private void OnMouseEnter(object sender, EventArgs eventArgs)
         {
             m_mouseInside = true;
+
+            // needed for mouse wheel event to work
+            this.Focus();
         }
 
         private void OnMouseLeave(object sender, EventArgs eventArgs)
         {
             m_mouseInside = false;
+        }
+
+        private void OnMouseWheel(object sender, MouseEventArgs mouseEventArgs)
+        {
+            MessageBox.Show("mouse wheel!");
         }
 
         private void OnTileProperties(object sender, EventArgs eventArgs)
@@ -789,6 +797,8 @@ namespace TileMapEditor.Controls
             m_animationTimer.Enabled = !this.DesignMode;
 
             m_dtStart = DateTime.Now;
+
+            this.MouseWheel += new MouseEventHandler(OnMouseWheel);
         }
 
         public Image GenerateImage(Layer layer)
