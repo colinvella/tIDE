@@ -939,6 +939,11 @@ namespace TileMapEditor
             UpdateZoomControls();
         }
 
+        private void OnZoomChanged(object sender, EventArgs eventArgs)
+        {
+            UpdateZoomControls();
+        }
+
         private void OnViewWindowMode(object sender, EventArgs eventArgs)
         {
             if (m_windowMode == WindowMode.Windowed)

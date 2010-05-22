@@ -25,6 +25,8 @@ namespace TileMapEditor.Controls
     {
         #region Private Variables
 
+        private const int MAX_ZOOM = 10;
+
         private Map m_map;
 
         private CommandHistory m_commandHistory;
@@ -614,7 +616,17 @@ namespace TileMapEditor.Controls
 
         private void OnMouseWheel(object sender, MouseEventArgs mouseEventArgs)
         {
-            MessageBox.Show("mouse wheel!");
+            if (mouseEventArgs.Delta < 0 && m_zoom <= 1
+                || mouseEventArgs.Delta > 0 && m_zoom >= MAX_ZOOM)
+                return;
+
+            if (mouseEventArgs.Delta < 0)
+                --Zoom;
+            else if (mouseEventArgs.Delta > 0)
+                ++Zoom;
+
+            if (ZoomChanged != null)
+                ZoomChanged(sender, EventArgs.Empty);
         }
 
         private void OnTileProperties(object sender, EventArgs eventArgs)
@@ -932,7 +944,7 @@ namespace TileMapEditor.Controls
             get { return m_zoom; }
             set
             {
-                m_zoom = Math.Max(1, Math.Min(value, 10));
+                m_zoom = Math.Max(1, Math.Min(value, MAX_ZOOM));
 
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
                 m_viewport.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
@@ -1064,6 +1076,9 @@ namespace TileMapEditor.Controls
 
         [Category("Behavior"), Description("Occurs when the properties of a tile are changed")]
         public event MapPanelEventHandler TilePropertiesChanged;
+
+        [Category("Behavior"), Description("Occurs when zooming factor is changed from within the map panel")]
+        public event EventHandler ZoomChanged;
 
         #endregion
     }
