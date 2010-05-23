@@ -181,7 +181,7 @@ namespace TileMapEditor.Controls
             // reset image list
             m_tileImageList.Images.Clear();
             System.Drawing.Size tileSize = new System.Drawing.Size(
-                m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height);
+                Math.Min(256, m_tileSheet.TileSize.Width), Math.Min(256, m_tileSheet.TileSize.Height));
             m_tileImageList.ImageSize = tileSize;
 
             // populate item list for virtual mode with no image index
