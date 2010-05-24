@@ -84,11 +84,11 @@ namespace TestPlugin
 
         public void Shutdown(IApplication application)
         {
-            application.ToolBars.Remove(m_myToolBar);
-            m_myToolBar = null;
             m_myToolBarButton1 = m_myToolBarButton2 = null;
 
-            application.MenuStrip.DropDownMenus["&File"].SubItems.Remove(m_myMenuItem);
+            application.ToolBars.Remove(m_myToolBar);
+            m_myToolBar = null;
+
             m_myMenuItem = null;
 
             application.MenuStrip.DropDownMenus.Remove(m_myDropDownMenu);

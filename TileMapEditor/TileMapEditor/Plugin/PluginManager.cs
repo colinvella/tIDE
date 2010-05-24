@@ -76,10 +76,10 @@ namespace TileMapEditor.Plugin
                     plugin.Initialise(m_applicationBridge);
 
                     m_plugins[plugin.Name] = plugin;
-
-                    // update plugins menu
-                    UpdatePluginMenu();
                 }
+
+                // update plugins menu
+                UpdatePluginMenu();
             }
             catch (Exception innerException)
             {
@@ -139,7 +139,7 @@ namespace TileMapEditor.Plugin
                 catch (Exception exception)
                 {
                     MessageBox.Show(null,
-                        "A problem occured while shutting down plugin '" + plugin.Name + "'. Reason: " + exception.StackTrace,
+                        "A problem occured while shutting down plugin '" + plugin.Name + "'. Reason: " + exception.Message + " Stack Trace:" + exception.StackTrace,
                         "Plugin Manager", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }

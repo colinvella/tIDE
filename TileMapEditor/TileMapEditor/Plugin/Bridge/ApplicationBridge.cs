@@ -43,7 +43,7 @@ namespace TileMapEditor.Plugin.Bridge
             PopulateToolBars(toolStripContainer.TopToolStripPanel);
             PopulateToolBars(toolStripContainer.BottomToolStripPanel);
             PopulateToolBars(toolStripContainer.LeftToolStripPanel);
-            PopulateToolBars(toolStripContainer.TopToolStripPanel);
+            PopulateToolBars(toolStripContainer.RightToolStripPanel);
 
             m_editorBridge = new EditorBridge(mapPanel);
         }
