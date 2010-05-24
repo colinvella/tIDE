@@ -48,8 +48,8 @@
             System.Windows.Forms.ToolStripSeparator m_tileSheetToolStripSeparator2;
             System.Windows.Forms.ToolStripSeparator m_fileSeparator3;
             System.Windows.Forms.ToolStripSeparator m_fileToolStripSeparator2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ToolStripSeparator m_fileSeparator4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.m_mapTreeView = new TileMapEditor.Controls.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
@@ -119,6 +119,7 @@
             this.m_filePageSetupMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_filePrintPreviewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_filePrintMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_fileRecentFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_editUndoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -196,7 +197,6 @@
             this.m_filePrintPreviewButton = new System.Windows.Forms.ToolStripButton();
             this.m_filePrintButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
-            this.m_fileRecentFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -390,6 +390,11 @@
             // 
             m_fileToolStripSeparator2.Name = "m_fileToolStripSeparator2";
             m_fileToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // m_fileSeparator4
+            // 
+            m_fileSeparator4.Name = "m_fileSeparator4";
+            m_fileSeparator4.Size = new System.Drawing.Size(152, 6);
             // 
             // m_toolStripContainer
             // 
@@ -1181,6 +1186,14 @@
             this.m_filePrintMenuItem.Text = "Print...";
             this.m_filePrintMenuItem.Click += new System.EventHandler(this.OnFilePrint);
             // 
+            // m_fileRecentFilesMenuItem
+            // 
+            this.m_fileRecentFilesMenuItem.Enabled = false;
+            this.m_fileRecentFilesMenuItem.Image = global::TileMapEditor.Properties.Resources.FileOpenRecent;
+            this.m_fileRecentFilesMenuItem.Name = "m_fileRecentFilesMenuItem";
+            this.m_fileRecentFilesMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_fileRecentFilesMenuItem.Text = "Recent Files";
+            // 
             // m_fileExitMenuItem
             // 
             this.m_fileExitMenuItem.Name = "m_fileExitMenuItem";
@@ -1928,18 +1941,6 @@
             this.m_filePrintButton.Size = new System.Drawing.Size(23, 22);
             this.m_filePrintButton.Text = "Print";
             this.m_filePrintButton.Click += new System.EventHandler(this.OnFilePrint);
-            // 
-            // m_fileRecentFilesMenuItem
-            // 
-            this.m_fileRecentFilesMenuItem.Enabled = false;
-            this.m_fileRecentFilesMenuItem.Name = "m_fileRecentFilesMenuItem";
-            this.m_fileRecentFilesMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.m_fileRecentFilesMenuItem.Text = "Recent Files";
-            // 
-            // m_fileSeparator4
-            // 
-            m_fileSeparator4.Name = "m_fileSeparator4";
-            m_fileSeparator4.Size = new System.Drawing.Size(152, 6);
             // 
             // MainForm
             // 

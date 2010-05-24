@@ -135,7 +135,7 @@ namespace TileMapEditor
             m_fileRecentFilesMenuItem.Enabled = filenames.Count > 0;
             m_fileRecentFilesMenuItem.DropDownItems.Clear();
             foreach (string filename in filenames)
-                m_fileRecentFilesMenuItem.DropDownItems.Add(filename, null, OnFileOpenRecent);
+                m_fileRecentFilesMenuItem.DropDownItems.Add(filename, Properties.Resources.FileOpen, OnFileOpenRecent);
         }
 
         private void UpdateFileControls()
@@ -778,7 +778,22 @@ namespace TileMapEditor
 
             string filename = ((ToolStripMenuItem)sender).Text;
 
-            OpenFile(filename);
+            if (File.Exists(filename))
+            {
+                OpenFile(filename);
+            }
+            else
+            {
+                if (MessageBox.Show(this,
+                    "Cannot find this file. Do you want to remove it from the Recent Files list?",
+                    "Open file " + filename,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    RecentFilesManager.Instance.RemoveFilename(filename);
+                    UpdateRecentFilesMenu();
+                }
+            }
         }
 
         private void OnEditUndo(object sender, EventArgs eventArgs)

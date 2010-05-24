@@ -165,6 +165,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap FileOpenRecent {
+            get {
+                object obj = ResourceManager.GetObject("FileOpenRecent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap FilePageSetup {
             get {
                 object obj = ResourceManager.GetObject("FilePageSetup", resourceCulture);

@@ -34,6 +34,19 @@ namespace TileMapEditor
 
         public void StoreFilename(string filename)
         {
+            RemoveFilename(filename);
+
+            StringCollection filenames = Filenames;
+            filenames.Insert(0, filename);
+
+            while (filenames.Count > MAX_FILES)
+                filenames.RemoveAt(filenames.Count - 1);
+
+            Properties.Settings.Default.Save();
+        }
+
+        public void RemoveFilename(string filename)
+        {
             StringCollection filenames = Filenames;
             string filenameToRemove = null;
             foreach (string containedFilename in filenames)
@@ -42,14 +55,12 @@ namespace TileMapEditor
                     filenameToRemove = containedFilename;
                     break;
                 }
+
             if (filenameToRemove != null)
+            {
                 filenames.Remove(filenameToRemove);
-            filenames.Insert(0, filename);
-
-            while (filenames.Count > MAX_FILES)
-                filenames.RemoveAt(filenames.Count - 1);
-
-            Properties.Settings.Default.Save();
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }

@@ -341,6 +341,7 @@
     <None Include="Resources\FilePrint.png" />
     <None Include="Resources\FilePageSetup.png" />
     <None Include="Resources\FilePrintPreview.png" />
+    <None Include="Resources\FileOpenRecent.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
     <None Include="Resources\Help\AboutDialog.rtf" />
