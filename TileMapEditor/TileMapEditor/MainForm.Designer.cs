@@ -49,6 +49,7 @@
             System.Windows.Forms.ToolStripSeparator m_fileSeparator3;
             System.Windows.Forms.ToolStripSeparator m_fileToolStripSeparator2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.ToolStripSeparator m_fileSeparator4;
             this.m_mapTreeView = new TileMapEditor.Controls.MapTreeView();
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
@@ -195,6 +196,7 @@
             this.m_filePrintPreviewButton = new System.Windows.Forms.ToolStripButton();
             this.m_filePrintButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
+            this.m_fileRecentFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -215,6 +217,7 @@
             m_tileSheetToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             m_fileSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             m_fileToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            m_fileSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             m_splitContainerVertical.Panel1.SuspendLayout();
             m_splitContainerVertical.Panel2.SuspendLayout();
             m_splitContainerVertical.SuspendLayout();
@@ -1107,6 +1110,8 @@
             this.m_filePrintPreviewMenuItem,
             this.m_filePrintMenuItem,
             m_fileSeparator3,
+            this.m_fileRecentFilesMenuItem,
+            m_fileSeparator4,
             this.m_fileExitMenuItem});
             this.m_fileMenuItem.Image = global::TileMapEditor.Properties.Resources.File;
             this.m_fileMenuItem.Name = "m_fileMenuItem";
@@ -1157,7 +1162,7 @@
             this.m_filePageSetupMenuItem.Name = "m_filePageSetupMenuItem";
             this.m_filePageSetupMenuItem.Size = new System.Drawing.Size(155, 22);
             this.m_filePageSetupMenuItem.Text = "Page Setup...";
-            this.m_filePageSetupMenuItem.Click += new System.EventHandler(this.OnPageSetup);
+            this.m_filePageSetupMenuItem.Click += new System.EventHandler(this.OnFilePageSetup);
             // 
             // m_filePrintPreviewMenuItem
             // 
@@ -1165,7 +1170,7 @@
             this.m_filePrintPreviewMenuItem.Name = "m_filePrintPreviewMenuItem";
             this.m_filePrintPreviewMenuItem.Size = new System.Drawing.Size(155, 22);
             this.m_filePrintPreviewMenuItem.Text = "Print Preview...";
-            this.m_filePrintPreviewMenuItem.Click += new System.EventHandler(this.OnPrintPreview);
+            this.m_filePrintPreviewMenuItem.Click += new System.EventHandler(this.OnFilePrintPreview);
             // 
             // m_filePrintMenuItem
             // 
@@ -1174,7 +1179,7 @@
             this.m_filePrintMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.m_filePrintMenuItem.Size = new System.Drawing.Size(155, 22);
             this.m_filePrintMenuItem.Text = "Print...";
-            this.m_filePrintMenuItem.Click += new System.EventHandler(this.OnPrint);
+            this.m_filePrintMenuItem.Click += new System.EventHandler(this.OnFilePrint);
             // 
             // m_fileExitMenuItem
             // 
@@ -1901,7 +1906,7 @@
             this.m_filePageSetupButton.Size = new System.Drawing.Size(23, 22);
             this.m_filePageSetupButton.Text = "Page Setup";
             this.m_filePageSetupButton.ToolTipText = "Configure page settings for printing";
-            this.m_filePageSetupButton.Click += new System.EventHandler(this.OnPageSetup);
+            this.m_filePageSetupButton.Click += new System.EventHandler(this.OnFilePageSetup);
             // 
             // m_filePrintPreviewButton
             // 
@@ -1912,7 +1917,7 @@
             this.m_filePrintPreviewButton.Size = new System.Drawing.Size(23, 22);
             this.m_filePrintPreviewButton.Text = "Print Preview";
             this.m_filePrintPreviewButton.ToolTipText = "Print preview";
-            this.m_filePrintPreviewButton.Click += new System.EventHandler(this.OnPrintPreview);
+            this.m_filePrintPreviewButton.Click += new System.EventHandler(this.OnFilePrintPreview);
             // 
             // m_filePrintButton
             // 
@@ -1922,7 +1927,19 @@
             this.m_filePrintButton.Name = "m_filePrintButton";
             this.m_filePrintButton.Size = new System.Drawing.Size(23, 22);
             this.m_filePrintButton.Text = "Print";
-            this.m_filePrintButton.Click += new System.EventHandler(this.OnPrint);
+            this.m_filePrintButton.Click += new System.EventHandler(this.OnFilePrint);
+            // 
+            // m_fileRecentFilesMenuItem
+            // 
+            this.m_fileRecentFilesMenuItem.Enabled = false;
+            this.m_fileRecentFilesMenuItem.Name = "m_fileRecentFilesMenuItem";
+            this.m_fileRecentFilesMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.m_fileRecentFilesMenuItem.Text = "Recent Files";
+            // 
+            // m_fileSeparator4
+            // 
+            m_fileSeparator4.Name = "m_fileSeparator4";
+            m_fileSeparator4.Size = new System.Drawing.Size(152, 6);
             // 
             // MainForm
             // 
@@ -2129,5 +2146,6 @@
         private System.Windows.Forms.ToolStripButton m_filePrintButton;
         private System.Windows.Forms.ToolStripMenuItem m_filePrintPreviewMenuItem;
         private System.Windows.Forms.ToolStripButton m_filePrintPreviewButton;
+        private System.Windows.Forms.ToolStripMenuItem m_fileRecentFilesMenuItem;
     }
 }

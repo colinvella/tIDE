@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.IO;
@@ -128,11 +129,22 @@ namespace TileMapEditor
             Cursor = Cursor;
         }
 
+        private void UpdateRecentFilesMenu()
+        {
+            StringCollection filenames = RecentFilesManager.Instance.Filenames;
+            m_fileRecentFilesMenuItem.Enabled = filenames.Count > 0;
+            m_fileRecentFilesMenuItem.DropDownItems.Clear();
+            foreach (string filename in filenames)
+                m_fileRecentFilesMenuItem.DropDownItems.Add(filename, null, OnFileOpenRecent);
+        }
+
         private void UpdateFileControls()
         {
             m_fileSaveMenuItem.Enabled
                 = m_fileSaveButton.Enabled
                 = m_needsSaving;
+
+            UpdateRecentFilesMenu();
         }
 
         private void UpdateEditControls()
@@ -430,6 +442,76 @@ namespace TileMapEditor
             return basePath + relativePath;
         }
 
+        private void OpenFile(string filename)
+        {
+            FormatManager formatManager = FormatManager.Instance;
+
+            StartWaitCursor();
+
+            string fileExtension
+                = Path.GetExtension(filename).Replace(".", "");
+
+            IMapFormat selectedMapFormat
+                = formatManager.GetMapFormatByExtension(fileExtension);
+
+            Map newMap = null;
+            try
+            {
+                Stream stream = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                newMap = selectedMapFormat.Load(stream);
+                stream.Close();
+
+                RecentFilesManager.Instance.StoreFilename(filename);
+
+                // convert relative image source paths to absolute paths
+                string basePath = Path.GetDirectoryName(filename);
+                foreach (TileSheet tileSheet in newMap.TileSheets)
+                    tileSheet.ImageSource = GetAbsolutePath(basePath, tileSheet.ImageSource);
+
+                ClipBoardManager.Instance.StoreTileBrush(null);
+                m_tileBrushCollection.TileBrushes.Clear();
+
+                m_map = newMap;
+
+                foreach (TileSheet tileSheet in m_map.TileSheets)
+                    TileImageCache.Instance.Refresh(tileSheet);
+
+                m_mapTreeView.Map = m_map;
+                m_tilePicker.Map = m_map;
+                m_mapPanel.Map = m_map;
+
+                m_mapTreeView.UpdateTree();
+                m_tilePicker.UpdatePicker();
+
+                if (m_map.Layers.Count == 0)
+                {
+                    m_selectedComponent = null;
+                    m_mapTreeView.SelectedComponent = null;
+                }
+                else
+                {
+                    m_selectedComponent = m_mapTreeView.SelectedComponent = m_map.Layers[m_map.Layers.Count - 1];
+                }
+
+                m_mapPanel.Enabled = true;
+                m_mapPanel.Invalidate(true);
+
+                m_needsSaving = false;
+                m_filename = filename;
+                m_commandHistory.Clear();
+
+                UpdateAllControls();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this,
+                    "An error occured whilst opening the file. Details: " + exception.Message,
+                    "Open Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            StopWaitCursor();
+        }
+
         private bool SaveFile(string filename)
         {
             FormatManager formatManager = FormatManager.Instance;
@@ -456,6 +538,7 @@ namespace TileMapEditor
                     tileSheet.ImageSource = GetAbsolutePath(basePath, tileSheet.ImageSource);
 
                 m_needsSaving = false;
+                RecentFilesManager.Instance.StoreFilename(filename);
                 UpdateFileControls();
                 return true;
             }
@@ -514,6 +597,7 @@ namespace TileMapEditor
             m_pluginManager = new PluginManager(m_menuStrip, m_toolStripContainer, m_mapPanel);
             OnPluginsReload(this, EventArgs.Empty);
 
+            UpdateRecentFilesMenu();
             ArrangeToolStripLayout();
         }
 
@@ -625,67 +709,7 @@ namespace TileMapEditor
             if (openFileDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
-            StartWaitCursor();
-
-            string fileExtension
-                = Path.GetExtension(openFileDialog.FileName).Replace(".", "");
-
-            IMapFormat selectedMapFormat
-                = formatManager.GetMapFormatByExtension(fileExtension);
-
-            Map newMap = null;
-            try
-            {
-                Stream stream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
-                newMap = selectedMapFormat.Load(stream);
-                stream.Close();
-
-                // convert relative image source paths to absolute paths
-                string basePath = Path.GetDirectoryName(openFileDialog.FileName);
-                foreach (TileSheet tileSheet in newMap.TileSheets)
-                    tileSheet.ImageSource = GetAbsolutePath(basePath, tileSheet.ImageSource);
-
-                ClipBoardManager.Instance.StoreTileBrush(null);
-                m_tileBrushCollection.TileBrushes.Clear();
-
-                m_map = newMap;
-
-                foreach (TileSheet tileSheet in m_map.TileSheets)
-                    TileImageCache.Instance.Refresh(tileSheet);
-                
-                m_mapTreeView.Map = m_map;
-                m_tilePicker.Map = m_map;
-                m_mapPanel.Map = m_map;
-
-                m_mapTreeView.UpdateTree();
-                m_tilePicker.UpdatePicker();
-
-                if (m_map.Layers.Count == 0)
-                {
-                    m_selectedComponent = null;
-                    m_mapTreeView.SelectedComponent = null;
-                }
-                else
-                {
-                    m_selectedComponent = m_mapTreeView.SelectedComponent = m_map.Layers[m_map.Layers.Count - 1];
-                }
-
-                m_mapPanel.Enabled = true;
-                m_mapPanel.Invalidate(true);
-
-                m_needsSaving = false;
-                m_filename = openFileDialog.FileName;
-                m_commandHistory.Clear();
-                UpdateAllControls();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(this,
-                    "An error occured whilst opening the file. Details: " + exception.Message,
-                    "Open Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            StopWaitCursor();
+            OpenFile(openFileDialog.FileName);
         }
 
         private void OnFileSave(object sender, EventArgs eventArgs)
@@ -714,12 +738,12 @@ namespace TileMapEditor
             }
         }
 
-        private void OnPageSetup(object sender, EventArgs e)
+        private void OnFilePageSetup(object sender, EventArgs e)
         {
             PrintManager.Instance.ShowPageSetupDialog(this);
         }
 
-        private void OnPrintPreview(object sender, EventArgs e)
+        private void OnFilePrintPreview(object sender, EventArgs e)
         {
             Layer selectedLayer = m_mapPanel.SelectedLayer;
             if (selectedLayer == null)
@@ -729,7 +753,7 @@ namespace TileMapEditor
                 m_mapPanel.GenerateImage(selectedLayer));
         }
 
-        private void OnPrint(object sender, EventArgs eventArgs)
+        private void OnFilePrint(object sender, EventArgs eventArgs)
         {
             Layer selectedLayer = m_mapPanel.SelectedLayer;
             if (selectedLayer == null)
@@ -742,6 +766,19 @@ namespace TileMapEditor
         private void OnFileExit(object sender, EventArgs eventArgs)
         {
             Close();
+        }
+
+        private void OnFileOpenRecent(object sender, EventArgs eventArgs)
+        {
+            if (m_needsSaving
+                && MessageBox.Show(this,
+                    "Any unsaved changes in the current map will be lost. Do you want to continue?",
+                    "Open Map", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                return;
+
+            string filename = ((ToolStripMenuItem)sender).Text;
+
+            OpenFile(filename);
         }
 
         private void OnEditUndo(object sender, EventArgs eventArgs)

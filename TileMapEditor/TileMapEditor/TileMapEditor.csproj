@@ -168,6 +168,7 @@
     <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Plugin\Version.cs" />
     <Compile Include="PrintManager.cs" />
+    <Compile Include="RecentFilesManager.cs" />
     <Compile Include="TileBrushCollection.cs" />
     <Compile Include="TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
@@ -322,6 +323,7 @@
     <None Include="Resources\FileSaveAs.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\EditClearSelection.png" />
     <None Include="Resources\EditDelete.png" />
