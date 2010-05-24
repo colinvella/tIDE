@@ -180,8 +180,17 @@ namespace TileMapEditor.Controls
 
             // reset image list
             m_tileImageList.Images.Clear();
+
+            // ensure tiles within 256 wide/high and preserve aspect ratio
             System.Drawing.Size tileSize = new System.Drawing.Size(
-                Math.Min(256, m_tileSheet.TileSize.Width), Math.Min(256, m_tileSheet.TileSize.Height));
+                m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height);
+            int maxDimension = Math.Max(tileSize.Width, tileSize.Height);
+            if (maxDimension > 256)
+            {
+                tileSize.Width = (tileSize.Width * 256) / maxDimension;
+                tileSize.Height = (tileSize.Height * 256) / maxDimension;
+            }
+
             m_tileImageList.ImageSize = tileSize;
 
             // populate item list for virtual mode with no image index
