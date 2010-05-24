@@ -1034,7 +1034,7 @@ namespace TileMapEditor
 
         private void OnMapStatistics(object sender, EventArgs eventArgs)
         {
-            MapStatisticsDialog mapStatisticsDialog = new MapStatisticsDialog(m_map);
+            MapStatisticsDialog mapStatisticsDialog = new MapStatisticsDialog(m_map, m_mapPanel.Viewport);
             mapStatisticsDialog.ShowDialog(this);
         }
 

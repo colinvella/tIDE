@@ -20,6 +20,7 @@ namespace TileMapEditor.Dialogs
     public partial class MapStatisticsDialog : Form
     {
         private Map m_map;
+        private Tiling.Dimensions.Rectangle m_viewport;
         private Font m_headerFont;
         private Font m_propertyNameFont;
         private Font m_propertyValueFont;
@@ -153,6 +154,43 @@ namespace TileMapEditor.Dialogs
 
             m_textBoxStatistics.SelectionBullet = false;
 
+            // parallax ratios
+            if (layer.Map.Layers.Count > 1)
+            {
+                m_textBoxStatistics.AppendLine();
+                m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+                m_textBoxStatistics.AppendLine("Parallax Ratios");
+                m_textBoxStatistics.SelectionBullet = true;
+                m_textBoxStatistics.SelectionTabs = new int[] { 400 };
+
+                Tiling.Dimensions.Size thisSize = layer.DisplaySize;
+                thisSize.Width -= m_viewport.Size.Width;
+                thisSize.Height -= m_viewport.Size.Height;
+
+                foreach (Layer layerOther in layer.Map.Layers)
+                {
+                    if (layerOther == layer)
+                        continue;
+
+                    Tiling.Dimensions.Size displaySizeOther = layerOther.DisplaySize;
+                    Tiling.Dimensions.Size otherSize = displaySizeOther;
+                    otherSize.Width -= m_viewport.Size.Width;
+                    otherSize.Height -= m_viewport.Size.Height;
+
+                    m_textBoxStatistics.SelectionFont = m_propertyNameFont;
+                    m_textBoxStatistics.AppendText(layerOther.Id);
+                    m_textBoxStatistics.AppendText("\t");
+
+                    string ratioX = otherSize.Width != 0 ? (thisSize.Width * 100 / otherSize.Width).ToString() : "∞";
+                    string ratioY = otherSize.Height != 0 ? (thisSize.Height * 100 / otherSize.Height).ToString() : "∞";
+
+                    m_textBoxStatistics.SelectionFont = m_propertyValueFont;
+                    m_textBoxStatistics.AppendLine(ratioX + "%, " + ratioY + "%");
+                }
+            }
+
+            m_textBoxStatistics.SelectionBullet = false;
+
             m_textBoxStatistics.AppendLine();
         }
 
@@ -266,7 +304,7 @@ namespace TileMapEditor.Dialogs
             m_textBoxStatistics.AppendLine();
         }
 
-        private void DisplayMapStatistics(Map map)
+        private void DisplayMapStatistics()
         {
             // map details
             m_textBoxStatistics.InsertImage(Properties.Resources.Map);
@@ -282,21 +320,21 @@ namespace TileMapEditor.Dialogs
             m_textBoxStatistics.AppendText("ID\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
-            m_textBoxStatistics.AppendLine(map.Id);
+            m_textBoxStatistics.AppendLine(m_map.Id);
 
             // map description
             m_textBoxStatistics.SelectionFont = m_propertyNameFont;
             m_textBoxStatistics.AppendText("Description\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
-            m_textBoxStatistics.AppendLine(map.Description.Length == 0 ? "(no description)" : map.Description);
+            m_textBoxStatistics.AppendLine(m_map.Description.Length == 0 ? "(no description)" : m_map.Description);
 
             // size
             m_textBoxStatistics.SelectionFont = m_propertyNameFont;
             m_textBoxStatistics.AppendText("Size\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
-            m_textBoxStatistics.AppendText(map.DisplaySize.ToString());
+            m_textBoxStatistics.AppendText(m_map.DisplaySize.ToString());
             m_textBoxStatistics.AppendLine(" pixels");
 
             // layers
@@ -304,29 +342,29 @@ namespace TileMapEditor.Dialogs
             m_textBoxStatistics.AppendText("Layers\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
-            m_textBoxStatistics.AppendLine(map.Layers.Count.ToString());
+            m_textBoxStatistics.AppendLine(m_map.Layers.Count.ToString());
 
             // tile sheets
             m_textBoxStatistics.SelectionFont = m_propertyNameFont;
             m_textBoxStatistics.AppendText("Tile Sheets\t");
 
             m_textBoxStatistics.SelectionFont = m_propertyValueFont;
-            m_textBoxStatistics.AppendLine(map.TileSheets.Count.ToString());
+            m_textBoxStatistics.AppendLine(m_map.TileSheets.Count.ToString());
 
             // custom properties
             m_textBoxStatistics.AppendLine();
-            DisplayCustomProperties(map);
+            DisplayCustomProperties(m_map);
 
             m_textBoxStatistics.SelectionIndent += 50;
 
             // layers
             m_textBoxStatistics.AppendLine();
-            foreach (Layer layer in map.Layers)
+            foreach (Layer layer in m_map.Layers)
                 DisplayLayerStatistics(layer);
 
             // tile sheets
             m_textBoxStatistics.AppendLine();
-            foreach (TileSheet tileSheet in map.TileSheets)
+            foreach (TileSheet tileSheet in m_map.TileSheets)
                 DisplayTileSheetStatistics(tileSheet);
         }
 
@@ -337,14 +375,15 @@ namespace TileMapEditor.Dialogs
             m_propertyNameFont = new Font(this.Font, FontStyle.Bold);
             m_propertyValueFont = this.Font;
 
-            DisplayMapStatistics(m_map);
+            DisplayMapStatistics();
         }
 
-        public MapStatisticsDialog(Map map)
+        public MapStatisticsDialog(Map map, Tiling.Dimensions.Rectangle viewport)
         {
             InitializeComponent();
 
             m_map = map;
+            m_viewport = viewport;
         }
     }
 }
