@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Map Id="Untitled">
-  <Description><![CDATA[]]></Description>
+<Map Id="Level Map 01">
+  <Description><![CDATA[This is the first level.]]></Description>
   <TileSheets>
     <TileSheet Id="Background01">
       <Description><![CDATA[]]></Description>
