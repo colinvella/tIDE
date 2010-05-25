@@ -89,11 +89,11 @@ namespace Tiling.Layers
             int mapWidthDifference = mapDisplaySize.Width - viewportWidth;
             int mapHeightDifference = mapDisplaySize.Height - viewportHeight;
 
-            int layerLocationX = mapWidthDifference >= 0
+            int layerLocationX = mapWidthDifference > 0
                 ? mapDisplayLocation.X * layerWidthDifference / mapWidthDifference
                 : 0;
 
-            int layerLocationY = mapHeightDifference >= 0
+            int layerLocationY = mapHeightDifference > 0
                 ? mapDisplayLocation.Y * layerHeightDifference / mapHeightDifference
                 : 0;
 
