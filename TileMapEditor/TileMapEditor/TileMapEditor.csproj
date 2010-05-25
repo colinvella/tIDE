@@ -352,6 +352,7 @@
     <None Include="Resources\Help\LayerCommandReference.rtf" />
     <None Include="Resources\Help\MapCommandReference.rtf" />
     <None Include="Resources\Help\MapPropertiesDialog.rtf" />
+    <None Include="Resources\Help\MapStatisticsDialog.rtf" />
     <None Include="Resources\Help\PluginCommandReference.rtf" />
     <None Include="Resources\Help\PluginInfoDialog.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />

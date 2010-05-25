@@ -385,6 +385,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpMapStatisticsDialog {
+            get {
+                object obj = ResourceManager.GetObject("HelpMapStatisticsDialog", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpPluginCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpPluginCommandReference", resourceCulture);
