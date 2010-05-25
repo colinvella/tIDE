@@ -21,10 +21,12 @@
       <Properties />
     </TileSheet>
     <TileSheet Id="TileSheet01">
-      <Description><![CDATA[]]></Description>
+      <Description><![CDATA[This is the foreground tile sheet.]]></Description>
       <ImageSource><![CDATA[..\TileSheets\TileSheet01.png]]></ImageSource>
       <Alignment SheetSize="16 x 16" TileSize="32 x 32" Margin="0 x 0" Spacing="0 x 0" />
-      <Properties />
+      <Properties>
+        <Property Key="CacheTimestamp" Type="String"><![CDATA[2010-05-25-20-35-13]]></Property>
+      </Properties>
     </TileSheet>
   </TileSheets>
   <Layers>

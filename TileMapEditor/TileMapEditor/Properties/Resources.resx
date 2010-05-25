@@ -403,4 +403,7 @@
   <data name="HelpLayerPropertiesDialog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\LayerPropertiesDialog.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="HelpTileSheetPropertiesDialog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\TileSheetPropertiesDialog.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
