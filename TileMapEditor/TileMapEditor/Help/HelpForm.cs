@@ -143,9 +143,23 @@ namespace TileMapEditor.Help
 
             foreach (string word in words)
             {
+                // filter out links
                 if (word.Contains('#'))
                     continue;
+
+                // filter out blacklisted words
                 if (m_keywordBlacklist.ContainsKey(word))
+                    continue;
+
+                // filter out numbers
+                int dummyInteger;
+                if (int.TryParse(word, out dummyInteger))
+                    continue;
+                float dummyFloat;
+                if (float.TryParse(word, out dummyFloat))
+                    continue;
+                double dummyDouble;
+                if (double.TryParse(word, out dummyDouble))
                     continue;
 
                 List<string> resourceNames = null;
