@@ -754,7 +754,10 @@
           <Null Count="359" />
         </Row>
       </TileArray>
-      <Properties />
+      <Properties>
+        <Property Key="FogEffect" Type="Boolean"><![CDATA[True]]></Property>
+        <Property Key="FogDistance" Type="Int32"><![CDATA[20]]></Property>
+      </Properties>
     </Layer>
   </Layers>
   <Properties />
