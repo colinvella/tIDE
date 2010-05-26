@@ -98,6 +98,7 @@ namespace TileMapEditor.Help
             {
                 m_contentRichTextBox.LoadFile(new MemoryStream(content), RichTextBoxStreamType.RichText);
                 ProcessHelpLinks();
+                m_contentRichTextBox.SelectionStart = 0;
             }
             catch (Exception exception)
             {
