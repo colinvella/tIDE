@@ -256,6 +256,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpEditingToolbox {
+            get {
+                object obj = ResourceManager.GetObject("HelpEditingToolbox", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpFeatures {
             get {
                 object obj = ResourceManager.GetObject("HelpFeatures", resourceCulture);
