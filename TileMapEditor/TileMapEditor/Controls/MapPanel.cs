@@ -415,14 +415,37 @@ namespace TileMapEditor.Controls
 
                 Location tileLocation = tileViewportLocation;
                 for (;  tileLocation.Y <= tileViewportLocation.Y + tileViewportSize.Height; tileLocation.Y++)
-                    for (tileLocation.X = tileViewportLocation.X; tileLocation.X <= tileViewportLocation.X + tileViewportSize.Width; tileLocation.X++)
+                    for (tileLocation.X = tileViewportLocation.X;
+                        tileLocation.X <= tileViewportLocation.X + tileViewportSize.Width; tileLocation.X++)
                     {
                         if (m_tileSelection.Contains(tileLocation))
                         {
                             Tiling.Dimensions.Rectangle tileRectangle = m_selectedLayer.GetTileDisplayRectangle(viewport, tileLocation);
-                            m_graphics.FillRectangle(m_tileSelectionBrush,
-                                tileRectangle.Location.X, tileRectangle.Location.Y,
-                                tileRectangle.Size.Width, tileRectangle.Size.Height);
+                            int x1 = tileRectangle.Location.X;
+                            int y1 = tileRectangle.Location.Y;
+                            int width = tileRectangle.Size.Width;
+                            int height = tileRectangle.Size.Height;
+                            int x2 = x1 + width;
+                            int y2 = y1 + height;
+
+                            m_graphics.FillRectangle(m_tileSelectionBrush, x1, y1 , width, height);
+
+                            // selection borders
+                            Location leftLocation = new Location(tileLocation.X - 1, tileLocation.Y);
+                            if (!m_tileSelection.Contains(leftLocation))
+                                m_graphics.DrawLine(Pens.DarkCyan, x1, y1, x1, y2);
+
+                            Location rightLocation = new Location(tileLocation.X + 1, tileLocation.Y);
+                            if (!m_tileSelection.Contains(rightLocation))
+                                m_graphics.DrawLine(Pens.DarkCyan, x2, y1, x2, y2);
+
+                            Location topLocation = new Location(tileLocation.X, tileLocation.Y - 1);
+                            if (!m_tileSelection.Contains(topLocation))
+                                m_graphics.DrawLine(Pens.DarkCyan, x1, y1, x2, y1);
+
+                            Location bottomLocation = new Location(tileLocation.X, tileLocation.Y + 1);
+                            if (!m_tileSelection.Contains(bottomLocation))
+                                m_graphics.DrawLine(Pens.DarkCyan, x1, y2, x2, y2);
                         }
                     }
             }
