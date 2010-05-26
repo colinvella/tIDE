@@ -462,6 +462,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpTileSelectionTool {
+            get {
+                object obj = ResourceManager.GetObject("HelpTileSelectionTool", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpTileSheetCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpTileSheetCommandReference", resourceCulture);

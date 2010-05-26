@@ -362,6 +362,7 @@
     <None Include="Resources\Help\TileBrushDialog.rtf" />
     <None Include="Resources\Help\TileBrushTool.rtf" />
     <None Include="Resources\Help\TilePropertiesDialog.rtf" />
+    <None Include="Resources\Help\TileSelectionTool.rtf" />
     <None Include="Resources\Help\TileSheetCommandReference.rtf" />
     <None Include="Resources\Help\TileSheetPropertiesDialog.rtf" />
     <None Include="Resources\Help\ViewCommandReference.rtf" />
