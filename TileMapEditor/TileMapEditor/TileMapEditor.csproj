@@ -357,6 +357,7 @@
     <None Include="Resources\Help\PluginCommandReference.rtf" />
     <None Include="Resources\Help\PluginInfoDialog.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />
+    <None Include="Resources\Help\TileAnimationDialog.rtf" />
     <None Include="Resources\Help\TilePropertiesDialog.rtf" />
     <None Include="Resources\Help\TileSheetCommandReference.rtf" />
     <None Include="Resources\Help\TileSheetPropertiesDialog.rtf" />
