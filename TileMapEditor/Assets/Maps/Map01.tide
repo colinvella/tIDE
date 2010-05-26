@@ -21,7 +21,7 @@
       <Properties />
     </TileSheet>
     <TileSheet Id="TileSheet01">
-      <Description><![CDATA[This is the foreground tile sheet.]]></Description>
+      <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\TileSheet01.png]]></ImageSource>
       <Alignment SheetSize="16 x 16" TileSize="32 x 32" Margin="0 x 0" Spacing="0 x 0" />
       <Properties>
@@ -121,16 +121,32 @@
           <Null Count="400" />
         </Row>
         <Row>
-          <Null Count="19" />
+          <Null Count="13" />
           <TileSheet Ref="TileSheet01" />
+          <Static Index="96" BlendMode="Alpha" />
+          <Static Index="100" BlendMode="Alpha" />
+          <Static Index="100" BlendMode="Alpha" />
+          <Static Index="97" BlendMode="Alpha" />
+          <Null Count="2" />
           <Static Index="10" BlendMode="Alpha" />
           <Static Index="1" BlendMode="Alpha" />
           <Static Index="1" BlendMode="Alpha" />
           <Static Index="11" BlendMode="Alpha" />
-          <Null Count="377" />
+          <Null Count="11" />
+          <Static Index="96" BlendMode="Alpha" />
+          <Static Index="100" BlendMode="Alpha" />
+          <Static Index="97" BlendMode="Alpha" />
+          <Null Count="363" />
         </Row>
         <Row>
-          <Null Count="19" />
+          <Null Count="11" />
+          <Static Index="96" BlendMode="Alpha" />
+          <Static Index="100" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="102" BlendMode="Alpha" />
+          <Static Index="99" BlendMode="Alpha" />
+          <Null Count="2" />
           <Static Index="8" BlendMode="Alpha" />
           <Animated Interval="100">
             <Frames>
@@ -151,10 +167,22 @@
             </Frames>
           </Animated>
           <Static Index="9" BlendMode="Alpha" />
-          <Null Count="377" />
+          <Null Count="10" />
+          <Static Index="96" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="100" BlendMode="Alpha" />
+          <Static Index="97" BlendMode="Alpha" />
+          <Null Count="361" />
         </Row>
         <Row>
-          <Null Count="19" />
+          <Null Count="11" />
+          <Static Index="98" BlendMode="Alpha" />
+          <Static Index="101" BlendMode="Alpha" />
+          <Static Index="101" BlendMode="Alpha" />
+          <Static Index="99" BlendMode="Alpha" />
+          <Null Count="4" />
           <Static Index="14" BlendMode="Alpha" />
           <Animated Interval="50">
             <Frames>
@@ -183,7 +211,14 @@
             </Frames>
           </Animated>
           <Static Index="15" BlendMode="Alpha" />
-          <Null Count="377" />
+          <Null Count="10" />
+          <Static Index="98" BlendMode="Alpha" />
+          <Static Index="103" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="104" BlendMode="Alpha" />
+          <Static Index="102" BlendMode="Alpha" />
+          <Static Index="99" BlendMode="Alpha" />
+          <Null Count="361" />
         </Row>
         <Row>
           <Null Count="20" />
@@ -213,7 +248,10 @@
               <Static Index="71" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Null Count="378" />
+          <Null Count="13" />
+          <Static Index="98" BlendMode="Alpha" />
+          <Static Index="99" BlendMode="Alpha" />
+          <Null Count="363" />
         </Row>
         <Row>
           <Null Count="7" />
