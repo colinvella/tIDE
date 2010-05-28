@@ -253,7 +253,7 @@
             // m_buttonSwapTiles
             // 
             this.m_buttonSwapTiles.Enabled = false;
-            this.m_buttonSwapTiles.Location = new System.Drawing.Point(6, 255);
+            this.m_buttonSwapTiles.Location = new System.Drawing.Point(15, 255);
             this.m_buttonSwapTiles.Name = "m_buttonSwapTiles";
             this.m_buttonSwapTiles.Size = new System.Drawing.Size(75, 23);
             this.m_buttonSwapTiles.TabIndex = 19;
