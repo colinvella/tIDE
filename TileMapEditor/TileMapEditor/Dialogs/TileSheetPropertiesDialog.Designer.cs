@@ -253,7 +253,7 @@
             // m_buttonSwapTiles
             // 
             this.m_buttonSwapTiles.Enabled = false;
-            this.m_buttonSwapTiles.Location = new System.Drawing.Point(15, 255);
+            this.m_buttonSwapTiles.Location = new System.Drawing.Point(6, 255);
             this.m_buttonSwapTiles.Name = "m_buttonSwapTiles";
             this.m_buttonSwapTiles.Size = new System.Drawing.Size(75, 23);
             this.m_buttonSwapTiles.TabIndex = 19;
@@ -616,10 +616,9 @@
             this.Controls.Add(this.m_buttonCancel);
             this.Controls.Add(this.m_buttonOk);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(450, 450);
             this.Name = "TileSheetPropertiesDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tile Sheet Properties";
