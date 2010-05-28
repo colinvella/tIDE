@@ -26,34 +26,36 @@ namespace TileMapEditor
         {
             try
             {
-                System.Drawing.Bitmap tileSheetBitmap
-                    = new System.Drawing.Bitmap(tileSheet.ImageSource);
-
-                int tileCount = tileSheet.TileCount;
-                System.Drawing.Bitmap[] tileBitmaps = new System.Drawing.Bitmap[tileCount];
-                Size tileSize = tileSheet.TileSize;
-
-                System.Drawing.Rectangle destRect
-                    = new System.Drawing.Rectangle(0, 0, tileSize.Width, tileSize.Height);
-
-                System.Drawing.Rectangle srcRect
-                    = new System.Drawing.Rectangle(destRect.Location, destRect.Size);
-
-                for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
+                using (System.Drawing.Bitmap tileSheetBitmap
+                    = new System.Drawing.Bitmap(tileSheet.ImageSource))
                 {
-                    Rectangle tileRectangle = tileSheet.GetTileImageBounds(tileIndex);
-                    srcRect.X = tileRectangle.Location.X;
-                    srcRect.Y = tileRectangle.Location.Y;
-                    srcRect.Width = tileRectangle.Size.Width;
-                    srcRect.Height = tileRectangle.Size.Height;
 
-                    System.Drawing.Bitmap tileBitmap = tileSheetBitmap.Clone(
-                         srcRect, tileSheetBitmap.PixelFormat);
+                    int tileCount = tileSheet.TileCount;
+                    System.Drawing.Bitmap[] tileBitmaps = new System.Drawing.Bitmap[tileCount];
+                    Size tileSize = tileSheet.TileSize;
 
-                    tileBitmaps[tileIndex] = tileBitmap;
+                    System.Drawing.Rectangle destRect
+                        = new System.Drawing.Rectangle(0, 0, tileSize.Width, tileSize.Height);
+
+                    System.Drawing.Rectangle srcRect
+                        = new System.Drawing.Rectangle(destRect.Location, destRect.Size);
+
+                    for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
+                    {
+                        Rectangle tileRectangle = tileSheet.GetTileImageBounds(tileIndex);
+                        srcRect.X = tileRectangle.Location.X;
+                        srcRect.Y = tileRectangle.Location.Y;
+                        srcRect.Width = tileRectangle.Size.Width;
+                        srcRect.Height = tileRectangle.Size.Height;
+
+                        System.Drawing.Bitmap tileBitmap = tileSheetBitmap.Clone(
+                             srcRect, tileSheetBitmap.PixelFormat);
+
+                        tileBitmaps[tileIndex] = tileBitmap;
+                    }
+
+                    m_bitmapCache[tileSheet] = tileBitmaps;
                 }
-
-                m_bitmapCache[tileSheet] = tileBitmaps;
             }
             catch (Exception innerException)
             {
