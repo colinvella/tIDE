@@ -86,6 +86,30 @@ namespace Tiling.Dimensions
             ExtendTo(corner);
         }
 
+        public int X
+        {
+            get { return Location.X; }
+            set { Location.X = value; }
+        }
+
+        public int Y
+        {
+            get { return Location.Y; }
+            set { Location.Y = value; }
+        }
+ 
+        public int Width
+        {
+            get { return Size.Width; }
+            set { Size.Width = value; }
+        }
+
+        public int Height
+        {
+            get { return Size.Height; }
+            set { Size.Height = value; }
+        }
+
         public Location MaxCorner
         {
             get
