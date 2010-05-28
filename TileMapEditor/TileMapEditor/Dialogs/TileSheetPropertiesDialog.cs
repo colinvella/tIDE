@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using Tiling;
 using Tiling.Dimensions;
+using Tiling.Layers;
 using Tiling.Tiles;
 
 using TileMapEditor.Commands;
@@ -27,17 +28,35 @@ namespace TileMapEditor.Dialogs
         private Bitmap m_bitmapImageSource;
         private string m_imageSourceErrorMessge;
 
+        PreviewMode m_previewMode;
         bool m_previewMouseDown;
         private PointF m_previewOffset;
         private Location m_previewGrip;
+        private int m_tileHoverIndex;
+        private int m_swapTileIndex1;
+        private int m_swapTileIndex2;
 
         #endregion
 
         #region Private Methods
 
+        private Bitmap LoadUnlockedBitmap(string filename)
+        {
+            Bitmap unlockedBitmap = null;
+            using (Bitmap lockedBitmap = new Bitmap(filename))
+            {
+                unlockedBitmap = new Bitmap(lockedBitmap.Width, lockedBitmap.Height, lockedBitmap.PixelFormat);
+                using (Graphics graphics = Graphics.FromImage(unlockedBitmap))
+                {
+                    graphics.DrawImage(lockedBitmap, 0, 0);
+                }
+            }
+            return unlockedBitmap;
+        }
+
         private void MarkAsModified()
         {
-            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonSwapTiles.Enabled = true;
             m_buttonCancel.Text = "&Cancel";
         }
 
@@ -85,6 +104,70 @@ namespace TileMapEditor.Dialogs
             }
         }
 
+        private void SwapTiles(int tileIndex1, int tileIndex2)
+        {
+            Bitmap imageSourceBitmap = LoadUnlockedBitmap(m_tileSheet.ImageSource);
+
+            Tiling.Dimensions.Rectangle rectangle1 = m_tileSheet.GetTileImageBounds(tileIndex1);
+            Tiling.Dimensions.Rectangle rectangle2 = m_tileSheet.GetTileImageBounds(tileIndex2);
+
+            System.Drawing.Rectangle source1 = new System.Drawing.Rectangle(rectangle1.Location.X, rectangle1.Location.Y, rectangle1.Size.Width, rectangle1.Size.Height);
+            System.Drawing.Rectangle source2 = new System.Drawing.Rectangle(rectangle2.Location.X, rectangle2.Location.Y, source1.Width, source1.Height);
+            Bitmap tileBitmap1 = imageSourceBitmap.Clone(source1, imageSourceBitmap.PixelFormat);
+            Bitmap tileBitmap2 = imageSourceBitmap.Clone(source2, imageSourceBitmap.PixelFormat);
+
+            Graphics graphics = Graphics.FromImage(imageSourceBitmap);
+
+            graphics.SetClip(source1);
+            graphics.Clear(Color.FromArgb(0, 0, 0, 0));
+            graphics.DrawImage(tileBitmap2, source1.Location);
+
+            graphics.SetClip(source2);
+            graphics.Clear(Color.FromArgb(0, 0, 0, 0));
+            graphics.DrawImage(tileBitmap1, source2.Location);
+
+            imageSourceBitmap.Save(m_tileSheet.ImageSource);
+
+            TileImageCache.Instance.Refresh(m_tileSheet);
+
+            Map map = m_tileSheet.Map;
+
+            foreach (Layer layer in map.Layers)
+            {
+                Location tileLocation = new Location();
+                for (tileLocation.Y = 0; tileLocation.Y < layer.LayerSize.Height; tileLocation.Y++)
+                {
+                    for (tileLocation.X = 0; tileLocation.X < layer.LayerSize.Width; tileLocation.X++)
+                    {
+                        Tile tile = layer.Tiles[tileLocation];
+                        if (tile == null)
+                            continue;
+                        if (tile.TileSheet != m_tileSheet)
+                            continue;
+
+                        if (tile is StaticTile)
+                        {
+                            if (tile.TileIndex == tileIndex1)
+                                tile.TileIndex = tileIndex2;
+                            else if (tile.TileIndex == tileIndex2)
+                                tile.TileIndex = tileIndex1;
+                        }
+                        else if (tile is AnimatedTile)
+                        {
+                            AnimatedTile animatedTile = (AnimatedTile)tile;
+                            foreach (StaticTile tileFrame in animatedTile.TileFrames)
+                            {
+                                if (tileFrame.TileIndex == tileIndex1)
+                                    tileFrame.TileIndex = tileIndex2;
+                                else if (tileFrame.TileIndex == tileIndex2)
+                                    tileFrame.TileIndex = tileIndex1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_textBoxId.Text = m_tileSheet.Id;
@@ -109,7 +192,7 @@ namespace TileMapEditor.Dialogs
             m_imageSourceErrorMessge = null;
             try
             {
-                m_bitmapImageSource = new Bitmap(m_tileSheet.ImageSource);
+                m_bitmapImageSource = LoadUnlockedBitmap(m_tileSheet.ImageSource);
             }
             catch (Exception exception)
             {
@@ -117,6 +200,7 @@ namespace TileMapEditor.Dialogs
                 m_imageSourceErrorMessge = exception.Message;
             }
 
+            m_previewMode = PreviewMode.Preview;
             m_previewMouseDown = false;
             m_previewOffset = PointF.Empty;
             m_previewGrip = Tiling.Dimensions.Location.Origin;
@@ -174,7 +258,7 @@ namespace TileMapEditor.Dialogs
 
             try
             {
-                m_bitmapImageSource = new Bitmap(openFileDialog.FileName);
+                m_bitmapImageSource = LoadUnlockedBitmap(m_tileSheet.ImageSource);
                 m_customTabControl.SelectedTab = m_tabAlignment;
             }
             catch (Exception exception)
@@ -311,12 +395,30 @@ namespace TileMapEditor.Dialogs
             Cursor = oldCuror;
         }
 
+        private void OnSwapTiles(object sender, EventArgs eventArgs)
+        {
+            switch (m_previewMode)
+            {
+                case PreviewMode.Preview:
+                    m_groupBoxQuickSettings.Enabled = m_groupBoxCustomSettings.Enabled = false;
+                    m_previewMode = PreviewMode.PickFirst;
+                    m_buttonSwapTiles.Text = "Done";
+                    break;
+                case PreviewMode.PickFirst:
+                case PreviewMode.PickSecond:
+                    m_groupBoxQuickSettings.Enabled = m_groupBoxCustomSettings.Enabled = true;
+                    m_previewMode = PreviewMode.Preview;
+                    m_buttonSwapTiles.Text = "Swap Tiles";
+                    break;
+            }
+        }
+
         private void OnZoom(object sender, EventArgs eventArgs)
         {
-            if (m_trackBar.Value == 1)
+            if (m_trackBarZoom.Value == 1)
                 m_labelZoom.Text = "Zoom";
             else
-                m_labelZoom.Text = "Zoom (x " + m_trackBar.Value + ")";
+                m_labelZoom.Text = "Zoom (x " + m_trackBarZoom.Value + ")";
             m_panelImage.Invalidate();
         }
 
@@ -331,35 +433,95 @@ namespace TileMapEditor.Dialogs
         {
             if (mouseEventArgs.Button == MouseButtons.Left)
             {
-                m_previewMouseDown = true;
-                m_previewGrip.X = mouseEventArgs.X;
-                m_previewGrip.Y = mouseEventArgs.Y;
+                switch (m_previewMode)
+                {
+                    case PreviewMode.Preview:
+                        m_previewMouseDown = true;
+                        m_previewGrip.X = mouseEventArgs.X;
+                        m_previewGrip.Y = mouseEventArgs.Y;
+                        break;
+                    case PreviewMode.PickFirst:
+                        {
+                            Location pixelLocation = new Location(mouseEventArgs.X, mouseEventArgs.Y);
+                            pixelLocation.X /= m_trackBarZoom.Value;
+                            pixelLocation.Y /= m_trackBarZoom.Value;
+                            pixelLocation.X -= (int)m_previewOffset.X;
+                            pixelLocation.Y -= (int)m_previewOffset.Y;
+                            m_swapTileIndex1 = m_tileSheet.GetTileIndex(pixelLocation);
+                            m_previewMode = PreviewMode.PickSecond;
+                            m_panelImage.Invalidate();
+                        }
+                        break;
+                    case PreviewMode.PickSecond:
+                        {
+                            Cursor oldCursor = this.Cursor;
+                            this.Cursor = Cursors.WaitCursor;
+
+                            Location pixelLocation = new Location(mouseEventArgs.X, mouseEventArgs.Y);
+                            pixelLocation.X /= m_trackBarZoom.Value;
+                            pixelLocation.Y /= m_trackBarZoom.Value;
+                            pixelLocation.X -= (int)m_previewOffset.X;
+                            pixelLocation.Y -= (int)m_previewOffset.Y;
+                            m_swapTileIndex2 = m_tileSheet.GetTileIndex(pixelLocation);
+
+                            if (m_swapTileIndex1 != m_swapTileIndex2)
+                            {
+                                SwapTiles(m_swapTileIndex1, m_swapTileIndex2);
+                                m_bitmapImageSource = LoadUnlockedBitmap(m_tileSheet.ImageSource);
+                            }
+
+                            this.Cursor = oldCursor;
+
+                            m_previewMode = PreviewMode.PickFirst;
+                            m_panelImage.Invalidate();
+
+                            m_buttonOk.Enabled = m_buttonApply.Enabled = false;
+                            m_buttonCancel.Text = "&Close";
+                            m_buttonCancel.DialogResult = DialogResult.OK;
+                        }
+                        break;
+                }
             }
         }
 
         private void OnPreviewMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
-            if (m_previewMouseDown && m_bitmapImageSource != null)
+            if (m_bitmapImageSource == null)
+                return;
+
+            if (m_previewMouseDown)
             {
                 float deltaX = mouseEventArgs.X - m_previewGrip.X;
                 float deltaY = mouseEventArgs.Y - m_previewGrip.Y;
 
-                m_previewOffset.X -= deltaX / m_trackBar.Value;
-                m_previewOffset.Y -= deltaY / m_trackBar.Value;
+                m_previewOffset.X -= deltaX / m_trackBarZoom.Value;
+                m_previewOffset.Y -= deltaY / m_trackBarZoom.Value;
 
                 m_previewOffset.X = Math.Min(m_previewOffset.X,
-                    m_bitmapImageSource.Width * m_trackBar.Value - m_panelImage.Width);
+                    m_bitmapImageSource.Width * m_trackBarZoom.Value - m_panelImage.Width);
                 m_previewOffset.Y = Math.Min(m_previewOffset.Y,
-                    m_bitmapImageSource.Height * m_trackBar.Value - m_panelImage.Height);
+                    m_bitmapImageSource.Height * m_trackBarZoom.Value - m_panelImage.Height);
 
                 m_previewOffset.X = Math.Max(0, m_previewOffset.X);
                 m_previewOffset.Y = Math.Max(0, m_previewOffset.Y);
 
                 m_previewGrip.X = mouseEventArgs.X;
                 m_previewGrip.Y = mouseEventArgs.Y;
-
-                m_panelImage.Invalidate();
             }
+
+            if (m_previewMode != PreviewMode.Preview)
+            {
+                Location pixelLocation = new Location(mouseEventArgs.X, mouseEventArgs.Y);
+                pixelLocation.X /= m_trackBarZoom.Value;
+                pixelLocation.Y /= m_trackBarZoom.Value;
+                pixelLocation.X -= (int)m_previewOffset.X;
+                pixelLocation.Y -= (int)m_previewOffset.Y;
+                m_tileHoverIndex = m_tileSheet.GetTileIndex(pixelLocation);
+            }
+            else
+                m_tileHoverIndex = -1;
+
+            m_panelImage.Invalidate();
         }
 
         private void OnPreviewMouseUp(object sender, MouseEventArgs mouseEventArgs)
@@ -485,7 +647,7 @@ namespace TileMapEditor.Dialogs
                 graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
                 graphics.PixelOffsetMode = PixelOffsetMode.Half;
 
-                graphics.ScaleTransform(m_trackBar.Value, m_trackBar.Value);
+                graphics.ScaleTransform(m_trackBarZoom.Value, m_trackBarZoom.Value);
                 graphics.TranslateTransform(-m_previewOffset.X, -m_previewOffset.Y);
 
                 int imageWidth = m_bitmapImageSource.Width;
@@ -500,18 +662,30 @@ namespace TileMapEditor.Dialogs
                 int tilePaddingX = (int)m_textBoxSpacingX.Value;
                 int tilePaddingY = (int)m_textBoxSpacingY.Value;
 
-                Pen pen = new Pen(SystemColors.ActiveCaption);
-                float fZoomInverse = 1.0f / m_trackBar.Value;
-                pen.Width = fZoomInverse;
+                Pen alignmentPen = new Pen(SystemColors.ActiveCaption);
+                float fZoomInverse = 1.0f / m_trackBarZoom.Value;
+                alignmentPen.Width = fZoomInverse;
 
-                Brush brush = new SolidBrush(Color.FromArgb(64, SystemColors.ActiveBorder));
+                //Brush brush = new SolidBrush(Color.FromArgb(64, SystemColors.ActiveBorder));
 
                 for (int posY = marginTop; posY + tileHeight <= imageHeight; posY += tileHeight + tilePaddingY)
                     for (int posX = marginLeft; posX + tileWidth <= imageWidth; posX += tileWidth + tilePaddingX)
                     {
-                        graphics.FillRectangle(brush, posX, posY, tileWidth, tileHeight);
-                        graphics.DrawRectangle(pen, posX, posY, tileWidth, tileHeight);
+                        //graphics.FillRectangle(brush, posX, posY, tileWidth, tileHeight);
+                        graphics.DrawRectangle(alignmentPen, posX, posY, tileWidth, tileHeight);
                     }
+
+                if (m_previewMode != PreviewMode.Preview && m_tileHoverIndex != -1)
+                {
+                    Tiling.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_tileHoverIndex);
+                    graphics.DrawRectangle(Pens.Red, rectangle.Location.X, rectangle.Location.Y, rectangle.Size.Width, rectangle.Size.Height);
+                }
+
+                if (m_previewMode == PreviewMode.PickSecond)
+                {
+                    Tiling.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_swapTileIndex1);
+                    graphics.DrawRectangle(Pens.Red, rectangle.Location.X, rectangle.Location.Y, rectangle.Size.Width, rectangle.Size.Height);
+                }
             }
 
         }
@@ -530,5 +704,12 @@ namespace TileMapEditor.Dialogs
         }
 
         #endregion
+    }
+
+    public enum PreviewMode
+    {
+        Preview,
+        PickFirst,
+        PickSecond
     }
 }

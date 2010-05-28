@@ -48,6 +48,14 @@ namespace Tiling.Tiles
             return new Rectangle(location, m_tileSize);
         }
 
+        public int GetTileIndex(Location pixelLocation)
+        {
+            int tileX = (pixelLocation.X - m_margin.Width) / (m_tileSize.Width + m_spacing.Width);
+            int tileY = (pixelLocation.Y - m_margin.Height) / (m_tileSize.Height + m_spacing.Height);
+
+            return tileY * m_sheetSize.Width + tileX;
+        }
+
         public Map Map { get { return m_map; } }
 
         public string ImageSource

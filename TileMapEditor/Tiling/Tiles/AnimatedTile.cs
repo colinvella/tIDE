@@ -75,7 +75,12 @@ namespace Tiling.Tiles
                 long animationTime = Layer.Map.ElapsedTime % m_animationInterval;
                 int currentIndex = (int) (animationTime / m_frameInterval);
                 return m_tileFrames[currentIndex].TileIndex;
-            } 
+            }
+            set
+            {
+                throw new NotSupportedException(
+                    "Cannot set a specific tile index for an animated tile");
+            }
         }
 
         public StaticTile[] TileFrames

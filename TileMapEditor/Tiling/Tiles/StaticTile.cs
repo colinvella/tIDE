@@ -48,7 +48,11 @@ namespace Tiling.Tiles
 
         public override TileSheet TileSheet { get { return m_tileSheet; } }
 
-        public override int TileIndex { get { return m_tileIndex; } }
+        public override int TileIndex
+        {
+            get { return m_tileIndex; }
+            set { m_tileIndex = value; }
+        }
 
         public override string ToString()
         {

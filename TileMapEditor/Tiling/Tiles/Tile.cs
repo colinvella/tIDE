@@ -35,6 +35,6 @@ namespace Tiling.Tiles
 
         public abstract TileSheet TileSheet { get; }
 
-        public abstract int TileIndex { get; }
-}
+        public abstract int TileIndex { get; set; }
+    }
 }
