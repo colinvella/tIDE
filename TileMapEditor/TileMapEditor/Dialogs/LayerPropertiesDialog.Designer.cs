@@ -68,84 +68,6 @@
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label4
-            // 
-            label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(253, 309);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(33, 13);
-            label4.TabIndex = 16;
-            label4.Text = "pixels";
-            // 
-            // label5
-            // 
-            label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(169, 309);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(12, 13);
-            label5.TabIndex = 14;
-            label5.Text = "x";
-            // 
-            // label6
-            // 
-            label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(6, 309);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(47, 13);
-            label6.TabIndex = 12;
-            label6.Text = "Tile Size";
-            // 
-            // label3
-            // 
-            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(253, 283);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(25, 13);
-            label3.TabIndex = 11;
-            label3.Text = "tiles";
-            // 
-            // label2
-            // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(169, 283);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(12, 13);
-            label2.TabIndex = 9;
-            label2.Text = "x";
-            // 
-            // label1
-            // 
-            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 283);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(56, 13);
-            label1.TabIndex = 7;
-            label1.Text = "Layer Size";
-            // 
-            // m_labelDescription
-            // 
-            m_labelDescription.AutoSize = true;
-            m_labelDescription.Location = new System.Drawing.Point(6, 36);
-            m_labelDescription.Name = "m_labelDescription";
-            m_labelDescription.Size = new System.Drawing.Size(60, 13);
-            m_labelDescription.TabIndex = 2;
-            m_labelDescription.Text = "Description";
-            // 
-            // m_labelId
-            // 
-            m_labelId.AutoSize = true;
-            m_labelId.Location = new System.Drawing.Point(6, 10);
-            m_labelId.Name = "m_labelId";
-            m_labelId.Size = new System.Drawing.Size(18, 13);
-            m_labelId.TabIndex = 0;
-            m_labelId.Text = "ID";
-            // 
             // m_buttonOk
             // 
             this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -233,6 +155,16 @@
             this.m_checkBoxVisible.UseVisualStyleBackColor = true;
             this.m_checkBoxVisible.CheckedChanged += new System.EventHandler(this.OnFieldChanged);
             // 
+            // label4
+            // 
+            label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(253, 309);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(33, 13);
+            label4.TabIndex = 16;
+            label4.Text = "pixels";
+            // 
             // m_numericTileHeight
             // 
             this.m_numericTileHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -257,6 +189,16 @@
             0,
             0});
             this.m_numericTileHeight.ValueChanged += new System.EventHandler(this.OnFieldChanged);
+            // 
+            // label5
+            // 
+            label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(169, 309);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(12, 13);
+            label5.TabIndex = 14;
+            label5.Text = "x";
             // 
             // m_numericTileWidth
             // 
@@ -283,6 +225,26 @@
             0});
             this.m_numericTileWidth.ValueChanged += new System.EventHandler(this.OnFieldChanged);
             // 
+            // label6
+            // 
+            label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(6, 309);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(47, 13);
+            label6.TabIndex = 12;
+            label6.Text = "Tile Size";
+            // 
+            // label3
+            // 
+            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(253, 283);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(25, 13);
+            label3.TabIndex = 11;
+            label3.Text = "tiles";
+            // 
             // m_numericLayerHeight
             // 
             this.m_numericLayerHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -307,6 +269,16 @@
             0,
             0});
             this.m_numericLayerHeight.ValueChanged += new System.EventHandler(this.OnFieldChanged);
+            // 
+            // label2
+            // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(169, 283);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(12, 13);
+            label2.TabIndex = 9;
+            label2.Text = "x";
             // 
             // m_numericLayerWidth
             // 
@@ -333,6 +305,16 @@
             0});
             this.m_numericLayerWidth.ValueChanged += new System.EventHandler(this.OnFieldChanged);
             // 
+            // label1
+            // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(6, 283);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(56, 13);
+            label1.TabIndex = 7;
+            label1.Text = "Layer Size";
+            // 
             // m_textBoxDescription
             // 
             this.m_textBoxDescription.AcceptsReturn = true;
@@ -346,6 +328,15 @@
             this.m_textBoxDescription.TabIndex = 3;
             this.m_textBoxDescription.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
+            // m_labelDescription
+            // 
+            m_labelDescription.AutoSize = true;
+            m_labelDescription.Location = new System.Drawing.Point(6, 36);
+            m_labelDescription.Name = "m_labelDescription";
+            m_labelDescription.Size = new System.Drawing.Size(60, 13);
+            m_labelDescription.TabIndex = 2;
+            m_labelDescription.Text = "Description";
+            // 
             // m_textBoxId
             // 
             this.m_textBoxId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -355,6 +346,15 @@
             this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
             this.m_textBoxId.TabIndex = 1;
             this.m_textBoxId.TextChanged += new System.EventHandler(this.OnFieldChanged);
+            // 
+            // m_labelId
+            // 
+            m_labelId.AutoSize = true;
+            m_labelId.Location = new System.Drawing.Point(6, 10);
+            m_labelId.Name = "m_labelId";
+            m_labelId.Size = new System.Drawing.Size(18, 13);
+            m_labelId.TabIndex = 0;
+            m_labelId.Text = "ID";
             // 
             // m_tabCustomProperties
             // 
@@ -393,6 +393,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(400, 250);
             this.Name = "LayerPropertiesDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Layer Properties";
