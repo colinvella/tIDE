@@ -111,8 +111,8 @@ namespace TileMapEditor.Dialogs
             Tiling.Dimensions.Rectangle rectangle1 = m_tileSheet.GetTileImageBounds(tileIndex1);
             Tiling.Dimensions.Rectangle rectangle2 = m_tileSheet.GetTileImageBounds(tileIndex2);
 
-            System.Drawing.Rectangle source1 = new System.Drawing.Rectangle(rectangle1.Location.X, rectangle1.Location.Y, rectangle1.Size.Width, rectangle1.Size.Height);
-            System.Drawing.Rectangle source2 = new System.Drawing.Rectangle(rectangle2.Location.X, rectangle2.Location.Y, source1.Width, source1.Height);
+            System.Drawing.Rectangle source1 = new System.Drawing.Rectangle(rectangle1.X, rectangle1.Y, rectangle1.Width, rectangle1.Height);
+            System.Drawing.Rectangle source2 = new System.Drawing.Rectangle(rectangle2.X, rectangle2.Y, rectangle2.Width, rectangle2.Height);
             Bitmap tileBitmap1 = imageSourceBitmap.Clone(source1, imageSourceBitmap.PixelFormat);
             Bitmap tileBitmap2 = imageSourceBitmap.Clone(source2, imageSourceBitmap.PixelFormat);
 
@@ -675,16 +675,20 @@ namespace TileMapEditor.Dialogs
                         graphics.DrawRectangle(alignmentPen, posX, posY, tileWidth, tileHeight);
                     }
 
+                Pen selectionPen = Pens.Red;
+                Brush selectionBrush = new SolidBrush(Color.FromArgb(128, Color.Red));
                 if (m_previewMode != PreviewMode.Preview && m_tileHoverIndex != -1)
                 {
                     Tiling.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_tileHoverIndex);
-                    graphics.DrawRectangle(Pens.Red, rectangle.Location.X, rectangle.Location.Y, rectangle.Size.Width, rectangle.Size.Height);
+                    graphics.FillRectangle(selectionBrush, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+                    graphics.DrawRectangle(selectionPen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
                 }
 
                 if (m_previewMode == PreviewMode.PickSecond)
                 {
                     Tiling.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_swapTileIndex1);
-                    graphics.DrawRectangle(Pens.Red, rectangle.Location.X, rectangle.Location.Y, rectangle.Size.Width, rectangle.Size.Height);
+                    graphics.FillRectangle(selectionBrush, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+                    graphics.DrawRectangle(selectionPen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
                 }
             }
 
