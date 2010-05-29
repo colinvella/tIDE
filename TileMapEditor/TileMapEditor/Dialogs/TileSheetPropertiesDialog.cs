@@ -48,7 +48,8 @@ namespace TileMapEditor.Dialogs
                 unlockedBitmap = new Bitmap(lockedBitmap.Width, lockedBitmap.Height, lockedBitmap.PixelFormat);
                 using (Graphics graphics = Graphics.FromImage(unlockedBitmap))
                 {
-                    graphics.DrawImage(lockedBitmap, 0, 0);
+                    graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    graphics.DrawImageUnscaled(lockedBitmap, 0, 0);
                 }
             }
             return unlockedBitmap;
@@ -117,14 +118,15 @@ namespace TileMapEditor.Dialogs
             Bitmap tileBitmap2 = imageSourceBitmap.Clone(source2, imageSourceBitmap.PixelFormat);
 
             Graphics graphics = Graphics.FromImage(imageSourceBitmap);
+            graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
 
             graphics.SetClip(source1);
             graphics.Clear(Color.FromArgb(0, 0, 0, 0));
-            graphics.DrawImage(tileBitmap2, source1.Location);
+            graphics.DrawImageUnscaled(tileBitmap2, source1.Location);
 
             graphics.SetClip(source2);
             graphics.Clear(Color.FromArgb(0, 0, 0, 0));
-            graphics.DrawImage(tileBitmap1, source2.Location);
+            graphics.DrawImageUnscaled(tileBitmap1, source2.Location);
 
             imageSourceBitmap.Save(m_tileSheet.ImageSource);
 
@@ -666,12 +668,9 @@ namespace TileMapEditor.Dialogs
                 float fZoomInverse = 1.0f / m_trackBarZoom.Value;
                 alignmentPen.Width = fZoomInverse;
 
-                //Brush brush = new SolidBrush(Color.FromArgb(64, SystemColors.ActiveBorder));
-
                 for (int posY = marginTop; posY + tileHeight <= imageHeight; posY += tileHeight + tilePaddingY)
                     for (int posX = marginLeft; posX + tileWidth <= imageWidth; posX += tileWidth + tilePaddingX)
                     {
-                        //graphics.FillRectangle(brush, posX, posY, tileWidth, tileHeight);
                         graphics.DrawRectangle(alignmentPen, posX, posY, tileWidth, tileHeight);
                     }
 
