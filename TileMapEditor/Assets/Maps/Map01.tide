@@ -142,8 +142,8 @@
           <Static Index="107" BlendMode="Alpha" />
           <Null Count="2" />
           <Static Index="8" BlendMode="Alpha" />
-          <Static Index="105" BlendMode="Alpha" />
           <Static Index="9" BlendMode="Alpha" />
+          <Static Index="10" BlendMode="Alpha" />
           <Null Count="5" />
           <Static Index="96" BlendMode="Alpha" />
           <Static Index="100" BlendMode="Alpha" />
@@ -190,7 +190,7 @@
         </Row>
         <Row>
           <Null Count="8" />
-          <Static Index="15" BlendMode="Alpha" />
+          <Static Index="14" BlendMode="Alpha" />
           <Null Count="2" />
           <Static Index="98" BlendMode="Alpha" />
           <Static Index="101" BlendMode="Alpha" />
@@ -224,7 +224,7 @@
               <Static Index="79" BlendMode="Alpha" />
             </Frames>
           </Animated>
-          <Static Index="9" BlendMode="Alpha" />
+          <Static Index="10" BlendMode="Alpha" />
           <Null Count="10" />
           <Static Index="98" BlendMode="Alpha" />
           <Static Index="103" BlendMode="Alpha" />
@@ -356,7 +356,7 @@
         </Row>
         <Row>
           <Null Count="2" />
-          <Static Index="13" BlendMode="Alpha" />
+          <Static Index="12" BlendMode="Alpha" />
           <Null Count="1" />
           <Static Index="2" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
@@ -513,7 +513,7 @@
         </Row>
         <Row>
           <Null Count="2" />
-          <Static Index="12" BlendMode="Alpha" />
+          <Static Index="11" BlendMode="Alpha" />
           <Null Count="1" />
           <Static Index="2" BlendMode="Alpha" />
           <Static Index="3" BlendMode="Alpha" />
