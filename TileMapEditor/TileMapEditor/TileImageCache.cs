@@ -29,7 +29,6 @@ namespace TileMapEditor
                 using (System.Drawing.Bitmap tileSheetBitmap
                     = new System.Drawing.Bitmap(tileSheet.ImageSource))
                 {
-
                     int tileCount = tileSheet.TileCount;
                     System.Drawing.Bitmap[] tileBitmaps = new System.Drawing.Bitmap[tileCount];
                     Size tileSize = tileSheet.TileSize;
