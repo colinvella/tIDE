@@ -516,8 +516,10 @@ namespace TileMapEditor.Dialogs
                 Location pixelLocation = new Location(mouseEventArgs.X, mouseEventArgs.Y);
                 pixelLocation.X /= m_trackBarZoom.Value;
                 pixelLocation.Y /= m_trackBarZoom.Value;
-                pixelLocation.X -= (int)m_previewOffset.X;
-                pixelLocation.Y -= (int)m_previewOffset.Y;
+                pixelLocation.X += (int)m_previewOffset.X;
+                pixelLocation.Y += (int)m_previewOffset.Y;
+                pixelLocation.X = Math.Min(pixelLocation.X, m_tileSheet.SheetSize.Width * m_tileSheet.TileSize.Width - 1);
+                pixelLocation.Y = Math.Min(pixelLocation.Y, m_tileSheet.SheetSize.Height * m_tileSheet.TileSize.Width - 1);
                 m_tileHoverIndex = m_tileSheet.GetTileIndex(pixelLocation);
             }
             else
