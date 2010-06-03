@@ -55,6 +55,72 @@ namespace TileMapEditor.Dialogs
             return unlockedBitmap;
         }
 
+        private float[,] ComputeIntensityImage(Bitmap bitmap)
+        {
+            float[,] image = new float[bitmap.Width, bitmap.Height];
+            for (int pixelY = 0; pixelY < bitmap.Height; pixelY++)
+            {
+                for (int pixelX = 0; pixelX < bitmap.Width; pixelX++)
+                {
+                    image[pixelX, pixelY] = bitmap.GetPixel(pixelX, pixelY).GetBrightness();
+                }
+            }
+            return image;
+        }
+
+        private double ComputeLineMean(float[,] image, int start, bool horizontal)
+        {
+            int length = image.GetLength(horizontal ? 0 : 1);
+            int deltaX = horizontal ? 1 : 0;
+            int deltaY = horizontal ? 0 : 1;
+            int posX = horizontal ? 0 : start;
+            int posY = horizontal ? start : 0;
+            double mean = 0.0;
+            for (int pos = 0; pos < length; pos++)
+            {
+                mean += image[posX, posY];
+                posX += deltaX;
+                posY += deltaY;
+            }
+
+            mean /= length;
+
+            return mean;
+        }
+
+        private int EstimateLinePeriod(float[,] image, int start, bool horizontal)
+        {
+            double mean = ComputeLineMean(image, start, horizontal);
+
+            int length = image.GetLength(horizontal ? 0 : 1);
+            int deltaX = horizontal ? 1 : 0;
+            int deltaY = horizontal ? 0 : 1;
+            double leastDifference = double.MaxValue;
+            int period = 0;
+            for (int offset = 8; offset < length; offset++)
+            {
+                int posX = horizontal ? 0 : start;
+                int posY = horizontal ? start : 0;
+                int offsetX = deltaX * offset;
+                int offsetY = deltaY * offset;
+                double sumDifference = 0.0;
+                for (int pos = 0; pos < length; pos++)
+                {
+                    double value1 = image[posX, posY];
+                    double value2 = pos + offset < length ? image[posX + offsetX, posY + offsetY] : 0.0;
+                    sumDifference += Math.Abs(value2 - value1);
+                }
+
+                if (leastDifference > sumDifference)
+                {
+                    leastDifference = sumDifference;
+                    period = offset;
+                }
+            }
+
+            return period;
+        }
+
         private void MarkAsModified()
         {
             m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonSwapTiles.Enabled = true;
@@ -279,42 +345,44 @@ namespace TileMapEditor.Dialogs
             this.Enabled = false;
 
             // determine tile intervals (width + spacing)
-            const int MAX_OFFSET = 96;
-            long leastDifferenceX = long.MaxValue, leastDifferenceY = long.MaxValue;
-            int intervalX = 8, intervalY = 8;
-            for (int offset = 8; offset < MAX_OFFSET; offset++)
+            float[,] intensityImage = ComputeIntensityImage(m_bitmapImageSource);
+
+            Dictionary<int, int> sampleHistogram = new Dictionary<int, int>();
+            for (int sampleLine = 0; sampleLine < m_bitmapImageSource.Height; sampleLine += m_bitmapImageSource.Height / 10)
             {
-                long differenceX = 0, differenceY = 0;
-                for (int y = 0; y < Math.Min(m_bitmapImageSource.Height, MAX_OFFSET); y++)
-                    for (int x = 0; x < Math.Min(m_bitmapImageSource.Width, MAX_OFFSET); x++)
-                    {
-                        Color color = m_bitmapImageSource.GetPixel(x, y);
-
-                        Color offsetColorX = x + offset < m_bitmapImageSource.Width ? m_bitmapImageSource.GetPixel(x + offset, y) : Color.Black;
-                        differenceX +=
-                            Math.Abs(offsetColorX.R - color.R)
-                            + Math.Abs(offsetColorX.G - color.G)
-                            + Math.Abs(offsetColorX.B - color.B);
-
-                        Color offsetColorY = y + offset < m_bitmapImageSource.Height ? m_bitmapImageSource.GetPixel(x, y + offset) : Color.Black;
-                        differenceY +=
-                            Math.Abs(offsetColorY.R - color.R)
-                            + Math.Abs(offsetColorY.G - color.G)
-                            + Math.Abs(offsetColorY.B - color.B);
-                    }
-
-                if (leastDifferenceX > differenceX)
-                {
-                    leastDifferenceX = differenceX;
-                    intervalX = offset;
-                }
-
-                if (leastDifferenceY > differenceY)
-                {
-                    leastDifferenceY = differenceY;
-                    intervalY = offset;
-                }
+                int period = EstimateLinePeriod(intensityImage, sampleLine, true);
+                if (!sampleHistogram.ContainsKey(period))
+                    sampleHistogram[period] = 1;
+                else
+                    sampleHistogram[period] = sampleHistogram[period] + 1;
             }
+            int intervalX = 0; int countX = 0;
+            foreach (KeyValuePair<int, int> pair in sampleHistogram)
+                if (countX < pair.Value)
+                {
+                    intervalX = pair.Key;
+                    countX = pair.Value;
+                }
+            intervalX = Math.Max(intervalX, 8);
+
+            sampleHistogram.Clear();
+            for (int sampleLine = 0; sampleLine < m_bitmapImageSource.Height; sampleLine += m_bitmapImageSource.Height / 10)
+            {
+                int period = EstimateLinePeriod(intensityImage, sampleLine, false);
+                if (!sampleHistogram.ContainsKey(period))
+                    sampleHistogram[period] = 1;
+                else
+                    sampleHistogram[period] = sampleHistogram[period] + 1;
+            }
+            int intervalY = 0; int countY = 0;
+            foreach (KeyValuePair<int, int> pair in sampleHistogram)
+                if (countY < pair.Value)
+                {
+                    intervalY = pair.Key;
+                    countY = pair.Value;
+                }
+            intervalY = Math.Max(intervalY, 8);
+
 
             // determine top margin
             int topMargin = 0;
