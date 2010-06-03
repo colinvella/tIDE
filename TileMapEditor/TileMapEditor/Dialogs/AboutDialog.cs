@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace TileMapEditor.Dialogs
 {
-    partial class AboutForm : Form
+    partial class AboutDialog : Form
     {
         private double m_fadeDirection;
 
@@ -27,7 +27,7 @@ namespace TileMapEditor.Dialogs
             m_timer.Enabled = true;
         }
 
-        public AboutForm()
+        public AboutDialog()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);

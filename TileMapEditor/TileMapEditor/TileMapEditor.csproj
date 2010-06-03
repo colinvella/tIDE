@@ -109,11 +109,11 @@
     <Compile Include="Controls\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\AboutForm.cs">
+    <Compile Include="Dialogs\AboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\MapStatisticsDialog.cs">
       <SubType>Form</SubType>
@@ -225,8 +225,8 @@
       <DependentUpon>TilePicker.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapStatisticsDialog.resx">

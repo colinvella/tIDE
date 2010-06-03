@@ -1349,8 +1349,8 @@ namespace TileMapEditor
 
         private void OnHelpAbout(object sender, EventArgs eventArgs)
         {
-            AboutForm aboutForm = new AboutForm();
-            aboutForm.ShowDialog(this);
+            AboutDialog aboutDialog = new AboutDialog();
+            aboutDialog.ShowDialog(this);
         }
 
         private void OnPickerTileSelected(object sender, TilePickerEventArgs tilePickerEventArgs)

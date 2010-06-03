@@ -1,6 +1,6 @@
 ﻿namespace TileMapEditor.Dialogs
 {
-    partial class AboutForm
+    partial class AboutDialog
     {
         /// <summary>
         /// Required designer variable.
