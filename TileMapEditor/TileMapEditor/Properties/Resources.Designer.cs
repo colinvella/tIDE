@@ -740,6 +740,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ToolsTexture {
+            get {
+                object obj = ResourceManager.GetObject("ToolsTexture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ToolsTileBlock {
             get {
                 object obj = ResourceManager.GetObject("ToolsTileBlock", resourceCulture);

@@ -412,6 +412,7 @@
     <None Include="Resources\MapStatistics.png" />
     <None Include="Resources\TileSheetRemoveDependencies.png" />
     <None Include="Resources\Legal.txt" />
+    <None Include="Resources\ToolsTexture.png" />
     <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
