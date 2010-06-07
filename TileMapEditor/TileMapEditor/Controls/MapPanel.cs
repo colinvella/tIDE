@@ -47,6 +47,9 @@ namespace TileMapEditor.Controls
         private TileSelection m_tileSelection;
         private bool m_ctrlKeyPressed;
 
+        private Random m_random;
+        private List<Tile> m_textureDistribution;
+
         private Graphics m_graphics;
         private Tiling.Dimensions.Rectangle m_viewport;
         private bool m_autoScaleViewport; 
@@ -179,8 +182,10 @@ namespace TileMapEditor.Controls
                 return;
 
             Command command = new ToolsPlaceTileCommand(
-                m_selectedLayer, m_selectedTileSheet,
-                m_selectedTileIndex, m_tileLayerLocation);
+                m_selectedLayer,
+                new StaticTile(m_selectedLayer, m_selectedTileSheet,
+                    BlendMode.Alpha, m_selectedTileIndex),
+                m_tileLayerLocation);
             m_commandHistory.Do(command);
 
             m_innerPanel.Invalidate();
@@ -256,6 +261,56 @@ namespace TileMapEditor.Controls
                 TilePicked(new MapPanelEventArgs(tile, m_tileLayerLocation));
 
             this.EditTool = tile == null ? EditTool.Eraser : EditTool.SingleTile;
+        }
+
+        private void DrawSampledTile()
+        {
+            if (m_selectedLayer == null)
+                return;
+
+            if (m_textureDistribution.Count == 0)
+                return;
+
+            Tile sampledTile
+                = m_textureDistribution[m_random.Next(m_textureDistribution.Count)];
+
+            if (m_selectedLayer.TileSize != sampledTile.TileSheet.TileSize)
+            {
+                MessageBox.Show(this, "Incompatible tile size", "Layer Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
+                return;
+
+            Tile oldTile = m_selectedLayer.Tiles[m_tileLayerLocation];
+
+            if (oldTile != null && oldTile.TileSheet == m_selectedTileSheet
+                && oldTile.TileIndex == m_selectedTileIndex)
+                return;
+
+            Command command = new ToolsPlaceTileCommand(
+                m_selectedLayer,
+                sampledTile,
+                m_tileLayerLocation);
+            m_commandHistory.Do(command);
+
+            m_innerPanel.Invalidate();
+
+            if (MapChanged != null)
+                MapChanged(this, EventArgs.Empty);
+        }
+
+        private void GenerateTextureDistribution()
+        {
+            m_textureDistribution.Clear();
+            foreach (Location location in m_tileSelection.Locations)
+            {
+                Tile tile = m_selectedLayer.Tiles[location];
+                if (tile == null)
+                    continue;
+                m_textureDistribution.Add(tile);
+            }
         }
 
         private void ApplyTileBrush()
@@ -553,6 +608,7 @@ namespace TileMapEditor.Controls
                     case EditTool.Dropper:
                         PickTile();
                         break;
+                    case EditTool.Texture: DrawSampledTile(); break;
                     case EditTool.TileBrush: ApplyTileBrush(); break;
                 }
             }
@@ -819,6 +875,9 @@ namespace TileMapEditor.Controls
             m_tileSelection = new TileSelection();
             m_ctrlKeyPressed = false;
 
+            m_random = new Random();
+            m_textureDistribution = new List<Tile>();
+
             m_tileGuides = false;
 
             m_veilBrush = new SolidBrush(Color.FromArgb(192, SystemColors.InactiveCaption));
@@ -1021,14 +1080,29 @@ namespace TileMapEditor.Controls
             get { return m_editTool; }
             set
             {
-                m_editTool = value;
-                switch (m_editTool)
+                switch (value)
                 {
                     case EditTool.SingleTile: m_innerPanel.Cursor = m_singleTileCursor; break;
                     case EditTool.TileBlock: m_innerPanel.Cursor = m_tileBlockCursor; break;
                     case EditTool.Eraser: m_innerPanel.Cursor = m_eraserCursor; break;
                     case EditTool.Dropper: m_innerPanel.Cursor = m_dropperCursor; break;
+                    case EditTool.Texture:
+                        GenerateTextureDistribution();
+                        if (m_textureDistribution.Count == 0)
+                        {
+                            EditTool = m_editTool; // restore old tool
+                            MessageBox.Show(this,
+                                "Must have a valid selection of tiles to sample",
+                                "Texture Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        m_tileSelection.Clear();
+
+                        //TODO: cursor
+                        break;
                 }
+                m_editTool = value;
             }
         }
 
