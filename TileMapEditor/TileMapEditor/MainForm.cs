@@ -341,6 +341,7 @@ namespace TileMapEditor
             m_toolsTileBlockButton.Checked = editTool == EditTool.TileBlock;
             m_toolsEraserButton.Checked = editTool == EditTool.Eraser;
             m_toolsDropperButton.Checked = editTool == EditTool.Dropper;
+            m_toolsTextureButton.Checked = editTool == EditTool.Texture;
             m_toolsTileBrushButton.Checked = editTool == EditTool.TileBrush;
         }
 
@@ -1449,6 +1450,13 @@ namespace TileMapEditor
             UpdateToolButtons();
         }
 
+        private void OnToolsTexture(object sender, EventArgs eventArgs)
+        {
+            m_mapPanel.EditTool = EditTool.Texture;
+            // TODO: sample from selection here
+            UpdateToolButtons();
+        }
+
         private void OnToolsTileBrush(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.TileBrush;
@@ -1530,5 +1538,6 @@ namespace TileMapEditor
         }
 
         #endregion
+
     }
 }

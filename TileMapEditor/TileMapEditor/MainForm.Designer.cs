@@ -197,6 +197,7 @@
             this.m_filePrintPreviewButton = new System.Windows.Forms.ToolStripButton();
             this.m_filePrintButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpProvider = new System.Windows.Forms.HelpProvider();
+            this.m_toolsTextureButton = new System.Windows.Forms.ToolStripButton();
             m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -540,10 +541,11 @@
             this.m_toolsTileBlockButton,
             this.m_toolsEraserButton,
             this.m_toolsDropperButton,
+            this.m_toolsTextureButton,
             this.m_toolsTileBrushButton});
             this.m_toolsToolStrip.Location = new System.Drawing.Point(0, 3);
             this.m_toolsToolStrip.Name = "m_toolsToolStrip";
-            this.m_toolsToolStrip.Size = new System.Drawing.Size(33, 149);
+            this.m_toolsToolStrip.Size = new System.Drawing.Size(33, 191);
             this.m_toolsToolStrip.TabIndex = 0;
             // 
             // m_toolsSelectButton
@@ -1942,6 +1944,17 @@
             this.m_filePrintButton.Text = "Print";
             this.m_filePrintButton.Click += new System.EventHandler(this.OnFilePrint);
             // 
+            // m_toolsTextureButton
+            // 
+            this.m_toolsTextureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_toolsTextureButton.Image = global::TileMapEditor.Properties.Resources.ToolsTexture;
+            this.m_toolsTextureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_toolsTextureButton.Name = "m_toolsTextureButton";
+            this.m_toolsTextureButton.Size = new System.Drawing.Size(31, 20);
+            this.m_toolsTextureButton.Text = "toolStripButton1";
+            this.m_toolsTextureButton.ToolTipText = "Lay tiles based on a selected region";
+            this.m_toolsTextureButton.Click += new System.EventHandler(this.OnToolsTexture);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2148,5 +2161,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_filePrintPreviewMenuItem;
         private System.Windows.Forms.ToolStripButton m_filePrintPreviewButton;
         private System.Windows.Forms.ToolStripMenuItem m_fileRecentFilesMenuItem;
+        private System.Windows.Forms.ToolStripButton m_toolsTextureButton;
     }
 }

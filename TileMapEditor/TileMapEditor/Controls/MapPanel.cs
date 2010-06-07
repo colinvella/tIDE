@@ -1123,6 +1123,7 @@ namespace TileMapEditor.Controls
         TileBlock,
         Eraser,
         Dropper,
+        Texture,
         TileBrush
     }
 
