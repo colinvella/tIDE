@@ -92,8 +92,11 @@ namespace TileMapEditor.Controls
 
         private void PerformAutoScroll()
         {
-            int deltaX = Math.Max(1, m_selectedLayer.TileSize.Width / 8);
-            int deltaY = Math.Max(1, m_selectedLayer.TileSize.Height / 8);
+            int maxDeltaX = Math.Max(1, m_viewport.Width / 10);
+            int maxDeltaY = Math.Max(1, m_viewport.Height / 10);
+
+            int deltaX = Math.Min(Math.Max(1, m_selectedLayer.TileSize.Width / 8), maxDeltaX);
+            int deltaY = Math.Min(Math.Max(1, m_selectedLayer.TileSize.Height / 8), maxDeltaY);
 
             if (m_mouseLocation.X < m_selectedLayer.TileSize.Width * m_zoom)
             {
