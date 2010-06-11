@@ -14,7 +14,6 @@ namespace TileMapEditor.Commands
 {
     class TileSheetSwapTilesCommand : Command
     {
-        private Map m_map;
         private TileSheet m_tileSheet;
         private int m_tileIndex1;
         private int m_tileIndex2;
@@ -34,9 +33,8 @@ namespace TileMapEditor.Commands
             return unlockedBitmap;
         }
 
-        public TileSheetSwapTilesCommand(Map map, TileSheet tileSheet, int tileIndex1, int tileIndex2)
+        public TileSheetSwapTilesCommand(TileSheet tileSheet, int tileIndex1, int tileIndex2)
         {
-            m_map = map;
             m_tileSheet = tileSheet;
             m_tileIndex1 = tileIndex1;
             m_tileIndex2 = tileIndex2;

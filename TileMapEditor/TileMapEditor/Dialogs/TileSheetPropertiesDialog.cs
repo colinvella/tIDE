@@ -171,71 +171,6 @@ namespace TileMapEditor.Dialogs
             }
         }
 
-        private void SwapTiles(int tileIndex1, int tileIndex2)
-        {
-            Bitmap imageSourceBitmap = LoadUnlockedBitmap(m_tileSheet.ImageSource);
-
-            Tiling.Dimensions.Rectangle rectangle1 = m_tileSheet.GetTileImageBounds(tileIndex1);
-            Tiling.Dimensions.Rectangle rectangle2 = m_tileSheet.GetTileImageBounds(tileIndex2);
-
-            System.Drawing.Rectangle source1 = new System.Drawing.Rectangle(rectangle1.X, rectangle1.Y, rectangle1.Width, rectangle1.Height);
-            System.Drawing.Rectangle source2 = new System.Drawing.Rectangle(rectangle2.X, rectangle2.Y, rectangle2.Width, rectangle2.Height);
-            Bitmap tileBitmap1 = imageSourceBitmap.Clone(source1, imageSourceBitmap.PixelFormat);
-            Bitmap tileBitmap2 = imageSourceBitmap.Clone(source2, imageSourceBitmap.PixelFormat);
-
-            Graphics graphics = Graphics.FromImage(imageSourceBitmap);
-            graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-
-            graphics.SetClip(source1);
-            graphics.Clear(Color.FromArgb(0, 0, 0, 0));
-            graphics.DrawImageUnscaled(tileBitmap2, source1.Location);
-
-            graphics.SetClip(source2);
-            graphics.Clear(Color.FromArgb(0, 0, 0, 0));
-            graphics.DrawImageUnscaled(tileBitmap1, source2.Location);
-
-            imageSourceBitmap.Save(m_tileSheet.ImageSource);
-
-            TileImageCache.Instance.Refresh(m_tileSheet);
-
-            Map map = m_tileSheet.Map;
-
-            foreach (Layer layer in map.Layers)
-            {
-                Location tileLocation = new Location();
-                for (tileLocation.Y = 0; tileLocation.Y < layer.LayerSize.Height; tileLocation.Y++)
-                {
-                    for (tileLocation.X = 0; tileLocation.X < layer.LayerSize.Width; tileLocation.X++)
-                    {
-                        Tile tile = layer.Tiles[tileLocation];
-                        if (tile == null)
-                            continue;
-                        if (tile.TileSheet != m_tileSheet)
-                            continue;
-
-                        if (tile is StaticTile)
-                        {
-                            if (tile.TileIndex == tileIndex1)
-                                tile.TileIndex = tileIndex2;
-                            else if (tile.TileIndex == tileIndex2)
-                                tile.TileIndex = tileIndex1;
-                        }
-                        else if (tile is AnimatedTile)
-                        {
-                            AnimatedTile animatedTile = (AnimatedTile)tile;
-                            foreach (StaticTile tileFrame in animatedTile.TileFrames)
-                            {
-                                if (tileFrame.TileIndex == tileIndex1)
-                                    tileFrame.TileIndex = tileIndex2;
-                                else if (tileFrame.TileIndex == tileIndex2)
-                                    tileFrame.TileIndex = tileIndex1;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_textBoxId.Text = m_tileSheet.Id;
@@ -536,7 +471,8 @@ namespace TileMapEditor.Dialogs
 
                             if (m_swapTileIndex1 != m_swapTileIndex2)
                             {
-                                SwapTiles(m_swapTileIndex1, m_swapTileIndex2);
+                                Command command = new TileSheetSwapTilesCommand(m_tileSheet, m_swapTileIndex1, m_swapTileIndex2);
+                                CommandHistory.Instance.Do(command);
                                 m_bitmapImageSource = LoadUnlockedBitmap(m_tileSheet.ImageSource);
                             }
 
