@@ -12,8 +12,6 @@ namespace TileMapEditor.Commands
     internal class ToolsPlaceTileCommand: Command
     {
         private Layer m_layer; 
-        //private TileSheet m_tileSheet;
-        //private int m_tileIndex;
         private Tile m_newTile;
         private Location m_tileLocation;
         private Tile m_oldTile;
@@ -21,8 +19,6 @@ namespace TileMapEditor.Commands
         public ToolsPlaceTileCommand(Layer layer, Tile newTile, Location tileLocation)
         {
             m_layer = layer;
-            //m_tileSheet = tileSheet;
-            //m_tileIndex = tileIndex;
             m_newTile = newTile;
             m_tileLocation = tileLocation;
 
@@ -34,7 +30,6 @@ namespace TileMapEditor.Commands
         {
             m_oldTile = m_layer.Tiles[m_tileLocation];
             m_layer.Tiles[m_tileLocation]
-                //= new StaticTile(m_layer, m_tileSheet, BlendMode.Alpha, m_tileIndex);
                 = m_newTile.Clone();
         }
 
