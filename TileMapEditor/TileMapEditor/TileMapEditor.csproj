@@ -432,9 +432,9 @@
       <Project>{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}</Project>
       <Name>Tiling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XTile\XTile.csproj">
+    <ProjectReference Include="..\XTile\XTilePC.csproj">
       <Project>{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}</Project>
-      <Name>XTile</Name>
+      <Name>XTilePC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{961826DA-D
 		Assets\Maps\Map01.tide = Assets\Maps\Map01.tide
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTile", "XTile\XTile.csproj", "{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTilePC", "XTile\XTilePC.csproj", "{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -46,13 +46,13 @@ Global
 		SccProjectUniqueName4 = Plugin\\Plugin.csproj
 		SccProjectName4 = Plugin
 		SccLocalPath4 = Plugin
-		SccProjectUniqueName5 = XTile\\XTile.csproj
-		SccProjectName5 = XTile
-		SccLocalPath5 = XTile
-		SccProjectUniqueName6 = XTile\\Content\\Content.contentproj
-		SccProjectTopLevelParentUniqueName6 = XTile\\XTile.csproj
-		SccProjectName6 = XTile/Content
-		SccLocalPath6 = XTile\\Content
+		SccProjectUniqueName5 = XTile\\Content\\Content.contentproj
+		SccProjectTopLevelParentUniqueName5 = XTile\\XTile.csproj
+		SccProjectName5 = XTile/Content
+		SccLocalPath5 = XTile\\Content
+		SccProjectUniqueName6 = XTile\\XTilePC.csproj
+		SccProjectName6 = XTile
+		SccLocalPath6 = XTile
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

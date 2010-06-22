@@ -88,8 +88,25 @@
     <Compile Include="Dimensions\Location.cs" />
     <Compile Include="Dimensions\Rectangle.cs" />
     <Compile Include="Dimensions\Size.cs" />
-    <Compile Include="MyTestClass.cs" />
+    <Compile Include="Display\IDisplayDevice.cs" />
+    <Compile Include="Format\CompatibilityResults.cs" />
+    <Compile Include="Format\FormatManager.cs" />
+    <Compile Include="Format\IMapFormat.cs" />
+    <Compile Include="Format\StandardFormat.cs" />
+    <Compile Include="Format\XmlHelper.cs" />
+    <Compile Include="Layers\Layer.cs" />
+    <Compile Include="Layers\LayerEventArgs.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="ObjectModel\Component.cs" />
+    <Compile Include="ObjectModel\DescribedComponent.cs" />
+    <Compile Include="ObjectModel\PropertyCollection.cs" />
+    <Compile Include="ObjectModel\PropertyValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tiles\AnimatedTile.cs" />
+    <Compile Include="Tiles\StaticTile.cs" />
+    <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Tiles\TileArray.cs" />
+    <Compile Include="Tiles\TileSheet.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
