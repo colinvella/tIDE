@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("XTile")]
 [assembly: AssemblyProduct("XTile")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
+[assembly: AssemblyDescription("XNA Tile Engine")]
+[assembly: AssemblyCompany("Colin Vella")]
+[assembly: AssemblyCopyright("Copyright © Colin Vella 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
