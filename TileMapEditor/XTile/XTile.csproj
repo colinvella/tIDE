@@ -85,6 +85,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dimensions\Location.cs" />
+    <Compile Include="Dimensions\Rectangle.cs" />
+    <Compile Include="Dimensions\Size.cs" />
     <Compile Include="MyTestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
