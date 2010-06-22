@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Format;
-using Tiling.Layers;
-using Tiling.ObjectModel;
-using Tiling.Tiles;
+using XTile;
+using XTile.Dimensions;
+using XTile.Format;
+using XTile.Layers;
+using XTile.ObjectModel;
+using XTile.Tiles;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
@@ -39,7 +39,7 @@ namespace TileMapEditor
         private Map m_map;
 
         private CommandHistory m_commandHistory;
-        private Tiling.ObjectModel.Component m_selectedComponent;
+        private XTile.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
         private bool m_needsSaving;
         private string m_filename;
@@ -570,7 +570,7 @@ namespace TileMapEditor
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
-            Tiling.Format.FormatManager fm = Tiling.Format.FormatManager.Instance;
+            XTile.Format.FormatManager fm = XTile.Format.FormatManager.Instance;
 
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
@@ -1059,10 +1059,10 @@ namespace TileMapEditor
         {
             ToolStripMenuItem toolStripMenuItemSelected = (ToolStripMenuItem)sender;
             string sizeTag = toolStripMenuItemSelected.Tag.ToString();
-            Size viewPortSize = Tiling.Dimensions.Size.FromString(sizeTag);
+            Size viewPortSize = XTile.Dimensions.Size.FromString(sizeTag);
 
             Rectangle viewport = new Rectangle(
-                Tiling.Dimensions.Location.Origin, viewPortSize);
+                XTile.Dimensions.Location.Origin, viewPortSize);
 
             m_mapPanel.AutoScaleViewport = false;
             m_mapPanel.Viewport = viewport;
@@ -1372,7 +1372,7 @@ namespace TileMapEditor
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
-            Tiling.ObjectModel.Component component = mapTreeViewEventArgs.Component;
+            XTile.ObjectModel.Component component = mapTreeViewEventArgs.Component;
 
             // enable/disable layer menu items as applicable
             bool layerSelected = component != null && component is Layer;

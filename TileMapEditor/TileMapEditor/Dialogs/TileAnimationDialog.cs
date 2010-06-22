@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Layers;
-using Tiling.Tiles;
+using XTile;
+using XTile.Dimensions;
+using XTile.Layers;
+using XTile.Tiles;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;

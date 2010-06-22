@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Tiling.Layers;
+using XTile.Layers;
 
 namespace TileMapEditor.Commands
 {

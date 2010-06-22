@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Tiles;
+using XTile;
+using XTile.Dimensions;
+using XTile.Tiles;
 
 namespace TileMapEditor.Controls
 {

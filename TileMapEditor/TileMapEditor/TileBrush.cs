@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Layers;
-using Tiling.Tiles;
+using XTile;
+using XTile.Dimensions;
+using XTile.Layers;
+using XTile.Tiles;
 
 using TileMapEditor.Controls;
 
@@ -18,9 +18,9 @@ namespace TileMapEditor
     public class TileBrush
     {
         private string m_id;
-        private Tiling.Dimensions.Size m_brushSize;
-        private Tiling.Dimensions.Size m_tileSize;
-        private Tiling.Dimensions.Size m_displaySize;
+        private XTile.Dimensions.Size m_brushSize;
+        private XTile.Dimensions.Size m_tileSize;
+        private XTile.Dimensions.Size m_displaySize;
         private List<TileBrushElement> m_tileBrushElements;
         private Image m_imageRepresentation;
 
@@ -32,11 +32,11 @@ namespace TileMapEditor
         public TileBrush(string id, Layer layer, TileSelection tileSelection)
         {
             m_id = id;
-            Tiling.Dimensions.Rectangle selectionBounds = tileSelection.Bounds;
+            XTile.Dimensions.Rectangle selectionBounds = tileSelection.Bounds;
 
             m_brushSize = selectionBounds.Size;
             m_tileSize = layer.TileSize;
-            m_displaySize = new Tiling.Dimensions.Size(
+            m_displaySize = new XTile.Dimensions.Size(
                 m_brushSize.Width * m_tileSize.Width,
                 m_brushSize.Height * m_tileSize.Height);
 
@@ -65,7 +65,7 @@ namespace TileMapEditor
             TileSelection tileSelection)
         {
             Map map = layer.Map;
-            Tiling.Dimensions.Size layerTileSize = layer.TileSize;
+            XTile.Dimensions.Size layerTileSize = layer.TileSize;
 
             if (layerTileSize != m_tileSize)
                 return;
@@ -142,11 +142,11 @@ namespace TileMapEditor
             }
         }
 
-        public Tiling.Dimensions.Size BrushSize { get { return m_brushSize; } }
+        public XTile.Dimensions.Size BrushSize { get { return m_brushSize; } }
 
-        public Tiling.Dimensions.Size TileSize { get { return m_tileSize; } }
+        public XTile.Dimensions.Size TileSize { get { return m_tileSize; } }
 
-        public Tiling.Dimensions.Size DisplaySize { get { return m_displaySize; } }
+        public XTile.Dimensions.Size DisplaySize { get { return m_displaySize; } }
 
         public ReadOnlyCollection<TileBrushElement> Elements
         {

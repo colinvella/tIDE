@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using Tiling.Tiles;
+using XTile.Tiles;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;

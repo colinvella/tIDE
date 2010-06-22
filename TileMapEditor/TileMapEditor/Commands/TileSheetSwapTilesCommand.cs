@@ -5,10 +5,10 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Layers;
-using Tiling.Tiles;
+using XTile;
+using XTile.Dimensions;
+using XTile.Layers;
+using XTile.Tiles;
 
 namespace TileMapEditor.Commands
 {
@@ -46,8 +46,8 @@ namespace TileMapEditor.Commands
         {
             Bitmap imageSourceBitmap = LoadUnlockedBitmap(m_tileSheet.ImageSource);
 
-            Tiling.Dimensions.Rectangle rectangle1 = m_tileSheet.GetTileImageBounds(m_tileIndex1);
-            Tiling.Dimensions.Rectangle rectangle2 = m_tileSheet.GetTileImageBounds(m_tileIndex2);
+            XTile.Dimensions.Rectangle rectangle1 = m_tileSheet.GetTileImageBounds(m_tileIndex1);
+            XTile.Dimensions.Rectangle rectangle2 = m_tileSheet.GetTileImageBounds(m_tileIndex2);
 
             System.Drawing.Rectangle source1 = new System.Drawing.Rectangle(rectangle1.X, rectangle1.Y, rectangle1.Width, rectangle1.Height);
             System.Drawing.Rectangle source2 = new System.Drawing.Rectangle(rectangle2.X, rectangle2.Y, rectangle2.Width, rectangle2.Height);

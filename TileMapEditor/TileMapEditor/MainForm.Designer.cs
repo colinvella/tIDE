@@ -1934,7 +1934,7 @@
             this.m_mapPanel.SelectedTileSheet = null;
             this.m_mapPanel.Size = new System.Drawing.Size(543, 391);
             this.m_mapPanel.TabIndex = 0;
-            this.m_mapPanel.Viewport = ((Tiling.Dimensions.Rectangle)(resources.GetObject("m_mapPanel.Viewport")));
+            //this.m_mapPanel.Viewport = ((XTile.Dimensions.Rectangle)(resources.GetObject("m_mapPanel.Viewport")));
             this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
             this.m_mapPanel.SelectionChanged += new System.EventHandler(this.OnTileSelectionChanged);
             this.m_mapPanel.ZoomChanged += new System.EventHandler(this.OnZoomChanged);

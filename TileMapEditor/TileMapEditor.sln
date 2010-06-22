@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiling", "Tiling\Tiling.csproj", "{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapEditor", "TileMapEditor\TileMapEditor.csproj", "{23DDF477-C651-46E1-A856-46BA1D64FC6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}"
@@ -32,32 +30,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTile360", "XTile\XTile360.
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
+		SccNumberOfProjects = 7
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs04.codeplex.com/
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = TileMapEditor\\TileMapEditor.csproj
 		SccProjectName1 = TileMapEditor
 		SccLocalPath1 = TileMapEditor
-		SccProjectUniqueName2 = Tiling\\Tiling.csproj
-		SccProjectName2 = Tiling
-		SccLocalPath2 = Tiling
-		SccProjectUniqueName3 = TestPlugin\\TestPlugin.csproj
-		SccProjectName3 = TestPlugin
-		SccLocalPath3 = TestPlugin
-		SccProjectUniqueName4 = Plugin\\Plugin.csproj
-		SccProjectName4 = Plugin
-		SccLocalPath4 = Plugin
-		SccProjectUniqueName5 = XTile\\Content\\Content.contentproj
-		SccProjectTopLevelParentUniqueName5 = XTile\\XTile.csproj
-		SccProjectName5 = XTile/Content
-		SccLocalPath5 = XTile\\Content
-		SccProjectUniqueName6 = XTile\\XTilePC.csproj
-		SccProjectName6 = XTile
-		SccLocalPath6 = XTile
-		SccProjectUniqueName7 = XTile\\XTile360.csproj
-		SccProjectName7 = XTile
-		SccLocalPath7 = XTile
+		SccProjectUniqueName2 = TestPlugin\\TestPlugin.csproj
+		SccProjectName2 = TestPlugin
+		SccLocalPath2 = TestPlugin
+		SccProjectUniqueName3 = Plugin\\Plugin.csproj
+		SccProjectName3 = Plugin
+		SccLocalPath3 = Plugin
+		SccProjectUniqueName4 = XTile\\XTilePC.csproj
+		SccProjectName4 = XTile
+		SccLocalPath4 = XTile
+		SccProjectUniqueName5 = XTile\\XTile360.csproj
+		SccProjectName5 = XTile
+		SccLocalPath5 = XTile
+		SccProjectUniqueName6 = XTile\\Content\\Content.contentproj
+		SccProjectTopLevelParentUniqueName6 = XTile\\XTilePC.csproj
+		SccProjectName6 = XTile/Content
+		SccLocalPath6 = XTile\\Content
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,18 +65,6 @@ Global
 		Release|Xbox 360 = Release|Xbox 360
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Debug|Xbox 360.ActiveCfg = Debug|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|x86.ActiveCfg = Release|Any CPU
-		{BFBC7ED1-1783-4A9E-9551-3A5040A6D6BB}.Release|Xbox 360.ActiveCfg = Release|Any CPU
 		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23DDF477-C651-46E1-A856-46BA1D64FC6B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -130,14 +113,6 @@ Global
 		{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}.Release|x86.ActiveCfg = Release|x86
 		{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}.Release|x86.Build.0 = Release|x86
 		{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}.Release|Xbox 360.ActiveCfg = Release|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|x86.ActiveCfg = Debug|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|Xbox 360.ActiveCfg = Debug|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Any CPU.ActiveCfg = Release|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|x86.ActiveCfg = Release|x86
-		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Xbox 360.ActiveCfg = Release|x86
 		{3EBDA05D-CADD-48C6-8B59-249E79573A5F}.Debug|Any CPU.ActiveCfg = Debug|Xbox 360
 		{3EBDA05D-CADD-48C6-8B59-249E79573A5F}.Debug|Mixed Platforms.ActiveCfg = Debug|Xbox 360
 		{3EBDA05D-CADD-48C6-8B59-249E79573A5F}.Debug|Mixed Platforms.Build.0 = Debug|Xbox 360
@@ -150,6 +125,14 @@ Global
 		{3EBDA05D-CADD-48C6-8B59-249E79573A5F}.Release|x86.ActiveCfg = Release|Xbox 360
 		{3EBDA05D-CADD-48C6-8B59-249E79573A5F}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
 		{3EBDA05D-CADD-48C6-8B59-249E79573A5F}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|x86.ActiveCfg = Debug|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Debug|Xbox 360.ActiveCfg = Debug|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Any CPU.ActiveCfg = Release|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|x86.ActiveCfg = Release|x86
+		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Xbox 360.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

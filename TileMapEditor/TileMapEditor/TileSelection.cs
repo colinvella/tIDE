@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Layers;
+using XTile;
+using XTile.Dimensions;
+using XTile.Layers;
 
 using TileMapEditor.Controls;
 

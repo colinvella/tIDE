@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Tiling;
-using Tiling.Dimensions;
-using Tiling.Layers;
-using Tiling.Tiles;
+using XTile;
+using XTile.Dimensions;
+using XTile.Layers;
+using XTile.Tiles;
 
 using TileMapEditor.Controls;
 
