@@ -337,6 +337,7 @@
     <None Include="Resources\AboutSide.png" />
     <None Include="Resources\AboutPluginBackground.png" />
     <None Include="Resources\HelpSearch.png" />
+    <None Include="Resources\EditClipboard.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />

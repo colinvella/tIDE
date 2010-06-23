@@ -95,6 +95,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditClipboard {
+            get {
+                object obj = ResourceManager.GetObject("EditClipboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditDelete {
             get {
                 object obj = ResourceManager.GetObject("EditDelete", resourceCulture);
