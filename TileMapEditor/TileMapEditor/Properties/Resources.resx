@@ -226,9 +226,6 @@
   <data name="TilePropertiesIndicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TilePropertiesIndicator.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AboutSide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AboutSide.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Plugin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plugin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

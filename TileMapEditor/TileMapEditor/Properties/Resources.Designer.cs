@@ -74,13 +74,6 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap AboutSide {
-            get {
-                object obj = ResourceManager.GetObject("AboutSide", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Edit {
             get {
                 object obj = ResourceManager.GetObject("Edit", resourceCulture);
