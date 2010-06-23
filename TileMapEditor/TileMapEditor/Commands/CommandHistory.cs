@@ -90,5 +90,17 @@ namespace TileMapEditor.Commands
                     : "No action to redo";
             }
         }
+
+        public IEnumerable<Command> History
+        {
+            get
+            {
+                List<Command> commandHistory = new List<Command>(m_undoCommandStack);
+                int index = commandHistory.Count;
+                foreach (Command command in m_redoCommandStack)
+                    commandHistory.Insert(index, command);
+                return commandHistory;
+            }
+        }
     }
 }

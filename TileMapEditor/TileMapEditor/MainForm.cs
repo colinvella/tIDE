@@ -160,6 +160,10 @@ namespace TileMapEditor
             m_editRedoMenuItem.Enabled = m_editRedoButton.Enabled
                 = m_commandHistory.CanRedo();
 
+            // history
+            m_editHistoryMenuItem.Enabled = m_editHistoryButton.Enabled
+                = m_commandHistory.CanUndo() || m_commandHistory.CanRedo();
+
             m_editUndoButton.ToolTipText
                 = "Undo: " + m_commandHistory.UndoDescription;
             m_editRedoButton.ToolTipText
@@ -809,6 +813,11 @@ namespace TileMapEditor
             if (m_commandHistory.CanRedo())
                 m_commandHistory.Redo();
             UpdateAllControls();
+        }
+
+        private void OnEditHistory(object sender, EventArgs eventArgs)
+        {
+
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
@@ -1538,6 +1547,5 @@ namespace TileMapEditor
         }
 
         #endregion
-
     }
 }

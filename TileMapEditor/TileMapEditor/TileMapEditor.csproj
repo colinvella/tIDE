@@ -117,6 +117,12 @@
     <Compile Include="Dialogs\AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\CommandHistoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CommandHistoryDialog.Designer.cs">
+      <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\MapStatisticsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,10 @@
       <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CommandHistoryDialog.resx">
+      <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapStatisticsDialog.resx">
       <DependentUpon>MapStatisticsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -267,16 +277,16 @@
       <DependentUpon>HelpForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapPropertiesDialog.resx">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MapTreeView.resx">
       <DependentUpon>MapTreeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -338,6 +348,10 @@
     <None Include="Resources\AboutPluginBackground.png" />
     <None Include="Resources\HelpSearch.png" />
     <None Include="Resources\EditClipboard.png" />
+    <None Include="Resources\EditHistory.png" />
+    <None Include="Resources\EditCopy.png" />
+    <None Include="Resources\EditCut.png" />
+    <None Include="Resources\EditPaste.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />

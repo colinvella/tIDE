@@ -95,9 +95,30 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EditCopy {
+            get {
+                object obj = ResourceManager.GetObject("EditCopy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap EditCut {
+            get {
+                object obj = ResourceManager.GetObject("EditCut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EditDelete {
             get {
                 object obj = ResourceManager.GetObject("EditDelete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap EditHistory {
+            get {
+                object obj = ResourceManager.GetObject("EditHistory", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -119,6 +140,13 @@ namespace TileMapEditor.Properties {
         internal static System.Drawing.Bitmap EditManageTileBrushes {
             get {
                 object obj = ResourceManager.GetObject("EditManageTileBrushes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap EditPaste {
+            get {
+                object obj = ResourceManager.GetObject("EditPaste", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

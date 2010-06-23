@@ -86,6 +86,11 @@ namespace XTile.Dimensions
             ExtendTo(corner);
         }
 
+        public override string ToString()
+        {
+            return Location.ToString() + " - " + Size.ToString();
+        }
+
         public int X
         {
             get { return Location.X; }
