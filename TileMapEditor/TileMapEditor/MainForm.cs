@@ -817,7 +817,10 @@ namespace TileMapEditor
 
         private void OnEditHistory(object sender, EventArgs eventArgs)
         {
-
+            MessageBox.Show("ok");
+            CommandHistoryDialog commandHistoryDialog = new CommandHistoryDialog();
+            commandHistoryDialog.Show(this);
+            commandHistoryDialog.Visible = true;
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
