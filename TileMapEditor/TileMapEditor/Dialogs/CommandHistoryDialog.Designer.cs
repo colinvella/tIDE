@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandHistoryDialog));
             this.m_commandsDataGridView = new System.Windows.Forms.DataGridView();
             this.Command = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -38,6 +39,8 @@
             // 
             this.m_commandsDataGridView.AllowUserToAddRows = false;
             this.m_commandsDataGridView.AllowUserToDeleteRows = false;
+            this.m_commandsDataGridView.AllowUserToResizeColumns = false;
+            this.m_commandsDataGridView.AllowUserToResizeRows = false;
             this.m_commandsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.m_commandsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Command,
@@ -69,15 +72,19 @@
             this.Action.ReadOnly = true;
             this.Action.Width = 64;
             // 
-            // ClipboardDialog
+            // CommandHistoryDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 206);
             this.Controls.Add(this.m_commandsDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "ClipboardDialog";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CommandHistoryDialog";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Command History";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.OnDialogLoad);
             ((System.ComponentModel.ISupportInitialize)(this.m_commandsDataGridView)).EndInit();
             this.ResumeLayout(false);

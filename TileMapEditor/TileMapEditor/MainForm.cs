@@ -44,6 +44,8 @@ namespace TileMapEditor
         private bool m_needsSaving;
         private string m_filename;
 
+        private CommandHistoryDialog m_commandHistoryDialog;
+
         private PluginManager m_pluginManager;
 
         private HelpForm m_helpForm;
@@ -817,10 +819,19 @@ namespace TileMapEditor
 
         private void OnEditHistory(object sender, EventArgs eventArgs)
         {
-            MessageBox.Show("ok");
-            CommandHistoryDialog commandHistoryDialog = new CommandHistoryDialog();
-            commandHistoryDialog.Show(this);
-            commandHistoryDialog.Visible = true;
+            if (m_commandHistoryDialog == null ||
+                m_commandHistoryDialog.IsDisposed)
+            {
+                m_commandHistoryDialog = new CommandHistoryDialog();
+                m_commandHistoryDialog.Show(this);
+
+                // CenterParent does not work with SizableToolWindow
+                m_commandHistoryDialog.Location = new System.Drawing.Point(
+                    Location.X + (Width - m_commandHistoryDialog.Width) / 2,
+                    Location.Y + (Height - m_commandHistoryDialog.Height) / 2);
+            }
+            else
+                m_commandHistoryDialog.Visible = true;
         }
 
         private void OnEditCut(object sender, EventArgs eventArgs)
