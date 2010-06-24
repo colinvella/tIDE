@@ -827,6 +827,7 @@ namespace TileMapEditor
                 m_commandHistoryDialog.IsDisposed)
             {
                 m_commandHistoryDialog = new CommandHistoryDialog();
+                m_commandHistoryDialog.HistoryChanged +=new HistoryChangedHandler(OnCommandHistoryChanged);
                 m_commandHistoryDialog.Show(this);
 
                 // CenterParent does not work with SizableToolWindow
@@ -1553,6 +1554,11 @@ namespace TileMapEditor
             m_needsSaving = true;
             UpdateFileControls();
             UpdateEditControls();
+        }
+
+        private void OnCommandHistoryChanged(object sender, EventArgs eventArgs)
+        {
+            UpdateAllControls();
         }
 
         #endregion

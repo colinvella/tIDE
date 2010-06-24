@@ -49,6 +49,8 @@ namespace TileMapEditor.Dialogs
             m_commandsDataGridView.CellContentClick +=new DataGridViewCellEventHandler(OnCellContentClick);
         }
 
+        public event HistoryChangedHandler HistoryChanged;
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             UpdateHistory();
@@ -72,6 +74,13 @@ namespace TileMapEditor.Dialogs
 
             // refresh
             UpdateHistory();
+
+            // fire events
+            if (HistoryChanged != null)
+                HistoryChanged(this, EventArgs.Empty);
         }
     }
+
+    public delegate void HistoryChangedHandler(object sender, EventArgs eventArgs);
+
 }
