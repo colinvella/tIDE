@@ -41,7 +41,9 @@
             this.m_commandsDataGridView.AllowUserToDeleteRows = false;
             this.m_commandsDataGridView.AllowUserToResizeColumns = false;
             this.m_commandsDataGridView.AllowUserToResizeRows = false;
+            this.m_commandsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.m_commandsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.m_commandsDataGridView.ColumnHeadersVisible = false;
             this.m_commandsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Command,
             this.Action});
@@ -51,26 +53,26 @@
             this.m_commandsDataGridView.Name = "m_commandsDataGridView";
             this.m_commandsDataGridView.ReadOnly = true;
             this.m_commandsDataGridView.RowHeadersVisible = false;
-            this.m_commandsDataGridView.RowHeadersWidth = 10;
+            this.m_commandsDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.m_commandsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.m_commandsDataGridView.Size = new System.Drawing.Size(304, 206);
             this.m_commandsDataGridView.TabIndex = 0;
             // 
             // Command
             // 
+            this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Command.FillWeight = 80F;
             this.Command.HeaderText = "Command";
             this.Command.Name = "Command";
             this.Command.ReadOnly = true;
-            this.Command.Width = 256;
             // 
             // Action
             // 
+            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Action.FillWeight = 20F;
             this.Action.HeaderText = "Action";
             this.Action.Name = "Action";
             this.Action.ReadOnly = true;
-            this.Action.Width = 64;
             // 
             // CommandHistoryDialog
             // 
@@ -80,6 +82,7 @@
             this.Controls.Add(this.m_commandsDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(240, 120);
             this.Name = "CommandHistoryDialog";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
