@@ -377,6 +377,7 @@
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
     <None Include="Resources\Help\AboutDialog.rtf" />
+    <None Include="Resources\Help\CommandHistoryDialog.rtf" />
     <None Include="Resources\Help\CommandReference.rtf" />
     <None Include="Resources\Help\DialogBoxReference.rtf" />
     <None Include="Resources\Help\EditingToolbox.rtf" />
