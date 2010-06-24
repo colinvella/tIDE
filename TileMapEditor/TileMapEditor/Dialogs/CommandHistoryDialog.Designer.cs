@@ -57,6 +57,7 @@
             this.m_commandsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.m_commandsDataGridView.Size = new System.Drawing.Size(304, 206);
             this.m_commandsDataGridView.TabIndex = 0;
+            this.m_commandsDataGridView.SelectionChanged += new System.EventHandler(this.OnSelectionChanged);
             // 
             // Command
             // 

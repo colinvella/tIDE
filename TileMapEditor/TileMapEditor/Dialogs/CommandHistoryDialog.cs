@@ -32,6 +32,7 @@ namespace TileMapEditor.Dialogs
             if (lastCommand == null)
             {
                 m_commandsDataGridView.Rows.Insert(0, new object[] { "Current State", null });
+                m_commandsDataGridView.Rows[0].DefaultCellStyle.BackColor = SystemColors.GradientActiveCaption;
             }
 
             foreach (Command command in commandHistory)
@@ -42,6 +43,7 @@ namespace TileMapEditor.Dialogs
                 if (command == lastCommand)
                 {
                     m_commandsDataGridView.Rows.Insert(0, new object[] { "Current State", null });
+                    m_commandsDataGridView.Rows[0].DefaultCellStyle.BackColor = SystemColors.GradientActiveCaption;
                     buttonText = "Redo";
                 }
             }
@@ -78,6 +80,13 @@ namespace TileMapEditor.Dialogs
             // fire events
             if (HistoryChanged != null)
                 HistoryChanged(this, EventArgs.Empty);
+        }
+
+        private void OnSelectionChanged(object sender, EventArgs eventArgs)
+        {
+            m_commandsDataGridView.SelectionChanged -= OnSelectionChanged;
+            m_commandsDataGridView.ClearSelection();
+            m_commandsDataGridView.SelectionChanged +=new EventHandler(OnSelectionChanged);
         }
     }
 
