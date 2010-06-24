@@ -171,6 +171,10 @@ namespace TileMapEditor
             m_editRedoButton.ToolTipText
                 = "Redo: " + m_commandHistory.RedoDescription;
 
+            if (m_commandHistoryDialog != null
+                && !m_commandHistoryDialog.IsDisposed)
+                m_commandHistoryDialog.UpdateHistory();
+
             // cut, copy, paste
 
             m_editCutMenuItem.Enabled = m_editCutButton.Enabled

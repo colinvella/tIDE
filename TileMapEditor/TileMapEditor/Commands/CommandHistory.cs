@@ -56,6 +56,17 @@ namespace TileMapEditor.Commands
             m_redoCommandStack.Push(command);
         }
 
+        public void Undo(Command command)
+        {
+            if (!m_undoCommandStack.Contains(command))
+                throw new Exception("The command is not in the undo stack");
+
+            while (m_undoCommandStack.Peek() != command)
+                Undo();
+
+            Undo();
+        }
+
         public void Redo()
         {
             if (m_redoCommandStack.Count == 0)
@@ -64,6 +75,27 @@ namespace TileMapEditor.Commands
             Command command = m_redoCommandStack.Pop();
             command.Do();
             m_undoCommandStack.Push(command);
+        }
+
+        public void Redo(Command command)
+        {
+            if (!m_redoCommandStack.Contains(command))
+                throw new Exception("The command is not in the redo stack");
+
+            while (m_redoCommandStack.Peek() != command)
+                Redo();
+
+            Redo();
+        }
+
+        public void UndoOrRedo(Command command)
+        {
+            if (m_undoCommandStack.Contains(command))
+                Undo(command);
+            else if (m_redoCommandStack.Contains(command))
+                Redo(command);
+            else
+                throw new Exception("The command is not in the undo/redo command history");
         }
 
         public int Count
@@ -95,11 +127,22 @@ namespace TileMapEditor.Commands
         {
             get
             {
-                List<Command> commandHistory = new List<Command>(m_undoCommandStack);
-                int index = commandHistory.Count;
+                List<Command> commandHistory = new List<Command>();
+                foreach (Command command in m_undoCommandStack)
+                    commandHistory.Insert(0, command);
+
+                //int index = commandHistory.Count;
                 foreach (Command command in m_redoCommandStack)
-                    commandHistory.Insert(index, command);
+                    commandHistory.Add(command);
                 return commandHistory;
+            }
+        }
+
+        public Command LastCommand
+        {
+            get
+            {
+                return m_undoCommandStack.Count == 0 ? null : m_undoCommandStack.Peek();
             }
         }
     }

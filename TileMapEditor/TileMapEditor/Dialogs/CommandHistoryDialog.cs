@@ -18,13 +18,60 @@ namespace TileMapEditor.Dialogs
             InitializeComponent();
         }
 
-        private void OnDialogLoad(object sender, EventArgs eventArgs)
+        public void UpdateHistory()
         {
             m_commandsDataGridView.Rows.Clear();
-            foreach (Command command in CommandHistory.Instance.History)
+
+            IEnumerable<Command> commandHistory = CommandHistory.Instance.History;
+            if (commandHistory.Count<Command>()== 0)
+                return;
+
+            Command lastCommand = CommandHistory.Instance.LastCommand;
+            string buttonText = lastCommand == null ? "Redo" : "Undo";
+
+            if (lastCommand == null)
             {
-                m_commandsDataGridView.Rows.Add(new object[] {command.Description, null });
+                m_commandsDataGridView.Rows.Insert(0, new object[] { "Current State", null });
             }
+
+            foreach (Command command in commandHistory)
+            {
+                m_commandsDataGridView.Rows.Insert(0, new object[] { command.Description, buttonText });
+                m_commandsDataGridView.Rows[0].Tag = command;
+
+                if (command == lastCommand)
+                {
+                    m_commandsDataGridView.Rows.Insert(0, new object[] { "Current State", null });
+                    buttonText = "Redo";
+                }
+            }
+
+            m_commandsDataGridView.CellContentClick +=new DataGridViewCellEventHandler(OnCellContentClick);
+        }
+
+        private void OnDialogLoad(object sender, EventArgs eventArgs)
+        {
+            UpdateHistory();
+        }
+
+        private void OnCellContentClick(object sender, DataGridViewCellEventArgs dataGridViewCellEventArgs)
+        {
+            // ensure action column
+            if (dataGridViewCellEventArgs.ColumnIndex != 1)
+                return;
+
+            int rowIndex = dataGridViewCellEventArgs.RowIndex;
+
+            // ignore clicks on current state button
+            if (m_commandsDataGridView.Rows[rowIndex].Tag == null)
+                return;
+
+            // get corresponding command and undo/redo
+            Command command = (Command) m_commandsDataGridView.Rows[rowIndex].Tag;
+            CommandHistory.Instance.UndoOrRedo(command);
+
+            // refresh
+            UpdateHistory();
         }
     }
 }
