@@ -392,6 +392,7 @@
     <None Include="Resources\Help\PluginInfoDialog.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />
     <None Include="Resources\Help\TileAnimationDialog.rtf" />
+    <None Include="Resources\Help\TileBlockTool.rtf" />
     <None Include="Resources\Help\TileBrushDialog.rtf" />
     <None Include="Resources\Help\TileBrushTool.rtf" />
     <None Include="Resources\Help\TilePlacementTool.rtf" />
