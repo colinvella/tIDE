@@ -490,6 +490,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpTilePlacementTool {
+            get {
+                object obj = ResourceManager.GetObject("HelpTilePlacementTool", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpTilePropertiesDialog {
             get {
                 object obj = ResourceManager.GetObject("HelpTilePropertiesDialog", resourceCulture);
