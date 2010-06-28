@@ -395,6 +395,7 @@
     <None Include="Resources\Help\TileBlockTool.rtf" />
     <None Include="Resources\Help\TileBrushDialog.rtf" />
     <None Include="Resources\Help\TileBrushTool.rtf" />
+    <None Include="Resources\Help\TileEraserTool.rtf" />
     <None Include="Resources\Help\TilePlacementTool.rtf" />
     <None Include="Resources\Help\TilePropertiesDialog.rtf" />
     <None Include="Resources\Help\TileSelectionTool.rtf" />

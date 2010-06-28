@@ -497,6 +497,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpTileEraserTool {
+            get {
+                object obj = ResourceManager.GetObject("HelpTileEraserTool", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpTilePlacementTool {
             get {
                 object obj = ResourceManager.GetObject("HelpTilePlacementTool", resourceCulture);
