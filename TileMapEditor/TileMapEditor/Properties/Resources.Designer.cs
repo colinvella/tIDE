@@ -504,6 +504,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpTilePickingTool {
+            get {
+                object obj = ResourceManager.GetObject("HelpTilePickingTool", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpTilePlacementTool {
             get {
                 object obj = ResourceManager.GetObject("HelpTilePlacementTool", resourceCulture);
