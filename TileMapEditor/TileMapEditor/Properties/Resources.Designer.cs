@@ -441,6 +441,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static byte[] HelpOpenFileDialog {
+            get {
+                object obj = ResourceManager.GetObject("HelpOpenFileDialog", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpPluginCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpPluginCommandReference", resourceCulture);
@@ -451,6 +458,13 @@ namespace TileMapEditor.Properties {
         internal static byte[] HelpPluginInfoDialog {
             get {
                 object obj = ResourceManager.GetObject("HelpPluginInfoDialog", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        internal static byte[] HelpSaveFileDialog {
+            get {
+                object obj = ResourceManager.GetObject("HelpSaveFileDialog", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -388,8 +388,10 @@
     <None Include="Resources\Help\MapCommandReference.rtf" />
     <None Include="Resources\Help\MapPropertiesDialog.rtf" />
     <None Include="Resources\Help\MapStatisticsDialog.rtf" />
+    <None Include="Resources\Help\OpenFileDialog.rtf" />
     <None Include="Resources\Help\PluginCommandReference.rtf" />
     <None Include="Resources\Help\PluginInfoDialog.rtf" />
+    <None Include="Resources\Help\SaveFileDialog.rtf" />
     <None Include="Resources\Help\tIDE.rtf" />
     <None Include="Resources\Help\TileAnimationDialog.rtf" />
     <None Include="Resources\Help\TileBlockTool.rtf" />
