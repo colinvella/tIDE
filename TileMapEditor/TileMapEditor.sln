@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapEditor", "TileMapEditor\TileMapEditor.csproj", "{23DDF477-C651-46E1-A856-46BA1D64FC6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tIDE", "TileMapEditor\tIDE.csproj", "{23DDF477-C651-46E1-A856-46BA1D64FC6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}"
 EndProject
@@ -36,28 +36,28 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs04.codeplex.com/
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = TileMapEditor\\TileMapEditor.csproj
-		SccProjectName1 = TileMapEditor
-		SccLocalPath1 = TileMapEditor
-		SccProjectUniqueName2 = TestPlugin\\TestPlugin.csproj
-		SccProjectName2 = TestPlugin
-		SccLocalPath2 = TestPlugin
-		SccProjectUniqueName3 = Plugin\\Plugin.csproj
-		SccProjectName3 = Plugin
-		SccLocalPath3 = Plugin
-		SccProjectUniqueName4 = XTile\\XTilePC.csproj
+		SccProjectUniqueName1 = TestPlugin\\TestPlugin.csproj
+		SccProjectName1 = TestPlugin
+		SccLocalPath1 = TestPlugin
+		SccProjectUniqueName2 = Plugin\\Plugin.csproj
+		SccProjectName2 = Plugin
+		SccLocalPath2 = Plugin
+		SccProjectUniqueName3 = XTile\\XTilePC.csproj
+		SccProjectName3 = XTile
+		SccLocalPath3 = XTile
+		SccProjectUniqueName4 = XTile\\XTile360.csproj
 		SccProjectName4 = XTile
 		SccLocalPath4 = XTile
-		SccProjectUniqueName5 = XTile\\XTile360.csproj
-		SccProjectName5 = XTile
-		SccLocalPath5 = XTile
-		SccProjectUniqueName6 = XTile\\Content\\Content.contentproj
-		SccProjectTopLevelParentUniqueName6 = XTile\\XTilePC.csproj
-		SccProjectName6 = XTile/Content
-		SccLocalPath6 = XTile\\Content
-		SccProjectUniqueName7 = XTile\\XTileZune.csproj
-		SccProjectName7 = XTile
-		SccLocalPath7 = XTile
+		SccProjectUniqueName5 = XTile\\Content\\Content.contentproj
+		SccProjectTopLevelParentUniqueName5 = XTile\\XTilePC.csproj
+		SccProjectName5 = XTile/Content
+		SccLocalPath5 = XTile\\Content
+		SccProjectUniqueName6 = XTile\\XTileZune.csproj
+		SccProjectName6 = XTile
+		SccLocalPath6 = XTile
+		SccProjectUniqueName7 = TileMapEditor\\tIDE.csproj
+		SccProjectName7 = TileMapEditor
+		SccLocalPath7 = TileMapEditor
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
