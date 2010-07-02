@@ -533,6 +533,19 @@ namespace TileMapEditor
             IMapFormat selectedMapFormat
                 = formatManager.GetMapFormatByExtension(fileExtension);
 
+            // check format compatibility
+            CompatibilityResults compatibilityResults = selectedMapFormat.DetermineCompatibility(m_map);
+
+            if (compatibilityResults.CompatibilityLevel == CompatibilityLevel.None)
+            {
+                MessageBox.Show("The current map cannot be stored in this format");
+                return false;
+            }
+            else if (compatibilityResults.CompatibilityLevel == CompatibilityLevel.Partial)
+            {
+                MessageBox.Show("Some map details will be lost when stored in this format");
+            }
+
             // make image source paths relative
             string basePath = Path.GetDirectoryName(filename);
             foreach (TileSheet tileSheet in m_map.TileSheets)

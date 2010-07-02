@@ -13,7 +13,7 @@ using XTile.Tiles;
 
 namespace XTile.Format
 {
-    internal class StandardFormat: IMapFormat
+    internal class TideFormat: IMapFormat
     {
         private CompatibilityResults m_compatibilityResults;
 
@@ -375,7 +375,7 @@ namespace XTile.Format
             xmlTextWriter.WriteEndElement();
         }
 
-        internal StandardFormat()
+        internal TideFormat()
         {
             m_compatibilityResults = new CompatibilityResults(CompatibilityLevel.Full);
         }
@@ -443,7 +443,7 @@ namespace XTile.Format
 
         public string FileExtensionDescriptor
         {
-            get { return "Map Files (*.tide)"; }
+            get { return "tIDE Map Files (*.tide)"; }
         }
 
         public string FileExtension

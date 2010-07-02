@@ -11,13 +11,13 @@ namespace XTile.Format
         private static FormatManager s_formatManager = new FormatManager();
 
         private Dictionary<string, IMapFormat> m_mapFormats;
-        private StandardFormat m_standardFormat;
+        private TideFormat m_standardFormat;
 
         private FormatManager()
         {
             m_mapFormats = new Dictionary<string, IMapFormat>();
 
-            m_standardFormat = new StandardFormat();
+            m_standardFormat = new TideFormat();
             m_mapFormats[m_standardFormat.Name] = m_standardFormat;
         }
 
