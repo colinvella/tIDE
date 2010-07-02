@@ -15,41 +15,30 @@ namespace XTile.Format
 {
     internal class TiledTmxFormat: IMapFormat
     {
-        private CompatibilityResults m_compatibilityResults;
-
         private void LoadProperties(XmlHelper xmlHelper, Component component)
         {
-            xmlHelper.AdvanceStartElement("Properties");
+            xmlHelper.AdvanceStartElement("properties");
 
-            while (xmlHelper.AdvanceStartRepeatedElement("Property", "Properties"))
+            while (xmlHelper.AdvanceStartRepeatedElement("property", "properties"))
             {
-                string propertyKey = xmlHelper.GetAttribute("Key");
-                string propertyType = xmlHelper.GetAttribute("Type");
-                string propertyValue = xmlHelper.GetCData();
+                string propertyKey = xmlHelper.GetAttribute("name");
+                string propertyValue = xmlHelper.GetAttribute("value");
 
-                if (propertyType == typeof(bool).Name)
-                    component.Properties[propertyKey] = bool.Parse(propertyValue);
-                else if (propertyType == typeof(int).Name)
-                    component.Properties[propertyKey] = int.Parse(propertyValue);
-                else if (propertyType == typeof(float).Name)
-                    component.Properties[propertyKey] = float.Parse(propertyValue);
-                else
-                    component.Properties[propertyKey] = propertyValue;
+                component.Properties[propertyKey] = propertyValue;
 
-                xmlHelper.AdvanceEndElement("Property");
+                xmlHelper.AdvanceEndElement("property");
             }
         }
 
         private void StoreProperties(Component component, XmlWriter xmlWriter)
         {
-            xmlWriter.WriteStartElement("Properties");
+            xmlWriter.WriteStartElement("properties");
 
             foreach (KeyValuePair<string, PropertyValue> keyValuePair in component.Properties)
             {
-                xmlWriter.WriteStartElement("Property");
-                xmlWriter.WriteAttributeString("Key", keyValuePair.Key);
-                xmlWriter.WriteAttributeString("Type", keyValuePair.Value.Type.Name);
-                xmlWriter.WriteCData(keyValuePair.Value);
+                xmlWriter.WriteStartElement("property");
+                xmlWriter.WriteAttributeString("name", keyValuePair.Key);
+                xmlWriter.WriteAttributeString("value", keyValuePair.Value.ToString());
                 xmlWriter.WriteEndElement();
             }
 
@@ -58,7 +47,7 @@ namespace XTile.Format
 
         private StaticTile LoadStaticTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
         {
-            int tileIndex = int.Parse(xmlHelper.GetAttribute("Index"));
+            int tileIndex = xmlHelper.GetIntAttribute("Index");
             BlendMode blendMode
                 = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
                     ? BlendMode.Alpha : BlendMode.Additive;
@@ -88,7 +77,7 @@ namespace XTile.Format
 
         private AnimatedTile LoadAnimatedTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
         {
-            int frameInterval = int.Parse(xmlHelper.GetAttribute("Interval"));
+            int frameInterval = xmlHelper.GetIntAttribute("Interval");
 
             xmlHelper.AdvanceStartElement("Frames");
 
@@ -143,7 +132,7 @@ namespace XTile.Format
             xmlWriter.WriteEndElement();
         }
 
-        private void LoadTileSheet(XmlHelper xmlHelper, Map map)
+        private void LoadTileSet(XmlHelper xmlHelper, Map map)
         {
             string id = xmlHelper.GetAttribute("Id");
 
@@ -175,18 +164,17 @@ namespace XTile.Format
             map.AddTileSheet(tileSheet);
         }
 
-        private void StoreTileSheet(TileSheet tileSheet, XmlWriter xmlWriter)
+        private void StoreTileSet(TileSheet tileSheet, int firstGid, XmlWriter xmlWriter)
         {
-            xmlWriter.WriteStartElement("TileSheet");
-            xmlWriter.WriteAttributeString("Id", tileSheet.Id);
+            xmlWriter.WriteStartElement("tileset");
+            xmlWriter.WriteAttributeString("firstgid", firstGid.ToString());
+            xmlWriter.WriteAttributeString("source", tileSheet.ImageSource);
+            xmlWriter.WriteAttributeString("name", tileSheet.Id);
+            xmlWriter.WriteAttributeString("tilewidth", tileSheet.TileSize.Width.ToString());
+            xmlWriter.WriteAttributeString("tileheight", tileSheet.TileSize.Height.ToString());
 
-            xmlWriter.WriteStartElement("Description");
-            xmlWriter.WriteCData(tileSheet.Description);
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.WriteStartElement("ImageSource");
-            xmlWriter.WriteCData(tileSheet.ImageSource);
-            xmlWriter.WriteEndElement();
+            xmlWriter.WriteAttributeString("spacing", tileSheet.Spacing.Width.ToString());
+            xmlWriter.WriteAttributeString("margin", tileSheet.Margin.Width.ToString());
 
             xmlWriter.WriteStartElement("Alignment");
             xmlWriter.WriteAttributeString("SheetSize", tileSheet.SheetSize.ToString());
@@ -200,20 +188,14 @@ namespace XTile.Format
             xmlWriter.WriteEndElement();
         }
 
-        private void LoadTileSheets(XmlHelper xmlHelper, Map map)
+        private void StoreTileSets(ReadOnlyCollection<TileSheet> tileSheets, XmlWriter xmlWriter)
         {
-            xmlHelper.AdvanceStartElement("TileSheets");
-
-            while (xmlHelper.AdvanceStartRepeatedElement("TileSheet", "TileSheets"))
-                LoadTileSheet(xmlHelper, map);
-        }
-
-        private void StoreTileSheets(ReadOnlyCollection<TileSheet> tileSheets, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement("TileSheets");
+            int firstGid = 0;
             foreach (TileSheet tileSheet in tileSheets)
-                StoreTileSheet(tileSheet, xmlWriter);
-            xmlWriter.WriteEndElement();
+            {
+                StoreTileSet(tileSheet, firstGid, xmlWriter);
+                firstGid += tileSheet.TileCount;
+            }
         }
 
         private void LoadLayer(XmlHelper xmlHelper, Map map)
@@ -245,7 +227,7 @@ namespace XTile.Format
                 {
                     if (xmlReader.Name == "Null")
                     {
-                        int nullCount = int.Parse(xmlHelper.GetAttribute("Count"));
+                        int nullCount = xmlHelper.GetIntAttribute("Count");
                         tileLocation.X += nullCount % layerSize.Width;
                     }
                     else if (xmlReader.Name == "TileSheet")
@@ -359,53 +341,68 @@ namespace XTile.Format
             xmlWriter.WriteEndElement();
         }
 
-        private void LoadLayers(XmlHelper xmlHelper, Map map)
-        {
-            xmlHelper.AdvanceStartElement("Layers");
-
-            while (xmlHelper.AdvanceStartRepeatedElement("Layer", "Layers"))
-                LoadLayer(xmlHelper, map);
-        }
-
         private void StoreLayers(ReadOnlyCollection<Layer> layers, XmlWriter xmlTextWriter)
         {
-            xmlTextWriter.WriteStartElement("Layers");
             foreach (Layer layer in layers)
                 StoreLayer(layer, xmlTextWriter);
-            xmlTextWriter.WriteEndElement();
         }
 
         internal TiledTmxFormat()
         {
-            m_compatibilityResults = new CompatibilityResults(CompatibilityLevel.Full);
         }
 
         public CompatibilityResults DetermineCompatibility(Map map)
         {
-            // trivially compatible
-            return m_compatibilityResults;
+            // TODO
+
+            // all layer sizes same
+            // all tile sizes same
+
+            // spacing must be equal x, y
+            // margin must be equal x, y
+
+            List<string> remarks = new List<string>();
+            remarks.Add("This format is still work in progress");
+            return new CompatibilityResults(CompatibilityLevel.None, remarks);
         }
 
         public Map Load(Stream stream)
         {
+            // not implemented yet
+            throw new Exception("This format is not supported yet");
+
             XmlTextReader xmlReader = new XmlTextReader(stream);
             xmlReader.WhitespaceHandling = WhitespaceHandling.None;
 
             XmlHelper xmlHelper = new XmlHelper(xmlReader);
 
             xmlHelper.AdvanceDeclaration();
-            xmlHelper.AdvanceStartElement("Map");
-            string mapId = xmlHelper.GetAttribute("Id");
-            Map map = new Map(mapId);
+            xmlHelper.AdvanceStartElement("map");
 
-            xmlHelper.AdvanceStartElement("Description");
-            string mapDescription = xmlHelper.GetCData();
-            xmlHelper.AdvanceEndElement("Description");
-            map.Description = mapDescription;
+            string orientation = xmlHelper.GetAttribute("orientation");
 
-            LoadTileSheets(xmlHelper, map);
+            if (orientation != "orthogonal")
+                throw new Exception("Only orthogonal Tiled maps are supported.");
 
-            LoadLayers(xmlHelper, map);
+            int mapWidth = xmlHelper.GetIntAttribute("width");
+            int mapHeight = xmlHelper.GetIntAttribute("height");
+
+            int tileWidth = xmlHelper.GetIntAttribute("tilewidth");
+            int tileHeight = xmlHelper.GetIntAttribute("tileheight");
+
+            Map map = new Map();
+
+            while (true)
+            {
+                XmlNodeType xmlNodeType = xmlHelper.AdvanceNode();
+                if (xmlNodeType == XmlNodeType.EndElement)
+                    break;
+
+                if (xmlReader.Name == "tileset")
+                    LoadTileSet(xmlHelper, map);
+                else if (xmlReader.Name == "layer")
+                    LoadLayer(xmlHelper, map);
+            }
 
             LoadProperties(xmlHelper, map);
 
@@ -414,18 +411,37 @@ namespace XTile.Format
 
         public void Store(Map map, Stream stream)
         {
+            // not implemented yet
+            throw new Exception("This format is not supported yet");
+
             XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
             xmlWriter.Formatting = Formatting.Indented;
 
             xmlWriter.WriteStartDocument();
-            xmlWriter.WriteStartElement("Map");
-            xmlWriter.WriteAttributeString("Id", map.Id);
+            xmlWriter.WriteStartElement("map");
+            xmlWriter.WriteAttributeString("version", "1.0");
+            xmlWriter.WriteAttributeString("orientation", "orthogonal");
 
-            xmlWriter.WriteStartElement("Description");
-            xmlWriter.WriteCData(map.Description);
+            int mapWidth = 0, mapHeight = 0;
+            int tileWidth = 32, tileHeight = 32;
+            if (map.Layers.Count > 0)
+            {
+                Layer firstLayer = map.Layers[0];
+                mapWidth = firstLayer.LayerSize.Width;
+                mapHeight = firstLayer.LayerSize.Height;
+                tileWidth = firstLayer.TileSize.Width;
+                tileHeight = firstLayer.TileSize.Height;
+            }
+
+            xmlWriter.WriteAttributeString("width", mapWidth.ToString());
+            xmlWriter.WriteAttributeString("height", mapHeight.ToString());
+
+            xmlWriter.WriteAttributeString("tilewidth", tileWidth.ToString());
+            xmlWriter.WriteAttributeString("tileheight", tileHeight.ToString());
+
             xmlWriter.WriteEndElement();
 
-            StoreTileSheets(map.TileSheets, xmlWriter);
+            StoreTileSets(map.TileSheets, xmlWriter);
 
             StoreLayers(map.Layers, xmlWriter);
 

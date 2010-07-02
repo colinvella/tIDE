@@ -58,7 +58,7 @@ namespace XTile.Format
 
         private StaticTile LoadStaticTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
         {
-            int tileIndex = int.Parse(xmlHelper.GetAttribute("Index"));
+            int tileIndex = xmlHelper.GetIntAttribute("Index");
             BlendMode blendMode
                 = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
                     ? BlendMode.Alpha : BlendMode.Additive;
@@ -88,7 +88,7 @@ namespace XTile.Format
 
         private AnimatedTile LoadAnimatedTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
         {
-            int frameInterval = int.Parse(xmlHelper.GetAttribute("Interval"));
+            int frameInterval = xmlHelper.GetIntAttribute("Interval");
 
             xmlHelper.AdvanceStartElement("Frames");
 
@@ -245,7 +245,7 @@ namespace XTile.Format
                 {
                     if (xmlReader.Name == "Null")
                     {
-                        int nullCount = int.Parse(xmlHelper.GetAttribute("Count"));
+                        int nullCount = xmlHelper.GetIntAttribute("Count");
                         tileLocation.X += nullCount % layerSize.Width;
                     }
                     else if (xmlReader.Name == "TileSheet")

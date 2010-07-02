@@ -98,6 +98,20 @@ namespace XTile.Format
             return attributeValue;
         }
 
+        public int GetIntAttribute(string attributeName)
+        {
+            string attributeValue = GetAttribute(attributeName);
+            try
+            {
+                // note: TryParse not supported by .NET CF
+                return int.Parse(attributeValue);
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Attribute '" + attributeValue + "' is not a valid integer", exception);
+            }
+        }
+
         public string GetCData()
         {
             AdvanceNode(XmlNodeType.CDATA);
