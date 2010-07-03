@@ -98,6 +98,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)tIDE\bin\Debug\Plugins</PostBuildEvent>
+    <PostBuildEvent>REM copy $(TargetPath) $(SolutionDir)tIDE\bin\Debug\Plugins</PostBuildEvent>
   </PropertyGroup>
 </Project>
