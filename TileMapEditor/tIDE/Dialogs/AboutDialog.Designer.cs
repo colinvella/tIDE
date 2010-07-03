@@ -102,6 +102,7 @@
             // m_buttonOk
             // 
             this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_buttonOk.Location = new System.Drawing.Point(312, 265);
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Size = new System.Drawing.Size(75, 22);
@@ -132,10 +133,12 @@
             // 
             // AboutDialog
             // 
+            this.AcceptButton = this.m_buttonOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.m_buttonOk;
             this.ClientSize = new System.Drawing.Size(400, 300);
             this.Controls.Add(m_backgroundPanel);
             this.DoubleBuffered = true;
