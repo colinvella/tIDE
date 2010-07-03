@@ -12,7 +12,8 @@
     <AssemblyName>tIDE</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>TileMapEditor.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -457,7 +458,6 @@
     <None Include="Resources\TileSheetRemoveDependencies.png" />
     <None Include="Resources\Legal.txt" />
     <None Include="Resources\ToolsTexture.png" />
-    <Content Include="TileMapEditor.ico" />
     <None Include="Resources\TileSheetProperties.png" />
     <None Include="Resources\TileSheetDelete.png" />
     <None Include="Resources\TileSheetNew.png" />
