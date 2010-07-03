@@ -75,6 +75,7 @@
             this.m_textBoxStatistics.Location = new System.Drawing.Point(12, 12);
             this.m_textBoxStatistics.Name = "m_textBoxStatistics";
             this.m_textBoxStatistics.ReadOnly = true;
+            this.m_textBoxStatistics.SelectionLink = false;
             this.m_textBoxStatistics.Size = new System.Drawing.Size(560, 359);
             this.m_textBoxStatistics.TabIndex = 3;
             this.m_textBoxStatistics.Text = "";

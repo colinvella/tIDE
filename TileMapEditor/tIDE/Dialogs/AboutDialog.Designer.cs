@@ -29,6 +29,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Panel m_backgroundPanel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
             this.m_labelCompanyName = new System.Windows.Forms.Label();
             this.m_labelCopyright = new System.Windows.Forms.Label();
             this.m_labelProductName = new System.Windows.Forms.Label();
@@ -129,7 +130,7 @@
             this.m_timer.Interval = 10;
             this.m_timer.Tick += new System.EventHandler(this.OnTimer);
             // 
-            // AboutForm
+            // AboutDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,9 +140,10 @@
             this.Controls.Add(m_backgroundPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutForm";
+            this.Name = "AboutDialog";
             this.Opacity = 0;
             this.Padding = new System.Windows.Forms.Padding(9);
             this.ShowIcon = false;

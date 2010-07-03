@@ -228,7 +228,7 @@
             this.m_tabCustomProperties.Location = new System.Drawing.Point(4, 22);
             this.m_tabCustomProperties.Name = "m_tabCustomProperties";
             this.m_tabCustomProperties.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tabCustomProperties.Size = new System.Drawing.Size(552, 333);
+            this.m_tabCustomProperties.Size = new System.Drawing.Size(352, 183);
             this.m_tabCustomProperties.TabIndex = 1;
             this.m_tabCustomProperties.Text = " Custom Properties ";
             // 
