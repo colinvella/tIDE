@@ -15,8 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0B79715A804AFB46414EC881279B2B80"
+        "MsmKey" = "8:_1FC9DADE18A245814AFF1D1B854E6A13"
+        "OwnerKey" = "8:_FA8BDDC5ED847D74AD22D339D4B9A905"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1FC9DADE18A245814AFF1D1B854E6A13"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5EDF56440AB84A17B3A48BD987431371"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -27,26 +39,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
-        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
-        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
+        "MsmKey" = "8:_FA8BDDC5ED847D74AD22D339D4B9A905"
+        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
+        "OwnerKey" = "8:_FA8BDDC5ED847D74AD22D339D4B9A905"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1FC9DADE18A245814AFF1D1B854E6A13"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +85,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5"
+                    {
+                    "Name" = "8:.NET Framework 3.5"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -95,6 +122,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -124,45 +159,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B79715A804AFB46414EC881279B2B80"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_0B79715A804AFB46414EC881279B2B80"
-                    {
-                    "Name" = "8:TileMapEditor.Plugin.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:TileMapEditor.Plugin.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_765676D7A8175B49F9E291D509EF90F2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1FC9DADE18A245814AFF1D1B854E6A13"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:XTile, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_765676D7A8175B49F9E291D509EF90F2"
+                    "_1FC9DADE18A245814AFF1D1B854E6A13"
                     {
                     "Name" = "8:XTile.dll"
                     "Attributes" = "3:512"
@@ -186,6 +190,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5EDF56440AB84A17B3A48BD987431371"
+            {
+            "SourcePath" = "8:BannerBitmap.bmp"
+            "TargetName" = "8:BannerBitmap.bmp"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C1D6D84C6D743038E647C8C01F89DA4"
             {
             "SourcePath" = "8:tIDE.ico"
@@ -206,9 +230,63 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FA8BDDC5ED847D74AD22D339D4B9A905"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_FA8BDDC5ED847D74AD22D339D4B9A905"
+                    {
+                    "Name" = "8:TileMapEditor.Plugin.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:TileMapEditor.Plugin.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
+            "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_CFF3A724AD8245CB8454DBB083E5C513"
+            {
+            "Name" = "8:tIDE Map File"
+            "Description" = "8:tIDE Map File"
+            "Extensions" = "8:tide"
+            "MIME" = "8:xnl/tide"
+            "Icon" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+                }
+                "Verbs"
+                {
+                    "{95C0C507-CBF0-42B8-B119-07219E384A4A}:_63DE4114E7B14934A074E775C63A96BB"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
         }
         "Folder"
         {
@@ -221,6 +299,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_164FD92C47234D4B8870CFEDBCF2D5D0"
+                    {
+                    "Name" = "8:tIDE Tile Map Editor"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_1D5DDBE261F241D69B277F58EC365398"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_C7369F2D12C5471D8D5BDC1D32AADC69"
@@ -233,6 +322,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_3B2F68409F0E4CEA8E4078362993DC1E"
+                    {
+                    "Name" = "8:Plugins"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_3FFF1C2E36664A82BAC040E987EB906D"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_DB482BECEDB94C2D9B50B7FED83C4427"
@@ -261,9 +361,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:tIDE Tile Map Editor"
+        "ProductName" = "8:tIDE"
         "ProductCode" = "8:{F2C43773-22DD-4F18-82D4-1E00DD047569}"
-        "PackageCode" = "8:{483437B4-CC81-43FC-884C-E11EEC955E1F}"
+        "PackageCode" = "8:{396879BC-5F15-4FA6-B080-25DD17E92E08}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -272,7 +372,7 @@
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Colin Vella"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:http://tide.codeplex.com"
         "Title" = "8:tIDE Tile Map Editor"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Colin Vella"
@@ -384,14 +484,14 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EE41AEB8E7BB4EDE8CDE061F3E6A6565"
             {
-            "Name" = "8:tIDE"
+            "Name" = "8:tIDE Tile Map Editor"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:Launch tIDE tile map editor"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Folder" = "8:_164FD92C47234D4B8870CFEDBCF2D5D0"
             "WorkingFolder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
             "Icon" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
             "Feature" = "8:"
@@ -423,7 +523,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -473,7 +574,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -508,7 +610,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -530,7 +633,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -587,7 +691,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -618,7 +723,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -662,7 +768,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -706,7 +813,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -754,7 +862,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -776,7 +885,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
