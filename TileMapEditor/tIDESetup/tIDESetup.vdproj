@@ -15,13 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1FC9DADE18A245814AFF1D1B854E6A13"
-        "OwnerKey" = "8:_FA8BDDC5ED847D74AD22D339D4B9A905"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1FC9DADE18A245814AFF1D1B854E6A13"
+        "MsmKey" = "8:_0B79715A804AFB46414EC881279B2B80"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -39,18 +33,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
+        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
+        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_FA8BDDC5ED847D74AD22D339D4B9A905"
-        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
@@ -58,13 +58,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FA8BDDC5ED847D74AD22D339D4B9A905"
+        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1FC9DADE18A245814AFF1D1B854E6A13"
+        "OwnerKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -129,6 +129,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5"
+                    {
+                    "Name" = "8:.NET Framework 3.5"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -159,20 +172,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1FC9DADE18A245814AFF1D1B854E6A13"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B79715A804AFB46414EC881279B2B80"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:XTile, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_1FC9DADE18A245814AFF1D1B854E6A13"
+                    "_0B79715A804AFB46414EC881279B2B80"
                     {
-                    "Name" = "8:XTile.dll"
+                    "Name" = "8:TileMapEditor.Plugin.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:XTile.dll"
+            "SourcePath" = "8:TileMapEditor.Plugin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
@@ -210,6 +223,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_765676D7A8175B49F9E291D509EF90F2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:XTile, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_765676D7A8175B49F9E291D509EF90F2"
+                    {
+                    "Name" = "8:XTile.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:XTile.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C1D6D84C6D743038E647C8C01F89DA4"
             {
             "SourcePath" = "8:tIDE.ico"
@@ -228,37 +272,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FA8BDDC5ED847D74AD22D339D4B9A905"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_FA8BDDC5ED847D74AD22D339D4B9A905"
-                    {
-                    "Name" = "8:TileMapEditor.Plugin.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:TileMapEditor.Plugin.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -314,7 +327,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_C7369F2D12C5471D8D5BDC1D32AADC69"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -363,7 +376,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:tIDE"
         "ProductCode" = "8:{F2C43773-22DD-4F18-82D4-1E00DD047569}"
-        "PackageCode" = "8:{396879BC-5F15-4FA6-B080-25DD17E92E08}"
+        "PackageCode" = "8:{B3802ADC-69FC-4923-944B-A3550A8E8738}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

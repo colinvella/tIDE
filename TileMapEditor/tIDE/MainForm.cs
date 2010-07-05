@@ -33,6 +33,8 @@ namespace TileMapEditor
 
         #region Private Variables
 
+        private string[] m_arguments;
+
         private WindowMode m_windowMode;
         private System.Drawing.Rectangle m_windowBounds;
 
@@ -623,6 +625,10 @@ namespace TileMapEditor
 
             UpdateRecentFilesMenu();
             ArrangeToolStripLayout();
+
+            // handle opening by file association or command line
+            if (m_arguments.Length == 1 && m_arguments[0].ToLower().EndsWith(".tide"))
+                OpenFile(m_arguments[0]);
         }
 
         private void OnMainFormResizeEnd(object sender, EventArgs eventArgs)
@@ -1578,9 +1584,11 @@ namespace TileMapEditor
 
         #region Public Methods
 
-        public MainForm()
+        public MainForm(string[] arguments)
         {
             InitializeComponent();
+
+            m_arguments = arguments;
         }
 
         #endregion
