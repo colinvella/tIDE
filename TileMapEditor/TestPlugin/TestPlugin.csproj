@@ -65,9 +65,9 @@
       <Project>{2787F0CD-8BFD-4696-AAAA-629452D05A21}</Project>
       <Name>Plugin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XTile\XTilePC.csproj">
+    <ProjectReference Include="..\XTile\xTilePC.csproj">
       <Project>{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}</Project>
-      <Name>XTilePC</Name>
+      <Name>xTilePC</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
