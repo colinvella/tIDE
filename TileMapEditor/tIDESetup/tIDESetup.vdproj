@@ -155,6 +155,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_ED1BD91D2466468F92186DB14ABC0823"
+            {
+            "Name" = "8:Primary output from tIDE (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_61239F9F_AC79_4260_AED9_961672CF1B83"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -402,7 +416,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:tIDE"
         "ProductCode" = "8:{F2C43773-22DD-4F18-82D4-1E00DD047569}"
-        "PackageCode" = "8:{D45BC403-6216-4101-BBF6-DCFFE6A11B2E}"
+        "PackageCode" = "8:{6C60CC72-3F27-4106-B0D9-791E4600E96A}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -793,9 +807,9 @@
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_F15727E54BD64C2AA925B79664F181C9"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_732A7A1BB54947EA926399DE3BBCD6E4"
                     {
-                    "Sequence" = "3:100"
+                    "Sequence" = "3:210"
                     "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
@@ -810,8 +824,7 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:2"
-                            "Value" = "8:_5EDF56440AB84A17B3A48BD987431371"
+                            "Setting" = "3:1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"

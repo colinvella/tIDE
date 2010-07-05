@@ -62,9 +62,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -133,6 +135,12 @@
     </Compile>
     <Compile Include="Controls\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomInstaller.Designer.cs">
+      <DependentUpon>CustomInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\AboutDialog.cs">
       <SubType>Form</SubType>
