@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0B79715A804AFB46414EC881279B2B80"
+        "MsmKey" = "8:_139477DB820965A1B584FAC641D610A4"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -39,24 +39,24 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
-        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
-        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
+        "OwnerKey" = "8:_139477DB820965A1B584FAC641D610A4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
+        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
+        "OwnerKey" = "8:_139477DB820965A1B584FAC641D610A4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
+        "OwnerKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -147,6 +147,11 @@
                     "Name" = "8:Windows Installer 3.1"
                     "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
                     }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Xna.Framework.3.1"
+                    {
+                    "Name" = "8:Microsoft XNA Framework Redistributable 3.1"
+                    "ProductCode" = "8:Microsoft.Xna.Framework.3.1"
+                    }
                 }
             }
         }
@@ -212,14 +217,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B79715A804AFB46414EC881279B2B80"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_139477DB820965A1B584FAC641D610A4"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_0B79715A804AFB46414EC881279B2B80"
+                    "_139477DB820965A1B584FAC641D610A4"
                     {
                     "Name" = "8:TileMapEditor.Plugin.dll"
                     "Attributes" = "3:512"
@@ -263,14 +268,34 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_765676D7A8175B49F9E291D509EF90F2"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C1D6D84C6D743038E647C8C01F89DA4"
+            {
+            "SourcePath" = "8:tIDE.ico"
+            "TargetName" = "8:tIDE.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF8C3A0DEF4F53302A175BF1337BB307"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:XTile, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_765676D7A8175B49F9E291D509EF90F2"
+                    "_DF8C3A0DEF4F53302A175BF1337BB307"
                     {
                     "Name" = "8:XTile.dll"
                     "Attributes" = "3:512"
@@ -292,26 +317,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C1D6D84C6D743038E647C8C01F89DA4"
-            {
-            "SourcePath" = "8:tIDE.ico"
-            "TargetName" = "8:tIDE.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -416,7 +421,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:tIDE"
         "ProductCode" = "8:{F2C43773-22DD-4F18-82D4-1E00DD047569}"
-        "PackageCode" = "8:{6C60CC72-3F27-4106-B0D9-791E4600E96A}"
+        "PackageCode" = "8:{35E8F360-09CB-422E-8A15-A1638852832A}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -1055,7 +1060,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_62F24CC67EE04B7A9FBFDE99397CBA0C"
             {
-            "SourcePath" = "8:..\\tIDE\\obj\\Debug\\tIDE.exe"
+            "SourcePath" = "8:..\\tIDE\\obj\\Release\\tIDE.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
