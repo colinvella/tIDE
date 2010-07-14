@@ -21,7 +21,10 @@ namespace XTile.Display
             m_spriteBatchAlpha = new SpriteBatch(graphicsDevice);
             m_spriteBatchAdditive = new SpriteBatch(graphicsDevice);
             m_tileSheetTextures = new Dictionary<TileSheet, Texture2D>();
-            m_destinationRectangle = new Microsoft.Xna.Framework.Rectangle();
+
+            m_tilePosition = new Vector2();
+            m_sourceRectangle = new Microsoft.Xna.Framework.Rectangle();
+            m_modulationColour = Color.White;
         }
 
         public void LoadTileSheet(TileSheet tileSheet)
@@ -62,15 +65,20 @@ namespace XTile.Display
             SpriteBatch spriteBatch = tile.BlendMode == BlendMode.Alpha
                 ? m_spriteBatchAlpha : m_spriteBatchAdditive;
 
+            XTile.Dimensions.Rectangle sourceRectangle
+                = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
+
             Texture2D texture2D = m_tileSheetTextures[tile.TileSheet];
 
-            Size tileSize = tile.TileSheet.TileSize;
-            m_destinationRectangle.X = location.X;
-            m_destinationRectangle.Y = location.Y;
-            m_destinationRectangle.Width = tileSize.Width;
-            m_destinationRectangle.Height = tileSize.Height;
+            m_tilePosition.X = location.X;
+            m_tilePosition.Y = location.Y;
 
-            spriteBatch.Draw(texture2D, m_destinationRectangle, Color.White);
+            m_sourceRectangle.X = sourceRectangle.X;
+            m_sourceRectangle.Y = sourceRectangle.Y;
+            m_sourceRectangle.Width = sourceRectangle.Width;
+            m_sourceRectangle.Height = sourceRectangle.Height;
+
+            spriteBatch.Draw(texture2D, m_tilePosition, m_sourceRectangle, m_modulationColour);
         }
 
         public void EndScene()
@@ -79,11 +87,19 @@ namespace XTile.Display
             m_spriteBatchAlpha.End();
         }
 
+        public Color ModulationColour
+        {
+            get { return m_modulationColour; }
+            set { m_modulationColour = value; }
+        }
+
         private ContentManager m_contentManager;
         private GraphicsDevice m_graphicsDevice;
         private SpriteBatch m_spriteBatchAlpha;
         private SpriteBatch m_spriteBatchAdditive;
         private Dictionary<TileSheet, Texture2D> m_tileSheetTextures;
-        private Microsoft.Xna.Framework.Rectangle m_destinationRectangle;
+        private Microsoft.Xna.Framework.Vector2 m_tilePosition;
+        private Microsoft.Xna.Framework.Rectangle m_sourceRectangle;
+        private Color m_modulationColour;
     }
 }
