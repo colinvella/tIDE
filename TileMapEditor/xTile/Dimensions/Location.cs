@@ -140,7 +140,7 @@ namespace XTile.Dimensions
         /// <summary>
         /// Computes a hash code of the location
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
             return X + Y;
