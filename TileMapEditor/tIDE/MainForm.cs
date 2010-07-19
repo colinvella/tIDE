@@ -544,22 +544,9 @@ namespace TileMapEditor
             {
                 FormatCompatibilityDialog formatCompatibilityDialog
                     = new FormatCompatibilityDialog(compatibilityReport);
-                formatCompatibilityDialog.ShowDialog(this);
+                if (formatCompatibilityDialog.ShowDialog(this) == DialogResult.Cancel)
+                    return false;
             }
-
-            // if None, cancel save
-            if (compatibilityLevel == CompatibilityLevel.None)
-                return false;
-
-            /*if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.None)
-            {
-                MessageBox.Show("The current map cannot be stored in this format");
-                return false;
-            }
-            else if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.Partial)
-            {
-                MessageBox.Show("Some map details will be lost when stored in this format");
-            }*/
 
             // make image source paths relative
             string basePath = Path.GetDirectoryName(filename);

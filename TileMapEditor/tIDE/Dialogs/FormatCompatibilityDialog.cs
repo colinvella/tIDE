@@ -24,7 +24,8 @@ namespace TileMapEditor.Dialogs
 
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
-            m_overallCompatibilityValue.Text = m_compatibilityReport.CompatibilityLevel.ToString();
+            CompatibilityLevel compatibilityLevel = m_compatibilityReport.CompatibilityLevel;
+            m_overallCompatibilityValue.Text = compatibilityLevel.ToString();
 
             foreach (CompatibilityNote compatibilityNote in m_compatibilityReport.CompatibilityNotes)
             {
@@ -38,6 +39,16 @@ namespace TileMapEditor.Dialogs
                 m_notesDataGridView.Rows.Add(
                     new object[] { image, compatibilityNote.CompatibilityLevel, compatibilityNote.Remarks });
             }
+            m_notesDataGridView.ClearSelection();
+
+            m_okButton.Enabled = compatibilityLevel != CompatibilityLevel.None;
+        }
+
+        private void OnNoteSelectionChanged(object sender, EventArgs eventArgs)
+        {
+            m_notesDataGridView.SelectionChanged -= OnNoteSelectionChanged;
+            m_notesDataGridView.ClearSelection();
+            m_notesDataGridView.SelectionChanged += OnNoteSelectionChanged;
         }
     }
 }

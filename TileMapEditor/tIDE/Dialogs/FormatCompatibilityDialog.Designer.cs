@@ -32,11 +32,12 @@
             System.Windows.Forms.Label m_compatibilityNotesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormatCompatibilityDialog));
             this.m_overallCompatibilityValue = new System.Windows.Forms.Label();
-            this.m_okButton = new System.Windows.Forms.Button();
+            this.m_cancelButton = new System.Windows.Forms.Button();
             this.m_notesDataGridView = new System.Windows.Forms.DataGridView();
             this.CompatibilityLevelIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.CompatiblityLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.m_okButton = new System.Windows.Forms.Button();
             m_overallCompatibilityLabel = new System.Windows.Forms.Label();
             m_compatibilityNotesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_notesDataGridView)).BeginInit();
@@ -70,16 +71,16 @@
             this.m_overallCompatibilityValue.TabIndex = 4;
             this.m_overallCompatibilityValue.Text = "(compatibility)";
             // 
-            // m_okButton
+            // m_cancelButton
             // 
-            this.m_okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_okButton.Location = new System.Drawing.Point(497, 227);
-            this.m_okButton.Name = "m_okButton";
-            this.m_okButton.Size = new System.Drawing.Size(75, 23);
-            this.m_okButton.TabIndex = 0;
-            this.m_okButton.Text = "OK";
-            this.m_okButton.UseVisualStyleBackColor = true;
+            this.m_cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cancelButton.Location = new System.Drawing.Point(497, 227);
+            this.m_cancelButton.Name = "m_cancelButton";
+            this.m_cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.m_cancelButton.TabIndex = 0;
+            this.m_cancelButton.Text = "&Cancel";
+            this.m_cancelButton.UseVisualStyleBackColor = true;
             // 
             // m_notesDataGridView
             // 
@@ -90,6 +91,8 @@
             this.m_notesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_notesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.m_notesDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.m_notesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.m_notesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CompatibilityLevelIcon,
@@ -105,6 +108,7 @@
             this.m_notesDataGridView.Size = new System.Drawing.Size(559, 150);
             this.m_notesDataGridView.TabIndex = 1;
             this.m_notesDataGridView.TabStop = false;
+            this.m_notesDataGridView.SelectionChanged += new System.EventHandler(this.OnNoteSelectionChanged);
             // 
             // CompatibilityLevelIcon
             // 
@@ -131,18 +135,30 @@
             this.Remarks.Name = "Remarks";
             this.Remarks.ReadOnly = true;
             // 
+            // m_okButton
+            // 
+            this.m_okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_okButton.Location = new System.Drawing.Point(416, 227);
+            this.m_okButton.Name = "m_okButton";
+            this.m_okButton.Size = new System.Drawing.Size(75, 23);
+            this.m_okButton.TabIndex = 5;
+            this.m_okButton.Text = "&OK";
+            this.m_okButton.UseVisualStyleBackColor = true;
+            // 
             // FormatCompatibilityDialog
             // 
             this.AcceptButton = this.m_okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.m_okButton;
+            this.CancelButton = this.m_cancelButton;
             this.ClientSize = new System.Drawing.Size(584, 262);
+            this.Controls.Add(this.m_okButton);
             this.Controls.Add(this.m_overallCompatibilityValue);
             this.Controls.Add(m_compatibilityNotesLabel);
             this.Controls.Add(m_overallCompatibilityLabel);
             this.Controls.Add(this.m_notesDataGridView);
-            this.Controls.Add(this.m_okButton);
+            this.Controls.Add(this.m_cancelButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -158,11 +174,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button m_okButton;
+        private System.Windows.Forms.Button m_cancelButton;
         private System.Windows.Forms.DataGridView m_notesDataGridView;
         private System.Windows.Forms.DataGridViewImageColumn CompatibilityLevelIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompatiblityLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remarks;
         private System.Windows.Forms.Label m_overallCompatibilityValue;
+        private System.Windows.Forms.Button m_okButton;
     }
 }
