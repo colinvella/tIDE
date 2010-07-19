@@ -656,6 +656,27 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap MapCompatibilityFull {
+            get {
+                object obj = ResourceManager.GetObject("MapCompatibilityFull", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MapCompatibilityNone {
+            get {
+                object obj = ResourceManager.GetObject("MapCompatibilityNone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MapCompatibilityPartial {
+            get {
+                object obj = ResourceManager.GetObject("MapCompatibilityPartial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap MapProperties {
             get {
                 object obj = ResourceManager.GetObject("MapProperties", resourceCulture);

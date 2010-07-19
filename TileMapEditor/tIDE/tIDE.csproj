@@ -155,6 +155,12 @@
     <Compile Include="Dialogs\CommandHistoryDialog.Designer.cs">
       <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\FormatCompatibilityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FormatCompatibilityDialog.Designer.cs">
+      <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\MapStatisticsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CommandHistoryDialog.resx">
       <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\FormatCompatibilityDialog.resx">
+      <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapStatisticsDialog.resx">
@@ -394,6 +404,10 @@
     <None Include="Resources\FileOpenRecent.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\MapCompatibilityFull.png" />
+    <None Include="Resources\MapCompatibilityNone.png" />
+    <None Include="Resources\MapCompatibilityPartial.png" />
+    <Content Include="Resources\TileMapEditor.ico" />
     <None Include="Resources\Help\AboutDialog.rtf" />
     <None Include="Resources\Help\CommandHistoryDialog.rtf" />
     <None Include="Resources\Help\CommandReference.rtf" />
