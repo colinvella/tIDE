@@ -536,14 +536,14 @@ namespace TileMapEditor
                 = formatManager.GetMapFormatByExtension(fileExtension);
 
             // check format compatibility
-            CompatibilityResults compatibilityResults = selectedMapFormat.DetermineCompatibility(m_map);
+            CompatibilityReport compatibilityReport = selectedMapFormat.DetermineCompatibility(m_map);
 
-            if (compatibilityResults.CompatibilityLevel == CompatibilityLevel.None)
+            if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.None)
             {
                 MessageBox.Show("The current map cannot be stored in this format");
                 return false;
             }
-            else if (compatibilityResults.CompatibilityLevel == CompatibilityLevel.Partial)
+            else if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.Partial)
             {
                 MessageBox.Show("Some map details will be lost when stored in this format");
             }

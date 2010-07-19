@@ -8,7 +8,7 @@ namespace XTile.Format
 {
     public interface IMapFormat
     {
-        CompatibilityResults DetermineCompatibility(Map map);
+        CompatibilityReport DetermineCompatibility(Map map);
 
         Map Load(Stream stream);
 

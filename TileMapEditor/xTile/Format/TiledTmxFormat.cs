@@ -351,7 +351,7 @@ namespace XTile.Format
         {
         }
 
-        public CompatibilityResults DetermineCompatibility(Map map)
+        public CompatibilityReport DetermineCompatibility(Map map)
         {
             // TODO
 
@@ -361,9 +361,10 @@ namespace XTile.Format
             // spacing must be equal x, y
             // margin must be equal x, y
 
-            List<string> remarks = new List<string>();
-            remarks.Add("This format is still work in progress");
-            return new CompatibilityResults(CompatibilityLevel.None, remarks);
+            List<CompatibilityNote> compatibilityNotes = new List<CompatibilityNote>();
+            compatibilityNotes.Add(
+                new CompatibilityNote(CompatibilityLevel.None, "This format is still work in progress"));
+            return new CompatibilityReport(compatibilityNotes);
         }
 
         public Map Load(Stream stream)

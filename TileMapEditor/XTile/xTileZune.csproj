@@ -62,7 +62,8 @@
     <Compile Include="Dimensions\Size.cs" />
     <Compile Include="Display\IDisplayDevice.cs" />
     <Compile Include="Display\XnaDisplayDevice.cs" />
-    <Compile Include="Format\CompatibilityResults.cs" />
+    <Compile Include="Format\CompatibilityNote.cs" />
+    <Compile Include="Format\CompatibilityReport.cs" />
     <Compile Include="Format\FormatManager.cs" />
     <Compile Include="Format\IMapFormat.cs" />
     <Compile Include="Format\TideFormat.cs" />

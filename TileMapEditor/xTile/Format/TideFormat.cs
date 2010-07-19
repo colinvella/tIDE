@@ -15,7 +15,7 @@ namespace XTile.Format
 {
     internal class TideFormat: IMapFormat
     {
-        private CompatibilityResults m_compatibilityResults;
+        private CompatibilityReport m_compatibilityResults;
 
         private void LoadProperties(XmlHelper xmlHelper, Component component)
         {
@@ -377,10 +377,10 @@ namespace XTile.Format
 
         internal TideFormat()
         {
-            m_compatibilityResults = new CompatibilityResults(CompatibilityLevel.Full);
+            m_compatibilityResults = new CompatibilityReport();
         }
 
-        public CompatibilityResults DetermineCompatibility(Map map)
+        public CompatibilityReport DetermineCompatibility(Map map)
         {
             // trivially compatible
             return m_compatibilityResults;
