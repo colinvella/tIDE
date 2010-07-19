@@ -36,7 +36,7 @@ namespace XTile.Display
         /// functionality is used to by the rendering engine according to the
         /// configured view port.
         /// </summary>
-        /// <param name="clippingRegion"></param>
+        /// <param name="clippingRegion">Clipping region to apply</param>
         void SetClippingRegion(Rectangle clippingRegion);
 
         /// <summary>
