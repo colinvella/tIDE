@@ -13,9 +13,112 @@ using XTile.Tiles;
 
 namespace XTile.Format
 {
+    /// <summary>
+    /// Default tIDE map format implementation
+    /// </summary>
     internal class TideFormat: IMapFormat
     {
-        private CompatibilityReport m_compatibilityResults;
+        /// <summary>
+        /// Determines the map compatibility with tIDE. This is implicitly
+        /// supported in Full
+        /// </summary>
+        /// <param name="map">Map to analyse</param>
+        /// <returns>Format compatibility report</returns>
+        public CompatibilityReport DetermineCompatibility(Map map)
+        {
+            // trivially compatible
+            return m_compatibilityResults;
+        }
+
+        /// <summary>
+        /// Loads a map in tIDE format from the given stream
+        /// </summary>
+        /// <param name="stream">Input stream</param>
+        /// <returns>Map instance loaded from stream</returns>
+        public Map Load(Stream stream)
+        {
+            XmlTextReader xmlReader = new XmlTextReader(stream);
+            xmlReader.WhitespaceHandling = WhitespaceHandling.None;
+
+            XmlHelper xmlHelper = new XmlHelper(xmlReader);
+
+            xmlHelper.AdvanceDeclaration();
+            xmlHelper.AdvanceStartElement("Map");
+            string mapId = xmlHelper.GetAttribute("Id");
+            Map map = new Map(mapId);
+
+            xmlHelper.AdvanceStartElement("Description");
+            string mapDescription = xmlHelper.GetCData();
+            xmlHelper.AdvanceEndElement("Description");
+            map.Description = mapDescription;
+
+            LoadTileSheets(xmlHelper, map);
+
+            LoadLayers(xmlHelper, map);
+
+            LoadProperties(xmlHelper, map);
+
+            return map;
+        }
+
+        /// <summary>
+        /// Stores the given map in the given output stream using
+        /// the tIDE format
+        /// </summary>
+        /// <param name="map">Map to store</param>
+        /// <param name="stream">Output stream</param>
+        public void Store(Map map, Stream stream)
+        {
+            XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
+            xmlWriter.Formatting = Formatting.Indented;
+
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("Map");
+            xmlWriter.WriteAttributeString("Id", map.Id);
+
+            xmlWriter.WriteStartElement("Description");
+            xmlWriter.WriteCData(map.Description);
+            xmlWriter.WriteEndElement();
+
+            StoreTileSheets(map.TileSheets, xmlWriter);
+
+            StoreLayers(map.Layers, xmlWriter);
+
+            StoreProperties(map, xmlWriter);
+
+            xmlWriter.WriteEndElement();
+
+            xmlWriter.Flush();
+        }
+
+        /// <summary>
+        /// tIDE map format name
+        /// </summary>
+        public string Name
+        {
+            get { return "TIDE Map File"; }
+        }
+
+        /// <summary>
+        /// tIDE map format descriptor
+        /// </summary>
+        public string FileExtensionDescriptor
+        {
+            get { return "tIDE Map Files (*.tide)"; }
+        }
+
+        /// <summary>
+        /// tIDE file extension (.tide)
+        /// </summary>
+        public string FileExtension
+        {
+            get { return "tide"; }
+        }
+
+        internal TideFormat()
+        {
+            m_compatibilityResults = new CompatibilityReport();
+        }
 
         private void LoadProperties(XmlHelper xmlHelper, Component component)
         {
@@ -375,80 +478,6 @@ namespace XTile.Format
             xmlTextWriter.WriteEndElement();
         }
 
-        internal TideFormat()
-        {
-            m_compatibilityResults = new CompatibilityReport();
-        }
-
-        public CompatibilityReport DetermineCompatibility(Map map)
-        {
-            // trivially compatible
-            return m_compatibilityResults;
-        }
-
-        public Map Load(Stream stream)
-        {
-            XmlTextReader xmlReader = new XmlTextReader(stream);
-            xmlReader.WhitespaceHandling = WhitespaceHandling.None;
-
-            XmlHelper xmlHelper = new XmlHelper(xmlReader);
-
-            xmlHelper.AdvanceDeclaration();
-            xmlHelper.AdvanceStartElement("Map");
-            string mapId = xmlHelper.GetAttribute("Id");
-            Map map = new Map(mapId);
-
-            xmlHelper.AdvanceStartElement("Description");
-            string mapDescription = xmlHelper.GetCData();
-            xmlHelper.AdvanceEndElement("Description");
-            map.Description = mapDescription;
-
-            LoadTileSheets(xmlHelper, map);
-
-            LoadLayers(xmlHelper, map);
-
-            LoadProperties(xmlHelper, map);
-
-            return map;
-        }
-
-        public void Store(Map map, Stream stream)
-        {
-            XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
-            xmlWriter.Formatting = Formatting.Indented;
-
-            xmlWriter.WriteStartDocument();
-            xmlWriter.WriteStartElement("Map");
-            xmlWriter.WriteAttributeString("Id", map.Id);
-
-            xmlWriter.WriteStartElement("Description");
-            xmlWriter.WriteCData(map.Description);
-            xmlWriter.WriteEndElement();
-
-            StoreTileSheets(map.TileSheets, xmlWriter);
-
-            StoreLayers(map.Layers, xmlWriter);
-
-            StoreProperties(map, xmlWriter);
-
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.Flush();
-        }
-
-        public string Name
-        {
-            get { return "TIDE Map File"; }
-        }
-
-        public string FileExtensionDescriptor
-        {
-            get { return "tIDE Map Files (*.tide)"; }
-        }
-
-        public string FileExtension
-        {
-            get { return "tide"; }
-        }
+        private CompatibilityReport m_compatibilityResults;
     }
 }
