@@ -538,7 +538,20 @@ namespace TileMapEditor
             // check format compatibility
             CompatibilityReport compatibilityReport = selectedMapFormat.DetermineCompatibility(m_map);
 
-            if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.None)
+            // show incompatibilities if not Full
+            CompatibilityLevel compatibilityLevel = compatibilityReport.CompatibilityLevel;
+            if (compatibilityLevel != CompatibilityLevel.Full)
+            {
+                FormatCompatibilityDialog formatCompatibilityDialog
+                    = new FormatCompatibilityDialog(compatibilityReport);
+                formatCompatibilityDialog.ShowDialog(this);
+            }
+
+            // if None, cancel save
+            if (compatibilityLevel == CompatibilityLevel.None)
+                return false;
+
+            /*if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.None)
             {
                 MessageBox.Show("The current map cannot be stored in this format");
                 return false;
@@ -546,7 +559,7 @@ namespace TileMapEditor
             else if (compatibilityReport.CompatibilityLevel == CompatibilityLevel.Partial)
             {
                 MessageBox.Show("Some map details will be lost when stored in this format");
-            }
+            }*/
 
             // make image source paths relative
             string basePath = Path.GetDirectoryName(filename);
