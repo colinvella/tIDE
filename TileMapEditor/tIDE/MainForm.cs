@@ -733,7 +733,7 @@ namespace TileMapEditor
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Open Map";
             openFileDialog.Filter = GenerateFileDialogFilter();
-            openFileDialog.DefaultExt = formatManager.StandardFormat.FileExtension;
+            openFileDialog.DefaultExt = formatManager.DefaultFormat.FileExtension;
             openFileDialog.AddExtension = true;
 
             if (openFileDialog.ShowDialog(this) == DialogResult.Cancel)
@@ -754,7 +754,7 @@ namespace TileMapEditor
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save Map";
             saveFileDialog.Filter = GenerateFileDialogFilter();
-            saveFileDialog.DefaultExt = formatManager.StandardFormat.FileExtension;
+            saveFileDialog.DefaultExt = formatManager.DefaultFormat.FileExtension;
             saveFileDialog.AddExtension = true;
 
             if (saveFileDialog.ShowDialog(this) == DialogResult.Cancel)

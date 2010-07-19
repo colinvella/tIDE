@@ -11,14 +11,21 @@ namespace XTile.Format
         private static FormatManager s_formatManager = new FormatManager();
 
         private Dictionary<string, IMapFormat> m_mapFormats;
-        private TideFormat m_standardFormat;
+        private TideFormat m_defaultFormat;
 
         private FormatManager()
         {
             m_mapFormats = new Dictionary<string, IMapFormat>();
 
-            m_standardFormat = new TideFormat();
-            m_mapFormats[m_standardFormat.Name] = m_standardFormat;
+            // register default format
+            m_defaultFormat = new TideFormat();
+            m_mapFormats[m_defaultFormat.Name] = m_defaultFormat;
+
+            // register other supported formats
+
+            // Tiled Format
+            TiledTmxFormat tiledTmxFormat = new TiledTmxFormat();
+            m_mapFormats[tiledTmxFormat.Name] = tiledTmxFormat;
         }
 
         public static FormatManager Instance { get { return s_formatManager; } }
@@ -59,9 +66,9 @@ namespace XTile.Format
             }
         }
 
-        public IMapFormat StandardFormat
+        public IMapFormat DefaultFormat
         {
-            get { return m_standardFormat; }
+            get { return m_defaultFormat; }
         }
 
         public ReadOnlyCollection<IMapFormat> MapFormats
