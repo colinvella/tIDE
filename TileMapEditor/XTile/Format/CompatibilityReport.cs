@@ -6,19 +6,35 @@ using System.Text;
 
 namespace XTile.Format
 {
+    /// <summary>
+    /// Represents a report on the compatibility of a map in a given format
+    /// </summary>
     [Serializable]
     public class CompatibilityReport
     {
-        public CompatibilityReport(List<CompatibilityNote> compatibilityNotes)
+        /// <summary>
+        /// Constructs a compatibility report using the given compatibility notes
+        /// </summary>
+        /// <param name="compatibilityNotes">Compatibility notes to populate report with</param>
+        public CompatibilityReport(IEnumerable<CompatibilityNote> compatibilityNotes)
         {
             m_compatibilityNotes = new List<CompatibilityNote>(compatibilityNotes);
         }
 
+        /// <summary>
+        /// Creats a blank compatibility report. A report with no notes is assumed
+        /// to represent a format compliant map
+        /// </summary>
         public CompatibilityReport()
         {
             m_compatibilityNotes = new List<CompatibilityNote>();
         }
 
+        /// <summary>
+        /// Overall compatibility level. This is computed from the worst case
+        /// note within the report. If no notes are present, Full compatibility
+        /// is assumed
+        /// </summary>
         public CompatibilityLevel CompatibilityLevel
         {
             get
@@ -41,6 +57,9 @@ namespace XTile.Format
             }
         }
 
+        /// <summary>
+        /// Collection of compatibility notes
+        /// </summary>
         public ReadOnlyCollection<CompatibilityNote> CompatibilityNotes
         {
             get { return m_compatibilityNotes.AsReadOnly(); }
