@@ -6,12 +6,87 @@ using System.Text;
 
 namespace XTile.Format
 {
+    /// <summary>
+    /// A singleton manager of registered file map formats. Direct access is provided
+    /// to the default tIDE map format (.tide). Other formats are querable by extension
+    /// </summary>
     public class FormatManager
     {
-        private static FormatManager s_formatManager = new FormatManager();
+        /// <summary>
+        /// Reference to the singleton manager instance
+        /// </summary>
+        public static FormatManager Instance { get { return s_formatManager; } }
 
-        private Dictionary<string, IMapFormat> m_mapFormats;
-        private TideFormat m_defaultFormat;
+        /// <summary>
+        /// Registers the given map format
+        /// </summary>
+        /// <param name="mapFormat">Map format implementation to register</param>
+        public void RegisterMapFormat(IMapFormat mapFormat)
+        {
+            if (m_mapFormats.ContainsKey(mapFormat.Name))
+                throw new Exception("Map format '" + mapFormat.Name+ "' is already registered");
+
+            m_mapFormats[mapFormat.Name] = mapFormat;
+        }
+
+        /// <summary>
+        /// Unregisters the given map format
+        /// </summary>
+        /// <param name="mapFormat">Map format implementation to unregister</param>
+        public void UnregisterMapFormat(IMapFormat mapFormat)
+        {
+            if (!m_mapFormats.ContainsKey(mapFormat.Name))
+                throw new Exception("Map format '" + mapFormat.Name + "' is is not registered");
+
+            m_mapFormats.Remove(mapFormat.Name);
+        }
+
+        /// <summary>
+        /// Returns the map format implementation for the given file extension
+        /// or Null if not matched
+        /// </summary>
+        /// <param name="fileExtension">File extension to query</param>
+        /// <returns></returns>
+        public IMapFormat GetMapFormatByExtension(string fileExtension)
+        {
+            foreach (IMapFormat mapFormat in m_mapFormats.Values)
+                if (mapFormat.FileExtension.Equals(fileExtension,
+                    StringComparison.InvariantCultureIgnoreCase))
+                    return mapFormat;
+            return null;
+        }
+
+        /// <summary>
+        /// String-based indexer for map formap implementations
+        /// </summary>
+        /// <param name="mapFormatName">Format name to query</param>
+        /// <returns></returns>
+        public IMapFormat this[string mapFormatName]
+        {
+            get
+            {
+                if (!m_mapFormats.ContainsKey(mapFormatName))
+                    throw new Exception("Map format '" + mapFormatName + "' is is not registered");
+
+                return m_mapFormats[mapFormatName];
+            }
+        }
+
+        /// <summary>
+        /// Returns the default tIDE format
+        /// </summary>
+        public IMapFormat DefaultFormat
+        {
+            get { return m_defaultFormat; }
+        }
+
+        /// <summary>
+        /// Returns a collection of registered map formats
+        /// </summary>
+        public ReadOnlyCollection<IMapFormat> MapFormats
+        {
+            get { return new List<IMapFormat>(m_mapFormats.Values).AsReadOnly(); }
+        }
 
         private FormatManager()
         {
@@ -28,52 +103,9 @@ namespace XTile.Format
             m_mapFormats[tiledTmxFormat.Name] = tiledTmxFormat;
         }
 
-        public static FormatManager Instance { get { return s_formatManager; } }
+        private static FormatManager s_formatManager = new FormatManager();
 
-        public void RegisterMapFormat(IMapFormat mapFormat)
-        {
-            if (m_mapFormats.ContainsKey(mapFormat.Name))
-                throw new Exception("Map format '" + mapFormat.Name+ "' is already registered");
-
-            m_mapFormats[mapFormat.Name] = mapFormat;
-        }
-
-        public void UnregisterMapFormat(IMapFormat mapFormat)
-        {
-            if (!m_mapFormats.ContainsKey(mapFormat.Name))
-                throw new Exception("Map format '" + mapFormat.Name + "' is is not registered");
-
-            m_mapFormats.Remove(mapFormat.Name);
-        }
-
-        public IMapFormat GetMapFormatByExtension(string fileExtension)
-        {
-            foreach (IMapFormat mapFormat in m_mapFormats.Values)
-                if (mapFormat.FileExtension.Equals(fileExtension,
-                    StringComparison.InvariantCultureIgnoreCase))
-                    return mapFormat;
-            return null;
-        }
-
-        public IMapFormat this[string mapFormatName]
-        {
-            get
-            {
-                if (!m_mapFormats.ContainsKey(mapFormatName))
-                    throw new Exception("Map format '" + mapFormatName + "' is is not registered");
-
-                return m_mapFormats[mapFormatName];
-            }
-        }
-
-        public IMapFormat DefaultFormat
-        {
-            get { return m_defaultFormat; }
-        }
-
-        public ReadOnlyCollection<IMapFormat> MapFormats
-        {
-            get { return new List<IMapFormat>(m_mapFormats.Values).AsReadOnly(); }
-        }
+        private Dictionary<string, IMapFormat> m_mapFormats;
+        private TideFormat m_defaultFormat;
     }
 }
