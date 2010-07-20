@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,6 +23,8 @@ namespace XTile.Format
     [Serializable]
     public class CompatibilityReport
     {
+        #region Public Methods
+
         /// <summary>
         /// Constructs a compatibility report using the given compatibility notes
         /// </summary>
@@ -29,6 +42,10 @@ namespace XTile.Format
         {
             m_compatibilityNotes = new List<CompatibilityNote>();
         }
+
+        #endregion
+
+        #region Public Properties
 
         /// <summary>
         /// Overall compatibility level. This is computed from the worst case
@@ -65,6 +82,12 @@ namespace XTile.Format
             get { return m_compatibilityNotes.AsReadOnly(); }
         }
 
+        #endregion
+
+        #region Private Variables
+
         private List<CompatibilityNote> m_compatibilityNotes;
+
+        #endregion
     }
 }
