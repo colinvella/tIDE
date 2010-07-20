@@ -378,5 +378,9 @@ namespace XTile.Layers
         #endregion
     }
 
+    /// <summary>
+    /// Delegate for Layer events
+    /// </summary>
+    /// <param name="layerEventArgs">Argument structure for Layer events</param>
     public delegate void LayerEventHandler(LayerEventArgs layerEventArgs);
 }
