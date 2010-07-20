@@ -1,3 +1,14 @@
+/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,18 +45,7 @@ namespace XTile.Format
     [Serializable]
     public class CompatibilityNote
     {
-        /// <summary>
-        /// Constructs a compatiblity note with the given level and
-        /// remarks
-        /// </summary>
-        /// <param name="compatibilityLevel">Level of compatiblity</param>
-        /// <param name="remarks">Any applicable remarks</param>
-        public CompatibilityNote(
-            CompatibilityLevel compatibilityLevel, string remarks)
-        {
-            m_compatibilityLevel = compatibilityLevel;
-            m_remarks = remarks;
-        }
+        #region Public Properties
 
         /// <summary>
         /// The compatbility level of this note
@@ -63,7 +63,30 @@ namespace XTile.Format
             get { return m_remarks; }
         }
 
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Constructs a compatiblity note with the given level and
+        /// remarks
+        /// </summary>
+        /// <param name="compatibilityLevel">Level of compatiblity</param>
+        /// <param name="remarks">Any applicable remarks</param>
+        public CompatibilityNote(
+            CompatibilityLevel compatibilityLevel, string remarks)
+        {
+            m_compatibilityLevel = compatibilityLevel;
+            m_remarks = remarks;
+        }
+
+        #endregion
+
+        #region Private Variables
+
         private CompatibilityLevel m_compatibilityLevel;
         private string m_remarks;
+
+        #endregion
     }
 }
