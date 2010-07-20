@@ -11,23 +11,22 @@ using XTile.Tiles;
 
 namespace XTile.Layers
 {
+    /// <summary>
+    /// Represents a layer within an xTile map
+    /// </summary>
     [Serializable]
     public class Layer : DescribedComponent
     {
-        #region Private Variables
-
-        private Map m_map;
-        private ReadOnlyCollection<TileSheet> m_tileSheets;
-        private Size m_layerSize;
-        private Size m_tileSize;
-        private Tile[,] m_tiles;
-        private TileArray m_tileArray;
-        private bool m_visible;
-
-        #endregion
-
         #region Public Methods
 
+        /// <summary>
+        /// Constructs a new layer with the given ID, parent map,
+        /// layer dimensions and tile dimensions
+        /// </summary>
+        /// <param name="id">ID to assign to the layer</param>
+        /// <param name="map">map containing the new layer</param>
+        /// <param name="layerSize">width and height of the layer in tiles</param>
+        /// <param name="tileSize">tile width and height in pixels</param>
         public Layer(string id, Map map, Size layerSize, Size tileSize)
             : base(id)
         {
@@ -40,6 +39,12 @@ namespace XTile.Layers
             m_visible = true;
         }
 
+        /// <summary>
+        /// Tests if the layer contains at least one tile that references
+        /// the given tile sheet
+        /// </summary>
+        /// <param name="tileSheet">Tile sheet to test</param>
+        /// <returns>True if the layer depends on the given tile sheet, false otherwise</returns>
         public bool DependsOnTileSheet(TileSheet tileSheet)
         {
             for (int y = 0; y < m_layerSize.Height; y++)
@@ -52,6 +57,12 @@ namespace XTile.Layers
             return false;
         }
 
+        /// <summary>
+        /// Returns the coordinates in tile units, given a location
+        /// in pixels within the layer
+        /// </summary>
+        /// <param name="layerDisplayLocation">pixel location within the layer</param>
+        /// <returns>Location in tile coordinates</returns>
         public Location GetTileLocation(Location layerDisplayLocation)
         {
             return new Location(
@@ -59,12 +70,23 @@ namespace XTile.Layers
                 layerDisplayLocation.Y / m_tileSize.Height);
         }
 
+        /// <summary>
+        /// Tests if the given tile location is within the layer bounds
+        /// </summary>
+        /// <param name="tileLocation">tile coordinates to test</param>
+        /// <returns>True if the location is within the layer, False otherwise</returns>
         public bool IsValidTileLocation(Location tileLocation)
         {
             return tileLocation.X >= 0 && tileLocation.X < m_layerSize.Width
                 && tileLocation.Y >= 0 && tileLocation.Y < m_layerSize.Height;
         }
 
+        /// <summary>
+        /// Converts the viewport given in map pixel coordinates to layer
+        /// coordinates taking into account parallax effects
+        /// </summary>
+        /// <param name="mapViewport">Viewport in map pixel coordinates</param>
+        /// <returns>Viewport in layer pixel coordinates</returns>
         public Rectangle ConvertMapToLayerViewport(Rectangle mapViewport)
         {
             Size mapDisplaySize = m_map.DisplaySize;
@@ -75,6 +97,13 @@ namespace XTile.Layers
                     mapViewport.Size);
         }
 
+        /// <summary>
+        /// Convers the map location given in pixels to a layer location in
+        /// pixels taking into account parallax effects given the viewport size
+        /// </summary>
+        /// <param name="mapDisplayLocation">Location in map pixel coordinates</param>
+        /// <param name="viewportSize">Viewport dimensions in pixels</param>
+        /// <returns>Location in layer pixel coordinates</returns>
         public Location ConvertMapToLayerLocation(Location mapDisplayLocation, Size viewportSize)
         {
             Size mapDisplaySize = m_map.DisplaySize;
@@ -100,6 +129,13 @@ namespace XTile.Layers
             return new Location(layerLocationX, layerLocationY);
         }
 
+        /// <summary>
+        /// Convers the layer location given in pixels to a map location in
+        /// pixels taking into account parallax effects given the viewport size
+        /// </summary>
+        /// <param name="layerDisplayLocation">Location in layer pixel coordinates</param>
+        /// <param name="viewportSize">Viewport dimensions in pixels</param>
+        /// <returns>Location in map pixel coordinates</returns>
         public Location ConvertLayerToMapLocation(Location layerDisplayLocation, Size viewportSize)
         {
             Size mapDisplaySize = m_map.DisplaySize;
@@ -110,6 +146,15 @@ namespace XTile.Layers
                 (layerDisplayLocation.Y * (mapDisplaySize.Height - viewportSize.Height)) / (layerDisplaySize.Height - viewportSize.Height));
         }
 
+        /// <summary>
+        /// Computes and returns a rectangle representing a tile's bounadaries
+        /// given the map viewport and location in tile coordinates, taking into
+        /// account parallax effects. The rectangle coordinates are computed
+        /// relative to the viewport origin
+        /// </summary>
+        /// <param name="mapViewport">Map viewport in pixels</param>
+        /// <param name="tileLocation">Location in tile coordinates</param>
+        /// <returns>Rectangle representing the bounadries of the tile</returns>
         public Rectangle GetTileDisplayRectangle(Rectangle mapViewport, Location tileLocation)
         {
             Location layerViewportLocation = ConvertMapToLayerLocation(mapViewport.Location, mapViewport.Size);
@@ -122,6 +167,15 @@ namespace XTile.Layers
             return new Rectangle(tileDisplayOffset, m_tileSize);
         }
 
+        /// <summary>
+        /// Returns a reference to a tile given a pixel location within the
+        /// map and the viewport size taking into account parallax effects.
+        /// If no tile is assigned a at the computed location, null is
+        /// returned
+        /// </summary>
+        /// <param name="mapDisplayLocation">pixel location where to pick the tile</param>
+        /// <param name="viewportSize">viewport size to compute parallax for this layer</param>
+        /// <returns>Tile picked at the location, or null if one present</returns>
         public Tile PickTile(Location mapDisplayLocation, Size viewportSize)
         {
             Location tileLocation = ConvertMapToLayerLocation(mapDisplayLocation, viewportSize);
@@ -131,6 +185,10 @@ namespace XTile.Layers
                 return null;
         }
 
+        /// <summary>
+        /// Eliminates any tiles that refer to the given tile sheet
+        /// </summary>
+        /// <param name="tileSheet">tile sheet to test</param>
         public void RemoveTileSheetDependency(TileSheet tileSheet)
         {
             for (int y = 0; y < m_layerSize.Height; y++)
@@ -142,6 +200,13 @@ namespace XTile.Layers
                 }
         }
 
+        /// <summary>
+        /// Visually renders the layer using the given display device,
+        /// pixel offset from the map origin and display viewport
+        /// </summary>
+        /// <param name="displayDevice">Display device on which to render layer</param>
+        /// <param name="displayOffset">offset in pixel coordinates into the map from the top left</param>
+        /// <param name="mapViewport">viewport on the dipslay device</param>
         public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
         {
             if (BeforeDraw != null)
@@ -207,8 +272,14 @@ namespace XTile.Layers
 
         #region Public Properties
 
+        /// <summary>
+        /// Map containing this layer
+        /// </summary>
         public Map Map { get { return m_map; } }
 
+        /// <summary>
+        /// Width and height of this layer in tiles
+        /// </summary>
         public Size LayerSize
         {
             get { return m_layerSize; }
@@ -231,12 +302,18 @@ namespace XTile.Layers
             }
         }
 
+        /// <summary>
+        /// Width and height of the tiles used in this layer
+        /// </summary>
         public Size TileSize
         {
             get { return m_tileSize; }
             set { m_tileSize = value; }
         }
 
+        /// <summary>
+        /// Width and height of this layer in pixels
+        /// </summary>
         public Size DisplaySize
         {
             get
@@ -247,20 +324,45 @@ namespace XTile.Layers
             }
         }
 
+        /// <summary>
+        /// Visibilty flag to control rendering of this layer
+        /// </summary>
         public bool Visible
         {
             get { return m_visible; }
             set { m_visible = value; }
         }
 
+        /// <summary>
+        /// Doubly-indexed accessor to this layer's tiles
+        /// </summary>
         public TileArray Tiles { get { return m_tileArray; } }
 
         #endregion
 
         #region Public Events
 
+        /// <summary>
+        /// Raised before this layer is rendered
+        /// </summary>
         public event LayerEventHandler BeforeDraw;
+
+        /// <summary>
+        /// Raised after this layer is rendered
+        /// </summary>
         public event LayerEventHandler AfterDraw;
+
+        #endregion
+
+        #region Private Variables
+
+        private Map m_map;
+        private ReadOnlyCollection<TileSheet> m_tileSheets;
+        private Size m_layerSize;
+        private Size m_tileSize;
+        private Tile[,] m_tiles;
+        private TileArray m_tileArray;
+        private bool m_visible;
 
         #endregion
     }
