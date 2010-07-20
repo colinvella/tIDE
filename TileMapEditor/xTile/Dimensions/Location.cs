@@ -22,10 +22,16 @@ namespace XTile.Dimensions
     [Serializable]
     public struct Location
     {
+        #region Public Static Properties
+
         /// <summary>
         /// Static Location property representing the origin [0, 0]
         /// </summary>
         public static Location Origin { get { return s_origin; } }
+
+        #endregion
+
+        #region Public Variables
 
         /// <summary>
         /// Horizontal integral coordinate
@@ -36,6 +42,10 @@ namespace XTile.Dimensions
         /// Vertical integral coordinate
         /// </summary>
         public int Y;
+
+        #endregion
+
+        #region Public Static Methods
 
         /// <summary>
         /// Tests if two locations are identical (equality operator)
@@ -126,6 +136,10 @@ namespace XTile.Dimensions
             return new Location(location.X / divisor, location.Y / divisor);
         }
 
+        #endregion
+
+        #region Public Methods
+
         /// <summary>
         /// Constructs a Location from the given integral coordinates
         /// </summary>
@@ -171,6 +185,12 @@ namespace XTile.Dimensions
             return "[" + X + ", " + Y + "]";
         }
 
+        #endregion
+
+        #region Private Static Variables
+
         private static Location s_origin = new Location(0, 0);
+
+        #endregion
     }
 }
