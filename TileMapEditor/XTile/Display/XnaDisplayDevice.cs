@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +31,23 @@ namespace XTile.Display
     /// </summary>
     class XnaDisplayDevice : IDisplayDevice
     {
+        #region Public Properties
+
+        /// <summary>
+        /// Colour modulation property. This is set to White by default
+        /// 
+        /// NOTE: This property is specific to this implementation
+        /// </summary>
+        public Color ModulationColour
+        {
+            get { return m_modulationColour; }
+            set { m_modulationColour = value; }
+        }
+
+        #endregion
+
+        #region Public Methods
+
         /// <summary>
         /// Constructs an XNA displat device using the given content manager and
         /// XNA graphics device
@@ -127,16 +155,9 @@ namespace XTile.Display
             m_spriteBatchAlpha.End();
         }
 
-        /// <summary>
-        /// Colour modulation property. This is set to White by default
-        /// 
-        /// NOTE: This property is specific to this implementation
-        /// </summary>
-        public Color ModulationColour
-        {
-            get { return m_modulationColour; }
-            set { m_modulationColour = value; }
-        }
+        #endregion
+
+        #region Private Variables
 
         private ContentManager m_contentManager;
         private GraphicsDevice m_graphicsDevice;
@@ -146,5 +167,7 @@ namespace XTile.Display
         private Microsoft.Xna.Framework.Vector2 m_tilePosition;
         private Microsoft.Xna.Framework.Rectangle m_sourceRectangle;
         private Color m_modulationColour;
+
+        #endregion
     }
 }
