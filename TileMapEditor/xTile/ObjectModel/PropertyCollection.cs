@@ -8,6 +8,7 @@
 //  CODEBASE   http://tide.codeplex.com                                    //
 //                                                                         //
 /////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,8 @@ namespace XTile.ObjectModel
     /// component objects. This class extends the .NET Framework
     /// generic Dictionary class
     /// </summary>
-    public class PropertyCollection: Dictionary<string, PropertyValue>
+    [Serializable]
+    public class PropertyCollection : Dictionary<string, PropertyValue>
     {
         /// <summary>
         /// Constucts an empty property collection
