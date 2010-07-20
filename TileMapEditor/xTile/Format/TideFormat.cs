@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -18,6 +29,36 @@ namespace XTile.Format
     /// </summary>
     internal class TideFormat: IMapFormat
     {
+        #region Public Properties
+
+        /// <summary>
+        /// tIDE map format name
+        /// </summary>
+        public string Name
+        {
+            get { return "TIDE Map File"; }
+        }
+
+        /// <summary>
+        /// tIDE map format descriptor
+        /// </summary>
+        public string FileExtensionDescriptor
+        {
+            get { return "tIDE Map Files (*.tide)"; }
+        }
+
+        /// <summary>
+        /// tIDE file extension (.tide)
+        /// </summary>
+        public string FileExtension
+        {
+            get { return "tide"; }
+        }
+
+        #endregion
+
+        #region Public Methods
+
         /// <summary>
         /// Determines the map compatibility with tIDE. This is implicitly
         /// supported in Full
@@ -91,34 +132,18 @@ namespace XTile.Format
             xmlWriter.Flush();
         }
 
-        /// <summary>
-        /// tIDE map format name
-        /// </summary>
-        public string Name
-        {
-            get { return "TIDE Map File"; }
-        }
+        #endregion
 
-        /// <summary>
-        /// tIDE map format descriptor
-        /// </summary>
-        public string FileExtensionDescriptor
-        {
-            get { return "tIDE Map Files (*.tide)"; }
-        }
-
-        /// <summary>
-        /// tIDE file extension (.tide)
-        /// </summary>
-        public string FileExtension
-        {
-            get { return "tide"; }
-        }
+        #region Internal Methods
 
         internal TideFormat()
         {
             m_compatibilityResults = new CompatibilityReport();
         }
+
+        #endregion
+
+        #region Private Methods
 
         private void LoadProperties(XmlHelper xmlHelper, Component component)
         {
@@ -478,6 +503,12 @@ namespace XTile.Format
             xmlTextWriter.WriteEndElement();
         }
 
+        #endregion
+
+        #region Private Variables
+
         private CompatibilityReport m_compatibilityResults;
+
+        #endregion
     }
 }
