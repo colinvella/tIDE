@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +25,8 @@ namespace XTile.Display
     /// </summary>
     public interface IDisplayDevice
     {
+        #region Public Methods
+
         /// <summary>
         /// Loads resources assocaited with the given tile sheet
         /// </summary>
@@ -50,5 +63,7 @@ namespace XTile.Display
         /// Performs any actions necessary to terminate rendering of the current frame
         /// </summary>
         void EndScene();
+
+        #endregion
     }
 }
