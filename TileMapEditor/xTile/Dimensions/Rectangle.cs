@@ -22,15 +22,7 @@ namespace XTile.Dimensions
     [Serializable]
     public struct Rectangle
     {
-        /// <summary>
-        /// Location of the rectangle's top-left corner
-        /// </summary>
-        public Location Location;
-
-        /// <summary>
-        /// Dimensions of the rectangle
-        /// </summary>
-        public Size Size;
+        #region Public Methods
 
         /// <summary>
         /// Constructs a Rectangle given a Location and Size
@@ -148,6 +140,10 @@ namespace XTile.Dimensions
             return Location.ToString() + " - " + Size.ToString();
         }
 
+        #endregion
+
+        #region Public Properties
+
         /// <summary>
         /// Horizontal coordinate of the top left corner
         /// </summary>
@@ -196,5 +192,21 @@ namespace XTile.Dimensions
                     Location.Y + Size.Height - 1);
             }
         }
+
+        #endregion
+
+        #region Public Variables
+
+        /// <summary>
+        /// Location of the rectangle's top-left corner
+        /// </summary>
+        public Location Location;
+
+        /// <summary>
+        /// Dimensions of the rectangle
+        /// </summary>
+        public Size Size;
+
+        #endregion
     }
 }
