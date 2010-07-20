@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,10 +23,52 @@ namespace XTile.Format
     /// </summary>
     public class FormatManager
     {
+        #region Public Static Properties
+
         /// <summary>
         /// Reference to the singleton manager instance
         /// </summary>
         public static FormatManager Instance { get { return s_formatManager; } }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// String-based indexer for map formap implementations
+        /// </summary>
+        /// <param name="mapFormatName">Format name to query</param>
+        /// <returns></returns>
+        public IMapFormat this[string mapFormatName]
+        {
+            get
+            {
+                if (!m_mapFormats.ContainsKey(mapFormatName))
+                    throw new Exception("Map format '" + mapFormatName + "' is is not registered");
+
+                return m_mapFormats[mapFormatName];
+            }
+        }
+
+        /// <summary>
+        /// Returns the default tIDE format
+        /// </summary>
+        public IMapFormat DefaultFormat
+        {
+            get { return m_defaultFormat; }
+        }
+
+        /// <summary>
+        /// Returns a collection of registered map formats
+        /// </summary>
+        public ReadOnlyCollection<IMapFormat> MapFormats
+        {
+            get { return new List<IMapFormat>(m_mapFormats.Values).AsReadOnly(); }
+        }
+
+        #endregion
+
+        #region Public Methods
 
         /// <summary>
         /// Registers the given map format
@@ -56,37 +109,9 @@ namespace XTile.Format
             return null;
         }
 
-        /// <summary>
-        /// String-based indexer for map formap implementations
-        /// </summary>
-        /// <param name="mapFormatName">Format name to query</param>
-        /// <returns></returns>
-        public IMapFormat this[string mapFormatName]
-        {
-            get
-            {
-                if (!m_mapFormats.ContainsKey(mapFormatName))
-                    throw new Exception("Map format '" + mapFormatName + "' is is not registered");
+        #endregion
 
-                return m_mapFormats[mapFormatName];
-            }
-        }
-
-        /// <summary>
-        /// Returns the default tIDE format
-        /// </summary>
-        public IMapFormat DefaultFormat
-        {
-            get { return m_defaultFormat; }
-        }
-
-        /// <summary>
-        /// Returns a collection of registered map formats
-        /// </summary>
-        public ReadOnlyCollection<IMapFormat> MapFormats
-        {
-            get { return new List<IMapFormat>(m_mapFormats.Values).AsReadOnly(); }
-        }
+        #region Private Methods
 
         private FormatManager()
         {
@@ -103,9 +128,19 @@ namespace XTile.Format
             m_mapFormats[tiledTmxFormat.Name] = tiledTmxFormat;
         }
 
+        #endregion
+
+        #region Private Static Variables
+
         private static FormatManager s_formatManager = new FormatManager();
+
+        #endregion
+
+        #region Private Variables
 
         private Dictionary<string, IMapFormat> m_mapFormats;
         private TideFormat m_defaultFormat;
+
+        #endregion
     }
 }
