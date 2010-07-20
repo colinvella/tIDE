@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
