@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +22,27 @@ namespace XTile.Format
     /// </summary>
     public interface IMapFormat
     {
+        #region Public Properties
+
+        /// <summary>
+        /// Name of this map format
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
+        /// Descriptive text for this map format
+        /// </summary>
+        string FileExtensionDescriptor { get; }
+
+        /// <summary>
+        /// File extension associated with this map format
+        /// </summary>
+        string FileExtension { get; }
+
+        #endregion
+
+        #region Public Methods
+
         /// <summary>
         /// Generates a compatibility report for the given map
         /// according to this format
@@ -33,19 +65,6 @@ namespace XTile.Format
         /// <param name="stream">Output stream on which to store the map</param>
         void Store(Map map, Stream stream);
 
-        /// <summary>
-        /// Name of this map format
-        /// </summary>
-        string Name { get; }
-
-        /// <summary>
-        /// Descriptive text for this map format
-        /// </summary>
-        string FileExtensionDescriptor { get; }
-
-        /// <summary>
-        /// File extension associated with this map format
-        /// </summary>
-        string FileExtension { get; }
+        #endregion
     }
 }
