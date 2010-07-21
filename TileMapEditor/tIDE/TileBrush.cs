@@ -44,7 +44,7 @@ namespace TileMapEditor
             foreach (Location location in tileSelection.Locations)
             {
                 Tile tile = layer.Tiles[location];
-                Tile tileClone = tile == null ? null : tile.Clone();
+                Tile tileClone = tile == null ? null : tile.Clone(layer);
                 TileBrushElement tileBrushElement = new TileBrushElement(
                     tileClone, location - selectionBounds.Location);
                 m_tileBrushElements.Add(tileBrushElement);
@@ -87,7 +87,7 @@ namespace TileMapEditor
                     if (!map.TileSheets.Contains(tile.TileSheet))
                         continue;
 
-                    tileClone = tile.Clone();
+                    tileClone = tile.Clone(layer);
                 }
 
                 layer.Tiles[tileLocation] = tileClone;

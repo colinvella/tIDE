@@ -30,7 +30,7 @@ namespace TileMapEditor.Commands
         {
             m_oldTile = m_layer.Tiles[m_tileLocation];
             m_layer.Tiles[m_tileLocation]
-                = m_newTile.Clone();
+                = m_newTile.Clone(m_layer);
         }
 
         public override void Undo()
