@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
+//             http://www.opensource.org/licenses/ms-rl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,35 +23,56 @@ using XTile.Tiles;
 
 namespace XTile
 {
+    /// <summary>
+    /// A multi-layer tile-based map implementation. The contained Layers are
+    /// ordered by depth
+    /// </summary>
     [Serializable]
     public class Map : DescribedComponent
     {
-        #region Private Variables
+        #region Public Properties
 
-        private List<TileSheet> m_tileSheets;
-        private List<Layer> m_layers;
-        private long m_elapsedTime;
-        private Size m_displaySize;
-
-        #endregion
-
-        #region Private Methods
-
-        private void UpdateDisplaySize()
+        /// <summary>
+        /// Display size of the map in pixels. Corresponds to the size of
+        /// the largest layer
+        /// </summary>
+        public Size DisplaySize
         {
-            m_displaySize = Size.Zero;
-            foreach (Layer layer in m_layers)
-            {
-                Size displaySize = layer.DisplaySize;
-                m_displaySize.Width = Math.Max(m_displaySize.Width, displaySize.Width);
-                m_displaySize.Height = Math.Max(m_displaySize.Height, displaySize.Height);
-            }
+            get { return m_displaySize; }
+        }
+
+        /// <summary>
+        /// Layer collection contained in the Map
+        /// </summary>
+        public ReadOnlyCollection<Layer> Layers
+        {
+            get { return m_layers.AsReadOnly(); }
+        }
+
+        /// <summary>
+        /// TileSheet collection in the Map
+        /// </summary>
+        public ReadOnlyCollection<TileSheet> TileSheets
+        {
+            get { return m_tileSheets.AsReadOnly(); }
+        }
+
+        /// <summary>
+        /// Elapsed time in milliseconds, used for tile animation
+        /// </summary>
+        public long ElapsedTime
+        {
+            get { return m_elapsedTime; }
+            set { m_elapsedTime = value; }
         }
 
         #endregion
 
         #region Public Methods
 
+        /// <summary>
+        /// Constructs a map with a default "Untitled Map" ID
+        /// </summary>
         public Map()
             : base("Untiled map")
         {
@@ -49,6 +81,10 @@ namespace XTile
             m_elapsedTime = 0;
         }
 
+        /// <summary>
+        /// Constructs a map with the given ID
+        /// </summary>
+        /// <param name="id">ID to assign to the Map</param>
         public Map(string id)
             :base(id)
         {
@@ -58,6 +94,12 @@ namespace XTile
             m_displaySize = Size.Zero;
         }
 
+        /// <summary>
+        /// Returns the Layer corresponding to the given layer ID or null
+        /// if not matched
+        /// </summary>
+        /// <param name="layerId">ID of the Layer to retrieve</param>
+        /// <returns>Layer corresponding to the given ID</returns>
         public Layer GetLayer(string layerId)
         {
             foreach (Layer layer in m_layers)
@@ -67,11 +109,21 @@ namespace XTile
             return null;
         }
 
+        /// <summary>
+        /// Adds the given Layer to this Map
+        /// </summary>
+        /// <param name="layer">Layer to add</param>
         public void AddLayer(Layer layer)
         {
             InsertLayer(layer, m_layers.Count);
         }
 
+        /// <summary>
+        /// Inserts the given Layer at the given index in the
+        /// Layer collection
+        /// </summary>
+        /// <param name="layer">Layer to insert</param>
+        /// <param name="layerIndex">Insertion index into this Map's Layer collection</param>
         public void InsertLayer(Layer layer, int layerIndex)
         {
             if (layer.Map != this)
@@ -88,6 +140,10 @@ namespace XTile
             UpdateDisplaySize();
         }
 
+        /// <summary>
+        /// Removes the given Layer from the Map
+        /// </summary>
+        /// <param name="layer">Layer to remove</param>
         public void RemoveLayer(Layer layer)
         {
             if (!m_layers.Contains(layer))
@@ -98,6 +154,11 @@ namespace XTile
             UpdateDisplaySize();
         }
 
+        /// <summary>
+        /// Moves the given Layer one index forward (higher) in this
+        /// Map's Layer collection
+        /// </summary>
+        /// <param name="layer">Layer to bring forward</param>
         public void BringLayerForward(Layer layer)
         {
             int layerIndex = m_layers.IndexOf(layer);
@@ -111,6 +172,11 @@ namespace XTile
             m_layers[layerIndex + 1] = layer;            
         }
 
+        /// <summary>
+        /// Moves the given Layer one index backward (lower) in this
+        /// Map's Layer collection
+        /// </summary>
+        /// <param name="layer">Layer to send backward</param>
         public void SendLayerBackward(Layer layer)
         {
             int layerIndex = m_layers.IndexOf(layer);
@@ -124,6 +190,12 @@ namespace XTile
             m_layers[layerIndex - 1] = layer;
         }
 
+        /// <summary>
+        /// Tests if the given TileSheet is used by this Map by testing
+        /// if the Layers contain and dependent tiles
+        /// </summary>
+        /// <param name="tileSheet">TileSheet to test</param>
+        /// <returns>True if dependent, False otherwise</returns>
         public bool DependsOnTileSheet(TileSheet tileSheet)
         {
             if (tileSheet.Map != this)
@@ -136,6 +208,12 @@ namespace XTile
             return false;
         }
 
+        /// <summary>
+        /// Returns the TileSheet corresponding to the given ID, or null
+        /// if not matched
+        /// </summary>
+        /// <param name="tileSheetId">ID of the TileSheet to retrieve</param>
+        /// <returns>TileSheet corresponding to the given ID, or null if unmatched</returns>
         public TileSheet GetTileSheet(string tileSheetId)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
@@ -145,6 +223,10 @@ namespace XTile
             return null;
         }
 
+        /// <summary>
+        /// Adds the given TileSheet to this Map
+        /// </summary>
+        /// <param name="tileSheet">TileSheet to add</param>
         public void AddTileSheet(TileSheet tileSheet)
         {
             if (tileSheet.Map != this)
@@ -162,6 +244,11 @@ namespace XTile
                 });
         }
 
+        /// <summary>
+        /// Removes the given TileSheet from this Map, subject to
+        /// dependencies
+        /// </summary>
+        /// <param name="tileSheet">TileSheet to remove</param>
         public void RemoveTileSheet(TileSheet tileSheet)
         {
             if (!m_tileSheets.Contains(tileSheet))
@@ -174,34 +261,68 @@ namespace XTile
             m_tileSheets.Remove(tileSheet);
         }
 
+        /// <summary>
+        /// Removes any dependencies on the given TileSheet by clearing out
+        /// any tiles within all Layers that depend on the TileSheet
+        /// </summary>
+        /// <param name="tileSheet">TileSheet for which to remove dependencies</param>
         public void RemoveTileSheetDependencies(TileSheet tileSheet)
         {
             foreach (Layer layer in m_layers)
                 layer.RemoveTileSheetDependency(tileSheet);
         }
 
+        /// <summary>
+        /// Updates the map's animation clock with the given time interval
+        /// </summary>
+        /// <param name="timeInterval">Time interval in milliseconds</param>
         public void Update(long timeInterval)
         {
             m_elapsedTime += timeInterval;
         }
 
+        /// <summary>
+        /// Loads all the TileSheets contained in this Map into the given
+        /// display device
+        /// </summary>
+        /// <param name="displayDevice">Display device in which to load the TileSheets</param>
         public void LoadTileSheets(IDisplayDevice displayDevice)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
                 displayDevice.LoadTileSheet(tileSheet);
         }
 
+        /// <summary>
+        /// Frees the resources of all the TileSheets contained in this Map
+        /// from the given display device
+        /// </summary>
+        /// <param name="displayDevice">Display device from which to dispose the TileSheets</param>
         public void DisposeTileSheets(IDisplayDevice displayDevice)
         {
             foreach (TileSheet tileSheet in m_tileSheets)
                 displayDevice.DisposeTileSheet(tileSheet);
         }
 
+        /// <summary>
+        /// Visually renders this Map using the given display device and
+        /// viewport into the map. The viewport is rendered at the display
+        /// device's origin
+        /// </summary>
+        /// <param name="displayDevice">Display device on which to render the Map</param>
+        /// <param name="mapViewport">Viewport into the Map to be rendered</param>
         public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport)
         {
             Draw(displayDevice, Location.Origin, mapViewport);
         }
 
+        /// <summary>
+        /// Visually renders this Map using the given display device and
+        /// viewport into the map. The viewport is rendered at the given
+        /// display offset
+        /// </summary>
+        /// <param name="displayDevice">Display device on which to render the Map</param>
+        /// <param name="displayOffset">Pixel offset on the device where to render the map</param>
+        /// <param name="mapViewport">Viewport into the Map to be rendered</param>
         public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
         {
             displayDevice.BeginScene();
@@ -223,28 +344,27 @@ namespace XTile
 
         #endregion
 
-        #region Public Properties
+        #region Private Methods
 
-        public Size DisplaySize
+        private void UpdateDisplaySize()
         {
-            get { return m_displaySize; }
+            m_displaySize = Size.Zero;
+            foreach (Layer layer in m_layers)
+            {
+                Size displaySize = layer.DisplaySize;
+                m_displaySize.Width = Math.Max(m_displaySize.Width, displaySize.Width);
+                m_displaySize.Height = Math.Max(m_displaySize.Height, displaySize.Height);
+            }
         }
 
-        public ReadOnlyCollection<Layer> Layers
-        {
-            get { return m_layers.AsReadOnly(); }
-        }
+        #endregion
 
-        public ReadOnlyCollection<TileSheet> TileSheets
-        {
-            get { return m_tileSheets.AsReadOnly(); }
-        }
+        #region Private Variables
 
-        public long ElapsedTime
-        {
-            get { return m_elapsedTime; }
-            set { m_elapsedTime = value; }
-        }
+        private List<TileSheet> m_tileSheets;
+        private List<Layer> m_layers;
+        private long m_elapsedTime;
+        private Size m_displaySize;
 
         #endregion
     }
