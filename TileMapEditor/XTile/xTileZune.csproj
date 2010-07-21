@@ -55,6 +55,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <DefineConstants>TRACE;ZUNE</DefineConstants>
+    <DocumentationFile>bin\Zune\Release\XTile.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Dimensions\Location.cs" />

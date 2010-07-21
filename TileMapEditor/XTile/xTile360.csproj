@@ -57,6 +57,7 @@
     <Optimize>true</Optimize>
     <DefineConstants>TRACE;XBOX;XBOX360</DefineConstants>
     <XnaCompressContent>true</XnaCompressContent>
+    <DocumentationFile>bin\Xbox 360\Release\XTile.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Dimensions\Location.cs" />
