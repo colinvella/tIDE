@@ -17,13 +17,12 @@ namespace TileMapEditor
         public CustomInstaller()
             : base()
         {
-            // attach handler to 'Committed' event.
-            this.Committed += new InstallEventHandler(OnInstallerCommitted);
         }
 
-        // Committed event handler
-        private void OnInstallerCommitted(object sender, InstallEventArgs installEventArgs)
+        public override void Commit(IDictionary savedState)
         {
+            base.Commit(savedState);
+
             if (MessageBox.Show(
                 "Do you want to run tIDE now?", "tIDE Tile Map Editor",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question,
@@ -41,7 +40,7 @@ namespace TileMapEditor
             catch (Exception exception)
             {
                 MessageBox.Show("Unable to run application. Reason:" + exception.Message,
-                    "tIDE Tile Map Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);   
+                    "tIDE Tile Map Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
