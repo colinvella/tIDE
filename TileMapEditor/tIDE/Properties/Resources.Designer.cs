@@ -705,6 +705,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Icon tIDE {
+            get {
+                object obj = ResourceManager.GetObject("tIDE", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileAnimation {
             get {
                 object obj = ResourceManager.GetObject("TileAnimation", resourceCulture);

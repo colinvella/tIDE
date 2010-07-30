@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{23DDF477-C651-46E1-A856-46BA1D64FC6B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -12,8 +12,7 @@
     <AssemblyName>tIDE</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\tIDE.ico</ApplicationIcon>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -407,6 +406,7 @@
     <None Include="Resources\MapCompatibilityFull.png" />
     <None Include="Resources\MapCompatibilityNone.png" />
     <None Include="Resources\MapCompatibilityPartial.png" />
+    <None Include="Resources\tIDE.ico" />
     <Content Include="Resources\TileMapEditor.ico" />
     <None Include="Resources\Help\AboutDialog.rtf" />
     <None Include="Resources\Help\CommandHistoryDialog.rtf" />
