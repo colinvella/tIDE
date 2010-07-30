@@ -202,6 +202,12 @@
     <Compile Include="Help\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Installer\RunApplicationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Installer\RunApplicationDialog.Designer.cs">
+      <DependentUpon>RunApplicationDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\CommandBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
@@ -325,6 +331,9 @@
     <EmbeddedResource Include="Controls\MapTreeView.resx">
       <DependentUpon>MapTreeView.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Installer\RunApplicationDialog.resx">
+      <DependentUpon>RunApplicationDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
