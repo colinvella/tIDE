@@ -136,10 +136,10 @@
     <Compile Include="Controls\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomInstaller.cs">
+    <Compile Include="Installer\CustomInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomInstaller.Designer.cs">
+    <Compile Include="Installer\CustomInstaller.Designer.cs">
       <DependentUpon>CustomInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\AboutDialog.cs">

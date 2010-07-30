@@ -9,10 +9,10 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace TileMapEditor
+namespace TileMapEditor.Installer
 {
     [RunInstaller(true)]
-    public partial class CustomInstaller : Installer
+    public partial class CustomInstaller : System.Configuration.Install.Installer
     {
         public CustomInstaller()
             : base()
