@@ -407,7 +407,6 @@
     <None Include="Resources\MapCompatibilityNone.png" />
     <None Include="Resources\MapCompatibilityPartial.png" />
     <None Include="Resources\tIDE.ico" />
-    <Content Include="Resources\TileMapEditor.ico" />
     <None Include="Resources\Help\AboutDialog.rtf" />
     <None Include="Resources\Help\CommandHistoryDialog.rtf" />
     <None Include="Resources\Help\CommandReference.rtf" />
