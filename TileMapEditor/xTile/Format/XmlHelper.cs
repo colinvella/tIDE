@@ -98,6 +98,13 @@ namespace XTile.Format
             return attributeValue;
         }
 
+        public string GetAttribute(string attributeName, string defaultValue)
+        {
+            string attributeValue = m_xmlReader.GetAttribute(attributeName);
+
+            return attributeValue == null ? defaultValue : attributeValue;
+        }
+
         public int GetIntAttribute(string attributeName)
         {
             string attributeValue = GetAttribute(attributeName);
@@ -109,6 +116,24 @@ namespace XTile.Format
             catch (Exception exception)
             {
                 throw new Exception("Attribute '" + attributeValue + "' is not a valid integer", exception);
+            }
+        }
+
+        public int GetIntAttribute(string attributeName, int defaultValue)
+        {
+            string attributeValueString = m_xmlReader.GetAttribute(attributeName);
+
+            if (attributeValueString == null)
+                return defaultValue;
+
+            try
+            {
+                // note: TryParse not supported by .NET CF
+                return int.Parse(attributeValueString);
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Attribute '" + attributeValueString + "' is not a valid integer", exception);
             }
         }
 

@@ -499,7 +499,6 @@
     <None Include="Resources\LayerProperties.png" />
     <None Include="Resources\HelpAbout.png" />
     <None Include="Resources\MapProperties.png" />
-    <None Include="TileMapEditor_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugin\Plugin.csproj">
