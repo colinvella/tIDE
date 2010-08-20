@@ -57,6 +57,12 @@ namespace TileMapEditor
 
         #region Private Methods
 
+        private void RegisterFileFormats()
+        {
+            // Tiled TMX format
+            XTile.Format.FormatManager.Instance.RegisterMapFormat(new TiledTmxFormat());
+        }
+
         private string GenerateFileDialogFilter()
         {
             FormatManager formatManager = FormatManager.Instance;
@@ -416,6 +422,10 @@ namespace TileMapEditor
             IMapFormat selectedMapFormat
                 = formatManager.GetMapFormatByExtension(fileExtension);
 
+            string basePath = Path.GetDirectoryName(filename);
+            string oldCurrentDirectory = Directory.GetCurrentDirectory();
+            Directory.SetCurrentDirectory(basePath);
+
             Map newMap = null;
             try
             {
@@ -426,7 +436,6 @@ namespace TileMapEditor
                 RecentFilesManager.Instance.StoreFilename(filename);
 
                 // convert relative image source paths to absolute paths
-                string basePath = Path.GetDirectoryName(filename);
                 foreach (TileSheet tileSheet in newMap.TileSheets)
                     tileSheet.ImageSource = PathHelper.GetAbsolutePath(basePath, tileSheet.ImageSource);
 
@@ -470,6 +479,8 @@ namespace TileMapEditor
                     "An error occured whilst opening the file. Details: " + exception.Message,
                     "Open Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            Directory.SetCurrentDirectory(oldCurrentDirectory);
 
             StopWaitCursor();
         }
@@ -552,6 +563,9 @@ namespace TileMapEditor
             m_commandHistory = CommandHistory.Instance;
 
             m_tileBrushCollection = new TileBrushCollection();
+
+            // register supported formats for xTile
+            RegisterFileFormats();
 
             m_map = new Map("Untitled");
             m_needsSaving = false;
