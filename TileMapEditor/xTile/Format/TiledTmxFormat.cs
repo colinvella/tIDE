@@ -136,30 +136,33 @@ namespace XTile.Format
         {
             string id = xmlHelper.GetAttribute("Id");
 
-            xmlHelper.AdvanceStartElement("Description");
-            string description = xmlHelper.GetCData();
-            xmlHelper.AdvanceEndElement("Description");
+            int tileWidth = xmlHelper.GetIntAttribute("tilewidth");
+            int tileHeight = xmlHelper.GetIntAttribute("tileheight");
+            Size tileSize = new Size(tileWidth, tileHeight);
 
-            xmlHelper.AdvanceStartElement("ImageSource");
-            string imageSource = xmlHelper.GetCData();
-            xmlHelper.AdvanceEndElement("ImageSource");
+            int marginValue = xmlHelper.GetIntAttribute("margin", 0);
+            Size margin = new Size(marginValue);
 
-            xmlHelper.AdvanceStartElement("Alignment");
+            int spacingValue = xmlHelper.GetIntAttribute("spacing", 0);
+            Size spacing = new Size(spacingValue);
 
-            Size sheetSize = Size.FromString(xmlHelper.GetAttribute("SheetSize"));
-            Size tileSize = Size.FromString(xmlHelper.GetAttribute("TileSize"));
-            Size margin = Size.FromString(xmlHelper.GetAttribute("Margin"));
-            Size spacing = Size.FromString(xmlHelper.GetAttribute("Spacing"));
+            xmlHelper.AdvanceStartElement("image");
+            string imageSource = xmlHelper.GetAttribute("source");
+            xmlHelper.AdvanceEndElement("image");
 
-            xmlHelper.AdvanceEndElement("Alignment");
+            
+            Size sheetSize = new Size();
+            //using (Bitmap)
+            //{
+            //}
 
             TileSheet tileSheet = new TileSheet(id, map, imageSource, sheetSize, tileSize);
             tileSheet.Margin = margin;
             tileSheet.Spacing = spacing;
 
-            LoadProperties(xmlHelper, tileSheet);
+            //LoadProperties(xmlHelper, tileSheet);
 
-            xmlHelper.AdvanceEndElement("TileSheet");
+            xmlHelper.AdvanceEndElement("tileset");
 
             map.AddTileSheet(tileSheet);
         }
