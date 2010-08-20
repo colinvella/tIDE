@@ -719,6 +719,8 @@ namespace TileMapEditor
             saveFileDialog.Filter = GenerateFileDialogFilter();
             saveFileDialog.DefaultExt = formatManager.DefaultFormat.FileExtension;
             saveFileDialog.AddExtension = true;
+            saveFileDialog.FileName = Path.GetFileNameWithoutExtension(m_filename);
+            saveFileDialog.InitialDirectory = Path.GetDirectoryName(m_filename);
 
             if (saveFileDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
