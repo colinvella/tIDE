@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace XTile.Format
 {
-    internal class XmlHelper
+    public class XmlHelper
     {
         private XmlReader m_xmlReader;
 

@@ -18,6 +18,7 @@ using XTile.Tiles;
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
 using TileMapEditor.Dialogs;
+using TileMapEditor.Format;
 using TileMapEditor.Help;
 using TileMapEditor.Plugin;
 
@@ -403,58 +404,6 @@ namespace TileMapEditor
             this.Text = shortName + " - tIDE";
         }
 
-        private string GetRelativePath(string basePath, string absolutePath)
-        {
-            basePath = basePath.Trim();
-            absolutePath = absolutePath.Trim();
-
-            if (!Path.IsPathRooted(basePath) || !Path.IsPathRooted(absolutePath))
-                return absolutePath;
-
-            // absolute path within base
-            if (absolutePath.StartsWith(basePath))
-                return absolutePath.Remove(0, basePath.Length);
-
-            // remove common root
-            while (basePath.Length > 0 && absolutePath.Length > 0)
-            {
-                if (char.ToLower(basePath[0]) == char.ToLower(absolutePath[0]))
-                {
-                    basePath = basePath.Remove(0, 1);
-                    absolutePath = absolutePath.Remove(0, 1);
-                }
-                else
-                    break;
-            }
-
-            int levels = basePath.Split(new char[] { Path.DirectorySeparatorChar }).Length;
-            while (levels-- > 0)
-                absolutePath = ".." + Path.DirectorySeparatorChar + absolutePath;
-
-            return absolutePath;
-        }
-
-        private string GetAbsolutePath(string basePath, string relativePath)
-        {
-            basePath = basePath.Trim();
-            relativePath = relativePath.Trim();
-
-            if (!Path.IsPathRooted(basePath) || Path.IsPathRooted(relativePath))
-                return relativePath;
-
-            while (relativePath.StartsWith(".." + Path.DirectorySeparatorChar))
-            {
-                relativePath = relativePath.Remove(0, 3);
-                int index = basePath.LastIndexOf(Path.DirectorySeparatorChar);
-                if (index <= 2)
-                    break;
-                else
-                    basePath = basePath.Remove(index + 1);
-            }
-
-            return basePath + relativePath;
-        }
-
         private void OpenFile(string filename)
         {
             FormatManager formatManager = FormatManager.Instance;
@@ -479,7 +428,7 @@ namespace TileMapEditor
                 // convert relative image source paths to absolute paths
                 string basePath = Path.GetDirectoryName(filename);
                 foreach (TileSheet tileSheet in newMap.TileSheets)
-                    tileSheet.ImageSource = GetAbsolutePath(basePath, tileSheet.ImageSource);
+                    tileSheet.ImageSource = PathHelper.GetAbsolutePath(basePath, tileSheet.ImageSource);
 
                 ClipBoardManager.Instance.StoreTileBrush(null);
                 m_tileBrushCollection.TileBrushes.Clear();
@@ -551,7 +500,7 @@ namespace TileMapEditor
             // make image source paths relative
             string basePath = Path.GetDirectoryName(filename);
             foreach (TileSheet tileSheet in m_map.TileSheets)
-                tileSheet.ImageSource = GetRelativePath(basePath, tileSheet.ImageSource);
+                tileSheet.ImageSource = PathHelper.GetRelativePath(basePath, tileSheet.ImageSource);
 
             try
             {
@@ -561,7 +510,7 @@ namespace TileMapEditor
 
                 // restore paths
                 foreach (TileSheet tileSheet in m_map.TileSheets)
-                    tileSheet.ImageSource = GetAbsolutePath(basePath, tileSheet.ImageSource);
+                    tileSheet.ImageSource = PathHelper.GetAbsolutePath(basePath, tileSheet.ImageSource);
 
                 m_needsSaving = false;
                 RecentFilesManager.Instance.StoreFilename(filename);
@@ -576,7 +525,7 @@ namespace TileMapEditor
 
                 // restore paths
                 foreach (TileSheet tileSheet in m_map.TileSheets)
-                    tileSheet.ImageSource = GetAbsolutePath(basePath, tileSheet.ImageSource);
+                    tileSheet.ImageSource = PathHelper.GetAbsolutePath(basePath, tileSheet.ImageSource);
 
                 return false;
             }

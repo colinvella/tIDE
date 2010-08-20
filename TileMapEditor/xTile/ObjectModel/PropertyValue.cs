@@ -76,7 +76,7 @@ namespace XTile.ObjectModel
         /// <summary>
         /// Implicit cast operator to a boolean value
         /// </summary>
-        /// <param name="value">property value to cast</param>
+        /// <param name="propertyValue">property value to cast</param>
         /// <returns>Boolean value</returns>
         public static implicit operator bool(PropertyValue propertyValue)
         {
@@ -88,7 +88,7 @@ namespace XTile.ObjectModel
         /// <summary>
         /// Implicit cast operator to an integer value
         /// </summary>
-        /// <param name="value">property value to cast</param>
+        /// <param name="propertyValue">property value to cast</param>
         /// <returns>Integer value</returns>
         public static implicit operator int(PropertyValue propertyValue)
         {
@@ -100,7 +100,7 @@ namespace XTile.ObjectModel
         /// <summary>
         /// Implicit cast operator to a floating point value
         /// </summary>
-        /// <param name="value">property value to cast</param>
+        /// <param name="propertyValue">property value to cast</param>
         /// <returns>Float value</returns>
         public static implicit operator float(PropertyValue propertyValue)
         {
@@ -115,7 +115,7 @@ namespace XTile.ObjectModel
         /// <summary>
         /// Implicit cast operator to a string value
         /// </summary>
-        /// <param name="value">property value to cast</param>
+        /// <param name="propertyValue">property value to cast</param>
         /// <returns>String value</returns>
         public static implicit operator string(PropertyValue propertyValue)
         {

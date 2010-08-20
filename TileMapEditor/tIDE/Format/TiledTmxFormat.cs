@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
+using XTile;
 using XTile.Dimensions;
+using XTile.Format;
 using XTile.ObjectModel;
 using XTile.Layers;
 using XTile.Tiles;
 
-namespace XTile.Format
+namespace TileMapEditor.Format
 {
     internal class TiledTmxFormat: IMapFormat
     {
@@ -152,9 +154,18 @@ namespace XTile.Format
 
             
             Size sheetSize = new Size();
-            //using (Bitmap)
-            //{
-            //}
+            try
+            {
+                using (System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(imageSource))
+                {
+                    sheetSize.Width = (bitmap.Width - marginValue) / (tileWidth + spacingValue);
+                    sheetSize.Height = (bitmap.Height - marginValue) / (tileHeight + spacingValue);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Unable to determine sheet size from image source", exception);
+            }
 
             TileSheet tileSheet = new TileSheet(id, map, imageSource, sheetSize, tileSize);
             tileSheet.Margin = margin;

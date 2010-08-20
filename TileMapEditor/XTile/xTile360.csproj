@@ -70,7 +70,6 @@
     <Compile Include="Format\FormatManager.cs" />
     <Compile Include="Format\IMapFormat.cs" />
     <Compile Include="Format\TideFormat.cs" />
-    <Compile Include="Format\TiledTmxFormat.cs" />
     <Compile Include="Format\XmlHelper.cs" />
     <Compile Include="Layers\Layer.cs" />
     <Compile Include="Layers\LayerEventArgs.cs" />

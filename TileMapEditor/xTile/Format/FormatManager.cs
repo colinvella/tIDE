@@ -120,12 +120,6 @@ namespace XTile.Format
             // register default format
             m_defaultFormat = new TideFormat();
             m_mapFormats[m_defaultFormat.Name] = m_defaultFormat;
-
-            // register other supported formats
-
-            // Tiled Format
-            TiledTmxFormat tiledTmxFormat = new TiledTmxFormat();
-            m_mapFormats[tiledTmxFormat.Name] = tiledTmxFormat;
         }
 
         #endregion
