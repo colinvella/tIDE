@@ -54,6 +54,9 @@ namespace TileMapEditor.Format
                     basePath = basePath.Remove(index + 1);
             }
 
+            if (basePath.Length > 0 && !basePath.EndsWith(Path.DirectorySeparatorChar + ""))
+                basePath += Path.DirectorySeparatorChar;
+
             return basePath + relativePath;
         }
     }

@@ -171,9 +171,14 @@ namespace TileMapEditor.Format
             }
 
             TileSheet tileSheet = new TileSheet(id, map, imageSource, sheetSize, tileSize);
-            tileSheet.Properties["@FirstGid"] = firstGid;
             tileSheet.Margin = margin;
             tileSheet.Spacing = spacing;
+
+            // keep track of first gid as custom property
+            tileSheet.Properties["@FirstGid"] = firstGid;
+
+            // also add lastgid to facilitate import
+            tileSheet.Properties["@LastGid"] = firstGid + tileSheet.TileCount - 1;
 
             // properties at tile level within tile sets not supported
             // but are mapped as prefixed properties at tile sheet level
@@ -191,9 +196,9 @@ namespace TileMapEditor.Format
                     tileSheet.Properties["@Tile@" + tileId + "@" + propertyName]
                         = dummyComponent.Properties[propertyName];
                 }
-            }
 
-            xmlHelper.AdvanceEndElement("tileset");
+                xmlNodeType = xmlHelper.AdvanceNode();
+            }
 
             map.AddTileSheet(tileSheet);
         }
@@ -232,6 +237,92 @@ namespace TileMapEditor.Format
             }
         }
 
+        private Tile CreateTile(Layer layer, int gid)
+        {
+            TileSheet selectedTileSheet = null;
+            int tileIndex = -1;
+            foreach (TileSheet tileSheet in layer.Map.TileSheets)
+            {
+                int firstGid = tileSheet.Properties["@FirstGid"];
+                int lastGid = tileSheet.Properties["@LastGid"];
+
+                if (gid >= firstGid && gid <= lastGid)
+                {
+                    selectedTileSheet = tileSheet;
+                    tileIndex = gid - firstGid;
+
+                    break;
+                }
+            }
+
+            if (selectedTileSheet == null)
+                throw new Exception("Invalid tile gid: " + gid);
+
+            return new StaticTile(layer, selectedTileSheet, BlendMode.Alpha, tileIndex);
+        }
+
+        private void LoadLayerDataXml(XmlHelper xmlHelper, Layer layer)
+        {
+            Location tileLocation = Location.Origin;
+
+            while (xmlHelper.AdvanceStartRepeatedElement("tile", "data"))
+            {
+                int gid = xmlHelper.GetIntAttribute("gid");
+
+                layer.Tiles[tileLocation] = CreateTile(layer, gid);
+
+                ++tileLocation.X;
+                if (tileLocation.X >= layer.LayerSize.Width)
+                {
+                    tileLocation.X = 0;
+                    ++tileLocation.Y;
+                }
+            }
+        }
+
+        private void LoadLayerDataBase64(XmlHelper xmlHelper, Layer layer, string dataCompression)
+        {
+            if (dataCompression == "none")
+            {
+            }
+            else if (dataCompression == "gzip")
+            {
+            }
+            else if (dataCompression == "zlib")
+            {
+            }
+            else
+                throw new Exception("Unsupported compression scheme: " + dataCompression);
+        }
+
+        private void LoadLayerDataCsv(XmlHelper xmlHelper, Layer layer)
+        {
+            Location tileLocation = Location.Origin;
+
+            xmlHelper.AdvanceNode(XmlNodeType.Text);
+
+            XmlReader xmlReader = xmlHelper.XmlReader;
+
+            string csvData = xmlReader.Value;
+            string[] csvElements = csvData.Split(new char[] { ',', '\r', '\n', '\t' });
+
+            foreach (string csvElement in csvElements)
+            {
+                int gid = int.Parse(csvElement);
+
+                layer.Tiles[tileLocation] = CreateTile(layer, gid);
+
+                ++tileLocation.X;
+                if (tileLocation.X >= layer.LayerSize.Width)
+                {
+                    tileLocation.X = 0;
+                    ++tileLocation.Y;
+                }
+            }
+
+            xmlHelper.AdvanceEndElement("data");
+        }
+
         private void LoadLayer(XmlHelper xmlHelper, Map map)
         {
             if (map.TileSheets.Count == 0)
@@ -266,47 +357,16 @@ namespace TileMapEditor.Format
             string dataEncoding = xmlHelper.GetAttribute("encoding", "xml");
             string dataCompression = xmlHelper.GetAttribute("compression", "none");
 
-            // CONTINUE HERE
+            if (dataEncoding == "xml")
+                LoadLayerDataXml(xmlHelper, layer);
+            else if (dataEncoding == "base64")
+                LoadLayerDataBase64(xmlHelper, layer, dataCompression);
+            else if (dataEncoding == "csv")
+                LoadLayerDataCsv(xmlHelper, layer);
+            else
+                throw new Exception("Unknown encoding/compression setting combination (" + dataEncoding + "/" + dataCompression + ")");
 
-            Location tileLocation = Location.Origin;
-            TileSheet tileSheet = null;
-            XmlReader xmlReader = xmlHelper.XmlReader;
-            while (xmlHelper.AdvanceStartRepeatedElement("Row", "TileArray"))
-            {
-                tileLocation.X = 0;
-
-                while (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
-                {
-                    if (xmlReader.Name == "Null")
-                    {
-                        int nullCount = xmlHelper.GetIntAttribute("Count");
-                        tileLocation.X += nullCount % layerSize.Width;
-                    }
-                    else if (xmlReader.Name == "TileSheet")
-                    {
-                        string tileSheetRef = xmlHelper.GetAttribute("Ref");
-                        tileSheet = map.GetTileSheet(tileSheetRef);
-                    }
-                    else if (xmlReader.Name == "Static")
-                    {
-                        layer.Tiles[tileLocation] = LoadStaticTile(xmlHelper, layer, tileSheet);
-
-                        ++tileLocation.X;
-                    }
-                    else if (xmlReader.Name == "Animated")
-                    {
-                        layer.Tiles[tileLocation] = LoadAnimatedTile(xmlHelper, layer, tileSheet);
-
-                        ++tileLocation.X;
-                    }
-                }
-
-                ++tileLocation.Y;
-            }
-
-            LoadProperties(xmlHelper, layer);
-
-            xmlHelper.AdvanceEndElement("Layer");
+            xmlHelper.AdvanceEndElement("layer");
 
             map.AddLayer(layer);
         }
@@ -421,9 +481,6 @@ namespace TileMapEditor.Format
 
         public Map Load(Stream stream)
         {
-            // not implemented yet
-            throw new Exception("This format is not supported yet");
-
             XmlTextReader xmlReader = new XmlTextReader(stream);
             xmlReader.WhitespaceHandling = WhitespaceHandling.None;
 
