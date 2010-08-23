@@ -17,10 +17,12 @@ namespace TileMapEditor.Format
 {
     internal class TiledTmxFormat: IMapFormat
     {
+        private class DummyComponent : Component
+        {
+        }
+
         private void LoadProperties(XmlHelper xmlHelper, Component component)
         {
-            xmlHelper.AdvanceStartElement("properties");
-
             while (xmlHelper.AdvanceStartRepeatedElement("property", "properties"))
             {
                 string propertyKey = xmlHelper.GetAttribute("name");
@@ -136,7 +138,9 @@ namespace TileMapEditor.Format
 
         private void LoadTileSet(XmlHelper xmlHelper, Map map)
         {
-            string id = xmlHelper.GetAttribute("Id");
+            string id = xmlHelper.GetAttribute("name");
+
+            int firstGid = xmlHelper.GetIntAttribute("firstgid");
 
             int tileWidth = xmlHelper.GetIntAttribute("tilewidth");
             int tileHeight = xmlHelper.GetIntAttribute("tileheight");
@@ -151,7 +155,6 @@ namespace TileMapEditor.Format
             xmlHelper.AdvanceStartElement("image");
             string imageSource = xmlHelper.GetAttribute("source");
             xmlHelper.AdvanceEndElement("image");
-
             
             Size sheetSize = new Size();
             try
@@ -168,10 +171,27 @@ namespace TileMapEditor.Format
             }
 
             TileSheet tileSheet = new TileSheet(id, map, imageSource, sheetSize, tileSize);
+            tileSheet.Properties["@FirstGid"] = firstGid;
             tileSheet.Margin = margin;
             tileSheet.Spacing = spacing;
 
-            //LoadProperties(xmlHelper, tileSheet);
+            // properties at tile level within tile sets not supported
+            // but are mapped as prefixed properties at tile sheet level
+            XmlNodeType xmlNodeType = xmlHelper.AdvanceNode();
+            while (xmlNodeType == XmlNodeType.Element && xmlHelper.XmlReader.Name == "tile")
+            {
+                int tileId = xmlHelper.GetIntAttribute("id");
+                xmlHelper.AdvanceNamedNode(XmlNodeType.Element, "properties");
+                Component dummyComponent = new DummyComponent();
+                LoadProperties(xmlHelper, dummyComponent);
+                xmlHelper.AdvanceEndElement("tile");
+
+                foreach (string propertyName in dummyComponent.Properties.Keys)
+                {
+                    tileSheet.Properties["@Tile@" + tileId + "@" + propertyName]
+                        = dummyComponent.Properties[propertyName];
+                }
+            }
 
             xmlHelper.AdvanceEndElement("tileset");
 
@@ -413,7 +433,9 @@ namespace TileMapEditor.Format
                 if (xmlNodeType == XmlNodeType.EndElement)
                     break;
 
-                if (xmlReader.Name == "tileset")
+                if (xmlReader.Name == "properties")
+                    LoadProperties(xmlHelper, map);
+                else if (xmlReader.Name == "tileset")
                     LoadTileSet(xmlHelper, map);
                 else if (xmlReader.Name == "layer")
                     LoadLayer(xmlHelper, map);
