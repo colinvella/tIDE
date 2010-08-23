@@ -234,21 +234,39 @@ namespace TileMapEditor.Format
 
         private void LoadLayer(XmlHelper xmlHelper, Map map)
         {
-            string id = xmlHelper.GetAttribute("Id");
+            if (map.TileSheets.Count == 0)
+                throw new Exception("Must load at least one tileset to determine layer tile size");
 
-            xmlHelper.AdvanceStartElement("Description");
-            string description = xmlHelper.GetCData();
-            xmlHelper.AdvanceEndElement("Description");
+            string id = xmlHelper.GetAttribute("name");
 
-            xmlHelper.AdvanceStartElement("Dimensions");
-            Size layerSize = Size.FromString(xmlHelper.GetAttribute("LayerSize"));
-            Size tileSize = Size.FromString(xmlHelper.GetAttribute("TileSize"));
-            xmlHelper.AdvanceEndElement("Dimensions");
+            int layerWidth = xmlHelper.GetIntAttribute("width");
+            int layerHeight = xmlHelper.GetIntAttribute("height");
+            Size layerSize = new Size(layerWidth, layerHeight);
+
+            // must assume tile size from first tile set
+            Size tileSize = map.TileSheets[0].TileSize;
 
             Layer layer = new Layer(id, map, layerSize, tileSize);
-            layer.Description = description;
 
-            xmlHelper.AdvanceStartElement("TileArray");
+            // load properties if available
+            XmlNodeType xmlNodeType = xmlHelper.AdvanceNode();
+            if (xmlNodeType == XmlNodeType.Element && xmlHelper.XmlReader.Name == "properties")
+            {
+                LoadProperties(xmlHelper, layer);
+
+                // try to obtain layer description via custom property
+                if (layer.Properties.ContainsKey("@Description"))
+                    layer.Description = layer.Properties["@Description"];
+
+                xmlHelper.AdvanceStartElement("data");
+            }
+            else if (xmlNodeType != XmlNodeType.Element || xmlHelper.XmlReader.Name != "data")
+                throw new Exception("The element <properties> or <data> expected");
+
+            string dataEncoding = xmlHelper.GetAttribute("encoding", "xml");
+            string dataCompression = xmlHelper.GetAttribute("compression", "none");
+
+            // CONTINUE HERE
 
             Location tileLocation = Location.Origin;
             TileSheet tileSheet = null;
@@ -441,7 +459,9 @@ namespace TileMapEditor.Format
                     LoadLayer(xmlHelper, map);
             }
 
-            LoadProperties(xmlHelper, map);
+            // try to obtain map description via custom property
+            if (map.Properties.ContainsKey("@Description"))
+                map.Description = map.Properties["@Description"];
 
             return map;
         }
