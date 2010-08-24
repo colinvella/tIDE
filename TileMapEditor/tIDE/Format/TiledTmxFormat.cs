@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Xml;
@@ -246,7 +247,21 @@ namespace TileMapEditor.Format
             }
             else if (dataCompression == "gzip")
             {
-                throw new Exception("GZIP compression not supported");
+                GZipStream inGZipStream = new GZipStream(
+                    new MemoryStream(dataBytes), CompressionMode.Decompress);
+
+                MemoryStream outMemoryStream = new MemoryStream();
+
+                byte[] buffer = new byte[1024];
+                while (true)
+                {
+                    int bytesRead = inGZipStream.Read(buffer, 0, buffer.Length);
+                    if (bytesRead == 0)
+                        break;
+                    outMemoryStream.Write(buffer, 0, bytesRead);
+                }
+
+                dataBytes = outMemoryStream.ToArray();
             }
             else if (dataCompression == "zlib")
             {
