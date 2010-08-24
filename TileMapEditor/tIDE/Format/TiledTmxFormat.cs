@@ -49,24 +49,6 @@ namespace TileMapEditor.Format
             xmlWriter.WriteEndElement();
         }
 
-        private StaticTile LoadStaticTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
-        {
-            int tileIndex = xmlHelper.GetIntAttribute("Index");
-            BlendMode blendMode
-                = xmlHelper.GetAttribute("BlendMode") == BlendMode.Alpha.ToString()
-                    ? BlendMode.Alpha : BlendMode.Additive;
-
-            StaticTile staticTile = new StaticTile(layer, tileSheet, blendMode, tileIndex);
-
-            if (!xmlHelper.XmlReader.IsEmptyElement)
-            {
-                LoadProperties(xmlHelper, staticTile);
-                xmlHelper.AdvanceEndElement("Static");
-            }
-
-            return staticTile;
-        }
-
         private void StoreStaticTile(StaticTile staticTile, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement("Static");
@@ -77,36 +59,6 @@ namespace TileMapEditor.Format
                 StoreProperties(staticTile, xmlWriter);
 
             xmlWriter.WriteEndElement();
-        }
-
-        private AnimatedTile LoadAnimatedTile(XmlHelper xmlHelper, Layer layer, TileSheet tileSheet)
-        {
-            int frameInterval = xmlHelper.GetIntAttribute("Interval");
-
-            xmlHelper.AdvanceStartElement("Frames");
-
-            Map map = layer.Map;
-            List<StaticTile> tileFrames = new List<StaticTile>();
-
-            while (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
-            {
-                if (xmlHelper.XmlReader.Name == "Static")
-                    tileFrames.Add(LoadStaticTile(xmlHelper, layer, tileSheet));
-                else if (xmlHelper.XmlReader.Name == "TileSheet")
-                {
-                    string tileSheetRef = xmlHelper.GetAttribute("Ref");
-                    tileSheet = map.GetTileSheet(tileSheetRef);
-                }
-            }
-
-            AnimatedTile animatedTile
-                = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
-
-            // end of this element or optional props
-            if (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
-                LoadProperties(xmlHelper, animatedTile);
-
-            return animatedTile;
         }
 
         private void StoreAnimatedTile(AnimatedTile animatedTile, XmlWriter xmlWriter)
@@ -237,7 +189,7 @@ namespace TileMapEditor.Format
             }
         }
 
-        private Tile CreateTile(Layer layer, int gid)
+        private Tile LoadStaticTile(Layer layer, int gid)
         {
             TileSheet selectedTileSheet = null;
             int tileIndex = -1;
@@ -269,7 +221,7 @@ namespace TileMapEditor.Format
             {
                 int gid = xmlHelper.GetIntAttribute("gid");
 
-                layer.Tiles[tileLocation] = CreateTile(layer, gid);
+                layer.Tiles[tileLocation] = LoadStaticTile(layer, gid);
 
                 ++tileLocation.X;
                 if (tileLocation.X >= layer.LayerSize.Width)
@@ -304,13 +256,13 @@ namespace TileMapEditor.Format
             XmlReader xmlReader = xmlHelper.XmlReader;
 
             string csvData = xmlReader.Value;
-            string[] csvElements = csvData.Split(new char[] { ',', '\r', '\n', '\t' });
+            string[] csvElements = csvData.Split(new char[] { ',', '\r', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string csvElement in csvElements)
             {
                 int gid = int.Parse(csvElement);
 
-                layer.Tiles[tileLocation] = CreateTile(layer, gid);
+                layer.Tiles[tileLocation] = LoadStaticTile(layer, gid);
 
                 ++tileLocation.X;
                 if (tileLocation.X >= layer.LayerSize.Width)
