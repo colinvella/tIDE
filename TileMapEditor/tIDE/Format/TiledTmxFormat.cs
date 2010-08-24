@@ -276,17 +276,10 @@ namespace TileMapEditor.Format
                 while (true)
                 {
                     int bytesRead = inZInputStream.Read(buffer, 0, buffer.Length);
-                    if (bytesRead <= 0)
+                    if (bytesRead == 0)
                         break;
                     outMemoryStream.Write(buffer, 0, bytesRead);
                 }
-
-                /*
-                int dataByte = 0;
-                while ((dataByte = inZInputStream.Read()) != -1)
-                {
-                    outMemoryStream.WriteByte((byte) dataByte);
-                }*/
 
                 dataBytes = outMemoryStream.ToArray();
             }

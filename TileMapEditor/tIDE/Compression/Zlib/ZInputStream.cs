@@ -157,7 +157,7 @@ namespace TileMapEditor.Compression.Zlib
 				if (err != zlibConst.Z_OK && err != zlibConst.Z_STREAM_END)
 					throw new ZStreamException((compress?"de":"in") + "flating: " + z.msg);
 				if (nomoreinput && (z.avail_out == len))
-					return (- 1);
+					return (0);
 			}
 			while (z.avail_out == len && err == zlibConst.Z_OK);
 			//System.err.print("("+(len-z.avail_out)+")");
