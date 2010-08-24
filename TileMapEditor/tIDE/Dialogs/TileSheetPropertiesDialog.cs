@@ -261,7 +261,7 @@ namespace TileMapEditor.Dialogs
 
             try
             {
-                m_bitmapImageSource = LoadUnlockedBitmap(m_tileSheet.ImageSource);
+                m_bitmapImageSource = LoadUnlockedBitmap(m_textBoxImageSource.Text);
                 m_customTabControl.SelectedTab = m_tabAlignment;
             }
             catch (Exception exception)
