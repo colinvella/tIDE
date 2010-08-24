@@ -14,6 +14,8 @@ using XTile.ObjectModel;
 using XTile.Layers;
 using XTile.Tiles;
 
+using TileMapEditor.Compression.Zlib;
+
 namespace TileMapEditor.Format
 {
     internal class TiledTmxFormat: IMapFormat
@@ -265,7 +267,28 @@ namespace TileMapEditor.Format
             }
             else if (dataCompression == "zlib")
             {
-                throw new Exception("ZLIB compression not supported");
+                ZInputStream inZInputStream = new ZInputStream(
+                    new MemoryStream(dataBytes));
+
+                MemoryStream outMemoryStream = new MemoryStream();
+
+                byte[] buffer = new byte[1024];
+                while (true)
+                {
+                    int bytesRead = inZInputStream.Read(buffer, 0, buffer.Length);
+                    if (bytesRead <= 0)
+                        break;
+                    outMemoryStream.Write(buffer, 0, bytesRead);
+                }
+
+                /*
+                int dataByte = 0;
+                while ((dataByte = inZInputStream.Read()) != -1)
+                {
+                    outMemoryStream.WriteByte((byte) dataByte);
+                }*/
+
+                dataBytes = outMemoryStream.ToArray();
             }
             else
                 throw new Exception("Unknown compression scheme: " + dataCompression);

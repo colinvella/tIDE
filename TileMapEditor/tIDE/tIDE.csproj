@@ -108,6 +108,20 @@
     <Compile Include="Commands\EditPasteCommand.cs" />
     <Compile Include="Commands\ToolsPlaceTileCommand.cs" />
     <Compile Include="Commands\ToolsSelectCommand.cs" />
+    <Compile Include="Compression\Zlib\Adler32.cs" />
+    <Compile Include="Compression\Zlib\Deflate.cs" />
+    <Compile Include="Compression\Zlib\InfBlocks.cs" />
+    <Compile Include="Compression\Zlib\InfCodes.cs" />
+    <Compile Include="Compression\Zlib\Inflate.cs" />
+    <Compile Include="Compression\Zlib\InfTree.cs" />
+    <Compile Include="Compression\Zlib\StaticTree.cs" />
+    <Compile Include="Compression\Zlib\SupportClass.cs" />
+    <Compile Include="Compression\Zlib\Tree.cs" />
+    <Compile Include="Compression\Zlib\ZInputStream.cs" />
+    <Compile Include="Compression\Zlib\Zlib.cs" />
+    <Compile Include="Compression\Zlib\ZOutputStream.cs" />
+    <Compile Include="Compression\Zlib\ZStream.cs" />
+    <Compile Include="Compression\Zlib\ZStreamException.cs" />
     <Compile Include="Controls\CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
