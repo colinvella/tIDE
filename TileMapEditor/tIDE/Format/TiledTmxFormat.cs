@@ -234,23 +234,54 @@ namespace TileMapEditor.Format
 
         private void LoadLayerDataBase64(XmlHelper xmlHelper, Layer layer, string dataCompression)
         {
+            xmlHelper.AdvanceNode(XmlNodeType.Text);
+
+            string base64Data = xmlHelper.XmlReader.Value;
+
+            byte[] dataBytes = System.Convert.FromBase64String(base64Data);
+
             if (dataCompression == "none")
             {
+                // do nothing
             }
             else if (dataCompression == "gzip")
             {
+                throw new Exception("GZIP compression not supported");
             }
             else if (dataCompression == "zlib")
             {
+                throw new Exception("ZLIB compression not supported");
             }
             else
-                throw new Exception("Unsupported compression scheme: " + dataCompression);
+                throw new Exception("Unknown compression scheme: " + dataCompression);
+
+            if (dataBytes.Length % 4 != 0)
+                throw new Exception("Base64 byte stream size must be a mutliple of 4 bytes");
+
+            Location tileLocation = Location.Origin;
+            for (int byteIndex = 0; byteIndex < dataBytes.Length; byteIndex += 4)
+            {
+                int gid =
+                    dataBytes[byteIndex] |
+                    dataBytes[byteIndex + 1] << 8 |
+                    dataBytes[byteIndex + 2] << 16 |
+                    dataBytes[byteIndex + 3] << 24;
+
+                layer.Tiles[tileLocation] = LoadStaticTile(layer, gid);
+
+                ++tileLocation.X;
+                if (tileLocation.X >= layer.LayerSize.Width)
+                {
+                    tileLocation.X = 0;
+                    ++tileLocation.Y;
+                }
+            }
+
+            xmlHelper.AdvanceEndElement("data");
         }
 
         private void LoadLayerDataCsv(XmlHelper xmlHelper, Layer layer)
         {
-            Location tileLocation = Location.Origin;
-
             xmlHelper.AdvanceNode(XmlNodeType.Text);
 
             XmlReader xmlReader = xmlHelper.XmlReader;
@@ -258,6 +289,7 @@ namespace TileMapEditor.Format
             string csvData = xmlReader.Value;
             string[] csvElements = csvData.Split(new char[] { ',', '\r', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
 
+            Location tileLocation = Location.Origin;
             foreach (string csvElement in csvElements)
             {
                 int gid = int.Parse(csvElement);
