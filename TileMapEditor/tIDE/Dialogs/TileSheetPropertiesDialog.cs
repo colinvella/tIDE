@@ -46,6 +46,7 @@ namespace TileMapEditor.Dialogs
             using (Bitmap lockedBitmap = new Bitmap(filename))
             {
                 unlockedBitmap = new Bitmap(lockedBitmap.Width, lockedBitmap.Height, lockedBitmap.PixelFormat);
+                unlockedBitmap.SetResolution(lockedBitmap.HorizontalResolution, lockedBitmap.VerticalResolution);
                 using (Graphics graphics = Graphics.FromImage(unlockedBitmap))
                 {
                     graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
