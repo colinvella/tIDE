@@ -408,10 +408,13 @@ namespace TileMapEditor.Format
             int layerHeight = xmlHelper.GetIntAttribute("height");
             Size layerSize = new Size(layerWidth, layerHeight);
 
+            int visible = xmlHelper.GetIntAttribute("visible", 1);
+
             // must assume tile size from first tile set
             Size tileSize = map.TileSheets[0].TileSize;
 
             Layer layer = new Layer(id, map, layerSize, tileSize);
+            layer.Visible = visible > 0;
 
             // load properties if available
             XmlNodeType xmlNodeType = xmlHelper.AdvanceNode();
@@ -445,92 +448,172 @@ namespace TileMapEditor.Format
             map.AddLayer(layer);
         }
 
-        private void StoreLayer(Layer layer, XmlWriter xmlWriter)
+        private byte[] ConvertTileIndicesToBytes(List<int> tileIndices)
         {
-            xmlWriter.WriteStartElement("Layer");
-            xmlWriter.WriteAttributeString("Id", layer.Id);
-
-            xmlWriter.WriteStartElement("Description");
-            xmlWriter.WriteCData(layer.Description);
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.WriteStartElement("Dimensions");
-            xmlWriter.WriteAttributeString("LayerSize", layer.LayerSize.ToString());
-            xmlWriter.WriteAttributeString("TileSize", layer.TileSize.ToString());
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.WriteStartElement("TileArray");
-
-            TileSheet previousTileSheet = null;
-            int nullCount = 0;
-
-            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+            byte[] tileBytes = new byte[tileIndices.Count * 4];
+            int byteIndex = 0;
+            foreach (int tileIndex in tileIndices)
             {
-                xmlWriter.WriteStartElement("Row");
-
-                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
-                {
-                    Tile currentTile = layer.Tiles[tileX, tileY];
-
-                    if (currentTile == null)
-                    {
-                        ++nullCount;
-                        continue;
-                    }
-                    else if (nullCount > 0)
-                    {
-                        xmlWriter.WriteStartElement("Null");
-                        xmlWriter.WriteAttributeString("Count", nullCount.ToString());
-                        xmlWriter.WriteEndElement();
-                        nullCount = 0;
-                    }
-
-                    TileSheet currentTileSheet = currentTile.TileSheet;
-
-                    if (previousTileSheet != currentTileSheet)
-                    {
-                        xmlWriter.WriteStartElement("TileSheet");
-                        xmlWriter.WriteAttributeString("Ref", currentTileSheet == null ? "" : currentTileSheet.Id);
-                        xmlWriter.WriteEndElement();
-
-                        previousTileSheet = currentTileSheet;
-                    }
-
-                    if (currentTile is StaticTile)
-                    {
-                        StoreStaticTile((StaticTile)currentTile, xmlWriter);
-                    }
-                    else if (currentTile is AnimatedTile)
-                    {
-                        AnimatedTile animatedTile = (AnimatedTile)currentTile;
-                        StoreAnimatedTile(animatedTile, xmlWriter);
-                    }
-                }
-
-                if (nullCount > 0)
-                {
-                    xmlWriter.WriteStartElement("Null");
-                    xmlWriter.WriteAttributeString("Count", nullCount.ToString());
-                    xmlWriter.WriteEndElement();
-                    nullCount = 0;
-                }
-
-                // row closing tag
-                xmlWriter.WriteEndElement();
+                tileBytes[byteIndex] = (byte)(tileIndex & 0xFF);
+                tileBytes[++byteIndex] = (byte)((tileIndex >> 8) & 0xFF);
+                tileBytes[++byteIndex] = (byte)((tileIndex >> 16) & 0xFF);
+                tileBytes[++byteIndex] = (byte)((tileIndex >> 24) & 0xFF);
             }
 
-            // tile array closing tag
-            xmlWriter.WriteEndElement();
+            return tileBytes;
+        }
 
+        private void StoreLayerDataXml(List<int> tileIndices, XmlWriter xmlWriter)
+        {
+            foreach (int tileIndex in tileIndices)
+            {
+                xmlWriter.WriteStartElement("tile");
+                xmlWriter.WriteAttributeString("gid", tileIndex.ToString());
+                xmlWriter.WriteEndElement();
+            }
+        }
+
+        private void StoreLayerDataBase64(List<int> tileIndices, XmlWriter xmlWriter, string dataCompression)
+        {
+            byte[] tileBytes = ConvertTileIndicesToBytes(tileIndices);
+
+            if (dataCompression == "none")
+            {
+                string base64Data = Convert.ToBase64String(tileBytes);
+                xmlWriter.WriteString(base64Data);
+            }
+            else if (dataCompression == "gzip")
+            {
+                MemoryStream inMemoryStream = new MemoryStream(tileBytes);
+                MemoryStream outMemoryStream = new MemoryStream();
+                GZipStream outGZipStream = new GZipStream(outMemoryStream, CompressionMode.Compress);
+
+                byte[] buffer = new byte[1024];
+                while (true)
+                {
+                    int bytesRead = inMemoryStream.Read(buffer, 0, buffer.Length);
+                    if (bytesRead == 0)
+                        break;
+                    outGZipStream.Write(buffer, 0, bytesRead);
+                }
+
+                byte[] compressedBytes = outMemoryStream.ToArray();
+                string base64Data = Convert.ToBase64String(compressedBytes);
+                xmlWriter.WriteString(base64Data);
+            }
+            else if (dataCompression == "zlib")
+            {
+                //TODO
+            }
+        }
+
+        private void StoreLayerDataCsv(List<int> tileIndices, XmlWriter xmlWriter)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (int tileIndex in tileIndices)
+            {
+                if (stringBuilder.Length > 0)
+                    stringBuilder.Append(',');
+                stringBuilder.Append(tileIndex);
+            }
+            xmlWriter.WriteString(stringBuilder.ToString());
+        }
+
+        private void StoreLayer(Layer layer, XmlWriter xmlWriter, TmxEncoding tmxEncoding)
+        {
+            xmlWriter.WriteStartElement("layer");
+
+            xmlWriter.WriteAttributeString("name", layer.Id);
+            xmlWriter.WriteAttributeString("width", layer.LayerSize.Width.ToString());
+            xmlWriter.WriteAttributeString("height", layer.LayerSize.Height.ToString());
+
+            // visible by default - specify property otherwise
+            if (!layer.Visible)
+                xmlWriter.WriteAttributeString("visible", "0");
+
+            // handle description as custom property
+            layer.Properties["@Description"] = layer.Description;
+
+            // store properties
             StoreProperties(layer, xmlWriter);
 
+            xmlWriter.WriteStartElement("data");
+
+            switch (tmxEncoding)
+            {
+                case TmxEncoding.Xml:
+                    xmlWriter.WriteAttributeString("encoding", "xml");
+                    break;
+                case TmxEncoding.Base64:
+                    xmlWriter.WriteAttributeString("encoding", "base64");
+                    break;
+                case TmxEncoding.Base64Gzip:
+                    xmlWriter.WriteAttributeString("encoding", "base64");
+                    xmlWriter.WriteAttributeString("compression", "gzip");
+                    break;
+                case TmxEncoding.Base64Zlib:
+                    xmlWriter.WriteAttributeString("encoding", "base64");
+                    xmlWriter.WriteAttributeString("compression", "zlib");
+                    break;
+                case TmxEncoding.Csv:
+                    xmlWriter.WriteAttributeString("encoding", "csv");
+                    break;
+            }
+
+            // annotate tilesheets with first gid to simplify mapping
+            int firstGid = 1;
+            foreach (TileSheet tileSheet in layer.Map.TileSheets)
+            {
+                tileSheet.Properties["@FirstGid"] = firstGid;
+                firstGid += tileSheet.TileCount;
+            }
+
+            // convert to TMX tile indices using firstGid of each tile set
+            List<int> tileIndices = new List<int>();
+            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+            {
+                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                {
+                    Tile tile = layer.Tiles[tileX, tileY];
+
+                    int tileIndex = 0; // null tile index
+                    if (tile != null)
+                        tileIndex = tile.TileIndex + tile.TileSheet.Properties["@FirstGid"];
+
+                    tileIndices.Add(tileIndex);
+                }
+            }
+
+            switch (tmxEncoding)
+            {
+                case TmxEncoding.Xml:
+                    StoreLayerDataXml(tileIndices, xmlWriter);
+                    break;
+                case TmxEncoding.Base64:
+                    StoreLayerDataBase64(tileIndices, xmlWriter, "none");
+                    break;
+                case TmxEncoding.Base64Gzip:
+                    StoreLayerDataBase64(tileIndices, xmlWriter, "gzip");
+                    break;
+                case TmxEncoding.Base64Zlib:
+                    StoreLayerDataBase64(tileIndices, xmlWriter, "zlib");
+                    break;
+                case TmxEncoding.Csv:
+                    xmlWriter.WriteAttributeString("encoding", "csv");
+                    break;
+            }
+
+            // data closing tag
+            xmlWriter.WriteEndElement();
+
+            // layer closing tag
             xmlWriter.WriteEndElement();
         }
 
-        private void StoreLayers(ReadOnlyCollection<Layer> layers, XmlWriter xmlTextWriter)
+        private void StoreLayers(ReadOnlyCollection<Layer> layers, XmlWriter xmlTextWriter, TmxEncoding tmxEncoding)
         {
             foreach (Layer layer in layers)
-                StoreLayer(layer, xmlTextWriter);
+                StoreLayer(layer, xmlTextWriter, tmxEncoding);
         }
 
         internal TiledTmxFormat()
@@ -642,7 +725,7 @@ namespace TileMapEditor.Format
 
             StoreTileSets(map.TileSheets, xmlWriter);
 
-            StoreLayers(map.Layers, xmlWriter);
+            StoreLayers(map.Layers, xmlWriter, tmxEncoding);
 
             xmlWriter.WriteEndElement();
 
