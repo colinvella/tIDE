@@ -488,6 +488,8 @@ namespace TileMapEditor.Format
             // spacing must be equal x, y
             // margin must be equal x, y
 
+            // tile properties lost
+
             List<CompatibilityNote> compatibilityNotes = new List<CompatibilityNote>();
             compatibilityNotes.Add(
                 new CompatibilityNote(CompatibilityLevel.None, "This format is still work in progress"));
@@ -529,6 +531,8 @@ namespace TileMapEditor.Format
                     LoadTileSet(xmlHelper, map);
                 else if (xmlReader.Name == "layer")
                     LoadLayer(xmlHelper, map);
+                else
+                    xmlHelper.SkipToEndElement(xmlReader.Name);
             }
 
             // try to obtain map description via custom property

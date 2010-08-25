@@ -84,6 +84,12 @@ namespace XTile.Format
             AdvanceNamedNode(XmlNodeType.EndElement, elementName);
         }
 
+        public void SkipToEndElement(string elementName)
+        {
+            while (m_xmlReader.NodeType != XmlNodeType.EndElement || m_xmlReader.Name != elementName)
+                AdvanceNode();
+        }
+
         public string GetAttribute(string attributeName)
         {
             if (!m_xmlReader.HasAttributes)
