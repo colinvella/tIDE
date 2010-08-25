@@ -32,7 +32,7 @@ namespace TileMapEditor.Format
                     break;
             }
 
-            int levels = basePath.Split(new char[] { Path.DirectorySeparatorChar }).Length;
+            int levels = basePath.Split(new char[] { Path.DirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries).Length;
             while (levels-- > 0)
                 absolutePath = ".." + Path.DirectorySeparatorChar + absolutePath;
 

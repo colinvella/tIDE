@@ -66,45 +66,6 @@ namespace TileMapEditor.Format
             xmlWriter.WriteEndElement();
         }
 
-        private void StoreStaticTile(StaticTile staticTile, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement("Static");
-            xmlWriter.WriteAttributeString("Index", staticTile.TileIndex.ToString());
-            xmlWriter.WriteAttributeString("BlendMode", staticTile.BlendMode.ToString());
-
-            if (staticTile.Properties.Count > 0)
-                StoreProperties(staticTile, xmlWriter);
-
-            xmlWriter.WriteEndElement();
-        }
-
-        private void StoreAnimatedTile(AnimatedTile animatedTile, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement("Animated");
-            xmlWriter.WriteAttributeString("Interval", animatedTile.FrameInterval.ToString());
-
-            xmlWriter.WriteStartElement("Frames");
-            TileSheet tileSheet = null;
-            foreach (StaticTile tileFrame in animatedTile.TileFrames)
-            {
-                if (tileSheet != tileFrame.TileSheet)
-                {
-                    xmlWriter.WriteStartElement("TileSheet");
-                    xmlWriter.WriteAttributeString("Ref", tileFrame.TileSheet.Id);
-                    xmlWriter.WriteEndElement();
-
-                    tileSheet = tileFrame.TileSheet;
-                }
-                StoreStaticTile(tileFrame, xmlWriter);
-            }
-            xmlWriter.WriteEndElement(); // Frames
-
-            if (animatedTile.Properties.Count > 0)
-                StoreProperties(animatedTile, xmlWriter);
-
-            xmlWriter.WriteEndElement();
-        }
-
         private void LoadTileSet(XmlHelper xmlHelper, Map map)
         {
             string id = xmlHelper.GetAttribute("name");
@@ -641,21 +602,79 @@ namespace TileMapEditor.Format
 
         public CompatibilityReport DetermineCompatibility(Map map)
         {
-            // TODO
-
-            // all layer sizes same
-            // all tile sizes same
-
-            // spacing must be equal x, y
-            // margin must be equal x, y
-
-            // tile properties lost
-            // object groups lost
-            // tileset tile properties may be preserved
-
             List<CompatibilityNote> compatibilityNotes = new List<CompatibilityNote>();
+
+            // check that margin values and spacign values are equal since
+            // TMX does not distinguish between vertical/horizontal values
+            foreach (TileSheet tileSheet in  map.TileSheets)
+            {
+                if (!tileSheet.Margin.Square)
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None,
+                            "Tilesheet " + tileSheet.Id + ": Margin values (" + tileSheet.Margin + ") are not equal"));
+
+                if (!tileSheet.Spacing.Square)
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None,
+                            "Tilesheet " + tileSheet.Id + ": Spacing values (" + tileSheet.Margin + ") are not equal"));
+            }
+
+            if (map.Layers.Count > 0)
+            {
+                Layer firstLayer = map.Layers[0];
+
+                bool layerWidthMismatch = false;
+                bool layerHeightMismatch = false;
+                bool tileWidthMismatch = false;
+                bool tileHeightMismatch = false;
+                foreach (Layer layer in map.Layers)
+                {
+                    if (layer == firstLayer)
+                        continue;
+
+                    if (layer.LayerSize.Width != firstLayer.LayerSize.Width)
+                        layerWidthMismatch = true;
+                    if (layer.LayerSize.Height != firstLayer.LayerSize.Height)
+                        layerHeightMismatch = true;
+
+                    if (layer.TileSize.Width != firstLayer.TileSize.Width)
+                        tileWidthMismatch = true;
+                    if (layer.TileSize.Height != firstLayer.TileSize.Height)
+                        tileHeightMismatch = true;
+                }
+
+                if (layerWidthMismatch)
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None,
+                            "Layer widths do not match across all layers"));
+                if (layerHeightMismatch)
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None,
+                            "Layer heights do not match across all layers"));
+
+                if (tileWidthMismatch)
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None, 
+                            "Tile widths do not match across all layers"));
+                if (tileHeightMismatch)
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None, 
+                            "Tile heights do not match across all layers"));
+            }
+
+            // description fields
             compatibilityNotes.Add(
-                new CompatibilityNote(CompatibilityLevel.Partial, "This format is still work in progress"));
+                new CompatibilityNote(CompatibilityLevel.Partial,
+                    "Map and layer description fields are preserved as custom properties named '@Description'. These properties are recognised and restored by tIDE"));
+
+            // tile properties in layers lost
+            compatibilityNotes.Add(
+                new CompatibilityNote(CompatibilityLevel.Partial, "Custom tile properties within layers are not supported"));
+
+            // TMX object layers
+            compatibilityNotes.Add(
+                new CompatibilityNote(CompatibilityLevel.Partial, "TMX object layers are lost on import"));
+
             return new CompatibilityReport(compatibilityNotes);
         }
 
@@ -740,10 +759,18 @@ namespace TileMapEditor.Format
             xmlWriter.WriteAttributeString("tilewidth", tileWidth.ToString());
             xmlWriter.WriteAttributeString("tileheight", tileHeight.ToString());
 
+            // preserve tIDE map description as TMX map property
+            if (map.Description.Length > 0)
+                map.Properties["@Description"] = map.Description;
+
             StoreProperties(map, xmlWriter);
 
+            map.Properties.Remove("@Description");
+
+            // store tile sets
             StoreTileSets(map.TileSheets, xmlWriter);
 
+            // store layers
             StoreLayers(map.Layers, xmlWriter, tmxEncoding);
 
             xmlWriter.WriteEndElement();
