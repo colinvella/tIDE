@@ -216,6 +216,9 @@ namespace TileMapEditor.Format
 
         private Tile LoadStaticTile(Layer layer, int gid)
         {
+            if (gid == 0)
+                return null;
+
             TileSheet selectedTileSheet = null;
             int tileIndex = -1;
             foreach (TileSheet tileSheet in layer.Map.TileSheets)

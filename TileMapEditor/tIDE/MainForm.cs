@@ -472,6 +472,9 @@ namespace TileMapEditor
                 m_commandHistory.Clear();
 
                 UpdateAllControls();
+
+                // push to top of recent file list
+                RecentFilesManager.Instance.StoreFilename(filename);
             }
             catch (Exception exception)
             {
