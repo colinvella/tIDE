@@ -8,6 +8,9 @@ namespace TileMapEditor.Format
         public static string GetRelativePath(string basePath, string absolutePath)
         {
             basePath = basePath.Trim();
+            if (basePath.Length > 0 && !basePath.EndsWith(Path.DirectorySeparatorChar + ""))
+                basePath += Path.DirectorySeparatorChar;
+
             absolutePath = absolutePath.Trim();
 
             if (!Path.IsPathRooted(basePath) || !Path.IsPathRooted(absolutePath))
