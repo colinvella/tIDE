@@ -226,6 +226,8 @@ namespace TileMapEditor.Format
                 xmlWriter.WriteAttributeString("name", tilePropertyName);
                 xmlWriter.WriteAttributeString("value", tilePropertyValue);
                 xmlWriter.WriteEndElement();
+
+                lastTileIndex = tileIndex;
             }
 
             if (lastTileIndex != -1)
@@ -454,10 +456,10 @@ namespace TileMapEditor.Format
             int byteIndex = 0;
             foreach (int tileIndex in tileIndices)
             {
-                tileBytes[byteIndex] = (byte)(tileIndex & 0xFF);
-                tileBytes[++byteIndex] = (byte)((tileIndex >> 8) & 0xFF);
-                tileBytes[++byteIndex] = (byte)((tileIndex >> 16) & 0xFF);
-                tileBytes[++byteIndex] = (byte)((tileIndex >> 24) & 0xFF);
+                tileBytes[byteIndex++] = (byte)(tileIndex & 0xFF);
+                tileBytes[byteIndex++] = (byte)((tileIndex >> 8) & 0xFF);
+                tileBytes[byteIndex++] = (byte)((tileIndex >> 16) & 0xFF);
+                tileBytes[byteIndex++] = (byte)((tileIndex >> 24) & 0xFF);
             }
 
             return tileBytes;
@@ -496,6 +498,7 @@ namespace TileMapEditor.Format
                         break;
                     outGZipStream.Write(buffer, 0, bytesRead);
                 }
+                outGZipStream.Close();
 
                 byte[] compressedBytes = outMemoryStream.ToArray();
                 string base64Data = Convert.ToBase64String(compressedBytes);
