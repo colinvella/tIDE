@@ -506,7 +506,23 @@ namespace TileMapEditor.Format
             }
             else if (dataCompression == "zlib")
             {
-                //TODO
+                MemoryStream inMemoryStream = new MemoryStream(tileBytes);
+                MemoryStream outMemoryStream = new MemoryStream();
+                ZOutputStream zOutputStream = new ZOutputStream(outMemoryStream, 9);
+
+                byte[] buffer = new byte[1024];
+                while (true)
+                {
+                    int bytesRead = inMemoryStream.Read(buffer, 0, buffer.Length);
+                    if (bytesRead == 0)
+                        break;
+                    zOutputStream.Write(buffer, 0, bytesRead);
+                }
+                zOutputStream.Close();
+
+                byte[] compressedBytes = outMemoryStream.ToArray();
+                string base64Data = Convert.ToBase64String(compressedBytes);
+                xmlWriter.WriteString(base64Data);
             }
         }
 
