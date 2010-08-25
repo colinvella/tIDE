@@ -15,9 +15,19 @@ using XTile.Layers;
 using XTile.Tiles;
 
 using TileMapEditor.Compression.Zlib;
+using TileMapEditor.Dialogs;
 
 namespace TileMapEditor.Format
 {
+    public enum TmxEncoding
+    {
+        Xml,
+        Base64,
+        Base64Gzip,
+        Base64Zlib,
+        Csv
+    }
+
     internal class TiledTmxFormat: IMapFormat
     {
         private class DummyComponent : Component
@@ -543,7 +553,7 @@ namespace TileMapEditor.Format
 
             List<CompatibilityNote> compatibilityNotes = new List<CompatibilityNote>();
             compatibilityNotes.Add(
-                new CompatibilityNote(CompatibilityLevel.None, "This format is still work in progress"));
+                new CompatibilityNote(CompatibilityLevel.Partial, "This format is still work in progress"));
             return new CompatibilityReport(compatibilityNotes);
         }
 
@@ -595,6 +605,13 @@ namespace TileMapEditor.Format
 
         public void Store(Map map, Stream stream)
         {
+            TiledFormatOptionsDialog tiledFormatOptionsDialog
+                = new TiledFormatOptionsDialog();
+            if (tiledFormatOptionsDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                throw new Exception("Store operation cancelled by user");
+
+            TmxEncoding tmxEncoding = tiledFormatOptionsDialog.TmxEncoding;
+
             XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
             xmlWriter.Formatting = Formatting.Indented;
 

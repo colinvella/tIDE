@@ -59,10 +59,12 @@
             this.m_cmbDataFormat.Name = "m_cmbDataFormat";
             this.m_cmbDataFormat.Size = new System.Drawing.Size(143, 21);
             this.m_cmbDataFormat.TabIndex = 1;
+            this.m_cmbDataFormat.SelectedIndexChanged += new System.EventHandler(this.OnEncodingSelected);
             // 
             // m_btnOk
             // 
             this.m_btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_btnOk.Enabled = false;
             this.m_btnOk.Location = new System.Drawing.Point(13, 127);
             this.m_btnOk.Name = "m_btnOk";
             this.m_btnOk.Size = new System.Drawing.Size(75, 23);
@@ -92,7 +94,13 @@
             this.Controls.Add(this.m_cmbDataFormat);
             this.Controls.Add(m_lblDataFormat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(300, 200);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "TiledFormatOptionsDialog";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tiled TMX Format Options";
             this.ResumeLayout(false);
             this.PerformLayout();
