@@ -39,6 +39,10 @@ namespace TileMapEditor.Format
 
         private void StoreProperties(Component component, XmlWriter xmlWriter)
         {
+            // properties are an optional element in TMX
+            if (component.Properties.Count == 0)
+                return;
+
             xmlWriter.WriteStartElement("properties");
 
             foreach (KeyValuePair<string, PropertyValue> keyValuePair in component.Properties)
@@ -161,30 +165,75 @@ namespace TileMapEditor.Format
         private void StoreTileSet(TileSheet tileSheet, int firstGid, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement("tileset");
+
             xmlWriter.WriteAttributeString("firstgid", firstGid.ToString());
-            xmlWriter.WriteAttributeString("source", tileSheet.ImageSource);
             xmlWriter.WriteAttributeString("name", tileSheet.Id);
             xmlWriter.WriteAttributeString("tilewidth", tileSheet.TileSize.Width.ToString());
             xmlWriter.WriteAttributeString("tileheight", tileSheet.TileSize.Height.ToString());
-
             xmlWriter.WriteAttributeString("spacing", tileSheet.Spacing.Width.ToString());
             xmlWriter.WriteAttributeString("margin", tileSheet.Margin.Width.ToString());
 
-            xmlWriter.WriteStartElement("Alignment");
-            xmlWriter.WriteAttributeString("SheetSize", tileSheet.SheetSize.ToString());
-            xmlWriter.WriteAttributeString("TileSize", tileSheet.TileSize.ToString());
-            xmlWriter.WriteAttributeString("Margin", tileSheet.Margin.ToString());
-            xmlWriter.WriteAttributeString("Spacing", tileSheet.Spacing.ToString());
+            xmlWriter.WriteStartElement("image");
+            xmlWriter.WriteAttributeString("source", tileSheet.ImageSource);
             xmlWriter.WriteEndElement();
 
-            StoreProperties(tileSheet, xmlWriter);
+            // if tileset tile properties were imported and converted to tilesheet properties,
+            // try to convert them back
+            int lastTileIndex = -1;
+            foreach (string propertyName in tileSheet.Properties.Keys)
+            {
+                if (!propertyName.StartsWith("@Tile@"))
+                    continue;
 
+                string[] tokens = propertyName.Split(new char[] { '@' }, StringSplitOptions.RemoveEmptyEntries);
+                if (tokens.Length != 3)
+                    continue;
+
+                int tileIndex = 0;
+                if (!int.TryParse(tokens[1], out tileIndex))
+                    continue;
+
+                string tilePropertyName = tokens[2];
+                string tilePropertyValue = tileSheet.Properties[propertyName];
+
+                if (tileIndex != lastTileIndex)
+                {
+                    if (lastTileIndex != -1)
+                    {
+                        // properties closing tag
+                        xmlWriter.WriteEndElement();
+
+                        // item closing tag
+                        xmlWriter.WriteEndElement();
+                    }
+
+                    xmlWriter.WriteStartElement("tile");
+                    xmlWriter.WriteAttributeString("id", tileIndex.ToString());
+                    xmlWriter.WriteStartElement("properties");
+                }
+
+                xmlWriter.WriteStartElement("property");
+                xmlWriter.WriteAttributeString("name", tilePropertyName);
+                xmlWriter.WriteAttributeString("value", tilePropertyValue);
+                xmlWriter.WriteEndElement();
+            }
+
+            if (lastTileIndex != -1)
+            {
+                // properties closing tag
+                xmlWriter.WriteEndElement();
+
+                // item closing tag
+                xmlWriter.WriteEndElement();
+            }
+
+            // tileset close tag
             xmlWriter.WriteEndElement();
         }
 
         private void StoreTileSets(ReadOnlyCollection<TileSheet> tileSheets, XmlWriter xmlWriter)
         {
-            int firstGid = 0;
+            int firstGid = 1;
             foreach (TileSheet tileSheet in tileSheets)
             {
                 StoreTileSet(tileSheet, firstGid, xmlWriter);
@@ -489,6 +538,8 @@ namespace TileMapEditor.Format
             // margin must be equal x, y
 
             // tile properties lost
+            // object groups lost
+            // tileset tile properties may be preserved
 
             List<CompatibilityNote> compatibilityNotes = new List<CompatibilityNote>();
             compatibilityNotes.Add(
@@ -544,9 +595,6 @@ namespace TileMapEditor.Format
 
         public void Store(Map map, Stream stream)
         {
-            // not implemented yet
-            throw new Exception("This format is not supported yet");
-
             XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
             xmlWriter.Formatting = Formatting.Indented;
 
@@ -555,6 +603,7 @@ namespace TileMapEditor.Format
             xmlWriter.WriteAttributeString("version", "1.0");
             xmlWriter.WriteAttributeString("orientation", "orthogonal");
 
+            // determine map with from a layer (all assumed same size)
             int mapWidth = 0, mapHeight = 0;
             int tileWidth = 32, tileHeight = 32;
             if (map.Layers.Count > 0)
@@ -572,13 +621,11 @@ namespace TileMapEditor.Format
             xmlWriter.WriteAttributeString("tilewidth", tileWidth.ToString());
             xmlWriter.WriteAttributeString("tileheight", tileHeight.ToString());
 
-            xmlWriter.WriteEndElement();
+            StoreProperties(map, xmlWriter);
 
             StoreTileSets(map.TileSheets, xmlWriter);
 
             StoreLayers(map.Layers, xmlWriter);
-
-            StoreProperties(map, xmlWriter);
 
             xmlWriter.WriteEndElement();
 
