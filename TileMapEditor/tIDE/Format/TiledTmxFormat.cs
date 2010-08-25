@@ -579,7 +579,7 @@ namespace TileMapEditor.Format
                     StoreLayerDataBase64(tileIndices, xmlWriter, "zlib");
                     break;
                 case TmxEncoding.Csv:
-                    xmlWriter.WriteAttributeString("encoding", "csv");
+                    StoreLayerDataCsv(tileIndices, xmlWriter);
                     break;
             }
 
