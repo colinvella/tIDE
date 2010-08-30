@@ -473,6 +473,8 @@ namespace TileMapEditor
 
                 UpdateAllControls();
 
+                AutoTileManager.Instance.Refresh(m_map);
+
                 // push to top of recent file list
                 RecentFilesManager.Instance.StoreFilename(filename);
             }

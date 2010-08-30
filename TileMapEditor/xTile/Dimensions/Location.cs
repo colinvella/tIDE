@@ -187,6 +187,50 @@ namespace XTile.Dimensions
 
         #endregion
 
+        #region Public Properties
+
+        /// <summary>
+        /// A location one unit above and left of this location
+        /// </summary>
+        public Location AboveLeft { get { return new Location(X - 1, Y - 1); } }
+
+        /// <summary>
+        /// A location one unit above this location
+        /// </summary>
+        public Location Above { get { return new Location(X, Y - 1); } }
+
+        /// <summary>
+        /// A location one unit above and right of this location
+        /// </summary>
+        public Location AboveRight { get { return new Location(X + 1, Y - 1); } }
+
+        /// <summary>
+        /// A location one unit left of this location
+        /// </summary>
+        public Location Left { get { return new Location(X - 1, Y); } }
+
+        /// <summary>
+        /// A location one unit right of this location
+        /// </summary>
+        public Location Right { get { return new Location(X + 1, Y); } }
+
+        /// <summary>
+        /// A location one unit below and left of this location
+        /// </summary>
+        public Location BelowLeft { get { return new Location(X - 1, Y + 1); } }
+
+        /// <summary>
+        /// A location one unit below this location
+        /// </summary>
+        public Location Below { get { return new Location(X, Y + 1); } }
+
+        /// <summary>
+        /// A location one unit below and right of this location
+        /// </summary>
+        public Location BelowRight { get { return new Location(X + 1, Y + 1); } }
+
+        #endregion
+
         #region Private Static Variables
 
         private static Location s_origin = new Location(0, 0);

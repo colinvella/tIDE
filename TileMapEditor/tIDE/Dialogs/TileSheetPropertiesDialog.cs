@@ -633,6 +633,8 @@ namespace TileMapEditor.Dialogs
 
             CommandHistory.Instance.Do(command);
 
+            AutoTileManager.Instance.Refresh(m_tileSheet);
+
             m_buttonOk.Enabled = m_buttonApply.Enabled = false;
             m_buttonCancel.Text = "&Close";
             m_buttonCancel.DialogResult = DialogResult.OK;
