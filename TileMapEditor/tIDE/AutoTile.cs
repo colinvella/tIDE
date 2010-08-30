@@ -72,8 +72,8 @@ namespace TileMapEditor
             Location topRight = tileLocation.AboveRight;
             Tile topRightTile = DetermineAdjacentTile(layer, centreIndex,
                 topRight, new int[] { 1 }, new int[] { 2 });
-            if (topLeftTile != null)
-                autoTileAssignments[topLeft] = topLeftTile;
+            if (topRightTile != null)
+                autoTileAssignments[topRight] = topRightTile;
 
             // left
             Location left = tileLocation.Left;
@@ -108,7 +108,7 @@ namespace TileMapEditor
             Tile bottomRightTile = DetermineAdjacentTile(layer, centreIndex,
                 bottomRight, new int[] { 3 }, new int[] { 0 });
             if (bottomRightTile != null)
-                autoTileAssignments[topLeft] = bottomRightTile;
+                autoTileAssignments[bottomRight] = bottomRightTile;
 
             return autoTileAssignments;
         }

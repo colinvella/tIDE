@@ -47,7 +47,6 @@ namespace TileMapEditor
             }
         }
 
-
         public Dictionary<Location, Tile> DetermineTileAssignments(Layer layer, Location tileLocation, StaticTile staticTile)
         {
             Dictionary<Location, Tile> allAssignments = new Dictionary<Location, Tile>();
