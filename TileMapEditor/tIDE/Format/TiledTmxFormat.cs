@@ -91,8 +91,8 @@ namespace TileMapEditor.Format
             {
                 using (System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(imageSource))
                 {
-                    sheetSize.Width = (bitmap.Width - marginValue) / (tileWidth + spacingValue);
-                    sheetSize.Height = (bitmap.Height - marginValue) / (tileHeight + spacingValue);
+                    sheetSize.Width = (bitmap.Width + spacingValue - marginValue) / (tileWidth + spacingValue);
+                    sheetSize.Height = (bitmap.Height + spacingValue - marginValue) / (tileHeight + spacingValue);
                 }
             }
             catch (Exception exception)
