@@ -296,9 +296,6 @@ namespace XTile.Format
             tileSheet.Margin = margin;
             tileSheet.Spacing = spacing;
 
-            xmlHelper.AdvanceStartElement("AutoTiles");
-            xmlHelper.AdvanceEndElement("AutoTiles");
-
             LoadProperties(xmlHelper, tileSheet);
 
             xmlHelper.AdvanceEndElement("TileSheet");
@@ -324,9 +321,6 @@ namespace XTile.Format
             xmlWriter.WriteAttributeString("TileSize", tileSheet.TileSize.ToString());
             xmlWriter.WriteAttributeString("Margin", tileSheet.Margin.ToString());
             xmlWriter.WriteAttributeString("Spacing", tileSheet.Spacing.ToString());
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.WriteStartElement("AutoTiles");
             xmlWriter.WriteEndElement();
 
             StoreProperties(tileSheet, xmlWriter);

@@ -6,28 +6,24 @@
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\Background01.png]]></ImageSource>
       <Alignment SheetSize="2 x 2" TileSize="320 x 240" Margin="0 x 0" Spacing="0 x 0" />
-      <AutoTiles />        
       <Properties />
     </TileSheet>
     <TileSheet Id="Background02">
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\Background02.png]]></ImageSource>
       <Alignment SheetSize="2 x 2" TileSize="320 x 240" Margin="0 x 0" Spacing="0 x 0" />
-      <AutoTiles />
       <Properties />
     </TileSheet>
     <TileSheet Id="Background03">
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\Background03.png]]></ImageSource>
       <Alignment SheetSize="2 x 2" TileSize="320 x 240" Margin="0 x 0" Spacing="0 x 0" />
-      <AutoTiles />
       <Properties />
     </TileSheet>
     <TileSheet Id="TileSheet01">
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\TileSheet01.png]]></ImageSource>
       <Alignment SheetSize="16 x 16" TileSize="32 x 32" Margin="0 x 0" Spacing="0 x 0" />
-      <AutoTiles />
       <Properties>
         <Property Key="CacheTimestamp" Type="String"><![CDATA[2010-05-25-20-35-13]]></Property>
       </Properties>

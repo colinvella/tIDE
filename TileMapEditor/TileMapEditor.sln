@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{5A92BF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TileSheets", "TileSheets", "{FAC8407A-A75A-44EC-8ADB-5D4E46372CF5}"
 	ProjectSection(SolutionItems) = preProject
+		Assets\TileSheets\AutoTiles01.png = Assets\TileSheets\AutoTiles01.png
 		Assets\TileSheets\Background.pdn = Assets\TileSheets\Background.pdn
 		Assets\TileSheets\Background01.png = Assets\TileSheets\Background01.png
 		Assets\TileSheets\Background02.png = Assets\TileSheets\Background02.png
@@ -20,6 +21,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{961826DA-DCD8-4117-92D0-272E551B87F0}"
 	ProjectSection(SolutionItems) = preProject
 		Assets\Maps\Map01.tide = Assets\Maps\Map01.tide
+		Assets\Maps\Map02.tide = Assets\Maps\Map02.tide
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xTilePC", "XTile\xTilePC.csproj", "{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}"
@@ -36,7 +38,7 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 9
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs04.codeplex.com/
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/TFS04
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = TestPlugin\\TestPlugin.csproj
 		SccProjectName1 = TestPlugin
@@ -44,17 +46,17 @@ Global
 		SccProjectUniqueName2 = Plugin\\Plugin.csproj
 		SccProjectName2 = Plugin
 		SccLocalPath2 = Plugin
-		SccProjectUniqueName3 = XTile\\XTilePC.csproj
+		SccProjectUniqueName3 = XTile\\xTilePC.csproj
 		SccProjectName3 = XTile
 		SccLocalPath3 = XTile
-		SccProjectUniqueName4 = XTile\\XTile360.csproj
+		SccProjectUniqueName4 = XTile\\xTile360.csproj
 		SccProjectName4 = XTile
 		SccLocalPath4 = XTile
 		SccProjectUniqueName5 = XTile\\Content\\Content.contentproj
-		SccProjectTopLevelParentUniqueName5 = XTile\\XTilePC.csproj
+		SccProjectTopLevelParentUniqueName5 = XTile\\xTilePC.csproj
 		SccProjectName5 = XTile/Content
 		SccLocalPath5 = XTile\\Content
-		SccProjectUniqueName6 = XTile\\XTileZune.csproj
+		SccProjectUniqueName6 = XTile\\xTileZune.csproj
 		SccProjectName6 = XTile
 		SccLocalPath6 = XTile
 		SccProjectUniqueName7 = tIDE\\tIDE.csproj

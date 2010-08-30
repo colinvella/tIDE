@@ -601,9 +601,9 @@ namespace TileMapEditor.Dialogs
             XTile.Dimensions.Size newSheetSize = XTile.Dimensions.Size.Zero;
             if (m_bitmapImageSource != null)
             {
-                newSheetSize.Width = (m_bitmapImageSource.Width - newMargin.Width)
+                newSheetSize.Width = (m_bitmapImageSource.Width + newSpacing.Width - newMargin.Width)
                         / (newTileSize.Width + newSpacing.Width);
-                newSheetSize.Height = (m_bitmapImageSource.Height - newMargin.Height)
+                newSheetSize.Height = (m_bitmapImageSource.Height + newSpacing.Height - newMargin.Height)
                         / (newTileSize.Height + newSpacing.Height);
             }
 
