@@ -45,6 +45,12 @@ namespace TileMapEditor
                 string autoTileSet = tileSheet.Properties[propertyKey];
                 RefreshSet(autoTileId, tileSheet, autoTileSet);
             }
+
+            m_autoTiles.Sort(
+                delegate(AutoTile autoTile1, AutoTile autoTile2)
+                {
+                    return autoTile1.Id.CompareTo(autoTile2.Id);
+                });
         }
 
         public Dictionary<Location, Tile> DetermineTileAssignments(Layer layer, Location tileLocation, StaticTile staticTile)

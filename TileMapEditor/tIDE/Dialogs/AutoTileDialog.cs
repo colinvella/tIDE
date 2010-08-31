@@ -28,6 +28,9 @@ namespace TileMapEditor.Dialogs
 
             foreach (AutoTile autoTile in AutoTileManager.Instance.GetAutoTiles(m_tileSheet))
                 m_cmbId.Items.Add(autoTile.Id);
+
+            if (m_cmbId.Items.Count > 0)
+                m_cmbId.SelectedIndex = 0;
         }
 
         private static readonly int[] s_displayToSet
