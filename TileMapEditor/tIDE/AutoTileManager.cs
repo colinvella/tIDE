@@ -11,7 +11,7 @@ using XTile.Tiles;
 
 namespace TileMapEditor
 {
-    class AutoTileManager
+    internal class AutoTileManager
     {
         public static AutoTileManager Instance { get { return s_instance; } }
 
@@ -66,6 +66,15 @@ namespace TileMapEditor
                 allAssignments[tileLocation] = staticTile.Clone(layer);
 
             return allAssignments;
+        }
+
+        public ReadOnlyCollection<AutoTile> GetAutoTiles(TileSheet tileSheet)
+        {
+            List<AutoTile> autoTiles = new List<AutoTile>();
+            foreach (AutoTile autoTile in m_autoTiles)
+                if (autoTile.TileSheet == tileSheet)
+                    autoTiles.Add(autoTile);
+            return autoTiles.AsReadOnly();
         }
 
         public ReadOnlyCollection<AutoTile> AutoTiles { get { return m_autoTiles.AsReadOnly(); } }
