@@ -12,16 +12,11 @@ namespace TileMapEditor.Commands
     internal class ToolsPlaceTileCommand: Command
     {
         private Layer m_layer; 
-        //private Tile m_newTile;
-        //private Location m_tileLocation;
-        //private Tile m_oldTile;
         private Dictionary<Location, Tile> m_newAssignments, m_oldAssignments;
 
         public ToolsPlaceTileCommand(Layer layer, Tile newTile, Location tileLocation)
         {
             m_layer = layer;
-            //m_newTile = newTile;
-            //m_tileLocation = tileLocation;
 
             if (newTile is StaticTile)
             {
@@ -46,16 +41,10 @@ namespace TileMapEditor.Commands
         {
             foreach (Location assignedLocation in m_newAssignments.Keys)
                 m_layer.Tiles[assignedLocation] = m_newAssignments[assignedLocation];
-
-            //m_oldTile = m_layer.Tiles[m_tileLocation];
-            //m_layer.Tiles[m_tileLocation]
-            //    = m_newTile.Clone(m_layer);
         }
 
         public override void Undo()
         {
-            //m_layer.Tiles[m_tileLocation] = m_oldTile;
-
             foreach (Location assignedLocation in m_oldAssignments.Keys)
                 m_layer.Tiles[assignedLocation] = m_oldAssignments[assignedLocation];
         }
