@@ -45,6 +45,15 @@
             this.m_splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
+            // m_lblId
+            // 
+            m_lblId.AutoSize = true;
+            m_lblId.Location = new System.Drawing.Point(12, 15);
+            m_lblId.Name = "m_lblId";
+            m_lblId.Size = new System.Drawing.Size(18, 13);
+            m_lblId.TabIndex = 3;
+            m_lblId.Text = "ID";
+            // 
             // m_btnNew
             // 
             this.m_btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -73,15 +82,6 @@
             this.m_splitContainer.Size = new System.Drawing.Size(560, 330);
             this.m_splitContainer.SplitterDistance = 186;
             this.m_splitContainer.TabIndex = 2;
-            // 
-            // m_lblId
-            // 
-            m_lblId.AutoSize = true;
-            m_lblId.Location = new System.Drawing.Point(12, 15);
-            m_lblId.Name = "m_lblId";
-            m_lblId.Size = new System.Drawing.Size(18, 13);
-            m_lblId.TabIndex = 3;
-            m_lblId.Text = "ID";
             // 
             // m_cmbId
             // 
@@ -139,9 +139,9 @@
             // 
             // m_tilePicker
             // 
-            this.m_tilePicker.AutoUpdate = false;
             this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
+            this.m_tilePicker.LockTileSheet = true;
             this.m_tilePicker.Map = null;
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.SelectedTileSheet = null;
@@ -178,6 +178,7 @@
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "AutoTileDialog";
             this.Text = "Auto Tiles";
+            this.Load += new System.EventHandler(this.OnDialogLoad);
             this.m_splitContainer.Panel1.ResumeLayout(false);
             this.m_splitContainer.Panel2.ResumeLayout(false);
             this.m_splitContainer.ResumeLayout(false);

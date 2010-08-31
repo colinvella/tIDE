@@ -322,9 +322,11 @@ namespace TileMapEditor
 
         private void UpdateTileSheetControls()
         {
-            // properties and delete enabled if tile sheet selected
+            // properties, auto tiles and delete enabled if tile sheet selected
             m_tileSheetPropertiesMenuItem.Enabled
                 = m_tileSheetPropertiesButton.Enabled
+                = m_tileSheetAutoTilesMenuItem.Enabled
+                = m_tileSheetAutoTilesButton.Enabled
                 = m_tileSheetDeleteMenuItem.Enabled
                 = m_tileSheetDeleteButton.Enabled
                 = m_mapTreeView.SelectedComponent is TileSheet;
@@ -1275,6 +1277,32 @@ namespace TileMapEditor
             UpdateEditControls();
             UpdateTileSheetControls();
             m_mapTreeView.UpdateTree();
+        }
+
+        private void OnTileSheetAutoTiles(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is TileSheet))
+                return;
+
+            TileSheet tileSheet = (TileSheet)m_selectedComponent;
+
+            AutoTileDialog autoTileDialog = new AutoTileDialog(tileSheet);
+
+            if (autoTileDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            StartWaitCursor();
+
+            m_needsSaving = true;
+            UpdateFileControls();
+            UpdateEditControls();
+            UpdateTileSheetControls();
+            m_mapTreeView.UpdateTree();
+
+            AutoTileManager.Instance.Refresh(tileSheet);
+
+            StopWaitCursor();
         }
 
         private void OnTileSheetAutoUpdate(object sender, EventArgs eventArgs)
