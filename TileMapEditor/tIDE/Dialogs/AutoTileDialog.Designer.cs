@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTileDialog));
             this.m_btnNew = new System.Windows.Forms.Button();
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
+            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
+            this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
             this.m_cmbId = new System.Windows.Forms.ComboBox();
             this.m_btnDelete = new System.Windows.Forms.Button();
             this.m_btnOk = new System.Windows.Forms.Button();
             this.m_btnApply = new System.Windows.Forms.Button();
             this.m_btnClose = new System.Windows.Forms.Button();
-            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
-            this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
             m_lblId = new System.Windows.Forms.Label();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
@@ -63,6 +63,7 @@
             this.m_btnNew.TabIndex = 1;
             this.m_btnNew.Text = "&New...";
             this.m_btnNew.UseVisualStyleBackColor = true;
+            this.m_btnNew.Click += new System.EventHandler(this.OnNewAutoTile);
             // 
             // m_splitContainer
             // 
@@ -82,6 +83,34 @@
             this.m_splitContainer.Size = new System.Drawing.Size(560, 330);
             this.m_splitContainer.SplitterDistance = 186;
             this.m_splitContainer.TabIndex = 2;
+            // 
+            // m_tilePicker
+            // 
+            this.m_tilePicker.AllowDrop = true;
+            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
+            this.m_tilePicker.LockTileSheet = true;
+            this.m_tilePicker.Map = null;
+            this.m_tilePicker.Name = "m_tilePicker";
+            this.m_tilePicker.SelectedTileSheet = null;
+            this.m_tilePicker.Size = new System.Drawing.Size(186, 330);
+            this.m_tilePicker.TabIndex = 0;
+            this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TilePickerEventHandler(this.OnTileDrag);
+            // 
+            // m_panelTemplate
+            // 
+            this.m_panelTemplate.AllowDrop = true;
+            this.m_panelTemplate.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.m_panelTemplate.BackgroundImage = global::TileMapEditor.Properties.Resources.AutoTileTemplate;
+            this.m_panelTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_panelTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_panelTemplate.Location = new System.Drawing.Point(0, 0);
+            this.m_panelTemplate.Name = "m_panelTemplate";
+            this.m_panelTemplate.Size = new System.Drawing.Size(370, 330);
+            this.m_panelTemplate.TabIndex = 0;
+            this.m_panelTemplate.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTemplatePaint);
+            this.m_panelTemplate.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
+            this.m_panelTemplate.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
             // 
             // m_cmbId
             // 
@@ -137,33 +166,6 @@
             this.m_btnClose.TabIndex = 8;
             this.m_btnClose.Text = "&Close";
             this.m_btnClose.UseVisualStyleBackColor = true;
-            // 
-            // m_tilePicker
-            // 
-            this.m_tilePicker.AllowDrop = true;
-            this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
-            this.m_tilePicker.LockTileSheet = true;
-            this.m_tilePicker.Map = null;
-            this.m_tilePicker.Name = "m_tilePicker";
-            this.m_tilePicker.SelectedTileSheet = null;
-            this.m_tilePicker.Size = new System.Drawing.Size(186, 330);
-            this.m_tilePicker.TabIndex = 0;
-            this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TilePickerEventHandler(this.OnTileDrag);
-            // 
-            // m_panelTemplate
-            // 
-            this.m_panelTemplate.AllowDrop = true;
-            this.m_panelTemplate.BackgroundImage = global::TileMapEditor.Properties.Resources.AutoTileTemplate;
-            this.m_panelTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_panelTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_panelTemplate.Location = new System.Drawing.Point(0, 0);
-            this.m_panelTemplate.Name = "m_panelTemplate";
-            this.m_panelTemplate.Size = new System.Drawing.Size(370, 330);
-            this.m_panelTemplate.TabIndex = 0;
-            this.m_panelTemplate.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTemplatePaint);
-            this.m_panelTemplate.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
-            this.m_panelTemplate.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
             // 
             // AutoTileDialog
             // 

@@ -9,6 +9,7 @@
       <Properties>
         <Property Key="@AutoTile@Dirt And Grass" Type="String"><![CDATA[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]]></Property>
         <Property Key="@AutoTile@Dirt And Paving" Type="String"><![CDATA[0,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]></Property>
+        <Property Key="@AutoTile@New AutoTile" Type="String"><![CDATA[0,17,18,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]]></Property>
       </Properties>
     </TileSheet>
   </TileSheets>
