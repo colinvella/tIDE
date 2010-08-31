@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -30,11 +31,25 @@ namespace TileMapEditor.Dialogs
             m_tilePicker.SelectedTileSheet = m_tileSheet;
             m_tilePicker.UpdatePicker();
 
-            foreach (AutoTile autoTile in AutoTileManager.Instance.GetAutoTiles(m_tileSheet))
+            ReadOnlyCollection<AutoTile> autoTiles
+                = AutoTileManager.Instance.GetAutoTiles(m_tileSheet);
+            foreach (AutoTile autoTile in autoTiles)
                 m_cmbId.Items.Add(autoTile.Id);
 
-            if (m_cmbId.Items.Count > 0)
+            m_selectedAutoTile = null;
+            if (autoTiles.Count > 0)
+            {
                 m_cmbId.SelectedIndex = 0;
+                m_selectedAutoTile = autoTiles[0];
+            }
+        }
+
+        private void OnAutoTileSelected(object sender, EventArgs eventArgs)
+        {
+            ReadOnlyCollection<AutoTile> autoTiles
+                = AutoTileManager.Instance.GetAutoTiles(m_tileSheet);
+            m_selectedAutoTile = autoTiles[m_cmbId.SelectedIndex];
+            m_panelTemplate.Invalidate();
         }
 
         private void OnTileDrag(object sender, TilePickerEventArgs tilePickerEventArgs)
@@ -60,8 +75,66 @@ namespace TileMapEditor.Dialogs
 
         private void OnTileDragDrop(object sender, DragEventArgs dragEventArgs)
         {
-            MessageBox.Show("ok");
-            Cursor = Cursors.Default;
+            SplitterPanel panel = m_splitContainer.Panel2;
+            int templateX = Math.Max(0, panel.Left + panel.Width / 2 - 128);
+            int templateY = Math.Max(0, panel.Top + panel.Height / 2 - 128);
+
+            templateX += m_splitContainer.Left;
+            templateY += m_splitContainer.Top;
+
+            Point dragPoint = new Point(dragEventArgs.X, dragEventArgs.Y);
+            dragPoint = PointToClient(dragPoint);
+
+            if (dragPoint.X >= templateX && dragPoint.Y >= templateY
+                && dragPoint.X < templateX + 256 && dragPoint.Y < templateY + 256)
+            {
+                int displayX = (dragPoint.X - templateX) / 64;
+                int displayY = (dragPoint.Y - templateY) / 64;
+                int displayIndex = displayY * 4 + displayX;
+
+                MessageBox.Show("Display index = " + displayIndex);
+            }
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        {
+            if (Cursor != Cursors.Default
+                && mouseEventArgs.Button != MouseButtons.Left)
+                Cursor = Cursors.Default;
+        }
+
+        private void OnTemplatePaint(object sender, PaintEventArgs paintEventArgs)
+        {
+            if (m_selectedAutoTile == null)
+                return;
+
+            SplitterPanel panel = m_splitContainer.Panel2;
+            int templateX = Math.Max(0, panel.Width / 2 - 128);
+            int templateY = Math.Max(0, panel.Height / 2 - 128);
+
+            Graphics graphics = paintEventArgs.Graphics;
+
+            int displayIndex = 0;
+            for (int displayY = 0; displayY < 4; displayY++)
+            {
+                for (int displayX = 0; displayX < 4; displayX++)
+                {
+                    int setIndex = s_displayToSet[displayIndex];
+                    int tileIndex = m_selectedAutoTile.IndexSet[setIndex];
+
+                    if (tileIndex >= 0)
+                    {
+                        Image tileImage = TileImageCache.Instance.GetTileBitmap(
+                            m_tileSheet, tileIndex);
+                        graphics.DrawImage(tileImage,
+                            templateX + displayX * 64,
+                            templateY + displayY * 64,
+                            64, 64);
+                    }
+
+                    ++displayIndex;
+                }
+            }
         }
 
         [DllImport("user32.dll")]
@@ -78,11 +151,6 @@ namespace TileMapEditor.Dialogs
 
         private TileSheet m_tileSheet;
         private int m_draggedTileIndex;
-
-        private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
-        {
-            if (mouseEventArgs.Button != MouseButtons.Left)
-                Cursor = Cursors.Default;
-        }
+        private AutoTile m_selectedAutoTile;
     }
 }
