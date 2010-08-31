@@ -38,7 +38,7 @@
             this.m_btnApply = new System.Windows.Forms.Button();
             this.m_btnClose = new System.Windows.Forms.Button();
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
-            this.customPanel1 = new TileMapEditor.Controls.CustomPanel();
+            this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
             m_lblId = new System.Windows.Forms.Label();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             // m_splitContainer.Panel2
             // 
-            this.m_splitContainer.Panel2.Controls.Add(this.customPanel1);
+            this.m_splitContainer.Panel2.Controls.Add(this.m_panelTemplate);
             this.m_splitContainer.Size = new System.Drawing.Size(560, 330);
             this.m_splitContainer.SplitterDistance = 186;
             this.m_splitContainer.TabIndex = 2;
@@ -91,6 +91,7 @@
             this.m_cmbId.Name = "m_cmbId";
             this.m_cmbId.Size = new System.Drawing.Size(121, 21);
             this.m_cmbId.TabIndex = 4;
+            this.m_cmbId.SelectedIndexChanged += new System.EventHandler(this.OnAutoTileSelected);
             // 
             // m_btnDelete
             // 
@@ -150,18 +151,19 @@
             this.m_tilePicker.TabIndex = 0;
             this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TilePickerEventHandler(this.OnTileDrag);
             // 
-            // customPanel1
+            // m_panelTemplate
             // 
-            this.customPanel1.AllowDrop = true;
-            this.customPanel1.BackgroundImage = global::TileMapEditor.Properties.Resources.AutoTileTemplate;
-            this.customPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customPanel1.Location = new System.Drawing.Point(0, 0);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(370, 330);
-            this.customPanel1.TabIndex = 0;
-            this.customPanel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
-            this.customPanel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
+            this.m_panelTemplate.AllowDrop = true;
+            this.m_panelTemplate.BackgroundImage = global::TileMapEditor.Properties.Resources.AutoTileTemplate;
+            this.m_panelTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_panelTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_panelTemplate.Location = new System.Drawing.Point(0, 0);
+            this.m_panelTemplate.Name = "m_panelTemplate";
+            this.m_panelTemplate.Size = new System.Drawing.Size(370, 330);
+            this.m_panelTemplate.TabIndex = 0;
+            this.m_panelTemplate.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTemplatePaint);
+            this.m_panelTemplate.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
+            this.m_panelTemplate.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
             // 
             // AutoTileDialog
             // 
@@ -200,7 +202,7 @@
         private System.Windows.Forms.Button m_btnNew;
         private System.Windows.Forms.SplitContainer m_splitContainer;
         private TileMapEditor.Controls.TilePicker m_tilePicker;
-        private TileMapEditor.Controls.CustomPanel customPanel1;
+        private TileMapEditor.Controls.CustomPanel m_panelTemplate;
         private System.Windows.Forms.ComboBox m_cmbId;
         private System.Windows.Forms.Button m_btnDelete;
         private System.Windows.Forms.Button m_btnOk;

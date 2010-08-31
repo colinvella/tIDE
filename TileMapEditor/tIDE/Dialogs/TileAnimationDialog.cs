@@ -69,7 +69,7 @@ namespace TileMapEditor.Dialogs
             m_animationListView.Items.Add(newListViewItem);
         }
 
-        private void TileAnimationDialog_Load(object sender, EventArgs eventArgs)
+        private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             Tile tile = m_layer.Tiles[m_tileLocation];
             if (tile != null)

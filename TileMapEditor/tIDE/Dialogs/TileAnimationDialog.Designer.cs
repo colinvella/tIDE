@@ -273,7 +273,7 @@
             this.Name = "TileAnimationDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tile Animation";
-            this.Load += new System.EventHandler(this.TileAnimationDialog_Load);
+            this.Load += new System.EventHandler(this.OnDialogLoad);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
             m_customPanel.ResumeLayout(false);
             m_splitContainerOuter.Panel1.ResumeLayout(false);

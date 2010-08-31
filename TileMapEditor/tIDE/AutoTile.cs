@@ -117,7 +117,7 @@ namespace TileMapEditor
 
         public TileSheet TileSheet { get { return m_tileSheet; } }
 
-        public IEnumerable<int> IndexSet { get { return m_indexSet.AsEnumerable<int>(); } }
+        public int[] IndexSet { get { return m_indexSet; } }
 
         private Tile DetermineAdjacentTile(Layer layer, int centreSetIndex,
             Location adjacentLocation,
