@@ -136,13 +136,15 @@ namespace TileMapEditor.Controls
                         cell.Value = m_newProperties[propertyName] = false;
                         newPropertyValue = false;
                     }
-                    else if (int.TryParse(propertyValue.Trim(), out propertyValueInt))
+                    else if (!propertyValue.Contains(',')
+                        && int.TryParse(propertyValue.Trim(), out propertyValueInt))
                     {
                         cell.Value = m_newProperties[propertyName] = propertyValueInt;
                         cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
                         newPropertyValue = propertyValueInt;
                     }
-                    else if (float.TryParse(propertyValue.Trim(), out propertyValueFloat))
+                    else if (!propertyValue.Contains(',')
+                        && float.TryParse(propertyValue.Trim(), out propertyValueFloat))
                     {
                         cell.Value = m_newProperties[propertyName] = propertyValueFloat;
                         cell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
