@@ -3,13 +3,12 @@
   <Description><![CDATA[]]></Description>
   <TileSheets>
     <TileSheet Id="Grass, Dirt, Paving Tile Sheet">
-      <Description><![CDATA[Auto tile graphics adapted from free graphical resources kindly provided by Daniel Cook at http://www.lostgarden.com.
-]]></Description>
+      <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\AutoTiles01.png]]></ImageSource>
       <Alignment SheetSize="4 x 8" TileSize="40 x 40" Margin="0 x 0" Spacing="1 x 1" />
       <Properties>
         <Property Key="@AutoTile@Dirt And Grass" Type="String"><![CDATA[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]]></Property>
-        <Property Key="@AutoTile@Dirt And Paving" Type="String"><![CDATA[0,17,18,19,20,21,2,23,24,25,26,27,28,29,30,31]]></Property>
+        <Property Key="@AutoTile@Dirt And Paving" Type="String"><![CDATA[0,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]></Property>
       </Properties>
     </TileSheet>
   </TileSheets>
