@@ -183,6 +183,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "AutoTileDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Auto Tiles";
             this.Load += new System.EventHandler(this.OnDialogLoad);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);

@@ -183,6 +183,12 @@ namespace TileMapEditor.Controls
                 TileSheetProperties(this, eventArgs);
         }
 
+        private void OnTileSheetAutoTiles(object sender, EventArgs eventArgs)
+        {
+            if (TileSheetAutoTiles != null)
+                TileSheetAutoTiles(this, eventArgs);
+        }
+
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)
         {
             if (DeleteTileSheet != null)
@@ -341,6 +347,9 @@ namespace TileMapEditor.Controls
 
         [Category("Behavior"), Description("Occurs when tile sheet properties are requested from the context menu")]
         public event EventHandler TileSheetProperties;
+
+        [Category("Behavior"), Description("Occurs when tile sheet auto tiles are requested from the context menu")]
+        public event EventHandler TileSheetAutoTiles;
 
         [Category("Behavior"), Description("Occurs when a tile sheet deletion is requested from the context menu")]
         public event EventHandler DeleteTileSheet;
