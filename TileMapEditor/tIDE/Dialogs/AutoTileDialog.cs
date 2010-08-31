@@ -25,7 +25,15 @@ namespace TileMapEditor.Dialogs
             m_tilePicker.Map = m_tileSheet.Map;
             m_tilePicker.SelectedTileSheet = m_tileSheet;
             m_tilePicker.UpdatePicker();
+
+            foreach (AutoTile autoTile in AutoTileManager.Instance.GetAutoTiles(m_tileSheet))
+                m_cmbId.Items.Add(autoTile.Id);
         }
+
+        private static readonly int[] s_displayToSet
+            = new int[] { 0, 12, 10,  5, 15,  3,  6,  9,  8,  4,  7, 11,  2,  1, 13, 14};
+        private static readonly int[] s_setToDisplay
+            = new int[] { 0, 13, 12,  5,  9,  3,  6, 10,  8,  7,  2, 11,  1, 14, 15,  4 };
 
         private TileSheet m_tileSheet;
     }
