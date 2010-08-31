@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -114,6 +115,13 @@ namespace TileMapEditor.Dialogs
 
             Graphics graphics = paintEventArgs.Graphics;
 
+            /*
+            ColorMatrix colorMatrix = new ColorMatrix();
+            colorMatrix.Matrix33 = 0.75f;
+            ImageAttributes imageAttributes = new ImageAttributes();
+            imageAttributes.SetColorMatrix(colorMatrix, 
+                ColorMatrixFlag.Default, ColorAdjustType.Bitmap);*/
+
             int displayIndex = 0;
             for (int displayY = 0; displayY < 4; displayY++)
             {
@@ -126,15 +134,26 @@ namespace TileMapEditor.Dialogs
                     {
                         Image tileImage = TileImageCache.Instance.GetTileBitmap(
                             m_tileSheet, tileIndex);
+                        /*
+                        Rectangle destRectangle
+                            = new Rectangle(
+                                templateX + displayX * 64, templateY + displayY * 64,
+                                64, 64);
+                        graphics.DrawImage(tileImage, destRectangle,
+                            0, 0, tileImage.Width, tileImage.Height,
+                            GraphicsUnit.Pixel, imageAttributes);
+                         */
                         graphics.DrawImage(tileImage,
-                            templateX + displayX * 64,
-                            templateY + displayY * 64,
+                            templateX + displayX * 64, templateY + displayY * 64,
                             64, 64);
                     }
 
                     ++displayIndex;
                 }
             }
+
+            graphics.DrawImage(Properties.Resources.AutoTileTemplate,
+                templateX, templateY);
         }
 
         [DllImport("user32.dll")]
