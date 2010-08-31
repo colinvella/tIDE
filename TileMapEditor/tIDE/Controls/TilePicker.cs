@@ -258,7 +258,7 @@ namespace TileMapEditor.Controls
         }
 
         [Category("Behavior"),
-         DefaultValue(-1),
+         DefaultValue(false),
          Description("Automatically update tile sheets when they are updated on disk")]
         public bool AutoUpdate
         {
@@ -270,6 +270,21 @@ namespace TileMapEditor.Controls
             {
                 m_autoUpdate = value;
                 UpdateWatchers();
+            }
+        }
+
+        [Category("Behavior"),
+         DefaultValue(false),
+         Description("Prevents the user from switching tile sheets")]
+        public bool LockTileSheet
+        {
+            get
+            {
+                return !m_comboBoxTileSheets.Enabled;
+            }
+            set
+            {
+                m_comboBoxTileSheets.Enabled = !value;
             }
         }
 
