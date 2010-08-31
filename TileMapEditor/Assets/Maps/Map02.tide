@@ -3,7 +3,8 @@
   <Description><![CDATA[]]></Description>
   <TileSheets>
     <TileSheet Id="Grass, Dirt, Paving Tile Sheet">
-      <Description><![CDATA[]]></Description>
+      <Description><![CDATA[Auto tile graphics adapted from free graphical resources kindly provided by Daniel Cook at http://www.lostgarden.com.
+]]></Description>
       <ImageSource><![CDATA[..\TileSheets\AutoTiles01.png]]></ImageSource>
       <Alignment SheetSize="4 x 8" TileSize="40 x 40" Margin="0 x 0" Spacing="1 x 1" />
       <Properties>
