@@ -139,6 +139,7 @@
             // 
             // m_tilePicker
             // 
+            this.m_tilePicker.AllowDrop = true;
             this.m_tilePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tilePicker.Location = new System.Drawing.Point(0, 0);
             this.m_tilePicker.LockTileSheet = true;
@@ -147,9 +148,11 @@
             this.m_tilePicker.SelectedTileSheet = null;
             this.m_tilePicker.Size = new System.Drawing.Size(186, 330);
             this.m_tilePicker.TabIndex = 0;
+            this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TilePickerEventHandler(this.OnTileDrag);
             // 
             // customPanel1
             // 
+            this.customPanel1.AllowDrop = true;
             this.customPanel1.BackgroundImage = global::TileMapEditor.Properties.Resources.AutoTileTemplate;
             this.customPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -157,10 +160,13 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(370, 330);
             this.customPanel1.TabIndex = 0;
+            this.customPanel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
+            this.customPanel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
             // 
             // AutoTileDialog
             // 
             this.AcceptButton = this.m_btnOk;
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -179,6 +185,7 @@
             this.Name = "AutoTileDialog";
             this.Text = "Auto Tiles";
             this.Load += new System.EventHandler(this.OnDialogLoad);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
             this.m_splitContainer.Panel1.ResumeLayout(false);
             this.m_splitContainer.Panel2.ResumeLayout(false);
             this.m_splitContainer.ResumeLayout(false);

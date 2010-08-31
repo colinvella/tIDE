@@ -20,15 +20,6 @@ namespace TileMapEditor.Dialogs
 {
     public partial class TileAnimationDialog : Form
     {
-        private struct IconInfo
-        {
-            public bool Icon;
-            public int HotSpotX;
-            public int HotSpotY;
-            public IntPtr BitMaskHandle;
-            public IntPtr PixelData;
-        }
-
         private Map m_map;
         private Layer m_layer;
         private Location m_tileLocation;

@@ -158,6 +158,7 @@
     <Compile Include="Dialogs\AutoTileDialog.Designer.cs">
       <DependentUpon>AutoTileDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\IconInfo.cs" />
     <Compile Include="Dialogs\TiledFormatOptionsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
