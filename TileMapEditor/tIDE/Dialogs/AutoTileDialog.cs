@@ -31,24 +31,22 @@ namespace TileMapEditor.Dialogs
             m_tilePicker.SelectedTileSheet = m_tileSheet;
             m_tilePicker.UpdatePicker();
 
-            ReadOnlyCollection<AutoTile> autoTiles
-                = AutoTileManager.Instance.GetAutoTiles(m_tileSheet);
-            foreach (AutoTile autoTile in autoTiles)
-                m_cmbId.Items.Add(autoTile.Id);
+            m_autoTiles = new List<AutoTile>(
+                AutoTileManager.Instance.GetAutoTiles(m_tileSheet));
+
+            UpdateIdComboBox();
 
             m_selectedAutoTile = null;
-            if (autoTiles.Count > 0)
+            if (m_autoTiles.Count > 0)
             {
                 m_cmbId.SelectedIndex = 0;
-                m_selectedAutoTile = autoTiles[0];
+                m_selectedAutoTile = m_autoTiles[0];
             }
         }
 
         private void OnAutoTileSelected(object sender, EventArgs eventArgs)
         {
-            ReadOnlyCollection<AutoTile> autoTiles
-                = AutoTileManager.Instance.GetAutoTiles(m_tileSheet);
-            m_selectedAutoTile = autoTiles[m_cmbId.SelectedIndex];
+            m_selectedAutoTile = m_autoTiles[m_cmbId.SelectedIndex];
             m_panelTemplate.Invalidate();
         }
 
@@ -105,6 +103,37 @@ namespace TileMapEditor.Dialogs
 
         private void OnNewAutoTile(object sender, EventArgs eventArgs)
         {
+            int[] indexSet = new int[16];
+            for (int index = 0; index < 16; index++)
+                indexSet[index] = -1;
+
+            // determine unused name
+            int nameIndex = 1;
+            string newId = null;
+            while (true)
+            {
+                newId = "Auto Tile #" + nameIndex;
+                bool duplicate = false;
+                foreach (AutoTile autoTile in m_autoTiles)
+                    if (autoTile.Id == newId)
+                    {
+                        duplicate = true;
+                        break;
+                    }
+                if (!duplicate)
+                    break;
+                ++nameIndex;
+            }
+
+            AutoTile newAutoTile = new AutoTile(newId, m_tileSheet, indexSet);
+
+            m_autoTiles.Add(newAutoTile);
+            m_selectedAutoTile = newAutoTile;
+
+            SortAutoTiles();
+            UpdateIdComboBox();
+
+            m_cmbId.SelectedIndex = m_autoTiles.IndexOf(m_selectedAutoTile);
         }
 
         private void OnTemplatePaint(object sender, PaintEventArgs paintEventArgs)
@@ -143,6 +172,22 @@ namespace TileMapEditor.Dialogs
                 templateX, templateY);
         }
 
+        private void UpdateIdComboBox()
+        {
+            m_cmbId.Items.Clear();
+            foreach (AutoTile autoTile in m_autoTiles)
+                m_cmbId.Items.Add(autoTile.Id);
+        }
+
+        private void SortAutoTiles()
+        {
+            m_autoTiles.Sort(
+                delegate(AutoTile autoTile1, AutoTile autoTile2)
+                {
+                    return autoTile1.Id.CompareTo(autoTile2.Id);
+                });
+        }
+
         [DllImport("user32.dll")]
         private static extern IntPtr CreateIconIndirect(ref IconInfo icon);
 
@@ -158,5 +203,6 @@ namespace TileMapEditor.Dialogs
         private TileSheet m_tileSheet;
         private int m_draggedTileIndex;
         private AutoTile m_selectedAutoTile;
+        private List<AutoTile> m_autoTiles;
     }
 }

@@ -46,11 +46,7 @@ namespace TileMapEditor
                 RefreshSet(autoTileId, tileSheet, autoTileSet);
             }
 
-            m_autoTiles.Sort(
-                delegate(AutoTile autoTile1, AutoTile autoTile2)
-                {
-                    return autoTile1.Id.CompareTo(autoTile2.Id);
-                });
+            SortAutoTiles();
         }
 
         public Dictionary<Location, Tile> DetermineTileAssignments(Layer layer, Location tileLocation, StaticTile staticTile)
@@ -115,6 +111,15 @@ namespace TileMapEditor
             }
 
             m_autoTiles.Add(new AutoTile(id, tileSheet, tileIndices)); 
+        }
+
+        private void SortAutoTiles()
+        {
+            m_autoTiles.Sort(
+                delegate(AutoTile autoTile1, AutoTile autoTile2)
+                {
+                    return autoTile1.Id.CompareTo(autoTile2.Id);
+                });
         }
 
         private List<AutoTile> m_autoTiles;
