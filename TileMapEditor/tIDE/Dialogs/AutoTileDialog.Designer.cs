@@ -37,6 +37,8 @@
             this.m_btnOk = new System.Windows.Forms.Button();
             this.m_btnApply = new System.Windows.Forms.Button();
             this.m_btnClose = new System.Windows.Forms.Button();
+            this.m_btnRename = new System.Windows.Forms.Button();
+            this.m_txtNewId = new System.Windows.Forms.TextBox();
             this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
             m_lblId = new System.Windows.Forms.Label();
@@ -48,7 +50,7 @@
             // m_lblId
             // 
             m_lblId.AutoSize = true;
-            m_lblId.Location = new System.Drawing.Point(12, 15);
+            m_lblId.Location = new System.Drawing.Point(12, 17);
             m_lblId.Name = "m_lblId";
             m_lblId.Size = new System.Drawing.Size(18, 13);
             m_lblId.TabIndex = 3;
@@ -60,7 +62,7 @@
             this.m_btnNew.Location = new System.Drawing.Point(12, 379);
             this.m_btnNew.Name = "m_btnNew";
             this.m_btnNew.Size = new System.Drawing.Size(75, 23);
-            this.m_btnNew.TabIndex = 1;
+            this.m_btnNew.TabIndex = 4;
             this.m_btnNew.Text = "&New...";
             this.m_btnNew.UseVisualStyleBackColor = true;
             this.m_btnNew.Click += new System.EventHandler(this.OnNewAutoTile);
@@ -70,7 +72,7 @@
             this.m_splitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_splitContainer.Location = new System.Drawing.Point(12, 43);
+            this.m_splitContainer.Location = new System.Drawing.Point(12, 41);
             this.m_splitContainer.Name = "m_splitContainer";
             // 
             // m_splitContainer.Panel1
@@ -80,7 +82,7 @@
             // m_splitContainer.Panel2
             // 
             this.m_splitContainer.Panel2.Controls.Add(this.m_panelTemplate);
-            this.m_splitContainer.Size = new System.Drawing.Size(560, 330);
+            this.m_splitContainer.Size = new System.Drawing.Size(560, 332);
             this.m_splitContainer.SplitterDistance = 186;
             this.m_splitContainer.TabIndex = 2;
             // 
@@ -88,10 +90,10 @@
             // 
             this.m_cmbId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cmbId.FormattingEnabled = true;
-            this.m_cmbId.Location = new System.Drawing.Point(36, 12);
+            this.m_cmbId.Location = new System.Drawing.Point(36, 14);
             this.m_cmbId.Name = "m_cmbId";
-            this.m_cmbId.Size = new System.Drawing.Size(121, 21);
-            this.m_cmbId.TabIndex = 4;
+            this.m_cmbId.Size = new System.Drawing.Size(162, 21);
+            this.m_cmbId.TabIndex = 0;
             this.m_cmbId.SelectedIndexChanged += new System.EventHandler(this.OnAutoTileSelected);
             // 
             // m_btnDelete
@@ -140,6 +142,28 @@
             this.m_btnClose.Text = "&Close";
             this.m_btnClose.UseVisualStyleBackColor = true;
             // 
+            // m_btnRename
+            // 
+            this.m_btnRename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.m_btnRename.Enabled = false;
+            this.m_btnRename.Location = new System.Drawing.Point(204, 12);
+            this.m_btnRename.Name = "m_btnRename";
+            this.m_btnRename.Size = new System.Drawing.Size(75, 23);
+            this.m_btnRename.TabIndex = 1;
+            this.m_btnRename.Text = "&Rename";
+            this.m_btnRename.UseVisualStyleBackColor = true;
+            this.m_btnRename.Click += new System.EventHandler(this.OnRenameAutoTile);
+            // 
+            // m_txtNewId
+            // 
+            this.m_txtNewId.Location = new System.Drawing.Point(36, 14);
+            this.m_txtNewId.Name = "m_txtNewId";
+            this.m_txtNewId.Size = new System.Drawing.Size(162, 20);
+            this.m_txtNewId.TabIndex = 10;
+            this.m_txtNewId.Visible = false;
+            this.m_txtNewId.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.OnNewIdPreviewKeyDown);
+            this.m_txtNewId.Leave += new System.EventHandler(this.OnLeaveNewId);
+            // 
             // m_tilePicker
             // 
             this.m_tilePicker.AllowDrop = true;
@@ -150,8 +174,8 @@
             this.m_tilePicker.Map = null;
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.SelectedTileSheet = null;
-            this.m_tilePicker.Size = new System.Drawing.Size(186, 330);
-            this.m_tilePicker.TabIndex = 0;
+            this.m_tilePicker.Size = new System.Drawing.Size(186, 332);
+            this.m_tilePicker.TabIndex = 2;
             this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TilePickerEventHandler(this.OnTileDrag);
             // 
             // m_panelTemplate
@@ -163,21 +187,21 @@
             this.m_panelTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_panelTemplate.Location = new System.Drawing.Point(0, 0);
             this.m_panelTemplate.Name = "m_panelTemplate";
-            this.m_panelTemplate.Size = new System.Drawing.Size(370, 330);
-            this.m_panelTemplate.TabIndex = 0;
+            this.m_panelTemplate.Size = new System.Drawing.Size(370, 332);
+            this.m_panelTemplate.TabIndex = 3;
             this.m_panelTemplate.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTemplatePaint);
             this.m_panelTemplate.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnTileDragDrop);
             this.m_panelTemplate.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnTileDragEnter);
             // 
             // AutoTileDialog
             // 
-            this.AcceptButton = this.m_btnOk;
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.m_btnClose;
             this.ClientSize = new System.Drawing.Size(584, 414);
+            this.Controls.Add(this.m_btnRename);
             this.Controls.Add(this.m_btnClose);
             this.Controls.Add(this.m_btnApply);
             this.Controls.Add(this.m_btnOk);
@@ -186,6 +210,7 @@
             this.Controls.Add(m_lblId);
             this.Controls.Add(this.m_splitContainer);
             this.Controls.Add(this.m_btnNew);
+            this.Controls.Add(this.m_txtNewId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "AutoTileDialog";
@@ -212,6 +237,8 @@
         private System.Windows.Forms.Button m_btnOk;
         private System.Windows.Forms.Button m_btnApply;
         private System.Windows.Forms.Button m_btnClose;
+        private System.Windows.Forms.Button m_btnRename;
+        private System.Windows.Forms.TextBox m_txtNewId;
 
 
     }

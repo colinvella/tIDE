@@ -113,7 +113,11 @@ namespace TileMapEditor
             return autoTileAssignments;
         }
 
-        public string Id { get { return m_id; } }
+        public string Id
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
 
         public TileSheet TileSheet { get { return m_tileSheet; } }
 

@@ -42,6 +42,7 @@ namespace TileMapEditor.Dialogs
                 m_cmbId.SelectedIndex = 0;
                 m_selectedAutoTile = m_autoTiles[0];
 
+                m_btnRename.Enabled = true;
                 m_tilePicker.Enabled = true;
                 m_btnDelete.Enabled = true;
             }
@@ -50,11 +51,70 @@ namespace TileMapEditor.Dialogs
         private void OnAutoTileSelected(object sender, EventArgs eventArgs)
         {
             if (m_cmbId.SelectedIndex == -1)
+            {
                 m_selectedAutoTile = null;
+                m_txtNewId.Clear();
+            }
             else
+            {
                 m_selectedAutoTile = m_autoTiles[m_cmbId.SelectedIndex];
+                m_txtNewId.Text = m_selectedAutoTile.Id;
+            }
 
             m_panelTemplate.Invalidate();
+        }
+
+        private void OnRenameAutoTile(object sender, EventArgs eventArgs)
+        {
+            m_txtNewId.Text = m_selectedAutoTile.Id;
+
+            m_cmbId.Visible = false;
+            m_txtNewId.Visible = true;
+            m_tilePicker.Enabled = m_btnRename.Enabled = m_btnNew.Enabled = m_btnDelete.Enabled
+                = m_btnOk.Enabled = m_btnApply.Enabled = m_btnClose.Enabled = false;
+        }
+
+        private void OnLeaveNewId(object sender, EventArgs eventArgs)
+        {
+            // name must be specified, leading, trailing spaces ignored
+            m_txtNewId.Text = m_txtNewId.Text.Trim();
+            if (m_txtNewId.Text.Length == 0)
+            {
+                MessageBox.Show(this, "No ID specified", "Rename Auto Tile",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_txtNewId.Focus();
+                return;
+            }
+
+            // check new name not duplicate
+            foreach (AutoTile autoTile in m_autoTiles)
+            {
+                if (autoTile == m_selectedAutoTile)
+                    continue;
+                if (autoTile.Id == m_txtNewId.Text)
+                {
+                    MessageBox.Show(this, "The ID '" + m_txtNewId.Text + "' is already in use",
+                        "Rename Auto Tile", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    m_txtNewId.Focus();
+                    return;
+                }
+            }
+
+            m_selectedAutoTile.Id = m_txtNewId.Text;
+            SortAutoTiles();
+            UpdateIdComboBox();
+            m_cmbId.SelectedItem = m_selectedAutoTile.Id;
+
+            m_txtNewId.Visible = false;
+            m_cmbId.Visible = true;
+            m_tilePicker.Enabled = m_btnRename.Enabled = m_btnNew.Enabled = m_btnDelete.Enabled
+                = m_btnOk.Enabled = m_btnApply.Enabled = m_btnClose.Enabled = true;
+        }
+
+        private void OnNewIdPreviewKeyDown(object sender, PreviewKeyDownEventArgs previewKeyDownEventArgs)
+        {
+            if (previewKeyDownEventArgs.KeyCode == Keys.Return)
+                OnLeaveNewId(sender, EventArgs.Empty);
         }
 
         private void OnTileDrag(object sender, TilePickerEventArgs tilePickerEventArgs)
@@ -143,6 +203,7 @@ namespace TileMapEditor.Dialogs
             m_cmbId.SelectedIndex = m_autoTiles.IndexOf(m_selectedAutoTile);
 
             UpdateDialogState(true);
+            m_btnRename.Enabled = true;
             m_tilePicker.Enabled = true;
             m_btnDelete.Enabled = true;
         }
@@ -165,6 +226,7 @@ namespace TileMapEditor.Dialogs
                 m_selectedAutoTile = null;
                 m_cmbId.SelectedIndex = -1;
 
+                m_btnRename.Enabled = false;
                 m_tilePicker.Enabled = false;
                 m_btnDelete.Enabled = false;
             }
