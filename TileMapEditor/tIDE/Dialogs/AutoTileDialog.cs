@@ -109,6 +109,8 @@ namespace TileMapEditor.Dialogs
             m_cmbId.Visible = true;
             m_tilePicker.Enabled = m_btnRename.Enabled = m_btnNew.Enabled = m_btnDelete.Enabled
                 = m_btnOk.Enabled = m_btnApply.Enabled = m_btnClose.Enabled = true;
+
+            UpdateDialogState(true);
         }
 
         private void OnNewIdPreviewKeyDown(object sender, PreviewKeyDownEventArgs previewKeyDownEventArgs)
@@ -157,8 +159,15 @@ namespace TileMapEditor.Dialogs
                 int displayY = (dragPoint.Y - templateY) / 64;
                 int displayIndex = displayY * 4 + displayX;
 
-                MessageBox.Show("Display index = " + displayIndex);
+                int setIndex = s_displayToSet[displayIndex];
+
+                m_selectedAutoTile.IndexSet[setIndex] = m_draggedTileIndex;
+                m_panelTemplate.Invalidate();
+
+                UpdateDialogState(true);
             }
+
+            Cursor = Cursors.Default;
         }
 
         private void OnMouseMove(object sender, MouseEventArgs mouseEventArgs)
