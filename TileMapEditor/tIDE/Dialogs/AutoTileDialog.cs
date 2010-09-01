@@ -41,12 +41,19 @@ namespace TileMapEditor.Dialogs
             {
                 m_cmbId.SelectedIndex = 0;
                 m_selectedAutoTile = m_autoTiles[0];
+
+                m_tilePicker.Enabled = true;
+                m_btnDelete.Enabled = true;
             }
         }
 
         private void OnAutoTileSelected(object sender, EventArgs eventArgs)
         {
-            m_selectedAutoTile = m_autoTiles[m_cmbId.SelectedIndex];
+            if (m_cmbId.SelectedIndex == -1)
+                m_selectedAutoTile = null;
+            else
+                m_selectedAutoTile = m_autoTiles[m_cmbId.SelectedIndex];
+
             m_panelTemplate.Invalidate();
         }
 
@@ -134,6 +141,43 @@ namespace TileMapEditor.Dialogs
             UpdateIdComboBox();
 
             m_cmbId.SelectedIndex = m_autoTiles.IndexOf(m_selectedAutoTile);
+
+            UpdateDialogState(true);
+            m_tilePicker.Enabled = true;
+            m_btnDelete.Enabled = true;
+        }
+
+        private void OnDeleteAutoTile(object sender, EventArgs eventArgs)
+        {
+            if (MessageBox.Show(this, "Are you sure?",
+                "Delete auto tile definition '" + m_selectedAutoTile.Id + "'",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2) == DialogResult.No)
+                return;
+
+            int currentIndex = m_autoTiles.IndexOf(m_selectedAutoTile);
+            m_autoTiles.Remove(m_selectedAutoTile);
+
+            UpdateIdComboBox();
+
+            if (m_autoTiles.Count == 0)
+            {
+                m_selectedAutoTile = null;
+                m_cmbId.SelectedIndex = -1;
+
+                m_tilePicker.Enabled = false;
+                m_btnDelete.Enabled = false;
+            }
+            else
+            {
+                if (currentIndex >= m_autoTiles.Count)
+                    currentIndex = m_autoTiles.Count - 1;
+
+                m_selectedAutoTile = m_autoTiles[currentIndex];
+                m_cmbId.SelectedIndex = currentIndex;
+            }
+
+            m_panelTemplate.Invalidate();
         }
 
         private void OnTemplatePaint(object sender, PaintEventArgs paintEventArgs)
@@ -177,6 +221,13 @@ namespace TileMapEditor.Dialogs
             m_cmbId.Items.Clear();
             foreach (AutoTile autoTile in m_autoTiles)
                 m_cmbId.Items.Add(autoTile.Id);
+        }
+
+        private void UpdateDialogState(bool changes)
+        {
+            m_btnOk.Enabled = m_btnApply.Enabled = changes;
+            m_btnClose.Text = changes ? "&Cancel" : "&Close";
+            m_btnClose.DialogResult = changes ? DialogResult.Cancel : DialogResult.Cancel;
         }
 
         private void SortAutoTiles()
