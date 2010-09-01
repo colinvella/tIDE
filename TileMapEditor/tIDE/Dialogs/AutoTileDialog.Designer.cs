@@ -119,6 +119,7 @@
             this.m_btnOk.TabIndex = 6;
             this.m_btnOk.Text = "&OK";
             this.m_btnOk.UseVisualStyleBackColor = true;
+            this.m_btnOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_btnApply
             // 
@@ -130,6 +131,7 @@
             this.m_btnApply.TabIndex = 7;
             this.m_btnApply.Text = "&Apply";
             this.m_btnApply.UseVisualStyleBackColor = true;
+            this.m_btnApply.Click += new System.EventHandler(this.OnDialogApply);
             // 
             // m_btnClose
             // 

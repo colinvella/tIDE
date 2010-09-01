@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using XTile.Tiles;
 
+using TileMapEditor.Commands;
 using TileMapEditor.Controls;
 
 namespace TileMapEditor.Dialogs
@@ -249,6 +250,18 @@ namespace TileMapEditor.Dialogs
             }
 
             m_panelTemplate.Invalidate();
+        }
+
+        private void OnDialogApply(object sender, EventArgs eventArgs)
+        {
+            Command command = new TileSheetAutoTilesCommand(m_tileSheet, m_autoTiles);
+            CommandHistory.Instance.Do(command);
+            UpdateDialogState(false);
+        }
+
+        private void OnDialogOk(object sender, EventArgs eventArgs)
+        {
+            OnDialogApply(sender, eventArgs);
         }
 
         private void OnTemplatePaint(object sender, PaintEventArgs paintEventArgs)
