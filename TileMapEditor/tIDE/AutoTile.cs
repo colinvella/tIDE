@@ -49,8 +49,12 @@ namespace TileMapEditor
                 return autoTileAssignments;
 
             // add centre tile
-            Tile centreTile = new StaticTile(layer, m_tileSheet, BlendMode.Alpha, tileIndex);
-            autoTileAssignments[tileLocation] = centreTile;
+            Tile oldCentreTile = layer.Tiles[tileLocation];
+            if (oldCentreTile == null || oldCentreTile.TileSheet != m_tileSheet || oldCentreTile.TileIndex != tileIndex)
+            {
+                Tile centreTile = new StaticTile(layer, m_tileSheet, BlendMode.Alpha, tileIndex);
+                autoTileAssignments[tileLocation] = centreTile;
+            }
 
             // determine and add adjacent tiles where applicable
 
@@ -137,13 +141,20 @@ namespace TileMapEditor
 
             // get and validate adjacent tile
             Tile adjacentTile = layer.Tiles[adjacentLocation];
+
+            // must be non-null
             if (adjacentTile == null)
                 return null;
+
+            // must be a static tile
             if (!(adjacentTile is StaticTile))
                 return null;
+
+            // must share the same tile sheet
             if (adjacentTile.TileSheet != m_tileSheet)
                 return null;
 
+            // must belong to the same auto-tile definition
             int adjacentSetIndex = GetSetIndex(adjacentTile);
             if (adjacentSetIndex == -1)
                 return null;
@@ -159,9 +170,12 @@ namespace TileMapEditor
             // make new index
             int newSetIndex = MakeSetIndex(adjacentCorners);
 
-            // place new tile
+            // compute new tile if different, or null if same
             int newTileIndex = m_indexSet[newSetIndex];
-            return new StaticTile(layer, m_tileSheet, BlendMode.Alpha, newTileIndex);
+            if (newTileIndex != adjacentTile.TileIndex)
+                return new StaticTile(layer, m_tileSheet, BlendMode.Alpha, newTileIndex);
+            else
+                return null;
         }
 
         private int GetSetIndex(int tileIndex)
