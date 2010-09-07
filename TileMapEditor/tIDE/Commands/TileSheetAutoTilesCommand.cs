@@ -7,6 +7,8 @@ using XTile.Dimensions;
 using XTile.ObjectModel;
 using XTile.Tiles;
 
+using TileMapEditor.AutoTiles;
+
 namespace TileMapEditor.Commands
 {
     internal class TileSheetAutoTilesCommand: Command

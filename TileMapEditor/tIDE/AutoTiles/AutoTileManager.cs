@@ -9,7 +9,7 @@ using XTile.Dimensions;
 using XTile.Layers;
 using XTile.Tiles;
 
-namespace TileMapEditor
+namespace TileMapEditor.AutoTiles
 {
     internal class AutoTileManager
     {

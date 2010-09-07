@@ -15,6 +15,7 @@ using XTile.Layers;
 using XTile.ObjectModel;
 using XTile.Tiles;
 
+using TileMapEditor.AutoTiles;
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
 using TileMapEditor.Dialogs;

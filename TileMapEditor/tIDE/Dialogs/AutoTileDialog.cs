@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using XTile.Tiles;
 
+using TileMapEditor.AutoTiles;
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
 

@@ -81,8 +81,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoTile.cs" />
-    <Compile Include="AutoTileManager.cs" />
+    <Compile Include="AutoTiles\AutoTile.cs" />
+    <Compile Include="AutoTiles\AutoTileManager.cs" />
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
