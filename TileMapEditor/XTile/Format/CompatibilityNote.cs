@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////
 //                                                                         //
-//  LICENSE    Microsoft Reciprocal License (Ms-RL)                        //
-//             http://www.opensource.org/licenses/ms-rl.html               //
+//  LICENSE    Microsoft Public License (Ms-PL)                            //
+//             http://www.opensource.org/licenses/ms-pl.html               //
 //                                                                         //
 //  AUTHOR     Colin Vella                                                 //
 //                                                                         //
