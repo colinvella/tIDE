@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace XTile.Format
 {
@@ -107,6 +108,42 @@ namespace XTile.Format
                     StringComparison.InvariantCultureIgnoreCase))
                     return mapFormat;
             return null;
+        }
+
+        /// <summary>
+        /// Loads and returns a Map instance using the given file path. The map
+        /// format is determined automatically from the file extension and the
+        /// map is loaded using the corresponding IMapFormat implementation if
+        /// available.
+        /// </summary>
+        /// <param name="filePath">Path to the map file to load</param>
+        /// <returns>a loaded Map instance</returns>
+        public Map LoadMap(string filePath)
+        {
+            try
+            {
+                if (filePath == null)
+                    throw new Exception("A null file path was specified");
+
+                string fileExtension
+                    = Path.GetExtension(filePath).Replace(".", "");
+                if (fileExtension.Length == 0)
+                    throw new Exception("Cannot determine map format without a file extension");
+
+                IMapFormat mapFormat = GetMapFormatByExtension(fileExtension);
+                if (mapFormat == null)
+                    throw new Exception("No IMapFormat implementation for files with extension '" + fileExtension + "'");
+
+                Stream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                Map map = mapFormat.Load(fileStream);
+                fileStream.Close();
+
+                return map;
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Unable to load map with file path '" + filePath + "'", exception);
+            }
         }
 
         #endregion
