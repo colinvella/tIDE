@@ -38,6 +38,9 @@ namespace TileMapEditor.TileBrushes
             m_tileBrushElements = new List<TileBrushElement>();
             foreach (Location location in tileSelection.Locations)
             {
+                if (!layer.IsValidTileLocation(location))
+                    continue;
+
                 Tile tile = layer.Tiles[location];
                 Tile tileClone = tile == null ? null : tile.Clone(layer);
                 TileBrushElement tileBrushElement = new TileBrushElement(
