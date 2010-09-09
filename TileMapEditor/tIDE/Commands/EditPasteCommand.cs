@@ -7,6 +7,8 @@ using XTile.Dimensions;
 using XTile.Layers;
 using XTile.Tiles;
 
+using TileMapEditor.TileBrushes;
+
 namespace TileMapEditor.Commands
 {
     internal class EditPasteCommand: Command

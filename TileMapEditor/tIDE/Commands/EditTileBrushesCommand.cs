@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using TileMapEditor.TileBrushes;
+
 namespace TileMapEditor.Commands
 {
     internal class EditTileBrushesCommand: Command

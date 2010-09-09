@@ -22,6 +22,7 @@ using TileMapEditor.Dialogs;
 using TileMapEditor.Format;
 using TileMapEditor.Help;
 using TileMapEditor.Plugin;
+using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor
 {

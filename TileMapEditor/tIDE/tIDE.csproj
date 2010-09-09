@@ -252,8 +252,8 @@
     <Compile Include="Plugin\Version.cs" />
     <Compile Include="PrintManager.cs" />
     <Compile Include="RecentFilesManager.cs" />
-    <Compile Include="TileBrushCollection.cs" />
-    <Compile Include="TileBrushElement.cs" />
+    <Compile Include="TileBrushes\TileBrushCollection.cs" />
+    <Compile Include="TileBrushes\TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Controls\MapPanelEventArgs.cs" />
     <Compile Include="Controls\TilePicker.cs">
@@ -396,7 +396,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TileBrush.cs" />
+    <Compile Include="TileBrushes\TileBrush.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Map.png" />

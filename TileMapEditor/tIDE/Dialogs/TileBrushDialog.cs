@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using TileMapEditor.Commands;
+using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor.Dialogs
 {

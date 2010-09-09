@@ -18,6 +18,7 @@ using XTile.Tiles;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Dialogs;
+using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor.Controls
 {

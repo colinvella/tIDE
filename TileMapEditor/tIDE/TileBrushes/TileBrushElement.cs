@@ -9,7 +9,7 @@ using XTile.Tiles;
 
 using TileMapEditor.Controls;
 
-namespace TileMapEditor
+namespace TileMapEditor.TileBrushes
 {
     [Serializable]
     public struct TileBrushElement

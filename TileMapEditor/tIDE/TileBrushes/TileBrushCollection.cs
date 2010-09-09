@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TileMapEditor
+namespace TileMapEditor.TileBrushes
 {
     internal class TileBrushCollection
     {
