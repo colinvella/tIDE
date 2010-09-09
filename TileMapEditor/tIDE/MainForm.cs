@@ -419,23 +419,15 @@ namespace TileMapEditor
             FormatManager formatManager = FormatManager.Instance;
 
             StartWaitCursor();
-
-            string fileExtension
-                = Path.GetExtension(filename).Replace(".", "");
-
-            IMapFormat selectedMapFormat
-                = formatManager.GetMapFormatByExtension(fileExtension);
-
+            
             string basePath = Path.GetDirectoryName(filename);
             string oldCurrentDirectory = Directory.GetCurrentDirectory();
             Directory.SetCurrentDirectory(basePath);
-
+            
             Map newMap = null;
             try
             {
-                Stream stream = new FileStream(filename, FileMode.Open, FileAccess.Read);
-                newMap = selectedMapFormat.Load(stream);
-                stream.Close();
+                newMap = formatManager.LoadMap(filename);
 
                 RecentFilesManager.Instance.StoreFilename(filename);
 
