@@ -7,7 +7,7 @@ using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor
 {
-    public class ClipBoardManager
+    internal class ClipBoardManager
     {
         private static ClipBoardManager s_clipBoardManager = new ClipBoardManager();
 

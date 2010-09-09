@@ -906,5 +906,8 @@
       </Properties>
     </Layer>
   </Layers>
-  <Properties />
+  <Properties>
+    <Property Key="@TileBrush@Tile Brush 1@" Type="String"><![CDATA[Foreground|0,3,TileSheet01,114|1,0,,114|1,1,,112|1,2,,112|1,3,,112|2,0,,115|2,1,,113|2,2,,117|2,3,,112|3,2,,115|3,3,,113]]></Property>
+    <Property Key="@TileBrush@Tile Brush 2@" Type="String"><![CDATA[Foreground|2,1,TileSheet01,3|1,1,,2|2,2,,3|1,2,,2|1,0,,4|0,0,,108|3,0,,107|2,0,,5]]></Property>
+  </Properties>
 </Map>

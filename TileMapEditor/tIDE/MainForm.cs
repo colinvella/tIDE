@@ -475,12 +475,16 @@ namespace TileMapEditor
                 m_filename = filename;
                 m_commandHistory.Clear();
 
-                UpdateAllControls();
+                // refresh tile brush definitions
+                m_tileBrushCollection.LoadFromMap(m_map);
 
+                // refresh auto tile definitions
                 AutoTileManager.Instance.Refresh(m_map);
 
                 // push to top of recent file list
                 RecentFilesManager.Instance.StoreFilename(filename);
+
+                UpdateAllControls();
             }
             catch (Exception exception)
             {
@@ -689,6 +693,14 @@ namespace TileMapEditor
 
                 m_commandHistory.Clear();
                 m_selectedComponent = null;
+
+                // refresh tile brush definitions
+                m_tileBrushCollection.LoadFromMap(m_map);
+
+                // refresh auto tile definitions
+                AutoTileManager.Instance.Refresh(m_map);
+
+                UpdateAllControls();
             }
         }
 
@@ -955,7 +967,8 @@ namespace TileMapEditor
             string tileBrushId = m_tileBrushCollection.GenerateId();
             TileBrush newTileBrush = new TileBrush(tileBrushId, layer, tileSelection);
 
-            TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection, newTileBrush);
+            TileBrushDialog tileBrushDialog
+                = new TileBrushDialog(m_map, m_tileBrushCollection, newTileBrush);
             if (tileBrushDialog.ShowDialog(this) == DialogResult.OK)
             {
                 UpdateTileBrushDropDown();
@@ -970,7 +983,8 @@ namespace TileMapEditor
 
         private void OnEditManageTileBrushes(object sender, EventArgs eventArgs)
         {
-            TileBrushDialog tileBrushDialog = new TileBrushDialog(m_tileBrushCollection);
+            TileBrushDialog tileBrushDialog
+                = new TileBrushDialog(m_map, m_tileBrushCollection);
             tileBrushDialog.ShowDialog(this);
 
             UpdateTileBrushDropDown();

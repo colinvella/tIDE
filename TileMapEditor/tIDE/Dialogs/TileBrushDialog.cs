@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using XTile;
+
 using TileMapEditor.Commands;
 using TileMapEditor.TileBrushes;
 
@@ -14,6 +16,7 @@ namespace TileMapEditor.Dialogs
 {
     internal partial class TileBrushDialog : Form
     {
+        private Map m_map;
         private TileBrushCollection m_tileBrushCollection;
         private TileBrush m_newTileBrush;
 
@@ -157,7 +160,7 @@ namespace TileMapEditor.Dialogs
             Command command = null;
             if (m_newTileBrush != null)
             {
-                command = new EditTileBrushesCommand(m_tileBrushCollection, m_newTileBrush);
+                command = new EditTileBrushesCommand(m_map, m_tileBrushCollection, m_newTileBrush);
             }
             else
             {
@@ -172,7 +175,7 @@ namespace TileMapEditor.Dialogs
                     newTileBrushCollection.TileBrushes.Add(newTileBrush);
                 }
 
-                command = new EditTileBrushesCommand(m_tileBrushCollection, newTileBrushCollection);
+                command = new EditTileBrushesCommand(m_map, m_tileBrushCollection, newTileBrushCollection);
             }
 
             CommandHistory.Instance.Do(command);
@@ -186,18 +189,21 @@ namespace TileMapEditor.Dialogs
                 m_tileBrushCollection.TileBrushes.Remove(m_newTileBrush);
         }
 
-        public TileBrushDialog(TileBrushCollection tileBrushCollection)
+        public TileBrushDialog(Map map, TileBrushCollection tileBrushCollection)
         {
             InitializeComponent();
 
+            m_map = map;
             m_tileBrushCollection = tileBrushCollection;
             m_newTileBrush = null;
         }
 
-        public TileBrushDialog(TileBrushCollection tileBrushCollection, TileBrush newTileBrush)
+        public TileBrushDialog(Map map,
+            TileBrushCollection tileBrushCollection, TileBrush newTileBrush)
         {
             InitializeComponent();
 
+            m_map = map;
             m_tileBrushCollection = tileBrushCollection;
             m_newTileBrush = newTileBrush;
         }

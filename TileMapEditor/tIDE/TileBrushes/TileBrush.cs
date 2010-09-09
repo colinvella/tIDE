@@ -15,21 +15,16 @@ using TileMapEditor.Controls;
 namespace TileMapEditor.TileBrushes
 {
     [Serializable]
-    public class TileBrush
+    internal class TileBrush
     {
-        private string m_id;
-        private XTile.Dimensions.Size m_brushSize;
-        private XTile.Dimensions.Size m_tileSize;
-        private XTile.Dimensions.Size m_displaySize;
-        private List<TileBrushElement> m_tileBrushElements;
-        private Image m_imageRepresentation;
+        #region Internal Methods
 
-        public TileBrush(Layer layer, TileSelection tileSelection)
+        internal TileBrush(Layer layer, TileSelection tileSelection)
             : this("Clipboard", layer, tileSelection)
         {
         }
 
-        public TileBrush(string id, Layer layer, TileSelection tileSelection)
+        internal TileBrush(string id, Layer layer, TileSelection tileSelection)
         {
             m_id = id;
             XTile.Dimensions.Rectangle selectionBounds = tileSelection.Bounds;
@@ -51,7 +46,7 @@ namespace TileMapEditor.TileBrushes
             }
         }
 
-        public TileBrush(TileBrush tileBrush)
+        internal TileBrush(TileBrush tileBrush)
         {
             m_id = tileBrush.m_id;
             m_brushSize = tileBrush.m_brushSize;
@@ -61,7 +56,28 @@ namespace TileMapEditor.TileBrushes
             m_imageRepresentation = tileBrush.m_imageRepresentation;
         }
 
-        public void ApplyTo(Layer layer, Location brushLocation,
+        internal TileBrush(string id, List<TileBrushElement> tileBrushElements)
+        {
+            m_id = id;
+
+            m_brushSize = new XTile.Dimensions.Size();
+            m_tileSize = new XTile.Dimensions.Size();
+            foreach (TileBrushElement tileBrushElement in tileBrushElements)
+            {
+                m_brushSize.Width = Math.Max(m_brushSize.Width, tileBrushElement.Location.X + 1);
+                m_brushSize.Height = Math.Max(m_brushSize.Width, tileBrushElement.Location.Y + 1);
+                if (tileBrushElement.Tile != null)
+                    m_tileSize = tileBrushElement.Tile.TileSheet.TileSize;
+            }
+
+            m_displaySize = new XTile.Dimensions.Size(
+                m_brushSize.Width * m_tileSize.Width,
+                m_brushSize.Height * m_tileSize.Height);
+
+            m_tileBrushElements = new List<TileBrushElement>(tileBrushElements);
+        }
+
+        internal void ApplyTo(Layer layer, Location brushLocation,
             TileSelection tileSelection)
         {
             Map map = layer.Map;
@@ -95,7 +111,7 @@ namespace TileMapEditor.TileBrushes
             }
         }
 
-        public void GenerateSelection(Location brushLocation,
+        internal void GenerateSelection(Location brushLocation,
             TileSelection tileSelection)
         {
             tileSelection.Clear();
@@ -103,13 +119,96 @@ namespace TileMapEditor.TileBrushes
                 tileSelection.AddLocation(brushLocation + tileBrushElement.Location);
         }
 
-        public string Id
+        internal void StoreInMap(Map map)
+        {
+            if (m_tileBrushElements.Count == 0)
+                return;
+
+            string propertyKey = "@TileBrush@" + m_id + "@";
+
+            List<TileBrushElement> tileBrushElements = new List<TileBrushElement>(m_tileBrushElements);
+            Layer layer = null;
+
+            // group by tile sheet id for compactness
+            tileBrushElements.Sort(
+                delegate(TileBrushElement tileBrushElement1, TileBrushElement tileBrushElement2)
+                {
+                    Tile tile1 = tileBrushElement1.Tile;
+                    Tile tile2 = tileBrushElement2.Tile;
+                    if (tile1 == null)
+                    {
+                        if (tile2 == null)
+                        {
+                            // both null
+                            return 0;
+                        }
+                        else
+                        {
+                            // only #1 null
+                            return -1;
+                        }
+                    }
+                    else
+                    {
+                        if (tile2 == null)
+                        {
+                            // only #2 null
+                            return 1;
+                        }
+                        else
+                        {
+                            // both non-null - compare tile sheet id's
+                            return tile1.TileSheet.Id.CompareTo(tile2.TileSheet.Id);
+                        }
+                    }
+                }
+                );
+
+            // build property value
+            StringBuilder stringBuilder = new StringBuilder();
+            string lastTileSheetId = null;
+            foreach (TileBrushElement tileBrushElement in tileBrushElements)
+            {
+                if (stringBuilder.Length > 0)
+                    stringBuilder.Append('|');
+                stringBuilder.Append(tileBrushElement.Location.X);
+                stringBuilder.Append(',');
+                stringBuilder.Append(tileBrushElement.Location.Y);
+                stringBuilder.Append(',');
+
+                Tile tile = tileBrushElement.Tile;
+                if (tile == null)
+                    stringBuilder.Append(",");
+                else
+                {
+                    layer = tile.Layer;
+                    string tileSheetId = tile.TileSheet.Id;
+                    if (tileSheetId != lastTileSheetId)
+                    {
+                        stringBuilder.Append(tileSheetId);
+                        lastTileSheetId = tileSheetId;
+                    }
+                    stringBuilder.Append(',');
+                    stringBuilder.Append(tile.TileIndex);
+                }
+            }
+
+            string propertyValue = layer.Id + "|" + stringBuilder;
+
+            map.Properties[propertyKey] = propertyValue;
+        }
+
+        #endregion
+
+        #region Internal Properties
+
+        internal string Id
         {
             get { return m_id; }
             set { m_id = value; }
         }
 
-        public Image ImageRepresentation
+        internal Image ImageRepresentation
         {
             get
             {
@@ -142,15 +241,28 @@ namespace TileMapEditor.TileBrushes
             }
         }
 
-        public XTile.Dimensions.Size BrushSize { get { return m_brushSize; } }
+        internal XTile.Dimensions.Size BrushSize { get { return m_brushSize; } }
 
-        public XTile.Dimensions.Size TileSize { get { return m_tileSize; } }
+        internal XTile.Dimensions.Size TileSize { get { return m_tileSize; } }
 
-        public XTile.Dimensions.Size DisplaySize { get { return m_displaySize; } }
+        internal XTile.Dimensions.Size DisplaySize { get { return m_displaySize; } }
 
-        public ReadOnlyCollection<TileBrushElement> Elements
+        internal ReadOnlyCollection<TileBrushElement> Elements
         {
             get { return m_tileBrushElements.AsReadOnly(); }
         }
+
+        #endregion
+
+        #region Private Variables
+
+        private string m_id;
+        private XTile.Dimensions.Size m_brushSize;
+        private XTile.Dimensions.Size m_tileSize;
+        private XTile.Dimensions.Size m_displaySize;
+        private List<TileBrushElement> m_tileBrushElements;
+        private Image m_imageRepresentation;
+
+        #endregion
     }
 }
