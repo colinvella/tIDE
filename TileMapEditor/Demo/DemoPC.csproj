@@ -139,10 +139,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xTilePipeline\xTilePipeline.csproj">
-      <Project>{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}</Project>
-      <Name>xTilePipeline</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XTile\xTilePC.csproj">
       <Project>{BF19F9E2-FD54-4B63-AF67-DA49B5EA11D9}</Project>
       <Name>xTilePC</Name>
