@@ -29,7 +29,7 @@ namespace xTile.Display
     /// and alpha and additive blend modes are supported via dedicated
     /// sprite batch instances
     /// </summary>
-    class XnaDisplayDevice : IDisplayDevice
+    public class XnaDisplayDevice : IDisplayDevice
     {
         #region Public Properties
 

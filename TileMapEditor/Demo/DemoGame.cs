@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 
 using xTile;
+using xTile.Display;
+using xTile.Dimensions;
 
 namespace Demo
 {
@@ -20,12 +22,15 @@ namespace Demo
     /// </summary>
     public class DemoGame : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        GraphicsDeviceManager m_graphicsDeviceManager;
+        SpriteBatch m_spriteBatch;
+
+        XnaDisplayDevice m_xnaDisplayDevice;
+        Map m_map;
 
         public DemoGame()
         {
-            graphics = new GraphicsDeviceManager(this);
+            m_graphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 
@@ -49,10 +54,11 @@ namespace Demo
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            m_spriteBatch = new SpriteBatch(GraphicsDevice);
+            m_xnaDisplayDevice = new XnaDisplayDevice(Content, GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            Map map = Content.Load<Map>("Maps/Map01");
+            m_map = Content.Load<Map>("Maps/Map01");
         }
 
         /// <summary>
@@ -62,6 +68,7 @@ namespace Demo
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            m_map = null;
         }
 
         /// <summary>
@@ -76,6 +83,7 @@ namespace Demo
                 this.Exit();
 
             // TODO: Add your update logic here
+            m_map.Draw(m_xnaDisplayDevice, new xTile.Dimensions.Rectangle(xTile.Dimensions.Location.Origin, new xTile.Dimensions.Size(10, 10)));
 
             base.Update(gameTime);
         }
