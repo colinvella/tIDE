@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Layers;
-using XTile.ObjectModel;
-using XTile.Tiles;
+using xTile;
+using xTile.Layers;
+using xTile.ObjectModel;
+using xTile.Tiles;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
@@ -20,12 +20,12 @@ namespace TileMapEditor.Dialogs
     public partial class MapStatisticsDialog : Form
     {
         private Map m_map;
-        private XTile.Dimensions.Rectangle m_viewport;
+        private xTile.Dimensions.Rectangle m_viewport;
         private Font m_headerFont;
         private Font m_propertyNameFont;
         private Font m_propertyValueFont;
 
-        private void DisplayCustomProperties(XTile.ObjectModel.Component component)
+        private void DisplayCustomProperties(xTile.ObjectModel.Component component)
         {
             int oldIndent = m_textBoxStatistics.SelectionIndent;
 
@@ -163,7 +163,7 @@ namespace TileMapEditor.Dialogs
                 m_textBoxStatistics.SelectionBullet = true;
                 m_textBoxStatistics.SelectionTabs = new int[] { 400 };
 
-                XTile.Dimensions.Size thisSize = layer.DisplaySize;
+                xTile.Dimensions.Size thisSize = layer.DisplaySize;
                 thisSize.Width -= m_viewport.Size.Width;
                 thisSize.Height -= m_viewport.Size.Height;
 
@@ -172,8 +172,8 @@ namespace TileMapEditor.Dialogs
                     if (layerOther == layer)
                         continue;
 
-                    XTile.Dimensions.Size displaySizeOther = layerOther.DisplaySize;
-                    XTile.Dimensions.Size otherSize = displaySizeOther;
+                    xTile.Dimensions.Size displaySizeOther = layerOther.DisplaySize;
+                    xTile.Dimensions.Size otherSize = displaySizeOther;
                     otherSize.Width -= m_viewport.Size.Width;
                     otherSize.Height -= m_viewport.Size.Height;
 
@@ -378,7 +378,7 @@ namespace TileMapEditor.Dialogs
             DisplayMapStatistics();
         }
 
-        public MapStatisticsDialog(Map map, XTile.Dimensions.Rectangle viewport)
+        public MapStatisticsDialog(Map map, xTile.Dimensions.Rectangle viewport)
         {
             InitializeComponent();
 

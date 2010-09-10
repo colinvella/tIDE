@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Tiles;
 
 namespace TileMapEditor.Controls
 {

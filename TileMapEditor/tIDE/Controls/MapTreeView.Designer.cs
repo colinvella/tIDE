@@ -1,4 +1,4 @@
-﻿using XTile;
+﻿using xTile;
 
 namespace TileMapEditor.Controls
 {

@@ -15,13 +15,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
-using XTile.Display;
-using XTile.Layers;
-using XTile.ObjectModel;
-using XTile.Tiles;
+using xTile.Dimensions;
+using xTile.Display;
+using xTile.Layers;
+using xTile.ObjectModel;
+using xTile.Tiles;
 
-namespace XTile
+namespace xTile
 {
     /// <summary>
     /// A multi-layer tile-based map implementation. The contained Layers are

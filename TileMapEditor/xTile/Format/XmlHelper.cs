@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace XTile.Format
+namespace xTile.Format
 {
     public class XmlHelper
     {

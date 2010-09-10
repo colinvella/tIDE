@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile.Tiles;
+using xTile.Tiles;
 
 using TileMapEditor.AutoTiles;
 using TileMapEditor.Commands;

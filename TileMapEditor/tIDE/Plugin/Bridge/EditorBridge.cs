@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Layers;
+using xTile;
+using xTile.Dimensions;
+using xTile.Layers;
 
 using TileMapEditor.Controls;
 using TileMapEditor.Plugin.Interface;

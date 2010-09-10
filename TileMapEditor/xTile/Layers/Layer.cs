@@ -15,12 +15,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
-using XTile.Display;
-using XTile.ObjectModel;
-using XTile.Tiles;
+using xTile.Dimensions;
+using xTile.Display;
+using xTile.ObjectModel;
+using xTile.Tiles;
 
-namespace XTile.Layers
+namespace xTile.Layers
 {
     /// <summary>
     /// Represents a layer within an xTile map

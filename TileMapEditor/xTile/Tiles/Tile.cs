@@ -14,10 +14,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.ObjectModel;
-using XTile.Layers;
+using xTile.ObjectModel;
+using xTile.Layers;
 
-namespace XTile.Tiles
+namespace xTile.Tiles
 {
     /// <summary>
     /// Tile Blending Mode

@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
-using XTile.Tiles;
+using xTile.Dimensions;
+using xTile.Tiles;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace XTile.Display
+namespace xTile.Display
 {
     /// <summary>
     /// XNA implementation of the display device. In this implementation,
@@ -103,7 +103,7 @@ namespace XTile.Display
         /// NOTE: This function is not supported on the Zune platform.
         /// </summary>
         /// <param name="clippingRegion">Clipping region to apply</param>
-        public void SetClippingRegion(XTile.Dimensions.Rectangle clippingRegion)
+        public void SetClippingRegion(xTile.Dimensions.Rectangle clippingRegion)
         {
             m_graphicsDevice.ScissorRectangle = new Microsoft.Xna.Framework.Rectangle(
                 clippingRegion.Location.X, clippingRegion.Location.Y,
@@ -129,7 +129,7 @@ namespace XTile.Display
             SpriteBatch spriteBatch = tile.BlendMode == BlendMode.Alpha
                 ? m_spriteBatchAlpha : m_spriteBatchAdditive;
 
-            XTile.Dimensions.Rectangle sourceRectangle
+            xTile.Dimensions.Rectangle sourceRectangle
                 = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
 
             Texture2D texture2D = m_tileSheetTextures[tile.TileSheet];

@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XTile.ObjectModel
+namespace xTile.ObjectModel
 {
     /// <summary>
     /// Derivation of a Component type with a Description property

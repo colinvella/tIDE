@@ -14,10 +14,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
-using XTile.Tiles;
+using xTile.Dimensions;
+using xTile.Tiles;
 
-namespace XTile.Display
+namespace xTile.Display
 {
     /// <summary>
     /// Abstract representation of a display device. The device supports basic rendering

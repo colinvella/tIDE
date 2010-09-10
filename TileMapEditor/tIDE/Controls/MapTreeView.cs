@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.ObjectModel;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile;
+using xTile.ObjectModel;
+using xTile.Layers;
+using xTile.Tiles;
 
 namespace TileMapEditor.Controls
 {
@@ -75,15 +75,15 @@ namespace TileMapEditor.Controls
             if (ComponentChanged != null)
             {
                 object tag = treeNode.Tag;
-                XTile.ObjectModel.Component component = tag is XTile.ObjectModel.Component
-                    ? (XTile.ObjectModel.Component)tag : null;
+                xTile.ObjectModel.Component component = tag is xTile.ObjectModel.Component
+                    ? (xTile.ObjectModel.Component)tag : null;
 
                 ComponentChanged(this,
                     new MapTreeViewEventArgs(treeNode, component));
             }
         }
 
-        private TreeNode SearchComponent(TreeNode rootNode, XTile.ObjectModel.Component component)
+        private TreeNode SearchComponent(TreeNode rootNode, xTile.ObjectModel.Component component)
         {
             if (rootNode.Tag == component)
                 return rootNode;
@@ -212,7 +212,7 @@ namespace TileMapEditor.Controls
                 return;
             }
 
-            XTile.ObjectModel.Component selectedComponent = SelectedComponent;
+            xTile.ObjectModel.Component selectedComponent = SelectedComponent;
 
 
             // map root node
@@ -287,17 +287,17 @@ namespace TileMapEditor.Controls
             }
         }
 
-        public XTile.ObjectModel.Component SelectedComponent
+        public xTile.ObjectModel.Component SelectedComponent
         {
             get
             {
                 TreeNode treeNode = m_treeView.SelectedNode;
                 if (treeNode == null || treeNode.Tag == null)
                     return null;
-                if (!(treeNode.Tag is XTile.ObjectModel.Component))
+                if (!(treeNode.Tag is xTile.ObjectModel.Component))
                     return null;
 
-                return (XTile.ObjectModel.Component)treeNode.Tag;
+                return (xTile.ObjectModel.Component)treeNode.Tag;
             }
 
             set
@@ -360,9 +360,9 @@ namespace TileMapEditor.Controls
     public class MapTreeViewEventArgs
     {
         private TreeNode m_treeNode;
-        private XTile.ObjectModel.Component m_component;
+        private xTile.ObjectModel.Component m_component;
 
-        public MapTreeViewEventArgs(TreeNode treeNode, XTile.ObjectModel.Component component)
+        public MapTreeViewEventArgs(TreeNode treeNode, xTile.ObjectModel.Component component)
         {
             m_treeNode = treeNode;
             m_component = component;
@@ -370,7 +370,7 @@ namespace TileMapEditor.Controls
 
         public TreeNode TreeNode { get { return m_treeNode; } }
 
-        public XTile.ObjectModel.Component Component { get { return m_component; } }
+        public xTile.ObjectModel.Component Component { get { return m_component; } }
     }
 
     public delegate void MapTreeViewEventHandler(

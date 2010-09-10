@@ -17,12 +17,12 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-using XTile.Dimensions;
-using XTile.ObjectModel;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile.Dimensions;
+using xTile.ObjectModel;
+using xTile.Layers;
+using xTile.Tiles;
 
-namespace XTile.Format
+namespace xTile.Format
 {
     /// <summary>
     /// Default tIDE map format implementation

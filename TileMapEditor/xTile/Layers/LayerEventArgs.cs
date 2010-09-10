@@ -14,9 +14,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
+using xTile.Dimensions;
 
-namespace XTile.Layers
+namespace xTile.Layers
 {
     /// <summary>
     /// Argument structure for Layer-related events

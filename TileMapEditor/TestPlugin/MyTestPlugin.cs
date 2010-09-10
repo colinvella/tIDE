@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Dimensions;
+using xTile;
+using xTile.Dimensions;
 
 using TileMapEditor.Plugin;
 using TileMapEditor.Plugin.Interface;

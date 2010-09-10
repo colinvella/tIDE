@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace XTile.Format
+namespace xTile.Format
 {
     /// <summary>
     /// Represents a report on the compatibility of a map in a given format

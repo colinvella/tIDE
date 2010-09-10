@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace XTile.Format
+namespace xTile.Format
 {
     /// <summary>
     /// A singleton manager of registered file map formats. Direct access is provided

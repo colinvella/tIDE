@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile.Tiles;
+using xTile.Tiles;
 
 using TileMapEditor.Commands;
 
@@ -15,9 +15,9 @@ namespace TileMapEditor.Dialogs
 {
     public partial class CustomPropertiesDialog : Form
     {
-        private XTile.ObjectModel.Component m_component;
+        private xTile.ObjectModel.Component m_component;
 
-        public CustomPropertiesDialog(string dialogTitle, XTile.ObjectModel.Component component)
+        public CustomPropertiesDialog(string dialogTitle, xTile.ObjectModel.Component component)
         {
             InitializeComponent();
 

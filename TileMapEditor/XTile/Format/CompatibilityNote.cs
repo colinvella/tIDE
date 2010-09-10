@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XTile.Format
+namespace xTile.Format
 {
     /// <summary>
     /// Enumeration for the compatiblity level of a given format

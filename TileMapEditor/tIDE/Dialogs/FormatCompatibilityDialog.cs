@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile.Format;
+using xTile.Format;
 
 namespace TileMapEditor.Dialogs
 {

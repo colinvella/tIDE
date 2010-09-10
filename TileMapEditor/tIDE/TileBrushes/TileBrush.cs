@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Layers;
+using xTile.Tiles;
 
 using TileMapEditor.Controls;
 
@@ -27,11 +27,11 @@ namespace TileMapEditor.TileBrushes
         internal TileBrush(string id, Layer layer, TileSelection tileSelection)
         {
             m_id = id;
-            XTile.Dimensions.Rectangle selectionBounds = tileSelection.Bounds;
+            xTile.Dimensions.Rectangle selectionBounds = tileSelection.Bounds;
 
             m_brushSize = selectionBounds.Size;
             m_tileSize = layer.TileSize;
-            m_displaySize = new XTile.Dimensions.Size(
+            m_displaySize = new xTile.Dimensions.Size(
                 m_brushSize.Width * m_tileSize.Width,
                 m_brushSize.Height * m_tileSize.Height);
 
@@ -63,8 +63,8 @@ namespace TileMapEditor.TileBrushes
         {
             m_id = id;
 
-            m_brushSize = new XTile.Dimensions.Size();
-            m_tileSize = new XTile.Dimensions.Size();
+            m_brushSize = new xTile.Dimensions.Size();
+            m_tileSize = new xTile.Dimensions.Size();
             foreach (TileBrushElement tileBrushElement in tileBrushElements)
             {
                 m_brushSize.Width = Math.Max(m_brushSize.Width, tileBrushElement.Location.X + 1);
@@ -73,7 +73,7 @@ namespace TileMapEditor.TileBrushes
                     m_tileSize = tileBrushElement.Tile.TileSheet.TileSize;
             }
 
-            m_displaySize = new XTile.Dimensions.Size(
+            m_displaySize = new xTile.Dimensions.Size(
                 m_brushSize.Width * m_tileSize.Width,
                 m_brushSize.Height * m_tileSize.Height);
 
@@ -84,7 +84,7 @@ namespace TileMapEditor.TileBrushes
             TileSelection tileSelection)
         {
             Map map = layer.Map;
-            XTile.Dimensions.Size layerTileSize = layer.TileSize;
+            xTile.Dimensions.Size layerTileSize = layer.TileSize;
 
             if (layerTileSize != m_tileSize)
                 return;
@@ -244,11 +244,11 @@ namespace TileMapEditor.TileBrushes
             }
         }
 
-        internal XTile.Dimensions.Size BrushSize { get { return m_brushSize; } }
+        internal xTile.Dimensions.Size BrushSize { get { return m_brushSize; } }
 
-        internal XTile.Dimensions.Size TileSize { get { return m_tileSize; } }
+        internal xTile.Dimensions.Size TileSize { get { return m_tileSize; } }
 
-        internal XTile.Dimensions.Size DisplaySize { get { return m_displaySize; } }
+        internal xTile.Dimensions.Size DisplaySize { get { return m_displaySize; } }
 
         internal ReadOnlyCollection<TileBrushElement> Elements
         {
@@ -260,9 +260,9 @@ namespace TileMapEditor.TileBrushes
         #region Private Variables
 
         private string m_id;
-        private XTile.Dimensions.Size m_brushSize;
-        private XTile.Dimensions.Size m_tileSize;
-        private XTile.Dimensions.Size m_displaySize;
+        private xTile.Dimensions.Size m_brushSize;
+        private xTile.Dimensions.Size m_tileSize;
+        private xTile.Dimensions.Size m_displaySize;
         private List<TileBrushElement> m_tileBrushElements;
         private Image m_imageRepresentation;
 

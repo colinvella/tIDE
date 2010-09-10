@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Format;
-using XTile.ObjectModel;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Format;
+using xTile.ObjectModel;
+using xTile.Layers;
+using xTile.Tiles;
 
 using TileMapEditor.Compression.Zlib;
 using TileMapEditor.Dialogs;

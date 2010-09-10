@@ -15,10 +15,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
-using XTile.Layers;
+using xTile.Dimensions;
+using xTile.Layers;
 
-namespace XTile.Tiles
+namespace xTile.Tiles
 {
     /// <summary>
     /// Doubly-indexed tile array used to hold tiles within a Layer

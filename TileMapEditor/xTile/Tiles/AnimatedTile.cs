@@ -14,9 +14,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.Layers;
+using xTile.Layers;
 
-namespace XTile.Tiles
+namespace xTile.Tiles
 {
     /// <summary>
     /// Animated implementation of the Tile base class. The constituent

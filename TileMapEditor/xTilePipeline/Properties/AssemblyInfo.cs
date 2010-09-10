@@ -5,10 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xTile")]
-[assembly: AssemblyProduct("xTile")]
-[assembly: AssemblyDescription("XNA Tile Engine")]
+[assembly: AssemblyTitle("xTile.Pipeline")]
+[assembly: AssemblyDescription("xTile Content Pipeline")]
+[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Colin Vella")]
+[assembly: AssemblyProduct("xTile.Pipeline")]
 [assembly: AssemblyCopyright("Copyright © Colin Vella 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7044cf96-9f36-4bbd-a2d8-39cdc600778e")]
+[assembly: Guid("9e4764a0-0d19-42e6-9856-1cf8533003cd")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -29,3 +30,4 @@ using System.Runtime.InteropServices;
 //      Revision
 //
 [assembly: AssemblyVersion("1.1.1.0")]
+[assembly: AssemblyFileVersion("1.1.1.0")]

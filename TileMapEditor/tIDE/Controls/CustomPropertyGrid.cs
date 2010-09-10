@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile.ObjectModel;
+using xTile.ObjectModel;
 
 namespace TileMapEditor.Controls
 {
@@ -15,7 +15,7 @@ namespace TileMapEditor.Controls
     {
         #region Private Variables
 
-        private XTile.ObjectModel.PropertyCollection m_newProperties;
+        private xTile.ObjectModel.PropertyCollection m_newProperties;
         private string m_previousPropertyName = null;
         private PropertyValue m_previousPropertyValue = null;
 
@@ -188,10 +188,10 @@ namespace TileMapEditor.Controls
         {
             InitializeComponent();
 
-            m_newProperties = new XTile.ObjectModel.PropertyCollection();
+            m_newProperties = new xTile.ObjectModel.PropertyCollection();
         }
 
-        public void LoadProperties(XTile.ObjectModel.Component component)
+        public void LoadProperties(xTile.ObjectModel.Component component)
         {
             m_dataGridView.Rows.Clear();
 
@@ -217,7 +217,7 @@ namespace TileMapEditor.Controls
             }
         }
 
-        public void StoreProperties(XTile.ObjectModel.Component component)
+        public void StoreProperties(xTile.ObjectModel.Component component)
         {
             component.Properties.Clear();
             component.Properties.CopyFrom(m_newProperties);
@@ -227,7 +227,7 @@ namespace TileMapEditor.Controls
 
         #region Public Properties
 
-        public XTile.ObjectModel.PropertyCollection NewProperties
+        public xTile.ObjectModel.PropertyCollection NewProperties
         {
             get { return m_newProperties; }
         }

@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Format;
-using XTile.Layers;
-using XTile.ObjectModel;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Format;
+using xTile.Layers;
+using xTile.ObjectModel;
+using xTile.Tiles;
 
 using TileMapEditor.AutoTiles;
 using TileMapEditor.Commands;
@@ -44,7 +44,7 @@ namespace TileMapEditor
         private Map m_map;
 
         private CommandHistory m_commandHistory;
-        private XTile.ObjectModel.Component m_selectedComponent;
+        private xTile.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
         private bool m_needsSaving;
         private string m_filename;
@@ -62,7 +62,7 @@ namespace TileMapEditor
         private void RegisterFileFormats()
         {
             // Tiled TMX format
-            XTile.Format.FormatManager.Instance.RegisterMapFormat(new TiledTmxFormat());
+            xTile.Format.FormatManager.Instance.RegisterMapFormat(new TiledTmxFormat());
         }
 
         private string GenerateFileDialogFilter()
@@ -560,7 +560,7 @@ namespace TileMapEditor
 
         private void OnMainFormLoad(object sender, EventArgs eventArgs)
         {
-            XTile.Format.FormatManager fm = XTile.Format.FormatManager.Instance;
+            xTile.Format.FormatManager fm = xTile.Format.FormatManager.Instance;
 
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
@@ -1086,10 +1086,10 @@ namespace TileMapEditor
         {
             ToolStripMenuItem toolStripMenuItemSelected = (ToolStripMenuItem)sender;
             string sizeTag = toolStripMenuItemSelected.Tag.ToString();
-            Size viewPortSize = XTile.Dimensions.Size.FromString(sizeTag);
+            Size viewPortSize = xTile.Dimensions.Size.FromString(sizeTag);
 
             Rectangle viewport = new Rectangle(
-                XTile.Dimensions.Location.Origin, viewPortSize);
+                xTile.Dimensions.Location.Origin, viewPortSize);
 
             m_mapPanel.AutoScaleViewport = false;
             m_mapPanel.Viewport = viewport;
@@ -1425,7 +1425,7 @@ namespace TileMapEditor
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
-            XTile.ObjectModel.Component component = mapTreeViewEventArgs.Component;
+            xTile.ObjectModel.Component component = mapTreeViewEventArgs.Component;
 
             // enable/disable layer menu items as applicable
             bool layerSelected = component != null && component is Layer;

@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Layers;
+using xTile.Tiles;
 
 namespace TileMapEditor.AutoTiles
 {

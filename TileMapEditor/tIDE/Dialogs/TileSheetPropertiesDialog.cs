@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Layers;
+using xTile.Tiles;
 
 using TileMapEditor.AutoTiles;
 using TileMapEditor.Commands;
@@ -208,7 +208,7 @@ namespace TileMapEditor.Dialogs
             m_previewMode = PreviewMode.Preview;
             m_previewMouseDown = false;
             m_previewOffset = PointF.Empty;
-            m_previewGrip = XTile.Dimensions.Location.Origin;
+            m_previewGrip = xTile.Dimensions.Location.Origin;
 
             if (!m_isNewTileSheet)
             {
@@ -590,16 +590,16 @@ namespace TileMapEditor.Dialogs
                     return;
             }
 
-            XTile.Dimensions.Size newTileSize = new XTile.Dimensions.Size(
+            xTile.Dimensions.Size newTileSize = new xTile.Dimensions.Size(
                 (int)m_textBoxTileWidth.Value, (int)m_textBoxTileHeight.Value);
 
-            XTile.Dimensions.Size newMargin = new XTile.Dimensions.Size(
+            xTile.Dimensions.Size newMargin = new xTile.Dimensions.Size(
                 (int)m_textBoxLeftMargin.Value, (int)m_textBoxTopMargin.Value);
 
-            XTile.Dimensions.Size newSpacing = new XTile.Dimensions.Size(
+            xTile.Dimensions.Size newSpacing = new xTile.Dimensions.Size(
                 (int)m_textBoxSpacingX.Value, (int)m_textBoxSpacingY.Value);
 
-            XTile.Dimensions.Size newSheetSize = XTile.Dimensions.Size.Zero;
+            xTile.Dimensions.Size newSheetSize = xTile.Dimensions.Size.Zero;
             if (m_bitmapImageSource != null)
             {
                 newSheetSize.Width = (m_bitmapImageSource.Width + newSpacing.Width - newMargin.Width)
@@ -688,14 +688,14 @@ namespace TileMapEditor.Dialogs
                 Brush selectionBrush = new SolidBrush(Color.FromArgb(128, Color.Red));
                 if (m_previewMode != PreviewMode.Preview && m_tileHoverIndex != -1)
                 {
-                    XTile.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_tileHoverIndex);
+                    xTile.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_tileHoverIndex);
                     graphics.FillRectangle(selectionBrush, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
                     graphics.DrawRectangle(selectionPen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
                 }
 
                 if (m_previewMode == PreviewMode.PickSecond)
                 {
-                    XTile.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_swapTileIndex1);
+                    xTile.Dimensions.Rectangle rectangle = m_tileSheet.GetTileImageBounds(m_swapTileIndex1);
                     graphics.FillRectangle(selectionBrush, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
                     graphics.DrawRectangle(selectionPen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
                 }

@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XTile.ObjectModel
+namespace xTile.ObjectModel
 {
     /// <summary>
     /// Represents the value of a property within a property collection

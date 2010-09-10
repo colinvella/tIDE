@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XTile.Dimensions
+namespace xTile.Dimensions
 {
     /// <summary>
     /// Size representation structure in two integral dimensions

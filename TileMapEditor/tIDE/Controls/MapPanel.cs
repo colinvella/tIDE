@@ -10,11 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using XTile;
-using XTile.Dimensions;
-using XTile.Display;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile;
+using xTile.Dimensions;
+using xTile.Display;
+using xTile.Layers;
+using xTile.Tiles;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Dialogs;
@@ -52,7 +52,7 @@ namespace TileMapEditor.Controls
         private List<Tile> m_textureDistribution;
 
         private Graphics m_graphics;
-        private XTile.Dimensions.Rectangle m_viewport;
+        private xTile.Dimensions.Rectangle m_viewport;
         private bool m_autoScaleViewport; 
         private int m_zoom;
         private Brush m_veilBrush;
@@ -84,7 +84,7 @@ namespace TileMapEditor.Controls
 
             layerLocation += viewportOffset / m_zoom;
 
-            XTile.Dimensions.Size tileSize = m_selectedLayer.TileSize;
+            xTile.Dimensions.Size tileSize = m_selectedLayer.TileSize;
             layerLocation.X /= tileSize.Width;
             layerLocation.Y /= tileSize.Height;
 
@@ -140,7 +140,7 @@ namespace TileMapEditor.Controls
             if (m_selectedLayer == null)
                 return;
 
-            XTile.Dimensions.Size layerSize = m_selectedLayer.LayerSize;
+            xTile.Dimensions.Size layerSize = m_selectedLayer.LayerSize;
             int minX = Math.Max(0, Math.Min(m_tileLayerLocation.X, m_dragTileStart.X));
             int minY = Math.Max(0, Math.Min(m_tileLayerLocation.Y, m_dragTileStart.Y));
             int maxX = Math.Min(layerSize.Width - 1, Math.Max(m_tileLayerLocation.X, m_dragTileStart.X));
@@ -215,7 +215,7 @@ namespace TileMapEditor.Controls
                 return;
             }
 
-            XTile.Dimensions.Size layerSize = m_selectedLayer.LayerSize;
+            xTile.Dimensions.Size layerSize = m_selectedLayer.LayerSize;
             int minX = Math.Max(0, Math.Min(m_tileLayerLocation.X, m_dragTileStart.X));
             int minY = Math.Max(0, Math.Min(m_tileLayerLocation.Y, m_dragTileStart.Y));
             int maxX = Math.Min(layerSize.Width - 1, Math.Max(m_tileLayerLocation.X, m_dragTileStart.X));
@@ -224,7 +224,7 @@ namespace TileMapEditor.Controls
             Command command = new ToolsTileBlockCommand(
                 m_selectedLayer, m_selectedTileSheet, m_selectedTileIndex,
                 new Location(minX, minY),
-                new XTile.Dimensions.Size(maxX - minX + 1, maxY - minY + 1));
+                new xTile.Dimensions.Size(maxX - minX + 1, maxY - minY + 1));
             m_commandHistory.Do(command);
 
             m_innerPanel.Invalidate();
@@ -333,8 +333,8 @@ namespace TileMapEditor.Controls
                 return;
             }
 
-            XTile.Dimensions.Location brushLocation = m_tileLayerLocation;
-            XTile.Dimensions.Size brushSize = m_selectedTileBrush.BrushSize;
+            xTile.Dimensions.Location brushLocation = m_tileLayerLocation;
+            xTile.Dimensions.Size brushSize = m_selectedTileBrush.BrushSize;
             brushLocation.X -= brushSize.Width / 2;
             brushLocation.Y -= brushSize.Height / 2;
 
@@ -364,7 +364,7 @@ namespace TileMapEditor.Controls
             else
             {
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-                XTile.Dimensions.Size displaySize = m_map.DisplaySize;
+                xTile.Dimensions.Size displaySize = m_map.DisplaySize;
 
                 m_horizontalScrollBar.Maximum = displaySize.Width;
                 m_horizontalScrollBar.LargeChange = 1 + (clientRectangle.Width - 1) / m_zoom;
@@ -442,9 +442,9 @@ namespace TileMapEditor.Controls
 
             // alignment data
             Layer layer = layerEventArgs.Layer;
-            XTile.Dimensions.Rectangle viewport = layerEventArgs.Viewport;
-            XTile.Dimensions.Size tileSize = layer.TileSize;
-            XTile.Dimensions.Location layerViewportLocation
+            xTile.Dimensions.Rectangle viewport = layerEventArgs.Viewport;
+            xTile.Dimensions.Size tileSize = layer.TileSize;
+            xTile.Dimensions.Location layerViewportLocation
                 = m_selectedLayer.ConvertMapToLayerLocation(viewport.Location, m_viewport.Size);
 
             // tile guide
@@ -466,7 +466,7 @@ namespace TileMapEditor.Controls
             {
                 Location tileViewportLocation = new Location(
                     layerViewportLocation.X / tileSize.Width, layerViewportLocation.Y / tileSize.Height);
-                XTile.Dimensions.Size tileViewportSize = viewport.Size;
+                xTile.Dimensions.Size tileViewportSize = viewport.Size;
                 tileViewportSize.Width /= tileSize.Width;
                 tileViewportSize.Height /= tileSize.Height;
                 tileViewportSize.Width++;
@@ -481,7 +481,7 @@ namespace TileMapEditor.Controls
                     {
                         if (m_tileSelection.Contains(tileLocation))
                         {
-                            XTile.Dimensions.Rectangle tileRectangle = m_selectedLayer.GetTileDisplayRectangle(viewport, tileLocation);
+                            xTile.Dimensions.Rectangle tileRectangle = m_selectedLayer.GetTileDisplayRectangle(viewport, tileLocation);
                             int x1 = tileRectangle.Location.X;
                             int y1 = tileRectangle.Location.Y;
                             int width = tileRectangle.Size.Width;
@@ -514,15 +514,15 @@ namespace TileMapEditor.Controls
             // highlight tile under mouse cursor
             if (m_mouseInside)
             {
-                XTile.Dimensions.Rectangle tileDisplayRectangle
+                xTile.Dimensions.Rectangle tileDisplayRectangle
                     = m_selectedLayer.GetTileDisplayRectangle(m_viewport, m_tileLayerLocation);
-                XTile.Dimensions.Location tileDisplayLocation = tileDisplayRectangle.Location;
+                xTile.Dimensions.Location tileDisplayLocation = tileDisplayRectangle.Location;
 
                 if (m_bMouseDown && (m_editTool == EditTool.Select || m_editTool == EditTool.TileBlock) )
                 {
-                    XTile.Dimensions.Rectangle tileDragRectangle
+                    xTile.Dimensions.Rectangle tileDragRectangle
                         = m_selectedLayer.GetTileDisplayRectangle(m_viewport, m_dragTileStart);
-                    XTile.Dimensions.Location tileDragLocation = tileDragRectangle.Location;
+                    xTile.Dimensions.Location tileDragLocation = tileDragRectangle.Location;
 
                     int minX = Math.Min(tileDragLocation.X, tileDisplayLocation.X);
                     int minY = Math.Min(tileDragLocation.Y, tileDisplayLocation.Y);
@@ -551,9 +551,9 @@ namespace TileMapEditor.Controls
                 {
                     if (m_selectedTileBrush != null)
                     {
-                        XTile.Dimensions.Location location = tileDisplayRectangle.Location;
-                        XTile.Dimensions.Size brushSize = m_selectedTileBrush.BrushSize;
-                        XTile.Dimensions.Size displaySize = m_selectedTileBrush.DisplaySize;
+                        xTile.Dimensions.Location location = tileDisplayRectangle.Location;
+                        xTile.Dimensions.Size brushSize = m_selectedTileBrush.BrushSize;
+                        xTile.Dimensions.Size displaySize = m_selectedTileBrush.DisplaySize;
 
                         location.X -= (brushSize.Width / 2) * tileSize.Width;
                         location.Y -= (brushSize.Height / 2) * tileSize.Height;
@@ -572,8 +572,8 @@ namespace TileMapEditor.Controls
                 }
                 else
                 {
-                    XTile.Dimensions.Location location = tileDisplayRectangle.Location;
-                    XTile.Dimensions.Size size = tileDisplayRectangle.Size;
+                    xTile.Dimensions.Location location = tileDisplayRectangle.Location;
+                    xTile.Dimensions.Size size = tileDisplayRectangle.Size;
 
                     m_graphics.PixelOffsetMode = PixelOffsetMode.None;
 
@@ -863,8 +863,8 @@ namespace TileMapEditor.Controls
             m_eraserCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsEraserCursor));
             m_dropperCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsDropperCursor));
 
-            m_viewport = new XTile.Dimensions.Rectangle(
-                XTile.Dimensions.Location.Origin, XTile.Dimensions.Size.Zero);
+            m_viewport = new xTile.Dimensions.Rectangle(
+                xTile.Dimensions.Location.Origin, xTile.Dimensions.Size.Zero);
             m_autoScaleViewport = true;
 
             m_zoom = 1;
@@ -875,8 +875,8 @@ namespace TileMapEditor.Controls
             m_innerPanel.Cursor = m_singleTileCursor;
             m_mouseInside = false;
             m_mouseLocation = new Location();
-            m_tileLayerLocation = XTile.Dimensions.Location.Origin;
-            m_dragTileStart = XTile.Dimensions.Location.Origin;
+            m_tileLayerLocation = xTile.Dimensions.Location.Origin;
+            m_dragTileStart = xTile.Dimensions.Location.Origin;
 
             m_tileSelection = new TileSelection();
             m_ctrlKeyPressed = false;
@@ -912,8 +912,8 @@ namespace TileMapEditor.Controls
             Graphics oldGraphics = m_graphics;
             m_graphics = graphics;
 
-            XTile.Dimensions.Rectangle viewport = new XTile.Dimensions.Rectangle(layer.DisplaySize);
-            layer.Draw(this, XTile.Dimensions.Location.Origin, viewport);
+            xTile.Dimensions.Rectangle viewport = new xTile.Dimensions.Rectangle(layer.DisplaySize);
+            layer.Draw(this, xTile.Dimensions.Location.Origin, viewport);
 
             m_graphics = oldGraphics;
 
@@ -936,7 +936,7 @@ namespace TileMapEditor.Controls
             m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
         }
 
-        public void SetClippingRegion(XTile.Dimensions.Rectangle clippingRegion)
+        public void SetClippingRegion(xTile.Dimensions.Rectangle clippingRegion)
         {
             if (m_graphics == null)
                 return;
@@ -954,7 +954,7 @@ namespace TileMapEditor.Controls
             Bitmap tileBitmap = TileImageCache.Instance.GetTileBitmap(
                 tile.TileSheet, tile.TileIndex);
 
-            XTile.Dimensions.Size tileSize = tile.TileSheet.TileSize;
+            xTile.Dimensions.Size tileSize = tile.TileSheet.TileSize;
 
             System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
                 location.X, location.Y, tileSize.Width, tileSize.Height);
@@ -1112,7 +1112,7 @@ namespace TileMapEditor.Controls
             }
         }
 
-        public XTile.Dimensions.Rectangle Viewport
+        public xTile.Dimensions.Rectangle Viewport
         {
             get { return m_viewport; }
             set { m_viewport = value; }

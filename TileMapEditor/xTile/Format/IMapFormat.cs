@@ -15,7 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace XTile.Format
+namespace xTile.Format
 {
     /// <summary>
     /// Abstract interface to a map format implementation

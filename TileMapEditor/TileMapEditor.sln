@@ -33,9 +33,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tIDE", "tIDE\tIDE.csproj", 
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "tIDESetup", "tIDESetup\tIDESetup.vdproj", "{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xTilePipeline", "xTilePipeline\xTilePipeline.csproj", "{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
+		SccNumberOfProjects = 10
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/TFS04
 		SccLocalPath0 = .
@@ -64,6 +66,9 @@ Global
 		SccProjectUniqueName8 = tIDESetup\\tIDESetup.vdproj
 		SccProjectName8 = tIDESetup
 		SccLocalPath8 = tIDESetup
+		SccProjectUniqueName9 = xTilePipeline\\xTilePipeline.csproj
+		SccProjectName9 = xTilePipeline
+		SccLocalPath9 = xTilePipeline
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -182,6 +187,24 @@ Global
 		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|x86.ActiveCfg = Release|x86
 		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Xbox 360.ActiveCfg = Release|x86
 		{B5667A7B-0FD7-454E-B901-EEC1ADCFC393}.Release|Zune.ActiveCfg = Release|x86
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Any CPU.ActiveCfg = Debug|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Mixed Platforms.ActiveCfg = Debug|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Mixed Platforms.Build.0 = Debug|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|x86.ActiveCfg = Debug|x86
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|x86.Build.0 = Debug|x86
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Zune.ActiveCfg = Debug|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Zune.Build.0 = Debug|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Any CPU.ActiveCfg = Release|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Mixed Platforms.ActiveCfg = Release|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Mixed Platforms.Build.0 = Release|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|x86.ActiveCfg = Release|x86
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|x86.Build.0 = Release|x86
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Zune.ActiveCfg = Release|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Zune.Build.0 = Release|Zune
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

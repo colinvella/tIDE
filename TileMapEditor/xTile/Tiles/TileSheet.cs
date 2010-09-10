@@ -14,10 +14,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using XTile.Dimensions;
-using XTile.ObjectModel;
+using xTile.Dimensions;
+using xTile.ObjectModel;
 
-namespace XTile.Tiles
+namespace xTile.Tiles
 {
     /// <summary>
     /// Represents an indexed tile sheet based on a tile image source

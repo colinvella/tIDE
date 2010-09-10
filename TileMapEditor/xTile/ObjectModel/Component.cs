@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XTile.ObjectModel
+namespace xTile.ObjectModel
 {
     /// <summary>
     /// Base class for all xTile map components. Can be assigned an ID and
