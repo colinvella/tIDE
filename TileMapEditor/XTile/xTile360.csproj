@@ -79,7 +79,6 @@
     <Compile Include="ObjectModel\PropertyCollection.cs" />
     <Compile Include="ObjectModel\PropertyValue.cs" />
     <Compile Include="Pipeline\TideReader.cs" />
-    <Compile Include="Pipeline\TileMarker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tiles\AnimatedTile.cs" />
     <Compile Include="Tiles\StaticTile.cs" />

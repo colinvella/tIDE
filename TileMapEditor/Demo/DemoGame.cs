@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 
+using xTile;
+
 namespace Demo
 {
     /// <summary>
@@ -50,6 +52,7 @@ namespace Demo
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            Map map = Content.Load<Map>("Maps/Map01");
         }
 
         /// <summary>

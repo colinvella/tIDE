@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+
 using System.Linq;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 using xTile;
+using xTile.Format;
 
 namespace xTile.Pipeline
 {
@@ -14,10 +18,17 @@ namespace xTile.Pipeline
     /// </summary>
     public class TideReader : ContentTypeReader<Map>
     {
-        protected override Map Read(ContentReader input, Map map)
+        protected override Map Read(ContentReader contentReader, Map existingMap)
         {
-            // TODO: read a value from the input ContentReader.
-            throw new NotImplementedException();
+            // existing map is ignored
+
+            int dataLength = contentReader.ReadInt32();
+            byte[] data = contentReader.ReadBytes(dataLength);
+
+            MemoryStream memoryStream = new MemoryStream(data);
+            Map map = FormatManager.Instance.DefaultFormat.Load(memoryStream);
+
+            return map;
         }
     }
 }
