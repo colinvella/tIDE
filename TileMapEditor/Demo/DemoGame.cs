@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework.Storage;
 using xTile;
 using xTile.Display;
 using xTile.Dimensions;
+using xTile.Tiles;
 
 namespace Demo
 {
@@ -27,6 +28,7 @@ namespace Demo
 
         XnaDisplayDevice m_xnaDisplayDevice;
         Map m_map;
+        xTile.Dimensions.Rectangle m_viewPort;
 
         public DemoGame()
         {
@@ -58,7 +60,14 @@ namespace Demo
             m_xnaDisplayDevice = new XnaDisplayDevice(Content, GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            m_map = Content.Load<Map>("Maps/Map01");
+            m_map = Content.Load<Map>("Maps\\Map01");
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+                m_xnaDisplayDevice.LoadTileSheet(tileSheet);
+
+            m_viewPort = new xTile.Dimensions.Rectangle(
+                new xTile.Dimensions.Size(
+                    GraphicsDevice.PresentationParameters.BackBufferWidth,
+                    GraphicsDevice.PresentationParameters.BackBufferHeight));
         }
 
         /// <summary>
@@ -68,6 +77,9 @@ namespace Demo
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+                m_xnaDisplayDevice.DisposeTileSheet(tileSheet);
+
             m_map = null;
         }
 
@@ -78,12 +90,35 @@ namespace Demo
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
+            GamePadButtons gamePadButtons = gamePadState.Buttons;
+            Vector2 leftThumbStick = gamePadState.ThumbSticks.Left;
+
+            KeyboardState keyboardState = Keyboard.GetState(PlayerIndex.One);
+
+            // check for exit
+            if (gamePadButtons.Back == ButtonState.Pressed
+                || keyboardState.IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            // TODO: Add your update logic here
-            m_map.Draw(m_xnaDisplayDevice, new xTile.Dimensions.Rectangle(xTile.Dimensions.Location.Origin, new xTile.Dimensions.Size(10, 10)));
+            // movement via keyboard
+            if (keyboardState.IsKeyDown(Keys.Left))
+                m_viewPort.Location.X -= 2;
+
+            if (keyboardState.IsKeyDown(Keys.Right))
+                m_viewPort.Location.X += 2;
+
+            if (keyboardState.IsKeyDown(Keys.Up))
+                m_viewPort.Location.Y -= 2;
+
+            if (keyboardState.IsKeyDown(Keys.Down))
+                m_viewPort.Location.Y += 2;
+
+            // stick movement
+            m_viewPort.Location.X += (int)(leftThumbStick.X * 4.0f);
+            m_viewPort.Location.Y += (int)(leftThumbStick.Y * 4.0f);
+
+            m_map.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
         }
@@ -97,6 +132,7 @@ namespace Demo
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            m_map.Draw(m_xnaDisplayDevice, m_viewPort);
 
             base.Draw(gameTime);
         }
