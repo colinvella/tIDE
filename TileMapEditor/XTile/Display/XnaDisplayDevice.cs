@@ -117,7 +117,7 @@ namespace xTile.Display
         }
 
         /// <summary>
-        /// Draws the givne tile at the given location
+        /// Draws the given tile at the given location
         /// </summary>
         /// <param name="tile">Tile to draw</param>
         /// <param name="location">Drawing location</param>
