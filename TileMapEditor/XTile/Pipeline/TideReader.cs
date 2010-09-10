@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 
 using System.Linq;
 
@@ -26,7 +27,9 @@ namespace xTile.Pipeline
             byte[] data = contentReader.ReadBytes(dataLength);
 
             MemoryStream memoryStream = new MemoryStream(data);
-            Map map = FormatManager.Instance.DefaultFormat.Load(memoryStream);
+            GZipStream gZipStream = new GZipStream(memoryStream, CompressionMode.Decompress);
+
+            Map map = FormatManager.Instance.DefaultFormat.Load(gZipStream);
 
             return map;
         }

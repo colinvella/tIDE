@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 
 
@@ -36,7 +37,12 @@ namespace xTile.Pipeline
         protected override void Write(ContentWriter contentWriter, Map map)
         {
             MemoryStream memoryStream = new MemoryStream();
-            FormatManager.Instance.DefaultFormat.Store(map, memoryStream);
+            GZipStream gZipStream = new GZipStream(memoryStream, CompressionMode.Compress);
+
+            FormatManager.Instance.DefaultFormat.Store(map, gZipStream);
+
+            gZipStream.Close();
+
             byte[] data = memoryStream.ToArray();
             contentWriter.Write(data.Length);
             contentWriter.Write(data);
