@@ -5,7 +5,7 @@
     <TileSheet Id="Background01">
       <Description><![CDATA[]]></Description>
       <ImageSource><![CDATA[..\TileSheets\Background01.png]]></ImageSource>
-      <Alignment SheetSize="2 x 2" TileSize="320 x 240" Margin="0 x 0" Spacing="0 x 0" />
+      <Alignment SheetSize="2 x 3" TileSize="320 x 240" Margin="0 x 0" Spacing="0 x 0" />
       <Properties />
     </TileSheet>
     <TileSheet Id="Background02">
@@ -32,10 +32,16 @@
   <Layers>
     <Layer Id="Background01">
       <Description><![CDATA[]]></Description>
-      <Dimensions LayerSize="4 x 2" TileSize="320 x 240" />
+      <Dimensions LayerSize="4 x 3" TileSize="320 x 240" />
       <TileArray>
         <Row>
           <TileSheet Ref="Background01" />
+          <Static Index="4" BlendMode="Alpha" />
+          <Static Index="4" BlendMode="Alpha" />
+          <Static Index="4" BlendMode="Alpha" />
+          <Static Index="4" BlendMode="Alpha" />
+        </Row>
+        <Row>
           <Static Index="0" BlendMode="Alpha" />
           <Static Index="1" BlendMode="Alpha" />
           <Static Index="0" BlendMode="Alpha" />
@@ -52,8 +58,11 @@
     </Layer>
     <Layer Id="Background02">
       <Description><![CDATA[]]></Description>
-      <Dimensions LayerSize="8 x 2" TileSize="320 x 240" />
+      <Dimensions LayerSize="8 x 3" TileSize="320 x 240" />
       <TileArray>
+        <Row>
+          <Null Count="8" />
+        </Row>
         <Row>
           <TileSheet Ref="Background02" />
           <Static Index="0" BlendMode="Alpha" />
@@ -80,8 +89,11 @@
     </Layer>
     <Layer Id="Background03">
       <Description><![CDATA[]]></Description>
-      <Dimensions LayerSize="16 x 2" TileSize="320 x 240" />
+      <Dimensions LayerSize="16 x 3" TileSize="320 x 240" />
       <TileArray>
+        <Row>
+          <Null Count="16" />
+        </Row>
         <Row>
           <Null Count="16" />
         </Row>
@@ -109,8 +121,32 @@
     </Layer>
     <Layer Id="Foreground">
       <Description><![CDATA[Foreground layer]]></Description>
-      <Dimensions LayerSize="400 x 15" TileSize="32 x 32" />
+      <Dimensions LayerSize="400 x 24" TileSize="32 x 32" />
       <TileArray>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
         <Row>
           <Null Count="400" />
         </Row>
@@ -899,6 +935,9 @@
           <Static Index="3" BlendMode="Alpha" />
           <Null Count="355" />
         </Row>
+        <Row>
+          <Null Count="400" />
+        </Row>
       </TileArray>
       <Properties>
         <Property Key="FogEffect" Type="Boolean"><![CDATA[True]]></Property>
@@ -907,7 +946,7 @@
     </Layer>
   </Layers>
   <Properties>
-    <Property Key="@TileBrush@Tile Brush 1@" Type="String"><![CDATA[Foreground|0,3,TileSheet01,114|1,0,,114|1,1,,112|1,2,,112|1,3,,112|2,0,,115|2,1,,113|2,2,,117|2,3,,112|3,2,,115|3,3,,113]]></Property>
-    <Property Key="@TileBrush@Tile Brush 2@" Type="String"><![CDATA[Foreground|2,1,TileSheet01,3|1,1,,2|2,2,,3|1,2,,2|1,0,,4|0,0,,108|3,0,,107|2,0,,5]]></Property>
+    <Property Key="@TileBrush@Tile Brush 2@" Type="String"><![CDATA[Foreground|0,0,TileSheet01,108|1,0,,4|2,0,,5|3,0,,107|1,1,,2|2,1,,3|1,2,,2|2,2,,3]]></Property>
+    <Property Key="@TileBrush@Tile Brush 1@" Type="String"><![CDATA[Foreground|2,2,TileSheet01,117|2,1,,113|2,3,,112|3,3,,113|3,2,,115|2,0,,115|1,0,,114|0,3,,114|1,1,,112|1,3,,112|1,2,,112]]></Property>
   </Properties>
 </Map>
