@@ -45,6 +45,7 @@ namespace Demo
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            Window.Title = "xTile XNA Demo Application";
 
             base.Initialize();
         }
@@ -123,8 +124,6 @@ namespace Demo
             m_viewPort.Location.Y = Math.Max(0, m_viewPort.Location.Y);
             m_viewPort.Location.X = Math.Min(m_map.DisplaySize.Width - m_viewPort.Width, m_viewPort.Location.X);
             m_viewPort.Location.Y = Math.Min(m_map.DisplaySize.Height - m_viewPort.Height, m_viewPort.Location.Y);
-
-
 
             m_map.Update(gameTime.ElapsedGameTime.Milliseconds);
 
