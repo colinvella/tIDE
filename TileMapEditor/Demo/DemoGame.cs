@@ -56,8 +56,13 @@ namespace Demo
                     GraphicsDevice.PresentationParameters.BackBufferHeight));
 
             // set help panel size
+#if WINDOWS
+            m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
+                0, m_viewPort.Height - 80, m_viewPort.Width, 80);
+#else
             m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
                 0, m_viewPort.Height - 56, m_viewPort.Width, 56);
+#endif
 
             base.Initialize();
         }
@@ -117,6 +122,13 @@ namespace Demo
                 || keyboardState.IsKeyDown(Keys.Escape))
                 this.Exit();
 
+#if WINDOWS
+            // toggle window / fullscreen mode
+            if (gamePadButtons.Y == ButtonState.Pressed
+                || keyboardState.IsKeyDown(Keys.Space))
+                m_graphicsDeviceManager.ToggleFullScreen();
+#endif
+
             // movement via keyboard
             if (keyboardState.IsKeyDown(Keys.Left))
                 m_viewPort.Location.X -= 2;
@@ -160,8 +172,14 @@ namespace Demo
             // draw help panel
             m_spriteBatch.Begin();
             m_spriteBatch.Draw(m_texturePanel, m_panelRectangle, Color.White);
-            WriteText("Use the arrow keys or left gamepad thumbstick to navigate the map", 16, m_viewPort.Height - 48);
-            WriteText("Press the Esc key or the gamepad Back button to exit the demo", 16, m_viewPort.Height - 24);
+#if WINDOWS
+            WriteText("Arrow keys / left gamepad thumbstick - navigate the map", 16, m_viewPort.Height - 72);
+            WriteText("Esc key    / gamepad Back button     - exit the demo", 16, m_viewPort.Height - 48);
+            WriteText("Space key  / gamepad Y button        - window / fullscreen toggle", 16, m_viewPort.Height - 24);
+#else
+            WriteText("Arrow keys / left gamepad thumbstick - navigate the map", 16, m_viewPort.Height - 48);
+            WriteText("Esc key    / gamepad Back button     - exit the demo", 16, m_viewPort.Height - 24);
+#endif
             m_spriteBatch.End();
 
             base.Draw(gameTime);
