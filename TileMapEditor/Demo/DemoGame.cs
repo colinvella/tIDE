@@ -47,7 +47,15 @@ namespace Demo
         protected override void Initialize()
         {
             // set window title (PC version, windowed mode only)
-            Window.Title = "xTile XNA Demo Application";
+#if WINDOWS
+            Window.Title = "xTile XNA Demo Application (Windows)";
+#elif XBOX
+            Window.Title = "xTile XNA Demo Application (XBOX 360)";
+#elif ZUNE
+            Window.Title = "xTile XNA Demo Application (Zune)";
+#elif WINDOWS_PHONE
+            Window.Title = "xTile XNA Demo Application (Windows Phone)";
+#endif
 
             // set map viewport to match window size
             m_viewPort = new xTile.Dimensions.Rectangle(
