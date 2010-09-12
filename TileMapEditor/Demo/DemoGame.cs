@@ -31,6 +31,9 @@ namespace Demo
         xTile.Dimensions.Rectangle m_viewPort;
         SpriteFont m_spriteFontDemo;
 
+        Microsoft.Xna.Framework.Rectangle m_panelRectangle;
+        Texture2D m_texturePanel;
+
         public DemoGame()
         {
             m_graphicsDeviceManager = new GraphicsDeviceManager(this);
@@ -47,6 +50,14 @@ namespace Demo
         {
             // TODO: Add your initialization logic here
             Window.Title = "xTile XNA Demo Application";
+
+            m_viewPort = new xTile.Dimensions.Rectangle(
+                new xTile.Dimensions.Size(
+                    GraphicsDevice.PresentationParameters.BackBufferWidth,
+                    GraphicsDevice.PresentationParameters.BackBufferHeight));
+
+            m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
+                0, m_viewPort.Height - 56, m_viewPort.Width, 56);
 
             base.Initialize();
         }
@@ -68,10 +79,9 @@ namespace Demo
             foreach (TileSheet tileSheet in m_map.TileSheets)
                 m_xnaDisplayDevice.LoadTileSheet(tileSheet);
 
-            m_viewPort = new xTile.Dimensions.Rectangle(
-                new xTile.Dimensions.Size(
-                    GraphicsDevice.PresentationParameters.BackBufferWidth,
-                    GraphicsDevice.PresentationParameters.BackBufferHeight));
+            // prepare translucent panel for text
+            m_texturePanel = new Texture2D(GraphicsDevice, 1, 1);
+            m_texturePanel.SetData<Color>(new Color[] { new Color(Color.Black, 128) });
         }
 
         /// <summary>
@@ -147,10 +157,20 @@ namespace Demo
             m_map.Draw(m_xnaDisplayDevice, m_viewPort);
 
             m_spriteBatch.Begin();
-            m_spriteBatch.DrawString(m_spriteFontDemo, "Test", new Vector2(16, 15), Color.White);
+            m_spriteBatch.Draw(m_texturePanel, m_panelRectangle, Color.White);
+            WriteText("Use the arrow keys or left gamepad thumbstick to navigate the map", 16, m_viewPort.Height - 48);
+            WriteText("Press the Esc key or the gamepad Back button to exit the demo", 16, m_viewPort.Height - 24);
             m_spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void WriteText(string text, int positionX, int positionY)
+        {
+            Vector2 textPosition = new Vector2(positionX + 1, positionY + 1);
+            m_spriteBatch.DrawString(m_spriteFontDemo, text, textPosition, Color.Black);
+            textPosition -= new Vector2(1, 1);
+            m_spriteBatch.DrawString(m_spriteFontDemo, text, textPosition, Color.White);
         }
     }
 }
