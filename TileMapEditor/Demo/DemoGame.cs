@@ -23,22 +23,20 @@ namespace Demo
     /// </summary>
     public class DemoGame : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager m_graphicsDeviceManager;
-        SpriteBatch m_spriteBatch;
+        #region Public Methods
 
-        XnaDisplayDevice m_xnaDisplayDevice;
-        Map m_map;
-        xTile.Dimensions.Rectangle m_viewPort;
-        SpriteFont m_spriteFontDemo;
-
-        Microsoft.Xna.Framework.Rectangle m_panelRectangle;
-        Texture2D m_texturePanel;
-
+        /// <summary>
+        /// Constructs the game class
+        /// </summary>
         public DemoGame()
         {
             m_graphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
+
+        #endregion
+
+        #region Protected Methods
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -48,14 +46,16 @@ namespace Demo
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            // set window title (PC version, windowed mode only)
             Window.Title = "xTile XNA Demo Application";
 
+            // set map viewport to match window size
             m_viewPort = new xTile.Dimensions.Rectangle(
                 new xTile.Dimensions.Size(
                     GraphicsDevice.PresentationParameters.BackBufferWidth,
                     GraphicsDevice.PresentationParameters.BackBufferHeight));
 
+            // set help panel size
             m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
                 0, m_viewPort.Height - 56, m_viewPort.Width, 56);
 
@@ -72,14 +72,14 @@ namespace Demo
             m_spriteBatch = new SpriteBatch(GraphicsDevice);
             m_xnaDisplayDevice = new XnaDisplayDevice(Content, GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            // load font for help text
             m_spriteFontDemo = Content.Load<SpriteFont>("Fonts/Demo");
 
+            // load map from content pipeline and initialise it
             m_map = Content.Load<Map>("Maps\\Map01");
-            foreach (TileSheet tileSheet in m_map.TileSheets)
-                m_xnaDisplayDevice.LoadTileSheet(tileSheet);
+            m_map.LoadTileSheets(m_xnaDisplayDevice);
 
-            // prepare translucent panel for text
+            // prepare translucent panel for help text
             m_texturePanel = new Texture2D(GraphicsDevice, 1, 1);
             m_texturePanel.SetData<Color>(new Color[] { new Color(Color.Black, 128) });
         }
@@ -90,12 +90,13 @@ namespace Demo
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
-            foreach (TileSheet tileSheet in m_map.TileSheets)
-                m_xnaDisplayDevice.DisposeTileSheet(tileSheet);
-
+            // dispose map resoures
+            m_map.DisposeTileSheets(m_xnaDisplayDevice);
             m_map = null;
+
+            // dispose other objects
             m_spriteFontDemo = null;
+            m_texturePanel = null;
         }
 
         /// <summary>
@@ -105,10 +106,10 @@ namespace Demo
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            // get keyboard and gamepad states
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
             GamePadButtons gamePadButtons = gamePadState.Buttons;
             Vector2 leftThumbStick = gamePadState.ThumbSticks.Left;
-
             KeyboardState keyboardState = Keyboard.GetState(PlayerIndex.One);
 
             // check for exit
@@ -136,9 +137,12 @@ namespace Demo
             // limit viewport to map
             m_viewPort.Location.X = Math.Max(0, m_viewPort.Location.X);
             m_viewPort.Location.Y = Math.Max(0, m_viewPort.Location.Y);
-            m_viewPort.Location.X = Math.Min(m_map.DisplaySize.Width - m_viewPort.Width, m_viewPort.Location.X);
-            m_viewPort.Location.Y = Math.Min(m_map.DisplaySize.Height - m_viewPort.Height, m_viewPort.Location.Y);
+            m_viewPort.Location.X = Math.Min(
+                m_map.DisplaySize.Width - m_viewPort.Width, m_viewPort.Location.X);
+            m_viewPort.Location.Y = Math.Min(
+                m_map.DisplaySize.Height - m_viewPort.Height, m_viewPort.Location.Y);
 
+            // update map for animations etc.
             m_map.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
@@ -150,12 +154,10 @@ namespace Demo
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            // draw map
             m_map.Draw(m_xnaDisplayDevice, m_viewPort);
 
+            // draw help panel
             m_spriteBatch.Begin();
             m_spriteBatch.Draw(m_texturePanel, m_panelRectangle, Color.White);
             WriteText("Use the arrow keys or left gamepad thumbstick to navigate the map", 16, m_viewPort.Height - 48);
@@ -165,6 +167,16 @@ namespace Demo
             base.Draw(gameTime);
         }
 
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Writes shadowed text at the given position
+        /// </summary>
+        /// <param name="text">Text to write</param>
+        /// <param name="positionX">Horizontal coordinate</param>
+        /// <param name="positionY">Vertical coordinate</param>
         private void WriteText(string text, int positionX, int positionY)
         {
             Vector2 textPosition = new Vector2(positionX + 1, positionY + 1);
@@ -172,5 +184,27 @@ namespace Demo
             textPosition -= new Vector2(1, 1);
             m_spriteBatch.DrawString(m_spriteFontDemo, text, textPosition, Color.White);
         }
+
+        #endregion
+
+        #region Private Variables
+
+        // XNA graphics device manager and sprite batch
+        private GraphicsDeviceManager m_graphicsDeviceManager;
+        private SpriteBatch m_spriteBatch;
+
+        // XNA implementation of the IDisplayDevice interface
+        private XnaDisplayDevice m_xnaDisplayDevice;
+
+        // map and viewport
+        private Map m_map;
+        private xTile.Dimensions.Rectangle m_viewPort;
+
+        // help panel objects
+        private Microsoft.Xna.Framework.Rectangle m_panelRectangle;
+        private Texture2D m_texturePanel;
+        private SpriteFont m_spriteFontDemo;
+
+        #endregion
     }
 }
