@@ -31,9 +31,6 @@ namespace xTile.Pipeline
         /// <returns></returns>
         public override Map Process(Map map, ContentProcessorContext contentProcessorContext)
         {
-            // set storage mode property for content writer
-            //map.Properties[StorageModeKey] = m_storageMode.ToString();
-
             // handle invisible layer exclusion
             if (m_excludeInvisibleLayers)
             {

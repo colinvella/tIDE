@@ -36,14 +36,6 @@ namespace xTile.Pipeline
 
         protected override void Write(ContentWriter contentWriter, Map map)
         {
-            /*
-            if (!map.Properties.ContainsKey(StorageModeKey))
-                throw new Exception(
-                    "The tide map content processor is not setting the storage mode property");
-            string storageModeValue = map.Properties[StorageModeKey];
-            StorageMode storageMode
-                = (StorageMode) Enum.Parse(typeof(StorageMode), storageModeValue);*/
-
             MemoryStream memoryStream = new MemoryStream();
             FormatManager.Instance.DefaultFormat.Store(map, memoryStream);
 
@@ -51,7 +43,5 @@ namespace xTile.Pipeline
             contentWriter.Write(data.Length);
             contentWriter.Write(data);
         }
-
-        //private const string StorageModeKey = "@ContentPipeline@StorageMode";
     }
 }
