@@ -12,17 +12,11 @@ using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 
 using xTile;
 using xTile.Format;
+using xTile.Layers;
 using xTile.Tiles;
 
 namespace xTile.Pipeline
 {
-    /*
-    public enum StorageMode
-    {
-        Compressed,
-        Uncompressed
-    }*/
-
     /// <summary>
     /// Content processor class for tIDE map files
     /// </summary>
@@ -39,6 +33,25 @@ namespace xTile.Pipeline
         {
             // set storage mode property for content writer
             //map.Properties[StorageModeKey] = m_storageMode.ToString();
+
+            // handle invisible layer exclusion
+            if (m_excludeInvisibleLayers)
+            {
+                List<Layer> invisibleLayers = new List<Layer>();
+                foreach (Layer layer in map.Layers)
+                    if (!layer.Visible)
+                        invisibleLayers.Add(layer);
+
+                if (invisibleLayers.Count == map.Layers.Count)
+                    throw new Exception("At least one layer must be visible when excluding invisible layers");
+
+                foreach (Layer invisibleLayer in invisibleLayers)
+                {
+                    map.RemoveLayer(invisibleLayer);
+                    contentProcessorContext.Logger.LogImportantMessage(
+                        "Excluded invisible layer '" + invisibleLayer.Id + "'");
+                }
+            }
 
             // normalise tilesheet image source references
             foreach (TileSheet tileSheet in map.TileSheets)
@@ -64,18 +77,15 @@ namespace xTile.Pipeline
             return map;
         }
 
-        /*
-        [DisplayName("Storage Mode")]
-        [DefaultValue(StorageMode.Compressed)]
-        [Description("Sets the storage mode used by the content pipeline")]
-        public StorageMode StorageMode
+        [DisplayName("Exclude Invisible Layers")]
+        [DefaultValue(false)]
+        [Description("Excludes layers that are not marked as visible")]
+        public bool ExcludeInvisibleLayers
         {
-            get { return m_storageMode; }
-            set { m_storageMode = value; }
-        }*/
+            get { return m_excludeInvisibleLayers; }
+            set { m_excludeInvisibleLayers = value; }
+        }
 
-        //private StorageMode m_storageMode;
-
-        //private const string StorageModeKey = "@ContentPipeline@StorageMode";
+        private bool m_excludeInvisibleLayers;
     }
 }

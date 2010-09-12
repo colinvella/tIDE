@@ -30,7 +30,7 @@
     </TileSheet>
   </TileSheets>
   <Layers>
-    <Layer Id="Background01">
+    <Layer Id="Background01" Visible="True">
       <Description><![CDATA[]]></Description>
       <Dimensions LayerSize="4 x 3" TileSize="320 x 240" />
       <TileArray>
@@ -56,7 +56,7 @@
       </TileArray>
       <Properties />
     </Layer>
-    <Layer Id="Background02">
+    <Layer Id="Background02" Visible="True">
       <Description><![CDATA[]]></Description>
       <Dimensions LayerSize="8 x 3" TileSize="320 x 240" />
       <TileArray>
@@ -87,7 +87,7 @@
       </TileArray>
       <Properties />
     </Layer>
-    <Layer Id="Background03">
+    <Layer Id="Background03" Visible="True">
       <Description><![CDATA[]]></Description>
       <Dimensions LayerSize="16 x 3" TileSize="320 x 240" />
       <TileArray>
@@ -119,7 +119,7 @@
       </TileArray>
       <Properties />
     </Layer>
-    <Layer Id="Foreground">
+    <Layer Id="Foreground" Visible="True">
       <Description><![CDATA[Foreground layer]]></Description>
       <Dimensions LayerSize="400 x 24" TileSize="32 x 32" />
       <TileArray>

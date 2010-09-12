@@ -348,6 +348,8 @@ namespace xTile.Format
         {
             string id = xmlHelper.GetAttribute("Id");
 
+            bool visible = bool.Parse(xmlHelper.GetAttribute("Visible"));
+
             xmlHelper.AdvanceStartElement("Description");
             string description = xmlHelper.GetCData();
             xmlHelper.AdvanceEndElement("Description");
@@ -359,6 +361,7 @@ namespace xTile.Format
 
             Layer layer = new Layer(id, map, layerSize, tileSize);
             layer.Description = description;
+            layer.Visible = visible;
 
             xmlHelper.AdvanceStartElement("TileArray");
 
@@ -409,6 +412,7 @@ namespace xTile.Format
         {
             xmlWriter.WriteStartElement("Layer");
             xmlWriter.WriteAttributeString("Id", layer.Id);
+            xmlWriter.WriteAttributeString("Visible", layer.Visible.ToString());
 
             xmlWriter.WriteStartElement("Description");
             xmlWriter.WriteCData(layer.Description);
