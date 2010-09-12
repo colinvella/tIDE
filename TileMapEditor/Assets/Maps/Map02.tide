@@ -14,7 +14,7 @@
     </TileSheet>
   </TileSheets>
   <Layers>
-    <Layer Id="Grass, Dirt, Paving Layer">
+    <Layer Id="Grass, Dirt, Paving Layer" Visible="True">
       <Description><![CDATA[]]></Description>
       <Dimensions LayerSize="10 x 10" TileSize="40 x 40" />
       <TileArray>
