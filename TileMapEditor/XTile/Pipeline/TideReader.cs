@@ -27,9 +27,7 @@ namespace xTile.Pipeline
             byte[] data = contentReader.ReadBytes(dataLength);
 
             MemoryStream memoryStream = new MemoryStream(data);
-            GZipStream gZipStream = new GZipStream(memoryStream, CompressionMode.Decompress);
-
-            Map map = FormatManager.Instance.DefaultFormat.Load(gZipStream);
+            Map map = FormatManager.Instance.DefaultFormat.Load(memoryStream);
 
             return map;
         }

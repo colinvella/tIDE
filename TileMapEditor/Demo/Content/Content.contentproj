@@ -74,6 +74,7 @@
       <Name>Map01</Name>
       <Importer>TideImporter</Importer>
       <Processor>TideProcessor</Processor>
+      <ProcessorParameters_StorageMode>Uncompressed</ProcessorParameters_StorageMode>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 
@@ -15,6 +16,13 @@ using xTile.Tiles;
 
 namespace xTile.Pipeline
 {
+    /*
+    public enum StorageMode
+    {
+        Compressed,
+        Uncompressed
+    }*/
+
     /// <summary>
     /// Content processor class for tIDE map files
     /// </summary>
@@ -29,6 +37,10 @@ namespace xTile.Pipeline
         /// <returns></returns>
         public override Map Process(Map map, ContentProcessorContext contentProcessorContext)
         {
+            // set storage mode property for content writer
+            //map.Properties[StorageModeKey] = m_storageMode.ToString();
+
+            // normalise tilesheet image source references
             foreach (TileSheet tileSheet in map.TileSheets)
             {
                 string imageSource = tileSheet.ImageSource;
@@ -51,5 +63,19 @@ namespace xTile.Pipeline
 
             return map;
         }
+
+        /*
+        [DisplayName("Storage Mode")]
+        [DefaultValue(StorageMode.Compressed)]
+        [Description("Sets the storage mode used by the content pipeline")]
+        public StorageMode StorageMode
+        {
+            get { return m_storageMode; }
+            set { m_storageMode = value; }
+        }*/
+
+        //private StorageMode m_storageMode;
+
+        //private const string StorageModeKey = "@ContentPipeline@StorageMode";
     }
 }
