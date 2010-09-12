@@ -29,6 +29,7 @@ namespace Demo
         XnaDisplayDevice m_xnaDisplayDevice;
         Map m_map;
         xTile.Dimensions.Rectangle m_viewPort;
+        SpriteFont m_spriteFontDemo;
 
         public DemoGame()
         {
@@ -61,6 +62,8 @@ namespace Demo
             m_xnaDisplayDevice = new XnaDisplayDevice(Content, GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            m_spriteFontDemo = Content.Load<SpriteFont>("Fonts/Demo");
+
             m_map = Content.Load<Map>("Maps\\Map01");
             foreach (TileSheet tileSheet in m_map.TileSheets)
                 m_xnaDisplayDevice.LoadTileSheet(tileSheet);
@@ -82,6 +85,7 @@ namespace Demo
                 m_xnaDisplayDevice.DisposeTileSheet(tileSheet);
 
             m_map = null;
+            m_spriteFontDemo = null;
         }
 
         /// <summary>
@@ -139,7 +143,12 @@ namespace Demo
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+
             m_map.Draw(m_xnaDisplayDevice, m_viewPort);
+
+            m_spriteBatch.Begin();
+            m_spriteBatch.DrawString(m_spriteFontDemo, "Test", new Vector2(16, 15), Color.White);
+            m_spriteBatch.End();
 
             base.Draw(gameTime);
         }
