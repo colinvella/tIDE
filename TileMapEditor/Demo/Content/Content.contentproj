@@ -42,26 +42,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TileSheets\Background01.png">
+    <None Include="TileSheets\Background01.png">
       <Name>Background01</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="TileSheets\Background02.png">
+    </None>
+    <None Include="TileSheets\Background02.png">
       <Name>Background02</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="TileSheets\Background03.png">
+    </None>
+    <None Include="TileSheets\Background03.png">
       <Name>Background03</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="TileSheets\TileSheet01.png">
+    </None>
+    <None Include="TileSheets\TileSheet01.png">
       <Name>TileSheet01</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\xTilePipeline\xTilePipeline.csproj">

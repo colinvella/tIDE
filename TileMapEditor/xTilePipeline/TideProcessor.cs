@@ -68,25 +68,41 @@ namespace xTile.Pipeline
                 }
             }
 
-            // normalise tilesheet image source references
+            // update tilesheet image source references
             foreach (TileSheet tileSheet in map.TileSheets)
             {
+                // get image source
                 string imageSource = tileSheet.ImageSource;
-                string oldImageSource = imageSource;
 
-                while (imageSource.StartsWith("..\\")
-                    || imageSource.StartsWith("../"))
-                    imageSource = imageSource.Remove(0, 3);
+                // build path relative to content directory (remove upward folder refs)
+                string contentSourcePath = imageSource + "";
+                while (contentSourcePath.StartsWith("..\\")
+                    || contentSourcePath.StartsWith("../"))
+                    contentSourcePath = contentSourcePath.Remove(0, 3);
 
-                string extension = Path.GetExtension(imageSource);
+                // not strictly needed, but sets asset dependency
+                string absoluteImagePath = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + contentSourcePath;
+                contentProcessorContext.AddDependency(absoluteImagePath);
+
+                // generate asset name
+                string assetName = null;
+                string extension = Path.GetExtension(contentSourcePath);
                 if (extension != string.Empty)
-                    imageSource
-                        = imageSource.Remove(imageSource.Length - extension.Length);
+                    assetName
+                        = contentSourcePath.Remove(contentSourcePath.Length - extension.Length);
+                else
+                    assetName = contentSourcePath;
 
-                tileSheet.ImageSource = imageSource;
+                // force build of image source as asset
+                contentProcessorContext.Logger.LogImportantMessage("Discovered dependency on asset '" + contentSourcePath + "'...");
+                ExternalReference<TextureContent> imageSourceReference
+                    = contentProcessorContext.BuildAsset<TextureContent, TextureContent>(
+                        new ExternalReference<TextureContent>(contentSourcePath), "TextureProcessor", null, null, assetName);
+
+                tileSheet.ImageSource = assetName;
 
                 contentProcessorContext.Logger.LogImportantMessage(
-                    "Normalised image source reference from '" + oldImageSource + "' to '" + imageSource + "'");
+                    "Converted image source refenrence'" + imageSource + "' to asset reference '" + assetName + "'");
             }
 
             return map;
