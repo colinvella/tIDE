@@ -23,6 +23,8 @@ namespace xTile.Pipeline
     [ContentProcessor(DisplayName = "tIDE Map Processor")]
     public class TideProcessor : ContentProcessor<Map, Map>
     {
+        #region Public Methods
+
         /// <summary>
         /// Process a tIDE map object.
         /// </summary>
@@ -50,6 +52,22 @@ namespace xTile.Pipeline
                 }
             }
 
+            // handle unused tile sheet exclusion
+            if (m_excludeUnusedTileSheets)
+            {
+                List<TileSheet> unusedTileSheets = new List<TileSheet>();
+                foreach (TileSheet tileSheet in map.TileSheets)
+                    if (!map.DependsOnTileSheet(tileSheet))
+                        unusedTileSheets.Add(tileSheet);
+
+                foreach (TileSheet unusedTileSheet in unusedTileSheets)
+                {
+                    map.RemoveTileSheet(unusedTileSheet);
+                    contentProcessorContext.Logger.LogImportantMessage(
+                        "Excluded unused tile sheet '" + unusedTileSheet.Id + "'");
+                }
+            }
+
             // normalise tilesheet image source references
             foreach (TileSheet tileSheet in map.TileSheets)
             {
@@ -74,6 +92,14 @@ namespace xTile.Pipeline
             return map;
         }
 
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Content processor parameter to control if invisible layers should
+        /// be excluded or otherwise
+        /// </summary>
         [DisplayName("Exclude Invisible Layers")]
         [DefaultValue(false)]
         [Description("Excludes layers that are not marked as visible")]
@@ -83,6 +109,26 @@ namespace xTile.Pipeline
             set { m_excludeInvisibleLayers = value; }
         }
 
+        /// <summary>
+        /// Content processor parameter to control if invisible layers should
+        /// be excluded or otherwise
+        /// </summary>
+        [DisplayName("Exclude Unused TileSheets")]
+        [DefaultValue(false)]
+        [Description("Excludes tile sheets that are not referenced in any layer")]
+        public bool ExcludeUnusedTileSheets
+        {
+            get { return m_excludeUnusedTileSheets; }
+            set { m_excludeUnusedTileSheets = value; }
+        }
+
+        #endregion
+
+        #region Private Variables
+
         private bool m_excludeInvisibleLayers;
+        private bool m_excludeUnusedTileSheets;
+
+        #endregion
     }
 }
