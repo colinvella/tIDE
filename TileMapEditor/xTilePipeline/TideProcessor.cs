@@ -102,7 +102,7 @@ namespace xTile.Pipeline
                 tileSheet.ImageSource = assetName;
 
                 contentProcessorContext.Logger.LogImportantMessage(
-                    "Converted image source refenrence'" + imageSource + "' to asset reference '" + assetName + "'");
+                    "Converted image source reference'" + imageSource + "' to asset reference '" + assetName + "'");
             }
 
             return map;
