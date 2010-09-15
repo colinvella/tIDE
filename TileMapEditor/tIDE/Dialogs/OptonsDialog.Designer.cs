@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label m_recentFileCountLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptonsDialog));
+            System.Windows.Forms.Label m_recentFileCountLabel;
             this.m_okButton = new System.Windows.Forms.Button();
             this.m_cancelButton = new System.Windows.Forms.Button();
             this.m_tabControl = new TileMapEditor.Controls.CustomTabControl();
@@ -46,129 +46,129 @@
             this.m_languageTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // m_recentFileCountLabel
-            // 
-            m_recentFileCountLabel.AutoSize = true;
-            m_recentFileCountLabel.Location = new System.Drawing.Point(62, 8);
-            m_recentFileCountLabel.Name = "m_recentFileCountLabel";
-            m_recentFileCountLabel.Size = new System.Drawing.Size(153, 13);
-            m_recentFileCountLabel.TabIndex = 1;
-            m_recentFileCountLabel.Text = "files shown in recent files menu";
-            // 
             // m_okButton
             // 
-            this.m_okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.m_okButton.AccessibleDescription = null;
+            this.m_okButton.AccessibleName = null;
+            resources.ApplyResources(this.m_okButton, "m_okButton");
+            this.m_okButton.BackgroundImage = null;
             this.m_okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.m_okButton.Location = new System.Drawing.Point(12, 129);
+            this.m_okButton.Font = null;
             this.m_okButton.Name = "m_okButton";
-            this.m_okButton.Size = new System.Drawing.Size(75, 23);
-            this.m_okButton.TabIndex = 1;
-            this.m_okButton.Text = "&OK";
             this.m_okButton.UseVisualStyleBackColor = true;
             this.m_okButton.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_cancelButton
             // 
-            this.m_cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_cancelButton.AccessibleDescription = null;
+            this.m_cancelButton.AccessibleName = null;
+            resources.ApplyResources(this.m_cancelButton, "m_cancelButton");
+            this.m_cancelButton.BackgroundImage = null;
             this.m_cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cancelButton.Location = new System.Drawing.Point(197, 129);
+            this.m_cancelButton.Font = null;
             this.m_cancelButton.Name = "m_cancelButton";
-            this.m_cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.m_cancelButton.TabIndex = 2;
-            this.m_cancelButton.Text = "&Cancel";
             this.m_cancelButton.UseVisualStyleBackColor = true;
             // 
             // m_tabControl
             // 
-            this.m_tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_tabControl.AccessibleDescription = null;
+            this.m_tabControl.AccessibleName = null;
+            resources.ApplyResources(this.m_tabControl, "m_tabControl");
+            this.m_tabControl.BackgroundImage = null;
             this.m_tabControl.Controls.Add(this.m_recentFilesTabPage);
             this.m_tabControl.Controls.Add(this.m_languageTabPage);
             this.m_tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.m_tabControl.Location = new System.Drawing.Point(12, 12);
+            this.m_tabControl.Font = null;
             this.m_tabControl.Name = "m_tabControl";
             this.m_tabControl.SelectedIndex = 0;
-            this.m_tabControl.Size = new System.Drawing.Size(260, 111);
-            this.m_tabControl.TabIndex = 0;
             // 
             // m_recentFilesTabPage
             // 
+            this.m_recentFilesTabPage.AccessibleDescription = null;
+            this.m_recentFilesTabPage.AccessibleName = null;
+            resources.ApplyResources(this.m_recentFilesTabPage, "m_recentFilesTabPage");
             this.m_recentFilesTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.m_recentFilesTabPage.BackgroundImage = null;
             this.m_recentFilesTabPage.Controls.Add(this.m_clearHistoryButton);
             this.m_recentFilesTabPage.Controls.Add(m_recentFileCountLabel);
             this.m_recentFilesTabPage.Controls.Add(this.m_recentFileCountUpDown);
-            this.m_recentFilesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.m_recentFilesTabPage.Font = null;
             this.m_recentFilesTabPage.Name = "m_recentFilesTabPage";
-            this.m_recentFilesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.m_recentFilesTabPage.Size = new System.Drawing.Size(252, 85);
-            this.m_recentFilesTabPage.TabIndex = 0;
-            this.m_recentFilesTabPage.Text = "Recent Files";
             // 
             // m_clearHistoryButton
             // 
-            this.m_clearHistoryButton.Location = new System.Drawing.Point(7, 33);
+            this.m_clearHistoryButton.AccessibleDescription = null;
+            this.m_clearHistoryButton.AccessibleName = null;
+            resources.ApplyResources(this.m_clearHistoryButton, "m_clearHistoryButton");
+            this.m_clearHistoryButton.BackgroundImage = null;
+            this.m_clearHistoryButton.Font = null;
             this.m_clearHistoryButton.Name = "m_clearHistoryButton";
-            this.m_clearHistoryButton.Size = new System.Drawing.Size(75, 23);
-            this.m_clearHistoryButton.TabIndex = 2;
-            this.m_clearHistoryButton.Text = "Clear &History";
             this.m_clearHistoryButton.UseVisualStyleBackColor = true;
+            // 
+            // m_recentFileCountLabel
+            // 
+            m_recentFileCountLabel.AccessibleDescription = null;
+            m_recentFileCountLabel.AccessibleName = null;
+            resources.ApplyResources(m_recentFileCountLabel, "m_recentFileCountLabel");
+            m_recentFileCountLabel.Font = null;
+            m_recentFileCountLabel.Name = "m_recentFileCountLabel";
             // 
             // m_recentFileCountUpDown
             // 
-            this.m_recentFileCountUpDown.Location = new System.Drawing.Point(6, 6);
+            this.m_recentFileCountUpDown.AccessibleDescription = null;
+            this.m_recentFileCountUpDown.AccessibleName = null;
+            resources.ApplyResources(this.m_recentFileCountUpDown, "m_recentFileCountUpDown");
+            this.m_recentFileCountUpDown.Font = null;
             this.m_recentFileCountUpDown.Name = "m_recentFileCountUpDown";
-            this.m_recentFileCountUpDown.Size = new System.Drawing.Size(50, 20);
-            this.m_recentFileCountUpDown.TabIndex = 0;
             // 
             // m_languageTabPage
             // 
+            this.m_languageTabPage.AccessibleDescription = null;
+            this.m_languageTabPage.AccessibleName = null;
+            resources.ApplyResources(this.m_languageTabPage, "m_languageTabPage");
             this.m_languageTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.m_languageTabPage.BackgroundImage = null;
             this.m_languageTabPage.Controls.Add(this.m_languageComboBox);
             this.m_languageTabPage.Controls.Add(this.label1);
-            this.m_languageTabPage.Location = new System.Drawing.Point(4, 22);
+            this.m_languageTabPage.Font = null;
             this.m_languageTabPage.Name = "m_languageTabPage";
-            this.m_languageTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.m_languageTabPage.Size = new System.Drawing.Size(252, 85);
-            this.m_languageTabPage.TabIndex = 1;
-            this.m_languageTabPage.Text = "Language";
             // 
             // m_languageComboBox
             // 
+            this.m_languageComboBox.AccessibleDescription = null;
+            this.m_languageComboBox.AccessibleName = null;
+            resources.ApplyResources(this.m_languageComboBox, "m_languageComboBox");
+            this.m_languageComboBox.BackgroundImage = null;
             this.m_languageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_languageComboBox.Font = null;
             this.m_languageComboBox.FormattingEnabled = true;
-            this.m_languageComboBox.Location = new System.Drawing.Point(7, 24);
             this.m_languageComboBox.Name = "m_languageComboBox";
-            this.m_languageComboBox.Size = new System.Drawing.Size(239, 21);
-            this.m_languageComboBox.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 8);
+            this.label1.AccessibleDescription = null;
+            this.label1.AccessibleName = null;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Font = null;
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User interface language:";
             // 
             // OptonsDialog
             // 
             this.AcceptButton = this.m_okButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.CancelButton = this.m_cancelButton;
-            this.ClientSize = new System.Drawing.Size(284, 164);
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_okButton);
             this.Controls.Add(this.m_tabControl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = null;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(300, 200);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "OptonsDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Optons";
             this.Load += new System.EventHandler(this.OnDialogLoad);
             this.m_tabControl.ResumeLayout(false);
             this.m_recentFilesTabPage.ResumeLayout(false);

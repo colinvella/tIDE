@@ -118,43 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_mapTreeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 203</value>
+  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
   </data>
-  <data name="m_splitContainerVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 438</value>
+  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
+    <value>Accedi opzioni generali</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_splitContainerVertical.SplitterDistance" type="System.Int32, mscorlib">
-    <value>203</value>
+  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 25</value>
   </data>
-  <data name="m_mapPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 416</value>
+  <data name="m_editUndoButton.Text" xml:space="preserve">
+    <value>Disfa</value>
   </data>
-  <data name="m_mapPanel.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAADxYVGlsZSwgVmVyc2lvbj0xLjIuMC4wLCBDdWx0dXJlPW5ldXRy
-        YWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAABp4VGlsZS5EaW1lbnNpb25zLlJlY3RhbmdsZQIAAAAI
-        TG9jYXRpb24EU2l6ZQQEGXhUaWxlLkRpbWVuc2lvbnMuTG9jYXRpb24CAAAAFXhUaWxlLkRpbWVuc2lv
-        bnMuU2l6ZQIAAAACAAAABf3///8ZeFRpbGUuRGltZW5zaW9ucy5Mb2NhdGlvbgIAAAABWAFZAAAICAIA
-        AAAAAAAAAAAAAAX8////FXhUaWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAAFV2lkdGgGSGVpZ2h0AAAICAIA
-        AAAgAgAAngEAAAs=
-</value>
+  <data name="m_editRedoButton.Text" xml:space="preserve">
+    <value>Rifa</value>
   </data>
-  <data name="m_toolStripContainerInner.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 416</value>
+  <data name="m_editHistoryButton.Text" xml:space="preserve">
+    <value>Cronologia Comandi</value>
   </data>
-  <data name="m_toolStripContainerInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>579, 438</value>
+  <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
+    <value>Accedi la cronologia dei comandi</value>
   </data>
-  <data name="m_splitContainerLeftRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 438</value>
+  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 438</value>
+  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 50</value>
   </data>
-  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 99</value>
+  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 50</value>
   </data>
   <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
@@ -207,13 +199,22 @@
   <data name="m_fileSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 6</value>
   </data>
+  <data name="m_fileOptionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 22</value>
+  </data>
+  <data name="m_fileOptionsMenuItem.Text" xml:space="preserve">
+    <value>Opzioni...</value>
+  </data>
+  <data name="m_fileSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 6</value>
+  </data>
   <data name="m_fileRecentFilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
   </data>
   <data name="m_fileRecentFilesMenuItem.Text" xml:space="preserve">
     <value>Fascicoli Recenti</value>
   </data>
-  <data name="m_fileSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="m_fileSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 6</value>
   </data>
   <data name="m_fileExitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -364,10 +365,10 @@
     <value>Oblò</value>
   </data>
   <data name="m_viewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 20</value>
+    <value>72, 20</value>
   </data>
   <data name="m_viewMenuItem.Text" xml:space="preserve">
-    <value>&amp;Visualizza</value>
+    <value>&amp;Visuale</value>
   </data>
   <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 22</value>
@@ -540,33 +541,6 @@
   </data>
   <data name="m_helpMenuItem.Text" xml:space="preserve">
     <value>&amp;Aiuto</value>
-  </data>
-  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 50</value>
-  </data>
-  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 50</value>
-  </data>
-  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 0</value>
-  </data>
-  <data name="m_editUndoButton.Text" xml:space="preserve">
-    <value>Disfa</value>
-  </data>
-  <data name="m_editRedoButton.Text" xml:space="preserve">
-    <value>Rifa</value>
-  </data>
-  <data name="m_editHistoryButton.Text" xml:space="preserve">
-    <value>Cronologia Comandi</value>
-  </data>
-  <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
-    <value>Accedi la cronologia dei comandi</value>
-  </data>
-  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 25</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1330,5 +1304,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

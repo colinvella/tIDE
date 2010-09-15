@@ -16,8 +16,7 @@ namespace TileMapEditor
         [STAThread]
         static void Main(string[] arguments)
         {
-            //LanguageManager.Initialise();
-            LanguageManager.Language = Language.English;
+            LanguageManager.Initialise();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -12,7 +12,7 @@ namespace TileMapEditor.Localisation
     {
         public readonly static Language English = new Language(
             "English", CultureInfo.CurrentCulture.Name);
-        public readonly static Language Italian = new Language("Italian", "it-IT");
+        public readonly static Language Italian = new Language("Italiano", "it-IT");
 
         public static Language FromCode(string code)
         {
