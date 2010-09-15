@@ -23,6 +23,8 @@ using TileMapEditor.Format;
 using TileMapEditor.Help;
 using TileMapEditor.Plugin;
 using TileMapEditor.TileBrushes;
+using System.Globalization;
+using System.Threading;
 
 namespace TileMapEditor
 {
@@ -665,8 +667,45 @@ namespace TileMapEditor
             }
         }
 
+        private void ApplyLanguageResource(ComponentResourceManager crm, ToolStripItem toolStripItem)
+        {
+            crm.ApplyResources(toolStripItem, toolStripItem.Name);
+            if (toolStripItem is ToolStripMenuItem)
+            {
+                ToolStripMenuItem tsmm = (ToolStripMenuItem)toolStripItem;
+                foreach (ToolStripItem child in tsmm.DropDown.Items)
+                    ApplyLanguageResource(crm, child);
+            }
+        }
+
+        private void ApplyLanguageResource(ComponentResourceManager crm, Control control)
+        {
+            crm.ApplyResources(control, control.Name);
+            foreach (Control childControl in control.Controls)
+                ApplyLanguageResource(crm, childControl);
+
+            if (control is SplitContainer)
+            {
+                SplitContainer sc = (SplitContainer)control;
+                ApplyLanguageResource(crm, sc.Panel1);
+                ApplyLanguageResource(crm, sc.Panel2);
+            }
+            else if (control is MenuStrip)
+            {
+                MenuStrip menuStrip = (MenuStrip)control;
+                foreach (ToolStripItem toolStripItem in menuStrip.Items)
+                    ApplyLanguageResource(crm, toolStripItem);
+            }
+        }
+
         private void OnFileNew(object sender, EventArgs eventArgs)
         {
+            //Application.CurrentCulture = new System.Globalization.CultureInfo("it-IT");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("it-IT");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("it-IT");
+            ComponentResourceManager crm = new ComponentResourceManager(typeof(MainForm));
+            ApplyLanguageResource(crm, this);
+
             if (MessageBox.Show(this, "Start a new map project?", "New map", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 == DialogResult.No)
                 return;
