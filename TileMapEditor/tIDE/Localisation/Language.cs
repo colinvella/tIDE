@@ -23,6 +23,11 @@ namespace TileMapEditor.Localisation
                 return English;
         }
 
+        public static ICollection<Language> List
+        {
+            get { return s_list; }
+        }
+
         public override string ToString()
         {
             return m_name + " (" + m_code + ")";
@@ -38,11 +43,20 @@ namespace TileMapEditor.Localisation
             get { return m_code; }
         }
 
+        static Language()
+        {
+            s_list = new List<Language>();
+            s_list.Add(English);
+            s_list.Add(Italian);
+        }
+
         private Language(string name, string code)
         {
             m_name = name;
             m_code = code;
         }
+
+        private static List<Language> s_list;
 
         private string m_name;
         private string m_code;
