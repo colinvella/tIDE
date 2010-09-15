@@ -7,31 +7,8 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading;
 
-namespace TileMapEditor
+namespace TileMapEditor.Localisation
 {
-    class Languages
-    {
-        public static readonly CultureInfo English = Application.CurrentCulture;
-        public static readonly CultureInfo Italian = new CultureInfo("it-IT");
-
-        static Languages()
-        {
-            s_list = new List<CultureInfo>();
-            s_list.Add(English);
-            s_list.Add(Italian);
-        }
-
-        public static bool IsSupported(CultureInfo cultureInfo)
-        {
-            foreach (CultureInfo language in s_list)
-                if (language.Name == cultureInfo.Name)
-                    return true;
-            return false;
-        }
-
-        private static List<CultureInfo> s_list;
-    }
-
     class LanguageManager
     {
         public static void ApplyLanguage(Form form)
@@ -41,22 +18,23 @@ namespace TileMapEditor
             ApplyLanguage(componentResourceManager, form);
         }
 
-        public static CultureInfo Language
+        public static Language Language
         {
             get
             {
-                return Properties.Settings.Default.Language;
+                CultureInfo cultureInfo = Properties.Settings.Default.Language;
+                return Language.Parse(cultureInfo.Name);
             }
             set
             {
-                CultureInfo language = value;
-                if (!Languages.IsSupported(value))
-                    language = Languages.English;
+                Language language = value == null ? Language.English : value;
 
-                Thread.CurrentThread.CurrentCulture = language;
-                Thread.CurrentThread.CurrentUICulture = language;
+                CultureInfo cultureInfo = new CultureInfo(language.Code);
 
-                Properties.Settings.Default.Language = language;
+                Thread.CurrentThread.CurrentCulture = cultureInfo;
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+
+                Properties.Settings.Default.Language = cultureInfo;
                 Properties.Settings.Default.Save();
             }
         }
