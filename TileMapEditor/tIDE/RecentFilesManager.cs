@@ -63,5 +63,12 @@ namespace TileMapEditor
                 Properties.Settings.Default.Save();
             }
         }
+
+        public static void ClearHistory()
+        {
+            StringCollection filenames = Filenames;
+            filenames.Clear();
+            Properties.Settings.Default.Save();
+        }
     }
 }

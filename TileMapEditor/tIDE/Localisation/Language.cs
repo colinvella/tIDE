@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace TileMapEditor.Localisation
 {
@@ -13,19 +14,27 @@ namespace TileMapEditor.Localisation
             "English", CultureInfo.CurrentCulture.Name);
         public readonly static Language Italian = new Language("Italian", "it-IT");
 
-        public static Language Parse(string code)
+        public static Language FromCode(string code)
         {
-            if (code == English.Code)
-                return English;
-            if (code == Italian.Code)
-                return Italian;
-            else
-                return English;
+            foreach (Language language in s_list)
+                if (language.Code == code)
+                    return language;
+
+            return English;
         }
 
-        public static ICollection<Language> List
+        public static Language FromName(string name)
         {
-            get { return s_list; }
+            foreach (Language language in s_list)
+                if (language.Name == name)
+                    return language;
+
+            return English;
+        }
+
+        public static ReadOnlyCollection<Language> List
+        {
+            get { return s_list.AsReadOnly(); }
         }
 
         public override string ToString()

@@ -11,6 +11,13 @@ namespace TileMapEditor.Localisation
 {
     class LanguageManager
     {
+        public static void Initialise()
+        {
+            CultureInfo cultureInfo = new CultureInfo(Language.Code);
+            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
+
         public static void ApplyLanguage(Form form)
         {
             ComponentResourceManager componentResourceManager
@@ -23,7 +30,7 @@ namespace TileMapEditor.Localisation
             get
             {
                 CultureInfo cultureInfo = Properties.Settings.Default.Language;
-                return Language.Parse(cultureInfo.Name);
+                return Language.FromCode(cultureInfo.Name);
             }
             set
             {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
+using TileMapEditor.Localisation;
 
 namespace TileMapEditor
 {
@@ -14,7 +15,10 @@ namespace TileMapEditor
         /// </summary>
         [STAThread]
         static void Main(string[] arguments)
-        {            
+        {
+            //LanguageManager.Initialise();
+            LanguageManager.Language = Language.English;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm(arguments));

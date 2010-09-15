@@ -25,6 +25,7 @@ using TileMapEditor.Plugin;
 using TileMapEditor.TileBrushes;
 using System.Globalization;
 using System.Threading;
+using TileMapEditor.Localisation;
 
 namespace TileMapEditor
 {
@@ -773,9 +774,15 @@ namespace TileMapEditor
                 m_mapPanel.GenerateImage(selectedLayer));
         }
 
-        private void OnFileExit(object sender, EventArgs eventArgs)
+        private void OnFileOptions(object sender, EventArgs eventArgs)
         {
-            Close();
+            OptonsDialog optionsDialog = new OptonsDialog();
+            if (optionsDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            LanguageManager.ApplyLanguage(this);
+            ArrangeToolStripLayout();
+            UpdateRecentFilesMenu();
         }
 
         private void OnFileOpenRecent(object sender, EventArgs eventArgs)
@@ -804,6 +811,11 @@ namespace TileMapEditor
                     UpdateRecentFilesMenu();
                 }
             }
+        }
+
+        private void OnFileExit(object sender, EventArgs eventArgs)
+        {
+            Close();
         }
 
         private void OnEditUndo(object sender, EventArgs eventArgs)
@@ -1600,5 +1612,6 @@ namespace TileMapEditor
         }
 
         #endregion
+
     }
 }
