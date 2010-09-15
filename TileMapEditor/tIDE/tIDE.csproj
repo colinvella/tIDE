@@ -240,6 +240,7 @@
     <Compile Include="Installer\RunApplicationDialog.Designer.cs">
       <DependentUpon>RunApplicationDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageManager.cs" />
     <Compile Include="Plugin\Bridge\ApplicationBridge.cs" />
     <Compile Include="Plugin\Bridge\CommandBridge.cs" />
     <Compile Include="Plugin\Bridge\ElementBridge.cs" />
