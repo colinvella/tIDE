@@ -8,16 +8,17 @@ namespace TileMapEditor
 {
     class RecentFilesManager
     {
-        private static RecentFilesManager s_instance = new RecentFilesManager();
-        private const int MAX_FILES = 10;
-
-        private RecentFilesManager()
+        public static byte MaxFilenameCount
         {
+            get { return Properties.Settings.Default.RecentFilesMaxCount; }
+            set
+            {
+                Properties.Settings.Default.RecentFilesMaxCount = value;
+                Properties.Settings.Default.Save();
+            }
         }
 
-        public static RecentFilesManager Instance { get { return s_instance; } }
-
-        public StringCollection Filenames
+        public static StringCollection Filenames
         {
             get
             {
@@ -32,20 +33,20 @@ namespace TileMapEditor
             }
         }
 
-        public void StoreFilename(string filename)
+        public static void StoreFilename(string filename)
         {
             RemoveFilename(filename);
 
             StringCollection filenames = Filenames;
             filenames.Insert(0, filename);
 
-            while (filenames.Count > MAX_FILES)
+            while (filenames.Count > MaxFilenameCount)
                 filenames.RemoveAt(filenames.Count - 1);
 
             Properties.Settings.Default.Save();
         }
 
-        public void RemoveFilename(string filename)
+        public static void RemoveFilename(string filename)
         {
             StringCollection filenames = Filenames;
             string filenameToRemove = null;

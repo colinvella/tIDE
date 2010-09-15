@@ -146,7 +146,7 @@ namespace TileMapEditor
 
         private void UpdateRecentFilesMenu()
         {
-            StringCollection filenames = RecentFilesManager.Instance.Filenames;
+            StringCollection filenames = RecentFilesManager.Filenames;
             m_fileRecentFilesMenuItem.Enabled = filenames.Count > 0;
             m_fileRecentFilesMenuItem.DropDownItems.Clear();
             foreach (string filename in filenames)
@@ -431,7 +431,7 @@ namespace TileMapEditor
             {
                 newMap = formatManager.LoadMap(filename);
 
-                RecentFilesManager.Instance.StoreFilename(filename);
+                RecentFilesManager.StoreFilename(filename);
 
                 // convert relative image source paths to absolute paths
                 foreach (TileSheet tileSheet in newMap.TileSheets)
@@ -476,7 +476,7 @@ namespace TileMapEditor
                 AutoTileManager.Instance.Refresh(m_map);
 
                 // push to top of recent file list
-                RecentFilesManager.Instance.StoreFilename(filename);
+                RecentFilesManager.StoreFilename(filename);
 
                 UpdateAllControls();
             }
@@ -531,7 +531,7 @@ namespace TileMapEditor
                     tileSheet.ImageSource = PathHelper.GetAbsolutePath(basePath, tileSheet.ImageSource);
 
                 m_needsSaving = false;
-                RecentFilesManager.Instance.StoreFilename(filename);
+                RecentFilesManager.StoreFilename(filename);
                 UpdateFileControls();
                 return true;
             }
@@ -800,7 +800,7 @@ namespace TileMapEditor
                     MessageBoxButtons.YesNo, MessageBoxIcon.Error,
                     MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    RecentFilesManager.Instance.RemoveFilename(filename);
+                    RecentFilesManager.RemoveFilename(filename);
                     UpdateRecentFilesMenu();
                 }
             }
