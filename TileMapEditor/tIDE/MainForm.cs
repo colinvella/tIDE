@@ -690,10 +690,11 @@ namespace TileMapEditor
                 ApplyLanguageResource(crm, sc.Panel1);
                 ApplyLanguageResource(crm, sc.Panel2);
             }
-            else if (control is MenuStrip)
+            else if (control is ToolStrip)
             {
-                MenuStrip menuStrip = (MenuStrip)control;
-                foreach (ToolStripItem toolStripItem in menuStrip.Items)
+                // handles derivative MenuStrip too
+                ToolStrip toolStrip = (ToolStrip)control;
+                foreach (ToolStripItem toolStripItem in toolStrip.Items)
                     ApplyLanguageResource(crm, toolStripItem);
             }
         }
