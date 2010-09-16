@@ -11,6 +11,102 @@ namespace TileMapEditor.Plugin
     {
         public class MenuStrip
         {
+            public class FileMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&File";
+                            case Language.Italian: return "&Fascicolo";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
+            public class EditMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&Edit";
+                            case Language.Italian: return "&Modifica";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
+            public class ViewMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&View";
+                            case Language.Italian: return "&Visualizza";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
+            public class MapMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&Map";
+                            case Language.Italian: return "Ma&ppa";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
+            public class LayerMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&Layer";
+                            case Language.Italian: return "&Strato";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
+            public class TileSheetMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&Tile Sheet";
+                            case Language.Italian: return "Foglio di &Piastre";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
             public class PluginMenu
             {
                 public static string Name
@@ -21,6 +117,22 @@ namespace TileMapEditor.Plugin
                         {
                             case Language.English: return "&Plugin";
                             case Language.Italian: return "Mo&dulo";
+                            default: throw new Exception();
+                        }
+                    }
+                }
+            }
+
+            public class HelpMenu
+            {
+                public static string Name
+                {
+                    get
+                    {
+                        switch (CurrentLanguage)
+                        {
+                            case Language.English: return "&Help";
+                            case Language.Italian: return "&Aiuto";
                             default: throw new Exception();
                         }
                     }
