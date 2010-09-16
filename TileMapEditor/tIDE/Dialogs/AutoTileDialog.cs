@@ -31,7 +31,6 @@ namespace TileMapEditor.Dialogs
         {
             m_tilePicker.Map = m_tileSheet.Map;
             m_tilePicker.SelectedTileSheet = m_tileSheet;
-            m_tilePicker.UpdatePicker();
 
             m_autoTiles = new List<AutoTile>(
                 AutoTileManager.Instance.GetAutoTiles(m_tileSheet));
@@ -311,8 +310,8 @@ namespace TileMapEditor.Dialogs
         private void UpdateDialogState(bool changes)
         {
             m_btnOk.Enabled = m_btnApply.Enabled = changes;
-            m_btnClose.Text = changes ? "&Cancel" : "&Close";
-            m_btnClose.DialogResult = changes ? DialogResult.Cancel : DialogResult.Cancel;
+            m_btnCancel.Visible = changes;
+            m_btnClose.Visible = !changes;
         }
 
         private void SortAutoTiles()
