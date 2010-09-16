@@ -28,7 +28,8 @@ namespace TileMapEditor.Plugin
 
         private void UpdatePluginMenu()
         {
-            IMenuItem pluginDropDownMenu = m_applicationBridge.MenuStrip.DropDownMenus["&Plugin"];
+            IMenuItem pluginDropDownMenu
+                = m_applicationBridge.MenuStrip.DropDownMenus[ApplicationRegistry.MenuStrip.PluginMenu.Name];
 
             while (pluginDropDownMenu.SubItems.Count<IMenuItem>() > 1)
                 pluginDropDownMenu.SubItems.Remove(pluginDropDownMenu.SubItems[1]);
