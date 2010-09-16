@@ -36,6 +36,7 @@ namespace TileMapEditor.Dialogs
             }
 
             m_clearHistory = false;
+            m_clearHistoryButton.Enabled = RecentFilesManager.Filenames.Count > 0;
         }
 
         private void OnClearHistory(object sender, EventArgs eventArgs)

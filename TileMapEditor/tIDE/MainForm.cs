@@ -780,9 +780,11 @@ namespace TileMapEditor
             if (optionsDialog.ShowDialog(this) == DialogResult.Cancel)
                 return;
 
+            Visible = false;
             LanguageManager.ApplyLanguage(this);
             ArrangeToolStripLayout();
             UpdateRecentFilesMenu();
+            Visible = true;
         }
 
         private void OnFileOpenRecent(object sender, EventArgs eventArgs)
