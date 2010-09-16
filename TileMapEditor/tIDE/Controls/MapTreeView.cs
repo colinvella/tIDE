@@ -11,6 +11,7 @@ using xTile;
 using xTile.ObjectModel;
 using xTile.Layers;
 using xTile.Tiles;
+using TileMapEditor.Localisation;
 
 namespace TileMapEditor.Controls
 {
@@ -228,15 +229,17 @@ namespace TileMapEditor.Controls
                 mapNode.Tag = m_map;
 
                 // create layer collection node
+                string layersLabel = LanguageManager.GetText(typeof(MapTreeView), "Generic.Layers");
                 int layerFolderImageIndex = m_imageList.Images.IndexOfKey("LayerFolder.png");
-                layersNode = new TreeNode("Layers", layerFolderImageIndex, layerFolderImageIndex);
+                layersNode = new TreeNode(layersLabel, layerFolderImageIndex, layerFolderImageIndex);
                 layersNode.ContextMenuStrip = m_layersContextMenuStrip;
                 layersNode.Tag = m_map.Layers;
                 mapNode.Nodes.Add(layersNode);
 
                 // create tilesheet collection node
+                string tileSheetsLabel = LanguageManager.GetText(typeof(MapTreeView), "Generic.TileSheets");
                 int tileSheetFolderImageIndex = m_imageList.Images.IndexOfKey("TileSheetFolder.png");
-                tileSheetsNode = new TreeNode("Tile Sheets", tileSheetFolderImageIndex, tileSheetFolderImageIndex);
+                tileSheetsNode = new TreeNode(tileSheetsLabel, tileSheetFolderImageIndex, tileSheetFolderImageIndex);
                 tileSheetsNode.ContextMenuStrip = m_tileSheetsContextMenuStrip;
                 tileSheetsNode.Tag = m_map.TileSheets;
                 mapNode.Nodes.Add(tileSheetsNode);
