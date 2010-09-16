@@ -35,7 +35,6 @@ namespace TileMapEditor.Dialogs
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.m_labelCopyright.Text = AssemblyCopyright;
             this.m_labelCompanyName.Text = AssemblyCompany;
-            //this.m_textBoxDescription.Text = AssemblyDescription;
             this.m_textBoxDescription.Text = Properties.Resources.Legal;
 
             m_fadeDirection = 0.05;
@@ -119,6 +118,7 @@ namespace TileMapEditor.Dialogs
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
+
         #endregion
 
 
