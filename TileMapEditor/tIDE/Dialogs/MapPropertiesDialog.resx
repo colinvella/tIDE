@@ -159,8 +159,8 @@
   <data name="&gt;&gt;m_textBoxDescription.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 333</value>
   </data>
   <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
     <value>m_labelId</value>
@@ -225,9 +225,6 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;m_tabGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="m_textBoxId.Location" type="System.Drawing.Point, System.Drawing">
     <value>103, 7</value>
   </data>
@@ -243,14 +240,8 @@
   <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="Generic.OK" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
   <data name="m_labelId.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxDescription.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
   </data>
   <data name="m_labelId.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 13</value>
@@ -279,8 +270,8 @@
   <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="Generic.Apply" xml:space="preserve">
-    <value>&amp;Apply</value>
+  <data name="&gt;&gt;m_tabGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="m_buttonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -321,8 +312,8 @@
   <data name="&gt;&gt;m_labelId.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="Generic.Cancel" xml:space="preserve">
-    <value>&amp;Cancel</value>
+  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
     <value>&amp;Apply</value>
@@ -360,6 +351,9 @@
   <data name="&gt;&gt;m_textBoxId.Name" xml:space="preserve">
     <value>m_textBoxId</value>
   </data>
+  <data name="&gt;&gt;m_textBoxDescription.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
   <data name="m_labelId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -393,14 +387,11 @@
   <data name="&gt;&gt;m_customPropertyGrid.Parent" xml:space="preserve">
     <value>m_tabCustomProperties</value>
   </data>
-  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 333</value>
+  <data name="m_customTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 359</value>
   </data>
   <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
-  </data>
-  <data name="m_customTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 359</value>
   </data>
   <data name="&gt;&gt;m_customPropertyGrid.Name" xml:space="preserve">
     <value>m_customPropertyGrid</value>
@@ -1194,9 +1185,6 @@
   </data>
   <data name="m_tabCustomProperties.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
-  </data>
-  <data name="Generic.Close" xml:space="preserve">
-    <value>&amp;Close</value>
   </data>
   <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
     <value>2</value>

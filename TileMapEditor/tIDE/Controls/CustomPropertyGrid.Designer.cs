@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomPropertyGrid));
             this.m_dataGridView = new System.Windows.Forms.DataGridView();
             this.PropertyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PropertyValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,22 +37,22 @@
             // 
             // m_dataGridView
             // 
+            this.m_dataGridView.AccessibleDescription = null;
+            this.m_dataGridView.AccessibleName = null;
             this.m_dataGridView.AllowUserToOrderColumns = true;
             this.m_dataGridView.AllowUserToResizeRows = false;
+            resources.ApplyResources(this.m_dataGridView, "m_dataGridView");
             this.m_dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.m_dataGridView.BackgroundImage = null;
             this.m_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.m_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.m_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PropertyName,
             this.PropertyValue});
-            this.m_dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.m_dataGridView.Font = null;
             this.m_dataGridView.MultiSelect = false;
             this.m_dataGridView.Name = "m_dataGridView";
-            this.m_dataGridView.RowHeadersWidth = 21;
             this.m_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.m_dataGridView.Size = new System.Drawing.Size(421, 150);
-            this.m_dataGridView.TabIndex = 0;
             this.m_dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.OnCellBeginEdit);
             this.m_dataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnCellValidated);
             this.m_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserDeletedRow);
@@ -60,22 +61,25 @@
             // PropertyName
             // 
             this.PropertyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PropertyName.HeaderText = "Name";
+            resources.ApplyResources(this.PropertyName, "PropertyName");
             this.PropertyName.Name = "PropertyName";
             // 
             // PropertyValue
             // 
             this.PropertyValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PropertyValue.HeaderText = "Value";
+            resources.ApplyResources(this.PropertyValue, "PropertyValue");
             this.PropertyValue.Name = "PropertyValue";
             // 
             // CustomPropertyGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.Controls.Add(this.m_dataGridView);
+            this.Font = null;
             this.Name = "CustomPropertyGrid";
-            this.Size = new System.Drawing.Size(421, 150);
             ((System.ComponentModel.ISupportInitialize)(this.m_dataGridView)).EndInit();
             this.ResumeLayout(false);
 
