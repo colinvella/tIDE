@@ -356,6 +356,9 @@
     <EmbeddedResource Include="Dialogs\OptonsDialog.resx">
       <DependentUpon>OptonsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PluginInfoDialog.it-IT.resx">
+      <DependentUpon>PluginInfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TiledFormatOptionsDialog.resx">
       <DependentUpon>TiledFormatOptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
