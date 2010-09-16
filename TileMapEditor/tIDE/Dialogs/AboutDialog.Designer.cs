@@ -43,7 +43,11 @@
             // 
             // m_backgroundPanel
             // 
+            m_backgroundPanel.AccessibleDescription = null;
+            m_backgroundPanel.AccessibleName = null;
+            resources.ApplyResources(m_backgroundPanel, "m_backgroundPanel");
             m_backgroundPanel.BackColor = System.Drawing.Color.Transparent;
+            m_backgroundPanel.BackgroundImage = null;
             m_backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             m_backgroundPanel.Controls.Add(this.m_labelCompanyName);
             m_backgroundPanel.Controls.Add(this.m_labelCopyright);
@@ -51,79 +55,66 @@
             m_backgroundPanel.Controls.Add(this.labelVersion);
             m_backgroundPanel.Controls.Add(this.m_buttonOk);
             m_backgroundPanel.Controls.Add(this.m_textBoxDescription);
-            m_backgroundPanel.Location = new System.Drawing.Point(0, 0);
-            m_backgroundPanel.Margin = new System.Windows.Forms.Padding(0);
+            m_backgroundPanel.Font = null;
             m_backgroundPanel.Name = "m_backgroundPanel";
-            m_backgroundPanel.Size = new System.Drawing.Size(400, 300);
-            m_backgroundPanel.TabIndex = 1;
             // 
             // m_labelCompanyName
             // 
-            this.m_labelCompanyName.AutoSize = true;
-            this.m_labelCompanyName.Location = new System.Drawing.Point(11, 104);
+            this.m_labelCompanyName.AccessibleDescription = null;
+            this.m_labelCompanyName.AccessibleName = null;
+            resources.ApplyResources(this.m_labelCompanyName, "m_labelCompanyName");
+            this.m_labelCompanyName.Font = null;
             this.m_labelCompanyName.Name = "m_labelCompanyName";
-            this.m_labelCompanyName.Size = new System.Drawing.Size(82, 13);
-            this.m_labelCompanyName.TabIndex = 4;
-            this.m_labelCompanyName.Text = "Company Name";
             // 
             // m_labelCopyright
             // 
-            this.m_labelCopyright.AutoSize = true;
-            this.m_labelCopyright.Location = new System.Drawing.Point(11, 87);
+            this.m_labelCopyright.AccessibleDescription = null;
+            this.m_labelCopyright.AccessibleName = null;
+            resources.ApplyResources(this.m_labelCopyright, "m_labelCopyright");
+            this.m_labelCopyright.Font = null;
             this.m_labelCopyright.Name = "m_labelCopyright";
-            this.m_labelCopyright.Size = new System.Drawing.Size(51, 13);
-            this.m_labelCopyright.TabIndex = 3;
-            this.m_labelCopyright.Text = "Copyright";
             // 
             // m_labelProductName
             // 
-            this.m_labelProductName.AutoSize = true;
-            this.m_labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_labelProductName.AccessibleDescription = null;
+            this.m_labelProductName.AccessibleName = null;
+            resources.ApplyResources(this.m_labelProductName, "m_labelProductName");
             this.m_labelProductName.ForeColor = System.Drawing.Color.White;
-            this.m_labelProductName.Location = new System.Drawing.Point(64, 16);
             this.m_labelProductName.Name = "m_labelProductName";
-            this.m_labelProductName.Size = new System.Drawing.Size(160, 25);
-            this.m_labelProductName.TabIndex = 2;
-            this.m_labelProductName.Text = "Product Name";
             // 
             // labelVersion
             // 
-            this.labelVersion.AutoSize = true;
+            this.labelVersion.AccessibleDescription = null;
+            this.labelVersion.AccessibleName = null;
+            resources.ApplyResources(this.labelVersion, "labelVersion");
+            this.labelVersion.Font = null;
             this.labelVersion.ForeColor = System.Drawing.Color.White;
-            this.labelVersion.Location = new System.Drawing.Point(66, 42);
-            this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(42, 13);
-            this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "Version";
-            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_buttonOk
             // 
-            this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonOk.AccessibleDescription = null;
+            this.m_buttonOk.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonOk, "m_buttonOk");
+            this.m_buttonOk.BackgroundImage = null;
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_buttonOk.Location = new System.Drawing.Point(312, 265);
+            this.m_buttonOk.Font = null;
             this.m_buttonOk.Name = "m_buttonOk";
-            this.m_buttonOk.Size = new System.Drawing.Size(75, 22);
-            this.m_buttonOk.TabIndex = 6;
-            this.m_buttonOk.Text = "&OK";
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_textBoxDescription
             // 
+            this.m_textBoxDescription.AccessibleDescription = null;
+            this.m_textBoxDescription.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxDescription, "m_textBoxDescription");
             this.m_textBoxDescription.BackColor = System.Drawing.SystemColors.Info;
+            this.m_textBoxDescription.BackgroundImage = null;
             this.m_textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_textBoxDescription.Location = new System.Drawing.Point(14, 126);
-            this.m_textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.m_textBoxDescription.Multiline = true;
+            this.m_textBoxDescription.Font = null;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.ReadOnly = true;
-            this.m_textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.m_textBoxDescription.Size = new System.Drawing.Size(373, 133);
-            this.m_textBoxDescription.TabIndex = 5;
             this.m_textBoxDescription.TabStop = false;
-            this.m_textBoxDescription.Text = "Description";
             // 
             // m_timer
             // 
@@ -134,25 +125,22 @@
             // AboutDialog
             // 
             this.AcceptButton = this.m_buttonOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.m_buttonOk;
-            this.ClientSize = new System.Drawing.Size(400, 300);
             this.Controls.Add(m_backgroundPanel);
             this.DoubleBuffered = true;
+            this.Font = null;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutDialog";
             this.Opacity = 0;
-            this.Padding = new System.Windows.Forms.Padding(9);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About tIDE";
             m_backgroundPanel.ResumeLayout(false);
             m_backgroundPanel.PerformLayout();
             this.ResumeLayout(false);
