@@ -11,6 +11,7 @@ using xTile;
 
 using TileMapEditor.Commands;
 using TileMapEditor.Controls;
+using TileMapEditor.Localisation;
 
 namespace TileMapEditor.Dialogs
 {
@@ -28,7 +29,7 @@ namespace TileMapEditor.Dialogs
         private void MarkAsModified()
         {
             m_buttonApply.Enabled = m_buttonOk.Enabled = true;
-            m_buttonCancel.Text = "&Cancel";
+            m_buttonCancel.Text = LanguageManager.GetText(typeof(MapPropertiesDialog), LanguageManager.GenericCancel);
             m_buttonCancel.DialogResult = DialogResult.Cancel;
         }
 
@@ -43,7 +44,7 @@ namespace TileMapEditor.Dialogs
             else
             {
                 m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-                m_buttonCancel.Text = "&Close";
+                m_buttonCancel.Text = LanguageManager.GetText(typeof(MapPropertiesDialog), LanguageManager.GenericClose);
                 m_buttonCancel.DialogResult = DialogResult.OK;
             }
         }
@@ -71,7 +72,7 @@ namespace TileMapEditor.Dialogs
             CommandHistory.Instance.Do(command);
 
             m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-            m_buttonCancel.Text = "&Close";
+            m_buttonCancel.Text = LanguageManager.GetText(typeof(MapPropertiesDialog), LanguageManager.GenericClose);
             m_buttonCancel.DialogResult = DialogResult.OK;
         }
 

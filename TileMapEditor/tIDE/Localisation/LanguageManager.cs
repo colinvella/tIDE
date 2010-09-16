@@ -11,6 +11,11 @@ namespace TileMapEditor.Localisation
 {
     class LanguageManager
     {
+        public const string GenericOK = "Generic.OK";
+        public const string GenericCancel = "Generic.Cancel";
+        public const string GenericApply = "Generic.Apply";
+        public const string GenericClose = "Generic.Close";
+
         public static void Initialise()
         {
             CultureInfo cultureInfo = new CultureInfo(Language.Code);
@@ -23,6 +28,13 @@ namespace TileMapEditor.Localisation
             ComponentResourceManager componentResourceManager
                 = new ComponentResourceManager(form.GetType());
             ApplyLanguage(componentResourceManager, form);
+        }
+
+        public static string GetText(Type componentType, string name)
+        {
+            ComponentResourceManager componentResourceManager
+                = new ComponentResourceManager(componentType);
+            return componentResourceManager.GetString(name);
         }
 
         public static Language Language
