@@ -34,12 +34,25 @@ namespace TileMapEditor.Dialogs
                     break;
                 }
             }
+
+            m_clearHistory = false;
+        }
+
+        private void OnClearHistory(object sender, EventArgs eventArgs)
+        {
+            m_clearHistoryButton.Enabled = false;
+            m_clearHistory = true;
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
+            if (m_clearHistory)
+                RecentFilesManager.ClearHistory();
+
             LanguageManager.Language
                 = Language.FromName(m_languageComboBox.SelectedItem.ToString());
         }
+
+        private bool m_clearHistory;
     }
 }

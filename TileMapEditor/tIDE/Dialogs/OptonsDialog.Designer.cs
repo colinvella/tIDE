@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptonsDialog));
             System.Windows.Forms.Label m_recentFileCountLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptonsDialog));
             this.m_okButton = new System.Windows.Forms.Button();
             this.m_cancelButton = new System.Windows.Forms.Button();
             this.m_tabControl = new TileMapEditor.Controls.CustomTabControl();
@@ -45,6 +45,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_recentFileCountUpDown)).BeginInit();
             this.m_languageTabPage.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // m_recentFileCountLabel
+            // 
+            m_recentFileCountLabel.AccessibleDescription = null;
+            m_recentFileCountLabel.AccessibleName = null;
+            resources.ApplyResources(m_recentFileCountLabel, "m_recentFileCountLabel");
+            m_recentFileCountLabel.Font = null;
+            m_recentFileCountLabel.Name = "m_recentFileCountLabel";
             // 
             // m_okButton
             // 
@@ -104,14 +112,7 @@
             this.m_clearHistoryButton.Font = null;
             this.m_clearHistoryButton.Name = "m_clearHistoryButton";
             this.m_clearHistoryButton.UseVisualStyleBackColor = true;
-            // 
-            // m_recentFileCountLabel
-            // 
-            m_recentFileCountLabel.AccessibleDescription = null;
-            m_recentFileCountLabel.AccessibleName = null;
-            resources.ApplyResources(m_recentFileCountLabel, "m_recentFileCountLabel");
-            m_recentFileCountLabel.Font = null;
-            m_recentFileCountLabel.Name = "m_recentFileCountLabel";
+            this.m_clearHistoryButton.Click += new System.EventHandler(this.OnClearHistory);
             // 
             // m_recentFileCountUpDown
             // 
@@ -119,6 +120,11 @@
             this.m_recentFileCountUpDown.AccessibleName = null;
             resources.ApplyResources(this.m_recentFileCountUpDown, "m_recentFileCountUpDown");
             this.m_recentFileCountUpDown.Font = null;
+            this.m_recentFileCountUpDown.Maximum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             this.m_recentFileCountUpDown.Name = "m_recentFileCountUpDown";
             // 
             // m_languageTabPage
