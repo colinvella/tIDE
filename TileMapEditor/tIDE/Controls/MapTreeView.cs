@@ -232,6 +232,7 @@ namespace TileMapEditor.Controls
                 string layersLabel = LanguageManager.GetText(typeof(MapTreeView), "Generic.Layers");
                 int layerFolderImageIndex = m_imageList.Images.IndexOfKey("LayerFolder.png");
                 layersNode = new TreeNode(layersLabel, layerFolderImageIndex, layerFolderImageIndex);
+                layersNode.Name = "Generic.Layers";
                 layersNode.ContextMenuStrip = m_layersContextMenuStrip;
                 layersNode.Tag = m_map.Layers;
                 mapNode.Nodes.Add(layersNode);
@@ -240,6 +241,7 @@ namespace TileMapEditor.Controls
                 string tileSheetsLabel = LanguageManager.GetText(typeof(MapTreeView), "Generic.TileSheets");
                 int tileSheetFolderImageIndex = m_imageList.Images.IndexOfKey("TileSheetFolder.png");
                 tileSheetsNode = new TreeNode(tileSheetsLabel, tileSheetFolderImageIndex, tileSheetFolderImageIndex);
+                tileSheetsNode.Name = "Generic.TileSheets";
                 tileSheetsNode.ContextMenuStrip = m_tileSheetsContextMenuStrip;
                 tileSheetsNode.Tag = m_map.TileSheets;
                 mapNode.Nodes.Add(tileSheetsNode);

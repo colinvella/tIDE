@@ -59,7 +59,7 @@ namespace TileMapEditor.Localisation
         }
 
         // recursively handles control tree and switches to
-        // menu / toolbar tree when needed
+        // menu / toolbar / tree view node trees when needed
         private static void ApplyLanguage(
             ComponentResourceManager componentResourceManager,
             Control control)
@@ -76,6 +76,13 @@ namespace TileMapEditor.Localisation
                 ToolStrip toolStrip = (ToolStrip)control;
                 foreach (ToolStripItem toolStripItem in toolStrip.Items)
                     ApplyLanguage(componentResourceManager, toolStripItem);
+            }
+            else if (control is TreeView)
+            {
+                // switch to node tree for treeview control
+                TreeView treeView = (TreeView)control;
+                foreach (TreeNode treeNode in treeView.Nodes)
+                    ApplyLanguage(componentResourceManager, treeNode);
             }
         }
 
@@ -98,6 +105,18 @@ namespace TileMapEditor.Localisation
                 foreach (ToolStripItem childToolStripItem in toolStripDropDown.Items)
                     ApplyLanguage(componentResourceManager, childToolStripItem);
             }
+        }
+
+        // recursively handles TreeView nodes
+        private static void ApplyLanguage(
+            ComponentResourceManager componentResourceManager,
+            TreeNode treeNode)
+        {
+            componentResourceManager.ApplyResources(
+                treeNode, treeNode.Name);
+
+            foreach (TreeNode childNode in treeNode.Nodes)
+                ApplyLanguage(componentResourceManager, childNode);
         }
     }
 }

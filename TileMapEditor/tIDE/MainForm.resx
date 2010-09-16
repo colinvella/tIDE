@@ -4022,7 +4022,13 @@
   <data name="Generic.Close" xml:space="preserve">
     <value>&amp;Close</value>
   </data>
+  <data name="Generic.Layers.Text" xml:space="preserve">
+    <value>Layers</value>
+  </data>
   <data name="Generic.OK" xml:space="preserve">
     <value>&amp;OK</value>
+  </data>
+  <data name="Generic.TileSheets.Text" xml:space="preserve">
+    <value>Tile Sheets</value>
   </data>
 </root>
