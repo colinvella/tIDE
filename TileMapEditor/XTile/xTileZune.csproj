@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>xTile</RootNamespace>
-    <AssemblyName>XTile</AssemblyName>
+    <AssemblyName>xTile</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <XnaFrameworkVersion>v3.1</XnaFrameworkVersion>
     <XnaPlatform>Zune</XnaPlatform>
@@ -55,7 +55,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <DefineConstants>TRACE;ZUNE</DefineConstants>
-    <DocumentationFile>bin\Zune\Release\XTile.XML</DocumentationFile>
+    <DocumentationFile>bin\Zune\Release\xTile.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Dimensions\Location.cs" />

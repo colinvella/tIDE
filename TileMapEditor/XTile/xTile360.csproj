@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>xTile</RootNamespace>
-    <AssemblyName>XTile</AssemblyName>
+    <AssemblyName>xTile</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <XnaFrameworkVersion>v3.1</XnaFrameworkVersion>
     <XnaPlatform>Xbox 360</XnaPlatform>
@@ -57,7 +57,7 @@
     <Optimize>true</Optimize>
     <DefineConstants>TRACE;XBOX;XBOX360</DefineConstants>
     <XnaCompressContent>true</XnaCompressContent>
-    <DocumentationFile>bin\Xbox 360\Release\XTile.XML</DocumentationFile>
+    <DocumentationFile>bin\Xbox 360\Release\xTile.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Dimensions\Location.cs" />
