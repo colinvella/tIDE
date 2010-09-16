@@ -902,4 +902,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Atributi della Mappa</value>
   </data>
+  <data name="Generic.Apply" xml:space="preserve">
+    <value>A&amp;plica</value>
+  </data>
+  <data name="Generic.Cancel" xml:space="preserve">
+    <value>&amp;Annulla</value>
+  </data>
+  <data name="Generic.Close" xml:space="preserve">
+    <value>&amp;Chiudi</value>
+  </data>
+  <data name="Generic.OK" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
 </root>
