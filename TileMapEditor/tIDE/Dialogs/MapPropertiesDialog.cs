@@ -29,8 +29,15 @@ namespace TileMapEditor.Dialogs
         private void MarkAsModified()
         {
             m_buttonApply.Enabled = m_buttonOk.Enabled = true;
-            m_buttonCancel.Text = LanguageManager.GetText(typeof(MapPropertiesDialog), LanguageManager.GenericCancel);
-            m_buttonCancel.DialogResult = DialogResult.Cancel;
+            m_buttonCancel.Visible = true;
+            m_buttonClose.Visible = false;
+        }
+
+        private void MarkAsApplied()
+        {
+            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+            m_buttonCancel.Visible = false;
+            m_buttonClose.Visible = true;
         }
 
         private void OnDialogLoad(object sender, EventArgs eventArgs)
@@ -42,11 +49,7 @@ namespace TileMapEditor.Dialogs
             if (m_isNewMap)
                 MarkAsModified();
             else
-            {
-                m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-                m_buttonCancel.Text = LanguageManager.GetText(typeof(MapPropertiesDialog), LanguageManager.GenericClose);
-                m_buttonCancel.DialogResult = DialogResult.OK;
-            }
+                MarkAsApplied();
         }
 
         private void OnFieldChanged(object sender, EventArgs eventArgs)
@@ -71,9 +74,7 @@ namespace TileMapEditor.Dialogs
                 m_customPropertyGrid.NewProperties);
             CommandHistory.Instance.Do(command);
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-            m_buttonCancel.Text = LanguageManager.GetText(typeof(MapPropertiesDialog), LanguageManager.GenericClose);
-            m_buttonCancel.DialogResult = DialogResult.OK;
+            MarkAsApplied();
         }
 
         #endregion

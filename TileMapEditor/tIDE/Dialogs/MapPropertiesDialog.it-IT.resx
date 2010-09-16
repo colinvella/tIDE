@@ -117,18 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_buttonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
     <value>&amp;Annulla</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_buttonCancel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
     <value>A&amp;plica</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
+  </data>
+  <data name="m_buttonClose.Text" xml:space="preserve">
+    <value>&amp;Chiudi</value>
+  </data>
+  <data name="m_labelDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
   </data>
   <data name="m_labelDescription.Text" xml:space="preserve">
     <value>Descrizione</value>
+  </data>
+  <data name="m_labelId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="m_tabGeneral.Text" xml:space="preserve">
     <value> Generale</value>
@@ -899,19 +925,10 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Atributi della Mappa</value>
-  </data>
-  <data name="Generic.Apply" xml:space="preserve">
-    <value>A&amp;plica</value>
-  </data>
-  <data name="Generic.Cancel" xml:space="preserve">
-    <value>&amp;Annulla</value>
-  </data>
-  <data name="Generic.Close" xml:space="preserve">
-    <value>&amp;Chiudi</value>
-  </data>
-  <data name="Generic.OK" xml:space="preserve">
-    <value>&amp;OK</value>
   </data>
 </root>

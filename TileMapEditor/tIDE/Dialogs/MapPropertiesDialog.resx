@@ -131,6 +131,9 @@
   <data name="m_textBoxDescription.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -159,14 +162,17 @@
   <data name="&gt;&gt;m_textBoxDescription.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 333</value>
+  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
     <value>m_labelId</value>
   </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
     <value> Custom Properties </value>
+  </data>
+  <data name="m_buttonClose.Text" xml:space="preserve">
+    <value>&amp;Close</value>
   </data>
   <data name="m_labelDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -179,6 +185,9 @@
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
+  </data>
+  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 377</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>584, 412</value>
@@ -202,10 +211,19 @@
     <value>m_tabGeneral</value>
   </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Close</value>
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="m_customPropertyGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
   <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 333</value>
+  </data>
+  <data name="m_buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="&gt;&gt;m_customPropertyGrid.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -213,20 +231,23 @@
   <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_tabCustomProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 10</value>
   </data>
   <data name="&gt;&gt;m_tabCustomProperties.Name" xml:space="preserve">
     <value>m_tabCustomProperties</value>
   </data>
+  <data name="&gt;&gt;m_buttonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="m_textBoxId.Location" type="System.Drawing.Point, System.Drawing">
     <value>103, 7</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="m_textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -243,8 +264,14 @@
   <data name="m_labelId.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;m_buttonClose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="m_labelId.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 13</value>
+  </data>
+  <data name="m_buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
   </data>
   <data name="m_customPropertyGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -261,11 +288,14 @@
   <data name="m_buttonOk.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;m_labelId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;m_customPropertyGrid.Parent" xml:space="preserve">
+    <value>m_tabCustomProperties</value>
   </data>
   <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -277,7 +307,7 @@
     <value>2</value>
   </data>
   <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;m_buttonApply.Name" xml:space="preserve">
     <value>m_buttonApply</value>
@@ -288,17 +318,17 @@
   <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;m_textBoxDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_tabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
+  <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;m_buttonApply.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -306,17 +336,14 @@
   <data name="m_labelDescription.Text" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="m_labelDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 36</value>
+  </data>
   <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
     <value>m_buttonCancel</value>
   </data>
   <data name="&gt;&gt;m_labelId.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
-  </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>&amp;Apply</value>
   </data>
   <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -330,14 +357,11 @@
   <data name="&gt;&gt;m_labelDescription.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="&gt;&gt;m_customTabControl.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomTabControl, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_buttonClose.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;m_customTabControl.Name" xml:space="preserve">
     <value>m_customTabControl</value>
@@ -369,35 +393,38 @@
   <data name="m_tabCustomProperties.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
+  <data name="&gt;&gt;m_buttonOk.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;m_buttonCancel.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="m_buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="m_tabGeneral.Text" xml:space="preserve">
     <value> General </value>
   </data>
-  <data name="m_labelDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 36</value>
+  <data name="m_buttonApply.Text" xml:space="preserve">
+    <value>&amp;Apply</value>
   </data>
   <data name="m_textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>103, 33</value>
   </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Parent" xml:space="preserve">
-    <value>m_tabCustomProperties</value>
+  <data name="m_buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 333</value>
+  </data>
+  <data name="&gt;&gt;m_labelId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_customTabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>560, 359</value>
   </data>
-  <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
   <data name="&gt;&gt;m_customPropertyGrid.Name" xml:space="preserve">
     <value>m_customPropertyGrid</value>
   </data>
-  <data name="m_customPropertyGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+  <data name="&gt;&gt;m_tabCustomProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_tabGeneral.Name" xml:space="preserve">
     <value>m_tabGeneral</value>
@@ -1177,43 +1204,34 @@
   <data name="&gt;&gt;m_tabGeneral.Parent" xml:space="preserve">
     <value>m_customTabControl</value>
   </data>
+  <data name="&gt;&gt;m_buttonClose.Name" xml:space="preserve">
+    <value>m_buttonClose</value>
+  </data>
   <data name="m_labelDescription.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="m_tabCustomProperties.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;m_customTabControl.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomTabControl, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;m_buttonOk.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_customTabControl.ZOrder" xml:space="preserve">
+  <data name="m_tabCustomProperties.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="m_buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
+  <data name="&gt;&gt;m_customTabControl.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <data name="m_buttonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>Italian (Italy)</value>
-  </data>
-  <data name="Generic.Apply" xml:space="preserve">
-    <value>&amp;Apply</value>
-  </data>
-  <data name="Generic.Cancel" xml:space="preserve">
-    <value>&amp;Cancel</value>
-  </data>
-  <data name="Generic.Close" xml:space="preserve">
-    <value>&amp;Close</value>
-  </data>
-  <data name="Generic.OK" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
+  </metadata>
 </root>

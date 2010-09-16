@@ -32,6 +32,7 @@
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
+            this.m_buttonClose = new System.Windows.Forms.Button();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
@@ -63,7 +64,7 @@
             this.m_buttonCancel.AccessibleName = null;
             resources.ApplyResources(this.m_buttonCancel, "m_buttonCancel");
             this.m_buttonCancel.BackgroundImage = null;
-            this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_buttonCancel.Font = null;
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
@@ -78,6 +79,17 @@
             this.m_buttonApply.Name = "m_buttonApply";
             this.m_buttonApply.UseVisualStyleBackColor = true;
             this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
+            // 
+            // m_buttonClose
+            // 
+            this.m_buttonClose.AccessibleDescription = null;
+            this.m_buttonClose.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonClose, "m_buttonClose");
+            this.m_buttonClose.BackgroundImage = null;
+            this.m_buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonClose.Font = null;
+            this.m_buttonClose.Name = "m_buttonClose";
+            this.m_buttonClose.UseVisualStyleBackColor = true;
             // 
             // m_customTabControl
             // 
@@ -173,6 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = null;
             this.CancelButton = this.m_buttonCancel;
+            this.Controls.Add(this.m_buttonClose);
             this.Controls.Add(this.m_buttonApply);
             this.Controls.Add(this.m_customTabControl);
             this.Controls.Add(this.m_buttonCancel);
@@ -202,5 +215,6 @@
         private System.Windows.Forms.Label m_labelId;
         private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Button m_buttonApply;
+        private System.Windows.Forms.Button m_buttonClose;
     }
 }
