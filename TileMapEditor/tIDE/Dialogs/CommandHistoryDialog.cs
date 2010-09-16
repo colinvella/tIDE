@@ -27,11 +27,11 @@ namespace TileMapEditor.Dialogs
                 return;
 
             Command lastCommand = CommandHistory.Instance.LastCommand;
-            string buttonText = lastCommand == null ? "Redo" : "Undo";
+            string buttonText = lastCommand == null ? m_redoLabel.Text : m_undoLabel.Text;
 
             if (lastCommand == null)
             {
-                m_commandsDataGridView.Rows.Insert(0, new object[] { "Current State", null });
+                m_commandsDataGridView.Rows.Insert(0, new object[] { m_CurrentStateLabel.Text, null });
                 m_commandsDataGridView.Rows[0].DefaultCellStyle.BackColor = SystemColors.GradientActiveCaption;
             }
 
@@ -42,7 +42,7 @@ namespace TileMapEditor.Dialogs
 
                 if (command == lastCommand)
                 {
-                    m_commandsDataGridView.Rows.Insert(0, new object[] { "Current State", null });
+                    m_commandsDataGridView.Rows.Insert(0, new object[] { m_CurrentStateLabel.Text, null });
                     m_commandsDataGridView.Rows[0].DefaultCellStyle.BackColor = SystemColors.GradientActiveCaption;
                     buttonText = "Redo";
                 }

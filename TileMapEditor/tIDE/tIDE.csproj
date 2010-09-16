@@ -332,6 +332,9 @@
     <EmbeddedResource Include="Dialogs\AutoTileDialog.resx">
       <DependentUpon>AutoTileDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CommandHistoryDialog.it-IT.resx">
+      <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CommandHistoryDialog.resx">
       <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
