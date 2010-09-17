@@ -423,6 +423,9 @@
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Help\HelpForm.it-IT.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
       <SubType>Designer</SubType>
