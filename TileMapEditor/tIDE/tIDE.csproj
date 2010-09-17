@@ -419,6 +419,9 @@
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TileSheetPropertiesDialog.it-IT.resx">
+      <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TileSheetPropertiesDialog.resx">
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>

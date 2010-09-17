@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
             System.Windows.Forms.Label m_labelTileSize;
             System.Windows.Forms.Label m_labelTileSizeBy;
             System.Windows.Forms.Label label2;
@@ -37,7 +38,6 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
@@ -97,71 +97,71 @@
             // 
             // m_buttonOk
             // 
-            this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonOk.AccessibleDescription = null;
+            this.m_buttonOk.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonOk, "m_buttonOk");
+            this.m_buttonOk.BackgroundImage = null;
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.m_buttonOk.Enabled = false;
-            this.m_buttonOk.Location = new System.Drawing.Point(335, 377);
+            this.m_buttonOk.Font = null;
             this.m_buttonOk.Name = "m_buttonOk";
-            this.m_buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonOk.TabIndex = 1;
-            this.m_buttonOk.Text = "&OK";
             this.m_buttonOk.UseVisualStyleBackColor = true;
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_buttonCancel
             // 
-            this.m_buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonCancel.AccessibleDescription = null;
+            this.m_buttonCancel.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonCancel, "m_buttonCancel");
+            this.m_buttonCancel.BackgroundImage = null;
             this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_buttonCancel.Location = new System.Drawing.Point(497, 377);
+            this.m_buttonCancel.Font = null;
             this.m_buttonCancel.Name = "m_buttonCancel";
-            this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonCancel.TabIndex = 2;
-            this.m_buttonCancel.Text = "&Cancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
-            this.m_buttonCancel.Visible = false;
             // 
             // m_buttonApply
             // 
-            this.m_buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonApply.Enabled = false;
-            this.m_buttonApply.Location = new System.Drawing.Point(416, 377);
+            this.m_buttonApply.AccessibleDescription = null;
+            this.m_buttonApply.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonApply, "m_buttonApply");
+            this.m_buttonApply.BackgroundImage = null;
+            this.m_buttonApply.Font = null;
             this.m_buttonApply.Name = "m_buttonApply";
-            this.m_buttonApply.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonApply.TabIndex = 4;
-            this.m_buttonApply.Text = "&Apply";
             this.m_buttonApply.UseVisualStyleBackColor = true;
             this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
             // 
             // m_buttonClose
             // 
-            this.m_buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonClose.AccessibleDescription = null;
+            this.m_buttonClose.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonClose, "m_buttonClose");
+            this.m_buttonClose.BackgroundImage = null;
             this.m_buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.m_buttonClose.Location = new System.Drawing.Point(497, 377);
+            this.m_buttonClose.Font = null;
             this.m_buttonClose.Name = "m_buttonClose";
-            this.m_buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonClose.TabIndex = 5;
-            this.m_buttonClose.Text = "&Close";
             this.m_buttonClose.UseVisualStyleBackColor = true;
             // 
             // m_customTabControl
             // 
-            this.m_customTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_customTabControl.AccessibleDescription = null;
+            this.m_customTabControl.AccessibleName = null;
+            resources.ApplyResources(this.m_customTabControl, "m_customTabControl");
+            this.m_customTabControl.BackgroundImage = null;
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabAlignment);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
             this.m_customTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.m_customTabControl.Location = new System.Drawing.Point(12, 12);
+            this.m_customTabControl.Font = null;
             this.m_customTabControl.Name = "m_customTabControl";
             this.m_customTabControl.SelectedIndex = 0;
-            this.m_customTabControl.Size = new System.Drawing.Size(560, 359);
-            this.m_customTabControl.TabIndex = 3;
             this.m_customTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.OnSelectingTab);
             // 
             // m_tabGeneral
             // 
+            this.m_tabGeneral.AccessibleDescription = null;
+            this.m_tabGeneral.AccessibleName = null;
+            resources.ApplyResources(this.m_tabGeneral, "m_tabGeneral");
             this.m_tabGeneral.BackColor = System.Drawing.SystemColors.Control;
+            this.m_tabGeneral.BackgroundImage = null;
             this.m_tabGeneral.Controls.Add(this.m_labelImageSource);
             this.m_tabGeneral.Controls.Add(this.m_buttonBrowse);
             this.m_tabGeneral.Controls.Add(this.m_textBoxImageSource);
@@ -169,89 +169,83 @@
             this.m_tabGeneral.Controls.Add(this.m_labelDescription);
             this.m_tabGeneral.Controls.Add(this.m_textBoxId);
             this.m_tabGeneral.Controls.Add(this.m_labelId);
-            this.m_tabGeneral.Location = new System.Drawing.Point(4, 22);
+            this.m_tabGeneral.Font = null;
             this.m_tabGeneral.Name = "m_tabGeneral";
-            this.m_tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tabGeneral.Size = new System.Drawing.Size(552, 333);
-            this.m_tabGeneral.TabIndex = 0;
-            this.m_tabGeneral.Text = " General ";
             // 
             // m_labelImageSource
             // 
-            this.m_labelImageSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.m_labelImageSource.AutoSize = true;
-            this.m_labelImageSource.Location = new System.Drawing.Point(6, 309);
+            this.m_labelImageSource.AccessibleDescription = null;
+            this.m_labelImageSource.AccessibleName = null;
+            resources.ApplyResources(this.m_labelImageSource, "m_labelImageSource");
+            this.m_labelImageSource.Font = null;
             this.m_labelImageSource.Name = "m_labelImageSource";
-            this.m_labelImageSource.Size = new System.Drawing.Size(73, 13);
-            this.m_labelImageSource.TabIndex = 6;
-            this.m_labelImageSource.Text = "Image Source";
             // 
             // m_buttonBrowse
             // 
-            this.m_buttonBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_buttonBrowse.Location = new System.Drawing.Point(471, 304);
+            this.m_buttonBrowse.AccessibleDescription = null;
+            this.m_buttonBrowse.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonBrowse, "m_buttonBrowse");
+            this.m_buttonBrowse.BackgroundImage = null;
+            this.m_buttonBrowse.Font = null;
             this.m_buttonBrowse.Name = "m_buttonBrowse";
-            this.m_buttonBrowse.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonBrowse.TabIndex = 5;
-            this.m_buttonBrowse.Text = "Browse...";
             this.m_buttonBrowse.UseVisualStyleBackColor = true;
             this.m_buttonBrowse.Click += new System.EventHandler(this.OnBrowse);
             // 
             // m_textBoxImageSource
             // 
-            this.m_textBoxImageSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_textBoxImageSource.Location = new System.Drawing.Point(103, 306);
+            this.m_textBoxImageSource.AccessibleDescription = null;
+            this.m_textBoxImageSource.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxImageSource, "m_textBoxImageSource");
+            this.m_textBoxImageSource.BackgroundImage = null;
+            this.m_textBoxImageSource.Font = null;
             this.m_textBoxImageSource.Name = "m_textBoxImageSource";
             this.m_textBoxImageSource.ReadOnly = true;
-            this.m_textBoxImageSource.Size = new System.Drawing.Size(362, 20);
-            this.m_textBoxImageSource.TabIndex = 4;
             this.m_textBoxImageSource.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_textBoxDescription
             // 
             this.m_textBoxDescription.AcceptsReturn = true;
-            this.m_textBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_textBoxDescription.Location = new System.Drawing.Point(103, 33);
-            this.m_textBoxDescription.Multiline = true;
+            this.m_textBoxDescription.AccessibleDescription = null;
+            this.m_textBoxDescription.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxDescription, "m_textBoxDescription");
+            this.m_textBoxDescription.BackgroundImage = null;
+            this.m_textBoxDescription.Font = null;
             this.m_textBoxDescription.Name = "m_textBoxDescription";
-            this.m_textBoxDescription.Size = new System.Drawing.Size(443, 265);
-            this.m_textBoxDescription.TabIndex = 3;
             this.m_textBoxDescription.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_labelDescription
             // 
-            this.m_labelDescription.AutoSize = true;
-            this.m_labelDescription.Location = new System.Drawing.Point(6, 36);
+            this.m_labelDescription.AccessibleDescription = null;
+            this.m_labelDescription.AccessibleName = null;
+            resources.ApplyResources(this.m_labelDescription, "m_labelDescription");
+            this.m_labelDescription.Font = null;
             this.m_labelDescription.Name = "m_labelDescription";
-            this.m_labelDescription.Size = new System.Drawing.Size(60, 13);
-            this.m_labelDescription.TabIndex = 2;
-            this.m_labelDescription.Text = "Description";
             // 
             // m_textBoxId
             // 
-            this.m_textBoxId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_textBoxId.Location = new System.Drawing.Point(103, 7);
+            this.m_textBoxId.AccessibleDescription = null;
+            this.m_textBoxId.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxId, "m_textBoxId");
+            this.m_textBoxId.BackgroundImage = null;
+            this.m_textBoxId.Font = null;
             this.m_textBoxId.Name = "m_textBoxId";
-            this.m_textBoxId.Size = new System.Drawing.Size(443, 20);
-            this.m_textBoxId.TabIndex = 1;
             this.m_textBoxId.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
             // m_labelId
             // 
-            this.m_labelId.AutoSize = true;
-            this.m_labelId.Location = new System.Drawing.Point(6, 10);
+            this.m_labelId.AccessibleDescription = null;
+            this.m_labelId.AccessibleName = null;
+            resources.ApplyResources(this.m_labelId, "m_labelId");
+            this.m_labelId.Font = null;
             this.m_labelId.Name = "m_labelId";
-            this.m_labelId.Size = new System.Drawing.Size(18, 13);
-            this.m_labelId.TabIndex = 0;
-            this.m_labelId.Text = "ID";
             // 
             // m_tabAlignment
             // 
+            this.m_tabAlignment.AccessibleDescription = null;
+            this.m_tabAlignment.AccessibleName = null;
+            resources.ApplyResources(this.m_tabAlignment, "m_tabAlignment");
             this.m_tabAlignment.BackColor = System.Drawing.SystemColors.Control;
+            this.m_tabAlignment.BackgroundImage = null;
             this.m_tabAlignment.Controls.Add(this.m_buttonDoneSwapping);
             this.m_tabAlignment.Controls.Add(this.m_buttonSwapTiles);
             this.m_tabAlignment.Controls.Add(this.m_groupBoxCustomSettings);
@@ -259,37 +253,37 @@
             this.m_tabAlignment.Controls.Add(this.m_panelImage);
             this.m_tabAlignment.Controls.Add(this.m_trackBarZoom);
             this.m_tabAlignment.Controls.Add(this.m_labelZoom);
-            this.m_tabAlignment.Location = new System.Drawing.Point(4, 22);
+            this.m_tabAlignment.Font = null;
             this.m_tabAlignment.Name = "m_tabAlignment";
-            this.m_tabAlignment.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tabAlignment.Size = new System.Drawing.Size(552, 333);
-            this.m_tabAlignment.TabIndex = 2;
-            this.m_tabAlignment.Text = "Alignment";
             // 
             // m_buttonDoneSwapping
             // 
-            this.m_buttonDoneSwapping.Location = new System.Drawing.Point(84, 255);
+            this.m_buttonDoneSwapping.AccessibleDescription = null;
+            this.m_buttonDoneSwapping.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonDoneSwapping, "m_buttonDoneSwapping");
+            this.m_buttonDoneSwapping.BackgroundImage = null;
+            this.m_buttonDoneSwapping.Font = null;
             this.m_buttonDoneSwapping.Name = "m_buttonDoneSwapping";
-            this.m_buttonDoneSwapping.Size = new System.Drawing.Size(105, 23);
-            this.m_buttonDoneSwapping.TabIndex = 20;
-            this.m_buttonDoneSwapping.Text = "Done Swapping";
             this.m_buttonDoneSwapping.UseVisualStyleBackColor = true;
-            this.m_buttonDoneSwapping.Visible = false;
             this.m_buttonDoneSwapping.Click += new System.EventHandler(this.OnDoneSwapping);
             // 
             // m_buttonSwapTiles
             // 
-            this.m_buttonSwapTiles.Enabled = false;
-            this.m_buttonSwapTiles.Location = new System.Drawing.Point(15, 255);
+            this.m_buttonSwapTiles.AccessibleDescription = null;
+            this.m_buttonSwapTiles.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonSwapTiles, "m_buttonSwapTiles");
+            this.m_buttonSwapTiles.BackgroundImage = null;
+            this.m_buttonSwapTiles.Font = null;
             this.m_buttonSwapTiles.Name = "m_buttonSwapTiles";
-            this.m_buttonSwapTiles.Size = new System.Drawing.Size(105, 23);
-            this.m_buttonSwapTiles.TabIndex = 19;
-            this.m_buttonSwapTiles.Text = "Swap Tiles";
             this.m_buttonSwapTiles.UseVisualStyleBackColor = true;
             this.m_buttonSwapTiles.Click += new System.EventHandler(this.OnSwapTiles);
             // 
             // m_groupBoxCustomSettings
             // 
+            this.m_groupBoxCustomSettings.AccessibleDescription = null;
+            this.m_groupBoxCustomSettings.AccessibleName = null;
+            resources.ApplyResources(this.m_groupBoxCustomSettings, "m_groupBoxCustomSettings");
+            this.m_groupBoxCustomSettings.BackgroundImage = null;
             this.m_groupBoxCustomSettings.Controls.Add(this.m_textBoxTileWidth);
             this.m_groupBoxCustomSettings.Controls.Add(m_labelTileSize);
             this.m_groupBoxCustomSettings.Controls.Add(m_labelTileSizeBy);
@@ -302,16 +296,16 @@
             this.m_groupBoxCustomSettings.Controls.Add(this.m_textBoxTopMargin);
             this.m_groupBoxCustomSettings.Controls.Add(this.m_textBoxSpacingX);
             this.m_groupBoxCustomSettings.Controls.Add(label4);
-            this.m_groupBoxCustomSettings.Location = new System.Drawing.Point(6, 148);
+            this.m_groupBoxCustomSettings.Font = null;
             this.m_groupBoxCustomSettings.Name = "m_groupBoxCustomSettings";
-            this.m_groupBoxCustomSettings.Size = new System.Drawing.Size(195, 101);
-            this.m_groupBoxCustomSettings.TabIndex = 18;
             this.m_groupBoxCustomSettings.TabStop = false;
-            this.m_groupBoxCustomSettings.Text = "Custom Settings";
             // 
             // m_textBoxTileWidth
             // 
-            this.m_textBoxTileWidth.Location = new System.Drawing.Point(59, 19);
+            this.m_textBoxTileWidth.AccessibleDescription = null;
+            this.m_textBoxTileWidth.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxTileWidth, "m_textBoxTileWidth");
+            this.m_textBoxTileWidth.Font = null;
             this.m_textBoxTileWidth.Maximum = new decimal(new int[] {
             512,
             0,
@@ -323,9 +317,6 @@
             0,
             0});
             this.m_textBoxTileWidth.Name = "m_textBoxTileWidth";
-            this.m_textBoxTileWidth.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxTileWidth.TabIndex = 2;
-            this.m_textBoxTileWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxTileWidth.Value = new decimal(new int[] {
             8,
             0,
@@ -335,25 +326,26 @@
             // 
             // m_labelTileSize
             // 
-            m_labelTileSize.AutoSize = true;
-            m_labelTileSize.Location = new System.Drawing.Point(6, 21);
+            m_labelTileSize.AccessibleDescription = null;
+            m_labelTileSize.AccessibleName = null;
+            resources.ApplyResources(m_labelTileSize, "m_labelTileSize");
+            m_labelTileSize.Font = null;
             m_labelTileSize.Name = "m_labelTileSize";
-            m_labelTileSize.Size = new System.Drawing.Size(47, 13);
-            m_labelTileSize.TabIndex = 0;
-            m_labelTileSize.Text = "Tile Size";
             // 
             // m_labelTileSizeBy
             // 
-            m_labelTileSizeBy.AutoSize = true;
-            m_labelTileSizeBy.Location = new System.Drawing.Point(117, 23);
+            m_labelTileSizeBy.AccessibleDescription = null;
+            m_labelTileSizeBy.AccessibleName = null;
+            resources.ApplyResources(m_labelTileSizeBy, "m_labelTileSizeBy");
+            m_labelTileSizeBy.Font = null;
             m_labelTileSizeBy.Name = "m_labelTileSizeBy";
-            m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
-            m_labelTileSizeBy.TabIndex = 3;
-            m_labelTileSizeBy.Text = "x";
             // 
             // m_textBoxTileHeight
             // 
-            this.m_textBoxTileHeight.Location = new System.Drawing.Point(131, 19);
+            this.m_textBoxTileHeight.AccessibleDescription = null;
+            this.m_textBoxTileHeight.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxTileHeight, "m_textBoxTileHeight");
+            this.m_textBoxTileHeight.Font = null;
             this.m_textBoxTileHeight.Maximum = new decimal(new int[] {
             512,
             0,
@@ -365,9 +357,6 @@
             0,
             0});
             this.m_textBoxTileHeight.Name = "m_textBoxTileHeight";
-            this.m_textBoxTileHeight.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxTileHeight.TabIndex = 4;
-            this.m_textBoxTileHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxTileHeight.Value = new decimal(new int[] {
             8,
             0,
@@ -377,98 +366,98 @@
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(6, 47);
+            label2.AccessibleDescription = null;
+            label2.AccessibleName = null;
+            resources.ApplyResources(label2, "label2");
+            label2.Font = null;
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(39, 13);
-            label2.TabIndex = 5;
-            label2.Text = "Margin";
             // 
             // m_textBoxLeftMargin
             // 
-            this.m_textBoxLeftMargin.Location = new System.Drawing.Point(59, 45);
+            this.m_textBoxLeftMargin.AccessibleDescription = null;
+            this.m_textBoxLeftMargin.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxLeftMargin, "m_textBoxLeftMargin");
+            this.m_textBoxLeftMargin.Font = null;
             this.m_textBoxLeftMargin.Maximum = new decimal(new int[] {
             1024,
             0,
             0,
             0});
             this.m_textBoxLeftMargin.Name = "m_textBoxLeftMargin";
-            this.m_textBoxLeftMargin.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxLeftMargin.TabIndex = 6;
-            this.m_textBoxLeftMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxLeftMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // m_textBoxSpacingY
             // 
-            this.m_textBoxSpacingY.Location = new System.Drawing.Point(130, 71);
+            this.m_textBoxSpacingY.AccessibleDescription = null;
+            this.m_textBoxSpacingY.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxSpacingY, "m_textBoxSpacingY");
+            this.m_textBoxSpacingY.Font = null;
             this.m_textBoxSpacingY.Maximum = new decimal(new int[] {
             1024,
             0,
             0,
             0});
             this.m_textBoxSpacingY.Name = "m_textBoxSpacingY";
-            this.m_textBoxSpacingY.Size = new System.Drawing.Size(53, 20);
-            this.m_textBoxSpacingY.TabIndex = 12;
-            this.m_textBoxSpacingY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxSpacingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(117, 49);
+            label1.AccessibleDescription = null;
+            label1.AccessibleName = null;
+            resources.ApplyResources(label1, "label1");
+            label1.Font = null;
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(12, 13);
-            label1.TabIndex = 7;
-            label1.Text = "x";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(116, 75);
+            label3.AccessibleDescription = null;
+            label3.AccessibleName = null;
+            resources.ApplyResources(label3, "label3");
+            label3.Font = null;
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(12, 13);
-            label3.TabIndex = 11;
-            label3.Text = "x";
             // 
             // m_textBoxTopMargin
             // 
-            this.m_textBoxTopMargin.Location = new System.Drawing.Point(131, 45);
+            this.m_textBoxTopMargin.AccessibleDescription = null;
+            this.m_textBoxTopMargin.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxTopMargin, "m_textBoxTopMargin");
+            this.m_textBoxTopMargin.Font = null;
             this.m_textBoxTopMargin.Maximum = new decimal(new int[] {
             1024,
             0,
             0,
             0});
             this.m_textBoxTopMargin.Name = "m_textBoxTopMargin";
-            this.m_textBoxTopMargin.Size = new System.Drawing.Size(52, 20);
-            this.m_textBoxTopMargin.TabIndex = 8;
-            this.m_textBoxTopMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxTopMargin.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // m_textBoxSpacingX
             // 
-            this.m_textBoxSpacingX.Location = new System.Drawing.Point(58, 71);
+            this.m_textBoxSpacingX.AccessibleDescription = null;
+            this.m_textBoxSpacingX.AccessibleName = null;
+            resources.ApplyResources(this.m_textBoxSpacingX, "m_textBoxSpacingX");
+            this.m_textBoxSpacingX.Font = null;
             this.m_textBoxSpacingX.Maximum = new decimal(new int[] {
             1024,
             0,
             0,
             0});
             this.m_textBoxSpacingX.Name = "m_textBoxSpacingX";
-            this.m_textBoxSpacingX.Size = new System.Drawing.Size(53, 20);
-            this.m_textBoxSpacingX.TabIndex = 10;
-            this.m_textBoxSpacingX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxSpacingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(6, 73);
+            label4.AccessibleDescription = null;
+            label4.AccessibleName = null;
+            resources.ApplyResources(label4, "label4");
+            label4.Font = null;
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(46, 13);
-            label4.TabIndex = 9;
-            label4.Text = "Spacing";
             // 
             // m_groupBoxQuickSettings
             // 
+            this.m_groupBoxQuickSettings.AccessibleDescription = null;
+            this.m_groupBoxQuickSettings.AccessibleName = null;
+            resources.ApplyResources(this.m_groupBoxQuickSettings, "m_groupBoxQuickSettings");
+            this.m_groupBoxQuickSettings.BackgroundImage = null;
             this.m_groupBoxQuickSettings.Controls.Add(this.m_comboBoxSpacing);
             this.m_groupBoxQuickSettings.Controls.Add(label7);
             this.m_groupBoxQuickSettings.Controls.Add(this.m_comboBoxMargin);
@@ -476,115 +465,114 @@
             this.m_groupBoxQuickSettings.Controls.Add(this.m_comboBoxTileSize);
             this.m_groupBoxQuickSettings.Controls.Add(label5);
             this.m_groupBoxQuickSettings.Controls.Add(this.m_buttonAutoDetect);
-            this.m_groupBoxQuickSettings.Location = new System.Drawing.Point(6, 6);
+            this.m_groupBoxQuickSettings.Font = null;
             this.m_groupBoxQuickSettings.Name = "m_groupBoxQuickSettings";
-            this.m_groupBoxQuickSettings.Size = new System.Drawing.Size(195, 136);
-            this.m_groupBoxQuickSettings.TabIndex = 17;
             this.m_groupBoxQuickSettings.TabStop = false;
-            this.m_groupBoxQuickSettings.Text = "Quick Settings";
             // 
             // m_comboBoxSpacing
             // 
+            this.m_comboBoxSpacing.AccessibleDescription = null;
+            this.m_comboBoxSpacing.AccessibleName = null;
+            resources.ApplyResources(this.m_comboBoxSpacing, "m_comboBoxSpacing");
+            this.m_comboBoxSpacing.BackgroundImage = null;
             this.m_comboBoxSpacing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxSpacing.Font = null;
             this.m_comboBoxSpacing.FormattingEnabled = true;
             this.m_comboBoxSpacing.Items.AddRange(new object[] {
-            "Custom",
-            "0 x 0",
-            "1 x 1",
-            "2 x 2",
-            "3 x 3",
-            "4 x 4"});
-            this.m_comboBoxSpacing.Location = new System.Drawing.Point(59, 103);
+            resources.GetString("m_comboBoxSpacing.Items"),
+            resources.GetString("m_comboBoxSpacing.Items1"),
+            resources.GetString("m_comboBoxSpacing.Items2"),
+            resources.GetString("m_comboBoxSpacing.Items3"),
+            resources.GetString("m_comboBoxSpacing.Items4"),
+            resources.GetString("m_comboBoxSpacing.Items5")});
             this.m_comboBoxSpacing.Name = "m_comboBoxSpacing";
-            this.m_comboBoxSpacing.Size = new System.Drawing.Size(124, 21);
-            this.m_comboBoxSpacing.TabIndex = 22;
             this.m_comboBoxSpacing.SelectedIndexChanged += new System.EventHandler(this.OnSpacingCombo);
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(6, 106);
+            label7.AccessibleDescription = null;
+            label7.AccessibleName = null;
+            resources.ApplyResources(label7, "label7");
+            label7.Font = null;
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(46, 13);
-            label7.TabIndex = 21;
-            label7.Text = "Spacing";
-            // 
-            // m_comboBoxMargin
-            // 
-            this.m_comboBoxMargin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_comboBoxMargin.FormattingEnabled = true;
-            this.m_comboBoxMargin.Items.AddRange(new object[] {
-            "Custom",
-            "0 x 0",
-            "1 x 1",
-            "2 x 2",
-            "3 x 3",
-            "4 x 4"});
-            this.m_comboBoxMargin.Location = new System.Drawing.Point(59, 76);
-            this.m_comboBoxMargin.Name = "m_comboBoxMargin";
-            this.m_comboBoxMargin.Size = new System.Drawing.Size(124, 21);
-            this.m_comboBoxMargin.TabIndex = 20;
-            this.m_comboBoxMargin.SelectedIndexChanged += new System.EventHandler(this.OnMarginCombo);
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(6, 79);
+            label6.AccessibleDescription = null;
+            label6.AccessibleName = null;
+            resources.ApplyResources(label6, "label6");
+            label6.Font = null;
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(39, 13);
-            label6.TabIndex = 19;
-            label6.Text = "Margin";
-            // 
-            // m_comboBoxTileSize
-            // 
-            this.m_comboBoxTileSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_comboBoxTileSize.FormattingEnabled = true;
-            this.m_comboBoxTileSize.Items.AddRange(new object[] {
-            "Custom",
-            "8 x 8",
-            "16 x 16",
-            "32 x 32",
-            "64 x 64",
-            "128 x 128",
-            "256 x 256",
-            "512 x 512"});
-            this.m_comboBoxTileSize.Location = new System.Drawing.Point(59, 49);
-            this.m_comboBoxTileSize.Name = "m_comboBoxTileSize";
-            this.m_comboBoxTileSize.Size = new System.Drawing.Size(124, 21);
-            this.m_comboBoxTileSize.TabIndex = 18;
-            this.m_comboBoxTileSize.SelectedIndexChanged += new System.EventHandler(this.OnTileSizeCombo);
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(6, 52);
+            label5.AccessibleDescription = null;
+            label5.AccessibleName = null;
+            resources.ApplyResources(label5, "label5");
+            label5.Font = null;
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(47, 13);
-            label5.TabIndex = 17;
-            label5.Text = "Tile Size";
+            // 
+            // m_comboBoxMargin
+            // 
+            this.m_comboBoxMargin.AccessibleDescription = null;
+            this.m_comboBoxMargin.AccessibleName = null;
+            resources.ApplyResources(this.m_comboBoxMargin, "m_comboBoxMargin");
+            this.m_comboBoxMargin.BackgroundImage = null;
+            this.m_comboBoxMargin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxMargin.Font = null;
+            this.m_comboBoxMargin.FormattingEnabled = true;
+            this.m_comboBoxMargin.Items.AddRange(new object[] {
+            resources.GetString("m_comboBoxMargin.Items"),
+            resources.GetString("m_comboBoxMargin.Items1"),
+            resources.GetString("m_comboBoxMargin.Items2"),
+            resources.GetString("m_comboBoxMargin.Items3"),
+            resources.GetString("m_comboBoxMargin.Items4"),
+            resources.GetString("m_comboBoxMargin.Items5")});
+            this.m_comboBoxMargin.Name = "m_comboBoxMargin";
+            this.m_comboBoxMargin.SelectedIndexChanged += new System.EventHandler(this.OnMarginCombo);
+            // 
+            // m_comboBoxTileSize
+            // 
+            this.m_comboBoxTileSize.AccessibleDescription = null;
+            this.m_comboBoxTileSize.AccessibleName = null;
+            resources.ApplyResources(this.m_comboBoxTileSize, "m_comboBoxTileSize");
+            this.m_comboBoxTileSize.BackgroundImage = null;
+            this.m_comboBoxTileSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxTileSize.Font = null;
+            this.m_comboBoxTileSize.FormattingEnabled = true;
+            this.m_comboBoxTileSize.Items.AddRange(new object[] {
+            resources.GetString("m_comboBoxTileSize.Items"),
+            resources.GetString("m_comboBoxTileSize.Items1"),
+            resources.GetString("m_comboBoxTileSize.Items2"),
+            resources.GetString("m_comboBoxTileSize.Items3"),
+            resources.GetString("m_comboBoxTileSize.Items4"),
+            resources.GetString("m_comboBoxTileSize.Items5"),
+            resources.GetString("m_comboBoxTileSize.Items6"),
+            resources.GetString("m_comboBoxTileSize.Items7")});
+            this.m_comboBoxTileSize.Name = "m_comboBoxTileSize";
+            this.m_comboBoxTileSize.SelectedIndexChanged += new System.EventHandler(this.OnTileSizeCombo);
             // 
             // m_buttonAutoDetect
             // 
-            this.m_buttonAutoDetect.Location = new System.Drawing.Point(6, 19);
+            this.m_buttonAutoDetect.AccessibleDescription = null;
+            this.m_buttonAutoDetect.AccessibleName = null;
+            resources.ApplyResources(this.m_buttonAutoDetect, "m_buttonAutoDetect");
+            this.m_buttonAutoDetect.BackgroundImage = null;
+            this.m_buttonAutoDetect.Font = null;
             this.m_buttonAutoDetect.Name = "m_buttonAutoDetect";
-            this.m_buttonAutoDetect.Size = new System.Drawing.Size(75, 23);
-            this.m_buttonAutoDetect.TabIndex = 16;
-            this.m_buttonAutoDetect.Text = "Auto Detect";
             this.m_buttonAutoDetect.UseVisualStyleBackColor = true;
             this.m_buttonAutoDetect.Click += new System.EventHandler(this.OnAutoDetect);
             // 
             // m_panelImage
             // 
-            this.m_panelImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_panelImage.AccessibleDescription = null;
+            this.m_panelImage.AccessibleName = null;
+            resources.ApplyResources(this.m_panelImage, "m_panelImage");
             this.m_panelImage.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_panelImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_panelImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.m_panelImage.Location = new System.Drawing.Point(207, 6);
+            this.m_panelImage.Font = null;
             this.m_panelImage.Name = "m_panelImage";
-            this.m_panelImage.Size = new System.Drawing.Size(339, 321);
-            this.m_panelImage.TabIndex = 13;
             this.m_panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPreviewPaint);
             this.m_panelImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnPreviewMouseMove);
             this.m_panelImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnPreviewMouseDown);
@@ -592,64 +580,63 @@
             // 
             // m_trackBarZoom
             // 
-            this.m_trackBarZoom.Location = new System.Drawing.Point(60, 297);
+            this.m_trackBarZoom.AccessibleDescription = null;
+            this.m_trackBarZoom.AccessibleName = null;
+            resources.ApplyResources(this.m_trackBarZoom, "m_trackBarZoom");
+            this.m_trackBarZoom.BackgroundImage = null;
+            this.m_trackBarZoom.Font = null;
             this.m_trackBarZoom.Minimum = 1;
             this.m_trackBarZoom.Name = "m_trackBarZoom";
-            this.m_trackBarZoom.Size = new System.Drawing.Size(129, 45);
-            this.m_trackBarZoom.TabIndex = 15;
             this.m_trackBarZoom.Value = 1;
             this.m_trackBarZoom.Scroll += new System.EventHandler(this.OnZoom);
             // 
             // m_labelZoom
             // 
-            this.m_labelZoom.AutoSize = true;
-            this.m_labelZoom.Location = new System.Drawing.Point(6, 303);
+            this.m_labelZoom.AccessibleDescription = null;
+            this.m_labelZoom.AccessibleName = null;
+            resources.ApplyResources(this.m_labelZoom, "m_labelZoom");
+            this.m_labelZoom.Font = null;
             this.m_labelZoom.Name = "m_labelZoom";
-            this.m_labelZoom.Size = new System.Drawing.Size(34, 13);
-            this.m_labelZoom.TabIndex = 14;
-            this.m_labelZoom.Text = "Zoom";
             // 
             // m_tabCustomProperties
             // 
+            this.m_tabCustomProperties.AccessibleDescription = null;
+            this.m_tabCustomProperties.AccessibleName = null;
+            resources.ApplyResources(this.m_tabCustomProperties, "m_tabCustomProperties");
             this.m_tabCustomProperties.BackColor = System.Drawing.SystemColors.Control;
+            this.m_tabCustomProperties.BackgroundImage = null;
             this.m_tabCustomProperties.Controls.Add(this.m_customPropertyGrid);
-            this.m_tabCustomProperties.Location = new System.Drawing.Point(4, 22);
+            this.m_tabCustomProperties.Font = null;
             this.m_tabCustomProperties.Name = "m_tabCustomProperties";
-            this.m_tabCustomProperties.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tabCustomProperties.Size = new System.Drawing.Size(552, 333);
-            this.m_tabCustomProperties.TabIndex = 1;
-            this.m_tabCustomProperties.Text = " Custom Properties ";
             // 
             // m_customPropertyGrid
             // 
-            this.m_customPropertyGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_customPropertyGrid.Location = new System.Drawing.Point(3, 3);
+            this.m_customPropertyGrid.AccessibleDescription = null;
+            this.m_customPropertyGrid.AccessibleName = null;
+            resources.ApplyResources(this.m_customPropertyGrid, "m_customPropertyGrid");
+            this.m_customPropertyGrid.BackgroundImage = null;
+            this.m_customPropertyGrid.Font = null;
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
-            this.m_customPropertyGrid.Size = new System.Drawing.Size(546, 327);
-            this.m_customPropertyGrid.TabIndex = 0;
             this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // TileSheetPropertiesDialog
             // 
             this.AcceptButton = this.m_buttonOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.CancelButton = this.m_buttonCancel;
-            this.ClientSize = new System.Drawing.Size(584, 414);
             this.Controls.Add(this.m_buttonClose);
             this.Controls.Add(this.m_buttonApply);
             this.Controls.Add(this.m_customTabControl);
             this.Controls.Add(this.m_buttonCancel);
             this.Controls.Add(this.m_buttonOk);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = null;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(450, 450);
             this.Name = "TileSheetPropertiesDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Tile Sheet Properties";
             this.Load += new System.EventHandler(this.OnDialogLoad);
             this.m_customTabControl.ResumeLayout(false);
             this.m_tabGeneral.ResumeLayout(false);
