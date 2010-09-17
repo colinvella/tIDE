@@ -41,6 +41,7 @@
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
+            this.m_buttonClose = new System.Windows.Forms.Button();
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_labelImageSource = new System.Windows.Forms.Label();
@@ -93,87 +94,6 @@
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
             // 
-            // m_labelTileSize
-            // 
-            m_labelTileSize.AutoSize = true;
-            m_labelTileSize.Location = new System.Drawing.Point(6, 21);
-            m_labelTileSize.Name = "m_labelTileSize";
-            m_labelTileSize.Size = new System.Drawing.Size(47, 13);
-            m_labelTileSize.TabIndex = 0;
-            m_labelTileSize.Text = "Tile Size";
-            // 
-            // m_labelTileSizeBy
-            // 
-            m_labelTileSizeBy.AutoSize = true;
-            m_labelTileSizeBy.Location = new System.Drawing.Point(117, 23);
-            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
-            m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
-            m_labelTileSizeBy.TabIndex = 3;
-            m_labelTileSizeBy.Text = "x";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(6, 47);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(39, 13);
-            label2.TabIndex = 5;
-            label2.Text = "Margin";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(117, 49);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(12, 13);
-            label1.TabIndex = 7;
-            label1.Text = "x";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(116, 75);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(12, 13);
-            label3.TabIndex = 11;
-            label3.Text = "x";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(6, 73);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(46, 13);
-            label4.TabIndex = 9;
-            label4.Text = "Spacing";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(6, 106);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(46, 13);
-            label7.TabIndex = 21;
-            label7.Text = "Spacing";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(6, 79);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(39, 13);
-            label6.TabIndex = 19;
-            label6.Text = "Margin";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(6, 52);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(47, 13);
-            label5.TabIndex = 17;
-            label5.Text = "Tile Size";
-            // 
             // m_buttonOk
             // 
             this.m_buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -195,8 +115,9 @@
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.m_buttonCancel.TabIndex = 2;
-            this.m_buttonCancel.Text = "&Close";
+            this.m_buttonCancel.Text = "&Cancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
+            this.m_buttonCancel.Visible = false;
             // 
             // m_buttonApply
             // 
@@ -209,6 +130,17 @@
             this.m_buttonApply.Text = "&Apply";
             this.m_buttonApply.UseVisualStyleBackColor = true;
             this.m_buttonApply.Click += new System.EventHandler(this.OnDialogApply);
+            // 
+            // m_buttonClose
+            // 
+            this.m_buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonClose.Location = new System.Drawing.Point(497, 377);
+            this.m_buttonClose.Name = "m_buttonClose";
+            this.m_buttonClose.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonClose.TabIndex = 5;
+            this.m_buttonClose.Text = "&Close";
+            this.m_buttonClose.UseVisualStyleBackColor = true;
             // 
             // m_customTabControl
             // 
@@ -387,6 +319,24 @@
             0});
             this.m_textBoxTileWidth.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
+            // m_labelTileSize
+            // 
+            m_labelTileSize.AutoSize = true;
+            m_labelTileSize.Location = new System.Drawing.Point(6, 21);
+            m_labelTileSize.Name = "m_labelTileSize";
+            m_labelTileSize.Size = new System.Drawing.Size(47, 13);
+            m_labelTileSize.TabIndex = 0;
+            m_labelTileSize.Text = "Tile Size";
+            // 
+            // m_labelTileSizeBy
+            // 
+            m_labelTileSizeBy.AutoSize = true;
+            m_labelTileSizeBy.Location = new System.Drawing.Point(117, 23);
+            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
+            m_labelTileSizeBy.Size = new System.Drawing.Size(12, 13);
+            m_labelTileSizeBy.TabIndex = 3;
+            m_labelTileSizeBy.Text = "x";
+            // 
             // m_textBoxTileHeight
             // 
             this.m_textBoxTileHeight.Location = new System.Drawing.Point(131, 19);
@@ -410,6 +360,15 @@
             0,
             0});
             this.m_textBoxTileHeight.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(6, 47);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(39, 13);
+            label2.TabIndex = 5;
+            label2.Text = "Margin";
             // 
             // m_textBoxLeftMargin
             // 
@@ -439,6 +398,24 @@
             this.m_textBoxSpacingY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxSpacingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(117, 49);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(12, 13);
+            label1.TabIndex = 7;
+            label1.Text = "x";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(116, 75);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(12, 13);
+            label3.TabIndex = 11;
+            label3.Text = "x";
+            // 
             // m_textBoxTopMargin
             // 
             this.m_textBoxTopMargin.Location = new System.Drawing.Point(131, 45);
@@ -466,6 +443,15 @@
             this.m_textBoxSpacingX.TabIndex = 10;
             this.m_textBoxSpacingX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.m_textBoxSpacingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(6, 73);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(46, 13);
+            label4.TabIndex = 9;
+            label4.Text = "Spacing";
             // 
             // m_groupBoxQuickSettings
             // 
@@ -500,6 +486,15 @@
             this.m_comboBoxSpacing.TabIndex = 22;
             this.m_comboBoxSpacing.SelectedIndexChanged += new System.EventHandler(this.OnSpacingCombo);
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(6, 106);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(46, 13);
+            label7.TabIndex = 21;
+            label7.Text = "Spacing";
+            // 
             // m_comboBoxMargin
             // 
             this.m_comboBoxMargin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -516,6 +511,15 @@
             this.m_comboBoxMargin.Size = new System.Drawing.Size(124, 21);
             this.m_comboBoxMargin.TabIndex = 20;
             this.m_comboBoxMargin.SelectedIndexChanged += new System.EventHandler(this.OnMarginCombo);
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(6, 79);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(39, 13);
+            label6.TabIndex = 19;
+            label6.Text = "Margin";
             // 
             // m_comboBoxTileSize
             // 
@@ -535,6 +539,15 @@
             this.m_comboBoxTileSize.Size = new System.Drawing.Size(124, 21);
             this.m_comboBoxTileSize.TabIndex = 18;
             this.m_comboBoxTileSize.SelectedIndexChanged += new System.EventHandler(this.OnTileSizeCombo);
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(6, 52);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(47, 13);
+            label5.TabIndex = 17;
+            label5.Text = "Tile Size";
             // 
             // m_buttonAutoDetect
             // 
@@ -611,6 +624,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_buttonCancel;
             this.ClientSize = new System.Drawing.Size(584, 414);
+            this.Controls.Add(this.m_buttonClose);
             this.Controls.Add(this.m_buttonApply);
             this.Controls.Add(this.m_customTabControl);
             this.Controls.Add(this.m_buttonCancel);
@@ -677,5 +691,6 @@
         private System.Windows.Forms.ComboBox m_comboBoxSpacing;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonSwapTiles;
+        private System.Windows.Forms.Button m_buttonClose;
     }
 }

@@ -125,8 +125,14 @@ namespace TileMapEditor.Dialogs
 
         private void MarkAsModified()
         {
-            m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonSwapTiles.Enabled = true;
-            m_buttonCancel.Text = "&Cancel";
+            m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonCancel.Visible = true;
+            m_buttonClose.Visible = false;
+        }
+
+        private void MarkAsApplied()
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonCancel.Visible = false;
+            m_buttonClose.Visible = true;
         }
 
         private void UpdateComboBoxes()
@@ -210,11 +216,10 @@ namespace TileMapEditor.Dialogs
             m_previewOffset = PointF.Empty;
             m_previewGrip = xTile.Dimensions.Location.Origin;
 
-            if (!m_isNewTileSheet)
-            {
-                m_buttonOk.Enabled = m_buttonApply.Enabled = false;
-                m_buttonCancel.Text = "&Close";
-            }
+            if (m_isNewTileSheet)
+                MarkAsModified();
+            else
+                MarkAsApplied();
         }
 
         private void OnTileSizeCombo(object sender, EventArgs eventArgs)
@@ -265,6 +270,7 @@ namespace TileMapEditor.Dialogs
             {
                 m_bitmapImageSource = LoadUnlockedBitmap(m_textBoxImageSource.Text);
                 m_customTabControl.SelectedTab = m_tabAlignment;
+                MarkAsModified();
             }
             catch (Exception exception)
             {
@@ -482,10 +488,6 @@ namespace TileMapEditor.Dialogs
 
                             m_previewMode = PreviewMode.PickFirst;
                             m_panelImage.Invalidate();
-
-                            m_buttonOk.Enabled = m_buttonApply.Enabled = false;
-                            m_buttonCancel.Text = "&Close";
-                            m_buttonCancel.DialogResult = DialogResult.OK;
                         }
                         break;
                 }
@@ -636,9 +638,7 @@ namespace TileMapEditor.Dialogs
 
             AutoTileManager.Instance.Refresh(m_tileSheet);
 
-            m_buttonOk.Enabled = m_buttonApply.Enabled = false;
-            m_buttonCancel.Text = "&Close";
-            m_buttonCancel.DialogResult = DialogResult.OK;
+            MarkAsApplied();
         }
 
         private void OnPreviewPaint(object sender, PaintEventArgs paintEventArgs)
