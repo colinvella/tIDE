@@ -20,6 +20,18 @@ namespace TileMapEditor.Dialogs
         private TileBrushCollection m_tileBrushCollection;
         private TileBrush m_newTileBrush;
 
+        private void MarkAsModified()
+        {
+            m_okButton.Enabled = m_applyButton.Enabled = m_cancelButton.Visible = true;
+            m_closeButton.Visible = false;
+        }
+
+        private void MarkAsApplied()
+        {
+            m_okButton.Enabled = m_applyButton.Enabled = m_cancelButton.Visible = false;
+            m_closeButton.Visible = true;
+        }
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             if (m_newTileBrush == null
@@ -73,8 +85,6 @@ namespace TileMapEditor.Dialogs
 
             if (m_newTileBrush != null)
             {
-                m_applyButton.Enabled = m_okButton.Enabled = true;
-
                 foreach (ListViewItem listViewItem in m_listView.Items)
                 {
                     if (listViewItem.Tag == m_newTileBrush)
@@ -85,7 +95,10 @@ namespace TileMapEditor.Dialogs
                         break;
                     }
                 }
+                MarkAsModified();
             }
+            else
+                MarkAsApplied();
         }
 
         private void OnSelectedIndexChanged(object sender, EventArgs eventArgs)
@@ -115,7 +128,7 @@ namespace TileMapEditor.Dialogs
             TileBrush tileBrush = (TileBrush)m_listView.Items[labelEditEventArgs.Item].Tag;
             tileBrush.Id = labelEditEventArgs.Label;
 
-            m_okButton.Enabled = m_applyButton.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnTileBrushRename(object sender, EventArgs eventArgs)
@@ -144,8 +157,9 @@ namespace TileMapEditor.Dialogs
                 return;
 
             m_listView.Items.RemoveAt(index);
+            m_renameButton.Enabled = m_deleteButton.Enabled = m_listView.Items.Count > 0;
 
-            m_okButton.Enabled = m_applyButton.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -180,7 +194,7 @@ namespace TileMapEditor.Dialogs
 
             CommandHistory.Instance.Do(command);
 
-            m_okButton.Enabled = m_applyButton.Enabled = false;
+            MarkAsApplied();
         }
 
         private void OnDialogCancel(object sender, EventArgs eventArgs)
