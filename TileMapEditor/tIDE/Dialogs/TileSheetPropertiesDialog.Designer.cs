@@ -52,6 +52,7 @@
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_labelId = new System.Windows.Forms.Label();
             this.m_tabAlignment = new System.Windows.Forms.TabPage();
+            this.m_buttonDoneSwapping = new System.Windows.Forms.Button();
             this.m_buttonSwapTiles = new System.Windows.Forms.Button();
             this.m_groupBoxCustomSettings = new System.Windows.Forms.GroupBox();
             this.m_textBoxTileWidth = new System.Windows.Forms.NumericUpDown();
@@ -156,6 +157,7 @@
             this.m_customTabControl.SelectedIndex = 0;
             this.m_customTabControl.Size = new System.Drawing.Size(560, 359);
             this.m_customTabControl.TabIndex = 3;
+            this.m_customTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.OnSelectingTab);
             // 
             // m_tabGeneral
             // 
@@ -250,6 +252,7 @@
             // m_tabAlignment
             // 
             this.m_tabAlignment.BackColor = System.Drawing.SystemColors.Control;
+            this.m_tabAlignment.Controls.Add(this.m_buttonDoneSwapping);
             this.m_tabAlignment.Controls.Add(this.m_buttonSwapTiles);
             this.m_tabAlignment.Controls.Add(this.m_groupBoxCustomSettings);
             this.m_tabAlignment.Controls.Add(this.m_groupBoxQuickSettings);
@@ -263,12 +266,23 @@
             this.m_tabAlignment.TabIndex = 2;
             this.m_tabAlignment.Text = "Alignment";
             // 
+            // m_buttonDoneSwapping
+            // 
+            this.m_buttonDoneSwapping.Location = new System.Drawing.Point(84, 255);
+            this.m_buttonDoneSwapping.Name = "m_buttonDoneSwapping";
+            this.m_buttonDoneSwapping.Size = new System.Drawing.Size(105, 23);
+            this.m_buttonDoneSwapping.TabIndex = 20;
+            this.m_buttonDoneSwapping.Text = "Done Swapping";
+            this.m_buttonDoneSwapping.UseVisualStyleBackColor = true;
+            this.m_buttonDoneSwapping.Visible = false;
+            this.m_buttonDoneSwapping.Click += new System.EventHandler(this.OnDoneSwapping);
+            // 
             // m_buttonSwapTiles
             // 
             this.m_buttonSwapTiles.Enabled = false;
             this.m_buttonSwapTiles.Location = new System.Drawing.Point(15, 255);
             this.m_buttonSwapTiles.Name = "m_buttonSwapTiles";
-            this.m_buttonSwapTiles.Size = new System.Drawing.Size(75, 23);
+            this.m_buttonSwapTiles.Size = new System.Drawing.Size(105, 23);
             this.m_buttonSwapTiles.TabIndex = 19;
             this.m_buttonSwapTiles.Text = "Swap Tiles";
             this.m_buttonSwapTiles.UseVisualStyleBackColor = true;
@@ -692,5 +706,6 @@
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonSwapTiles;
         private System.Windows.Forms.Button m_buttonClose;
+        private System.Windows.Forms.Button m_buttonDoneSwapping;
     }
 }

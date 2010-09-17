@@ -126,13 +126,13 @@ namespace TileMapEditor.Dialogs
         private void MarkAsModified()
         {
             m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonCancel.Visible = true;
-            m_buttonClose.Visible = false;
+            m_buttonClose.Visible = m_buttonSwapTiles.Enabled = false;
         }
 
         private void MarkAsApplied()
         {
             m_buttonOk.Enabled = m_buttonApply.Enabled = m_buttonCancel.Visible = false;
-            m_buttonClose.Visible = true;
+            m_buttonClose.Visible = m_buttonSwapTiles.Enabled = true;
         }
 
         private void UpdateComboBoxes()
@@ -414,16 +414,24 @@ namespace TileMapEditor.Dialogs
             {
                 case PreviewMode.Preview:
                     m_groupBoxQuickSettings.Enabled = m_groupBoxCustomSettings.Enabled = false;
+
+                    m_buttonSwapTiles.Visible = false;
+                    m_buttonDoneSwapping.Visible = true;
+
                     m_previewMode = PreviewMode.PickFirst;
-                    m_buttonSwapTiles.Text = "Done";
-                    break;
-                case PreviewMode.PickFirst:
-                case PreviewMode.PickSecond:
-                    m_groupBoxQuickSettings.Enabled = m_groupBoxCustomSettings.Enabled = true;
-                    m_previewMode = PreviewMode.Preview;
-                    m_buttonSwapTiles.Text = "Swap Tiles";
                     break;
             }
+        }
+
+        private void OnDoneSwapping(object sender, EventArgs eventArgs)
+        {
+            m_previewMode = PreviewMode.Preview;
+
+            m_buttonDoneSwapping.Visible = false;
+            m_buttonSwapTiles.Visible = true;
+
+            m_groupBoxQuickSettings.Enabled = m_groupBoxCustomSettings.Enabled = true;
+            m_customTabControl.Enabled = true;
         }
 
         private void OnZoom(object sender, EventArgs eventArgs)
@@ -717,6 +725,13 @@ namespace TileMapEditor.Dialogs
         }
 
         #endregion
+
+        private void OnSelectingTab(object sender,
+            TabControlCancelEventArgs tabControlCancelEventArgs)
+        {
+            if (m_previewMode != PreviewMode.Preview)
+                tabControlCancelEventArgs.Cancel = true;
+        }
     }
 
     public enum PreviewMode
