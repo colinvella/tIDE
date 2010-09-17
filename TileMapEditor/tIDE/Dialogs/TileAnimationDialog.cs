@@ -34,6 +34,20 @@ namespace TileMapEditor.Dialogs
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool GetIconInfo(IntPtr hIcon, ref IconInfo pIconInfo);
 
+        private void MarkAsModified()
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = true;
+            m_buttonCancel.Visible = true;
+            m_buttonClose.Visible = false;
+        }
+
+        private void MarkAsApplied()
+        {
+            m_buttonOk.Enabled = m_buttonApply.Enabled = false;
+            m_buttonCancel.Visible = false;
+            m_buttonClose.Visible = true;
+        }
+
         private void AddTileFrame(TileSheet tileSheet, int tileIndex)
         {
             StaticTile newTileFrame = new StaticTile(m_layer, tileSheet, BlendMode.Alpha, tileIndex);
@@ -95,12 +109,12 @@ namespace TileMapEditor.Dialogs
             m_tilePicker.Map = m_map;
             m_tilePicker.UpdatePicker();
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+            MarkAsApplied();
         }
 
         private void OnFrameIntervalChanged(object sender, EventArgs eventArgs)
         {
-            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnDialogMouseMove(object sender, MouseEventArgs mouseEventArgs)
@@ -145,8 +159,8 @@ namespace TileMapEditor.Dialogs
             m_draggedTileSheet = null;
             m_draggedTileIndex = -1;
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
             Cursor = Cursors.Default;
+            MarkAsModified();
         }
 
         private void OnFrameProperties(object sender, EventArgs eventArgs)
@@ -158,9 +172,7 @@ namespace TileMapEditor.Dialogs
             TilePropertiesDialog tilePropertiesDialog = new TilePropertiesDialog(tileFrame);
 
             if (tilePropertiesDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                m_buttonApply.Enabled = m_buttonOk.Enabled = true;
-            }
+                MarkAsModified();
         }
 
         private void OnDeleteFrame(object sender, EventArgs eventArgs)
@@ -179,7 +191,7 @@ namespace TileMapEditor.Dialogs
             foreach (ListViewItem listViewItem in m_animationListView.Items)
                 listViewItem.Text = "Frame #" + (frameIndex++);
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = true;
+            MarkAsModified();
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -198,7 +210,7 @@ namespace TileMapEditor.Dialogs
             Command command = new TileAnimationCommand(m_layer, m_tileLocation, animatedTile);
             CommandHistory.Instance.Do(command);
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+            MarkAsApplied();
         }
 
         private void OnAnimationTimer(object sender, EventArgs eventArgs)
