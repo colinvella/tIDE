@@ -121,7 +121,7 @@
     <value>&amp;Annulla</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>&amp;Aplica</value>
+    <value>A&amp;pplica</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">

@@ -134,13 +134,13 @@
     <value>96, 13</value>
   </data>
   <data name="m_labelBlendMode.Text" xml:space="preserve">
-    <value>Modalità di miscela</value>
+    <value>Modalità di Miscela</value>
   </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
     <value>&amp;Annulla</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>A&amp;plica</value>
+    <value>A&amp;pplica</value>
   </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>

@@ -134,7 +134,7 @@
     <value>122, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Dimensione delle Piastre</value>
+    <value>Dimensioni delle Piastre</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>284, 283</value>
@@ -152,7 +152,7 @@
     <value>118, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Dimensione dello Strato</value>
+    <value>Dimensioni dello Strato</value>
   </data>
   <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -164,7 +164,7 @@
     <value>&amp;Annulla</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>A&amp;plika</value>
+    <value>A&amp;pplica</value>
   </data>
   <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>497, 377</value>
