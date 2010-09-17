@@ -392,6 +392,9 @@
     <EmbeddedResource Include="Dialogs\TiledFormatOptionsDialog.resx">
       <DependentUpon>TiledFormatOptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TilePropertiesDialog.it-IT.resx">
+      <DependentUpon>TilePropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TilePropertiesDialog.resx">
       <DependentUpon>TilePropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
