@@ -123,15 +123,27 @@
   <data name="m_cancelButton.Text" xml:space="preserve">
     <value>&amp;Annulla</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_renameMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="m_renameMenuItem.Text" xml:space="preserve">
+    <value>Rinomina</value>
+  </data>
+  <data name="m_deleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="m_deleteMenuItem.Text" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="m_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 48</value>
+  </data>
   <data name="m_renameButton.Text" xml:space="preserve">
     <value>&amp;Rinoma</value>
   </data>
   <data name="m_deleteButton.Text" xml:space="preserve">
     <value>Ca&amp;ncella</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_closeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
   </data>
   <data name="m_closeButton.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>

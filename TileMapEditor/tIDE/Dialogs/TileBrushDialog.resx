@@ -117,245 +117,245 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_okButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 377</value>
-  </data>
-  <data name="m_okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="m_okButton.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.Name" xml:space="preserve">
-    <value>m_okButton</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;m_okButton.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="m_applyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_applyButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_applyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 377</value>
-  </data>
-  <data name="m_applyButton.Size" type="System.Drawing.Size, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_renameButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="m_applyButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>450, 150</value>
   </data>
-  <data name="m_applyButton.Text" xml:space="preserve">
-    <value>&amp;Apply</value>
-  </data>
-  <data name="&gt;&gt;m_applyButton.Name" xml:space="preserve">
-    <value>m_applyButton</value>
-  </data>
-  <data name="&gt;&gt;m_applyButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_renameButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_applyButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;m_listView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_applyButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_deleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
-  <data name="m_cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="&gt;&gt;m_renameButton.Name" xml:space="preserve">
+    <value>m_renameButton</value>
+  </data>
+  <data name="&gt;&gt;m_cancelButton.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="m_cancelButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>497, 377</value>
   </data>
-  <data name="m_cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
-  <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 412</value>
   </data>
   <data name="m_cancelButton.Text" xml:space="preserve">
     <value>&amp;Cancel</value>
   </data>
+  <data name="m_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;m_deleteButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_applyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="m_deleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;m_listView.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;m_okButton.Name" xml:space="preserve">
+    <value>m_okButton</value>
+  </data>
+  <data name="&gt;&gt;m_deleteMenuItem.Name" xml:space="preserve">
+    <value>m_deleteMenuItem</value>
+  </data>
+  <data name="m_closeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="m_deleteMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tile Brushes</value>
+  </data>
+  <data name="m_okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 377</value>
+  </data>
+  <data name="&gt;&gt;m_closeButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;m_deleteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_renameButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_closeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
+  </data>
+  <data name="&gt;&gt;m_applyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_renameMenuItem.Name" xml:space="preserve">
+    <value>m_renameMenuItem</value>
+  </data>
+  <data name="m_cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;m_cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_deleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 377</value>
+  </data>
+  <data name="m_listView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="m_applyButton.Text" xml:space="preserve">
+    <value>&amp;Apply</value>
+  </data>
+  <data name="&gt;&gt;m_listView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="m_renameButton.Text" xml:space="preserve">
+    <value>&amp;Rename</value>
+  </data>
+  <data name="m_okButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;m_contextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_listView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="m_closeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TileBrushDialog</value>
+  </data>
+  <data name="m_applyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>416, 377</value>
+  </data>
+  <data name="&gt;&gt;m_okButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_cancelButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;m_listView.Name" xml:space="preserve">
+    <value>m_listView</value>
+  </data>
+  <data name="m_cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="m_applyButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_renameButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;m_deleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_closeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_closeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_applyButton.Name" xml:space="preserve">
+    <value>m_applyButton</value>
+  </data>
+  <data name="&gt;&gt;m_closeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_applyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="m_renameButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="m_deleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_applyButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_applyButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_deleteButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;m_cancelButton.Name" xml:space="preserve">
     <value>m_cancelButton</value>
   </data>
-  <data name="&gt;&gt;m_cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_deleteButton.Name" xml:space="preserve">
+    <value>m_deleteButton</value>
   </data>
-  <data name="&gt;&gt;m_cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_cancelButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_listView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="m_contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="m_okButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="m_applyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="m_listView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="&gt;&gt;m_renameButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_deleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
+  </data>
+  <data name="m_renameButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="m_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 48</value>
   </data>
   <data name="&gt;&gt;m_contextMenuStrip.Name" xml:space="preserve">
     <value>m_contextMenuStrip</value>
   </data>
-  <data name="&gt;&gt;m_contextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_listView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="m_listView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="m_listView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 359</value>
-  </data>
-  <data name="m_listView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_listView.Name" xml:space="preserve">
-    <value>m_listView</value>
-  </data>
-  <data name="&gt;&gt;m_listView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_listView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_listView.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="m_renameMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
-  </data>
-  <data name="m_renameMenuItem.Text" xml:space="preserve">
-    <value>Rename</value>
-  </data>
-  <data name="m_deleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
-  </data>
-  <data name="m_deleteMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="m_renameButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="m_renameButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_renameButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 377</value>
-  </data>
-  <data name="m_renameButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_renameButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_renameButton.Text" xml:space="preserve">
-    <value>&amp;Rename</value>
-  </data>
-  <data name="&gt;&gt;m_renameButton.Name" xml:space="preserve">
-    <value>m_renameButton</value>
-  </data>
-  <data name="&gt;&gt;m_renameButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_renameButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_renameButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_deleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="m_deleteButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 377</value>
-  </data>
-  <data name="m_deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_deleteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="m_deleteButton.Text" xml:space="preserve">
-    <value>&amp;Delete</value>
-  </data>
-  <data name="&gt;&gt;m_deleteButton.Name" xml:space="preserve">
-    <value>m_deleteButton</value>
-  </data>
-  <data name="&gt;&gt;m_deleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;m_deleteButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_deleteButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;m_cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="m_closeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_closeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
-  </data>
-  <data name="m_closeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_closeButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="m_okButton.Text" xml:space="preserve">
+    <value>&amp;OK</value>
   </data>
   <data name="m_closeButton.Text" xml:space="preserve">
     <value>&amp;Close</value>
   </data>
-  <data name="&gt;&gt;m_closeButton.Name" xml:space="preserve">
-    <value>m_closeButton</value>
-  </data>
-  <data name="&gt;&gt;m_closeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_closeButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_closeButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 412</value>
+  <data name="m_listView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 359</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1120,31 +1120,31 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 150</value>
+  <data name="&gt;&gt;m_closeButton.Name" xml:space="preserve">
+    <value>m_closeButton</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="m_deleteButton.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Tile Brushes</value>
+  <data name="m_okButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;m_renameMenuItem.Name" xml:space="preserve">
-    <value>m_renameMenuItem</value>
+  <data name="m_renameMenuItem.Text" xml:space="preserve">
+    <value>Rename</value>
   </data>
   <data name="&gt;&gt;m_renameMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_deleteMenuItem.Name" xml:space="preserve">
-    <value>m_deleteMenuItem</value>
+  <data name="m_renameMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
   </data>
-  <data name="&gt;&gt;m_deleteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_renameButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 377</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TileBrushDialog</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <metadata name="m_contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
