@@ -348,6 +348,9 @@
     <EmbeddedResource Include="Dialogs\CustomPropertiesDialog.it-IT.resx">
       <DependentUpon>CustomPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\FormatCompatibilityDialog.it-IT.resx">
+      <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FormatCompatibilityDialog.resx">
       <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
       <SubType>Designer</SubType>

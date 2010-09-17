@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label m_overallCompatibilityLabel;
-            System.Windows.Forms.Label m_compatibilityNotesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormatCompatibilityDialog));
+            System.Windows.Forms.Label m_compatibilityNotesLabel;
             this.m_overallCompatibilityValue = new System.Windows.Forms.Label();
             this.m_cancelButton = new System.Windows.Forms.Button();
             this.m_notesDataGridView = new System.Windows.Forms.DataGridView();
+            this.m_okButton = new System.Windows.Forms.Button();
             this.CompatibilityLevelIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.CompatiblityLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.m_okButton = new System.Windows.Forms.Button();
             m_overallCompatibilityLabel = new System.Windows.Forms.Label();
             m_compatibilityNotesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_notesDataGridView)).BeginInit();
@@ -45,85 +45,88 @@
             // 
             // m_overallCompatibilityLabel
             // 
-            m_overallCompatibilityLabel.AutoSize = true;
-            m_overallCompatibilityLabel.Location = new System.Drawing.Point(13, 13);
+            m_overallCompatibilityLabel.AccessibleDescription = null;
+            m_overallCompatibilityLabel.AccessibleName = null;
+            resources.ApplyResources(m_overallCompatibilityLabel, "m_overallCompatibilityLabel");
+            m_overallCompatibilityLabel.Font = null;
             m_overallCompatibilityLabel.Name = "m_overallCompatibilityLabel";
-            m_overallCompatibilityLabel.Size = new System.Drawing.Size(101, 13);
-            m_overallCompatibilityLabel.TabIndex = 2;
-            m_overallCompatibilityLabel.Text = "Overall Compatibility";
             // 
             // m_compatibilityNotesLabel
             // 
-            m_compatibilityNotesLabel.AutoSize = true;
-            m_compatibilityNotesLabel.Location = new System.Drawing.Point(13, 47);
+            m_compatibilityNotesLabel.AccessibleDescription = null;
+            m_compatibilityNotesLabel.AccessibleName = null;
+            resources.ApplyResources(m_compatibilityNotesLabel, "m_compatibilityNotesLabel");
+            m_compatibilityNotesLabel.Font = null;
             m_compatibilityNotesLabel.Name = "m_compatibilityNotesLabel";
-            m_compatibilityNotesLabel.Size = new System.Drawing.Size(96, 13);
-            m_compatibilityNotesLabel.TabIndex = 3;
-            m_compatibilityNotesLabel.Text = "Compatibility Notes";
             // 
             // m_overallCompatibilityValue
             // 
-            this.m_overallCompatibilityValue.AutoSize = true;
-            this.m_overallCompatibilityValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_overallCompatibilityValue.Location = new System.Drawing.Point(120, 13);
+            this.m_overallCompatibilityValue.AccessibleDescription = null;
+            this.m_overallCompatibilityValue.AccessibleName = null;
+            resources.ApplyResources(this.m_overallCompatibilityValue, "m_overallCompatibilityValue");
             this.m_overallCompatibilityValue.Name = "m_overallCompatibilityValue";
-            this.m_overallCompatibilityValue.Size = new System.Drawing.Size(85, 13);
-            this.m_overallCompatibilityValue.TabIndex = 4;
-            this.m_overallCompatibilityValue.Text = "(compatibility)";
             // 
             // m_cancelButton
             // 
-            this.m_cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_cancelButton.AccessibleDescription = null;
+            this.m_cancelButton.AccessibleName = null;
+            resources.ApplyResources(this.m_cancelButton, "m_cancelButton");
+            this.m_cancelButton.BackgroundImage = null;
             this.m_cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cancelButton.Location = new System.Drawing.Point(497, 227);
+            this.m_cancelButton.Font = null;
             this.m_cancelButton.Name = "m_cancelButton";
-            this.m_cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.m_cancelButton.TabIndex = 0;
-            this.m_cancelButton.Text = "&Cancel";
             this.m_cancelButton.UseVisualStyleBackColor = true;
             // 
             // m_notesDataGridView
             // 
+            this.m_notesDataGridView.AccessibleDescription = null;
+            this.m_notesDataGridView.AccessibleName = null;
             this.m_notesDataGridView.AllowUserToAddRows = false;
             this.m_notesDataGridView.AllowUserToDeleteRows = false;
             this.m_notesDataGridView.AllowUserToResizeColumns = false;
             this.m_notesDataGridView.AllowUserToResizeRows = false;
-            this.m_notesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.m_notesDataGridView, "m_notesDataGridView");
             this.m_notesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.m_notesDataGridView.BackgroundImage = null;
             this.m_notesDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.m_notesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.m_notesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CompatibilityLevelIcon,
             this.CompatiblityLevel,
             this.Remarks});
-            this.m_notesDataGridView.Location = new System.Drawing.Point(13, 63);
+            this.m_notesDataGridView.Font = null;
             this.m_notesDataGridView.MultiSelect = false;
             this.m_notesDataGridView.Name = "m_notesDataGridView";
             this.m_notesDataGridView.ReadOnly = true;
             this.m_notesDataGridView.RowHeadersVisible = false;
             this.m_notesDataGridView.ShowEditingIcon = false;
             this.m_notesDataGridView.ShowRowErrors = false;
-            this.m_notesDataGridView.Size = new System.Drawing.Size(559, 150);
-            this.m_notesDataGridView.TabIndex = 1;
             this.m_notesDataGridView.TabStop = false;
             this.m_notesDataGridView.SelectionChanged += new System.EventHandler(this.OnNoteSelectionChanged);
             // 
+            // m_okButton
+            // 
+            this.m_okButton.AccessibleDescription = null;
+            this.m_okButton.AccessibleName = null;
+            resources.ApplyResources(this.m_okButton, "m_okButton");
+            this.m_okButton.BackgroundImage = null;
+            this.m_okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_okButton.Font = null;
+            this.m_okButton.Name = "m_okButton";
+            this.m_okButton.UseVisualStyleBackColor = true;
+            // 
             // CompatibilityLevelIcon
             // 
-            this.CompatibilityLevelIcon.HeaderText = "";
-            this.CompatibilityLevelIcon.MinimumWidth = 18;
+            resources.ApplyResources(this.CompatibilityLevelIcon, "CompatibilityLevelIcon");
             this.CompatibilityLevelIcon.Name = "CompatibilityLevelIcon";
             this.CompatibilityLevelIcon.ReadOnly = true;
             this.CompatibilityLevelIcon.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CompatibilityLevelIcon.Width = 18;
             // 
             // CompatiblityLevel
             // 
             this.CompatiblityLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CompatiblityLevel.FillWeight = 30F;
-            this.CompatiblityLevel.HeaderText = "Compatiblity Level";
+            resources.ApplyResources(this.CompatiblityLevel, "CompatiblityLevel");
             this.CompatiblityLevel.Name = "CompatiblityLevel";
             this.CompatiblityLevel.ReadOnly = true;
             // 
@@ -131,40 +134,29 @@
             // 
             this.Remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Remarks.FillWeight = 70F;
-            this.Remarks.HeaderText = "Remarks";
+            resources.ApplyResources(this.Remarks, "Remarks");
             this.Remarks.Name = "Remarks";
             this.Remarks.ReadOnly = true;
-            // 
-            // m_okButton
-            // 
-            this.m_okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.m_okButton.Location = new System.Drawing.Point(416, 227);
-            this.m_okButton.Name = "m_okButton";
-            this.m_okButton.Size = new System.Drawing.Size(75, 23);
-            this.m_okButton.TabIndex = 5;
-            this.m_okButton.Text = "&OK";
-            this.m_okButton.UseVisualStyleBackColor = true;
             // 
             // FormatCompatibilityDialog
             // 
             this.AcceptButton = this.m_okButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.CancelButton = this.m_cancelButton;
-            this.ClientSize = new System.Drawing.Size(584, 262);
             this.Controls.Add(this.m_okButton);
             this.Controls.Add(this.m_overallCompatibilityValue);
             this.Controls.Add(m_compatibilityNotesLabel);
             this.Controls.Add(m_overallCompatibilityLabel);
             this.Controls.Add(this.m_notesDataGridView);
             this.Controls.Add(this.m_cancelButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = null;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormatCompatibilityDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Format Compatibility Report";
             this.Load += new System.EventHandler(this.OnDialogLoad);
             ((System.ComponentModel.ISupportInitialize)(this.m_notesDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -176,10 +168,10 @@
 
         private System.Windows.Forms.Button m_cancelButton;
         private System.Windows.Forms.DataGridView m_notesDataGridView;
+        private System.Windows.Forms.Label m_overallCompatibilityValue;
+        private System.Windows.Forms.Button m_okButton;
         private System.Windows.Forms.DataGridViewImageColumn CompatibilityLevelIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompatiblityLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remarks;
-        private System.Windows.Forms.Label m_overallCompatibilityValue;
-        private System.Windows.Forms.Button m_okButton;
     }
 }
