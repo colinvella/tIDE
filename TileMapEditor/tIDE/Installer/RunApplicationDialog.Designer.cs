@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button m_yesButton;
-            System.Windows.Forms.Button m_noButton;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RunApplicationDialog));
+            System.Windows.Forms.Button m_noButton;
             this.m_promptLabel = new System.Windows.Forms.Label();
             m_yesButton = new System.Windows.Forms.Button();
             m_noButton = new System.Windows.Forms.Button();
@@ -38,55 +38,52 @@
             // 
             // m_yesButton
             // 
+            m_yesButton.AccessibleDescription = null;
+            m_yesButton.AccessibleName = null;
+            resources.ApplyResources(m_yesButton, "m_yesButton");
+            m_yesButton.BackgroundImage = null;
             m_yesButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            m_yesButton.Location = new System.Drawing.Point(12, 77);
+            m_yesButton.Font = null;
             m_yesButton.Name = "m_yesButton";
-            m_yesButton.Size = new System.Drawing.Size(75, 23);
-            m_yesButton.TabIndex = 1;
-            m_yesButton.Text = "&Yes";
             m_yesButton.UseVisualStyleBackColor = true;
             // 
             // m_noButton
             // 
+            m_noButton.AccessibleDescription = null;
+            m_noButton.AccessibleName = null;
+            resources.ApplyResources(m_noButton, "m_noButton");
+            m_noButton.BackgroundImage = null;
             m_noButton.DialogResult = System.Windows.Forms.DialogResult.No;
-            m_noButton.Location = new System.Drawing.Point(197, 77);
+            m_noButton.Font = null;
             m_noButton.Name = "m_noButton";
-            m_noButton.Size = new System.Drawing.Size(75, 23);
-            m_noButton.TabIndex = 2;
-            m_noButton.Text = "&No";
             m_noButton.UseVisualStyleBackColor = true;
             // 
             // m_promptLabel
             // 
-            this.m_promptLabel.AutoSize = true;
+            this.m_promptLabel.AccessibleDescription = null;
+            this.m_promptLabel.AccessibleName = null;
+            resources.ApplyResources(this.m_promptLabel, "m_promptLabel");
             this.m_promptLabel.BackColor = System.Drawing.Color.Transparent;
-            this.m_promptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_promptLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.m_promptLabel.Location = new System.Drawing.Point(94, 24);
             this.m_promptLabel.Name = "m_promptLabel";
-            this.m_promptLabel.Size = new System.Drawing.Size(93, 13);
-            this.m_promptLabel.TabIndex = 0;
-            this.m_promptLabel.Text = "Run tIDE now?";
-            this.m_promptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RunApplicationDialog
             // 
             this.AcceptButton = m_yesButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
             this.CancelButton = m_noButton;
-            this.ClientSize = new System.Drawing.Size(284, 112);
             this.Controls.Add(m_noButton);
             this.Controls.Add(m_yesButton);
             this.Controls.Add(this.m_promptLabel);
+            this.Font = null;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RunApplicationDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "tIDE Tile Map Editor";
             this.Deactivate += new System.EventHandler(this.OnDialogDeactivate);
             this.Load += new System.EventHandler(this.OnDialogLoad);
             this.ResumeLayout(false);
