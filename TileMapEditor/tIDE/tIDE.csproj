@@ -355,6 +355,9 @@
       <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LayerPropertiesDialog.it-IT.resx">
+      <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapPropertiesDialog.it-IT.resx">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>

@@ -29,8 +29,15 @@ namespace TileMapEditor.Dialogs
         private void MarkAsModified()
         {
             m_buttonApply.Enabled = m_buttonOk.Enabled = true;
-            m_buttonCancel.Text = "&Cancel";
-            m_buttonCancel.DialogResult = DialogResult.Cancel;
+            m_buttonClose.Visible = false;
+            m_buttonCancel.Visible = true;
+        }
+
+        private void MarkAsApplied()
+        {
+            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
+            m_buttonClose.Visible = true;
+            m_buttonCancel.Visible = false;
         }
 
         private void OnFieldChanged(object sender, EventArgs e)
@@ -58,12 +65,10 @@ namespace TileMapEditor.Dialogs
 
             m_customPropertyGrid.LoadProperties(m_layer);
 
-            if (!m_isNewLayer)
-            {
-                m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-                m_buttonCancel.Text = "&Close";
-                m_buttonCancel.DialogResult = DialogResult.OK;
-            }
+            if (m_isNewLayer)
+                MarkAsModified();
+            else
+                MarkAsApplied();
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -109,9 +114,7 @@ namespace TileMapEditor.Dialogs
 
             CommandHistory.Instance.Do(command);
 
-            m_buttonApply.Enabled = m_buttonOk.Enabled = false;
-            m_buttonCancel.Text = "&Close";
-            m_buttonCancel.DialogResult = DialogResult.OK;
+            MarkAsApplied();
         }
 
         #endregion
