@@ -34,8 +34,8 @@ namespace TileMapEditor.Dialogs
             TileMapEditor.Controls.CustomPropertyEventArgs customPropertyEventArgs)
         {
             m_buttonOk.Enabled = m_buttonApply.Enabled = true;
-            m_buttonCancel.Text = "&Cancel";
-            m_buttonCancel.DialogResult = DialogResult.Cancel;
+            m_buttonCancel.Visible = true;
+            m_buttonClose.Visible = false;
         }
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
@@ -48,8 +48,8 @@ namespace TileMapEditor.Dialogs
             Command command = new CustomPropertiesCommand(m_component, m_customPropertyGrid.NewProperties);
             CommandHistory.Instance.Do(command);
             m_buttonOk.Enabled = m_buttonApply.Enabled = false;
-            m_buttonCancel.Text = "&Close";
-            m_buttonCancel.DialogResult = DialogResult.OK;
+            m_buttonCancel.Visible = false;
+            m_buttonClose.Visible = true;
         }
     }
 }
