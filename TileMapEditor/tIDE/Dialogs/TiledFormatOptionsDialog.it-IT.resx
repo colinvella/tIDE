@@ -117,98 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;m_btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TiledFormatOptionsDialog</value>
-  </data>
-  <data name="&gt;&gt;m_lblDataFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_btnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 127</value>
-  </data>
-  <data name="m_btnOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;m_btnCancel.Name" xml:space="preserve">
-    <value>m_btnCancel</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_lblDataFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_lblDataFormat.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="m_cmbDataFormat.Items" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="&gt;&gt;m_cmbDataFormat.Name" xml:space="preserve">
-    <value>m_cmbDataFormat</value>
-  </data>
-  <data name="&gt;&gt;m_btnCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Tiled TMX Format Options</value>
-  </data>
-  <data name="&gt;&gt;m_btnOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_btnOk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="m_btnCancel.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
-  </data>
-  <data name="m_cmbDataFormat.Items3" xml:space="preserve">
-    <value>Base64 (zlib compressed)</value>
-  </data>
-  <data name="m_cmbDataFormat.Items1" xml:space="preserve">
-    <value>Base64 (uncompressed)</value>
-  </data>
-  <data name="m_cmbDataFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="m_btnOk.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 200</value>
-  </data>
-  <data name="m_btnOk.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="&gt;&gt;m_btnOk.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="m_lblDataFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 13</value>
   </data>
   <data name="m_lblDataFormat.Text" xml:space="preserve">
-    <value>Store tile layer data as</value>
+    <value>Memorizza le date dello strato come</value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 200</value>
+  <data name="m_cmbDataFormat.Items1" xml:space="preserve">
+    <value>Base64 (non compresso)</value>
   </data>
-  <data name="m_btnOk.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="m_cmbDataFormat.Items2" xml:space="preserve">
+    <value>Base64 (compresso con gzip)</value>
   </data>
-  <data name="&gt;&gt;m_cmbDataFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_cmbDataFormat.Items3" xml:space="preserve">
+    <value>Base64 (compresso con zlib)</value>
+  </data>
+  <data name="m_btnCancel.Text" xml:space="preserve">
+    <value>&amp;Annulla</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -973,58 +899,7 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="m_lblDataFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Opzioni per il Formato Tiled TMX</value>
   </data>
-  <data name="m_cmbDataFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 21</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 162</value>
-  </data>
-  <data name="&gt;&gt;m_lblDataFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="m_lblDataFormat.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;m_cmbDataFormat.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="m_cmbDataFormat.Items2" xml:space="preserve">
-    <value>Base64 (gzip compressed)</value>
-  </data>
-  <data name="m_lblDataFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 15</value>
-  </data>
-  <data name="&gt;&gt;m_btnOk.Name" xml:space="preserve">
-    <value>m_btnOk</value>
-  </data>
-  <data name="m_btnOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 127</value>
-  </data>
-  <data name="m_cmbDataFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 31</value>
-  </data>
-  <data name="&gt;&gt;m_lblDataFormat.Name" xml:space="preserve">
-    <value>m_lblDataFormat</value>
-  </data>
-  <data name="m_cmbDataFormat.Items4" xml:space="preserve">
-    <value>CSV</value>
-  </data>
-  <data name="&gt;&gt;m_cmbDataFormat.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="m_lblDataFormat.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
