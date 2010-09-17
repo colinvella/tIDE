@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapPanel));
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
@@ -41,20 +42,22 @@
             // 
             // m_verticalScrollBar
             // 
-            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_verticalScrollBar.Location = new System.Drawing.Point(301, 0);
+            this.m_verticalScrollBar.AccessibleDescription = null;
+            this.m_verticalScrollBar.AccessibleName = null;
+            resources.ApplyResources(this.m_verticalScrollBar, "m_verticalScrollBar");
+            this.m_verticalScrollBar.BackgroundImage = null;
+            this.m_verticalScrollBar.Font = null;
             this.m_verticalScrollBar.Name = "m_verticalScrollBar";
-            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 238);
-            this.m_verticalScrollBar.TabIndex = 0;
             this.m_verticalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnVerticalScroll);
             // 
             // m_horizontalScrollBar
             // 
-            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 221);
+            this.m_horizontalScrollBar.AccessibleDescription = null;
+            this.m_horizontalScrollBar.AccessibleName = null;
+            resources.ApplyResources(this.m_horizontalScrollBar, "m_horizontalScrollBar");
+            this.m_horizontalScrollBar.BackgroundImage = null;
+            this.m_horizontalScrollBar.Font = null;
             this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(301, 17);
-            this.m_horizontalScrollBar.TabIndex = 1;
             this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnHorizontalScroll);
             // 
             // m_animationTimer
@@ -63,36 +66,46 @@
             // 
             // m_tileContextMenuStrip
             // 
+            this.m_tileContextMenuStrip.AccessibleDescription = null;
+            this.m_tileContextMenuStrip.AccessibleName = null;
+            resources.ApplyResources(this.m_tileContextMenuStrip, "m_tileContextMenuStrip");
+            this.m_tileContextMenuStrip.BackgroundImage = null;
+            this.m_tileContextMenuStrip.Font = null;
             this.m_tileContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_tilePropertiesMenuItem,
             this.tileAnimationToolStripMenuItem});
             this.m_tileContextMenuStrip.Name = "m_tileContextMenuStrip";
-            this.m_tileContextMenuStrip.Size = new System.Drawing.Size(162, 70);
             // 
             // m_tilePropertiesMenuItem
             // 
+            this.m_tilePropertiesMenuItem.AccessibleDescription = null;
+            this.m_tilePropertiesMenuItem.AccessibleName = null;
+            resources.ApplyResources(this.m_tilePropertiesMenuItem, "m_tilePropertiesMenuItem");
+            this.m_tilePropertiesMenuItem.BackgroundImage = null;
             this.m_tilePropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileProperties;
             this.m_tilePropertiesMenuItem.Name = "m_tilePropertiesMenuItem";
-            this.m_tilePropertiesMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.m_tilePropertiesMenuItem.Text = "Tile Properties...";
+            this.m_tilePropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tilePropertiesMenuItem.Click += new System.EventHandler(this.OnTileProperties);
             // 
             // tileAnimationToolStripMenuItem
             // 
+            this.tileAnimationToolStripMenuItem.AccessibleDescription = null;
+            this.tileAnimationToolStripMenuItem.AccessibleName = null;
+            resources.ApplyResources(this.tileAnimationToolStripMenuItem, "tileAnimationToolStripMenuItem");
+            this.tileAnimationToolStripMenuItem.BackgroundImage = null;
             this.tileAnimationToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimation;
             this.tileAnimationToolStripMenuItem.Name = "tileAnimationToolStripMenuItem";
-            this.tileAnimationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.tileAnimationToolStripMenuItem.Text = "Tile Animation...";
+            this.tileAnimationToolStripMenuItem.ShortcutKeyDisplayString = null;
             this.tileAnimationToolStripMenuItem.Click += new System.EventHandler(this.OnTileAnimation);
             // 
             // m_innerPanel
             // 
+            this.m_innerPanel.AccessibleDescription = null;
+            this.m_innerPanel.AccessibleName = null;
+            resources.ApplyResources(this.m_innerPanel, "m_innerPanel");
             this.m_innerPanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
-            this.m_innerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_innerPanel.Location = new System.Drawing.Point(0, 0);
+            this.m_innerPanel.Font = null;
             this.m_innerPanel.Name = "m_innerPanel";
-            this.m_innerPanel.Size = new System.Drawing.Size(301, 221);
-            this.m_innerPanel.TabIndex = 2;
             this.m_innerPanel.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             this.m_innerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnMapPaint);
             this.m_innerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
@@ -103,14 +116,17 @@
             // 
             // MapPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.m_innerPanel);
             this.Controls.Add(this.m_horizontalScrollBar);
             this.Controls.Add(this.m_verticalScrollBar);
+            this.Font = null;
             this.Name = "MapPanel";
-            this.Size = new System.Drawing.Size(318, 238);
             this.m_tileContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 

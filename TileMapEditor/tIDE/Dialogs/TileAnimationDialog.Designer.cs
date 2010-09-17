@@ -66,26 +66,47 @@
             // 
             // m_frameIntervalLabel
             // 
+            m_frameIntervalLabel.AccessibleDescription = null;
+            m_frameIntervalLabel.AccessibleName = null;
             resources.ApplyResources(m_frameIntervalLabel, "m_frameIntervalLabel");
+            m_frameIntervalLabel.Font = null;
             m_frameIntervalLabel.Name = "m_frameIntervalLabel";
             // 
             // m_splitContainerOuter
             // 
+            m_splitContainerOuter.AccessibleDescription = null;
+            m_splitContainerOuter.AccessibleName = null;
             resources.ApplyResources(m_splitContainerOuter, "m_splitContainerOuter");
+            m_splitContainerOuter.BackgroundImage = null;
+            m_splitContainerOuter.Font = null;
             m_splitContainerOuter.Name = "m_splitContainerOuter";
             // 
             // m_splitContainerOuter.Panel1
             // 
+            m_splitContainerOuter.Panel1.AccessibleDescription = null;
+            m_splitContainerOuter.Panel1.AccessibleName = null;
+            resources.ApplyResources(m_splitContainerOuter.Panel1, "m_splitContainerOuter.Panel1");
+            m_splitContainerOuter.Panel1.BackgroundImage = null;
             m_splitContainerOuter.Panel1.Controls.Add(this.m_tilePicker);
+            m_splitContainerOuter.Panel1.Font = null;
             // 
             // m_splitContainerOuter.Panel2
             // 
+            m_splitContainerOuter.Panel2.AccessibleDescription = null;
+            m_splitContainerOuter.Panel2.AccessibleName = null;
+            resources.ApplyResources(m_splitContainerOuter.Panel2, "m_splitContainerOuter.Panel2");
+            m_splitContainerOuter.Panel2.BackgroundImage = null;
             m_splitContainerOuter.Panel2.Controls.Add(m_splitContainerInner);
+            m_splitContainerOuter.Panel2.Font = null;
             // 
             // m_tilePicker
             // 
+            this.m_tilePicker.AccessibleDescription = null;
+            this.m_tilePicker.AccessibleName = null;
             this.m_tilePicker.AllowDrop = true;
             resources.ApplyResources(this.m_tilePicker, "m_tilePicker");
+            this.m_tilePicker.BackgroundImage = null;
+            this.m_tilePicker.Font = null;
             this.m_tilePicker.Map = null;
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.SelectedTileSheet = null;
@@ -93,31 +114,53 @@
             // 
             // m_splitContainerInner
             // 
+            m_splitContainerInner.AccessibleDescription = null;
+            m_splitContainerInner.AccessibleName = null;
             resources.ApplyResources(m_splitContainerInner, "m_splitContainerInner");
+            m_splitContainerInner.BackgroundImage = null;
+            m_splitContainerInner.Font = null;
             m_splitContainerInner.Name = "m_splitContainerInner";
             // 
             // m_splitContainerInner.Panel1
             // 
+            m_splitContainerInner.Panel1.AccessibleDescription = null;
+            m_splitContainerInner.Panel1.AccessibleName = null;
+            resources.ApplyResources(m_splitContainerInner.Panel1, "m_splitContainerInner.Panel1");
+            m_splitContainerInner.Panel1.BackgroundImage = null;
             m_splitContainerInner.Panel1.Controls.Add(this.m_previewPanel);
+            m_splitContainerInner.Panel1.Font = null;
             // 
             // m_splitContainerInner.Panel2
             // 
+            m_splitContainerInner.Panel2.AccessibleDescription = null;
+            m_splitContainerInner.Panel2.AccessibleName = null;
+            resources.ApplyResources(m_splitContainerInner.Panel2, "m_splitContainerInner.Panel2");
+            m_splitContainerInner.Panel2.BackgroundImage = null;
             m_splitContainerInner.Panel2.Controls.Add(this.m_animationListView);
+            m_splitContainerInner.Panel2.Font = null;
             // 
             // m_previewPanel
             // 
+            this.m_previewPanel.AccessibleDescription = null;
+            this.m_previewPanel.AccessibleName = null;
             this.m_previewPanel.AllowDrop = true;
-            this.m_previewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.m_previewPanel, "m_previewPanel");
+            this.m_previewPanel.BackgroundImage = null;
+            this.m_previewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_previewPanel.Font = null;
             this.m_previewPanel.Name = "m_previewPanel";
             this.m_previewPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPreviewPaint);
             this.m_previewPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
             // 
             // m_animationListView
             // 
-            this.m_animationListView.AllowDrop = true;
-            this.m_animationListView.ContextMenuStrip = this.m_frameContextMenuStrip;
+            this.m_animationListView.AccessibleDescription = null;
+            this.m_animationListView.AccessibleName = null;
             resources.ApplyResources(this.m_animationListView, "m_animationListView");
+            this.m_animationListView.AllowDrop = true;
+            this.m_animationListView.BackgroundImage = null;
+            this.m_animationListView.ContextMenuStrip = this.m_frameContextMenuStrip;
+            this.m_animationListView.Font = null;
             this.m_animationListView.LargeImageList = this.m_imageListAnimation;
             this.m_animationListView.Name = "m_animationListView";
             this.m_animationListView.UseCompatibleStateImageBehavior = false;
@@ -126,30 +169,44 @@
             // 
             // m_frameContextMenuStrip
             // 
+            this.m_frameContextMenuStrip.AccessibleDescription = null;
+            this.m_frameContextMenuStrip.AccessibleName = null;
+            resources.ApplyResources(this.m_frameContextMenuStrip, "m_frameContextMenuStrip");
+            this.m_frameContextMenuStrip.BackgroundImage = null;
+            this.m_frameContextMenuStrip.Font = null;
             this.m_frameContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_framePropertiesMenuItem,
             m_menuItemSeparator,
             this.m_frameDeleteMenuItem});
             this.m_frameContextMenuStrip.Name = "m_frameContextMenuStrip";
-            resources.ApplyResources(this.m_frameContextMenuStrip, "m_frameContextMenuStrip");
             // 
             // m_framePropertiesMenuItem
             // 
+            this.m_framePropertiesMenuItem.AccessibleDescription = null;
+            this.m_framePropertiesMenuItem.AccessibleName = null;
+            resources.ApplyResources(this.m_framePropertiesMenuItem, "m_framePropertiesMenuItem");
+            this.m_framePropertiesMenuItem.BackgroundImage = null;
             this.m_framePropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimationFrameProperties;
             this.m_framePropertiesMenuItem.Name = "m_framePropertiesMenuItem";
-            resources.ApplyResources(this.m_framePropertiesMenuItem, "m_framePropertiesMenuItem");
+            this.m_framePropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_framePropertiesMenuItem.Click += new System.EventHandler(this.OnFrameProperties);
             // 
             // m_menuItemSeparator
             // 
-            m_menuItemSeparator.Name = "m_menuItemSeparator";
+            m_menuItemSeparator.AccessibleDescription = null;
+            m_menuItemSeparator.AccessibleName = null;
             resources.ApplyResources(m_menuItemSeparator, "m_menuItemSeparator");
+            m_menuItemSeparator.Name = "m_menuItemSeparator";
             // 
             // m_frameDeleteMenuItem
             // 
+            this.m_frameDeleteMenuItem.AccessibleDescription = null;
+            this.m_frameDeleteMenuItem.AccessibleName = null;
+            resources.ApplyResources(this.m_frameDeleteMenuItem, "m_frameDeleteMenuItem");
+            this.m_frameDeleteMenuItem.BackgroundImage = null;
             this.m_frameDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimationFrameDelete;
             this.m_frameDeleteMenuItem.Name = "m_frameDeleteMenuItem";
-            resources.ApplyResources(this.m_frameDeleteMenuItem, "m_frameDeleteMenuItem");
+            this.m_frameDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_frameDeleteMenuItem.Click += new System.EventHandler(this.OnDeleteFrame);
             // 
             // m_imageListAnimation
@@ -160,14 +217,22 @@
             // 
             // m_customPanel
             // 
+            m_customPanel.AccessibleDescription = null;
+            m_customPanel.AccessibleName = null;
             resources.ApplyResources(m_customPanel, "m_customPanel");
+            m_customPanel.BackgroundImage = null;
             m_customPanel.Controls.Add(m_splitContainerOuter);
+            m_customPanel.Font = null;
             m_customPanel.Name = "m_customPanel";
             // 
             // m_buttonOk
             // 
+            this.m_buttonOk.AccessibleDescription = null;
+            this.m_buttonOk.AccessibleName = null;
             resources.ApplyResources(this.m_buttonOk, "m_buttonOk");
+            this.m_buttonOk.BackgroundImage = null;
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonOk.Font = null;
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.UseVisualStyleBackColor = true;
             this.m_buttonOk.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
@@ -175,7 +240,11 @@
             // 
             // m_buttonApply
             // 
+            this.m_buttonApply.AccessibleDescription = null;
+            this.m_buttonApply.AccessibleName = null;
             resources.ApplyResources(this.m_buttonApply, "m_buttonApply");
+            this.m_buttonApply.BackgroundImage = null;
+            this.m_buttonApply.Font = null;
             this.m_buttonApply.Name = "m_buttonApply";
             this.m_buttonApply.UseVisualStyleBackColor = true;
             this.m_buttonApply.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
@@ -183,15 +252,22 @@
             // 
             // m_buttonCancel
             // 
+            this.m_buttonCancel.AccessibleDescription = null;
+            this.m_buttonCancel.AccessibleName = null;
             resources.ApplyResources(this.m_buttonCancel, "m_buttonCancel");
+            this.m_buttonCancel.BackgroundImage = null;
             this.m_buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_buttonCancel.Font = null;
             this.m_buttonCancel.Name = "m_buttonCancel";
             this.m_buttonCancel.UseVisualStyleBackColor = true;
             this.m_buttonCancel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);
             // 
             // m_frameIntervalTextbox
             // 
+            this.m_frameIntervalTextbox.AccessibleDescription = null;
+            this.m_frameIntervalTextbox.AccessibleName = null;
             resources.ApplyResources(this.m_frameIntervalTextbox, "m_frameIntervalTextbox");
+            this.m_frameIntervalTextbox.Font = null;
             this.m_frameIntervalTextbox.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -208,16 +284,23 @@
             // 
             // m_buttonClose
             // 
-            this.m_buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonClose.AccessibleDescription = null;
+            this.m_buttonClose.AccessibleName = null;
             resources.ApplyResources(this.m_buttonClose, "m_buttonClose");
+            this.m_buttonClose.BackgroundImage = null;
+            this.m_buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.m_buttonClose.Font = null;
             this.m_buttonClose.Name = "m_buttonClose";
             this.m_buttonClose.UseVisualStyleBackColor = true;
             // 
             // TileAnimationDialog
             // 
             this.AcceptButton = this.m_buttonOk;
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.CancelButton = this.m_buttonCancel;
             this.Controls.Add(this.m_buttonApply);
             this.Controls.Add(this.m_buttonCancel);
@@ -227,6 +310,7 @@
             this.Controls.Add(this.m_frameIntervalTextbox);
             this.Controls.Add(this.m_buttonOk);
             this.DoubleBuffered = true;
+            this.Font = null;
             this.Name = "TileAnimationDialog";
             this.Load += new System.EventHandler(this.OnDialogLoad);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnDialogMouseMove);

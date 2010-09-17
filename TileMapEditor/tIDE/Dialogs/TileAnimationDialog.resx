@@ -117,203 +117,83 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="m_frameIntervalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_frameIntervalLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_frameIntervalLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;m_splitContainerInner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_frameIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 379</value>
+  <data name="m_buttonApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>416, 377</value>
   </data>
-  <data name="m_frameIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
+  <data name="&gt;&gt;m_splitContainerOuter.Name" xml:space="preserve">
+    <value>m_splitContainerOuter</value>
   </data>
-  <data name="m_frameIntervalLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;m_framePropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_frameIntervalLabel.Text" xml:space="preserve">
-    <value>Frame Interval (ms)</value>
+  <data name="m_splitContainerOuter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 359</value>
   </data>
-  <data name="&gt;&gt;m_frameIntervalLabel.Name" xml:space="preserve">
-    <value>m_frameIntervalLabel</value>
+  <data name="m_buttonCancel.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
   </data>
-  <data name="&gt;&gt;m_frameIntervalLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_splitContainerOuter.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;m_frameIntervalLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
-  <data name="&gt;&gt;m_frameIntervalLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="m_buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <metadata name="m_splitContainerOuter.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="m_splitContainerOuter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;m_splitContainerInner.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tile Animation</value>
   </data>
   <data name="m_splitContainerOuter.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="m_tilePicker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_tilePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="m_tilePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 359</value>
-  </data>
-  <data name="m_tilePicker.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_tilePicker.Name" xml:space="preserve">
-    <value>m_tilePicker</value>
-  </data>
-  <data name="&gt;&gt;m_tilePicker.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.TilePicker, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_tilePicker.Parent" xml:space="preserve">
-    <value>m_splitContainerOuter.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_tilePicker.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel1.Name" xml:space="preserve">
-    <value>m_splitContainerOuter.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel1.Parent" xml:space="preserve">
-    <value>m_splitContainerOuter</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="m_splitContainerInner.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="m_splitContainerInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_splitContainerInner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="m_splitContainerInner.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="m_previewPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_previewPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="m_previewPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 180</value>
-  </data>
-  <data name="m_previewPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_previewPanel.Name" xml:space="preserve">
-    <value>m_previewPanel</value>
-  </data>
-  <data name="&gt;&gt;m_previewPanel.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_previewPanel.Parent" xml:space="preserve">
-    <value>m_splitContainerInner.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_previewPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Panel1.Name" xml:space="preserve">
-    <value>m_splitContainerInner.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Panel1.Parent" xml:space="preserve">
-    <value>m_splitContainerInner</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="m_frameContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>193, 17</value>
-  </metadata>
-  <data name="m_framePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="m_framePropertiesMenuItem.Text" xml:space="preserve">
-    <value>Frame Properties...</value>
-  </data>
-  <metadata name="m_menuItemSeparator.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="m_menuItemSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 6</value>
-  </data>
-  <data name="m_frameDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="m_frameDeleteMenuItem.Text" xml:space="preserve">
-    <value>Delete Frame</value>
-  </data>
-  <data name="m_frameContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 54</value>
-  </data>
-  <data name="&gt;&gt;m_frameContextMenuStrip.Name" xml:space="preserve">
-    <value>m_frameContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;m_frameContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_animationListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <metadata name="m_imageListAnimation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="m_imageListAnimation.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
-  </data>
-  <data name="m_animationListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="m_animationListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 175</value>
-  </data>
-  <data name="m_animationListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_animationListView.Name" xml:space="preserve">
-    <value>m_animationListView</value>
-  </data>
-  <data name="&gt;&gt;m_animationListView.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomListView, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_animationListView.Parent" xml:space="preserve">
-    <value>m_splitContainerInner.Panel2</value>
-  </data>
-  <data name="&gt;&gt;m_animationListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Panel2.Name" xml:space="preserve">
-    <value>m_splitContainerInner.Panel2</value>
   </data>
   <data name="&gt;&gt;m_splitContainerInner.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_splitContainerInner.Panel2.Parent" xml:space="preserve">
-    <value>m_splitContainerInner</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_tilePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_framePropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_framePropertiesMenuItem</value>
+  </data>
+  <data name="m_splitContainerInner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="m_splitContainerInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_buttonClose.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel2.Name" xml:space="preserve">
+    <value>m_splitContainerOuter.Panel2</value>
+  </data>
+  <data name="m_splitContainerInner.SplitterDistance" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Parent" xml:space="preserve">
+    <value>m_splitContainerOuter.Panel2</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalTextbox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 412</value>
   </data>
   <data name="&gt;&gt;m_splitContainerInner.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -321,233 +201,314 @@
   <data name="m_splitContainerInner.Size" type="System.Drawing.Size, System.Drawing">
     <value>370, 359</value>
   </data>
-  <data name="m_splitContainerInner.SplitterDistance" type="System.Int32, mscorlib">
-    <value>180</value>
+  <data name="m_frameIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 379</value>
   </data>
-  <data name="m_splitContainerInner.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Name" xml:space="preserve">
-    <value>m_splitContainerInner</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.Parent" xml:space="preserve">
-    <value>m_splitContainerOuter.Panel2</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerInner.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel2.Name" xml:space="preserve">
-    <value>m_splitContainerOuter.Panel2</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel2.Parent" xml:space="preserve">
-    <value>m_splitContainerOuter</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_splitContainerOuter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 359</value>
-  </data>
-  <data name="m_splitContainerOuter.SplitterDistance" type="System.Int32, mscorlib">
-    <value>186</value>
-  </data>
-  <data name="m_splitContainerOuter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Name" xml:space="preserve">
-    <value>m_splitContainerOuter</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.Parent" xml:space="preserve">
-    <value>m_customPanel</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainerOuter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="m_customPanel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="m_customPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="m_customPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="m_customPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 359</value>
-  </data>
-  <data name="m_customPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_customPanel.Name" xml:space="preserve">
-    <value>m_customPanel</value>
-  </data>
-  <data name="&gt;&gt;m_customPanel.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_customPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_customPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_buttonOk.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 377</value>
-  </data>
-  <data name="m_buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_buttonOk.Text" xml:space="preserve">
-    <value>&amp;Ok</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
-    <value>m_buttonOk</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="m_buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_buttonApply.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_buttonApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 377</value>
+  <data name="&gt;&gt;m_frameDeleteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_buttonApply.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="m_buttonApply.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="m_frameIntervalLabel.Text" xml:space="preserve">
+    <value>Frame Interval (ms)</value>
   </data>
-  <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>&amp;Apply</value>
+  <data name="&gt;&gt;m_customPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_customPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 359</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Panel1.Parent" xml:space="preserve">
+    <value>m_splitContainerInner</value>
+  </data>
+  <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
+    <value>m_buttonCancel</value>
+  </data>
+  <data name="m_menuItemSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 6</value>
+  </data>
+  <data name="&gt;&gt;m_previewPanel.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_splitContainerInner.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_tilePicker.Name" xml:space="preserve">
+    <value>m_tilePicker</value>
+  </data>
+  <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_animationListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 175</value>
+  </data>
+  <data name="m_frameContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 54</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="m_previewPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_frameIntervalTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="m_frameIntervalLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="m_frameIntervalTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="m_frameIntervalLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_animationListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_animationListView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Panel1.Name" xml:space="preserve">
+    <value>m_splitContainerInner.Panel1</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Name" xml:space="preserve">
+    <value>m_splitContainerInner</value>
+  </data>
+  <data name="&gt;&gt;m_menuItemSeparator.Name" xml:space="preserve">
+    <value>m_menuItemSeparator</value>
+  </data>
+  <data name="&gt;&gt;m_imageListAnimation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_animationListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="m_splitContainerOuter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;m_frameDeleteMenuItem.Name" xml:space="preserve">
+    <value>m_frameDeleteMenuItem</value>
+  </data>
+  <data name="m_buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_animationTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_tilePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="m_tilePicker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_splitContainerOuter.SplitterDistance" type="System.Int32, mscorlib">
+    <value>186</value>
+  </data>
+  <data name="m_customPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_previewPanel.Name" xml:space="preserve">
+    <value>m_previewPanel</value>
+  </data>
+  <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="m_frameIntervalLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Panel2.Name" xml:space="preserve">
+    <value>m_splitContainerInner.Panel2</value>
+  </data>
+  <data name="&gt;&gt;m_frameContextMenuStrip.Name" xml:space="preserve">
+    <value>m_frameContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel2.Parent" xml:space="preserve">
+    <value>m_splitContainerOuter</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;m_buttonApply.Name" xml:space="preserve">
     <value>m_buttonApply</value>
   </data>
-  <data name="&gt;&gt;m_buttonApply.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_customPanel.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_buttonApply.Text" xml:space="preserve">
+    <value>&amp;Apply</value>
+  </data>
+  <data name="m_framePropertiesMenuItem.Text" xml:space="preserve">
+    <value>Frame Properties...</value>
+  </data>
+  <data name="m_splitContainerInner.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="m_framePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="&gt;&gt;m_frameContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Panel2.Parent" xml:space="preserve">
+    <value>m_splitContainerInner</value>
+  </data>
+  <data name="&gt;&gt;m_animationListView.Name" xml:space="preserve">
+    <value>m_animationListView</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_buttonCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_buttonOk.Text" xml:space="preserve">
+    <value>&amp;Ok</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerInner.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_splitContainerOuter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_buttonApply.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="m_buttonApply.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="&gt;&gt;m_splitContainerOuter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
-  </data>
-  <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="m_buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
-  </data>
-  <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
-    <value>m_buttonCancel</value>
-  </data>
-  <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_buttonCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_frameIntervalTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="m_frameIntervalTextbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 377</value>
-  </data>
-  <data name="m_frameIntervalTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="m_frameIntervalTextbox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="m_frameIntervalTextbox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;m_frameIntervalTextbox.Name" xml:space="preserve">
-    <value>m_frameIntervalTextbox</value>
-  </data>
-  <data name="&gt;&gt;m_frameIntervalTextbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_frameIntervalTextbox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_frameIntervalTextbox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="m_animationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>391, 17</value>
-  </metadata>
-  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
-  </data>
-  <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_buttonClose.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="m_buttonClose.Text" xml:space="preserve">
-    <value>&amp;Close</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.Name" xml:space="preserve">
-    <value>m_buttonClose</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_customPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;m_buttonClose.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_buttonClose.ZOrder" xml:space="preserve">
+  <data name="m_frameIntervalTextbox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="m_customPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;m_buttonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
+  </data>
+  <data name="&gt;&gt;m_animationListView.Parent" xml:space="preserve">
+    <value>m_splitContainerInner.Panel2</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel1.Name" xml:space="preserve">
+    <value>m_splitContainerOuter.Panel1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TileAnimationDialog</value>
+  </data>
+  <data name="&gt;&gt;m_animationListView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_tilePicker.Parent" xml:space="preserve">
+    <value>m_splitContainerOuter.Panel1</value>
+  </data>
+  <data name="&gt;&gt;m_buttonClose.Name" xml:space="preserve">
+    <value>m_buttonClose</value>
+  </data>
+  <data name="m_frameDeleteMenuItem.Text" xml:space="preserve">
+    <value>Delete Frame</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>500, 300</value>
+  </data>
+  <data name="m_frameDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="&gt;&gt;m_imageListAnimation.Name" xml:space="preserve">
+    <value>m_imageListAnimation</value>
+  </data>
+  <data name="&gt;&gt;m_animationTimer.Name" xml:space="preserve">
+    <value>m_animationTimer</value>
+  </data>
+  <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;m_menuItemSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_buttonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
+    <value>m_buttonOk</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 412</value>
+  <data name="&gt;&gt;m_tilePicker.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_buttonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;m_previewPanel.Parent" xml:space="preserve">
+    <value>m_splitContainerInner.Panel1</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_frameIntervalTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;m_animationListView.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomListView, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_frameIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="&gt;&gt;m_previewPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_buttonOk.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_previewPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_previewPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1312,49 +1273,91 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 300</value>
+  <data name="m_buttonApply.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="m_tilePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 359</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Tile Animation</value>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_framePropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_framePropertiesMenuItem</value>
+  <data name="m_frameIntervalTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 377</value>
   </data>
-  <data name="&gt;&gt;m_framePropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
   </data>
-  <data name="&gt;&gt;m_menuItemSeparator.Name" xml:space="preserve">
-    <value>m_menuItemSeparator</value>
+  <data name="m_customPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
-  <data name="&gt;&gt;m_menuItemSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_tilePicker.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.TilePicker, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;m_frameDeleteMenuItem.Name" xml:space="preserve">
-    <value>m_frameDeleteMenuItem</value>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel1.Parent" xml:space="preserve">
+    <value>m_splitContainerOuter</value>
   </data>
-  <data name="&gt;&gt;m_frameDeleteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_imageListAnimation.Name" xml:space="preserve">
-    <value>m_imageListAnimation</value>
+  <data name="m_buttonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 377</value>
   </data>
-  <data name="&gt;&gt;m_imageListAnimation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_frameIntervalLabel.Name" xml:space="preserve">
+    <value>m_frameIntervalLabel</value>
   </data>
-  <data name="&gt;&gt;m_animationTimer.Name" xml:space="preserve">
-    <value>m_animationTimer</value>
+  <data name="&gt;&gt;m_splitContainerOuter.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;m_animationTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_customPanel.Name" xml:space="preserve">
+    <value>m_customPanel</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TileAnimationDialog</value>
+  <data name="m_previewPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 180</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_buttonOk.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
+  <data name="&gt;&gt;m_buttonClose.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainerOuter.Parent" xml:space="preserve">
+    <value>m_customPanel</value>
+  </data>
+  <data name="m_buttonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_frameIntervalTextbox.Name" xml:space="preserve">
+    <value>m_frameIntervalTextbox</value>
+  </data>
+  <metadata name="m_frameContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>193, 17</value>
+  </metadata>
+  <metadata name="m_menuItemSeparator.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="m_customPanel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="m_animationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>391, 17</value>
+  </metadata>
+  <metadata name="m_frameIntervalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="m_splitContainerInner.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="m_splitContainerOuter.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Italian (Italy)</value>
+  </metadata>
+  <metadata name="m_imageListAnimation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

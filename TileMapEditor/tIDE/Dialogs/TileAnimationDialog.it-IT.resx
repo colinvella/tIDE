@@ -162,9 +162,6 @@
   <data name="m_buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
-  </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>
   </data>
@@ -932,6 +929,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Animazione delle Piastre</value>
+    <value>Animazione della Piastra</value>
   </data>
 </root>
