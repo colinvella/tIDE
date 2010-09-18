@@ -236,26 +236,24 @@ namespace TileMapEditor
         {
             Layer layer = m_mapPanel.SelectedLayer;
 
-            m_layerVisibilityMenuItem.Enabled
-                = m_layerVisibilityButton.Enabled = layer != null;
+            m_layerMakeInvisibleMenuItem.Enabled
+                = m_layerMakeVisibleMenuItem.Enabled
+                = m_layerMakeInvisibileButton.Enabled
+                = m_layerMakeVisibileButton.Enabled
+                = layer != null;
 
             if (layer == null)
                 return;
 
             bool visible = layer.Visible;
 
-            m_layerVisibilityMenuItem.Text = visible
-                ? "Make Invisible"
-                : "Make Visible";
-            m_layerVisibilityButton.ToolTipText = visible
-                ? "Make layer invisible"
-                : "Make layer visible";
+            m_layerMakeInvisibleMenuItem.Visible = visible;
+            m_layerMakeVisibleMenuItem.Visible = !visible;
 
-            m_layerVisibilityMenuItem.Image
-                = m_layerVisibilityButton.Image
-                = visible
-                    ? Properties.Resources.LayerInvisible
-                    : Properties.Resources.LayerVisible;
+            m_layerToolStrip.SuspendLayout();
+            m_layerMakeInvisibileButton.Visible = visible;
+            m_layerMakeVisibileButton.Visible = !visible;
+            m_layerToolStrip.ResumeLayout();
 
             m_mapTreeView.UpdateTree();
         }
@@ -1450,8 +1448,8 @@ namespace TileMapEditor
 
             m_layerPropertiesMenuItem.Enabled
                 = m_layerPropertiesButton.Enabled
-                = m_layerVisibilityMenuItem.Enabled
-                = m_layerVisibilityButton.Enabled
+                = m_layerMakeInvisibleMenuItem.Enabled
+                = m_layerMakeInvisibileButton.Enabled
                 = m_layerDeleteMenuItem.Enabled
                 = m_layerDeleteButton.Enabled
                 = layerSelected;
