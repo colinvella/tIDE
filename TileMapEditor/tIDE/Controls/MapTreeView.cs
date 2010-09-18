@@ -103,16 +103,20 @@ namespace TileMapEditor.Controls
         {
             Layer layer = (Layer)SelectedComponent;
 
+            m_layerMakeInvisibileMenuItem.Visible = layer.Visible;
+            m_layerMakeVisibileMenuItem.Visible = !layer.Visible;
+
+            /*
             if (layer.Visible)
             {
-                m_layerVisibilityMenuItem.Image = Properties.Resources.LayerInvisible;
-                m_layerVisibilityMenuItem.Text = "Make Invisibile";
+                m_layerMakeInvisibileMenuItem.Image = Properties.Resources.LayerInvisible;
+                m_layerMakeInvisibileMenuItem.Text = "Make Invisibile";
             }
             else
             {
-                m_layerVisibilityMenuItem.Image = Properties.Resources.LayerVisible;
-                m_layerVisibilityMenuItem.Text = "Make Visibile";
-            }
+                m_layerMakeInvisibileMenuItem.Image = Properties.Resources.LayerVisible;
+                m_layerMakeInvisibileMenuItem.Text = "Make Visibile";
+            }*/
 
             int layerIndex = m_map.Layers.IndexOf(layer);
             m_layerBringForwardMenuItem.Enabled = layerIndex < m_map.Layers.Count - 1;
