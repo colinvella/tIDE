@@ -89,6 +89,8 @@ namespace TileMapEditor
         {
             ToolStripPanel toolStripPanel = m_toolStripContainer.TopToolStripPanel;
 
+            toolStripPanel.Hide();
+
             toolStripPanel.ControlAdded -= this.OnCustomToolStripAdded;
 
             // determine custom toolstrips implemented by plugins
@@ -126,8 +128,9 @@ namespace TileMapEditor
             toolStripPanel.Join(m_layerToolStrip, 2);
             toolStripPanel.Join(m_mapToolStrip, 2);      
 
-
             toolStripPanel.ControlAdded += this.OnCustomToolStripAdded;
+
+            toolStripPanel.Show();
         }
 
         private void StartWaitCursor()
