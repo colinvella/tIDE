@@ -569,10 +569,6 @@ namespace TileMapEditor
             m_windowMode = WindowMode.Windowed;
             m_windowBounds = this.Bounds;
 
-            m_commandHistory = CommandHistory.Instance;
-
-            m_tileBrushCollection = new TileBrushCollection();
-
             // register supported formats for xTile
             RegisterFileFormats();
 
@@ -785,6 +781,7 @@ namespace TileMapEditor
             LanguageManager.ApplyLanguage(this);
             ArrangeToolStripLayout();
             UpdateRecentFilesMenu();
+            m_mapTreeView.UpdateTree();
             Visible = true;
         }
 
@@ -1612,6 +1609,9 @@ namespace TileMapEditor
             InitializeComponent();
 
             m_arguments = arguments;
+
+            m_commandHistory = CommandHistory.Instance;
+            m_tileBrushCollection = new TileBrushCollection();
         }
 
         #endregion

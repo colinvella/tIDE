@@ -64,12 +64,32 @@ namespace TileMapEditor.Localisation
             ComponentResourceManager componentResourceManager,
             Control control)
         {
-            componentResourceManager.ApplyResources(control, control.Name);
+            if (control is UserControl)
+            {
+                // use its own CRM
+                ComponentResourceManager userControlCRM
+                    = new ComponentResourceManager(control.GetType());
 
+                userControlCRM.ApplyResources(control, control.Name);
+                foreach (Control childControl in control.Controls)
+                    ApplyLanguage(userControlCRM, childControl);
+
+                if (control is Controls.MapTreeView)
+                {
+                    // bit of a hack due to context menus
+
+                    foreach (ContextMenuStrip contextMenuStrip
+                        in ((Controls.MapTreeView)control).ContextMenus)
+                        ApplyLanguage(componentResourceManager, contextMenuStrip);
+                }
+
+                return;
+            }
+
+            componentResourceManager.ApplyResources(control, control.Name);
             foreach (Control childControl in control.Controls)
                 ApplyLanguage(componentResourceManager, childControl);
 
-            // switch to different recursive method for menus / toolbars
             if (control is ToolStrip)
             {
                 // handles derivative MenuStrip too
@@ -79,8 +99,13 @@ namespace TileMapEditor.Localisation
             }
             else if (control is TreeView)
             {
-                // switch to node tree for treeview control
+                // handle tree view nodes
                 TreeView treeView = (TreeView)control;
+
+                treeView.Nodes.Clear();
+                treeView.Nodes.AddRange(new TreeNode[] {
+                    ((TreeNode)(componentResourceManager.GetObject(treeView.Name + ".Nodes")))});
+
                 foreach (TreeNode treeNode in treeView.Nodes)
                     ApplyLanguage(componentResourceManager, treeNode);
             }
