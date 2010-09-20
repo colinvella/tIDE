@@ -222,6 +222,14 @@ namespace TileMapEditor.Dialogs
                 MarkAsApplied();
         }
 
+        private void OnSelectingTab(object sender,
+            TabControlCancelEventArgs tabControlCancelEventArgs)
+        {
+            // prevent tab swtiching while in tile swap mode
+            if (m_previewMode != PreviewMode.Preview)
+                tabControlCancelEventArgs.Cancel = true;
+        }
+
         private void OnTileSizeCombo(object sender, EventArgs eventArgs)
         {
             if (m_comboBoxTileSize.SelectedIndex == 0)
@@ -725,13 +733,6 @@ namespace TileMapEditor.Dialogs
         }
 
         #endregion
-
-        private void OnSelectingTab(object sender,
-            TabControlCancelEventArgs tabControlCancelEventArgs)
-        {
-            if (m_previewMode != PreviewMode.Preview)
-                tabControlCancelEventArgs.Cancel = true;
-        }
     }
 
     public enum PreviewMode
