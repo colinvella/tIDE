@@ -1050,12 +1050,6 @@ namespace TileMapEditor
                 m_splitContainerLeftRight.SplitterDistance = splitterWidth;
 
                 m_windowMode = WindowMode.Fullscreen;
-                m_viewWindowModeMenuItem.Image
-                    = m_viewWindowModeButton.Image
-                    = Properties.Resources.ViewWindowed;
-                m_viewWindowModeMenuItem.Text = "Windowed";
-                m_viewWindowModeButton.ToolTipText = "View in windowed mode";
-                 
             }
             else
             {
@@ -1065,12 +1059,15 @@ namespace TileMapEditor
                 m_splitContainerLeftRight.SplitterDistance = splitterWidth;
 
                 m_windowMode = WindowMode.Windowed;
-                m_viewWindowModeMenuItem.Image 
-                    = m_viewWindowModeButton.Image
-                    = Properties.Resources.ViewFullScreen;
-                m_viewWindowModeMenuItem.Text = "Full Screen";
-                m_viewWindowModeButton.ToolTipText = "View in full screen mode";
             }
+
+            m_viewFullScreenMenuItem.Visible = m_windowMode == WindowMode.Windowed;
+            m_viewWindowedMenuItem.Visible = m_windowMode == WindowMode.Fullscreen;
+
+            m_viewToolStrip.SuspendLayout();
+            m_viewFullScreenButton.Visible = m_windowMode == WindowMode.Windowed;
+            m_viewWindowedButton.Visible = m_windowMode == WindowMode.Fullscreen;
+            m_viewToolStrip.ResumeLayout();
         }
 
         private void OnViewLayerCompositing(object sender, EventArgs eventArgs)
