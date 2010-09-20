@@ -263,24 +263,14 @@ namespace TileMapEditor
 
         private void UpdateLayerCompositingControls()
         {
-            if (m_mapPanel.LayerCompositing == LayerCompositing.DimUnselected)
-            {
-                m_viewLayerCompositingMenuItem.Image
-                    = m_viewLayerCompositingButton.Image
-                    = Properties.Resources.ViewLayerCompositingShowAll;
+            bool showAll = m_mapPanel.LayerCompositing == LayerCompositing.ShowAll;
+            m_viewLayersShowAllMenuItem.Visible = !showAll;
+            m_viewLayersHighlightSelectedMenuItem.Visible = showAll;
 
-                m_viewLayerCompositingMenuItem.Text = "Show All Layers";
-                m_viewLayerCompositingButton.ToolTipText = "Show all layers";
-            }
-            else
-            {
-                m_viewLayerCompositingMenuItem.Image
-                    = m_viewLayerCompositingButton.Image
-                    = Properties.Resources.ViewLayerCompositingDimUnselected;
-
-                m_viewLayerCompositingMenuItem.Text = "Dim Unselected Layers";
-                m_viewLayerCompositingButton.ToolTipText = "Dim unselected layers";
-            }
+            m_viewToolStrip.SuspendLayout();
+            m_viewLayersShowAllButton.Visible = !showAll;
+            m_viewLayersHighlightSelectedButton.Visible = showAll;
+            m_viewToolStrip.ResumeLayout();
         }
 
         private void UpdateLayerOrderingControls()
