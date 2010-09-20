@@ -99,7 +99,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>mkdir $(SolutionDir)tIDE\bin\Debug\Plugins
-copy $(TargetPath) $(SolutionDir)tIDE\bin\Debug\Plugins</PostBuildEvent>
+    <PostBuildEvent>REM mkdir $(SolutionDir)tIDE\bin\Debug\Plugins
+REM copy $(TargetPath) $(SolutionDir)tIDE\bin\Debug\Plugins</PostBuildEvent>
   </PropertyGroup>
 </Project>
