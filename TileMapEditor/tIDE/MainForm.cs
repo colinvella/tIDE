@@ -304,16 +304,24 @@ namespace TileMapEditor
         {
             bool tileGuides = m_mapPanel.TileGuides;
 
-            m_viewTileGuidesButton.ToolTipText = tileGuides
+            /*
+            m_viewShowTileGuidesButton.ToolTipText = tileGuides
                 ? "Hide tile guides" : "Show tile guides";
 
-            m_viewTileGuidesMenuItem.Image
-                = m_viewTileGuidesButton.Image = tileGuides
+            m_viewShowTileGuidesMenuItem.Image
+                = m_viewShowTileGuidesButton.Image = tileGuides
                     ? Properties.Resources.VewTileGuidesHide
                     : Properties.Resources.VewTileGuidesShow;
 
-            m_viewTileGuidesMenuItem.Text = tileGuides
-                ? "Hide Tile Guides" : "Show Tile Guides";
+            m_viewShowTileGuidesMenuItem.Text = tileGuides
+                ? "Hide Tile Guides" : "Show Tile Guides";*/
+            m_viewShowTileGuidesMenuItem.Visible = !tileGuides;
+            m_viewHideTileGuidesMenuItem.Visible = tileGuides;
+
+            m_viewToolStrip.SuspendLayout();
+            m_viewShowTileGuidesButton.Visible = !tileGuides;
+            m_viewHideTileGuidesButton.Visible = tileGuides;
+            m_viewToolStrip.ResumeLayout();
         }
 
         private void UpdateTileSheetControls()
