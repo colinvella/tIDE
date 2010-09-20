@@ -69,6 +69,12 @@ namespace TileMapEditor.Plugin.Bridge
             set { m_toolStripMenuItem.Enabled = value; }
         }
 
+        public bool Visible
+        {
+            get { return m_toolStripMenuItem.Visible; }
+            set { m_toolStripMenuItem.Visible = value; }
+        }
+
         public object Tag
         {
             get { return m_toolStripMenuItem.Tag; }

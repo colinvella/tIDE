@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BF90ABC8-A2A6-4240-9DE4-CD6C1E81934D}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -99,6 +99,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>REM copy $(TargetPath) $(SolutionDir)tIDE\bin\Debug\Plugins</PostBuildEvent>
+    <PostBuildEvent>mkdir $(SolutionDir)tIDE\bin\Debug\Plugins
+copy $(TargetPath) $(SolutionDir)tIDE\bin\Debug\Plugins</PostBuildEvent>
   </PropertyGroup>
 </Project>

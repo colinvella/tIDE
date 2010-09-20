@@ -18,6 +18,8 @@ namespace TileMapEditor.Plugin.Interface
 
         bool Enabled { get; set; }
 
+        bool Visible { get; set; }
+
         IMenuItemCollection SubItems { get; }
 
         object Tag { get; set; }
