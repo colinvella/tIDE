@@ -117,6 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_toolStripContainer.BottomToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_splitContainerLeftRight.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_splitContainerVertical.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_mapTreeView.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_splitContainerVertical.Panel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_tilePicker.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_splitContainerVertical.Panel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_splitContainerLeftRight.Panel1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_statusStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_toolStripContainerInner.BottomToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_mapPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_toolStripContainerInner.ContentPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_toolStripContainerInner.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_toolStripContainerInner.LeftToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_toolsToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
   <data name="m_toolsSelectButton.Text" xml:space="preserve">
     <value>Select Tiles</value>
   </data>
@@ -159,33 +205,66 @@
   <data name="m_toolsTileBrushButton.ToolTipText" xml:space="preserve">
     <value>Applica un pennello di piastre</value>
   </data>
-  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
-    <value>Crea una nuova mappa</value>
+  <data name="m_toolStripContainerInner.RightToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
-    <value>Apri mappa</value>
+  <data name="m_toolStripContainerInner.TopToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
-    <value>Salva mappa</value>
+  <data name="m_splitContainerLeftRight.Panel2.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
-    <value>Salva mappa come...</value>
+  <data name="m_toolStripContainer.ContentPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
-    <value>Imposta la pagina per stampare</value>
+  <data name="m_toolStripContainer.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
-    <value>Visualizza anteprima di stampa</value>
+  <data name="m_toolStripContainer.LeftToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
-    <value>Stampa la mappa</value>
+  <data name="m_toolStripContainer.RightToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
-    <value>Accedi opzioni generali</value>
+  <data name="m_mapToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_mapPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Accedi gli atributi della mappa</value>
+  </data>
+  <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
+    <value>Visualizza statistiche sulla mappa</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 124</value>
+  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 99</value>
+  </data>
+  <data name="m_tileSheetToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
+    <value>Crea un nuovo foglio di piastre</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Accedi gli atributi del foglio piastre selezionato</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
+    <value>Arrangia le auto piastre del foglio selezionato</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateButton.ToolTipText" xml:space="preserve">
+    <value>Attiva l'aggiornamento automatico delle fonti immagini dei fogli piastre </value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
+    <value>Rimuovi le dipendenze sul foglio piastre selezionato</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Cancella il foglio di piastre selezionato</value>
+  </data>
+  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 99</value>
+  </data>
+  <data name="m_editToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
   <data name="m_editUndoButton.Text" xml:space="preserve">
     <value>Disfa</value>
@@ -227,16 +306,73 @@
     <value>Arrangia i pennelli appartenenti alla mappa</value>
   </data>
   <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 124</value>
+    <value>289, 74</value>
   </data>
-  <data name="m_mapPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Accedi gli atributi della mappa</value>
+  <data name="m_viewToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
-  <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
-    <value>Visualizza statistiche sulla mappa</value>
+  <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
+    <value>Fattore di ingrandimento</value>
   </data>
-  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
+    <value>In Scala</value>
+  </data>
+  <data name="m_viewZoomInButton.ToolTipText" xml:space="preserve">
+    <value>Zoom Avanti</value>
+  </data>
+  <data name="m_viewZoomOutButton.ToolTipText" xml:space="preserve">
+    <value>Zoom indietro</value>
+  </data>
+  <data name="m_viewFullScreenButton.ToolTipText" xml:space="preserve">
+    <value>Visualizza a tutto schermo</value>
+  </data>
+  <data name="m_viewWindowedButton.ToolTipText" xml:space="preserve">
+    <value>Visualizza in modalità finestrata</value>
+  </data>
+  <data name="m_viewLayerCompositingButton.ToolTipText" xml:space="preserve">
+    <value>Mostra tutti gli strati</value>
+  </data>
+  <data name="m_viewTileGuidesButton.ToolTipText" xml:space="preserve">
+    <value>Mostra le guide piastre</value>
+  </data>
+  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 74</value>
+  </data>
+  <data name="m_viewToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 25</value>
+  </data>
+  <data name="m_fileToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
+    <value>Crea una nuova mappa</value>
+  </data>
+  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
+    <value>Apri mappa</value>
+  </data>
+  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
+    <value>Salva mappa</value>
+  </data>
+  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
+    <value>Salva mappa come...</value>
+  </data>
+  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
+    <value>Imposta la pagina per stampare</value>
+  </data>
+  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
+    <value>Visualizza anteprima di stampa</value>
+  </data>
+  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
+    <value>Stampa la mappa</value>
+  </data>
+  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
+    <value>Accedi opzioni generali</value>
+  </data>
+  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="m_menuStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
   <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
@@ -457,11 +593,17 @@
   <data name="m_viewMenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
   </data>
-  <data name="m_viewWindowModeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="m_viewFullScreenMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
-  <data name="m_viewWindowModeMenuItem.Text" xml:space="preserve">
+  <data name="m_viewFullScreenMenuItem.Text" xml:space="preserve">
     <value>A Tutto Schermo</value>
+  </data>
+  <data name="m_viewWindowedMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="m_viewWindowedMenuItem.Text" xml:space="preserve">
+    <value>Finestrato</value>
   </data>
   <data name="m_viewMenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
@@ -661,47 +803,11 @@
   <data name="m_helpMenuItem.Text" xml:space="preserve">
     <value>&amp;Aiuto</value>
   </data>
-  <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
-    <value>Fattore di ingrandimento</value>
+  <data name="m_menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 50</value>
   </data>
-  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
-    <value>In Scala</value>
-  </data>
-  <data name="m_viewZoomInButton.ToolTipText" xml:space="preserve">
-    <value>Zoom Avanti</value>
-  </data>
-  <data name="m_viewZoomOutButton.ToolTipText" xml:space="preserve">
-    <value>Zoom indietro</value>
-  </data>
-  <data name="m_viewWindowModeButton.ToolTipText" xml:space="preserve">
-    <value>Visualizza a tutto schermo</value>
-  </data>
-  <data name="m_viewLayerCompositingButton.ToolTipText" xml:space="preserve">
-    <value>Mostra tutti gli strati</value>
-  </data>
-  <data name="m_viewTileGuidesButton.ToolTipText" xml:space="preserve">
-    <value>Mostra le guide piastre</value>
-  </data>
-  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
-    <value>Crea un nuovo foglio di piastre</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Accedi gli atributi del foglio piastre selezionato</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
-    <value>Arrangia le auto piastre del foglio selezionato</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateButton.ToolTipText" xml:space="preserve">
-    <value>Attiva l'aggiornamento automatico delle fonti immagini dei fogli piastre </value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
-    <value>Rimuovi le dipendenze sul foglio piastre selezionato</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Cancella il foglio di piastre selezionato</value>
-  </data>
-  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+  <data name="m_layerToolStrip.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
   <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
     <value>Crea un nuovo strato</value>
@@ -726,6 +832,12 @@
   </data>
   <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 25</value>
+  </data>
+  <data name="m_toolStripContainer.TopToolStripPanel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
+  </data>
+  <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>AssociateIndex</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1489,9 +1601,5 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
 </root>
