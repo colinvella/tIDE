@@ -373,6 +373,7 @@
             resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
             this.m_duplicateIdMessageBox.HelpFilePath = null;
             this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Owner = this;
             // 
             // LayerPropertiesDialog
             // 

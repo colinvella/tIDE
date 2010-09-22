@@ -53,8 +53,7 @@ namespace TileMapEditor.Controls
                 if (formattedValue.Length == 0)
                 {
                     dataGridViewCellValidatingEventArgs.Cancel = true;
-                    MessageBox.Show(this, "No property name specified", "Property Name",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    m_noNameMessageBox.Show();
                     return;
                 }
 
@@ -66,8 +65,7 @@ namespace TileMapEditor.Controls
                     if (formattedValue.Equals(m_dataGridView[0, otherRowIdex].Value.ToString(), StringComparison.CurrentCultureIgnoreCase))            
                     {
                         dataGridViewCellValidatingEventArgs.Cancel = true;
-                        MessageBox.Show(this, "Another property with the same name is already defined", "Property Name",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        m_duplicateNameMessageBox.Show();
                         return;
                     }
                 }
