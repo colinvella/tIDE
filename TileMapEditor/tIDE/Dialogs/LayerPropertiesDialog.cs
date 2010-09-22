@@ -86,8 +86,7 @@ namespace TileMapEditor.Dialogs
                     continue;
                 if (newId == layer.Id)
                 {
-                    MessageBox.Show(this, "The specified Id is already used by another Layer",
-                        "Layer Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    m_duplicateIdMessageBox.Show();
                     return;
                 }
             }

@@ -131,7 +131,7 @@
     <value>200, 309</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 13</value>
+    <value>118, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Dimensioni delle Piastre</value>
@@ -149,7 +149,7 @@
     <value>200, 283</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
+    <value>114, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Dimensioni dello Strato</value>
@@ -166,14 +166,8 @@
   <data name="m_buttonApply.Text" xml:space="preserve">
     <value>A&amp;pplica</value>
   </data>
-  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
-  </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>
-  </data>
-  <data name="m_tabGeneral.Text" xml:space="preserve">
-    <value> Generale </value>
   </data>
   <data name="m_numericTileHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>218, 307</value>
@@ -199,8 +193,17 @@
   <data name="m_textBoxId.Size" type="System.Drawing.Size, System.Drawing">
     <value>412, 20</value>
   </data>
+  <data name="m_tabGeneral.Text" xml:space="preserve">
+    <value> Generale </value>
+  </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
     <value> Atributi Personalizzati </value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Atributi dello Strato</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
+    <value>L'ID specificato è già utilizzato da un altro strato</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -964,6 +967,10 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Atributi dello Strato</value>
