@@ -48,6 +48,7 @@
             this.m_frameIntervalTextbox = new System.Windows.Forms.NumericUpDown();
             this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
             this.m_buttonClose = new System.Windows.Forms.Button();
+            this.m_tileSizeMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             m_frameIntervalLabel = new System.Windows.Forms.Label();
             m_splitContainerOuter = new System.Windows.Forms.SplitContainer();
             m_splitContainerInner = new System.Windows.Forms.SplitContainer();
@@ -293,6 +294,13 @@
             this.m_buttonClose.Name = "m_buttonClose";
             this.m_buttonClose.UseVisualStyleBackColor = true;
             // 
+            // m_tileSizeMessageBox
+            // 
+            resources.ApplyResources(this.m_tileSizeMessageBox, "m_tileSizeMessageBox");
+            this.m_tileSizeMessageBox.HelpFilePath = null;
+            this.m_tileSizeMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_tileSizeMessageBox.Owner = this;
+            // 
             // TileAnimationDialog
             // 
             this.AcceptButton = this.m_buttonOk;
@@ -343,6 +351,7 @@
         private System.Windows.Forms.Timer m_animationTimer;
         private System.Windows.Forms.ToolStripMenuItem m_framePropertiesMenuItem;
         private System.Windows.Forms.Button m_buttonClose;
+        private TileMapEditor.Controls.CustomMessageBox m_tileSizeMessageBox;
 
     }
 }

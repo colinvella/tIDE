@@ -165,6 +165,9 @@
   <data name="m_buttonClose.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>
   </data>
+  <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
+    <value>Animazione della Piastra</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAAAAAAAEAIADidgAARgAAADAwAAABACAAqCUAACh3AAAgIAAAAQAgAKgQAADQnAAAEBAAAAEA
@@ -930,5 +933,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Animazione della Piastra</value>
+  </data>
+  <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
+    <value>Piastre di dimensioni incompatibili</value>
   </data>
 </root>

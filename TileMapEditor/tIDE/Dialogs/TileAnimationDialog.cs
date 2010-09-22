@@ -150,8 +150,7 @@ namespace TileMapEditor.Dialogs
         {
             if (m_draggedTileSheet.TileSize != m_layer.TileSize)
             {
-                MessageBox.Show(this, "Incompatible tile size", "Tile Animation",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_tileSizeMessageBox.Show();
                 return;
             }
 

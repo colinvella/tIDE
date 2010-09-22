@@ -124,6 +124,9 @@
   <data name="m_buttonApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>416, 377</value>
   </data>
+  <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
+    <value>Incompatible tile size</value>
+  </data>
   <data name="&gt;&gt;m_splitContainerOuter.Name" xml:space="preserve">
     <value>m_splitContainerOuter</value>
   </data>
@@ -369,6 +372,9 @@
   <data name="&gt;&gt;m_splitContainerInner.Panel2.Parent" xml:space="preserve">
     <value>m_splitContainerInner</value>
   </data>
+  <data name="&gt;&gt;m_tileSizeMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;m_animationListView.Name" xml:space="preserve">
     <value>m_animationListView</value>
   </data>
@@ -404,6 +410,9 @@
   </data>
   <data name="&gt;&gt;m_splitContainerOuter.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_tileSizeMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;m_customPanel.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -459,6 +468,9 @@
   <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
+    <value>Tile Animation</value>
+  </data>
   <data name="&gt;&gt;m_menuItemSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -467,6 +479,9 @@
   </data>
   <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
     <value>m_buttonOk</value>
+  </data>
+  <data name="&gt;&gt;m_tileSizeMessageBox.Name" xml:space="preserve">
+    <value>m_tileSizeMessageBox</value>
   </data>
   <data name="&gt;&gt;m_tilePicker.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1341,6 +1356,9 @@
   </metadata>
   <metadata name="m_animationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>391, 17</value>
+  </metadata>
+  <metadata name="m_tileSizeMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>544, 17</value>
   </metadata>
   <metadata name="m_frameIntervalLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
