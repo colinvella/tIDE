@@ -1097,9 +1097,7 @@ namespace TileMapEditor.Controls
                         if (m_textureDistribution.Count == 0)
                         {
                             EditTool = m_editTool; // restore old tool
-                            MessageBox.Show(this,
-                                "Must have a valid selection of tiles to sample",
-                                "Texture Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            m_textureToolMessageBox.Show();
                             return;
                         }
 
