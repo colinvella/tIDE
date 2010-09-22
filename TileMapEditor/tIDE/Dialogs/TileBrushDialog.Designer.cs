@@ -40,6 +40,7 @@
             this.m_renameButton = new System.Windows.Forms.Button();
             this.m_deleteButton = new System.Windows.Forms.Button();
             this.m_closeButton = new System.Windows.Forms.Button();
+            this.m_deleteBrushMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,6 +159,14 @@
             this.m_closeButton.Name = "m_closeButton";
             this.m_closeButton.UseVisualStyleBackColor = true;
             // 
+            // m_deleteBrushMessageBox
+            // 
+            this.m_deleteBrushMessageBox.Buttons = System.Windows.Forms.MessageBoxButtons.YesNo;
+            resources.ApplyResources(this.m_deleteBrushMessageBox, "m_deleteBrushMessageBox");
+            this.m_deleteBrushMessageBox.HelpFilePath = null;
+            this.m_deleteBrushMessageBox.Icon = System.Windows.Forms.MessageBoxIcon.Question;
+            this.m_deleteBrushMessageBox.Owner = this;
+            // 
             // TileBrushDialog
             // 
             this.AcceptButton = this.m_okButton;
@@ -195,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_renameMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_deleteMenuItem;
         private System.Windows.Forms.Button m_closeButton;
+        private TileMapEditor.Controls.CustomMessageBox m_deleteBrushMessageBox;
     }
 }

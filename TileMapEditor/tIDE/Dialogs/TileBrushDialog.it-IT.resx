@@ -148,6 +148,9 @@
   <data name="m_closeButton.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>
   </data>
+  <data name="m_deleteBrushMessageBox.Caption" xml:space="preserve">
+    <value>Cancella il pennello di piastre '[m_selectedTileBrush.Id]'</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAAAAAAAEAIADidgAARgAAADAwAAABACAAqCUAACh3AAAgIAAAAQAgAKgQAADQnAAAEBAAAAEA
@@ -911,7 +914,14 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pennelli di Piastre</value>
+  </data>
+  <data name="m_deleteBrushMessageBox.Text" xml:space="preserve">
+    <value>Sei sicuro di voler cancellare questo pennello di piastre?</value>
   </data>
 </root>

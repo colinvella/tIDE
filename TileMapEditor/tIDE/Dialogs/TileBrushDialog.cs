@@ -19,6 +19,7 @@ namespace TileMapEditor.Dialogs
         private Map m_map;
         private TileBrushCollection m_tileBrushCollection;
         private TileBrush m_newTileBrush;
+        private TileBrush m_selectedTileBrush;
 
         private void MarkAsModified()
         {
@@ -105,6 +106,10 @@ namespace TileMapEditor.Dialogs
         {
             bool selected = m_listView.SelectedIndices.Count > 0;
             m_renameButton.Enabled = m_deleteButton.Enabled = selected;
+
+            m_selectedTileBrush = selected
+                ? (TileBrush) m_listView.SelectedItems[0].Tag
+                : null;
         }
 
         private void OnAfterLabelEdit(object sender, LabelEditEventArgs labelEditEventArgs)
@@ -149,11 +154,7 @@ namespace TileMapEditor.Dialogs
             int index = m_listView.SelectedIndices[0];
 
             string tileBrushId = m_listView.Items[index].Text;
-            if (MessageBox.Show(this,
-                "Are you sure you want to delete this tile brush?",
-                "Delete tile brush '" + tileBrushId + "'?",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                    == DialogResult.No)
+            if (m_deleteBrushMessageBox.Show(this) == DialogResult.No)
                 return;
 
             m_listView.Items.RemoveAt(index);
@@ -210,6 +211,7 @@ namespace TileMapEditor.Dialogs
             m_map = map;
             m_tileBrushCollection = tileBrushCollection;
             m_newTileBrush = null;
+            m_selectedTileBrush = null;
         }
 
         public TileBrushDialog(Map map,
@@ -220,6 +222,7 @@ namespace TileMapEditor.Dialogs
             m_map = map;
             m_tileBrushCollection = tileBrushCollection;
             m_newTileBrush = newTileBrush;
+            m_selectedTileBrush = newTileBrush;
         }
     }
 }

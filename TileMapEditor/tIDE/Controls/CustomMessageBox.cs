@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace TileMapEditor.Controls
 {
@@ -12,11 +14,23 @@ namespace TileMapEditor.Controls
     {
         public CustomMessageBox()
         {
+            m_messageBoxButtons = MessageBoxButtons.OK;
+            m_messageBoxDefaultButton = MessageBoxDefaultButton.Button1;
+            m_messageBoxIcon = MessageBoxIcon.None;
+            m_messageBoxOptions = 0;
+            m_helpNavigator = HelpNavigator.Topic;
+
             InitializeComponent();
         }
 
         public CustomMessageBox(IContainer container)
         {
+            m_messageBoxButtons = MessageBoxButtons.OK;
+            m_messageBoxDefaultButton = MessageBoxDefaultButton.Button1;
+            m_messageBoxIcon = MessageBoxIcon.None;
+            m_messageBoxOptions = 0;
+            m_helpNavigator = HelpNavigator.Topic;
+
             container.Add(this);
 
             InitializeComponent();
@@ -24,9 +38,25 @@ namespace TileMapEditor.Controls
 
         public DialogResult Show(IWin32Window owner)
         {
-            return MessageBox.Show(owner, m_text, m_caption,
-                m_messageBoxButtons, m_messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions,
-                m_helpFilePath, m_helpNavigator);
+            string caption = EvaluateText(m_caption);
+            string text = EvaluateText(m_text);
+            if (m_helpFilePath == null)
+                return MessageBox.Show(owner, text, caption,
+                    m_messageBoxButtons, m_messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions);
+            else
+                return MessageBox.Show(owner, text, caption,
+                    m_messageBoxButtons, m_messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions,
+                    m_helpFilePath, m_helpNavigator);
+            }
+
+        [Browsable(true)]
+        [Category("Misc")]
+        [DefaultValue(null)]
+        [Description("Owner of this message box")]
+        public IWin32Window Owner
+        {
+            get { return m_owner; }
+            set { m_owner = value; }
         }
 
         [Browsable(true)]
@@ -55,7 +85,7 @@ namespace TileMapEditor.Controls
         [Category("Appearance")]
         [DefaultValue(System.Windows.Forms.MessageBoxButtons.OK)]
         [Description("Buttons to present to the user")]
-        public MessageBoxButtons MessageBoxButtons
+        public MessageBoxButtons Buttons
         {
             get { return m_messageBoxButtons; }
             set { m_messageBoxButtons = value; }
@@ -65,7 +95,7 @@ namespace TileMapEditor.Controls
         [Category("Behaviour")]
         [DefaultValue(System.Windows.Forms.MessageBoxDefaultButton.Button1)]
         [Description("Button selected by default")]
-        public MessageBoxDefaultButton MessageBoxDefaultButton
+        public MessageBoxDefaultButton DefaultButton
         {
             get { return m_messageBoxDefaultButton; }
             set { m_messageBoxDefaultButton = value; }
@@ -75,7 +105,7 @@ namespace TileMapEditor.Controls
         [Category("Appearance")]
         [DefaultValue(System.Windows.Forms.MessageBoxIcon.None)]
         [Description("Icon displayed within the message box")]
-        public MessageBoxIcon MessageBoxIcon
+        public MessageBoxIcon Icon
         {
             get { return m_messageBoxIcon; }
             set { m_messageBoxIcon = value; }
@@ -86,7 +116,7 @@ namespace TileMapEditor.Controls
         [DefaultValue(System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly)]
         [Description("Presentation options for the message box")]
         [Localizable(true)]
-        public MessageBoxOptions MessageBoxOptions
+        public MessageBoxOptions Options
         {
             get { return m_messageBoxOptions; }
             set { m_messageBoxOptions = value; }
@@ -105,7 +135,7 @@ namespace TileMapEditor.Controls
 
         [Browsable(true)]
         [Category("Misc")]
-        [DefaultValue(null)]
+        [DefaultValue(System.Windows.Forms.HelpNavigator.Topic)]
         [Description("Optional help navigator reference")]
         public HelpNavigator HelpNavigator
         {
@@ -113,6 +143,65 @@ namespace TileMapEditor.Controls
             set { m_helpNavigator = value; }
         }
 
+        private string ResolveReference(string reference)
+        {
+            if (m_owner == null)
+                return "(ERROR: Owner property not set)";
+
+            string[] tokens = reference.Split(new char[] { '.' });
+            object obj = m_owner;
+            foreach (string token in tokens)
+            {
+                Type type = obj.GetType();
+                FieldInfo fieldInfo = type.GetField(token, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                PropertyInfo propertyInfo = fieldInfo != null
+                    ? null
+                    : type.GetProperty(token, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                if (fieldInfo != null)
+                    obj = fieldInfo.GetValue(obj);
+                else if (propertyInfo != null)
+                    obj = propertyInfo.GetValue(obj, null);
+                else
+                    return "(ERROR: unkownn field or property '" + token + "')";
+            }
+
+            if (obj == null)
+                return "(null)";
+            else
+                return obj.ToString();
+        }
+
+        private string EvaluateText(string input)
+        {
+            int position = input.IndexOf('[');
+            if (position < 0)
+                return input;
+
+            StringBuilder output = new StringBuilder();
+            Match match = s_regex.Match(input);
+            int literalIndex = 0;
+            foreach (Capture capture in match.Captures)
+            {
+                if (literalIndex != capture.Index)
+                {
+                    string literalSegment
+                        = input.Substring(literalIndex, capture.Index - literalIndex);
+                    output.Append(literalSegment);
+                }
+                string reference = capture.Value.Replace("[", "").Replace("]", "");
+                string value = ResolveReference(reference);
+                output.Append(value);
+                literalIndex = capture.Index + capture.Length;
+            }
+            if (literalIndex < input.Length)
+                output.Append(input.Substring(literalIndex));
+            
+            return output.ToString();
+        }
+
+        private static Regex s_regex = new Regex(@"\[.*\]", RegexOptions.Compiled);
+
+        private IWin32Window m_owner;
         private string m_caption;
         private string m_text;
         private MessageBoxButtons m_messageBoxButtons;
