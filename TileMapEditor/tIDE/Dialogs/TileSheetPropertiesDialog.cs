@@ -577,8 +577,7 @@ namespace TileMapEditor.Dialogs
         {
             if (m_bitmapImageSource == null)
             {
-                MessageBox.Show(this, "No image source selected", "Tile Sheet Properties",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_noImageSourceMessageBox.Show();
                 DialogResult = DialogResult.None;
                 return;
             }
@@ -591,8 +590,7 @@ namespace TileMapEditor.Dialogs
                     continue;
                 if (newId == tileSheet.Id)
                 {
-                    MessageBox.Show(this, "The specified Id is already used by another tile sheet",
-                        "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    m_duplicateIdMessageBox.Show();
                     DialogResult = DialogResult.None;
                     return;
                 }
@@ -602,10 +600,9 @@ namespace TileMapEditor.Dialogs
                 || m_tileSheet.TileSize.Height != m_textBoxTileHeight.Value)
                 && m_tileSheet.Map.DependsOnTileSheet(m_tileSheet))
             {
-                    MessageBox.Show(this, "The tile size cannot be changed as this tile sheet is currently in use",
-                        "Tile Sheet Properties", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    DialogResult = DialogResult.None;
-                    return;
+                m_tileSizeFixedMessageBox.Show();
+                DialogResult = DialogResult.None;
+                return;
             }
 
             xTile.Dimensions.Size newTileSize = new xTile.Dimensions.Size(

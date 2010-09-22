@@ -117,46 +117,63 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_buttonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_labelTileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
   </data>
-  <data name="m_buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="m_labelTileSize.Text" xml:space="preserve">
+    <value>Dimensioni</value>
+  </data>
+  <data name="m_labelTileSizeBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 21</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 47</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 73</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Divario</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Divario</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Margine</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Dimensioni</value>
   </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
     <value>&amp;Annulla</value>
   </data>
-  <data name="m_buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
     <value>A&amp;pplica</value>
-  </data>
-  <data name="m_buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
     <value>&amp;Chiudi</value>
   </data>
-  <data name="m_labelImageSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_labelImageSource.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
   </data>
   <data name="m_labelImageSource.Text" xml:space="preserve">
     <value>Fonte Imagine</value>
   </data>
-  <data name="m_buttonBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="m_buttonBrowse.Text" xml:space="preserve">
     <value>Cerca...</value>
-  </data>
-  <data name="m_labelDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -164,14 +181,8 @@
   <data name="m_labelDescription.Text" xml:space="preserve">
     <value>Descrizione</value>
   </data>
-  <data name="m_labelId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="m_tabGeneral.Text" xml:space="preserve">
     <value> Generale </value>
-  </data>
-  <data name="m_buttonDoneSwapping.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="m_buttonDoneSwapping.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 255</value>
@@ -179,35 +190,14 @@
   <data name="m_buttonDoneSwapping.Text" xml:space="preserve">
     <value>Scambio Fatto</value>
   </data>
-  <data name="m_buttonSwapTiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="m_buttonSwapTiles.Text" xml:space="preserve">
     <value>Scambia Piastre</value>
   </data>
   <data name="m_textBoxTileWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 19</value>
   </data>
-  <data name="m_labelTileSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_labelTileSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="m_labelTileSize.Text" xml:space="preserve">
-    <value>Dimensioni</value>
-  </data>
-  <data name="m_labelTileSizeBy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_labelTileSizeBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 21</value>
-  </data>
   <data name="m_textBoxTileHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 19</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="m_textBoxLeftMargin.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 45</value>
@@ -218,18 +208,6 @@
   <data name="m_textBoxSpacingY.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 47</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 73</value>
-  </data>
   <data name="m_textBoxTopMargin.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 45</value>
   </data>
@@ -238,15 +216,6 @@
   </data>
   <data name="m_textBoxSpacingX.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Divario</value>
   </data>
   <data name="m_groupBoxCustomSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 101</value>
@@ -260,47 +229,17 @@
   <data name="m_comboBoxSpacing.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 103</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Divario</value>
-  </data>
   <data name="m_comboBoxMargin.Items" xml:space="preserve">
     <value>Personalizzate</value>
   </data>
   <data name="m_comboBoxMargin.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 76</value>
   </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Margine</value>
-  </data>
   <data name="m_comboBoxTileSize.Items" xml:space="preserve">
     <value>Personalizzate</value>
   </data>
   <data name="m_comboBoxTileSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 49</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Dimensioni</value>
-  </data>
-  <data name="m_buttonAutoDetect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="m_buttonAutoDetect.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 23</value>
@@ -320,17 +259,14 @@
   <data name="m_panelImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>329, 321</value>
   </data>
-  <data name="m_trackBarZoom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_labelZoom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="m_tabAlignment.Text" xml:space="preserve">
     <value> Allineamento </value>
   </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
     <value> Atributi Personalizzati </value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Caption" xml:space="preserve">
+    <value>Atributi del Foglio di Piastre</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1095,10 +1031,22 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Atributi del Foglio di Piastre</value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Text" xml:space="preserve">
+    <value>Nessuna fonte immagine selezionata</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Atributi del Foglio di Piastre</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
+    <value>L'Id specificato è già utilizzato da un altro foglio di piastre</value>
+  </data>
+  <data name="m_tileSizeFixedMessageBox.Caption" xml:space="preserve">
+    <value>Atributi del Foglio di Piastre</value>
+  </data>
+  <data name="m_tileSizeFixedMessageBox.Text" xml:space="preserve">
+    <value>La dimensione delle piastre non può essere cambiata, perche questo foglio è attualmente in uso</value>
   </data>
 </root>

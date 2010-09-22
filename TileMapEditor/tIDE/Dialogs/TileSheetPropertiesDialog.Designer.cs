@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_labelTileSize;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
             System.Windows.Forms.Label m_labelTileSizeBy;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
@@ -71,6 +72,9 @@
             this.m_labelZoom = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
+            this.m_noImageSourceMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_tileSizeFixedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             m_labelTileSize = new System.Windows.Forms.Label();
             m_labelTileSizeBy = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -94,6 +98,78 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_trackBarZoom)).BeginInit();
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // m_labelTileSize
+            // 
+            m_labelTileSize.AccessibleDescription = null;
+            m_labelTileSize.AccessibleName = null;
+            resources.ApplyResources(m_labelTileSize, "m_labelTileSize");
+            m_labelTileSize.Font = null;
+            m_labelTileSize.Name = "m_labelTileSize";
+            // 
+            // m_labelTileSizeBy
+            // 
+            m_labelTileSizeBy.AccessibleDescription = null;
+            m_labelTileSizeBy.AccessibleName = null;
+            resources.ApplyResources(m_labelTileSizeBy, "m_labelTileSizeBy");
+            m_labelTileSizeBy.Font = null;
+            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
+            // 
+            // label2
+            // 
+            label2.AccessibleDescription = null;
+            label2.AccessibleName = null;
+            resources.ApplyResources(label2, "label2");
+            label2.Font = null;
+            label2.Name = "label2";
+            // 
+            // label1
+            // 
+            label1.AccessibleDescription = null;
+            label1.AccessibleName = null;
+            resources.ApplyResources(label1, "label1");
+            label1.Font = null;
+            label1.Name = "label1";
+            // 
+            // label3
+            // 
+            label3.AccessibleDescription = null;
+            label3.AccessibleName = null;
+            resources.ApplyResources(label3, "label3");
+            label3.Font = null;
+            label3.Name = "label3";
+            // 
+            // label4
+            // 
+            label4.AccessibleDescription = null;
+            label4.AccessibleName = null;
+            resources.ApplyResources(label4, "label4");
+            label4.Font = null;
+            label4.Name = "label4";
+            // 
+            // label7
+            // 
+            label7.AccessibleDescription = null;
+            label7.AccessibleName = null;
+            resources.ApplyResources(label7, "label7");
+            label7.Font = null;
+            label7.Name = "label7";
+            // 
+            // label6
+            // 
+            label6.AccessibleDescription = null;
+            label6.AccessibleName = null;
+            resources.ApplyResources(label6, "label6");
+            label6.Font = null;
+            label6.Name = "label6";
+            // 
+            // label5
+            // 
+            label5.AccessibleDescription = null;
+            label5.AccessibleName = null;
+            resources.ApplyResources(label5, "label5");
+            label5.Font = null;
+            label5.Name = "label5";
             // 
             // m_buttonOk
             // 
@@ -324,22 +400,6 @@
             0});
             this.m_textBoxTileWidth.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
-            // m_labelTileSize
-            // 
-            m_labelTileSize.AccessibleDescription = null;
-            m_labelTileSize.AccessibleName = null;
-            resources.ApplyResources(m_labelTileSize, "m_labelTileSize");
-            m_labelTileSize.Font = null;
-            m_labelTileSize.Name = "m_labelTileSize";
-            // 
-            // m_labelTileSizeBy
-            // 
-            m_labelTileSizeBy.AccessibleDescription = null;
-            m_labelTileSizeBy.AccessibleName = null;
-            resources.ApplyResources(m_labelTileSizeBy, "m_labelTileSizeBy");
-            m_labelTileSizeBy.Font = null;
-            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
-            // 
             // m_textBoxTileHeight
             // 
             this.m_textBoxTileHeight.AccessibleDescription = null;
@@ -363,14 +423,6 @@
             0,
             0});
             this.m_textBoxTileHeight.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // label2
-            // 
-            label2.AccessibleDescription = null;
-            label2.AccessibleName = null;
-            resources.ApplyResources(label2, "label2");
-            label2.Font = null;
-            label2.Name = "label2";
             // 
             // m_textBoxLeftMargin
             // 
@@ -400,22 +452,6 @@
             this.m_textBoxSpacingY.Name = "m_textBoxSpacingY";
             this.m_textBoxSpacingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
-            // label1
-            // 
-            label1.AccessibleDescription = null;
-            label1.AccessibleName = null;
-            resources.ApplyResources(label1, "label1");
-            label1.Font = null;
-            label1.Name = "label1";
-            // 
-            // label3
-            // 
-            label3.AccessibleDescription = null;
-            label3.AccessibleName = null;
-            resources.ApplyResources(label3, "label3");
-            label3.Font = null;
-            label3.Name = "label3";
-            // 
             // m_textBoxTopMargin
             // 
             this.m_textBoxTopMargin.AccessibleDescription = null;
@@ -443,14 +479,6 @@
             0});
             this.m_textBoxSpacingX.Name = "m_textBoxSpacingX";
             this.m_textBoxSpacingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
-            // 
-            // label4
-            // 
-            label4.AccessibleDescription = null;
-            label4.AccessibleName = null;
-            resources.ApplyResources(label4, "label4");
-            label4.Font = null;
-            label4.Name = "label4";
             // 
             // m_groupBoxQuickSettings
             // 
@@ -487,30 +515,6 @@
             resources.GetString("m_comboBoxSpacing.Items5")});
             this.m_comboBoxSpacing.Name = "m_comboBoxSpacing";
             this.m_comboBoxSpacing.SelectedIndexChanged += new System.EventHandler(this.OnSpacingCombo);
-            // 
-            // label7
-            // 
-            label7.AccessibleDescription = null;
-            label7.AccessibleName = null;
-            resources.ApplyResources(label7, "label7");
-            label7.Font = null;
-            label7.Name = "label7";
-            // 
-            // label6
-            // 
-            label6.AccessibleDescription = null;
-            label6.AccessibleName = null;
-            resources.ApplyResources(label6, "label6");
-            label6.Font = null;
-            label6.Name = "label6";
-            // 
-            // label5
-            // 
-            label5.AccessibleDescription = null;
-            label5.AccessibleName = null;
-            resources.ApplyResources(label5, "label5");
-            label5.Font = null;
-            label5.Name = "label5";
             // 
             // m_comboBoxMargin
             // 
@@ -619,6 +623,27 @@
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
+            // m_noImageSourceMessageBox
+            // 
+            resources.ApplyResources(this.m_noImageSourceMessageBox, "m_noImageSourceMessageBox");
+            this.m_noImageSourceMessageBox.HelpFilePath = null;
+            this.m_noImageSourceMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_noImageSourceMessageBox.Owner = this;
+            // 
+            // m_duplicateIdMessageBox
+            // 
+            resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
+            this.m_duplicateIdMessageBox.HelpFilePath = null;
+            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Owner = this;
+            // 
+            // m_tileSizeFixedMessageBox
+            // 
+            resources.ApplyResources(this.m_tileSizeFixedMessageBox, "m_tileSizeFixedMessageBox");
+            this.m_tileSizeFixedMessageBox.HelpFilePath = null;
+            this.m_tileSizeFixedMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_tileSizeFixedMessageBox.Owner = this;
+            // 
             // TileSheetPropertiesDialog
             // 
             this.AcceptButton = this.m_buttonOk;
@@ -694,5 +719,8 @@
         private System.Windows.Forms.Button m_buttonSwapTiles;
         private System.Windows.Forms.Button m_buttonClose;
         private System.Windows.Forms.Button m_buttonDoneSwapping;
+        private TileMapEditor.Controls.CustomMessageBox m_noImageSourceMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_tileSizeFixedMessageBox;
     }
 }
