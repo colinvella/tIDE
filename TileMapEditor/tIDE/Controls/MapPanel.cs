@@ -174,7 +174,7 @@ namespace TileMapEditor.Controls
 
             if (m_selectedLayer.TileSize != m_selectedTileSheet.TileSize)
             {
-                MessageBox.Show(this, "Incompatible tile size", "Layer Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_tileSizeMessageBox.Show();
                 return;
             }
 
@@ -211,7 +211,7 @@ namespace TileMapEditor.Controls
 
             if (m_selectedLayer.TileSize != m_selectedTileSheet.TileSize)
             {
-                MessageBox.Show(this, "Incompatible tile size", "Layer Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_tileSizeMessageBox.Show();
                 return;
             }
 
@@ -282,7 +282,7 @@ namespace TileMapEditor.Controls
 
             if (m_selectedLayer.TileSize != sampledTile.TileSheet.TileSize)
             {
-                MessageBox.Show(this, "Incompatible tile size", "Layer Editor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_tileSizeMessageBox.Show();
                 return;
             }
 
@@ -329,7 +329,7 @@ namespace TileMapEditor.Controls
 
             if (m_selectedTileBrush.TileSize != m_selectedLayer.TileSize)
             {
-                MessageBox.Show(this, "Incompatible tile size", "Apply TileBrush", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_tileSizeMessageBox.Show();
                 return;
             }
 

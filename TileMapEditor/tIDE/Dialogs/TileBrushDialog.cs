@@ -154,7 +154,7 @@ namespace TileMapEditor.Dialogs
             int index = m_listView.SelectedIndices[0];
 
             string tileBrushId = m_listView.Items[index].Text;
-            if (m_deleteBrushMessageBox.Show(this) == DialogResult.No)
+            if (m_deleteBrushMessageBox.Show() == DialogResult.No)
                 return;
 
             m_listView.Items.RemoveAt(index);

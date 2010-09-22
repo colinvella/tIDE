@@ -164,7 +164,7 @@
             this.m_deleteBrushMessageBox.Buttons = System.Windows.Forms.MessageBoxButtons.YesNo;
             resources.ApplyResources(this.m_deleteBrushMessageBox, "m_deleteBrushMessageBox");
             this.m_deleteBrushMessageBox.HelpFilePath = null;
-            this.m_deleteBrushMessageBox.Icon = System.Windows.Forms.MessageBoxIcon.Question;
+            this.m_deleteBrushMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Question;
             this.m_deleteBrushMessageBox.Owner = this;
             // 
             // TileBrushDialog

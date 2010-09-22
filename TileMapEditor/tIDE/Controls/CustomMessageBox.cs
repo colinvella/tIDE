@@ -16,7 +16,7 @@ namespace TileMapEditor.Controls
         {
             m_messageBoxButtons = MessageBoxButtons.OK;
             m_messageBoxDefaultButton = MessageBoxDefaultButton.Button1;
-            m_messageBoxIcon = MessageBoxIcon.None;
+            m_messageIcon = MessageIcon.None;
             m_messageBoxOptions = 0;
             m_helpNavigator = HelpNavigator.Topic;
 
@@ -27,7 +27,7 @@ namespace TileMapEditor.Controls
         {
             m_messageBoxButtons = MessageBoxButtons.OK;
             m_messageBoxDefaultButton = MessageBoxDefaultButton.Button1;
-            m_messageBoxIcon = MessageBoxIcon.None;
+            m_messageIcon = MessageIcon.None;
             m_messageBoxOptions = 0;
             m_helpNavigator = HelpNavigator.Topic;
 
@@ -36,16 +36,27 @@ namespace TileMapEditor.Controls
             InitializeComponent();
         }
 
-        public DialogResult Show(IWin32Window owner)
+        public DialogResult Show()
         {
             string caption = EvaluateText(m_caption);
             string text = EvaluateText(m_text);
+
+            MessageBoxIcon messageBoxIcon = MessageBoxIcon.None;
+            switch (m_messageIcon)
+            {
+                case MessageIcon.None: messageBoxIcon = MessageBoxIcon.None; break;
+                case MessageIcon.Information: messageBoxIcon = MessageBoxIcon.Information; break;
+                case MessageIcon.Warning: messageBoxIcon = MessageBoxIcon.Warning; break;
+                case MessageIcon.Error: messageBoxIcon = MessageBoxIcon.Error; break;
+                case MessageIcon.Question: messageBoxIcon = MessageBoxIcon.Question; break;
+            }
+
             if (m_helpFilePath == null)
-                return MessageBox.Show(owner, text, caption,
-                    m_messageBoxButtons, m_messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions);
+                return MessageBox.Show(m_owner, text, caption,
+                    m_messageBoxButtons, messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions);
             else
-                return MessageBox.Show(owner, text, caption,
-                    m_messageBoxButtons, m_messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions,
+                return MessageBox.Show(m_owner, text, caption,
+                    m_messageBoxButtons, messageBoxIcon, m_messageBoxDefaultButton, m_messageBoxOptions,
                     m_helpFilePath, m_helpNavigator);
             }
 
@@ -103,12 +114,12 @@ namespace TileMapEditor.Controls
 
         [Browsable(true)]
         [Category("Appearance")]
-        [DefaultValue(System.Windows.Forms.MessageBoxIcon.None)]
+        [DefaultValue(MessageIcon.None)]
         [Description("Icon displayed within the message box")]
-        public MessageBoxIcon Icon
+        public MessageIcon Icon
         {
-            get { return m_messageBoxIcon; }
-            set { m_messageBoxIcon = value; }
+            get { return m_messageIcon; }
+            set { m_messageIcon = value; }
         }
 
         [Browsable(true)]
@@ -206,9 +217,18 @@ namespace TileMapEditor.Controls
         private string m_text;
         private MessageBoxButtons m_messageBoxButtons;
         private MessageBoxDefaultButton m_messageBoxDefaultButton;
-        private MessageBoxIcon m_messageBoxIcon;
+        private MessageIcon m_messageIcon;
         private MessageBoxOptions m_messageBoxOptions;
         private string m_helpFilePath;
         private HelpNavigator m_helpNavigator;
+    }
+
+    public enum MessageIcon
+    {
+        None,
+        Information,
+        Warning,
+        Error,
+        Question
     }
 }

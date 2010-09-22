@@ -37,6 +37,7 @@
             this.m_tilePropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileAnimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_innerPanel = new TileMapEditor.Controls.CustomPanel();
+            this.m_tileSizeMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_tileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +115,13 @@
             this.m_innerPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
             this.m_innerPanel.MouseEnter += new System.EventHandler(this.OnMouseEnter);
             // 
+            // m_tileSizeMessageBox
+            // 
+            resources.ApplyResources(this.m_tileSizeMessageBox, "m_tileSizeMessageBox");
+            this.m_tileSizeMessageBox.HelpFilePath = null;
+            this.m_tileSizeMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_tileSizeMessageBox.Owner = this;
+            // 
             // MapPanel
             // 
             this.AccessibleDescription = null;
@@ -141,5 +149,6 @@
         private System.Windows.Forms.ContextMenuStrip m_tileContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem m_tilePropertiesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tileAnimationToolStripMenuItem;
+        private CustomMessageBox m_tileSizeMessageBox;
     }
 }
