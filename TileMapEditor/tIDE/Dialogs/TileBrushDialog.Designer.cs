@@ -41,6 +41,7 @@
             this.m_deleteButton = new System.Windows.Forms.Button();
             this.m_closeButton = new System.Windows.Forms.Button();
             this.m_deleteBrushMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_duplicteIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,6 +168,13 @@
             this.m_deleteBrushMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Question;
             this.m_deleteBrushMessageBox.Owner = this;
             // 
+            // m_duplicteIdMessageBox
+            // 
+            resources.ApplyResources(this.m_duplicteIdMessageBox, "m_duplicteIdMessageBox");
+            this.m_duplicteIdMessageBox.HelpFilePath = null;
+            this.m_duplicteIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicteIdMessageBox.Owner = this;
+            // 
             // TileBrushDialog
             // 
             this.AcceptButton = this.m_okButton;
@@ -205,5 +213,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_deleteMenuItem;
         private System.Windows.Forms.Button m_closeButton;
         private TileMapEditor.Controls.CustomMessageBox m_deleteBrushMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_duplicteIdMessageBox;
     }
 }

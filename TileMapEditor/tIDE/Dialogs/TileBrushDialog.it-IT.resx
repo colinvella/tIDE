@@ -124,6 +124,9 @@
     <value>&amp;Annulla</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 48</value>
+  </data>
   <data name="m_renameMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
@@ -135,9 +138,6 @@
   </data>
   <data name="m_deleteMenuItem.Text" xml:space="preserve">
     <value>Cancella</value>
-  </data>
-  <data name="m_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 48</value>
   </data>
   <data name="m_renameButton.Text" xml:space="preserve">
     <value>&amp;Rinomina</value>
@@ -914,14 +914,16 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pennelli di Piastre</value>
   </data>
   <data name="m_deleteBrushMessageBox.Text" xml:space="preserve">
     <value>Sei sicuro di voler cancellare questo pennello di piastre?</value>
+  </data>
+  <data name="m_duplicteIdMessageBox.Caption" xml:space="preserve">
+    <value>Pennelli di Piastre</value>
+  </data>
+  <data name="m_duplicteIdMessageBox.Text" xml:space="preserve">
+    <value>L'Id del pennello di piastre '[m_newLabel]' è già in uso</value>
   </data>
 </root>

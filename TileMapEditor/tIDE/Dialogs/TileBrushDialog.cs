@@ -20,6 +20,7 @@ namespace TileMapEditor.Dialogs
         private TileBrushCollection m_tileBrushCollection;
         private TileBrush m_newTileBrush;
         private TileBrush m_selectedTileBrush;
+        private string m_newLabel;
 
         private void MarkAsModified()
         {
@@ -114,18 +115,15 @@ namespace TileMapEditor.Dialogs
 
         private void OnAfterLabelEdit(object sender, LabelEditEventArgs labelEditEventArgs)
         {
-            string newLabel = labelEditEventArgs.Label;
+            m_newLabel = labelEditEventArgs.Label;
             for (int index = 0; index < m_tileBrushCollection.TileBrushes.Count; index++)
             {
                 if (index == labelEditEventArgs.Item)
                     continue;
-                if (newLabel == m_listView.Items[index].Text)
+                if (m_newLabel == m_listView.Items[index].Text)
                 {
                     labelEditEventArgs.CancelEdit = true;
-                    MessageBox.Show(this, 
-                        "The tile brush ID '" + newLabel + "' is already in use.",
-                        "Tile Brush Dialog",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    m_duplicteIdMessageBox.Show();
                     return;
                 }
             }

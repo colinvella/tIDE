@@ -176,6 +176,9 @@
   <data name="m_applyButton.Text" xml:space="preserve">
     <value>&amp;Apply</value>
   </data>
+  <data name="&gt;&gt;m_duplicteIdMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="m_okButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -230,6 +233,9 @@
   <data name="&gt;&gt;m_renameMenuItem.Name" xml:space="preserve">
     <value>m_renameMenuItem</value>
   </data>
+  <data name="m_duplicteIdMessageBox.Caption" xml:space="preserve">
+    <value>Tile Brushes</value>
+  </data>
   <data name="&gt;&gt;m_deleteBrushMessageBox.Name" xml:space="preserve">
     <value>m_deleteBrushMessageBox</value>
   </data>
@@ -251,6 +257,12 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_duplicteIdMessageBox.Name" xml:space="preserve">
+    <value>m_duplicteIdMessageBox</value>
+  </data>
+  <data name="m_duplicteIdMessageBox.Text" xml:space="preserve">
+    <value>The tile brush Id '[m_newLabel]' is already in use</value>
   </data>
   <data name="m_renameButton.Text" xml:space="preserve">
     <value>&amp;Rename</value>
@@ -1162,6 +1174,9 @@
   <data name="m_renameMenuItem.Text" xml:space="preserve">
     <value>Rename</value>
   </data>
+  <data name="m_duplicteIdMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;m_renameMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1183,7 +1198,7 @@
   <metadata name="m_deleteBrushMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>182, 17</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Italian (Italy)</value>
+  <metadata name="m_duplicteIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>382, 17</value>
   </metadata>
 </root>
