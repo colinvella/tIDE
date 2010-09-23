@@ -81,8 +81,7 @@ namespace TileMapEditor.Dialogs
             m_txtNewId.Text = m_txtNewId.Text.Trim();
             if (m_txtNewId.Text.Length == 0)
             {
-                MessageBox.Show(this, "No ID specified", "Rename Auto Tile",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_noIdMessageBox.Show();
                 m_txtNewId.Focus();
                 return;
             }
@@ -94,8 +93,7 @@ namespace TileMapEditor.Dialogs
                     continue;
                 if (autoTile.Id == m_txtNewId.Text)
                 {
-                    MessageBox.Show(this, "The ID '" + m_txtNewId.Text + "' is already in use",
-                        "Rename Auto Tile", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    m_duplicateIdMessageBox.Show();
                     m_txtNewId.Focus();
                     return;
                 }
@@ -220,10 +218,7 @@ namespace TileMapEditor.Dialogs
 
         private void OnDeleteAutoTile(object sender, EventArgs eventArgs)
         {
-            if (MessageBox.Show(this, "Are you sure?",
-                "Delete auto tile definition '" + m_selectedAutoTile.Id + "'",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2) == DialogResult.No)
+            if (m_deleteMessageBox.Show() == DialogResult.No)
                 return;
 
             int currentIndex = m_autoTiles.IndexOf(m_selectedAutoTile);

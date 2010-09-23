@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label m_lblId;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTileDialog));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
@@ -42,6 +43,9 @@
             this.m_btnRename = new System.Windows.Forms.Button();
             this.m_txtNewId = new System.Windows.Forms.TextBox();
             this.m_btnCancel = new System.Windows.Forms.Button();
+            this.m_noIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_deleteMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             m_lblId = new System.Windows.Forms.Label();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
@@ -212,6 +216,29 @@
             this.m_btnCancel.Name = "m_btnCancel";
             this.m_btnCancel.UseVisualStyleBackColor = true;
             // 
+            // m_noIdMessageBox
+            // 
+            resources.ApplyResources(this.m_noIdMessageBox, "m_noIdMessageBox");
+            this.m_noIdMessageBox.HelpFilePath = null;
+            this.m_noIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_noIdMessageBox.Owner = this;
+            // 
+            // m_duplicateIdMessageBox
+            // 
+            resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
+            this.m_duplicateIdMessageBox.HelpFilePath = null;
+            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Owner = this;
+            // 
+            // m_deleteMessageBox
+            // 
+            this.m_deleteMessageBox.Buttons = System.Windows.Forms.MessageBoxButtons.YesNo;
+            resources.ApplyResources(this.m_deleteMessageBox, "m_deleteMessageBox");
+            this.m_deleteMessageBox.DefaultButton = System.Windows.Forms.MessageBoxDefaultButton.Button2;
+            this.m_deleteMessageBox.HelpFilePath = null;
+            this.m_deleteMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Question;
+            this.m_deleteMessageBox.Owner = this;
+            // 
             // AutoTileDialog
             // 
             this.AccessibleDescription = null;
@@ -258,6 +285,9 @@
         private System.Windows.Forms.Button m_btnRename;
         private System.Windows.Forms.TextBox m_txtNewId;
         private System.Windows.Forms.Button m_btnCancel;
+        private TileMapEditor.Controls.CustomMessageBox m_noIdMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_deleteMessageBox;
 
 
     }

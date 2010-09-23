@@ -139,6 +139,9 @@
   <data name="m_btnCancel.Text" xml:space="preserve">
     <value>&amp;Annulla</value>
   </data>
+  <data name="m_noIdMessageBox.Caption" xml:space="preserve">
+    <value>Rinomina Auto Piastra</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAAAAAAAEAIADidgAARgAAADAwAAABACAAqCUAACh3AAAgIAAAAQAgAKgQAADQnAAAEBAAAAEA
@@ -904,5 +907,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Auto Piastre</value>
+  </data>
+  <data name="m_noIdMessageBox.Text" xml:space="preserve">
+    <value>Nessun Id specificato</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Rinomina Auto Piastra</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
+    <value>La Id '[m_txtNewId.Text]' è già in uso</value>
+  </data>
+  <data name="m_deleteMessageBox.Caption" xml:space="preserve">
+    <value>Auto Piastre</value>
+  </data>
+  <data name="m_deleteMessageBox.Text" xml:space="preserve">
+    <value>Sei sicuro di voler cancellare la definizione di questa auto piasta?</value>
   </data>
 </root>
