@@ -11,11 +11,6 @@ namespace TileMapEditor.Localisation
 {
     class LanguageManager
     {
-        public const string GenericOK = "Generic.OK";
-        public const string GenericCancel = "Generic.Cancel";
-        public const string GenericApply = "Generic.Apply";
-        public const string GenericClose = "Generic.Close";
-
         public static void Initialise()
         {
             CultureInfo cultureInfo = new CultureInfo(Language.Code);
