@@ -23,13 +23,6 @@ namespace TileMapEditor.Installer
         {
             base.Commit(savedState);
 
-            /*
-            if (MessageBox.Show(
-                "Do you want to run tIDE now?", "tIDE Tile Map Editor",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button1) == DialogResult.No)
-                return;
-            */
             RunApplicationDialog runApplicationDialog = new RunApplicationDialog();
             if (runApplicationDialog.ShowDialog() == DialogResult.No)
                 return;
