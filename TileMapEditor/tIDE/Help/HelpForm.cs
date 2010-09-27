@@ -17,6 +17,7 @@ namespace TileMapEditor.Help
         private Dictionary<string, List<string>> m_contentIndex;
         private char[] m_delimeters;
         private Dictionary<string, byte> m_keywordBlacklist;
+        private string m_resourceName;
 
         private void ProcessHelpLinks()
         {
@@ -57,6 +58,9 @@ namespace TileMapEditor.Help
 
         private byte[] LoadHelpContent(string resourceName)
         {
+            // stored as class field for use with message box
+            m_resourceName = resourceName;
+
             Type resourcesType = typeof(Properties.Resources);
 
             m_contentRichTextBox.Clear();
@@ -64,9 +68,7 @@ namespace TileMapEditor.Help
             PropertyInfo propertyInfo = resourcesType.GetProperty(resourceName, BindingFlags.Static | BindingFlags.NonPublic);
             if (propertyInfo == null)
             {
-                MessageBox.Show(this,
-                    "Content resource \"" + resourceName + "\" is not defined",
-                    "Load Help Content", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_noContentMessageBox.Show();
                 return null;
             }
 
@@ -75,8 +77,7 @@ namespace TileMapEditor.Help
 
             if (!(propertyValue is byte[]))
             {
-                MessageBox.Show(this, "Content resource \"" + resourceName + "\" is in the wrong format",
-                    "Load Help Content", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_badContentMessageBox.Show();
                 return null;
             }
 

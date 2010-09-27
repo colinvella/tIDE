@@ -303,7 +303,10 @@
     <value>Cerca</value>
   </data>
   <data name="m_toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 25</value>
+    <value>212, 25</value>
+  </data>
+  <data name="m_noContentMessageBox.Caption" xml:space="preserve">
+    <value>Caricare il Contenuto della Guida</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -808,7 +811,20 @@
         9v8AAPz/AABczAAAAEoAAOPsAAD//wAAr/8AADH/gAA5/4ABN//AAzP/8A8z/w==
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>tIDE Aiuto</value>
+  </data>
+  <data name="m_noContentMessageBox.Text" xml:space="preserve">
+    <value>La risorsa del contenuto "[m_resourceName]" non è definita</value>
+  </data>
+  <data name="m_badContentMessageBox.Caption" xml:space="preserve">
+    <value>Caricare il Contenuto della Guida</value>
+  </data>
+  <data name="m_badContentMessageBox.Text" xml:space="preserve">
+    <value>La risorsa del contenuto "[m_resourceName]" è nel formato sbagliato</value>
   </data>
 </root>
