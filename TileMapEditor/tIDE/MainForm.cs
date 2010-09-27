@@ -477,9 +477,8 @@ namespace TileMapEditor
             }
             catch (Exception exception)
             {
-                MessageBox.Show(this,
-                    "An error occured whilst opening the file. Details: " + exception.Message,
-                    "Open Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_loadErrorMessageBox.VariableDictionary["message"] = exception.Message;
+                m_loadErrorMessageBox.Show();                   
             }
 
             Directory.SetCurrentDirectory(oldCurrentDirectory);
@@ -532,9 +531,8 @@ namespace TileMapEditor
             }
             catch (Exception exception)
             {
-                MessageBox.Show(this,
-                    "An error occured whilst saving the file. Details: " + exception.Message,
-                    "Save Map", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                m_saveErrorMessageBox.VariableDictionary["message"] = exception.Message;
+                m_saveErrorMessageBox.Show();                   
 
                 // restore paths
                 foreach (TileSheet tileSheet in m_map.TileSheets)
@@ -600,11 +598,7 @@ namespace TileMapEditor
         private void OnMainFormClosing(object sender, FormClosingEventArgs formClosingEventArgs)
         {
             if (m_needsSaving &&
-                MessageBox.Show(this,
-                    "You have unsaved changes. Are you sure you want to exit the application?",
-                    "Exit",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                        == DialogResult.No)
+                m_unsavedMessageBox.Show() == DialogResult.No)
                 formClosingEventArgs.Cancel = true;
         }
 
@@ -660,8 +654,8 @@ namespace TileMapEditor
 
         private void OnFileNew(object sender, EventArgs eventArgs)
         {
-            if (MessageBox.Show(this, "Start a new map project?", "New map", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                == DialogResult.No)
+            if (!m_needsSaving
+                && m_unsavedMessageBox.Show() == DialogResult.No)
                 return;
 
             Map map = new Map("Untitled Map");
@@ -691,11 +685,8 @@ namespace TileMapEditor
 
         private void OnFileOpen(object sender, EventArgs eventArgs)
         {
-            if (m_needsSaving
-                && MessageBox.Show(this,
-                    "Any unsaved changes in the current map will be lost. Do you want to continue?",
-                    "Open Map", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                return;
+            if (m_needsSaving &&
+                m_unsavedMessageBox.Show() == DialogResult.No) return;
 
             FormatManager formatManager = FormatManager.Instance;
 
@@ -780,10 +771,8 @@ namespace TileMapEditor
 
         private void OnFileOpenRecent(object sender, EventArgs eventArgs)
         {
-            if (m_needsSaving
-                && MessageBox.Show(this,
-                    "Any unsaved changes in the current map will be lost. Do you want to continue?",
-                    "Open Map", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+            if (m_needsSaving &&
+                m_unsavedMessageBox.Show() == DialogResult.No)
                 return;
 
             string filename = ((ToolStripMenuItem)sender).Text;

@@ -19,6 +19,7 @@ namespace TileMapEditor.Controls
             m_messageIcon = MessageIcon.None;
             m_messageBoxOptions = 0;
             m_helpNavigator = HelpNavigator.Topic;
+            m_variableDictionary = new Dictionary<string, object>();
 
             InitializeComponent();
         }
@@ -30,6 +31,7 @@ namespace TileMapEditor.Controls
             m_messageIcon = MessageIcon.None;
             m_messageBoxOptions = 0;
             m_helpNavigator = HelpNavigator.Topic;
+            m_variableDictionary = new Dictionary<string, object>();
 
             container.Add(this);
 
@@ -154,8 +156,16 @@ namespace TileMapEditor.Controls
             set { m_helpNavigator = value; }
         }
 
+        public IDictionary<string, object> VariableDictionary
+        {
+            get { return m_variableDictionary; }
+        }
+
         private string ResolveReference(string reference)
         {
+            if (m_variableDictionary.ContainsKey(reference))
+                return m_variableDictionary[reference].ToString();
+
             if (m_owner == null)
                 return "(ERROR: Owner property not set)";
 
@@ -164,6 +174,7 @@ namespace TileMapEditor.Controls
             foreach (string token in tokens)
             {
                 Type type = obj.GetType();
+
                 FieldInfo fieldInfo = type.GetField(token, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
                 PropertyInfo propertyInfo = fieldInfo != null
                     ? null
@@ -221,6 +232,7 @@ namespace TileMapEditor.Controls
         private MessageBoxOptions m_messageBoxOptions;
         private string m_helpFilePath;
         private HelpNavigator m_helpNavigator;
+        private Dictionary<string, object> m_variableDictionary;
     }
 
     public enum MessageIcon
