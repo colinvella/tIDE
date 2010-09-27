@@ -218,6 +218,8 @@
             this.m_loadErrorMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_saveErrorMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_unsavedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_hasDependencyMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_dependencyRemovedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             m_fileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_fileSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             m_fileSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -1795,6 +1797,18 @@
             this.m_unsavedMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Warning;
             this.m_unsavedMessageBox.Owner = this;
             // 
+            // m_hasDependencyMessageBox
+            // 
+            resources.ApplyResources(this.m_hasDependencyMessageBox, "m_hasDependencyMessageBox");
+            this.m_hasDependencyMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_hasDependencyMessageBox.Owner = this;
+            // 
+            // m_dependencyRemovedMessageBox
+            // 
+            resources.ApplyResources(this.m_dependencyRemovedMessageBox, "m_dependencyRemovedMessageBox");
+            this.m_dependencyRemovedMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Information;
+            this.m_dependencyRemovedMessageBox.Owner = this;
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2034,5 +2048,7 @@
         private TileMapEditor.Controls.CustomMessageBox m_loadErrorMessageBox;
         private TileMapEditor.Controls.CustomMessageBox m_saveErrorMessageBox;
         private TileMapEditor.Controls.CustomMessageBox m_unsavedMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_hasDependencyMessageBox;
+        private TileMapEditor.Controls.CustomMessageBox m_dependencyRemovedMessageBox;
     }
 }
