@@ -782,6 +782,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TileSheetAlignment {
+            get {
+                object obj = ResourceManager.GetObject("TileSheetAlignment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileSheetAutoTiles {
             get {
                 object obj = ResourceManager.GetObject("TileSheetAutoTiles", resourceCulture);

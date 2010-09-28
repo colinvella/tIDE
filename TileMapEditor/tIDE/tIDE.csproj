@@ -565,6 +565,7 @@
     <None Include="Resources\FileOptions.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\TileSheetAlignment.png" />
     <None Include="Resources\OptionsLanguage.png" />
     <None Include="Resources\TileSheetAutoTiles.png" />
     <None Include="Resources\MapCompatibilityFull.png" />

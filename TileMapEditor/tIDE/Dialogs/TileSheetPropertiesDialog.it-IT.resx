@@ -181,6 +181,12 @@
   <data name="m_labelDescription.Text" xml:space="preserve">
     <value>Descrizione</value>
   </data>
+  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 21</value>
+  </data>
+  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 334</value>
+  </data>
   <data name="m_tabGeneral.Text" xml:space="preserve">
     <value> Generale </value>
   </data>
@@ -259,8 +265,20 @@
   <data name="m_panelImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>329, 321</value>
   </data>
+  <data name="m_tabAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 21</value>
+  </data>
+  <data name="m_tabAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 334</value>
+  </data>
   <data name="m_tabAlignment.Text" xml:space="preserve">
     <value> Allineamento </value>
+  </data>
+  <data name="m_tabCustomProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 21</value>
+  </data>
+  <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 334</value>
   </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
     <value> Atributi Personalizzati </value>
