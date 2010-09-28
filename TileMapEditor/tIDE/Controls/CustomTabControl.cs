@@ -33,7 +33,7 @@ namespace TileMapEditor.Controls
 			this._TabBuffer = new Bitmap(this.Width, this.Height);
 			this._TabBufferGraphics = Graphics.FromImage(this._TabBuffer);
 			
-			this.DisplayStyle = TabStyle.IE8;
+			this.DisplayStyle = TabStyle.VisualStudio;
 		}
 
 		protected override void OnCreateControl(){
