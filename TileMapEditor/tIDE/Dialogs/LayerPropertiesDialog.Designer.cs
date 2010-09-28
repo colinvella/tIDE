@@ -53,8 +53,8 @@
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -313,18 +313,18 @@
             this.m_customPropertyGrid.PropertyDeleted += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
-            // m_duplicateIdMessageBox
-            // 
-            resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
-            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
-            this.m_duplicateIdMessageBox.Owner = this;
-            // 
             // m_tabImageList
             // 
             this.m_tabImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("m_tabImageList.ImageStream")));
             this.m_tabImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.m_tabImageList.Images.SetKeyName(0, "Layer.png");
             this.m_tabImageList.Images.SetKeyName(1, "CustomProperties.png");
+            // 
+            // m_duplicateIdMessageBox
+            // 
+            resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
+            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Owner = this;
             // 
             // LayerPropertiesDialog
             // 
