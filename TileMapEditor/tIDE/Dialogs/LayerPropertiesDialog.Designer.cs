@@ -146,26 +146,6 @@
             resources.ApplyResources(this.m_customTabControl, "m_customTabControl");
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
-            this.m_customTabControl.DisplayStyle = TileMapEditor.Controls.TabStyle.IE8;
-            // 
-            // 
-            // 
-            this.m_customTabControl.DisplayStyleProvider.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.m_customTabControl.DisplayStyleProvider.BorderColorHot = System.Drawing.SystemColors.ControlDark;
-            this.m_customTabControl.DisplayStyleProvider.BorderColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.m_customTabControl.DisplayStyleProvider.CloserColor = System.Drawing.Color.DarkGray;
-            this.m_customTabControl.DisplayStyleProvider.CloserColorActive = System.Drawing.Color.Red;
-            this.m_customTabControl.DisplayStyleProvider.FocusTrack = false;
-            this.m_customTabControl.DisplayStyleProvider.HotTrack = true;
-            this.m_customTabControl.DisplayStyleProvider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_customTabControl.DisplayStyleProvider.Opacity = 1F;
-            this.m_customTabControl.DisplayStyleProvider.Overlap = 0;
-            this.m_customTabControl.DisplayStyleProvider.Padding = new System.Drawing.Point(6, 5);
-            this.m_customTabControl.DisplayStyleProvider.Radius = 3;
-            this.m_customTabControl.DisplayStyleProvider.ShowTabCloser = true;
-            this.m_customTabControl.DisplayStyleProvider.TextColor = System.Drawing.SystemColors.ControlText;
-            this.m_customTabControl.DisplayStyleProvider.TextColorDisabled = System.Drawing.SystemColors.ControlDark;
-            this.m_customTabControl.DisplayStyleProvider.TextColorSelected = System.Drawing.SystemColors.ControlText;
             this.m_customTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.m_customTabControl.HotTrack = true;
             this.m_customTabControl.ImageList = this.m_tabImageList;
