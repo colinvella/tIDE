@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace TileMapEditor.Controls
 {
-	public class CustomRichTextBox : RichTextBox
+    [ToolboxBitmapAttribute(typeof(RichTextBox))]
+    public class CustomRichTextBox : RichTextBox
     {
         #region Privte Constants
 

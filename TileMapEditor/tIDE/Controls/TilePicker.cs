@@ -13,6 +13,7 @@ using xTile.Tiles;
 
 namespace TileMapEditor.Controls
 {
+    [System.Drawing.ToolboxBitmapAttribute(typeof(ListView))]
     public partial class TilePicker : UserControl
     {
         #region Private Variables

@@ -7,7 +7,8 @@ using System.Windows.Forms;
 
 namespace TileMapEditor.Controls
 {
-    class CustomToolStripSplitButton: ToolStripSplitButton
+    [ToolboxBitmapAttribute(typeof(ToolStripSplitButton))]
+    class CustomToolStripSplitButton : ToolStripSplitButton
     {
         private CheckState m_checkState;
 

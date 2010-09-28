@@ -142,9 +142,6 @@
     <Compile Include="Controls\CustomRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\CustomTabControlOld.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\CustomPropertyGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>

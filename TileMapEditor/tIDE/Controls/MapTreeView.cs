@@ -16,6 +16,7 @@ using TileMapEditor.Localisation;
 
 namespace TileMapEditor.Controls
 {
+    [ToolboxBitmapAttribute(typeof(TreeView))]
     public partial class MapTreeView : UserControl
     {
         #region Public Methods

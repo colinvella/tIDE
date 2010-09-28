@@ -22,6 +22,7 @@ using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor.Controls
 {
+    [ToolboxBitmapAttribute(typeof(Panel))]
     public partial class MapPanel : UserControl, IDisplayDevice
     {
         #region Private Variables
