@@ -13,6 +13,8 @@ using System.Security.Permissions;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+using TileMapEditor.Controls.TabStyleProviders;
+
 namespace TileMapEditor.Controls
 {
 	
@@ -31,8 +33,7 @@ namespace TileMapEditor.Controls
 			this._TabBuffer = new Bitmap(this.Width, this.Height);
 			this._TabBufferGraphics = Graphics.FromImage(this._TabBuffer);
 			
-			this.DisplayStyle = TabStyle.Default;
-			
+			this.DisplayStyle = TabStyle.IE8;
 		}
 
 		protected override void OnCreateControl(){
