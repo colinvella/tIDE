@@ -554,6 +554,7 @@
     <None Include="Resources\EditCut.png" />
     <None Include="Resources\EditPaste.png" />
     <None Include="Resources\AutoTileTemplate.png" />
+    <None Include="Resources\CustomProperties.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
