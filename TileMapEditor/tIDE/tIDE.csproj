@@ -142,7 +142,7 @@
     <Compile Include="Controls\CustomRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\CustomTabControl.cs">
+    <Compile Include="Controls\CustomTabControlOld.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\CustomPropertyGrid.cs">
@@ -150,6 +150,9 @@
     </Compile>
     <Compile Include="Controls\CustomPropertyGrid.Designer.cs">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomTabControl.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\CustomToolStripSplitButton.cs">
       <SubType>Component</SubType>
@@ -160,6 +163,34 @@
     <Compile Include="Controls\MapPanel.Designer.cs">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TabControlNativeMethods.cs" />
+    <Compile Include="Controls\TabStyle.cs" />
+    <Compile Include="Controls\TabStyleProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleAngledProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleChromeProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleDefaultProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleIE8Provider.cs" />
+    <Compile Include="Controls\TabStyleProviders\TabStyleNoneProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleRoundedProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleVisualStudioProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabStyleProviders\TabStyleVS2010Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ThemedColors.cs" />
     <Compile Include="Dialogs\AutoTileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
