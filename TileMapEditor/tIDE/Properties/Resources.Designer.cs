@@ -712,6 +712,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap OptionsLanguage {
+            get {
+                object obj = ResourceManager.GetObject("OptionsLanguage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Plugin {
             get {
                 object obj = ResourceManager.GetObject("Plugin", resourceCulture);
