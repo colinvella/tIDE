@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapPropertiesDialog));
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonClose = new System.Windows.Forms.Button();
+            this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
@@ -91,6 +93,13 @@
             this.m_buttonClose.Name = "m_buttonClose";
             this.m_buttonClose.UseVisualStyleBackColor = true;
             // 
+            // m_tabImageList
+            // 
+            this.m_tabImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("m_tabImageList.ImageStream")));
+            this.m_tabImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.m_tabImageList.Images.SetKeyName(0, "Map.png");
+            this.m_tabImageList.Images.SetKeyName(1, "CustomProperties.png");
+            // 
             // m_customTabControl
             // 
             this.m_customTabControl.AccessibleDescription = null;
@@ -99,8 +108,30 @@
             this.m_customTabControl.BackgroundImage = null;
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
+            this.m_customTabControl.DisplayStyle = TileMapEditor.Controls.TabStyle.IE8;
+            // 
+            // 
+            // 
+            this.m_customTabControl.DisplayStyleProvider.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.m_customTabControl.DisplayStyleProvider.BorderColorHot = System.Drawing.SystemColors.ControlDark;
+            this.m_customTabControl.DisplayStyleProvider.BorderColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.m_customTabControl.DisplayStyleProvider.CloserColor = System.Drawing.Color.DarkGray;
+            this.m_customTabControl.DisplayStyleProvider.CloserColorActive = System.Drawing.Color.Red;
+            this.m_customTabControl.DisplayStyleProvider.FocusTrack = false;
+            this.m_customTabControl.DisplayStyleProvider.HotTrack = true;
+            this.m_customTabControl.DisplayStyleProvider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_customTabControl.DisplayStyleProvider.Opacity = 1F;
+            this.m_customTabControl.DisplayStyleProvider.Overlap = 0;
+            this.m_customTabControl.DisplayStyleProvider.Padding = new System.Drawing.Point(6, 5);
+            this.m_customTabControl.DisplayStyleProvider.Radius = 3;
+            this.m_customTabControl.DisplayStyleProvider.ShowTabCloser = true;
+            this.m_customTabControl.DisplayStyleProvider.TextColor = System.Drawing.SystemColors.ControlText;
+            this.m_customTabControl.DisplayStyleProvider.TextColorDisabled = System.Drawing.SystemColors.ControlDark;
+            this.m_customTabControl.DisplayStyleProvider.TextColorSelected = System.Drawing.SystemColors.ControlText;
             this.m_customTabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.m_customTabControl.Font = null;
+            this.m_customTabControl.HotTrack = true;
+            this.m_customTabControl.ImageList = this.m_tabImageList;
             this.m_customTabControl.Name = "m_customTabControl";
             this.m_customTabControl.SelectedIndex = 0;
             // 
@@ -109,7 +140,7 @@
             this.m_tabGeneral.AccessibleDescription = null;
             this.m_tabGeneral.AccessibleName = null;
             resources.ApplyResources(this.m_tabGeneral, "m_tabGeneral");
-            this.m_tabGeneral.BackColor = System.Drawing.SystemColors.Control;
+            this.m_tabGeneral.BackColor = System.Drawing.Color.Transparent;
             this.m_tabGeneral.BackgroundImage = null;
             this.m_tabGeneral.Controls.Add(this.m_textBoxDescription);
             this.m_tabGeneral.Controls.Add(this.m_labelDescription);
@@ -117,6 +148,7 @@
             this.m_tabGeneral.Controls.Add(this.m_labelId);
             this.m_tabGeneral.Font = null;
             this.m_tabGeneral.Name = "m_tabGeneral";
+            this.m_tabGeneral.UseVisualStyleBackColor = true;
             // 
             // m_textBoxDescription
             // 
@@ -160,11 +192,12 @@
             this.m_tabCustomProperties.AccessibleDescription = null;
             this.m_tabCustomProperties.AccessibleName = null;
             resources.ApplyResources(this.m_tabCustomProperties, "m_tabCustomProperties");
-            this.m_tabCustomProperties.BackColor = System.Drawing.SystemColors.Control;
+            this.m_tabCustomProperties.BackColor = System.Drawing.Color.Transparent;
             this.m_tabCustomProperties.BackgroundImage = null;
             this.m_tabCustomProperties.Controls.Add(this.m_customPropertyGrid);
             this.m_tabCustomProperties.Font = null;
             this.m_tabCustomProperties.Name = "m_tabCustomProperties";
+            this.m_tabCustomProperties.UseVisualStyleBackColor = true;
             // 
             // m_customPropertyGrid
             // 
@@ -216,5 +249,6 @@
         private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonClose;
+        private System.Windows.Forms.ImageList m_tabImageList;
     }
 }
