@@ -20,6 +20,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&File";
+                            case Language.Spanish: return "&Archivo";
                             case Language.Italian: return "&Fascicolo";
                             default: throw new Exception();
                         }
@@ -36,6 +37,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Edit";
+                            case Language.Spanish: return "&Edita";
                             case Language.Italian: return "&Modifica";
                             default: throw new Exception();
                         }
@@ -52,6 +54,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&View";
+                            case Language.Spanish: return "&Ver";
                             case Language.Italian: return "&Visualizza";
                             default: throw new Exception();
                         }
@@ -68,6 +71,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Map";
+                            case Language.Spanish: return "&Mapa";
                             case Language.Italian: return "Ma&ppa";
                             default: throw new Exception();
                         }
@@ -84,6 +88,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Layer";
+                            case Language.Spanish: return "&Capa";
                             case Language.Italian: return "&Strato";
                             default: throw new Exception();
                         }
@@ -100,6 +105,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Tile Sheet";
+                            case Language.Spanish: return "&Hoja de Azulejos";
                             case Language.Italian: return "Foglio di &Piastre";
                             default: throw new Exception();
                         }
@@ -116,6 +122,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Plugin";
+                            case Language.Spanish: return "Módul&o";
                             case Language.Italian: return "Mo&dulo";
                             default: throw new Exception();
                         }
@@ -132,6 +139,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Help";
+                            case Language.Spanish: return "A&yuda";
                             case Language.Italian: return "&Aiuto";
                             default: throw new Exception();
                         }
@@ -143,6 +151,7 @@ namespace TileMapEditor.Plugin
         private enum Language
         {
             English,
+            Spanish,
             Italian
         }
 
@@ -154,6 +163,8 @@ namespace TileMapEditor.Plugin
                 string code = cultureInfo.Name;
                 if (code == "en-GB")
                     return Language.English;
+                else if (code == "es-ES")
+                    return Language.Spanish;
                 else if (code == "it-IT")
                     return Language.Italian;
                 else

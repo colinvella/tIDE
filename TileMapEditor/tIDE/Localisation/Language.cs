@@ -11,6 +11,7 @@ namespace TileMapEditor.Localisation
     class Language
     {
         public readonly static Language English = new Language("English", "en-GB");
+        public readonly static Language Spanish = new Language("Español", "es-ES");
         public readonly static Language Italian = new Language("Italiano", "it-IT");
 
         public static Language FromCode(string code)
@@ -55,6 +56,7 @@ namespace TileMapEditor.Localisation
         {
             s_list = new List<Language>();
             s_list.Add(English);
+            s_list.Add(Spanish);
             s_list.Add(Italian);
         }
 
