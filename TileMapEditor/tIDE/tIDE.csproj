@@ -399,6 +399,9 @@
     <EmbeddedResource Include="Dialogs\MapPropertiesDialog.it-IT.resx">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MapStatisticsDialog.es-ES.resx">
+      <DependentUpon>MapStatisticsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapStatisticsDialog.it-IT.resx">
       <DependentUpon>MapStatisticsDialog.cs</DependentUpon>
     </EmbeddedResource>
