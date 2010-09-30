@@ -105,9 +105,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView m_dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PropertyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PropertyValue;
         private CustomMessageBox m_noNameMessageBox;
         private CustomMessageBox m_duplicateNameMessageBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PropertyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PropertyValue;
     }
 }

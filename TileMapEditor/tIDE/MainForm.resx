@@ -124,11 +124,18 @@
   <data name="m_mapPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 416</value>
   </data>
-  <data name="m_fileOpenButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_fileRecentFilesMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
   </data>
   <data name="m_mapStatisticsMenuItem.Text" xml:space="preserve">
     <value>Statistics...</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableMenuItem.Text" xml:space="preserve">
+    <value>Enable Auto Update</value>
   </data>
   <data name="&gt;&gt;m_editToolStripSeparator3.Name" xml:space="preserve">
     <value>m_editToolStripSeparator3</value>
@@ -160,9 +167,6 @@
   <data name="&gt;&gt;m_fileSaveAsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_editCutMenuItem.Text" xml:space="preserve">
-    <value>Cu&amp;t</value>
-  </data>
   <data name="m_viewZoomBy1MenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 22</value>
   </data>
@@ -176,6 +180,12 @@
   <data name="&gt;&gt;m_editCutButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="m_viewViewport1280x768MenuItem.Text" xml:space="preserve">
+    <value>1280 x 768 (WXGA)</value>
+  </data>
+  <data name="&gt;&gt;m_toolsToolStrip.Parent" xml:space="preserve">
+    <value>m_toolStripContainerInner.RightToolStripPanel</value>
+  </data>
   <data name="&gt;&gt;m_toolsToolStrip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -185,13 +195,9 @@
   <data name="&gt;&gt;m_helpContentsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_viewSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
   <data name="&gt;&gt;m_tileSheetAutoUpdateEnableMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_editCutButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -201,8 +207,8 @@
   <data name="m_tileSheetNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;m_layerNewButton.Name" xml:space="preserve">
-    <value>m_layerNewButton</value>
+  <data name="m_helpSearchMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 22</value>
   </data>
   <data name="m_editCopyMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -213,20 +219,23 @@
   <data name="&gt;&gt;m_filePrintMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_layerMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_editToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
   <data name="m_toolStripContainerInner.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;m_tileIndexStatusLabel.Name" xml:space="preserve">
-    <value>m_tileIndexStatusLabel</value>
-  </data>
   <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Parent" xml:space="preserve">
     <value>m_toolStripContainer</value>
   </data>
   <data name="m_viewZoomOutButton.Text" xml:space="preserve">
     <value>Zoom Out</value>
+  </data>
+  <data name="&gt;&gt;m_editMakeTileBrushMenuItem.Name" xml:space="preserve">
+    <value>m_editMakeTileBrushMenuItem</value>
   </data>
   <data name="&gt;&gt;m_viewZoomComboBox.Name" xml:space="preserve">
     <value>m_viewZoomComboBox</value>
@@ -239,6 +248,9 @@
   </data>
   <data name="m_viewHideTileGuidesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="m_fileRecentFilesMenuItem.Text" xml:space="preserve">
+    <value>Recent Files</value>
   </data>
   <data name="&gt;&gt;m_toolStripContainerInner.TopToolStripPanel.Parent" xml:space="preserve">
     <value>m_toolStripContainerInner</value>
@@ -288,6 +300,9 @@
   <data name="&gt;&gt;m_viewToolStrip.Parent" xml:space="preserve">
     <value>m_toolStripContainer.TopToolStripPanel</value>
   </data>
+  <data name="&gt;&gt;m_tileSheetNewButton.Name" xml:space="preserve">
+    <value>m_tileSheetNewButton</value>
+  </data>
   <data name="m_tileSheetAutoTilesButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
@@ -302,9 +317,6 @@
   </data>
   <data name="m_editMakeTileBrushMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
-  </data>
-  <data name="m_layerSendBackwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
   </data>
   <data name="m_layerBringForwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
@@ -330,11 +342,11 @@
   <data name="&gt;&gt;m_tileSheetAutoUpdateDisableButton.Name" xml:space="preserve">
     <value>m_tileSheetAutoUpdateDisableButton</value>
   </data>
+  <data name="&gt;&gt;m_mapTreeView.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.MapTreeView, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="m_layerDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
-  </data>
-  <data name="m_viewMenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 6</value>
   </data>
   <data name="m_viewZoomInMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Oemplus</value>
@@ -351,6 +363,9 @@
   <data name="m_layerDeleteMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="&gt;&gt;m_viewShowTileGuidesButton.Name" xml:space="preserve">
+    <value>m_viewShowTileGuidesButton</value>
+  </data>
   <data name="m_viewWindowedMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
   </data>
@@ -362,6 +377,9 @@
   </data>
   <data name="&gt;&gt;m_mapPropertiesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_layerNewButton.Name" xml:space="preserve">
+    <value>m_layerNewButton</value>
   </data>
   <data name="m_statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -394,7 +412,7 @@
     <value>192, 22</value>
   </data>
   <data name="&gt;&gt;m_mapToolStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;m_tileSheetRemoveDependenciesButton.Name" xml:space="preserve">
     <value>m_tileSheetRemoveDependenciesButton</value>
@@ -413,9 +431,6 @@
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="m_toolsSingleTileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 20</value>
   </data>
   <data name="&gt;&gt;m_tileSheetPropertiesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -468,6 +483,9 @@
   <data name="m_layerMakeInvisibileButton.Text" xml:space="preserve">
     <value>Make Layer Invisible</value>
   </data>
+  <data name="&gt;&gt;m_editHistoryMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;m_editMakeTileBrushButton.Name" xml:space="preserve">
     <value>m_editMakeTileBrushButton</value>
   </data>
@@ -516,11 +534,8 @@
   <data name="&gt;&gt;m_layerMakeVisibleMenuItem.Name" xml:space="preserve">
     <value>m_layerMakeVisibleMenuItem</value>
   </data>
-  <data name="m_editUndoButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;m_editDeleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_editMakeTileBrushMenuItem.Text" xml:space="preserve">
+    <value>Make Tile Brush</value>
   </data>
   <data name="m_layerMakeInvisibileButton.ToolTipText" xml:space="preserve">
     <value>Make layer invisible</value>
@@ -537,8 +552,11 @@
   <data name="m_viewShowTileGuidesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
   </data>
+  <data name="&gt;&gt;m_viewViewport1920x1080MenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;m_editToolStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="m_dependencyRemovedMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>
@@ -547,10 +565,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_layerToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_viewViewport1280x1024MenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;m_viewViewport848x480MenuItem.Name" xml:space="preserve">
     <value>m_viewViewport848x480MenuItem</value>
@@ -573,6 +588,9 @@
   <data name="m_saveErrorMessageBox.Text" xml:space="preserve">
     <value>An error occured while saving the file. Details: [message]</value>
   </data>
+  <data name="&gt;&gt;m_viewZoomBy7MenuItem.Name" xml:space="preserve">
+    <value>m_viewZoomBy7MenuItem</value>
+  </data>
   <data name="&gt;&gt;m_filePageSetupMenuItem.Name" xml:space="preserve">
     <value>m_filePageSetupMenuItem</value>
   </data>
@@ -585,14 +603,14 @@
   <data name="&gt;&gt;m_viewViewportScaleToWindowMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_tileSheetRemoveDependenciesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
   <data name="m_editClearSelectionButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="m_layerDeleteMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;m_viewToolStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="m_toolsTileBrushButton.Text" xml:space="preserve">
     <value>toolStripSplitButton1</value>
@@ -600,14 +618,11 @@
   <data name="&gt;&gt;m_viewViewport1280x720MenuItem.Name" xml:space="preserve">
     <value>m_viewViewport1280x720MenuItem</value>
   </data>
-  <data name="m_tilePicker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="&gt;&gt;m_toolsTileBlockButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_viewZoomOutMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+OemMinus</value>
+  <data name="&gt;&gt;m_tileSheetRemoveDependenciesMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetRemoveDependenciesMenuItem</value>
   </data>
   <data name="m_fileSaveButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -648,6 +663,9 @@
   <data name="&gt;&gt;m_fileSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_filePrintButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;m_layerToolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -660,11 +678,11 @@
   <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
     <value>New map</value>
   </data>
+  <data name="m_dependencyRemovedMessageBox.Caption" xml:space="preserve">
+    <value>Remove Dependencies</value>
+  </data>
   <data name="&gt;&gt;m_splitContainerVertical.Name" xml:space="preserve">
     <value>m_splitContainerVertical</value>
-  </data>
-  <data name="&gt;&gt;m_mapStatisticsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_viewMenuSeparator1.Name" xml:space="preserve">
     <value>m_viewMenuSeparator1</value>
@@ -695,9 +713,6 @@
   </data>
   <data name="m_viewZoomBy6MenuItem.Text" xml:space="preserve">
     <value>x 6</value>
-  </data>
-  <data name="m_fileExitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
   </data>
   <data name="m_layerBringForwardButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -735,8 +750,8 @@
   <data name="m_tileSheetRemoveDependenciesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;m_viewZoomOutMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_editSelectAllMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
   </data>
   <data name="&gt;&gt;m_toolStripContainerInner.Parent" xml:space="preserve">
     <value>m_splitContainerLeftRight.Panel2</value>
@@ -771,8 +786,8 @@
   <data name="&gt;&gt;m_splitContainerLeftRight.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+  <data name="&gt;&gt;m_viewSeparator2.Name" xml:space="preserve">
+    <value>m_viewSeparator2</value>
   </data>
   <data name="m_editPasteMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+V</value>
@@ -791,12 +806,6 @@
   </data>
   <data name="m_viewViewport1280x720MenuItem.Text" xml:space="preserve">
     <value>1280 x 720 (720p)</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainerInner.BottomToolStripPanel.Parent" xml:space="preserve">
-    <value>m_toolStripContainerInner</value>
-  </data>
-  <data name="m_viewZoomBy8MenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
   </data>
   <data name="&gt;&gt;m_hasDependencyMessageBox.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -819,9 +828,6 @@
   <data name="&gt;&gt;m_editHistoryButton.Name" xml:space="preserve">
     <value>m_editHistoryButton</value>
   </data>
-  <data name="m_toolsTextureButton.ToolTipText" xml:space="preserve">
-    <value>Lay tiles sampled from a selected region</value>
-  </data>
   <data name="&gt;&gt;m_filePrintPreviewMenuItem.Name" xml:space="preserve">
     <value>m_filePrintPreviewMenuItem</value>
   </data>
@@ -830,6 +836,9 @@
   </data>
   <data name="&gt;&gt;m_layerSendBackwardMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_filePrintPreviewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="&gt;&gt;m_layerPropertiesMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -843,9 +852,6 @@
   <data name="&gt;&gt;m_toolsTextureButton.Name" xml:space="preserve">
     <value>m_toolsTextureButton</value>
   </data>
-  <data name="&gt;&gt;m_fileSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="m_tileSheetRemoveDependenciesMenuItem.Text" xml:space="preserve">
     <value>Remove Dependencies</value>
   </data>
@@ -858,8 +864,8 @@
   <data name="&gt;&gt;m_menuStrip.Name" xml:space="preserve">
     <value>m_menuStrip</value>
   </data>
-  <data name="m_editRedoMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Y</value>
+  <data name="m_viewZoomBy2MenuItem.Text" xml:space="preserve">
+    <value>x 2</value>
   </data>
   <data name="m_editInvertSelectionButton.ToolTipText" xml:space="preserve">
     <value>Invert selection</value>
@@ -873,14 +879,17 @@
   <data name="m_toolsEraserButton.ToolTipText" xml:space="preserve">
     <value>Erase tiles [ E ]</value>
   </data>
-  <data name="m_layerPropertiesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="m_editPasteMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="m_viewViewport1920x1200MenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
   <data name="m_layerMakeInvisibleMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+V</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetToolStrip.Name" xml:space="preserve">
+    <value>m_tileSheetToolStrip</value>
   </data>
   <data name="m_layerNewMenuItem.Text" xml:space="preserve">
     <value>&amp;New...</value>
@@ -901,14 +910,14 @@
         AAAgAgAAngEAAAs=
 </value>
   </data>
+  <data name="&gt;&gt;m_fileNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;m_tileSheetSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_tileIndexStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_filePrintButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
   </data>
   <data name="m_viewZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 22</value>
@@ -964,6 +973,9 @@
   <data name="m_viewViewport640x480MenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 22</value>
   </data>
+  <data name="&gt;&gt;m_fileSeparator3.Name" xml:space="preserve">
+    <value>m_fileSeparator3</value>
+  </data>
   <data name="&gt;&gt;m_statusStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -975,9 +987,6 @@
   </data>
   <data name="&gt;&gt;m_layerSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_mapPropertiesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
   </data>
   <data name="&gt;&gt;m_viewLayersHighlightSelectedButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -999,9 +1008,6 @@
   </data>
   <data name="m_editUndoMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_viewZoomBy10MenuItem.Name" xml:space="preserve">
-    <value>m_viewZoomBy10MenuItem</value>
   </data>
   <data name="&gt;&gt;m_tileSheetAutoUpdateDisableMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1035,6 +1041,9 @@
   </data>
   <data name="m_viewZoomInButton.Text" xml:space="preserve">
     <value>Zoom In</value>
+  </data>
+  <data name="m_filePrintPreviewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="m_menuStrip.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1114,6 +1123,9 @@
   <data name="&gt;&gt;m_toolsTileBlockButton.Name" xml:space="preserve">
     <value>m_toolsTileBlockButton</value>
   </data>
+  <data name="m_tileLocationStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 17</value>
+  </data>
   <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
     <value>Manage tile sheet auto tiles</value>
   </data>
@@ -1174,12 +1186,6 @@
   <data name="m_layerMakeVisibileButton.ToolTipText" xml:space="preserve">
     <value>Make layer visible</value>
   </data>
-  <data name="m_editMakeTileBrushMenuItem.Text" xml:space="preserve">
-    <value>Make Tile Brush</value>
-  </data>
-  <data name="&gt;&gt;m_tileLocationStatusLabel.Name" xml:space="preserve">
-    <value>m_tileLocationStatusLabel</value>
-  </data>
   <data name="m_viewViewport1600x1200MenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 22</value>
   </data>
@@ -1213,9 +1219,6 @@
   <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
     <value>Enable automatic update of tile sheets from disk</value>
   </data>
-  <data name="m_fileSaveAsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
-  </data>
   <data name="&gt;&gt;m_mapPropertiesButton.Name" xml:space="preserve">
     <value>m_mapPropertiesButton</value>
   </data>
@@ -1228,9 +1231,6 @@
   <data name="m_viewHideTileGuidesButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetPropertiesMenuItem</value>
-  </data>
   <data name="&gt;&gt;m_viewZoomBy3MenuItem.Name" xml:space="preserve">
     <value>m_viewZoomBy3MenuItem</value>
   </data>
@@ -1242,6 +1242,9 @@
   </data>
   <data name="&gt;&gt;m_layerNewMenuItem.Name" xml:space="preserve">
     <value>m_layerNewMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_pluginMenuItem.Name" xml:space="preserve">
+    <value>m_pluginMenuItem</value>
   </data>
   <data name="m_editMenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 6</value>
@@ -1294,14 +1297,11 @@
   <data name="&gt;&gt;m_toolStripContainer.Name" xml:space="preserve">
     <value>m_toolStripContainer</value>
   </data>
-  <data name="m_filePrintMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
-  </data>
   <data name="m_helpContentsMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
   </data>
-  <data name="m_tileSheetRemoveDependenciesButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="m_unsavedMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;m_editMenuSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1314,6 +1314,9 @@
   </data>
   <data name="m_mapMenuItem.Text" xml:space="preserve">
     <value>&amp;Map</value>
+  </data>
+  <data name="m_editRedoButton.Text" xml:space="preserve">
+    <value>Redo</value>
   </data>
   <data name="m_viewViewport320x240MenuItem.Text" xml:space="preserve">
     <value>320 x 240 (QVGA)</value>
@@ -1339,17 +1342,14 @@
   <data name="m_splitContainerVertical.SplitterDistance" type="System.Int32, mscorlib">
     <value>203</value>
   </data>
+  <data name="&gt;&gt;m_viewViewport1280x1024MenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_tileSheetNewMenuItem.Text" xml:space="preserve">
     <value>New...</value>
   </data>
-  <data name="&gt;&gt;m_toolStripContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="m_editHistoryMenuItem.Text" xml:space="preserve">
     <value>Command History</value>
-  </data>
-  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
   </data>
   <data name="m_editClearSelectionMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1372,8 +1372,8 @@
   <data name="m_viewViewport1024x768MenuItem.Text" xml:space="preserve">
     <value>1024 x 768 (XGA)</value>
   </data>
-  <data name="m_helpIndexMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>F2</value>
+  <data name="m_editUndoButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="m_toolsSelectButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 20</value>
@@ -1384,17 +1384,14 @@
   <data name="&gt;&gt;m_splitContainerLeftRight.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainer.RightToolStripPanel</value>
+  </data>
   <data name="m_layerBringForwardMenuItem.Text" xml:space="preserve">
     <value>Bring Forward</value>
   </data>
-  <data name="m_editUndoButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
   <data name="m_tileSheetRemoveDependenciesButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
-  </data>
-  <data name="m_toolStripContainerInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="m_fileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 25</value>
@@ -1411,8 +1408,8 @@
   <data name="m_viewFullScreenButton.Text" xml:space="preserve">
     <value>Full Screen</value>
   </data>
-  <data name="m_fileOpenMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="m_editManageTileBrushesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;m_viewViewport1024x768MenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1432,11 +1429,17 @@
   <data name="&gt;&gt;m_viewViewport640x480MenuItem.Name" xml:space="preserve">
     <value>m_viewViewport640x480MenuItem</value>
   </data>
-  <data name="m_layerSendBackwardMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="m_viewZoomOutMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+OemMinus</value>
   </data>
   <data name="m_viewLayersShowAllButton.ToolTipText" xml:space="preserve">
     <value>Show all layers</value>
+  </data>
+  <data name="&gt;&gt;m_viewMenuSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_viewViewport1280x1024MenuItem.Text" xml:space="preserve">
+    <value>1280 x 1024 (SXGA)</value>
   </data>
   <data name="m_viewZoomInButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -1462,6 +1465,9 @@
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 6</value>
   </data>
+  <data name="m_layerNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
   <data name="&gt;&gt;m_layerMakeInvisibileButton.Name" xml:space="preserve">
     <value>m_layerMakeInvisibileButton</value>
   </data>
@@ -1479,9 +1485,6 @@
   </data>
   <data name="m_layerMakeVisibileButton.Text" xml:space="preserve">
     <value>Make Layer Visible</value>
-  </data>
-  <data name="&gt;&gt;m_editUndoButton.Name" xml:space="preserve">
-    <value>m_editUndoButton</value>
   </data>
   <data name="m_tileIndexStatusLabel.Text" xml:space="preserve">
     <value>Idx</value>
@@ -1528,8 +1531,8 @@
   <data name="m_fileSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 6</value>
   </data>
-  <data name="m_viewViewport1280x768MenuItem.Text" xml:space="preserve">
-    <value>1280 x 768 (WXGA)</value>
+  <data name="&gt;&gt;m_toolStripContainerInner.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>m_toolStripContainerInner</value>
   </data>
   <data name="m_mapPanel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1588,8 +1591,8 @@
   <data name="m_viewZoomComboBox.Items6" xml:space="preserve">
     <value>x 7</value>
   </data>
-  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="m_viewSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
   </data>
   <data name="&gt;&gt;m_pluginNoneLoadedMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1603,8 +1606,8 @@
   <data name="m_tileSheetDeleteButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="m_layerMakeInvisibileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <data name="m_fileSaveAsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
   </data>
   <data name="&gt;&gt;m_tileSheetSeparator2.Name" xml:space="preserve">
     <value>m_tileSheetSeparator2</value>
@@ -1636,12 +1639,6 @@
   <data name="&gt;&gt;m_mapPropertiesMenuItem.Name" xml:space="preserve">
     <value>m_mapPropertiesMenuItem</value>
   </data>
-  <data name="m_editClearSelectionMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="m_viewViewport1280x768MenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
   <data name="m_toolStripContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>784, 562</value>
   </data>
@@ -1653,9 +1650,6 @@
   </data>
   <data name="&gt;&gt;m_layerBringForwardMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_editInvertSelectionButton.Text" xml:space="preserve">
-    <value>Invert Selection</value>
   </data>
   <data name="m_viewViewportMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
@@ -1678,8 +1672,8 @@
   <data name="&gt;&gt;m_tileSheetAutoUpdateEnableButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_splitContainerLeftRight.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="m_fileOpenMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="&gt;&gt;m_toolStripContainerInner.ContentPanel.Parent" xml:space="preserve">
     <value>m_toolStripContainerInner</value>
@@ -1687,8 +1681,14 @@
   <data name="m_fileOptionsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="&gt;&gt;m_viewViewport1920x1200MenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;m_viewZoomLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_fileOpenButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="m_editDeleteButton.Text" xml:space="preserve">
     <value>Delete</value>
@@ -1696,8 +1696,8 @@
   <data name="m_fileRecentFilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
   </data>
-  <data name="&gt;&gt;m_viewSeparator2.Name" xml:space="preserve">
-    <value>m_viewSeparator2</value>
+  <data name="&gt;&gt;m_mapStatisticsMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_splitContainerLeftRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1768,9 +1768,6 @@
   <data name="&gt;&gt;m_fileRecentFilesMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_editDeleteMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;m_viewToolStrip.Name" xml:space="preserve">
     <value>m_viewToolStrip</value>
   </data>
@@ -1786,8 +1783,8 @@
   <data name="&gt;&gt;m_toolStripContainerInner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
-    <value>Hide tile guides</value>
+  <data name="m_filePrintMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
   </data>
   <data name="&gt;&gt;m_editMenuSeparator2.Name" xml:space="preserve">
     <value>m_editMenuSeparator2</value>
@@ -1804,8 +1801,8 @@
   <data name="m_mapTreeView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;m_fileOpenButton.Name" xml:space="preserve">
-    <value>m_fileOpenButton</value>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_viewLayersHighlightSelectedButton.ToolTipText" xml:space="preserve">
     <value>Highlight selected layer only</value>
@@ -1862,13 +1859,13 @@
     <value>Magenta</value>
   </data>
   <data name="&gt;&gt;m_tileSheetToolStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;m_splitContainerLeftRight.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_viewZoomBy7MenuItem.Text" xml:space="preserve">
+    <value>x 7</value>
   </data>
   <data name="m_editToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1894,17 +1891,14 @@
   <data name="&gt;&gt;m_pluginReloadMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_editSelectAllMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
+  <data name="&gt;&gt;m_tileLocationStatusLabel.Name" xml:space="preserve">
+    <value>m_tileLocationStatusLabel</value>
   </data>
   <data name="&gt;&gt;m_editInvertSelectionButton.Name" xml:space="preserve">
     <value>m_editInvertSelectionButton</value>
   </data>
   <data name="m_viewWindowedButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;m_tileLocationStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_editSelectAllButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1933,11 +1927,14 @@
   <data name="m_editMakeTileBrushButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="&gt;&gt;m_toolsEraserButton.Name" xml:space="preserve">
+    <value>m_toolsEraserButton</value>
+  </data>
   <data name="&gt;&gt;m_viewViewport1920x1080MenuItem.Name" xml:space="preserve">
     <value>m_viewViewport1920x1080MenuItem</value>
   </data>
-  <data name="&gt;&gt;m_viewHideTileGuidesButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
+    <value>To Scale</value>
   </data>
   <data name="m_editMenuSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 6</value>
@@ -1963,11 +1960,11 @@
   <data name="m_filePageSetupMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
   </data>
+  <data name="&gt;&gt;m_viewZoomOutMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_toolsSingleTileButton.ToolTipText" xml:space="preserve">
     <value>Lay individual tiles [ T ]</value>
-  </data>
-  <data name="&gt;&gt;m_toolsSelectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_fileOptionsMenuItem.Text" xml:space="preserve">
     <value>Options...</value>
@@ -1984,6 +1981,9 @@
   <data name="m_editPasteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="&gt;&gt;m_editDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_fileToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1993,11 +1993,11 @@
   <data name="&gt;&gt;m_fileToolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
   <data name="&gt;&gt;m_tileSheetRemoveDependenciesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_helpContentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 22</value>
   </data>
   <data name="&gt;&gt;m_tileSheetStatusLabel.Name" xml:space="preserve">
     <value>m_tileSheetStatusLabel</value>
@@ -2030,7 +2030,7 @@
     <value>False</value>
   </data>
   <data name="&gt;&gt;m_menuStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="m_splitContainerLeftRight.SplitterDistance" type="System.Int32, mscorlib">
     <value>201</value>
@@ -2080,9 +2080,6 @@
   <data name="m_fileSaveMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
   </data>
-  <data name="m_tileSheetPropertiesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
   <data name="&gt;&gt;m_editPasteButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2122,8 +2119,14 @@
   <data name="&gt;&gt;m_editUndoButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_editDeleteMenuItem.Name" xml:space="preserve">
+    <value>m_editDeleteMenuItem</value>
+  </data>
   <data name="m_viewZoomBy6MenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 22</value>
+  </data>
+  <data name="&gt;&gt;m_layerSendBackwardButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_splitContainerLeftRight.Panel1.Name" xml:space="preserve">
     <value>m_splitContainerLeftRight.Panel1</value>
@@ -2927,8 +2930,8 @@
   <data name="m_viewLayersHighlightSelectedButton.Text" xml:space="preserve">
     <value>Highlight Selected Layer Only</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_splitContainerLeftRight.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="m_editUndoMenuItem.Text" xml:space="preserve">
     <value>&amp;Undo</value>
@@ -2942,11 +2945,11 @@
   <data name="m_editInvertSelectionButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_tileLocationStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 438</value>
+  <data name="&gt;&gt;m_fileOpenButton.Name" xml:space="preserve">
+    <value>m_fileOpenButton</value>
   </data>
   <data name="&gt;&gt;m_editInvertSelectionMenuItem.Name" xml:space="preserve">
     <value>m_editInvertSelectionMenuItem</value>
@@ -2983,6 +2986,9 @@
   </data>
   <data name="m_tilePicker.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_toolsDropperButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3038,14 +3044,14 @@
   <data name="m_viewSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
-    <value>Save Map As</value>
-  </data>
   <data name="m_editPasteButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;m_toolStripContainerInner.RightToolStripPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainerInner.RightToolStripPanel</value>
+  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
+    <value>Print Preview</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
+    <value>Hide tile guides</value>
   </data>
   <data name="m_fileMenuItem.Text" xml:space="preserve">
     <value>&amp;File</value>
@@ -3062,23 +3068,20 @@
   <data name="m_fileSaveMenuItem.Text" xml:space="preserve">
     <value>&amp;Save</value>
   </data>
+  <data name="m_layerMakeInvisibileButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
   <data name="&gt;&gt;m_fileToolStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;m_viewFullScreenMenuItem.Name" xml:space="preserve">
     <value>m_viewFullScreenMenuItem</value>
-  </data>
-  <data name="m_layerMakeVisibleMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_mapToolStrip.Name" xml:space="preserve">
     <value>m_mapToolStrip</value>
-  </data>
-  <data name="&gt;&gt;m_fileOpenMenuItem.Name" xml:space="preserve">
-    <value>m_fileOpenMenuItem</value>
   </data>
   <data name="m_mapToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3119,8 +3122,8 @@
   <data name="m_fileNewMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
   </data>
-  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
-    <value>To Scale</value>
+  <data name="m_editClearSelectionMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
   </data>
   <data name="&gt;&gt;m_layerPropertiesButton.Name" xml:space="preserve">
     <value>m_layerPropertiesButton</value>
@@ -3158,23 +3161,20 @@
   <data name="m_editSelectAllMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;m_toolsEraserButton.Name" xml:space="preserve">
-    <value>m_toolsEraserButton</value>
+  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;m_viewZoomBy10MenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetToolStrip.Name" xml:space="preserve">
-    <value>m_tileSheetToolStrip</value>
+  <data name="m_helpIndexMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F2</value>
   </data>
   <data name="m_editPasteMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;m_editRedoButton.Name" xml:space="preserve">
-    <value>m_editRedoButton</value>
+  <data name="&gt;&gt;m_editInvertSelectionMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_toolsDropperButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -3200,9 +3200,6 @@
   <data name="&gt;&gt;m_menuStrip.Parent" xml:space="preserve">
     <value>m_toolStripContainer.TopToolStripPanel</value>
   </data>
-  <data name="m_editCopyMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
-  </data>
   <data name="m_toolStripContainerInner.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -3211,6 +3208,9 @@
   </data>
   <data name="m_menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="m_toolsSingleTileButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
   </data>
   <data name="m_toolsDropperButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 20</value>
@@ -3254,16 +3254,10 @@
   <data name="m_tileSheetToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="m_editManageTileBrushesButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;m_viewZoomBy8MenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_editMakeTileBrushButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_layerSendBackwardButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;m_saveErrorMessageBox.Type" xml:space="preserve">
@@ -3271,6 +3265,9 @@
   </data>
   <data name="&gt;&gt;m_viewZoomLabel.Name" xml:space="preserve">
     <value>m_viewZoomLabel</value>
+  </data>
+  <data name="&gt;&gt;m_viewZoomBy9MenuItem.Name" xml:space="preserve">
+    <value>m_viewZoomBy9MenuItem</value>
   </data>
   <data name="&gt;&gt;m_mapPanel.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3287,8 +3284,8 @@
   <data name="&gt;&gt;m_layerToolStripSeparator2.Name" xml:space="preserve">
     <value>m_layerToolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainer.RightToolStripPanel</value>
+  <data name="m_viewZoomBy8MenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
   </data>
   <data name="m_editManageTileBrushesButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -3305,8 +3302,8 @@
   <data name="m_tileSheetPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
   </data>
-  <data name="m_fileRecentFilesMenuItem.Text" xml:space="preserve">
-    <value>Recent Files</value>
+  <data name="m_editDeleteMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="m_layerMakeInvisibileButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3320,8 +3317,8 @@
   <data name="m_layerNewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="&gt;&gt;m_pluginMenuItem.Name" xml:space="preserve">
-    <value>m_pluginMenuItem</value>
+  <data name="m_editCopyMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+C</value>
   </data>
   <data name="&gt;&gt;m_tileSheetAutoUpdateDisableMenuItem.Name" xml:space="preserve">
     <value>m_tileSheetAutoUpdateDisableMenuItem</value>
@@ -3347,8 +3344,8 @@
   <data name="&gt;&gt;m_viewViewport848x480MenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_viewViewport1280x1024MenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_fileOpenMenuItem.Name" xml:space="preserve">
+    <value>m_fileOpenMenuItem</value>
   </data>
   <data name="&gt;&gt;m_fileSaveButton.Name" xml:space="preserve">
     <value>m_fileSaveButton</value>
@@ -3368,8 +3365,8 @@
   <data name="m_helpIndexMenuItem.Text" xml:space="preserve">
     <value>&amp;Index</value>
   </data>
-  <data name="m_tileSheetAutoUpdateEnableMenuItem.Text" xml:space="preserve">
-    <value>Enable Auto Update</value>
+  <data name="&gt;&gt;m_toolStripContainerInner.RightToolStripPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainerInner.RightToolStripPanel</value>
   </data>
   <data name="&gt;&gt;m_viewViewport1280x1024MenuItem.Name" xml:space="preserve">
     <value>m_viewViewport1280x1024MenuItem</value>
@@ -3380,8 +3377,8 @@
   <data name="&gt;&gt;m_splitContainerLeftRight.Name" xml:space="preserve">
     <value>m_splitContainerLeftRight</value>
   </data>
-  <data name="m_editRedoButton.Text" xml:space="preserve">
-    <value>Redo</value>
+  <data name="m_mapPropertiesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="&gt;&gt;m_editManageTileBrushesMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3389,14 +3386,17 @@
   <data name="&gt;&gt;m_viewMenuItem.Name" xml:space="preserve">
     <value>m_viewMenuItem</value>
   </data>
-  <data name="m_helpSearchMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+  <data name="m_viewMenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 6</value>
   </data>
   <data name="m_pluginNoneLoadedMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 22</value>
   </data>
   <data name="m_toolsDropperButton.Text" xml:space="preserve">
     <value>toolStripButton4</value>
+  </data>
+  <data name="m_layerSendBackwardMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 6</value>
@@ -3422,8 +3422,8 @@
   <data name="m_layerDeleteButton.Text" xml:space="preserve">
     <value>Delete Layer</value>
   </data>
-  <data name="&gt;&gt;m_viewViewport1920x1080MenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_layerToolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_layerMakeInvisibleMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3434,14 +3434,14 @@
   <data name="m_mapPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="m_layerNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="&gt;&gt;m_fileSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_editRedoMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
   </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator1.Name" xml:space="preserve">
-    <value>m_layerToolStripSeparator1</value>
+  <data name="&gt;&gt;m_viewViewport320x240MenuItem.Name" xml:space="preserve">
+    <value>m_viewViewport320x240MenuItem</value>
   </data>
   <data name="m_toolsToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3457,9 +3457,6 @@
   </data>
   <data name="m_editDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
-  </data>
-  <data name="&gt;&gt;m_editSelectAllButton.Name" xml:space="preserve">
-    <value>m_editSelectAllButton</value>
   </data>
   <data name="&gt;&gt;m_splitContainerVertical.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3512,9 +3509,6 @@
   <data name="&gt;&gt;m_toolStripContainerInner.ContentPanel.Name" xml:space="preserve">
     <value>m_toolStripContainerInner.ContentPanel</value>
   </data>
-  <data name="m_layerMakeVisibleMenuItem.Text" xml:space="preserve">
-    <value>Make Visible</value>
-  </data>
   <data name="m_saveErrorMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>
   </data>
@@ -3527,8 +3521,8 @@
   <data name="m_viewLayersHighlightSelectedMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
   </data>
-  <data name="&gt;&gt;m_viewZoomBy9MenuItem.Name" xml:space="preserve">
-    <value>m_viewZoomBy9MenuItem</value>
+  <data name="m_editRedoMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Y</value>
   </data>
   <data name="m_layerSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 6</value>
@@ -3542,11 +3536,14 @@
   <data name="m_layerPropertiesMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="m_helpContentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+  <data name="&gt;&gt;m_toolsSelectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_viewLayersShowAllMenuItem.Name" xml:space="preserve">
     <value>m_viewLayersShowAllMenuItem</value>
+  </data>
+  <data name="m_filePageSetupButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="m_fileNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -3554,17 +3551,14 @@
   <data name="&gt;&gt;m_editToolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_editMakeTileBrushButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
   <data name="&gt;&gt;m_filePageSetupMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
     <value>Configure page settings for printing</value>
   </data>
-  <data name="m_filePageSetupButton.Text" xml:space="preserve">
-    <value>Page Setup</value>
+  <data name="&gt;&gt;m_editUndoButton.Name" xml:space="preserve">
+    <value>m_editUndoButton</value>
   </data>
   <data name="&gt;&gt;m_viewWindowedButton.Name" xml:space="preserve">
     <value>m_viewWindowedButton</value>
@@ -3593,8 +3587,8 @@
   <data name="m_viewZoomBy5MenuItem.Text" xml:space="preserve">
     <value>x 5</value>
   </data>
-  <data name="&gt;&gt;m_editMakeTileBrushMenuItem.Name" xml:space="preserve">
-    <value>m_editMakeTileBrushMenuItem</value>
+  <data name="&gt;&gt;m_editSelectAllButton.Name" xml:space="preserve">
+    <value>m_editSelectAllButton</value>
   </data>
   <data name="&gt;&gt;m_editToolStripSeparator2.Name" xml:space="preserve">
     <value>m_editToolStripSeparator2</value>
@@ -3620,11 +3614,11 @@
   <data name="&gt;&gt;m_viewShowTileGuidesMenuItem.Name" xml:space="preserve">
     <value>m_viewShowTileGuidesMenuItem</value>
   </data>
-  <data name="m_viewViewport1280x1024MenuItem.Text" xml:space="preserve">
-    <value>1280 x 1024 (SXGA)</value>
+  <data name="m_toolStripContainerInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="m_unsavedMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
-    <value>0</value>
+  <data name="m_layerMakeVisibleMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="m_viewZoomOutButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3644,8 +3638,8 @@
   <data name="&gt;&gt;m_tileSheetToolStripSeparator2.Name" xml:space="preserve">
     <value>m_tileSheetToolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;m_fileNewButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_tilePicker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="m_tileSheetSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 6</value>
@@ -3653,8 +3647,8 @@
   <data name="m_helpIndexMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 22</value>
   </data>
-  <data name="m_viewViewport1920x1200MenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+  <data name="&gt;&gt;m_tileSheetStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_helpSearchMenuItem.Text" xml:space="preserve">
     <value>&amp;Search</value>
@@ -3662,8 +3656,8 @@
   <data name="m_tileSheetAutoUpdateEnableMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
   </data>
-  <data name="&gt;&gt;m_filePrintButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_editUndoButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="m_editInvertSelectionMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
@@ -3695,8 +3689,8 @@
   <data name="m_editManageTileBrushesMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="m_fileOpenMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+O</value>
+  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetPropertiesMenuItem</value>
   </data>
   <data name="m_editDeleteButton.ToolTipText" xml:space="preserve">
     <value>Delete selected area</value>
@@ -3707,14 +3701,14 @@
   <data name="&gt;&gt;m_layerPropertiesMenuItem.Name" xml:space="preserve">
     <value>m_layerPropertiesMenuItem</value>
   </data>
-  <data name="&gt;&gt;m_viewViewport320x240MenuItem.Name" xml:space="preserve">
-    <value>m_viewViewport320x240MenuItem</value>
+  <data name="m_tileSheetPropertiesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="m_viewShowTileGuidesButton.ToolTipText" xml:space="preserve">
     <value>Show tile guides</value>
   </data>
-  <data name="m_filePrintPreviewButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
+  <data name="m_editCutMenuItem.Text" xml:space="preserve">
+    <value>Cu&amp;t</value>
   </data>
   <data name="m_layerToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -3734,8 +3728,8 @@
   <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
     <value>Open map</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetNewButton.Name" xml:space="preserve">
-    <value>m_tileSheetNewButton</value>
+  <data name="&gt;&gt;m_editRedoButton.Name" xml:space="preserve">
+    <value>m_editRedoButton</value>
   </data>
   <data name="&gt;&gt;m_viewViewport800x600MenuItem.Name" xml:space="preserve">
     <value>m_viewViewport800x600MenuItem</value>
@@ -3749,11 +3743,11 @@
   <data name="m_layerSendBackwardButton.Text" xml:space="preserve">
     <value>Send Backward</value>
   </data>
-  <data name="&gt;&gt;m_editInvertSelectionMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_layerMakeVisibleMenuItem.Text" xml:space="preserve">
+    <value>Make Visible</value>
   </data>
-  <data name="&gt;&gt;m_viewToolStrip.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 438</value>
   </data>
   <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
     <value>Access the command undo / redo history</value>
@@ -3767,20 +3761,23 @@
   <data name="m_editUndoButton.Text" xml:space="preserve">
     <value>Undo</value>
   </data>
-  <data name="&gt;&gt;m_viewShowTileGuidesButton.Name" xml:space="preserve">
-    <value>m_viewShowTileGuidesButton</value>
+  <data name="m_tileSheetRemoveDependenciesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="m_filePageSetupButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="m_viewViewport1280x768MenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
   </data>
   <data name="m_fileOpenButton.Text" xml:space="preserve">
     <value>Open Map</value>
   </data>
+  <data name="m_mapPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
   <data name="m_editCutButton.ToolTipText" xml:space="preserve">
     <value>Cut selected area</value>
   </data>
-  <data name="&gt;&gt;m_editHistoryMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_viewHideTileGuidesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_viewFullScreenMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
@@ -3791,8 +3788,8 @@
   <data name="m_fileNewMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="m_viewZoomBy2MenuItem.Text" xml:space="preserve">
-    <value>x 2</value>
+  <data name="m_tileSheetAutoUpdateEnableButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="m_mapTreeView.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 203</value>
@@ -3803,17 +3800,17 @@
   <data name="m_viewZoomBy1MenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+0</value>
   </data>
-  <data name="&gt;&gt;m_fileSeparator3.Name" xml:space="preserve">
-    <value>m_fileSeparator3</value>
+  <data name="&gt;&gt;m_viewZoomBy10MenuItem.Name" xml:space="preserve">
+    <value>m_viewZoomBy10MenuItem</value>
   </data>
   <data name="m_toolsToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="m_fileRecentFilesMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="m_filePrintButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;m_layerMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_layerToolStripSeparator1.Name" xml:space="preserve">
+    <value>m_layerToolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;m_viewZoomBy4MenuItem.Name" xml:space="preserve">
     <value>m_viewZoomBy4MenuItem</value>
@@ -3857,14 +3854,14 @@
   <data name="&gt;&gt;m_layerBringForwardMenuItem.Name" xml:space="preserve">
     <value>m_layerBringForwardMenuItem</value>
   </data>
-  <data name="&gt;&gt;m_viewViewport1920x1200MenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_layerPropertiesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="m_editMakeTileBrushButton.ToolTipText" xml:space="preserve">
     <value>Make a new tile brush from the current selection</value>
   </data>
-  <data name="m_filePrintPreviewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="&gt;&gt;m_tileIndexStatusLabel.Name" xml:space="preserve">
+    <value>m_tileIndexStatusLabel</value>
   </data>
   <data name="m_viewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -3875,17 +3872,17 @@
   <data name="&gt;&gt;m_helpIndexMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_editDeleteMenuItem.Name" xml:space="preserve">
-    <value>m_editDeleteMenuItem</value>
+  <data name="m_tileSheetRemoveDependenciesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
   </data>
-  <data name="&gt;&gt;m_mapTreeView.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.MapTreeView, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
   </data>
   <data name="&gt;&gt;m_fileToolStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_toolsSingleTileButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
+  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
+    <value>Save Map As</value>
   </data>
   <data name="m_editClearSelectionButton.ToolTipText" xml:space="preserve">
     <value>Clear selection</value>
@@ -3893,8 +3890,8 @@
   <data name="m_editClearSelectionButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="&gt;&gt;m_layerSendBackwardButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_editMakeTileBrushButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="m_viewZoomComboBox.Items7" xml:space="preserve">
     <value>x 8</value>
@@ -3902,8 +3899,8 @@
   <data name="m_viewZoomComboBox.Items1" xml:space="preserve">
     <value>x 2</value>
   </data>
-  <data name="&gt;&gt;m_viewZoomBy7MenuItem.Name" xml:space="preserve">
-    <value>m_viewZoomBy7MenuItem</value>
+  <data name="m_viewViewport1280x1024MenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3929,23 +3926,23 @@
   <data name="&gt;&gt;m_editMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetRemoveDependenciesMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetRemoveDependenciesMenuItem</value>
+  <data name="m_fileOpenMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+O</value>
   </data>
-  <data name="m_viewZoomBy7MenuItem.Text" xml:space="preserve">
-    <value>x 7</value>
+  <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
   </data>
   <data name="m_tileSheetDeleteMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="m_tileLocationStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 17</value>
+  <data name="&gt;&gt;m_toolStripContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;m_viewZoomBy1MenuItem.Name" xml:space="preserve">
     <value>m_viewZoomBy1MenuItem</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_layerSendBackwardButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;m_fileToolStrip.Parent" xml:space="preserve">
     <value>m_toolStripContainer.TopToolStripPanel</value>
@@ -3968,8 +3965,8 @@
   <data name="m_toolsSingleTileButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="m_dependencyRemovedMessageBox.Caption" xml:space="preserve">
-    <value>Remove Dependencies</value>
+  <data name="m_fileExitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
   </data>
   <data name="m_mapStatisticsButton.Text" xml:space="preserve">
     <value>Map statistics</value>
@@ -3983,8 +3980,8 @@
   <data name="m_layerMenuItem.Text" xml:space="preserve">
     <value>&amp;Layer</value>
   </data>
-  <data name="&gt;&gt;m_toolsToolStrip.Parent" xml:space="preserve">
-    <value>m_toolStripContainerInner.RightToolStripPanel</value>
+  <data name="m_editInvertSelectionButton.Text" xml:space="preserve">
+    <value>Invert Selection</value>
   </data>
   <data name="&gt;&gt;m_viewToolStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3995,8 +3992,11 @@
   <data name="&gt;&gt;m_helpIndexMenuItem.Name" xml:space="preserve">
     <value>m_helpIndexMenuItem</value>
   </data>
-  <data name="&gt;&gt;m_viewMenuSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_layerSendBackwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="m_filePageSetupButton.Text" xml:space="preserve">
+    <value>Page Setup</value>
   </data>
   <data name="m_editCopyMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -4025,8 +4025,8 @@
   <data name="m_pluginMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
   </data>
-  <data name="m_mapPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="m_toolsTextureButton.ToolTipText" xml:space="preserve">
+    <value>Lay tiles sampled from a selected region</value>
   </data>
   <data name="m_editRedoButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -4037,8 +4037,8 @@
   <data name="m_viewViewport800x600MenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 22</value>
   </data>
-  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
-    <value>Print Preview</value>
+  <data name="m_toolsSingleTileButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 20</value>
   </data>
   <data name="&gt;&gt;m_filePrintButton.Name" xml:space="preserve">
     <value>m_filePrintButton</value>
@@ -4076,9 +4076,6 @@
   <data name="m_tileSheetAutoTilesButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="m_hasDependencyMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>385, 64</value>
-  </metadata>
   <metadata name="m_statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
@@ -4086,10 +4083,7 @@
     <value>True</value>
   </metadata>
   <metadata name="m_editToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 100</value>
-  </metadata>
-  <metadata name="m_layerToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 50</value>
+    <value>3, 99</value>
   </metadata>
   <metadata name="m_dependencyRemovedMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>607, 64</value>
@@ -4097,17 +4091,20 @@
   <metadata name="m_saveErrorMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>199, 64</value>
   </metadata>
+  <metadata name="m_loadErrorMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>513, 25</value>
+  </metadata>
   <metadata name="m_viewToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>3, 0</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Italian (Italy)</value>
-  </metadata>
   <metadata name="m_menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 75</value>
+    <value>0, 100</value>
   </metadata>
   <metadata name="m_fileSeparator1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
+  </metadata>
+  <metadata name="m_tileSheetToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>3, 25</value>
   </metadata>
   <metadata name="m_unsavedMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>198, 25</value>
@@ -4116,10 +4113,10 @@
     <value>False</value>
   </metadata>
   <metadata name="m_mapToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 124</value>
+    <value>92, 25</value>
   </metadata>
   <metadata name="m_fileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 50</value>
+    <value>3, 124</value>
   </metadata>
   <metadata name="m_fileSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -4127,11 +4124,11 @@
   <metadata name="m_fileSeparator5.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="m_tileSheetToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 25</value>
+  <metadata name="m_layerToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 50</value>
   </metadata>
-  <metadata name="m_loadErrorMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>513, 25</value>
+  <metadata name="m_hasDependencyMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>385, 64</value>
   </metadata>
   <metadata name="m_toolsToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 3</value>

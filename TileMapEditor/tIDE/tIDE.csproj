@@ -339,6 +339,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\CustomPropertyGrid.es-ES.resx">
+      <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomPropertyGrid.it-IT.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </EmbeddedResource>
