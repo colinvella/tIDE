@@ -362,6 +362,9 @@
     <EmbeddedResource Include="Controls\MapTreeView.it-IT.resx">
       <DependentUpon>MapTreeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TilePicker.es-ES.resx">
+      <DependentUpon>TilePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TilePicker.it-IT.resx">
       <DependentUpon>TilePicker.cs</DependentUpon>
     </EmbeddedResource>
