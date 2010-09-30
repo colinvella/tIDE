@@ -118,31 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_tilePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
+  <data name="m_verticalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 0</value>
   </data>
-  <data name="m_tilePropertiesMenuItem.Text" xml:space="preserve">
-    <value>Atributi della Piastra...</value>
+  <data name="m_verticalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 222</value>
   </data>
-  <data name="tileAnimationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
+  <data name="m_horizontalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 205</value>
   </data>
-  <data name="tileAnimationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Animazione della Piastra...</value>
+  <data name="m_horizontalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 17</value>
   </data>
   <data name="m_tileContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 48</value>
+    <value>210, 48</value>
+  </data>
+  <data name="m_tilePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="m_tilePropertiesMenuItem.Text" xml:space="preserve">
+    <value>Propiedades del Azulejo...</value>
+  </data>
+  <data name="tileAnimationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="tileAnimationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Animación del Azulejo...</value>
+  </data>
+  <data name="m_innerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 205</value>
   </data>
   <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
-    <value>Editore dello Strato</value>
+    <value>Editor de la Capa</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 222</value>
   </data>
   <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
-    <value>Dimensioni delle piastre incompatibili</value>
+    <value>Tamaño del azulejo incompatibles</value>
   </data>
   <data name="m_textureToolMessageBox.Caption" xml:space="preserve">
-    <value>Editore dello Strato</value>
+    <value>Editor de la Capa</value>
   </data>
   <data name="m_textureToolMessageBox.Text" xml:space="preserve">
-    <value>Devi avere una selezione valida per il campionamento di piastrelle</value>
+    <value>Usted debe tener una selección válida de las azulejos de la muestra</value>
   </data>
 </root>

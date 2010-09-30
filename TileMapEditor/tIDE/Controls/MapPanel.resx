@@ -117,134 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_verticalScrollBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MapPanel</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_verticalScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_verticalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 0</value>
-  </data>
-  <data name="m_verticalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 228</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_verticalScrollBar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_verticalScrollBar.Name" xml:space="preserve">
-    <value>m_verticalScrollBar</value>
-  </data>
-  <data name="&gt;&gt;m_verticalScrollBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_verticalScrollBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_verticalScrollBar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="m_horizontalScrollBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="m_horizontalScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_horizontalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 211</value>
-  </data>
-  <data name="m_horizontalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 17</value>
-  </data>
-  <data name="m_horizontalScrollBar.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_horizontalScrollBar.Name" xml:space="preserve">
-    <value>m_horizontalScrollBar</value>
-  </data>
-  <data name="&gt;&gt;m_horizontalScrollBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_horizontalScrollBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_horizontalScrollBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="m_animationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="m_tileContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>170, 17</value>
-  </metadata>
-  <data name="m_tilePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="m_tilePropertiesMenuItem.Text" xml:space="preserve">
-    <value>Tile Properties...</value>
-  </data>
-  <data name="tileAnimationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="tileAnimationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tile Animation...</value>
-  </data>
-  <data name="m_tileContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 48</value>
-  </data>
-  <data name="&gt;&gt;m_tileContextMenuStrip.Name" xml:space="preserve">
-    <value>m_tileContextMenuStrip</value>
   </data>
   <data name="&gt;&gt;m_tileContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_innerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;tileAnimationToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_innerPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
+    <value>Incompatible tile size</value>
   </data>
-  <data name="m_innerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 211</value>
-  </data>
-  <data name="m_innerPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_innerPanel.Name" xml:space="preserve">
-    <value>m_innerPanel</value>
-  </data>
-  <data name="&gt;&gt;m_innerPanel.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_innerPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_verticalScrollBar.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_horizontalScrollBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_innerPanel.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <metadata name="m_tileSizeMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>353, 17</value>
-  </metadata>
-  <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
-    <value>Layer Editor</value>
-  </data>
-  <data name="m_tileSizeMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 228</value>
-  </data>
-  <data name="&gt;&gt;m_animationTimer.Name" xml:space="preserve">
-    <value>m_animationTimer</value>
   </data>
   <data name="&gt;&gt;m_animationTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -252,46 +148,150 @@
   <data name="&gt;&gt;m_tilePropertiesMenuItem.Name" xml:space="preserve">
     <value>m_tilePropertiesMenuItem</value>
   </data>
-  <data name="&gt;&gt;m_tilePropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tileAnimationToolStripMenuItem.Name" xml:space="preserve">
-    <value>tileAnimationToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;tileAnimationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_tileSizeMessageBox.Name" xml:space="preserve">
-    <value>m_tileSizeMessageBox</value>
-  </data>
-  <data name="&gt;&gt;m_tileSizeMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;m_verticalScrollBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_textureToolMessageBox.Name" xml:space="preserve">
     <value>m_textureToolMessageBox</value>
   </data>
-  <data name="&gt;&gt;m_textureToolMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MapPanel</value>
+  <data name="m_horizontalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 209</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_innerPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_horizontalScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_innerPanel.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_innerPanel.Name" xml:space="preserve">
+    <value>m_innerPanel</value>
+  </data>
+  <data name="tileAnimationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="&gt;&gt;m_horizontalScrollBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_horizontalScrollBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="m_innerPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;m_verticalScrollBar.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
-    <value>Incompatible tile size</value>
+  <data name="m_horizontalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 17</value>
   </data>
-  <metadata name="m_textureToolMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>527, 17</value>
-  </metadata>
-  <data name="m_textureToolMessageBox.Caption" xml:space="preserve">
+  <data name="&gt;&gt;m_textureToolMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
     <value>Layer Editor</value>
+  </data>
+  <data name="&gt;&gt;m_animationTimer.Name" xml:space="preserve">
+    <value>m_animationTimer</value>
+  </data>
+  <data name="&gt;&gt;m_tileSizeMessageBox.Name" xml:space="preserve">
+    <value>m_tileSizeMessageBox</value>
+  </data>
+  <data name="m_verticalScrollBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="m_innerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 209</value>
   </data>
   <data name="m_textureToolMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>
   </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 226</value>
+  </data>
+  <data name="&gt;&gt;m_horizontalScrollBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_verticalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 0</value>
+  </data>
+  <data name="m_horizontalScrollBar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_tileSizeMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_tileContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 48</value>
+  </data>
+  <data name="m_textureToolMessageBox.Caption" xml:space="preserve">
+    <value>Layer Editor</value>
+  </data>
+  <data name="m_verticalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 226</value>
+  </data>
+  <data name="&gt;&gt;m_horizontalScrollBar.Name" xml:space="preserve">
+    <value>m_horizontalScrollBar</value>
+  </data>
+  <data name="&gt;&gt;m_verticalScrollBar.Name" xml:space="preserve">
+    <value>m_verticalScrollBar</value>
+  </data>
+  <data name="&gt;&gt;tileAnimationToolStripMenuItem.Name" xml:space="preserve">
+    <value>tileAnimationToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_innerPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_tileContextMenuStrip.Name" xml:space="preserve">
+    <value>m_tileContextMenuStrip</value>
+  </data>
+  <data name="m_innerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="m_textureToolMessageBox.Text" xml:space="preserve">
     <value>You must have a valid selection of tiles to sample</value>
   </data>
+  <data name="&gt;&gt;m_tilePropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_tileSizeMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
+  <data name="m_tilePropertiesMenuItem.Text" xml:space="preserve">
+    <value>Tile Properties...</value>
+  </data>
+  <data name="tileAnimationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tile Animation...</value>
+  </data>
+  <data name="m_tilePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="m_verticalScrollBar.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <metadata name="m_tileSizeMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>353, 17</value>
+  </metadata>
+  <metadata name="m_textureToolMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>527, 17</value>
+  </metadata>
+  <metadata name="m_tileContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>170, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="m_animationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

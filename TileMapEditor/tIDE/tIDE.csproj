@@ -349,6 +349,9 @@
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapPanel.es-ES.resx">
+      <DependentUpon>MapPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MapPanel.it-IT.resx">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
