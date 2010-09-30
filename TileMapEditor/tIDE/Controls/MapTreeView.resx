@@ -136,9 +136,6 @@
   <data name="m_treePanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 130</value>
   </data>
-  <data name="&gt;&gt;m_treePanel.Name" xml:space="preserve">
-    <value>m_treePanel</value>
-  </data>
   <data name="m_layerMakeVisibileMenuItem.Text" xml:space="preserve">
     <value>Make Visible</value>
   </data>
@@ -185,12 +182,6 @@
   </data>
   <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_labelCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Name" xml:space="preserve">
-    <value>m_layerMakeVisibileMenuItem</value>
   </data>
   <data name="m_layerPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
@@ -243,6 +234,9 @@
   <data name="&gt;&gt;m_layerSendBackwardMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
+    <value>m_treePanel</value>
+  </data>
   <data name="m_labelCaption.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -255,11 +249,17 @@
   <data name="m_labelCaption.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;m_layerNewMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_layerMakeInvisibileMenuItem.Text" xml:space="preserve">
     <value>Make Invisible</value>
@@ -311,7 +311,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACq
-        GAAAAk1TRnQBSQFMAgEBBgEAASwBAAEsAQABEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
+        GAAAAk1TRnQBSQFMAgEBBgEAASwBAAFMAQABEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIBIAA4YB/wFdApkB/wNuAf8DXQH/A1YB/wNMAf8DRAH/AzAB/wMgAf8DGQH/
         AxMB/wMNAf8DDQH/zAADhgH/AZABqQGtAf8BXQLMAf8BXQGZAcwB/wFdAZkBzAH/AV0BmQHMAf8BXQGZ
         AcwB/wFdAZkBzAH/AV0BmQHMAf8BXQGZAcwB/wFdAZkBzAH/AV0BmQHMAf8CKgFdAf8DwAH/yAADhgH/
@@ -482,8 +482,8 @@
   <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 22</value>
   </data>
-  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
-    <value>m_treePanel</value>
+  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Name" xml:space="preserve">
+    <value>m_layerMakeVisibileMenuItem</value>
   </data>
   <data name="&gt;&gt;m_layerContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -525,17 +525,17 @@
   <data name="&gt;&gt;m_treePanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;m_treePanel.Name" xml:space="preserve">
+    <value>m_treePanel</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_tileSheetNewMenuItem.Text" xml:space="preserve">
     <value>New...</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_labelCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="m_layerNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
@@ -629,8 +629,5 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Italian (Italy)</value>
   </metadata>
 </root>

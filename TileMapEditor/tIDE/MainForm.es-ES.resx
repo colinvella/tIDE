@@ -144,6 +144,58 @@
   <data name="m_toolsTileBrushButton.ToolTipText" xml:space="preserve">
     <value>Establece un pincel de azulejos</value>
   </data>
+  <data name="m_fileNewButton.Text" xml:space="preserve">
+    <value>Nueva Mapa</value>
+  </data>
+  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
+    <value>Nueva mapa</value>
+  </data>
+  <data name="m_fileOpenButton.Text" xml:space="preserve">
+    <value>Abre Mapa</value>
+  </data>
+  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
+    <value>Abre mapa</value>
+  </data>
+  <data name="m_fileSaveButton.Text" xml:space="preserve">
+    <value>Guarda la Mapa</value>
+  </data>
+  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
+    <value>Guarda la mapa</value>
+  </data>
+  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
+    <value>Guarda la Mapa Como</value>
+  </data>
+  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
+    <value>Guarda la mapa como</value>
+  </data>
+  <data name="m_filePageSetupButton.Text" xml:space="preserve">
+    <value>Configura Página</value>
+  </data>
+  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
+    <value>Configura la página para la impresión</value>
+  </data>
+  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
+    <value>Ver Previa de Impresión</value>
+  </data>
+  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
+    <value>Ver previa de impresión</value>
+  </data>
+  <data name="m_filePrintButton.Text" xml:space="preserve">
+    <value>Imprimi</value>
+  </data>
+  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
+    <value>Imprimi la mapa</value>
+  </data>
+  <data name="m_fileOptionsButton.Text" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
+    <value>Accede las opciones generales</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 0</value>
+  </data>
   <data name="m_mapPropertiesButton.Text" xml:space="preserve">
     <value>Propiedades del Mapa</value>
   </data>
@@ -156,9 +208,8 @@
   <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
     <value>Estadísticas del mapa</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 0</value>
+    <value>3, 0</value>
   </data>
   <data name="m_editUndoButton.Text" xml:space="preserve">
     <value>Deshace</value>
@@ -272,55 +323,7 @@
     <value>Elimina la capa</value>
   </data>
   <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 25</value>
-  </data>
-  <data name="m_fileNewButton.Text" xml:space="preserve">
-    <value>Nueva Mapa</value>
-  </data>
-  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
-    <value>Nueva mapa</value>
-  </data>
-  <data name="m_fileOpenButton.Text" xml:space="preserve">
-    <value>Abre Mapa</value>
-  </data>
-  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
-    <value>Abre mapa</value>
-  </data>
-  <data name="m_fileSaveButton.Text" xml:space="preserve">
-    <value>Guarda la Mapa</value>
-  </data>
-  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
-    <value>Guarda la mapa</value>
-  </data>
-  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
-    <value>Guarda la Mapa Como</value>
-  </data>
-  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
-    <value>Guarda la mapa como</value>
-  </data>
-  <data name="m_filePageSetupButton.Text" xml:space="preserve">
-    <value>Configura Página</value>
-  </data>
-  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
-    <value>Configura la página para la impresión</value>
-  </data>
-  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
-    <value>Ver Previa de Impresión</value>
-  </data>
-  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
-    <value>Ver previa de impresión</value>
-  </data>
-  <data name="m_filePrintButton.Text" xml:space="preserve">
-    <value>Imprimi</value>
-  </data>
-  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
-    <value>Imprimi la mapa</value>
-  </data>
-  <data name="m_fileOptionsButton.Text" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
-  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
-    <value>Accede las opciones generales</value>
+    <value>3, 50</value>
   </data>
   <data name="m_tileSheetNewButton.Text" xml:space="preserve">
     <value>Nueva Hoja de Azulejos</value>
@@ -365,7 +368,7 @@
     <value>Elimina la hoja de azulejos</value>
   </data>
   <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 50</value>
+    <value>326, 99</value>
   </data>
   <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -1615,10 +1618,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="m_loadErrorMessageBox.Text" xml:space="preserve">
     <value>Se produjo un error al abrir el archivo. Detalles: [message]</value>
