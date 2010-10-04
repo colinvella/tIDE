@@ -439,6 +439,9 @@
       <DependentUpon>MapStatisticsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OptonsDialog.es-ES.resx">
+      <DependentUpon>OptonsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\OptonsDialog.it-IT.resx">
       <DependentUpon>OptonsDialog.cs</DependentUpon>
     </EmbeddedResource>
