@@ -423,6 +423,9 @@
     <EmbeddedResource Include="Dialogs\LayerPropertiesDialog.it-IT.resx">
       <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MapPropertiesDialog.es-ES.resx">
+      <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MapPropertiesDialog.it-IT.resx">
       <DependentUpon>MapPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>

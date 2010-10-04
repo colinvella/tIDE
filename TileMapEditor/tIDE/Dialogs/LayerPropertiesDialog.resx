@@ -127,11 +127,12 @@
   <data name="&gt;&gt;m_customTabControl.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.CustomTabControl, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;m_tabGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_numericLayerWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="&gt;&gt;m_textBoxId.Name" xml:space="preserve">
-    <value>m_textBoxId</value>
+  <data name="m_numericTileHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_numericLayerHeight.Size" type="System.Drawing.Size, System.Drawing">
@@ -140,9 +141,11 @@
   <data name="&gt;&gt;m_numericTileHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_numericTileWidth.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;m_labelDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_buttonApply.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -195,9 +198,6 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="m_textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -225,11 +225,14 @@
   <data name="&gt;&gt;m_numericLayerHeight.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;m_textBoxId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>tiles</value>
+  <data name="&gt;&gt;m_textBoxDescription.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;m_numericTileHeight.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;m_tabImageList.Name" xml:space="preserve">
     <value>m_tabImageList</value>
@@ -237,17 +240,20 @@
   <data name="&gt;&gt;m_numericTileWidth.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Name" xml:space="preserve">
-    <value>m_customPropertyGrid</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 303</value>
+  <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 277</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
     <value>The specified Id is already used by another Layer</value>
@@ -266,6 +272,9 @@
   </data>
   <data name="m_customPropertyGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 326</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>pixels</value>
@@ -293,9 +302,6 @@
   </data>
   <data name="m_buttonApply.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;m_tabGeneral.Parent" xml:space="preserve">
     <value>m_customTabControl</value>
@@ -333,14 +339,14 @@
   <data name="&gt;&gt;m_numericTileWidth.Name" xml:space="preserve">
     <value>m_numericTileWidth</value>
   </data>
+  <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
+    <value>m_buttonCancel</value>
+  </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="m_numericLayerHeight.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -366,6 +372,9 @@
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>tiles</value>
+  </data>
   <data name="&gt;&gt;m_checkBoxVisible.Name" xml:space="preserve">
     <value>m_checkBoxVisible</value>
   </data>
@@ -378,8 +387,8 @@
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -417,6 +426,9 @@
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>253, 303</value>
   </data>
+  <data name="m_customTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
   <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 333</value>
   </data>
@@ -453,8 +465,8 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1258,9 +1270,6 @@
   <data name="m_buttonOk.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="m_checkBoxVisible.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 302</value>
-  </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
@@ -1291,6 +1300,9 @@
   <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
     <value>m_buttonOk</value>
   </data>
+  <data name="&gt;&gt;m_numericLayerWidth.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1308,9 +1320,6 @@
   </data>
   <data name="&gt;&gt;m_tabImageList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxDescription.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1333,8 +1342,8 @@
   <data name="m_tabGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_checkBoxVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 302</value>
   </data>
   <data name="m_numericLayerWidth.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -1345,8 +1354,8 @@
   <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="m_customTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="m_numericTileWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>x</value>
@@ -1417,8 +1426,95 @@
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="m_buttonCancel.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="m_customTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_numericLayerWidth.Name" xml:space="preserve">
+    <value>m_numericLayerWidth</value>
+  </data>
+  <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
+    <value>m_labelId</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Tile Size</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.Name" xml:space="preserve">
+    <value>m_textBoxId</value>
+  </data>
+  <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="m_numericLayerWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="&gt;&gt;m_labelDescription.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 221</value>
+  </data>
+  <data name="&gt;&gt;m_tabGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_customTabControl.Name" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 303</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_numericTileWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;m_customPropertyGrid.Name" xml:space="preserve">
+    <value>m_customPropertyGrid</value>
+  </data>
+  <data name="m_numericTileHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="&gt;&gt;m_duplicateIdMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_checkBoxVisible.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_buttonOk.Text" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 13</value>
   </data>
   <data name="m_tabImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -1466,99 +1562,6 @@
         Cw==
 </value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>x</value>
-  </data>
-  <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="m_buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
-  </data>
-  <data name="m_customTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;m_numericLayerWidth.Name" xml:space="preserve">
-    <value>m_numericLayerWidth</value>
-  </data>
-  <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
-    <value>m_labelId</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Tile Size</value>
-  </data>
-  <data name="&gt;&gt;m_labelDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
-    <value>m_customTabControl</value>
-  </data>
-  <data name="m_numericLayerWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="&gt;&gt;m_labelDescription.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 221</value>
-  </data>
-  <data name="&gt;&gt;m_numericTileHeight.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_customTabControl.Name" xml:space="preserve">
-    <value>m_customTabControl</value>
-  </data>
-  <data name="m_numericLayerWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_numericTileWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="m_numericTileHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="&gt;&gt;m_duplicateIdMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_tabGeneral.Name" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="&gt;&gt;m_buttonApply.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="m_checkBoxVisible.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_buttonOk.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 13</value>
-  </data>
-  <data name="m_checkBoxVisible.Text" xml:space="preserve">
-    <value>Visible</value>
-  </data>
   <data name="&gt;&gt;m_labelId.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
@@ -1571,8 +1574,8 @@
   <data name="m_buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
-    <value>m_buttonCancel</value>
+  <data name="&gt;&gt;m_tabGeneral.Name" xml:space="preserve">
+    <value>m_tabGeneral</value>
   </data>
   <data name="m_buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1585,9 +1588,6 @@
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 250</value>
-  </data>
-  <data name="m_numericTileWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
   </data>
   <data name="m_buttonApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>416, 377</value>
@@ -1616,11 +1616,14 @@
   <data name="&gt;&gt;m_textBoxDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="&gt;&gt;m_numericLayerWidth.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1631,17 +1634,14 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="m_numericTileHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="m_textBoxDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="m_textBoxId.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="m_checkBoxVisible.Text" xml:space="preserve">
+    <value>Visible</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -1655,8 +1655,8 @@
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <metadata name="label3.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1690,5 +1690,8 @@
   </metadata>
   <metadata name="m_tabImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>213, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Spanish (Spain)</value>
   </metadata>
 </root>

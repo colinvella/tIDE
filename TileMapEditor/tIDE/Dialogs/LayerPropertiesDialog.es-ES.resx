@@ -160,11 +160,14 @@
   <data name="m_labelDescription.Text" xml:space="preserve">
     <value>Descripción</value>
   </data>
+  <data name="m_buttonCancel.Text" xml:space="preserve">
+    <value>&amp;Cancela</value>
+  </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
     <value>&amp;Aplica</value>
   </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
-    <value>&amp;Cancela</value>
+    <value>&amp;Cierra</value>
   </data>
   <data name="m_numericTileHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 301</value>
