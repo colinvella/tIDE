@@ -391,6 +391,9 @@
     <EmbeddedResource Include="Dialogs\AutoTileDialog.resx">
       <DependentUpon>AutoTileDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CommandHistoryDialog.es-ES.resx">
+      <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CommandHistoryDialog.it-IT.resx">
       <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
     </EmbeddedResource>
