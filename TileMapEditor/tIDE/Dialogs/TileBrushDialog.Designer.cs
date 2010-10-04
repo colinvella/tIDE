@@ -184,9 +184,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = null;
             this.CancelButton = this.m_cancelButton;
-            this.Controls.Add(this.m_deleteButton);
             this.Controls.Add(this.m_renameButton);
             this.Controls.Add(this.m_closeButton);
+            this.Controls.Add(this.m_deleteButton);
             this.Controls.Add(this.m_listView);
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_applyButton);
