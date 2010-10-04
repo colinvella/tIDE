@@ -451,6 +451,9 @@
     <EmbeddedResource Include="Dialogs\PluginInfoDialog.it-IT.resx">
       <DependentUpon>PluginInfoDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TileAnimationDialog.es-ES.resx">
+      <DependentUpon>TileAnimationDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TileAnimationDialog.it-IT.resx">
       <DependentUpon>TileAnimationDialog.cs</DependentUpon>
     </EmbeddedResource>

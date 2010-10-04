@@ -315,8 +315,8 @@
             this.Controls.Add(this.m_buttonClose);
             this.Controls.Add(m_frameIntervalLabel);
             this.Controls.Add(m_customPanel);
-            this.Controls.Add(this.m_frameIntervalTextbox);
             this.Controls.Add(this.m_buttonOk);
+            this.Controls.Add(this.m_frameIntervalTextbox);
             this.DoubleBuffered = true;
             this.Font = null;
             this.Name = "TileAnimationDialog";
