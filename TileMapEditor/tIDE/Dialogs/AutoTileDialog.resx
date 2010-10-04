@@ -186,9 +186,6 @@
   <data name="&gt;&gt;m_btnOk.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_btnRename.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;m_lblId.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
@@ -228,8 +225,11 @@
   <data name="m_btnNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;m_splitContainer.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;m_txtNewId.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="m_btnApply.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="m_btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -249,14 +249,11 @@
   <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
     <value>The Id '[m_txtNewId.Text]' is already in use</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Auto Tiles</value>
+  <data name="m_tilePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="&gt;&gt;m_tilePicker.Name" xml:space="preserve">
     <value>m_tilePicker</value>
-  </data>
-  <data name="m_btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
   </data>
   <data name="m_cmbId.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 14</value>
@@ -264,14 +261,14 @@
   <data name="&gt;&gt;m_cmbId.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="m_btnDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="m_panelTemplate.Size" type="System.Drawing.Size, System.Drawing">
     <value>370, 332</value>
   </data>
   <data name="&gt;&gt;m_panelTemplate.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.Name" xml:space="preserve">
-    <value>m_splitContainer.Panel2</value>
   </data>
   <data name="m_cmbId.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -279,20 +276,20 @@
   <data name="m_btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="&gt;&gt;m_cmbId.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="m_btnCancel.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
   </data>
   <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
     <value>Rename Auto Tile</value>
   </data>
-  <data name="&gt;&gt;m_txtNewId.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_cmbId.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="m_btnClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>497, 379</value>
   </data>
-  <data name="m_btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="m_btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;m_panelTemplate.Name" xml:space="preserve">
     <value>m_panelTemplate</value>
@@ -306,11 +303,11 @@
   <data name="m_deleteMessageBox.Text" xml:space="preserve">
     <value>Are you sure you want to delete this auto tile definition?</value>
   </data>
-  <data name="m_tilePicker.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_panelTemplate.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="m_tilePicker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="m_btnApply.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;m_btnRename.Name" xml:space="preserve">
     <value>m_btnRename</value>
@@ -321,14 +318,8 @@
   <data name="&gt;&gt;m_tilePicker.Parent" xml:space="preserve">
     <value>m_splitContainer.Panel1</value>
   </data>
-  <data name="m_btnApply.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_panelTemplate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="m_btnCancel.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
+  <data name="&gt;&gt;m_txtNewId.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;m_btnDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -342,8 +333,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_panelTemplate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;m_btnRename.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="m_splitContainer.SplitterDistance" type="System.Int32, mscorlib">
     <value>186</value>
@@ -354,8 +345,8 @@
   <data name="m_splitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;m_duplicateIdMessageBox.Name" xml:space="preserve">
-    <value>m_duplicateIdMessageBox</value>
+  <data name="&gt;&gt;m_splitContainer.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AutoTileDialog</value>
@@ -369,14 +360,11 @@
   <data name="&gt;&gt;m_splitContainer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_btnOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Auto Tiles</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="m_btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;m_splitContainer.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="m_btnApply.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -423,9 +411,6 @@
   <data name="&gt;&gt;m_btnNew.Name" xml:space="preserve">
     <value>m_btnNew</value>
   </data>
-  <data name="m_btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
   <data name="&gt;&gt;m_btnRename.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -444,11 +429,14 @@
   <data name="m_lblId.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;m_splitContainer.Panel1.Parent" xml:space="preserve">
+    <value>m_splitContainer</value>
+  </data>
   <data name="m_btnRename.Text" xml:space="preserve">
     <value>&amp;Rename</value>
   </data>
-  <data name="m_btnOk.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;m_duplicateIdMessageBox.Name" xml:space="preserve">
+    <value>m_duplicateIdMessageBox</value>
   </data>
   <data name="m_tilePicker.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -480,71 +468,8 @@
   <data name="&gt;&gt;m_noIdMessageBox.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="m_btnDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="m_btnNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 379</value>
-  </data>
-  <data name="m_cmbId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 21</value>
-  </data>
-  <data name="m_btnRename.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 12</value>
-  </data>
-  <data name="&gt;&gt;m_tilePicker.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_duplicateIdMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_btnOk.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="m_btnApply.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;m_btnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_txtNewId.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="m_panelTemplate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="m_btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 379</value>
-  </data>
-  <data name="m_btnOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 379</value>
-  </data>
-  <data name="&gt;&gt;m_btnOk.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel1.Name" xml:space="preserve">
-    <value>m_splitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_txtNewId.Name" xml:space="preserve">
-    <value>m_txtNewId</value>
-  </data>
-  <data name="&gt;&gt;m_lblId.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="m_txtNewId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 14</value>
-  </data>
-  <data name="&gt;&gt;m_btnNew.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_btnRename.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.Parent" xml:space="preserve">
-    <value>m_splitContainer</value>
-  </data>
-  <data name="m_btnCancel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;m_splitContainer.Panel2.Name" xml:space="preserve">
+    <value>m_splitContainer.Panel2</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1309,8 +1234,77 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="m_btnNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="m_btnNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 379</value>
+  </data>
+  <data name="m_cmbId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 21</value>
+  </data>
+  <data name="m_btnRename.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 12</value>
+  </data>
+  <data name="&gt;&gt;m_tilePicker.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_duplicateIdMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_btnOk.Text" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="m_btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;m_btnCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_txtNewId.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="m_panelTemplate.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="m_btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 379</value>
+  </data>
+  <data name="m_btnOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 379</value>
+  </data>
+  <data name="m_btnOk.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_btnOk.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel1.Name" xml:space="preserve">
+    <value>m_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;m_txtNewId.Name" xml:space="preserve">
+    <value>m_txtNewId</value>
+  </data>
+  <data name="&gt;&gt;m_lblId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_txtNewId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 14</value>
+  </data>
+  <data name="&gt;&gt;m_btnNew.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_btnRename.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel2.Parent" xml:space="preserve">
+    <value>m_splitContainer</value>
+  </data>
+  <data name="m_btnCancel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="m_btnRename.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1318,8 +1312,8 @@
   <data name="&gt;&gt;m_cmbId.Name" xml:space="preserve">
     <value>m_cmbId</value>
   </data>
-  <data name="&gt;&gt;m_splitContainer.Panel1.Parent" xml:space="preserve">
-    <value>m_splitContainer</value>
+  <data name="&gt;&gt;m_btnOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_tilePicker.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.TilePicker, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -1333,11 +1327,17 @@
   <data name="m_btnOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;m_txtNewId.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="m_btnNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="m_tilePicker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="m_panelTemplate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -1357,8 +1357,8 @@
   <data name="&gt;&gt;m_lblId.Name" xml:space="preserve">
     <value>m_lblId</value>
   </data>
-  <metadata name="m_lblId.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="m_noIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1372,7 +1372,7 @@
   <metadata name="m_duplicateIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 17</value>
   </metadata>
-  <metadata name="m_noIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="m_lblId.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
   </metadata>
 </root>
