@@ -118,11 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 303</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>píxeles</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 303</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Tamaño de Azulejo</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 277</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>azulejos</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 277</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Tamaño de Capa</value>
+  </data>
   <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
   </data>
   <data name="m_labelDescription.Text" xml:space="preserve">
     <value>Descripción</value>
+  </data>
+  <data name="m_buttonApply.Text" xml:space="preserve">
+    <value>&amp;Aplica</value>
+  </data>
+  <data name="m_buttonClose.Text" xml:space="preserve">
+    <value>&amp;Cancela</value>
+  </data>
+  <data name="m_numericTileHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 301</value>
+  </data>
+  <data name="m_numericTileWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 301</value>
+  </data>
+  <data name="m_numericLayerHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 275</value>
+  </data>
+  <data name="m_numericLayerWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 275</value>
+  </data>
+  <data name="m_textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 33</value>
+  </data>
+  <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 221</value>
+  </data>
+  <data name="m_textBoxId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 7</value>
+  </data>
+  <data name="m_textBoxId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 20</value>
   </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
     <value>Propiedades Personalizadas</value>
@@ -172,6 +238,9 @@
         AQABDgQAAYABBwEAAQwEAAHAAQMGAAHgAQEGAAHwAQcGAAH4AQMB8AUAAfwBAQH4BQAC/wH8BQAE/wQA
         Cw==
 </value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Propiedades de la Capa</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -938,5 +1007,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Propiedades de la Capa</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
+    <value>El Identificador especificado ya está siendo utilizado por otra Capa</value>
   </data>
 </root>
