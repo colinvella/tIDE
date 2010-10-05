@@ -463,6 +463,9 @@
     <EmbeddedResource Include="Dialogs\TileBrushDialog.it-IT.resx">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TiledFormatOptionsDialog.es-ES.resx">
+      <DependentUpon>TiledFormatOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TiledFormatOptionsDialog.it-IT.resx">
       <DependentUpon>TiledFormatOptionsDialog.cs</DependentUpon>
     </EmbeddedResource>

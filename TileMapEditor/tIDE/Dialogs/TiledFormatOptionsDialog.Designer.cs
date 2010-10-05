@@ -79,7 +79,7 @@
             this.m_btnCancel.AccessibleName = null;
             resources.ApplyResources(this.m_btnCancel, "m_btnCancel");
             this.m_btnCancel.BackgroundImage = null;
-            this.m_btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_btnCancel.DialogResult = System.Windows.Forms.DialogResult.Abort;
             this.m_btnCancel.Font = null;
             this.m_btnCancel.Name = "m_btnCancel";
             this.m_btnCancel.UseVisualStyleBackColor = true;
