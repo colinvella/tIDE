@@ -284,60 +284,32 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_topicTreeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 404</value>
-  </data>
-  <data name="m_indexTreeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 404</value>
-  </data>
-  <data name="m_searchListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 404</value>
-  </data>
-  <data name="m_contentRichTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 394</value>
-  </data>
-  <data name="m_contentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 404</value>
-  </data>
-  <data name="m_splitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 412</value>
-  </data>
-  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 412</value>
-  </data>
   <data name="m_helpContentsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>83, 22</value>
   </data>
   <data name="m_helpContentsButton.Text" xml:space="preserve">
-    <value>Contenuto</value>
+    <value>Contenido</value>
   </data>
   <data name="m_helpIndexButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 22</value>
   </data>
   <data name="m_helpIndexButton.Text" xml:space="preserve">
-    <value>Indice</value>
+    <value>Índice</value>
   </data>
   <data name="m_helpSearchButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 22</value>
+    <value>59, 22</value>
   </data>
   <data name="m_helpSearchButton.Text" xml:space="preserve">
-    <value>Cerca</value>
+    <value>Búsqa</value>
   </data>
   <data name="m_searchTextbox.Text" xml:space="preserve">
-    <value>Inserisci i criteri di ricerca qui</value>
+    <value>Introduce criterios de búsqueda aquí</value>
   </data>
   <data name="m_searchTextbox.ToolTipText" xml:space="preserve">
-    <value>Inserisci i criteri di ricerca qui</value>
+    <value>Introduce criterios de búsqueda aquí</value>
   </data>
   <data name="m_toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 25</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_toolStrip.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_noContentMessageBox.Caption" xml:space="preserve">
-    <value>Caricare il Contenuto della Guida</value>
+    <value>213, 25</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -842,20 +814,7 @@
         9v8AAPz/AABczAAAAEoAAOPsAAD//wAAr/8AADH/gAA5/4ABN//AAzP/8A8z/w==
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>tIDE Aiuto</value>
-  </data>
-  <data name="m_noContentMessageBox.Text" xml:space="preserve">
-    <value>La risorsa del contenuto "[m_resourceName]" non è definita</value>
-  </data>
-  <data name="m_badContentMessageBox.Caption" xml:space="preserve">
-    <value>Caricare il Contenuto della Guida</value>
-  </data>
-  <data name="m_badContentMessageBox.Text" xml:space="preserve">
-    <value>La risorsa del contenuto "[m_resourceName]" è nel formato sbagliato</value>
+    <value>tIDE Ayuda</value>
   </data>
 </root>
