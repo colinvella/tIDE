@@ -136,20 +136,14 @@
   <data name="m_btnRename.Text" xml:space="preserve">
     <value>Cambia Nomb&amp;re</value>
   </data>
+  <data name="m_btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 379</value>
+  </data>
   <data name="m_btnCancel.Text" xml:space="preserve">
     <value>&amp;Cancela</value>
   </data>
   <data name="m_noIdMessageBox.Caption" xml:space="preserve">
     <value>Cambia el Nombre de Auto Azulejo</value>
-  </data>
-  <data name="m_noIdMessageBox.Text" xml:space="preserve">
-    <value>No se ha especificado Identificación</value>
-  </data>
-  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
-    <value>Cambia el Nombre de Auto Azulejo</value>
-  </data>
-  <data name="m_deleteMessageBox.Caption" xml:space="preserve">
-    <value>Auto Azulejos</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -915,6 +909,15 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
+    <value>Auto Azulejos</value>
+  </data>
+  <data name="m_noIdMessageBox.Text" xml:space="preserve">
+    <value>No se ha especificado Identificación</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Cambia el Nombre de Auto Azulejo</value>
+  </data>
+  <data name="m_deleteMessageBox.Caption" xml:space="preserve">
     <value>Auto Azulejos</value>
   </data>
   <data name="m_deleteMessageBox.Text" xml:space="preserve">
