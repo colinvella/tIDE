@@ -119,16 +119,16 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_labelTileIndex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
+    <value>88, 13</value>
   </data>
   <data name="m_labelTileIndex.Text" xml:space="preserve">
-    <value>Índice del Azulejo</value>
+    <value>Índice de Azulejo</value>
   </data>
   <data name="m_labelTileSheet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 13</value>
+    <value>86, 13</value>
   </data>
   <data name="m_labelTileSheet.Text" xml:space="preserve">
-    <value>Hoja des Azulejos</value>
+    <value>Hoja de Azulejos</value>
   </data>
   <data name="m_labelBlendMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -150,7 +150,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABS
-        CQAAAk1TRnQBSQFMAgEBAgEAASwBAAEsAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAgEAATQBAAE0AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

@@ -123,10 +123,6 @@
   <data name="&gt;&gt;m_labelTileSheet.Name" xml:space="preserve">
     <value>m_labelTileSheet</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
   <data name="&gt;&gt;m_textBoxTileIndex.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
@@ -150,8 +146,8 @@
   <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 183</value>
+  <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="m_customTabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 209</value>
@@ -162,6 +158,7 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -180,11 +177,11 @@
   <data name="&gt;&gt;m_buttonClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;m_customPropertyGrid.Parent" xml:space="preserve">
     <value>m_tabCustomProperties</value>
+  </data>
+  <data name="m_textBoxTileSheet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="m_labelTileIndex.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -272,6 +269,9 @@
   </data>
   <data name="m_labelBlendMode.Text" xml:space="preserve">
     <value>Blend Mode</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTileSheet.Name" xml:space="preserve">
+    <value>m_textBoxTileSheet</value>
   </data>
   <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1147,8 +1147,8 @@
   <data name="m_textBoxTileSheet.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="m_textBoxTileIndex.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="m_buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="m_buttonOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 227</value>
@@ -1264,9 +1264,6 @@
   <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
     <value> Custom Properties </value>
   </data>
@@ -1309,6 +1306,9 @@
   <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="m_textBoxTileIndex.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
   <data name="&gt;&gt;m_textBoxId.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
@@ -1321,17 +1321,14 @@
   <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
     <value>m_labelId</value>
   </data>
-  <data name="m_textBoxTileSheet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 183</value>
   </data>
   <data name="&gt;&gt;m_textBoxTileIndex.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
     <value>m_customTabControl</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>320, 240</value>
@@ -1363,6 +1360,9 @@
   <data name="m_buttonOk.Text" xml:space="preserve">
     <value>&amp;OK</value>
   </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 10</value>
   </data>
@@ -1371,7 +1371,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABS
-        CQAAAk1TRnQBSQFMAgEBAgEAARgBAAEkAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAgEAARgBAAEoAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -1440,8 +1440,8 @@
   <data name="m_textBoxTileSheet.Location" type="System.Drawing.Point, System.Drawing">
     <value>103, 61</value>
   </data>
-  <data name="&gt;&gt;m_textBoxTileSheet.Name" xml:space="preserve">
-    <value>m_textBoxTileSheet</value>
+  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="m_labelBlendMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
@@ -1455,8 +1455,8 @@
   <data name="m_labelBlendMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_buttonClose.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <metadata name="m_labelTileIndex.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>

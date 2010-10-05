@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label m_labelTileSize;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TileSheetPropertiesDialog));
+            System.Windows.Forms.Label m_labelTileSize;
             System.Windows.Forms.Label m_labelTileSizeBy;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
@@ -43,6 +43,7 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonClose = new System.Windows.Forms.Button();
+            this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_labelImageSource = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.m_labelZoom = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_noImageSourceMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_tileSizeFixedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
@@ -99,51 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_trackBarZoom)).BeginInit();
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_labelTileSize
-            // 
-            resources.ApplyResources(m_labelTileSize, "m_labelTileSize");
-            m_labelTileSize.Name = "m_labelTileSize";
-            // 
-            // m_labelTileSizeBy
-            // 
-            resources.ApplyResources(m_labelTileSizeBy, "m_labelTileSizeBy");
-            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(label7, "label7");
-            label7.Name = "label7";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
             // 
             // m_buttonOk
             // 
@@ -173,6 +128,14 @@
             this.m_buttonClose.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.m_buttonClose.Name = "m_buttonClose";
             this.m_buttonClose.UseVisualStyleBackColor = true;
+            // 
+            // m_tabImageList
+            // 
+            this.m_tabImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("m_tabImageList.ImageStream")));
+            this.m_tabImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.m_tabImageList.Images.SetKeyName(0, "TileSheet.png");
+            this.m_tabImageList.Images.SetKeyName(1, "TileSheetAlignment.png");
+            this.m_tabImageList.Images.SetKeyName(2, "CustomProperties.png");
             // 
             // m_customTabControl
             // 
@@ -328,6 +291,16 @@
             0});
             this.m_textBoxTileWidth.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
+            // m_labelTileSize
+            // 
+            resources.ApplyResources(m_labelTileSize, "m_labelTileSize");
+            m_labelTileSize.Name = "m_labelTileSize";
+            // 
+            // m_labelTileSizeBy
+            // 
+            resources.ApplyResources(m_labelTileSizeBy, "m_labelTileSizeBy");
+            m_labelTileSizeBy.Name = "m_labelTileSizeBy";
+            // 
             // m_textBoxTileHeight
             // 
             resources.ApplyResources(this.m_textBoxTileHeight, "m_textBoxTileHeight");
@@ -348,6 +321,11 @@
             0,
             0});
             this.m_textBoxTileHeight.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // m_textBoxLeftMargin
             // 
@@ -371,6 +349,16 @@
             this.m_textBoxSpacingY.Name = "m_textBoxSpacingY";
             this.m_textBoxSpacingY.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
             // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
             // m_textBoxTopMargin
             // 
             resources.ApplyResources(this.m_textBoxTopMargin, "m_textBoxTopMargin");
@@ -392,6 +380,11 @@
             0});
             this.m_textBoxSpacingX.Name = "m_textBoxSpacingX";
             this.m_textBoxSpacingX.ValueChanged += new System.EventHandler(this.OnUpdateAlignment);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
             // 
             // m_groupBoxQuickSettings
             // 
@@ -420,6 +413,21 @@
             resources.ApplyResources(this.m_comboBoxSpacing, "m_comboBoxSpacing");
             this.m_comboBoxSpacing.Name = "m_comboBoxSpacing";
             this.m_comboBoxSpacing.SelectedIndexChanged += new System.EventHandler(this.OnSpacingCombo);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // m_comboBoxMargin
             // 
@@ -498,14 +506,6 @@
             resources.ApplyResources(this.m_customPropertyGrid, "m_customPropertyGrid");
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
             this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
-            // 
-            // m_tabImageList
-            // 
-            this.m_tabImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("m_tabImageList.ImageStream")));
-            this.m_tabImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.m_tabImageList.Images.SetKeyName(0, "TileSheet.png");
-            this.m_tabImageList.Images.SetKeyName(1, "TileSheetAlignment.png");
-            this.m_tabImageList.Images.SetKeyName(2, "CustomProperties.png");
             // 
             // m_noImageSourceMessageBox
             // 
