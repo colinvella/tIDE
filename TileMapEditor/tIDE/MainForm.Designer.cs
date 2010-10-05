@@ -54,19 +54,19 @@
             this.m_toolsDropperButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsTextureButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsTileBrushButton = new TileMapEditor.Controls.CustomToolStripSplitButton();
-            this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
-            this.m_layerNewButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerPropertiesButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerMakeInvisibileButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerMakeVisibileButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_layerBringForwardButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerSendBackwardButton = new System.Windows.Forms.ToolStripButton();
-            this.m_layerToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_layerDeleteButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_mapPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapStatisticsButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetAutoTilesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_tileSheetAutoUpdateEnableButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetAutoUpdateDisableButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_tileSheetRemoveDependenciesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
             this.m_menuStrip = new System.Windows.Forms.MenuStrip();
             this.m_fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_fileNewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,40 +165,6 @@
             this.m_helpSearchMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.m_helpAboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_viewToolStrip = new System.Windows.Forms.ToolStrip();
-            this.m_viewZoomLabel = new System.Windows.Forms.ToolStripLabel();
-            this.m_viewZoomComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.m_viewZoomInButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewZoomOutButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_viewFullScreenButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewWindowedButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_viewLayersShowAllButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewLayersHighlightSelectedButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewShowTileGuidesButton = new System.Windows.Forms.ToolStripButton();
-            this.m_viewHideTileGuidesButton = new System.Windows.Forms.ToolStripButton();
-            this.m_fileToolStrip = new System.Windows.Forms.ToolStrip();
-            this.m_fileNewButton = new System.Windows.Forms.ToolStripButton();
-            this.m_fileOpenButton = new System.Windows.Forms.ToolStripButton();
-            this.m_fileToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
-            this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
-            this.m_fileToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_filePageSetupButton = new System.Windows.Forms.ToolStripButton();
-            this.m_filePrintPreviewButton = new System.Windows.Forms.ToolStripButton();
-            this.m_filePrintButton = new System.Windows.Forms.ToolStripButton();
-            this.m_fileOptionsButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetToolStrip = new System.Windows.Forms.ToolStrip();
-            this.m_tileSheetNewButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetPropertiesButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetAutoTilesButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_tileSheetAutoUpdateEnableButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetAutoUpdateDisableButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_tileSheetRemoveDependenciesButton = new System.Windows.Forms.ToolStripButton();
-            this.m_tileSheetDeleteButton = new System.Windows.Forms.ToolStripButton();
             this.m_editToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_editUndoButton = new System.Windows.Forms.ToolStripButton();
             this.m_editRedoButton = new System.Windows.Forms.ToolStripButton();
@@ -215,6 +181,40 @@
             this.m_editToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.m_editMakeTileBrushButton = new System.Windows.Forms.ToolStripButton();
             this.m_editManageTileBrushesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_layerNewButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerPropertiesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerMakeInvisibileButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerMakeVisibileButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_layerBringForwardButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerSendBackwardButton = new System.Windows.Forms.ToolStripButton();
+            this.m_layerToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_layerDeleteButton = new System.Windows.Forms.ToolStripButton();
+            this.m_fileToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_fileNewButton = new System.Windows.Forms.ToolStripButton();
+            this.m_fileOpenButton = new System.Windows.Forms.ToolStripButton();
+            this.m_fileToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_fileSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.m_fileSaveAsButton = new System.Windows.Forms.ToolStripButton();
+            this.m_fileToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_filePageSetupButton = new System.Windows.Forms.ToolStripButton();
+            this.m_filePrintPreviewButton = new System.Windows.Forms.ToolStripButton();
+            this.m_filePrintButton = new System.Windows.Forms.ToolStripButton();
+            this.m_fileOptionsButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewToolStrip = new System.Windows.Forms.ToolStrip();
+            this.m_viewZoomLabel = new System.Windows.Forms.ToolStripLabel();
+            this.m_viewZoomComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.m_viewZoomInButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewZoomOutButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_viewFullScreenButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewWindowedButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_viewLayersShowAllButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewLayersHighlightSelectedButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewShowTileGuidesButton = new System.Windows.Forms.ToolStripButton();
+            this.m_viewHideTileGuidesButton = new System.Windows.Forms.ToolStripButton();
             this.m_loadErrorMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_saveErrorMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_unsavedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
@@ -239,13 +239,13 @@
             this.m_toolStripContainerInner.SuspendLayout();
             this.m_statusStrip.SuspendLayout();
             this.m_toolsToolStrip.SuspendLayout();
-            this.m_layerToolStrip.SuspendLayout();
             this.m_mapToolStrip.SuspendLayout();
-            this.m_menuStrip.SuspendLayout();
-            this.m_viewToolStrip.SuspendLayout();
-            this.m_fileToolStrip.SuspendLayout();
             this.m_tileSheetToolStrip.SuspendLayout();
+            this.m_menuStrip.SuspendLayout();
             this.m_editToolStrip.SuspendLayout();
+            this.m_layerToolStrip.SuspendLayout();
+            this.m_fileToolStrip.SuspendLayout();
+            this.m_viewToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_toolStripContainer
@@ -297,13 +297,13 @@
             this.m_toolStripContainer.TopToolStripPanel.AccessibleName = null;
             this.m_toolStripContainer.TopToolStripPanel.BackgroundImage = null;
             resources.ApplyResources(this.m_toolStripContainer.TopToolStripPanel, "m_toolStripContainer.TopToolStripPanel");
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_fileToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_mapToolStrip);
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_fileToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_layerToolStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_editToolStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_tileSheetToolStrip);
-            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
             this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_viewToolStrip);
+            this.m_toolStripContainer.TopToolStripPanel.Controls.Add(this.m_menuStrip);
             this.m_toolStripContainer.TopToolStripPanel.Font = null;
             this.m_toolStripContainer.TopToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.OnCustomToolStripAdded);
             // 
@@ -622,116 +622,6 @@
             this.m_toolsTileBrushButton.Name = "m_toolsTileBrushButton";
             this.m_toolsTileBrushButton.ButtonClick += new System.EventHandler(this.OnToolsTileBrush);
             // 
-            // m_layerToolStrip
-            // 
-            this.m_layerToolStrip.AccessibleDescription = null;
-            this.m_layerToolStrip.AccessibleName = null;
-            resources.ApplyResources(this.m_layerToolStrip, "m_layerToolStrip");
-            this.m_layerToolStrip.BackgroundImage = null;
-            this.m_layerToolStrip.Font = null;
-            this.m_layerToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_layerNewButton,
-            this.m_layerPropertiesButton,
-            this.m_layerMakeInvisibileButton,
-            this.m_layerMakeVisibileButton,
-            this.m_layerToolStripSeparator1,
-            this.m_layerBringForwardButton,
-            this.m_layerSendBackwardButton,
-            this.m_layerToolStripSeparator2,
-            this.m_layerDeleteButton});
-            this.m_layerToolStrip.Name = "m_layerToolStrip";
-            // 
-            // m_layerNewButton
-            // 
-            this.m_layerNewButton.AccessibleDescription = null;
-            this.m_layerNewButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerNewButton, "m_layerNewButton");
-            this.m_layerNewButton.BackgroundImage = null;
-            this.m_layerNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerNewButton.Image = global::TileMapEditor.Properties.Resources.LayerNew;
-            this.m_layerNewButton.Name = "m_layerNewButton";
-            this.m_layerNewButton.Click += new System.EventHandler(this.OnLayerNew);
-            // 
-            // m_layerPropertiesButton
-            // 
-            this.m_layerPropertiesButton.AccessibleDescription = null;
-            this.m_layerPropertiesButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerPropertiesButton, "m_layerPropertiesButton");
-            this.m_layerPropertiesButton.BackgroundImage = null;
-            this.m_layerPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerPropertiesButton.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
-            this.m_layerPropertiesButton.Name = "m_layerPropertiesButton";
-            this.m_layerPropertiesButton.Click += new System.EventHandler(this.OnLayerProperties);
-            // 
-            // m_layerMakeInvisibileButton
-            // 
-            this.m_layerMakeInvisibileButton.AccessibleDescription = null;
-            this.m_layerMakeInvisibileButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerMakeInvisibileButton, "m_layerMakeInvisibileButton");
-            this.m_layerMakeInvisibileButton.BackgroundImage = null;
-            this.m_layerMakeInvisibileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerMakeInvisibileButton.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
-            this.m_layerMakeInvisibileButton.Name = "m_layerMakeInvisibileButton";
-            this.m_layerMakeInvisibileButton.Click += new System.EventHandler(this.OnLayerVisibility);
-            // 
-            // m_layerMakeVisibileButton
-            // 
-            this.m_layerMakeVisibileButton.AccessibleDescription = null;
-            this.m_layerMakeVisibileButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerMakeVisibileButton, "m_layerMakeVisibileButton");
-            this.m_layerMakeVisibileButton.BackgroundImage = null;
-            this.m_layerMakeVisibileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerMakeVisibileButton.Image = global::TileMapEditor.Properties.Resources.LayerVisible;
-            this.m_layerMakeVisibileButton.Name = "m_layerMakeVisibileButton";
-            this.m_layerMakeVisibileButton.Click += new System.EventHandler(this.OnLayerVisibility);
-            // 
-            // m_layerToolStripSeparator1
-            // 
-            this.m_layerToolStripSeparator1.AccessibleDescription = null;
-            this.m_layerToolStripSeparator1.AccessibleName = null;
-            resources.ApplyResources(this.m_layerToolStripSeparator1, "m_layerToolStripSeparator1");
-            this.m_layerToolStripSeparator1.Name = "m_layerToolStripSeparator1";
-            // 
-            // m_layerBringForwardButton
-            // 
-            this.m_layerBringForwardButton.AccessibleDescription = null;
-            this.m_layerBringForwardButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerBringForwardButton, "m_layerBringForwardButton");
-            this.m_layerBringForwardButton.BackgroundImage = null;
-            this.m_layerBringForwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerBringForwardButton.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
-            this.m_layerBringForwardButton.Name = "m_layerBringForwardButton";
-            this.m_layerBringForwardButton.Click += new System.EventHandler(this.OnLayerBringForward);
-            // 
-            // m_layerSendBackwardButton
-            // 
-            this.m_layerSendBackwardButton.AccessibleDescription = null;
-            this.m_layerSendBackwardButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerSendBackwardButton, "m_layerSendBackwardButton");
-            this.m_layerSendBackwardButton.BackgroundImage = null;
-            this.m_layerSendBackwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerSendBackwardButton.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
-            this.m_layerSendBackwardButton.Name = "m_layerSendBackwardButton";
-            this.m_layerSendBackwardButton.Click += new System.EventHandler(this.OnLayerSendBackward);
-            // 
-            // m_layerToolStripSeparator2
-            // 
-            this.m_layerToolStripSeparator2.AccessibleDescription = null;
-            this.m_layerToolStripSeparator2.AccessibleName = null;
-            resources.ApplyResources(this.m_layerToolStripSeparator2, "m_layerToolStripSeparator2");
-            this.m_layerToolStripSeparator2.Name = "m_layerToolStripSeparator2";
-            // 
-            // m_layerDeleteButton
-            // 
-            this.m_layerDeleteButton.AccessibleDescription = null;
-            this.m_layerDeleteButton.AccessibleName = null;
-            resources.ApplyResources(this.m_layerDeleteButton, "m_layerDeleteButton");
-            this.m_layerDeleteButton.BackgroundImage = null;
-            this.m_layerDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerDeleteButton.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
-            this.m_layerDeleteButton.Name = "m_layerDeleteButton";
-            this.m_layerDeleteButton.Click += new System.EventHandler(this.OnLayerDelete);
-            // 
             // m_mapToolStrip
             // 
             this.m_mapToolStrip.AccessibleDescription = null;
@@ -765,6 +655,116 @@
             this.m_mapStatisticsButton.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
             this.m_mapStatisticsButton.Name = "m_mapStatisticsButton";
             this.m_mapStatisticsButton.Click += new System.EventHandler(this.OnMapStatistics);
+            // 
+            // m_tileSheetToolStrip
+            // 
+            this.m_tileSheetToolStrip.AccessibleDescription = null;
+            this.m_tileSheetToolStrip.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetToolStrip, "m_tileSheetToolStrip");
+            this.m_tileSheetToolStrip.BackgroundImage = null;
+            this.m_tileSheetToolStrip.Font = null;
+            this.m_tileSheetToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_tileSheetNewButton,
+            this.m_tileSheetPropertiesButton,
+            this.m_tileSheetAutoTilesButton,
+            this.m_tileSheetToolStripSeparator1,
+            this.m_tileSheetAutoUpdateEnableButton,
+            this.m_tileSheetAutoUpdateDisableButton,
+            this.m_tileSheetToolStripSeparator2,
+            this.m_tileSheetRemoveDependenciesButton,
+            this.m_tileSheetDeleteButton});
+            this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
+            // 
+            // m_tileSheetNewButton
+            // 
+            this.m_tileSheetNewButton.AccessibleDescription = null;
+            this.m_tileSheetNewButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetNewButton, "m_tileSheetNewButton");
+            this.m_tileSheetNewButton.BackgroundImage = null;
+            this.m_tileSheetNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetNewButton.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
+            this.m_tileSheetNewButton.Name = "m_tileSheetNewButton";
+            this.m_tileSheetNewButton.Click += new System.EventHandler(this.OnTileSheetNew);
+            // 
+            // m_tileSheetPropertiesButton
+            // 
+            this.m_tileSheetPropertiesButton.AccessibleDescription = null;
+            this.m_tileSheetPropertiesButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetPropertiesButton, "m_tileSheetPropertiesButton");
+            this.m_tileSheetPropertiesButton.BackgroundImage = null;
+            this.m_tileSheetPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetPropertiesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
+            this.m_tileSheetPropertiesButton.Name = "m_tileSheetPropertiesButton";
+            this.m_tileSheetPropertiesButton.Click += new System.EventHandler(this.OnTileSheetProperties);
+            // 
+            // m_tileSheetAutoTilesButton
+            // 
+            this.m_tileSheetAutoTilesButton.AccessibleDescription = null;
+            this.m_tileSheetAutoTilesButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetAutoTilesButton, "m_tileSheetAutoTilesButton");
+            this.m_tileSheetAutoTilesButton.BackgroundImage = null;
+            this.m_tileSheetAutoTilesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetAutoTilesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoTiles;
+            this.m_tileSheetAutoTilesButton.Name = "m_tileSheetAutoTilesButton";
+            this.m_tileSheetAutoTilesButton.Click += new System.EventHandler(this.OnTileSheetAutoTiles);
+            // 
+            // m_tileSheetToolStripSeparator1
+            // 
+            this.m_tileSheetToolStripSeparator1.AccessibleDescription = null;
+            this.m_tileSheetToolStripSeparator1.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetToolStripSeparator1, "m_tileSheetToolStripSeparator1");
+            this.m_tileSheetToolStripSeparator1.Name = "m_tileSheetToolStripSeparator1";
+            // 
+            // m_tileSheetAutoUpdateEnableButton
+            // 
+            this.m_tileSheetAutoUpdateEnableButton.AccessibleDescription = null;
+            this.m_tileSheetAutoUpdateEnableButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetAutoUpdateEnableButton, "m_tileSheetAutoUpdateEnableButton");
+            this.m_tileSheetAutoUpdateEnableButton.BackgroundImage = null;
+            this.m_tileSheetAutoUpdateEnableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetAutoUpdateEnableButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateEnable;
+            this.m_tileSheetAutoUpdateEnableButton.Name = "m_tileSheetAutoUpdateEnableButton";
+            this.m_tileSheetAutoUpdateEnableButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
+            // 
+            // m_tileSheetAutoUpdateDisableButton
+            // 
+            this.m_tileSheetAutoUpdateDisableButton.AccessibleDescription = null;
+            this.m_tileSheetAutoUpdateDisableButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetAutoUpdateDisableButton, "m_tileSheetAutoUpdateDisableButton");
+            this.m_tileSheetAutoUpdateDisableButton.BackgroundImage = null;
+            this.m_tileSheetAutoUpdateDisableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetAutoUpdateDisableButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateDisable;
+            this.m_tileSheetAutoUpdateDisableButton.Name = "m_tileSheetAutoUpdateDisableButton";
+            this.m_tileSheetAutoUpdateDisableButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
+            // 
+            // m_tileSheetToolStripSeparator2
+            // 
+            this.m_tileSheetToolStripSeparator2.AccessibleDescription = null;
+            this.m_tileSheetToolStripSeparator2.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetToolStripSeparator2, "m_tileSheetToolStripSeparator2");
+            this.m_tileSheetToolStripSeparator2.Name = "m_tileSheetToolStripSeparator2";
+            // 
+            // m_tileSheetRemoveDependenciesButton
+            // 
+            this.m_tileSheetRemoveDependenciesButton.AccessibleDescription = null;
+            this.m_tileSheetRemoveDependenciesButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetRemoveDependenciesButton, "m_tileSheetRemoveDependenciesButton");
+            this.m_tileSheetRemoveDependenciesButton.BackgroundImage = null;
+            this.m_tileSheetRemoveDependenciesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetRemoveDependenciesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesButton.Name = "m_tileSheetRemoveDependenciesButton";
+            this.m_tileSheetRemoveDependenciesButton.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
+            // 
+            // m_tileSheetDeleteButton
+            // 
+            this.m_tileSheetDeleteButton.AccessibleDescription = null;
+            this.m_tileSheetDeleteButton.AccessibleName = null;
+            resources.ApplyResources(this.m_tileSheetDeleteButton, "m_tileSheetDeleteButton");
+            this.m_tileSheetDeleteButton.BackgroundImage = null;
+            this.m_tileSheetDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_tileSheetDeleteButton.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
+            this.m_tileSheetDeleteButton.Name = "m_tileSheetDeleteButton";
+            this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
             // m_menuStrip
             // 
@@ -1921,392 +1921,6 @@
             this.m_helpAboutMenuItem.ShortcutKeyDisplayString = null;
             this.m_helpAboutMenuItem.Click += new System.EventHandler(this.OnHelpAbout);
             // 
-            // m_viewToolStrip
-            // 
-            this.m_viewToolStrip.AccessibleDescription = null;
-            this.m_viewToolStrip.AccessibleName = null;
-            resources.ApplyResources(this.m_viewToolStrip, "m_viewToolStrip");
-            this.m_viewToolStrip.BackgroundImage = null;
-            this.m_viewToolStrip.Font = null;
-            this.m_viewToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_viewZoomLabel,
-            this.m_viewZoomComboBox,
-            this.m_viewZoomInButton,
-            this.m_viewZoomOutButton,
-            this.m_viewSeparator1,
-            this.m_viewFullScreenButton,
-            this.m_viewWindowedButton,
-            this.m_viewSeparator2,
-            this.m_viewLayersShowAllButton,
-            this.m_viewLayersHighlightSelectedButton,
-            this.m_viewShowTileGuidesButton,
-            this.m_viewHideTileGuidesButton});
-            this.m_viewToolStrip.Name = "m_viewToolStrip";
-            // 
-            // m_viewZoomLabel
-            // 
-            this.m_viewZoomLabel.AccessibleDescription = null;
-            this.m_viewZoomLabel.AccessibleName = null;
-            resources.ApplyResources(this.m_viewZoomLabel, "m_viewZoomLabel");
-            this.m_viewZoomLabel.BackgroundImage = null;
-            this.m_viewZoomLabel.Image = global::TileMapEditor.Properties.Resources.ViewZoom;
-            this.m_viewZoomLabel.Name = "m_viewZoomLabel";
-            // 
-            // m_viewZoomComboBox
-            // 
-            this.m_viewZoomComboBox.AccessibleDescription = null;
-            this.m_viewZoomComboBox.AccessibleName = null;
-            resources.ApplyResources(this.m_viewZoomComboBox, "m_viewZoomComboBox");
-            this.m_viewZoomComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_viewZoomComboBox.DropDownWidth = 60;
-            this.m_viewZoomComboBox.Items.AddRange(new object[] {
-            resources.GetString("m_viewZoomComboBox.Items"),
-            resources.GetString("m_viewZoomComboBox.Items1"),
-            resources.GetString("m_viewZoomComboBox.Items2"),
-            resources.GetString("m_viewZoomComboBox.Items3"),
-            resources.GetString("m_viewZoomComboBox.Items4"),
-            resources.GetString("m_viewZoomComboBox.Items5"),
-            resources.GetString("m_viewZoomComboBox.Items6"),
-            resources.GetString("m_viewZoomComboBox.Items7"),
-            resources.GetString("m_viewZoomComboBox.Items8"),
-            resources.GetString("m_viewZoomComboBox.Items9")});
-            this.m_viewZoomComboBox.Name = "m_viewZoomComboBox";
-            this.m_viewZoomComboBox.SelectedIndexChanged += new System.EventHandler(this.OnViewZoomComboBox);
-            // 
-            // m_viewZoomInButton
-            // 
-            this.m_viewZoomInButton.AccessibleDescription = null;
-            this.m_viewZoomInButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewZoomInButton, "m_viewZoomInButton");
-            this.m_viewZoomInButton.BackgroundImage = null;
-            this.m_viewZoomInButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewZoomInButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
-            this.m_viewZoomInButton.Name = "m_viewZoomInButton";
-            this.m_viewZoomInButton.Click += new System.EventHandler(this.OnViewZoomIn);
-            // 
-            // m_viewZoomOutButton
-            // 
-            this.m_viewZoomOutButton.AccessibleDescription = null;
-            this.m_viewZoomOutButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewZoomOutButton, "m_viewZoomOutButton");
-            this.m_viewZoomOutButton.BackgroundImage = null;
-            this.m_viewZoomOutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewZoomOutButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
-            this.m_viewZoomOutButton.Name = "m_viewZoomOutButton";
-            this.m_viewZoomOutButton.Click += new System.EventHandler(this.OnViewZoomOut);
-            // 
-            // m_viewSeparator1
-            // 
-            this.m_viewSeparator1.AccessibleDescription = null;
-            this.m_viewSeparator1.AccessibleName = null;
-            resources.ApplyResources(this.m_viewSeparator1, "m_viewSeparator1");
-            this.m_viewSeparator1.Name = "m_viewSeparator1";
-            // 
-            // m_viewFullScreenButton
-            // 
-            this.m_viewFullScreenButton.AccessibleDescription = null;
-            this.m_viewFullScreenButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewFullScreenButton, "m_viewFullScreenButton");
-            this.m_viewFullScreenButton.BackgroundImage = null;
-            this.m_viewFullScreenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewFullScreenButton.Image = global::TileMapEditor.Properties.Resources.ViewFullScreen;
-            this.m_viewFullScreenButton.Name = "m_viewFullScreenButton";
-            this.m_viewFullScreenButton.Click += new System.EventHandler(this.OnViewWindowMode);
-            // 
-            // m_viewWindowedButton
-            // 
-            this.m_viewWindowedButton.AccessibleDescription = null;
-            this.m_viewWindowedButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewWindowedButton, "m_viewWindowedButton");
-            this.m_viewWindowedButton.BackgroundImage = null;
-            this.m_viewWindowedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewWindowedButton.Image = global::TileMapEditor.Properties.Resources.ViewWindowed;
-            this.m_viewWindowedButton.Name = "m_viewWindowedButton";
-            this.m_viewWindowedButton.Click += new System.EventHandler(this.OnViewWindowMode);
-            // 
-            // m_viewSeparator2
-            // 
-            this.m_viewSeparator2.AccessibleDescription = null;
-            this.m_viewSeparator2.AccessibleName = null;
-            resources.ApplyResources(this.m_viewSeparator2, "m_viewSeparator2");
-            this.m_viewSeparator2.Name = "m_viewSeparator2";
-            // 
-            // m_viewLayersShowAllButton
-            // 
-            this.m_viewLayersShowAllButton.AccessibleDescription = null;
-            this.m_viewLayersShowAllButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewLayersShowAllButton, "m_viewLayersShowAllButton");
-            this.m_viewLayersShowAllButton.BackgroundImage = null;
-            this.m_viewLayersShowAllButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewLayersShowAllButton.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingShowAll;
-            this.m_viewLayersShowAllButton.Name = "m_viewLayersShowAllButton";
-            this.m_viewLayersShowAllButton.Click += new System.EventHandler(this.OnViewLayerCompositing);
-            // 
-            // m_viewLayersHighlightSelectedButton
-            // 
-            this.m_viewLayersHighlightSelectedButton.AccessibleDescription = null;
-            this.m_viewLayersHighlightSelectedButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewLayersHighlightSelectedButton, "m_viewLayersHighlightSelectedButton");
-            this.m_viewLayersHighlightSelectedButton.BackgroundImage = null;
-            this.m_viewLayersHighlightSelectedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewLayersHighlightSelectedButton.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingDimUnselected;
-            this.m_viewLayersHighlightSelectedButton.Name = "m_viewLayersHighlightSelectedButton";
-            this.m_viewLayersHighlightSelectedButton.Click += new System.EventHandler(this.OnViewLayerCompositing);
-            // 
-            // m_viewShowTileGuidesButton
-            // 
-            this.m_viewShowTileGuidesButton.AccessibleDescription = null;
-            this.m_viewShowTileGuidesButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewShowTileGuidesButton, "m_viewShowTileGuidesButton");
-            this.m_viewShowTileGuidesButton.BackgroundImage = null;
-            this.m_viewShowTileGuidesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewShowTileGuidesButton.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesShow;
-            this.m_viewShowTileGuidesButton.Name = "m_viewShowTileGuidesButton";
-            this.m_viewShowTileGuidesButton.Click += new System.EventHandler(this.OnViewTileGuides);
-            // 
-            // m_viewHideTileGuidesButton
-            // 
-            this.m_viewHideTileGuidesButton.AccessibleDescription = null;
-            this.m_viewHideTileGuidesButton.AccessibleName = null;
-            resources.ApplyResources(this.m_viewHideTileGuidesButton, "m_viewHideTileGuidesButton");
-            this.m_viewHideTileGuidesButton.BackgroundImage = null;
-            this.m_viewHideTileGuidesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewHideTileGuidesButton.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesHide;
-            this.m_viewHideTileGuidesButton.Name = "m_viewHideTileGuidesButton";
-            this.m_viewHideTileGuidesButton.Click += new System.EventHandler(this.OnViewTileGuides);
-            // 
-            // m_fileToolStrip
-            // 
-            this.m_fileToolStrip.AccessibleDescription = null;
-            this.m_fileToolStrip.AccessibleName = null;
-            resources.ApplyResources(this.m_fileToolStrip, "m_fileToolStrip");
-            this.m_fileToolStrip.BackgroundImage = null;
-            this.m_fileToolStrip.Font = null;
-            this.m_fileToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_fileNewButton,
-            this.m_fileOpenButton,
-            this.m_fileToolStripSeparator1,
-            this.m_fileSaveButton,
-            this.m_fileSaveAsButton,
-            this.m_fileToolStripSeparator2,
-            this.m_filePageSetupButton,
-            this.m_filePrintPreviewButton,
-            this.m_filePrintButton,
-            this.m_fileOptionsButton});
-            this.m_fileToolStrip.Name = "m_fileToolStrip";
-            // 
-            // m_fileNewButton
-            // 
-            this.m_fileNewButton.AccessibleDescription = null;
-            this.m_fileNewButton.AccessibleName = null;
-            resources.ApplyResources(this.m_fileNewButton, "m_fileNewButton");
-            this.m_fileNewButton.BackgroundImage = null;
-            this.m_fileNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileNewButton.Image = global::TileMapEditor.Properties.Resources.FileNew;
-            this.m_fileNewButton.Name = "m_fileNewButton";
-            this.m_fileNewButton.Click += new System.EventHandler(this.OnFileNew);
-            // 
-            // m_fileOpenButton
-            // 
-            this.m_fileOpenButton.AccessibleDescription = null;
-            this.m_fileOpenButton.AccessibleName = null;
-            resources.ApplyResources(this.m_fileOpenButton, "m_fileOpenButton");
-            this.m_fileOpenButton.BackgroundImage = null;
-            this.m_fileOpenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileOpenButton.Image = global::TileMapEditor.Properties.Resources.FileOpen;
-            this.m_fileOpenButton.Name = "m_fileOpenButton";
-            this.m_fileOpenButton.Click += new System.EventHandler(this.OnFileOpen);
-            // 
-            // m_fileToolStripSeparator1
-            // 
-            this.m_fileToolStripSeparator1.AccessibleDescription = null;
-            this.m_fileToolStripSeparator1.AccessibleName = null;
-            resources.ApplyResources(this.m_fileToolStripSeparator1, "m_fileToolStripSeparator1");
-            this.m_fileToolStripSeparator1.Name = "m_fileToolStripSeparator1";
-            // 
-            // m_fileSaveButton
-            // 
-            this.m_fileSaveButton.AccessibleDescription = null;
-            this.m_fileSaveButton.AccessibleName = null;
-            resources.ApplyResources(this.m_fileSaveButton, "m_fileSaveButton");
-            this.m_fileSaveButton.BackgroundImage = null;
-            this.m_fileSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileSaveButton.Image = global::TileMapEditor.Properties.Resources.FileSave;
-            this.m_fileSaveButton.Name = "m_fileSaveButton";
-            this.m_fileSaveButton.Click += new System.EventHandler(this.OnFileSave);
-            // 
-            // m_fileSaveAsButton
-            // 
-            this.m_fileSaveAsButton.AccessibleDescription = null;
-            this.m_fileSaveAsButton.AccessibleName = null;
-            resources.ApplyResources(this.m_fileSaveAsButton, "m_fileSaveAsButton");
-            this.m_fileSaveAsButton.BackgroundImage = null;
-            this.m_fileSaveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileSaveAsButton.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
-            this.m_fileSaveAsButton.Name = "m_fileSaveAsButton";
-            this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
-            // 
-            // m_fileToolStripSeparator2
-            // 
-            this.m_fileToolStripSeparator2.AccessibleDescription = null;
-            this.m_fileToolStripSeparator2.AccessibleName = null;
-            resources.ApplyResources(this.m_fileToolStripSeparator2, "m_fileToolStripSeparator2");
-            this.m_fileToolStripSeparator2.Name = "m_fileToolStripSeparator2";
-            // 
-            // m_filePageSetupButton
-            // 
-            this.m_filePageSetupButton.AccessibleDescription = null;
-            this.m_filePageSetupButton.AccessibleName = null;
-            resources.ApplyResources(this.m_filePageSetupButton, "m_filePageSetupButton");
-            this.m_filePageSetupButton.BackgroundImage = null;
-            this.m_filePageSetupButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_filePageSetupButton.Image = global::TileMapEditor.Properties.Resources.FilePageSetup;
-            this.m_filePageSetupButton.Name = "m_filePageSetupButton";
-            this.m_filePageSetupButton.Click += new System.EventHandler(this.OnFilePageSetup);
-            // 
-            // m_filePrintPreviewButton
-            // 
-            this.m_filePrintPreviewButton.AccessibleDescription = null;
-            this.m_filePrintPreviewButton.AccessibleName = null;
-            resources.ApplyResources(this.m_filePrintPreviewButton, "m_filePrintPreviewButton");
-            this.m_filePrintPreviewButton.BackgroundImage = null;
-            this.m_filePrintPreviewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_filePrintPreviewButton.Image = global::TileMapEditor.Properties.Resources.FilePrintPreview;
-            this.m_filePrintPreviewButton.Name = "m_filePrintPreviewButton";
-            this.m_filePrintPreviewButton.Click += new System.EventHandler(this.OnFilePrintPreview);
-            // 
-            // m_filePrintButton
-            // 
-            this.m_filePrintButton.AccessibleDescription = null;
-            this.m_filePrintButton.AccessibleName = null;
-            resources.ApplyResources(this.m_filePrintButton, "m_filePrintButton");
-            this.m_filePrintButton.BackgroundImage = null;
-            this.m_filePrintButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_filePrintButton.Image = global::TileMapEditor.Properties.Resources.FilePrint;
-            this.m_filePrintButton.Name = "m_filePrintButton";
-            this.m_filePrintButton.Click += new System.EventHandler(this.OnFilePrint);
-            // 
-            // m_fileOptionsButton
-            // 
-            this.m_fileOptionsButton.AccessibleDescription = null;
-            this.m_fileOptionsButton.AccessibleName = null;
-            resources.ApplyResources(this.m_fileOptionsButton, "m_fileOptionsButton");
-            this.m_fileOptionsButton.BackgroundImage = null;
-            this.m_fileOptionsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileOptionsButton.Image = global::TileMapEditor.Properties.Resources.FileOptions;
-            this.m_fileOptionsButton.Name = "m_fileOptionsButton";
-            this.m_fileOptionsButton.Click += new System.EventHandler(this.OnFileOptions);
-            // 
-            // m_tileSheetToolStrip
-            // 
-            this.m_tileSheetToolStrip.AccessibleDescription = null;
-            this.m_tileSheetToolStrip.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetToolStrip, "m_tileSheetToolStrip");
-            this.m_tileSheetToolStrip.BackgroundImage = null;
-            this.m_tileSheetToolStrip.Font = null;
-            this.m_tileSheetToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_tileSheetNewButton,
-            this.m_tileSheetPropertiesButton,
-            this.m_tileSheetAutoTilesButton,
-            this.m_tileSheetToolStripSeparator1,
-            this.m_tileSheetAutoUpdateEnableButton,
-            this.m_tileSheetAutoUpdateDisableButton,
-            this.m_tileSheetToolStripSeparator2,
-            this.m_tileSheetRemoveDependenciesButton,
-            this.m_tileSheetDeleteButton});
-            this.m_tileSheetToolStrip.Name = "m_tileSheetToolStrip";
-            // 
-            // m_tileSheetNewButton
-            // 
-            this.m_tileSheetNewButton.AccessibleDescription = null;
-            this.m_tileSheetNewButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetNewButton, "m_tileSheetNewButton");
-            this.m_tileSheetNewButton.BackgroundImage = null;
-            this.m_tileSheetNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetNewButton.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
-            this.m_tileSheetNewButton.Name = "m_tileSheetNewButton";
-            this.m_tileSheetNewButton.Click += new System.EventHandler(this.OnTileSheetNew);
-            // 
-            // m_tileSheetPropertiesButton
-            // 
-            this.m_tileSheetPropertiesButton.AccessibleDescription = null;
-            this.m_tileSheetPropertiesButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetPropertiesButton, "m_tileSheetPropertiesButton");
-            this.m_tileSheetPropertiesButton.BackgroundImage = null;
-            this.m_tileSheetPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetPropertiesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
-            this.m_tileSheetPropertiesButton.Name = "m_tileSheetPropertiesButton";
-            this.m_tileSheetPropertiesButton.Click += new System.EventHandler(this.OnTileSheetProperties);
-            // 
-            // m_tileSheetAutoTilesButton
-            // 
-            this.m_tileSheetAutoTilesButton.AccessibleDescription = null;
-            this.m_tileSheetAutoTilesButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetAutoTilesButton, "m_tileSheetAutoTilesButton");
-            this.m_tileSheetAutoTilesButton.BackgroundImage = null;
-            this.m_tileSheetAutoTilesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetAutoTilesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoTiles;
-            this.m_tileSheetAutoTilesButton.Name = "m_tileSheetAutoTilesButton";
-            this.m_tileSheetAutoTilesButton.Click += new System.EventHandler(this.OnTileSheetAutoTiles);
-            // 
-            // m_tileSheetToolStripSeparator1
-            // 
-            this.m_tileSheetToolStripSeparator1.AccessibleDescription = null;
-            this.m_tileSheetToolStripSeparator1.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetToolStripSeparator1, "m_tileSheetToolStripSeparator1");
-            this.m_tileSheetToolStripSeparator1.Name = "m_tileSheetToolStripSeparator1";
-            // 
-            // m_tileSheetAutoUpdateEnableButton
-            // 
-            this.m_tileSheetAutoUpdateEnableButton.AccessibleDescription = null;
-            this.m_tileSheetAutoUpdateEnableButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetAutoUpdateEnableButton, "m_tileSheetAutoUpdateEnableButton");
-            this.m_tileSheetAutoUpdateEnableButton.BackgroundImage = null;
-            this.m_tileSheetAutoUpdateEnableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetAutoUpdateEnableButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateEnable;
-            this.m_tileSheetAutoUpdateEnableButton.Name = "m_tileSheetAutoUpdateEnableButton";
-            this.m_tileSheetAutoUpdateEnableButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
-            // 
-            // m_tileSheetAutoUpdateDisableButton
-            // 
-            this.m_tileSheetAutoUpdateDisableButton.AccessibleDescription = null;
-            this.m_tileSheetAutoUpdateDisableButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetAutoUpdateDisableButton, "m_tileSheetAutoUpdateDisableButton");
-            this.m_tileSheetAutoUpdateDisableButton.BackgroundImage = null;
-            this.m_tileSheetAutoUpdateDisableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetAutoUpdateDisableButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateDisable;
-            this.m_tileSheetAutoUpdateDisableButton.Name = "m_tileSheetAutoUpdateDisableButton";
-            this.m_tileSheetAutoUpdateDisableButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
-            // 
-            // m_tileSheetToolStripSeparator2
-            // 
-            this.m_tileSheetToolStripSeparator2.AccessibleDescription = null;
-            this.m_tileSheetToolStripSeparator2.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetToolStripSeparator2, "m_tileSheetToolStripSeparator2");
-            this.m_tileSheetToolStripSeparator2.Name = "m_tileSheetToolStripSeparator2";
-            // 
-            // m_tileSheetRemoveDependenciesButton
-            // 
-            this.m_tileSheetRemoveDependenciesButton.AccessibleDescription = null;
-            this.m_tileSheetRemoveDependenciesButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetRemoveDependenciesButton, "m_tileSheetRemoveDependenciesButton");
-            this.m_tileSheetRemoveDependenciesButton.BackgroundImage = null;
-            this.m_tileSheetRemoveDependenciesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetRemoveDependenciesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
-            this.m_tileSheetRemoveDependenciesButton.Name = "m_tileSheetRemoveDependenciesButton";
-            this.m_tileSheetRemoveDependenciesButton.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
-            // 
-            // m_tileSheetDeleteButton
-            // 
-            this.m_tileSheetDeleteButton.AccessibleDescription = null;
-            this.m_tileSheetDeleteButton.AccessibleName = null;
-            resources.ApplyResources(this.m_tileSheetDeleteButton, "m_tileSheetDeleteButton");
-            this.m_tileSheetDeleteButton.BackgroundImage = null;
-            this.m_tileSheetDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetDeleteButton.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
-            this.m_tileSheetDeleteButton.Name = "m_tileSheetDeleteButton";
-            this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
-            // 
             // m_editToolStrip
             // 
             this.m_editToolStrip.AccessibleDescription = null;
@@ -2485,6 +2099,392 @@
             this.m_editManageTileBrushesButton.Name = "m_editManageTileBrushesButton";
             this.m_editManageTileBrushesButton.Click += new System.EventHandler(this.OnEditManageTileBrushes);
             // 
+            // m_layerToolStrip
+            // 
+            this.m_layerToolStrip.AccessibleDescription = null;
+            this.m_layerToolStrip.AccessibleName = null;
+            resources.ApplyResources(this.m_layerToolStrip, "m_layerToolStrip");
+            this.m_layerToolStrip.BackgroundImage = null;
+            this.m_layerToolStrip.Font = null;
+            this.m_layerToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_layerNewButton,
+            this.m_layerPropertiesButton,
+            this.m_layerMakeInvisibileButton,
+            this.m_layerMakeVisibileButton,
+            this.m_layerToolStripSeparator1,
+            this.m_layerBringForwardButton,
+            this.m_layerSendBackwardButton,
+            this.m_layerToolStripSeparator2,
+            this.m_layerDeleteButton});
+            this.m_layerToolStrip.Name = "m_layerToolStrip";
+            // 
+            // m_layerNewButton
+            // 
+            this.m_layerNewButton.AccessibleDescription = null;
+            this.m_layerNewButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerNewButton, "m_layerNewButton");
+            this.m_layerNewButton.BackgroundImage = null;
+            this.m_layerNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerNewButton.Image = global::TileMapEditor.Properties.Resources.LayerNew;
+            this.m_layerNewButton.Name = "m_layerNewButton";
+            this.m_layerNewButton.Click += new System.EventHandler(this.OnLayerNew);
+            // 
+            // m_layerPropertiesButton
+            // 
+            this.m_layerPropertiesButton.AccessibleDescription = null;
+            this.m_layerPropertiesButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerPropertiesButton, "m_layerPropertiesButton");
+            this.m_layerPropertiesButton.BackgroundImage = null;
+            this.m_layerPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerPropertiesButton.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
+            this.m_layerPropertiesButton.Name = "m_layerPropertiesButton";
+            this.m_layerPropertiesButton.Click += new System.EventHandler(this.OnLayerProperties);
+            // 
+            // m_layerMakeInvisibileButton
+            // 
+            this.m_layerMakeInvisibileButton.AccessibleDescription = null;
+            this.m_layerMakeInvisibileButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerMakeInvisibileButton, "m_layerMakeInvisibileButton");
+            this.m_layerMakeInvisibileButton.BackgroundImage = null;
+            this.m_layerMakeInvisibileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerMakeInvisibileButton.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
+            this.m_layerMakeInvisibileButton.Name = "m_layerMakeInvisibileButton";
+            this.m_layerMakeInvisibileButton.Click += new System.EventHandler(this.OnLayerVisibility);
+            // 
+            // m_layerMakeVisibileButton
+            // 
+            this.m_layerMakeVisibileButton.AccessibleDescription = null;
+            this.m_layerMakeVisibileButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerMakeVisibileButton, "m_layerMakeVisibileButton");
+            this.m_layerMakeVisibileButton.BackgroundImage = null;
+            this.m_layerMakeVisibileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerMakeVisibileButton.Image = global::TileMapEditor.Properties.Resources.LayerVisible;
+            this.m_layerMakeVisibileButton.Name = "m_layerMakeVisibileButton";
+            this.m_layerMakeVisibileButton.Click += new System.EventHandler(this.OnLayerVisibility);
+            // 
+            // m_layerToolStripSeparator1
+            // 
+            this.m_layerToolStripSeparator1.AccessibleDescription = null;
+            this.m_layerToolStripSeparator1.AccessibleName = null;
+            resources.ApplyResources(this.m_layerToolStripSeparator1, "m_layerToolStripSeparator1");
+            this.m_layerToolStripSeparator1.Name = "m_layerToolStripSeparator1";
+            // 
+            // m_layerBringForwardButton
+            // 
+            this.m_layerBringForwardButton.AccessibleDescription = null;
+            this.m_layerBringForwardButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerBringForwardButton, "m_layerBringForwardButton");
+            this.m_layerBringForwardButton.BackgroundImage = null;
+            this.m_layerBringForwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerBringForwardButton.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
+            this.m_layerBringForwardButton.Name = "m_layerBringForwardButton";
+            this.m_layerBringForwardButton.Click += new System.EventHandler(this.OnLayerBringForward);
+            // 
+            // m_layerSendBackwardButton
+            // 
+            this.m_layerSendBackwardButton.AccessibleDescription = null;
+            this.m_layerSendBackwardButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerSendBackwardButton, "m_layerSendBackwardButton");
+            this.m_layerSendBackwardButton.BackgroundImage = null;
+            this.m_layerSendBackwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerSendBackwardButton.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
+            this.m_layerSendBackwardButton.Name = "m_layerSendBackwardButton";
+            this.m_layerSendBackwardButton.Click += new System.EventHandler(this.OnLayerSendBackward);
+            // 
+            // m_layerToolStripSeparator2
+            // 
+            this.m_layerToolStripSeparator2.AccessibleDescription = null;
+            this.m_layerToolStripSeparator2.AccessibleName = null;
+            resources.ApplyResources(this.m_layerToolStripSeparator2, "m_layerToolStripSeparator2");
+            this.m_layerToolStripSeparator2.Name = "m_layerToolStripSeparator2";
+            // 
+            // m_layerDeleteButton
+            // 
+            this.m_layerDeleteButton.AccessibleDescription = null;
+            this.m_layerDeleteButton.AccessibleName = null;
+            resources.ApplyResources(this.m_layerDeleteButton, "m_layerDeleteButton");
+            this.m_layerDeleteButton.BackgroundImage = null;
+            this.m_layerDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_layerDeleteButton.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
+            this.m_layerDeleteButton.Name = "m_layerDeleteButton";
+            this.m_layerDeleteButton.Click += new System.EventHandler(this.OnLayerDelete);
+            // 
+            // m_fileToolStrip
+            // 
+            this.m_fileToolStrip.AccessibleDescription = null;
+            this.m_fileToolStrip.AccessibleName = null;
+            resources.ApplyResources(this.m_fileToolStrip, "m_fileToolStrip");
+            this.m_fileToolStrip.BackgroundImage = null;
+            this.m_fileToolStrip.Font = null;
+            this.m_fileToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_fileNewButton,
+            this.m_fileOpenButton,
+            this.m_fileToolStripSeparator1,
+            this.m_fileSaveButton,
+            this.m_fileSaveAsButton,
+            this.m_fileToolStripSeparator2,
+            this.m_filePageSetupButton,
+            this.m_filePrintPreviewButton,
+            this.m_filePrintButton,
+            this.m_fileOptionsButton});
+            this.m_fileToolStrip.Name = "m_fileToolStrip";
+            // 
+            // m_fileNewButton
+            // 
+            this.m_fileNewButton.AccessibleDescription = null;
+            this.m_fileNewButton.AccessibleName = null;
+            resources.ApplyResources(this.m_fileNewButton, "m_fileNewButton");
+            this.m_fileNewButton.BackgroundImage = null;
+            this.m_fileNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_fileNewButton.Image = global::TileMapEditor.Properties.Resources.FileNew;
+            this.m_fileNewButton.Name = "m_fileNewButton";
+            this.m_fileNewButton.Click += new System.EventHandler(this.OnFileNew);
+            // 
+            // m_fileOpenButton
+            // 
+            this.m_fileOpenButton.AccessibleDescription = null;
+            this.m_fileOpenButton.AccessibleName = null;
+            resources.ApplyResources(this.m_fileOpenButton, "m_fileOpenButton");
+            this.m_fileOpenButton.BackgroundImage = null;
+            this.m_fileOpenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_fileOpenButton.Image = global::TileMapEditor.Properties.Resources.FileOpen;
+            this.m_fileOpenButton.Name = "m_fileOpenButton";
+            this.m_fileOpenButton.Click += new System.EventHandler(this.OnFileOpen);
+            // 
+            // m_fileToolStripSeparator1
+            // 
+            this.m_fileToolStripSeparator1.AccessibleDescription = null;
+            this.m_fileToolStripSeparator1.AccessibleName = null;
+            resources.ApplyResources(this.m_fileToolStripSeparator1, "m_fileToolStripSeparator1");
+            this.m_fileToolStripSeparator1.Name = "m_fileToolStripSeparator1";
+            // 
+            // m_fileSaveButton
+            // 
+            this.m_fileSaveButton.AccessibleDescription = null;
+            this.m_fileSaveButton.AccessibleName = null;
+            resources.ApplyResources(this.m_fileSaveButton, "m_fileSaveButton");
+            this.m_fileSaveButton.BackgroundImage = null;
+            this.m_fileSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_fileSaveButton.Image = global::TileMapEditor.Properties.Resources.FileSave;
+            this.m_fileSaveButton.Name = "m_fileSaveButton";
+            this.m_fileSaveButton.Click += new System.EventHandler(this.OnFileSave);
+            // 
+            // m_fileSaveAsButton
+            // 
+            this.m_fileSaveAsButton.AccessibleDescription = null;
+            this.m_fileSaveAsButton.AccessibleName = null;
+            resources.ApplyResources(this.m_fileSaveAsButton, "m_fileSaveAsButton");
+            this.m_fileSaveAsButton.BackgroundImage = null;
+            this.m_fileSaveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_fileSaveAsButton.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
+            this.m_fileSaveAsButton.Name = "m_fileSaveAsButton";
+            this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
+            // 
+            // m_fileToolStripSeparator2
+            // 
+            this.m_fileToolStripSeparator2.AccessibleDescription = null;
+            this.m_fileToolStripSeparator2.AccessibleName = null;
+            resources.ApplyResources(this.m_fileToolStripSeparator2, "m_fileToolStripSeparator2");
+            this.m_fileToolStripSeparator2.Name = "m_fileToolStripSeparator2";
+            // 
+            // m_filePageSetupButton
+            // 
+            this.m_filePageSetupButton.AccessibleDescription = null;
+            this.m_filePageSetupButton.AccessibleName = null;
+            resources.ApplyResources(this.m_filePageSetupButton, "m_filePageSetupButton");
+            this.m_filePageSetupButton.BackgroundImage = null;
+            this.m_filePageSetupButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_filePageSetupButton.Image = global::TileMapEditor.Properties.Resources.FilePageSetup;
+            this.m_filePageSetupButton.Name = "m_filePageSetupButton";
+            this.m_filePageSetupButton.Click += new System.EventHandler(this.OnFilePageSetup);
+            // 
+            // m_filePrintPreviewButton
+            // 
+            this.m_filePrintPreviewButton.AccessibleDescription = null;
+            this.m_filePrintPreviewButton.AccessibleName = null;
+            resources.ApplyResources(this.m_filePrintPreviewButton, "m_filePrintPreviewButton");
+            this.m_filePrintPreviewButton.BackgroundImage = null;
+            this.m_filePrintPreviewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_filePrintPreviewButton.Image = global::TileMapEditor.Properties.Resources.FilePrintPreview;
+            this.m_filePrintPreviewButton.Name = "m_filePrintPreviewButton";
+            this.m_filePrintPreviewButton.Click += new System.EventHandler(this.OnFilePrintPreview);
+            // 
+            // m_filePrintButton
+            // 
+            this.m_filePrintButton.AccessibleDescription = null;
+            this.m_filePrintButton.AccessibleName = null;
+            resources.ApplyResources(this.m_filePrintButton, "m_filePrintButton");
+            this.m_filePrintButton.BackgroundImage = null;
+            this.m_filePrintButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_filePrintButton.Image = global::TileMapEditor.Properties.Resources.FilePrint;
+            this.m_filePrintButton.Name = "m_filePrintButton";
+            this.m_filePrintButton.Click += new System.EventHandler(this.OnFilePrint);
+            // 
+            // m_fileOptionsButton
+            // 
+            this.m_fileOptionsButton.AccessibleDescription = null;
+            this.m_fileOptionsButton.AccessibleName = null;
+            resources.ApplyResources(this.m_fileOptionsButton, "m_fileOptionsButton");
+            this.m_fileOptionsButton.BackgroundImage = null;
+            this.m_fileOptionsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_fileOptionsButton.Image = global::TileMapEditor.Properties.Resources.FileOptions;
+            this.m_fileOptionsButton.Name = "m_fileOptionsButton";
+            this.m_fileOptionsButton.Click += new System.EventHandler(this.OnFileOptions);
+            // 
+            // m_viewToolStrip
+            // 
+            this.m_viewToolStrip.AccessibleDescription = null;
+            this.m_viewToolStrip.AccessibleName = null;
+            resources.ApplyResources(this.m_viewToolStrip, "m_viewToolStrip");
+            this.m_viewToolStrip.BackgroundImage = null;
+            this.m_viewToolStrip.Font = null;
+            this.m_viewToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_viewZoomLabel,
+            this.m_viewZoomComboBox,
+            this.m_viewZoomInButton,
+            this.m_viewZoomOutButton,
+            this.m_viewSeparator1,
+            this.m_viewFullScreenButton,
+            this.m_viewWindowedButton,
+            this.m_viewSeparator2,
+            this.m_viewLayersShowAllButton,
+            this.m_viewLayersHighlightSelectedButton,
+            this.m_viewShowTileGuidesButton,
+            this.m_viewHideTileGuidesButton});
+            this.m_viewToolStrip.Name = "m_viewToolStrip";
+            // 
+            // m_viewZoomLabel
+            // 
+            this.m_viewZoomLabel.AccessibleDescription = null;
+            this.m_viewZoomLabel.AccessibleName = null;
+            resources.ApplyResources(this.m_viewZoomLabel, "m_viewZoomLabel");
+            this.m_viewZoomLabel.BackgroundImage = null;
+            this.m_viewZoomLabel.Image = global::TileMapEditor.Properties.Resources.ViewZoom;
+            this.m_viewZoomLabel.Name = "m_viewZoomLabel";
+            // 
+            // m_viewZoomComboBox
+            // 
+            this.m_viewZoomComboBox.AccessibleDescription = null;
+            this.m_viewZoomComboBox.AccessibleName = null;
+            resources.ApplyResources(this.m_viewZoomComboBox, "m_viewZoomComboBox");
+            this.m_viewZoomComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_viewZoomComboBox.DropDownWidth = 60;
+            this.m_viewZoomComboBox.Items.AddRange(new object[] {
+            resources.GetString("m_viewZoomComboBox.Items"),
+            resources.GetString("m_viewZoomComboBox.Items1"),
+            resources.GetString("m_viewZoomComboBox.Items2"),
+            resources.GetString("m_viewZoomComboBox.Items3"),
+            resources.GetString("m_viewZoomComboBox.Items4"),
+            resources.GetString("m_viewZoomComboBox.Items5"),
+            resources.GetString("m_viewZoomComboBox.Items6"),
+            resources.GetString("m_viewZoomComboBox.Items7"),
+            resources.GetString("m_viewZoomComboBox.Items8"),
+            resources.GetString("m_viewZoomComboBox.Items9")});
+            this.m_viewZoomComboBox.Name = "m_viewZoomComboBox";
+            this.m_viewZoomComboBox.SelectedIndexChanged += new System.EventHandler(this.OnViewZoomComboBox);
+            // 
+            // m_viewZoomInButton
+            // 
+            this.m_viewZoomInButton.AccessibleDescription = null;
+            this.m_viewZoomInButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewZoomInButton, "m_viewZoomInButton");
+            this.m_viewZoomInButton.BackgroundImage = null;
+            this.m_viewZoomInButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewZoomInButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
+            this.m_viewZoomInButton.Name = "m_viewZoomInButton";
+            this.m_viewZoomInButton.Click += new System.EventHandler(this.OnViewZoomIn);
+            // 
+            // m_viewZoomOutButton
+            // 
+            this.m_viewZoomOutButton.AccessibleDescription = null;
+            this.m_viewZoomOutButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewZoomOutButton, "m_viewZoomOutButton");
+            this.m_viewZoomOutButton.BackgroundImage = null;
+            this.m_viewZoomOutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewZoomOutButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
+            this.m_viewZoomOutButton.Name = "m_viewZoomOutButton";
+            this.m_viewZoomOutButton.Click += new System.EventHandler(this.OnViewZoomOut);
+            // 
+            // m_viewSeparator1
+            // 
+            this.m_viewSeparator1.AccessibleDescription = null;
+            this.m_viewSeparator1.AccessibleName = null;
+            resources.ApplyResources(this.m_viewSeparator1, "m_viewSeparator1");
+            this.m_viewSeparator1.Name = "m_viewSeparator1";
+            // 
+            // m_viewFullScreenButton
+            // 
+            this.m_viewFullScreenButton.AccessibleDescription = null;
+            this.m_viewFullScreenButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewFullScreenButton, "m_viewFullScreenButton");
+            this.m_viewFullScreenButton.BackgroundImage = null;
+            this.m_viewFullScreenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewFullScreenButton.Image = global::TileMapEditor.Properties.Resources.ViewFullScreen;
+            this.m_viewFullScreenButton.Name = "m_viewFullScreenButton";
+            this.m_viewFullScreenButton.Click += new System.EventHandler(this.OnViewWindowMode);
+            // 
+            // m_viewWindowedButton
+            // 
+            this.m_viewWindowedButton.AccessibleDescription = null;
+            this.m_viewWindowedButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewWindowedButton, "m_viewWindowedButton");
+            this.m_viewWindowedButton.BackgroundImage = null;
+            this.m_viewWindowedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewWindowedButton.Image = global::TileMapEditor.Properties.Resources.ViewWindowed;
+            this.m_viewWindowedButton.Name = "m_viewWindowedButton";
+            this.m_viewWindowedButton.Click += new System.EventHandler(this.OnViewWindowMode);
+            // 
+            // m_viewSeparator2
+            // 
+            this.m_viewSeparator2.AccessibleDescription = null;
+            this.m_viewSeparator2.AccessibleName = null;
+            resources.ApplyResources(this.m_viewSeparator2, "m_viewSeparator2");
+            this.m_viewSeparator2.Name = "m_viewSeparator2";
+            // 
+            // m_viewLayersShowAllButton
+            // 
+            this.m_viewLayersShowAllButton.AccessibleDescription = null;
+            this.m_viewLayersShowAllButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewLayersShowAllButton, "m_viewLayersShowAllButton");
+            this.m_viewLayersShowAllButton.BackgroundImage = null;
+            this.m_viewLayersShowAllButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewLayersShowAllButton.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingShowAll;
+            this.m_viewLayersShowAllButton.Name = "m_viewLayersShowAllButton";
+            this.m_viewLayersShowAllButton.Click += new System.EventHandler(this.OnViewLayerCompositing);
+            // 
+            // m_viewLayersHighlightSelectedButton
+            // 
+            this.m_viewLayersHighlightSelectedButton.AccessibleDescription = null;
+            this.m_viewLayersHighlightSelectedButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewLayersHighlightSelectedButton, "m_viewLayersHighlightSelectedButton");
+            this.m_viewLayersHighlightSelectedButton.BackgroundImage = null;
+            this.m_viewLayersHighlightSelectedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewLayersHighlightSelectedButton.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingDimUnselected;
+            this.m_viewLayersHighlightSelectedButton.Name = "m_viewLayersHighlightSelectedButton";
+            this.m_viewLayersHighlightSelectedButton.Click += new System.EventHandler(this.OnViewLayerCompositing);
+            // 
+            // m_viewShowTileGuidesButton
+            // 
+            this.m_viewShowTileGuidesButton.AccessibleDescription = null;
+            this.m_viewShowTileGuidesButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewShowTileGuidesButton, "m_viewShowTileGuidesButton");
+            this.m_viewShowTileGuidesButton.BackgroundImage = null;
+            this.m_viewShowTileGuidesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewShowTileGuidesButton.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesShow;
+            this.m_viewShowTileGuidesButton.Name = "m_viewShowTileGuidesButton";
+            this.m_viewShowTileGuidesButton.Click += new System.EventHandler(this.OnViewTileGuides);
+            // 
+            // m_viewHideTileGuidesButton
+            // 
+            this.m_viewHideTileGuidesButton.AccessibleDescription = null;
+            this.m_viewHideTileGuidesButton.AccessibleName = null;
+            resources.ApplyResources(this.m_viewHideTileGuidesButton, "m_viewHideTileGuidesButton");
+            this.m_viewHideTileGuidesButton.BackgroundImage = null;
+            this.m_viewHideTileGuidesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_viewHideTileGuidesButton.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesHide;
+            this.m_viewHideTileGuidesButton.Name = "m_viewHideTileGuidesButton";
+            this.m_viewHideTileGuidesButton.Click += new System.EventHandler(this.OnViewTileGuides);
+            // 
             // m_loadErrorMessageBox
             // 
             resources.ApplyResources(this.m_loadErrorMessageBox, "m_loadErrorMessageBox");
@@ -2560,20 +2560,20 @@
             this.m_statusStrip.PerformLayout();
             this.m_toolsToolStrip.ResumeLayout(false);
             this.m_toolsToolStrip.PerformLayout();
-            this.m_layerToolStrip.ResumeLayout(false);
-            this.m_layerToolStrip.PerformLayout();
             this.m_mapToolStrip.ResumeLayout(false);
             this.m_mapToolStrip.PerformLayout();
-            this.m_menuStrip.ResumeLayout(false);
-            this.m_menuStrip.PerformLayout();
-            this.m_viewToolStrip.ResumeLayout(false);
-            this.m_viewToolStrip.PerformLayout();
-            this.m_fileToolStrip.ResumeLayout(false);
-            this.m_fileToolStrip.PerformLayout();
             this.m_tileSheetToolStrip.ResumeLayout(false);
             this.m_tileSheetToolStrip.PerformLayout();
+            this.m_menuStrip.ResumeLayout(false);
+            this.m_menuStrip.PerformLayout();
             this.m_editToolStrip.ResumeLayout(false);
             this.m_editToolStrip.PerformLayout();
+            this.m_layerToolStrip.ResumeLayout(false);
+            this.m_layerToolStrip.PerformLayout();
+            this.m_fileToolStrip.ResumeLayout(false);
+            this.m_fileToolStrip.PerformLayout();
+            this.m_viewToolStrip.ResumeLayout(false);
+            this.m_viewToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
