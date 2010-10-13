@@ -87,6 +87,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\LayerOffsetCommand.cs" />
     <Compile Include="Commands\TileSheetAutoTilesCommand.cs" />
     <Compile Include="Commands\TileSheetRemoveDependencyCommand.cs" />
     <Compile Include="Commands\CustomPropertiesCommand.cs" />

@@ -58,15 +58,6 @@
             label1.TabIndex = 0;
             label1.Text = "Layer ID";
             // 
-            // m_lblLayerId
-            // 
-            this.m_lblLayerId.AutoSize = true;
-            this.m_lblLayerId.Location = new System.Drawing.Point(65, 14);
-            this.m_lblLayerId.Name = "m_lblLayerId";
-            this.m_lblLayerId.Size = new System.Drawing.Size(46, 13);
-            this.m_lblLayerId.TabIndex = 1;
-            this.m_lblLayerId.Text = "(layer id)";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -75,15 +66,6 @@
             label2.Size = new System.Drawing.Size(27, 13);
             label2.TabIndex = 2;
             label2.Text = "Size";
-            // 
-            // m_lblLayerSize
-            // 
-            this.m_lblLayerSize.AutoSize = true;
-            this.m_lblLayerSize.Location = new System.Drawing.Point(65, 40);
-            this.m_lblLayerSize.Name = "m_lblLayerSize";
-            this.m_lblLayerSize.Size = new System.Drawing.Size(56, 13);
-            this.m_lblLayerSize.TabIndex = 3;
-            this.m_lblLayerSize.Text = "(layer size)";
             // 
             // label3
             // 
@@ -103,6 +85,24 @@
             label4.TabIndex = 6;
             label4.Text = "Vertical Offset";
             // 
+            // m_lblLayerId
+            // 
+            this.m_lblLayerId.AutoSize = true;
+            this.m_lblLayerId.Location = new System.Drawing.Point(65, 14);
+            this.m_lblLayerId.Name = "m_lblLayerId";
+            this.m_lblLayerId.Size = new System.Drawing.Size(46, 13);
+            this.m_lblLayerId.TabIndex = 1;
+            this.m_lblLayerId.Text = "(layer id)";
+            // 
+            // m_lblLayerSize
+            // 
+            this.m_lblLayerSize.AutoSize = true;
+            this.m_lblLayerSize.Location = new System.Drawing.Point(65, 40);
+            this.m_lblLayerSize.Name = "m_lblLayerSize";
+            this.m_lblLayerSize.Size = new System.Drawing.Size(56, 13);
+            this.m_lblLayerSize.TabIndex = 3;
+            this.m_lblLayerSize.Text = "(layer size)";
+            // 
             // m_nudOffsetHorizontal
             // 
             this.m_nudOffsetHorizontal.Location = new System.Drawing.Point(148, 65);
@@ -110,6 +110,7 @@
             this.m_nudOffsetHorizontal.Size = new System.Drawing.Size(80, 20);
             this.m_nudOffsetHorizontal.TabIndex = 5;
             this.m_nudOffsetHorizontal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_nudOffsetHorizontal.ValueChanged += new System.EventHandler(this.OnParametersChanged);
             // 
             // m_nudOffsetVertical
             // 
@@ -118,6 +119,7 @@
             this.m_nudOffsetVertical.Size = new System.Drawing.Size(80, 20);
             this.m_nudOffsetVertical.TabIndex = 7;
             this.m_nudOffsetVertical.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_nudOffsetVertical.ValueChanged += new System.EventHandler(this.OnParametersChanged);
             // 
             // m_btnOk
             // 
@@ -129,6 +131,7 @@
             this.m_btnOk.TabIndex = 8;
             this.m_btnOk.Text = "&OK";
             this.m_btnOk.UseVisualStyleBackColor = true;
+            this.m_btnOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_btnCancel
             // 
@@ -149,6 +152,7 @@
             this.m_chkWrapHorizontal.TabIndex = 10;
             this.m_chkWrapHorizontal.Text = "Wrap layer horizontally";
             this.m_chkWrapHorizontal.UseVisualStyleBackColor = true;
+            this.m_chkWrapHorizontal.CheckedChanged += new System.EventHandler(this.OnParametersChanged);
             // 
             // m_chkWrapVertical
             // 
@@ -159,6 +163,7 @@
             this.m_chkWrapVertical.TabIndex = 11;
             this.m_chkWrapVertical.Text = "Wrap layer vertically";
             this.m_chkWrapVertical.UseVisualStyleBackColor = true;
+            this.m_chkWrapVertical.CheckedChanged += new System.EventHandler(this.OnParametersChanged);
             // 
             // LayerOffsetDialog
             // 

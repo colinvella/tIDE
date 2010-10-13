@@ -93,6 +93,18 @@ namespace xTile.Layers
         }
 
         /// <summary>
+        /// Tests if the given tile location is within the layer bounds
+        /// </summary>
+        /// <param name="tileX">horizontal tile coordiate to test</param>
+        /// <param name="tileY">vertical tile coordinate to test</param>
+        /// <returns>True if the location is within the layer, False otherwise</returns>
+        public bool IsValidTileLocation(int tileX, int tileY)
+        {
+            return tileX >= 0 && tileX < m_layerSize.Width
+                && tileY >= 0 && tileY < m_layerSize.Height;
+        }
+
+        /// <summary>
         /// Converts the viewport given in map pixel coordinates to layer
         /// coordinates taking into account parallax effects
         /// </summary>
