@@ -630,6 +630,13 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap LayerOffset {
+            get {
+                object obj = ResourceManager.GetObject("LayerOffset", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap LayerProperties {
             get {
                 object obj = ResourceManager.GetObject("LayerProperties", resourceCulture);

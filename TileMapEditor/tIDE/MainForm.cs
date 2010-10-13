@@ -293,6 +293,16 @@ namespace TileMapEditor
 
         private void UpdateLayerControls()
         {
+            Layer layer = m_mapPanel.SelectedLayer;
+
+            m_layerPropertiesMenuItem.Enabled
+                = m_layerPropertiesButton.Enabled
+                = m_layerOffsetMenuItem.Enabled
+                = m_layerOffsetButton.Enabled
+                = m_layerDeleteMenuItem.Enabled
+                = m_layerDeleteButton.Enabled
+                = layer != null;
+
             UpdateLayerOrderingControls();
 
             UpdateLayerVisibilityControls();
@@ -396,7 +406,7 @@ namespace TileMapEditor
             UpdateFileControls();
             UpdateEditControls();
             UpdateZoomControls();
-            UpdateLayerVisibilityControls();
+            UpdateLayerControls();
             UpdateTileSheetControls();
             UpdateToolButtons();
             UpdateTileBrushDropDown();
@@ -1156,6 +1166,25 @@ namespace TileMapEditor
             }
         }
 
+        private void OnLayerOffset(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is Layer))
+                return;
+
+            Layer layer = (Layer)m_selectedComponent;
+            LayerOffsetDialog layerOffsetDialog
+                = new LayerOffsetDialog(layer);
+
+            if (layerOffsetDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            m_needsSaving = true;
+            UpdateFileControls();
+            UpdateEditControls();
+            UpdateLayerControls();
+        }
+
         private void OnLayerVisibility(object sender, EventArgs eventArgs)
         {
             Layer layer = m_mapPanel.SelectedLayer;
@@ -1418,6 +1447,8 @@ namespace TileMapEditor
 
             m_layerPropertiesMenuItem.Enabled
                 = m_layerPropertiesButton.Enabled
+                = m_layerOffsetMenuItem.Enabled
+                = m_layerOffsetButton.Enabled
                 = m_layerMakeInvisibleMenuItem.Enabled
                 = m_layerMakeInvisibileButton.Enabled
                 = m_layerDeleteMenuItem.Enabled

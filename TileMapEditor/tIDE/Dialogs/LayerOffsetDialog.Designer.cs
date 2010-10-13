@@ -29,26 +29,24 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label m_lblLayerId;
             System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label m_lblLayerSize;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LayerOffsetDialog));
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.m_lblLayerId = new System.Windows.Forms.Label();
+            this.m_lblLayerSize = new System.Windows.Forms.Label();
+            this.m_nudOffsetHorizontal = new System.Windows.Forms.NumericUpDown();
+            this.m_nudOffsetVertical = new System.Windows.Forms.NumericUpDown();
             this.m_btnOk = new System.Windows.Forms.Button();
             this.m_btnCancel = new System.Windows.Forms.Button();
             this.m_chkWrapHorizontal = new System.Windows.Forms.CheckBox();
             this.m_chkWrapVertical = new System.Windows.Forms.CheckBox();
             label1 = new System.Windows.Forms.Label();
-            m_lblLayerId = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
-            m_lblLayerSize = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_nudOffsetHorizontal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_nudOffsetVertical)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,12 +60,12 @@
             // 
             // m_lblLayerId
             // 
-            m_lblLayerId.AutoSize = true;
-            m_lblLayerId.Location = new System.Drawing.Point(65, 14);
-            m_lblLayerId.Name = "m_lblLayerId";
-            m_lblLayerId.Size = new System.Drawing.Size(46, 13);
-            m_lblLayerId.TabIndex = 1;
-            m_lblLayerId.Text = "(layer id)";
+            this.m_lblLayerId.AutoSize = true;
+            this.m_lblLayerId.Location = new System.Drawing.Point(65, 14);
+            this.m_lblLayerId.Name = "m_lblLayerId";
+            this.m_lblLayerId.Size = new System.Drawing.Size(46, 13);
+            this.m_lblLayerId.TabIndex = 1;
+            this.m_lblLayerId.Text = "(layer id)";
             // 
             // label2
             // 
@@ -80,12 +78,12 @@
             // 
             // m_lblLayerSize
             // 
-            m_lblLayerSize.AutoSize = true;
-            m_lblLayerSize.Location = new System.Drawing.Point(65, 40);
-            m_lblLayerSize.Name = "m_lblLayerSize";
-            m_lblLayerSize.Size = new System.Drawing.Size(56, 13);
-            m_lblLayerSize.TabIndex = 3;
-            m_lblLayerSize.Text = "(layer size)";
+            this.m_lblLayerSize.AutoSize = true;
+            this.m_lblLayerSize.Location = new System.Drawing.Point(65, 40);
+            this.m_lblLayerSize.Name = "m_lblLayerSize";
+            this.m_lblLayerSize.Size = new System.Drawing.Size(56, 13);
+            this.m_lblLayerSize.TabIndex = 3;
+            this.m_lblLayerSize.Text = "(layer size)";
             // 
             // label3
             // 
@@ -105,21 +103,21 @@
             label4.TabIndex = 6;
             label4.Text = "Vertical Offset";
             // 
-            // numericUpDown1
+            // m_nudOffsetHorizontal
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(148, 65);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(80, 20);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_nudOffsetHorizontal.Location = new System.Drawing.Point(148, 65);
+            this.m_nudOffsetHorizontal.Name = "m_nudOffsetHorizontal";
+            this.m_nudOffsetHorizontal.Size = new System.Drawing.Size(80, 20);
+            this.m_nudOffsetHorizontal.TabIndex = 5;
+            this.m_nudOffsetHorizontal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown2
+            // m_nudOffsetVertical
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(148, 91);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(80, 20);
-            this.numericUpDown2.TabIndex = 7;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_nudOffsetVertical.Location = new System.Drawing.Point(148, 91);
+            this.m_nudOffsetVertical.Name = "m_nudOffsetVertical";
+            this.m_nudOffsetVertical.Size = new System.Drawing.Size(80, 20);
+            this.m_nudOffsetVertical.TabIndex = 7;
+            this.m_nudOffsetVertical.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_btnOk
             // 
@@ -173,13 +171,13 @@
             this.Controls.Add(this.m_chkWrapHorizontal);
             this.Controls.Add(this.m_btnCancel);
             this.Controls.Add(this.m_btnOk);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.m_nudOffsetVertical);
             this.Controls.Add(label4);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.m_nudOffsetHorizontal);
             this.Controls.Add(label3);
-            this.Controls.Add(m_lblLayerSize);
+            this.Controls.Add(this.m_lblLayerSize);
             this.Controls.Add(label2);
-            this.Controls.Add(m_lblLayerId);
+            this.Controls.Add(this.m_lblLayerId);
             this.Controls.Add(label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(256, 256);
@@ -188,8 +186,9 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Layer Offsetting";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.Load += new System.EventHandler(this.OnDialogLoad);
+            ((System.ComponentModel.ISupportInitialize)(this.m_nudOffsetHorizontal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_nudOffsetVertical)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,11 +196,13 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown m_nudOffsetHorizontal;
+        private System.Windows.Forms.NumericUpDown m_nudOffsetVertical;
         private System.Windows.Forms.Button m_btnOk;
         private System.Windows.Forms.Button m_btnCancel;
         private System.Windows.Forms.CheckBox m_chkWrapHorizontal;
         private System.Windows.Forms.CheckBox m_chkWrapVertical;
+        private System.Windows.Forms.Label m_lblLayerId;
+        private System.Windows.Forms.Label m_lblLayerSize;
     }
 }
