@@ -39,8 +39,8 @@
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.anchorButtonGroup1 = new TileMapEditor.Controls.AlignmentButton();
+            this.m_lblAlignment = new System.Windows.Forms.Label();
+            this.m_alignmentButton = new TileMapEditor.Controls.AlignmentButton();
             this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_numericTileHeight = new System.Windows.Forms.NumericUpDown();
@@ -136,8 +136,8 @@
             // m_tabGeneral
             // 
             this.m_tabGeneral.BackColor = System.Drawing.Color.Transparent;
-            this.m_tabGeneral.Controls.Add(this.label7);
-            this.m_tabGeneral.Controls.Add(this.anchorButtonGroup1);
+            this.m_tabGeneral.Controls.Add(this.m_lblAlignment);
+            this.m_tabGeneral.Controls.Add(this.m_alignmentButton);
             this.m_tabGeneral.Controls.Add(this.m_checkBoxVisible);
             this.m_tabGeneral.Controls.Add(this.label4);
             this.m_tabGeneral.Controls.Add(this.m_numericTileHeight);
@@ -157,19 +157,19 @@
             this.m_tabGeneral.Name = "m_tabGeneral";
             this.m_tabGeneral.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // m_lblAlignment
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.m_lblAlignment, "m_lblAlignment");
+            this.m_lblAlignment.Name = "m_lblAlignment";
             // 
-            // anchorButtonGroup1
+            // m_alignmentButton
             // 
-            this.anchorButtonGroup1.Alignment = TileMapEditor.Controls.Alignment.Centre;
-            resources.ApplyResources(this.anchorButtonGroup1, "anchorButtonGroup1");
-            this.anchorButtonGroup1.Image = global::TileMapEditor.Properties.Resources.Layer;
-            this.anchorButtonGroup1.MaximumSize = new System.Drawing.Size(70, 70);
-            this.anchorButtonGroup1.MinimumSize = new System.Drawing.Size(70, 70);
-            this.anchorButtonGroup1.Name = "anchorButtonGroup1";
+            this.m_alignmentButton.Alignment = TileMapEditor.Controls.Alignment.Centre;
+            resources.ApplyResources(this.m_alignmentButton, "m_alignmentButton");
+            this.m_alignmentButton.Image = global::TileMapEditor.Properties.Resources.Layer;
+            this.m_alignmentButton.MaximumSize = new System.Drawing.Size(70, 70);
+            this.m_alignmentButton.MinimumSize = new System.Drawing.Size(70, 70);
+            this.m_alignmentButton.Name = "m_alignmentButton";
             // 
             // m_checkBoxVisible
             // 
@@ -382,8 +382,8 @@
         private System.Windows.Forms.Button m_buttonClose;
         private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
         private System.Windows.Forms.ImageList m_tabImageList;
-        private TileMapEditor.Controls.AlignmentButton anchorButtonGroup1;
-        private System.Windows.Forms.Label label7;
+        private TileMapEditor.Controls.AlignmentButton m_alignmentButton;
+        private System.Windows.Forms.Label m_lblAlignment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

@@ -43,6 +43,9 @@ namespace TileMapEditor.Dialogs
         private void OnFieldChanged(object sender, EventArgs e)
         {
             MarkAsModified();
+
+            Size newLayerSize = new Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
+            m_lblAlignment.Visible = m_alignmentButton.Visible = m_layer.LayerSize != newLayerSize;
         }
 
         private void OnPropertyChangedOrDeleted(object sender,

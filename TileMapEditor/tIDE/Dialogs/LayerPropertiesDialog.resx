@@ -257,7 +257,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADk
-        CAAAAk1TRnQBSQFMAgEBAgEAAYwBAAGMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CAAAAk1TRnQBSQFMAgEBAgEAAZwBAAGcAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -301,61 +301,67 @@
   <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="m_lblAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+  <data name="m_lblAlignment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="m_lblAlignment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_lblAlignment.Location" type="System.Drawing.Point, System.Drawing">
     <value>341, 277</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="m_lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+  <data name="m_lblAlignment.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+  <data name="m_lblAlignment.Text" xml:space="preserve">
     <value>Alignment</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
+  <data name="m_lblAlignment.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_lblAlignment.Name" xml:space="preserve">
+    <value>m_lblAlignment</value>
+  </data>
+  <data name="&gt;&gt;m_lblAlignment.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_lblAlignment.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;m_lblAlignment.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="anchorButtonGroup1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="m_alignmentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="anchorButtonGroup1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_alignmentButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>400, 257</value>
   </data>
-  <data name="anchorButtonGroup1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="m_alignmentButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
   </data>
-  <data name="anchorButtonGroup1.TabIndex" type="System.Int32, mscorlib">
+  <data name="m_alignmentButton.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;anchorButtonGroup1.Name" xml:space="preserve">
-    <value>anchorButtonGroup1</value>
+  <data name="m_alignmentButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;anchorButtonGroup1.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_alignmentButton.Name" xml:space="preserve">
+    <value>m_alignmentButton</value>
+  </data>
+  <data name="&gt;&gt;m_alignmentButton.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.AlignmentButton, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;anchorButtonGroup1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_alignmentButton.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="&gt;&gt;anchorButtonGroup1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;m_alignmentButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="m_checkBoxVisible.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
