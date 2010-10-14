@@ -41,7 +41,7 @@
             // 
             // m_btnTopLeft
             // 
-            this.m_btnTopLeft.Image = global::TileMapEditor.Properties.Resources.AnchorUpLeft;
+            this.m_btnTopLeft.Image = global::TileMapEditor.Properties.Resources.AlignmentUpLeft;
             this.m_btnTopLeft.Location = new System.Drawing.Point(2, 2);
             this.m_btnTopLeft.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnTopLeft.Name = "m_btnTopLeft";
@@ -52,7 +52,7 @@
             // 
             // m_btnTop
             // 
-            this.m_btnTop.Image = global::TileMapEditor.Properties.Resources.AnchorUp;
+            this.m_btnTop.Image = global::TileMapEditor.Properties.Resources.AlignmentUp;
             this.m_btnTop.Location = new System.Drawing.Point(24, 2);
             this.m_btnTop.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnTop.Name = "m_btnTop";
@@ -63,7 +63,7 @@
             // 
             // m_btnTopRight
             // 
-            this.m_btnTopRight.Image = global::TileMapEditor.Properties.Resources.AnchorUpRight;
+            this.m_btnTopRight.Image = global::TileMapEditor.Properties.Resources.AlignmentUpRight;
             this.m_btnTopRight.Location = new System.Drawing.Point(46, 2);
             this.m_btnTopRight.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnTopRight.Name = "m_btnTopRight";
@@ -74,7 +74,7 @@
             // 
             // m_btnRight
             // 
-            this.m_btnRight.Image = global::TileMapEditor.Properties.Resources.AnchorRight;
+            this.m_btnRight.Image = global::TileMapEditor.Properties.Resources.AlignmentRight;
             this.m_btnRight.Location = new System.Drawing.Point(46, 24);
             this.m_btnRight.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnRight.Name = "m_btnRight";
@@ -95,7 +95,7 @@
             // 
             // m_btnLeft
             // 
-            this.m_btnLeft.Image = global::TileMapEditor.Properties.Resources.AnchorLeft;
+            this.m_btnLeft.Image = global::TileMapEditor.Properties.Resources.AlignmentLeft;
             this.m_btnLeft.Location = new System.Drawing.Point(2, 24);
             this.m_btnLeft.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnLeft.Name = "m_btnLeft";
@@ -106,7 +106,7 @@
             // 
             // m_btnBottomRight
             // 
-            this.m_btnBottomRight.Image = global::TileMapEditor.Properties.Resources.AnchorDownRight;
+            this.m_btnBottomRight.Image = global::TileMapEditor.Properties.Resources.AlignmentDownRight;
             this.m_btnBottomRight.Location = new System.Drawing.Point(46, 46);
             this.m_btnBottomRight.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnBottomRight.Name = "m_btnBottomRight";
@@ -117,7 +117,7 @@
             // 
             // m_btnBottom
             // 
-            this.m_btnBottom.Image = global::TileMapEditor.Properties.Resources.AnchorDown;
+            this.m_btnBottom.Image = global::TileMapEditor.Properties.Resources.AlignmentDown;
             this.m_btnBottom.Location = new System.Drawing.Point(24, 46);
             this.m_btnBottom.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnBottom.Name = "m_btnBottom";
@@ -128,7 +128,7 @@
             // 
             // m_btnBottomLeft
             // 
-            this.m_btnBottomLeft.Image = global::TileMapEditor.Properties.Resources.AnchorDownLeft;
+            this.m_btnBottomLeft.Image = global::TileMapEditor.Properties.Resources.AlignmentDownLeft;
             this.m_btnBottomLeft.Location = new System.Drawing.Point(2, 46);
             this.m_btnBottomLeft.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnBottomLeft.Name = "m_btnBottomLeft";

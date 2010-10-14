@@ -74,58 +74,58 @@ namespace TileMapEditor.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorDown {
+        internal static System.Drawing.Bitmap AlignmentDown {
             get {
-                object obj = ResourceManager.GetObject("AnchorDown", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorDownLeft {
+        internal static System.Drawing.Bitmap AlignmentDownLeft {
             get {
-                object obj = ResourceManager.GetObject("AnchorDownLeft", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentDownLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorDownRight {
+        internal static System.Drawing.Bitmap AlignmentDownRight {
             get {
-                object obj = ResourceManager.GetObject("AnchorDownRight", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentDownRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorLeft {
+        internal static System.Drawing.Bitmap AlignmentLeft {
             get {
-                object obj = ResourceManager.GetObject("AnchorLeft", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorRight {
+        internal static System.Drawing.Bitmap AlignmentRight {
             get {
-                object obj = ResourceManager.GetObject("AnchorRight", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorUp {
+        internal static System.Drawing.Bitmap AlignmentUp {
             get {
-                object obj = ResourceManager.GetObject("AnchorUp", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorUpLeft {
+        internal static System.Drawing.Bitmap AlignmentUpLeft {
             get {
-                object obj = ResourceManager.GetObject("AnchorUpLeft", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentUpLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap AnchorUpRight {
+        internal static System.Drawing.Bitmap AlignmentUpRight {
             get {
-                object obj = ResourceManager.GetObject("AnchorUpRight", resourceCulture);
+                object obj = ResourceManager.GetObject("AlignmentUpRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

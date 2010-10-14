@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LayerPropertiesDialog));
-            System.Windows.Forms.Label label7;
-            System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label5;
-            System.Windows.Forms.Label label6;
-            System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label label1;
             System.Windows.Forms.Label m_labelDescription;
             System.Windows.Forms.Label m_labelId;
             this.m_buttonOk = new System.Windows.Forms.Button();
@@ -46,24 +39,24 @@
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.anchorButtonGroup1 = new TileMapEditor.Controls.AlignmentButton();
             this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_numericTileHeight = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             this.m_numericTileWidth = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_numericLayerHeight = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_numericLayerWidth = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
             this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
             this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            label7 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
             m_labelDescription = new System.Windows.Forms.Label();
             m_labelId = new System.Windows.Forms.Label();
             this.m_customTabControl.SuspendLayout();
@@ -143,19 +136,19 @@
             // m_tabGeneral
             // 
             this.m_tabGeneral.BackColor = System.Drawing.Color.Transparent;
-            this.m_tabGeneral.Controls.Add(label7);
+            this.m_tabGeneral.Controls.Add(this.label7);
             this.m_tabGeneral.Controls.Add(this.anchorButtonGroup1);
             this.m_tabGeneral.Controls.Add(this.m_checkBoxVisible);
-            this.m_tabGeneral.Controls.Add(label4);
+            this.m_tabGeneral.Controls.Add(this.label4);
             this.m_tabGeneral.Controls.Add(this.m_numericTileHeight);
-            this.m_tabGeneral.Controls.Add(label5);
+            this.m_tabGeneral.Controls.Add(this.label5);
             this.m_tabGeneral.Controls.Add(this.m_numericTileWidth);
-            this.m_tabGeneral.Controls.Add(label6);
-            this.m_tabGeneral.Controls.Add(label3);
+            this.m_tabGeneral.Controls.Add(this.label6);
+            this.m_tabGeneral.Controls.Add(this.label3);
             this.m_tabGeneral.Controls.Add(this.m_numericLayerHeight);
-            this.m_tabGeneral.Controls.Add(label2);
+            this.m_tabGeneral.Controls.Add(this.label2);
             this.m_tabGeneral.Controls.Add(this.m_numericLayerWidth);
-            this.m_tabGeneral.Controls.Add(label1);
+            this.m_tabGeneral.Controls.Add(this.label1);
             this.m_tabGeneral.Controls.Add(this.m_textBoxDescription);
             this.m_tabGeneral.Controls.Add(m_labelDescription);
             this.m_tabGeneral.Controls.Add(this.m_textBoxId);
@@ -166,8 +159,8 @@
             // 
             // label7
             // 
-            resources.ApplyResources(label7, "label7");
-            label7.Name = "label7";
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
             // 
             // anchorButtonGroup1
             // 
@@ -187,8 +180,8 @@
             // 
             // label4
             // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // m_numericTileHeight
             // 
@@ -213,8 +206,8 @@
             // 
             // label5
             // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // m_numericTileWidth
             // 
@@ -239,13 +232,13 @@
             // 
             // label6
             // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
             // 
             // label3
             // 
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // m_numericLayerHeight
             // 
@@ -270,8 +263,8 @@
             // 
             // label2
             // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // m_numericLayerWidth
             // 
@@ -296,8 +289,8 @@
             // 
             // label1
             // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // m_textBoxDescription
             // 
@@ -390,5 +383,12 @@
         private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
         private System.Windows.Forms.ImageList m_tabImageList;
         private TileMapEditor.Controls.AlignmentButton anchorButtonGroup1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
