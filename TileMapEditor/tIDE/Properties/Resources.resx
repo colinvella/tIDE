@@ -493,4 +493,31 @@
   <data name="LayerOffset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LayerOffset.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AnchorDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorDown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorDownLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorDownLeft.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorDownRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorDownRight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorLeft.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorRight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorUp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorUpLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorUpLeft.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnchorUpRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnchorUpRight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DefaultButtonImage.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -74,6 +74,62 @@ namespace TileMapEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap AnchorDown {
+            get {
+                object obj = ResourceManager.GetObject("AnchorDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorDownLeft {
+            get {
+                object obj = ResourceManager.GetObject("AnchorDownLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorDownRight {
+            get {
+                object obj = ResourceManager.GetObject("AnchorDownRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorLeft {
+            get {
+                object obj = ResourceManager.GetObject("AnchorLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorRight {
+            get {
+                object obj = ResourceManager.GetObject("AnchorRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorUp {
+            get {
+                object obj = ResourceManager.GetObject("AnchorUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorUpLeft {
+            get {
+                object obj = ResourceManager.GetObject("AnchorUpLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap AnchorUpRight {
+            get {
+                object obj = ResourceManager.GetObject("AnchorUpRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap AutoTileTemplate {
             get {
                 object obj = ResourceManager.GetObject("AutoTileTemplate", resourceCulture);
@@ -84,6 +140,13 @@ namespace TileMapEditor.Properties {
         internal static System.Drawing.Bitmap CustomProperties {
             get {
                 object obj = ResourceManager.GetObject("CustomProperties", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap DefaultButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("DefaultButtonImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

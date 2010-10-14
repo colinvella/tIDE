@@ -127,6 +127,12 @@
     <Compile Include="Compression\Zlib\ZOutputStream.cs" />
     <Compile Include="Compression\Zlib\ZStream.cs" />
     <Compile Include="Compression\Zlib\ZStreamException.cs" />
+    <Compile Include="Controls\AlignmentButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AlignmentButton.Designer.cs">
+      <DependentUpon>AlignmentButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -175,7 +181,9 @@
     <Compile Include="Controls\TabStyleProviders\TabStyleDefaultProvider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TabStyleProviders\TabStyleIE8Provider.cs" />
+    <Compile Include="Controls\TabStyleProviders\TabStyleIE8Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\TabStyleProviders\TabStyleNoneProvider.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -346,6 +354,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\AlignmentButton.resx">
+      <DependentUpon>AlignmentButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomPropertyGrid.es-ES.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -622,6 +633,15 @@
     <None Include="Resources\EditPaste.png" />
     <None Include="Resources\AutoTileTemplate.png" />
     <None Include="Resources\CustomProperties.png" />
+    <None Include="Resources\AnchorDown.png" />
+    <None Include="Resources\AnchorDownLeft.png" />
+    <None Include="Resources\AnchorDownRight.png" />
+    <None Include="Resources\AnchorLeft.png" />
+    <None Include="Resources\AnchorRight.png" />
+    <None Include="Resources\AnchorUp.png" />
+    <None Include="Resources\AnchorUpLeft.png" />
+    <None Include="Resources\AnchorUpRight.png" />
+    <None Include="Resources\DefaultButtonImage.png" />
     <Content Include="Resources\EditUndo.png" />
     <Content Include="Resources\EditRedo.png" />
     <Content Include="Resources\File.png" />
