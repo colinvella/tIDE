@@ -112,7 +112,7 @@ namespace TileMapEditor.Dialogs
             else
                 command = new LayerPropertiesCommand(m_layer, newId, m_textBoxDescription.Text,
                     newLayerSize, newTileSize, m_checkBoxVisible.Checked,
-                    m_customPropertyGrid.NewProperties);
+                    m_customPropertyGrid.NewProperties, m_alignmentButton.Alignment);
 
             CommandHistory.Instance.Do(command);
 
