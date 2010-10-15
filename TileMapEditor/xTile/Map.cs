@@ -344,9 +344,9 @@ namespace xTile
 
         #endregion
 
-        #region Private Methods
+        #region Internal Methods
 
-        private void UpdateDisplaySize()
+        internal void UpdateDisplaySize()
         {
             m_displaySize = Size.Zero;
             foreach (Layer layer in m_layers)

@@ -257,7 +257,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADk
-        CAAAAk1TRnQBSQFMAgEBAgEAAZwBAAGcAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CAAAAk1TRnQBSQFMAgEBAgEAAbQBAAG0AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -301,6 +301,27 @@
   <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="m_alignmentButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 261</value>
+  </data>
+  <data name="m_alignmentButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 66</value>
+  </data>
+  <data name="m_alignmentButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;m_alignmentButton.Name" xml:space="preserve">
+    <value>m_alignmentButton</value>
+  </data>
+  <data name="&gt;&gt;m_alignmentButton.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.AlignmentButton, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_alignmentButton.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;m_alignmentButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="m_lblAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -311,7 +332,7 @@
     <value>NoControl</value>
   </data>
   <data name="m_lblAlignment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 277</value>
+    <value>341, 263</value>
   </data>
   <data name="m_lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -335,33 +356,6 @@
     <value>m_tabGeneral</value>
   </data>
   <data name="&gt;&gt;m_lblAlignment.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_alignmentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_alignmentButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 257</value>
-  </data>
-  <data name="m_alignmentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 70</value>
-  </data>
-  <data name="m_alignmentButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="m_alignmentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_alignmentButton.Name" xml:space="preserve">
-    <value>m_alignmentButton</value>
-  </data>
-  <data name="&gt;&gt;m_alignmentButton.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.AlignmentButton, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_alignmentButton.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="&gt;&gt;m_alignmentButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="m_checkBoxVisible.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -407,7 +401,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 303</value>
+    <value>253, 289</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -434,7 +428,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="m_numericTileHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 301</value>
+    <value>187, 287</value>
   </data>
   <data name="m_numericTileHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -467,7 +461,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 303</value>
+    <value>169, 289</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 13</value>
@@ -494,7 +488,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="m_numericTileWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 301</value>
+    <value>103, 287</value>
   </data>
   <data name="m_numericTileWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -527,7 +521,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 303</value>
+    <value>18, 289</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -560,7 +554,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 277</value>
+    <value>253, 263</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
@@ -587,7 +581,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="m_numericLayerHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 275</value>
+    <value>187, 261</value>
   </data>
   <data name="m_numericLayerHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -620,7 +614,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 277</value>
+    <value>169, 263</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 13</value>
@@ -647,7 +641,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="m_numericLayerWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 275</value>
+    <value>103, 261</value>
   </data>
   <data name="m_numericLayerWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -680,7 +674,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 277</value>
+    <value>18, 263</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -713,7 +707,7 @@
     <value>True</value>
   </data>
   <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 218</value>
+    <value>443, 222</value>
   </data>
   <data name="m_textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1699,9 +1693,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 250</value>

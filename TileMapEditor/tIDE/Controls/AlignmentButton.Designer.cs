@@ -42,7 +42,7 @@
             // m_btnTopLeft
             // 
             this.m_btnTopLeft.Image = global::TileMapEditor.Properties.Resources.AlignmentUpLeft;
-            this.m_btnTopLeft.Location = new System.Drawing.Point(2, 2);
+            this.m_btnTopLeft.Location = new System.Drawing.Point(0, 0);
             this.m_btnTopLeft.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnTopLeft.Name = "m_btnTopLeft";
             this.m_btnTopLeft.Size = new System.Drawing.Size(22, 22);
@@ -53,7 +53,7 @@
             // m_btnTop
             // 
             this.m_btnTop.Image = global::TileMapEditor.Properties.Resources.AlignmentUp;
-            this.m_btnTop.Location = new System.Drawing.Point(24, 2);
+            this.m_btnTop.Location = new System.Drawing.Point(22, 0);
             this.m_btnTop.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnTop.Name = "m_btnTop";
             this.m_btnTop.Size = new System.Drawing.Size(22, 22);
@@ -64,7 +64,7 @@
             // m_btnTopRight
             // 
             this.m_btnTopRight.Image = global::TileMapEditor.Properties.Resources.AlignmentUpRight;
-            this.m_btnTopRight.Location = new System.Drawing.Point(46, 2);
+            this.m_btnTopRight.Location = new System.Drawing.Point(44, 0);
             this.m_btnTopRight.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnTopRight.Name = "m_btnTopRight";
             this.m_btnTopRight.Size = new System.Drawing.Size(22, 22);
@@ -75,7 +75,7 @@
             // m_btnRight
             // 
             this.m_btnRight.Image = global::TileMapEditor.Properties.Resources.AlignmentRight;
-            this.m_btnRight.Location = new System.Drawing.Point(46, 24);
+            this.m_btnRight.Location = new System.Drawing.Point(44, 22);
             this.m_btnRight.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnRight.Name = "m_btnRight";
             this.m_btnRight.Size = new System.Drawing.Size(22, 22);
@@ -85,7 +85,7 @@
             // 
             // m_btnCentre
             // 
-            this.m_btnCentre.Location = new System.Drawing.Point(24, 24);
+            this.m_btnCentre.Location = new System.Drawing.Point(22, 22);
             this.m_btnCentre.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnCentre.Name = "m_btnCentre";
             this.m_btnCentre.Size = new System.Drawing.Size(22, 22);
@@ -96,7 +96,7 @@
             // m_btnLeft
             // 
             this.m_btnLeft.Image = global::TileMapEditor.Properties.Resources.AlignmentLeft;
-            this.m_btnLeft.Location = new System.Drawing.Point(2, 24);
+            this.m_btnLeft.Location = new System.Drawing.Point(0, 22);
             this.m_btnLeft.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnLeft.Name = "m_btnLeft";
             this.m_btnLeft.Size = new System.Drawing.Size(22, 22);
@@ -107,7 +107,7 @@
             // m_btnBottomRight
             // 
             this.m_btnBottomRight.Image = global::TileMapEditor.Properties.Resources.AlignmentDownRight;
-            this.m_btnBottomRight.Location = new System.Drawing.Point(46, 46);
+            this.m_btnBottomRight.Location = new System.Drawing.Point(44, 44);
             this.m_btnBottomRight.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnBottomRight.Name = "m_btnBottomRight";
             this.m_btnBottomRight.Size = new System.Drawing.Size(22, 22);
@@ -118,7 +118,7 @@
             // m_btnBottom
             // 
             this.m_btnBottom.Image = global::TileMapEditor.Properties.Resources.AlignmentDown;
-            this.m_btnBottom.Location = new System.Drawing.Point(24, 46);
+            this.m_btnBottom.Location = new System.Drawing.Point(22, 44);
             this.m_btnBottom.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnBottom.Name = "m_btnBottom";
             this.m_btnBottom.Size = new System.Drawing.Size(22, 22);
@@ -129,7 +129,7 @@
             // m_btnBottomLeft
             // 
             this.m_btnBottomLeft.Image = global::TileMapEditor.Properties.Resources.AlignmentDownLeft;
-            this.m_btnBottomLeft.Location = new System.Drawing.Point(2, 46);
+            this.m_btnBottomLeft.Location = new System.Drawing.Point(0, 44);
             this.m_btnBottomLeft.Margin = new System.Windows.Forms.Padding(0);
             this.m_btnBottomLeft.Name = "m_btnBottomLeft";
             this.m_btnBottomLeft.Size = new System.Drawing.Size(22, 22);
@@ -137,7 +137,7 @@
             this.m_btnBottomLeft.UseVisualStyleBackColor = true;
             this.m_btnBottomLeft.Click += new System.EventHandler(this.OnAnchorButtonClicked);
             // 
-            // AnchorButtonGroup
+            // AlignmentButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,10 +150,10 @@
             this.Controls.Add(this.m_btnTopRight);
             this.Controls.Add(this.m_btnTop);
             this.Controls.Add(this.m_btnTopLeft);
-            this.MaximumSize = new System.Drawing.Size(70, 70);
-            this.MinimumSize = new System.Drawing.Size(70, 70);
-            this.Name = "AnchorButtonGroup";
-            this.Size = new System.Drawing.Size(70, 70);
+            this.MaximumSize = new System.Drawing.Size(66, 66);
+            this.MinimumSize = new System.Drawing.Size(66, 66);
+            this.Name = "AlignmentButton";
+            this.Size = new System.Drawing.Size(66, 66);
             this.Load += new System.EventHandler(this.OnLoadControl);
             this.ResumeLayout(false);
 

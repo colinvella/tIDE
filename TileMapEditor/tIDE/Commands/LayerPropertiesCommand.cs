@@ -62,32 +62,32 @@ namespace TileMapEditor.Commands
                 switch (m_layerAlignment)
                 {
                     case Alignment.Top:
-                        offset.X = (m_newLayerSize.Width - m_layer.LayerSize.Width) / 2;
+                        offset.X = (m_newLayerSize.Width - m_oldLayerSize.Width) / 2;
                         break;
                     case Alignment.TopRight:
-                        offset.X = m_newLayerSize.Width - m_layer.LayerSize.Width;
+                        offset.X = m_newLayerSize.Width - m_oldLayerSize.Width;
                         break;
                     case Alignment.Left:
-                        offset.Y = (m_newLayerSize.Height - m_layer.LayerSize.Height) / 2;
+                        offset.Y = (m_newLayerSize.Height - m_oldLayerSize.Height) / 2;
                         break;
                     case Alignment.Centre:
-                        offset.X = (m_newLayerSize.Width - m_layer.LayerSize.Width) / 2;
-                        offset.Y = (m_newLayerSize.Height - m_layer.LayerSize.Height) / 2;
+                        offset.X = (m_newLayerSize.Width - m_oldLayerSize.Width) / 2;
+                        offset.Y = (m_newLayerSize.Height - m_oldLayerSize.Height) / 2;
                         break;
                     case Alignment.Right:
-                        offset.X = m_newLayerSize.Width - m_layer.LayerSize.Width;
-                        offset.Y = (m_newLayerSize.Height - m_layer.LayerSize.Height) / 2;
+                        offset.X = m_newLayerSize.Width - m_oldLayerSize.Width;
+                        offset.Y = (m_newLayerSize.Height - m_oldLayerSize.Height) / 2;
                         break;
                     case Alignment.BottomLeft:
-                        offset.Y = m_newLayerSize.Height - m_layer.LayerSize.Height;
+                        offset.Y = m_newLayerSize.Height - m_oldLayerSize.Height;
                         break;
                     case Alignment.Bottom:
-                        offset.X = (m_newLayerSize.Width - m_layer.LayerSize.Width) / 2;
-                        offset.Y = m_newLayerSize.Height - m_layer.LayerSize.Height;
+                        offset.X = (m_newLayerSize.Width - m_oldLayerSize.Width) / 2;
+                        offset.Y = m_newLayerSize.Height - m_oldLayerSize.Height;
                         break;
                     case Alignment.BottomRight:
-                        offset.X = m_newLayerSize.Width - m_layer.LayerSize.Width;
-                        offset.Y = m_newLayerSize.Height - m_layer.LayerSize.Height;
+                        offset.X = m_newLayerSize.Width - m_oldLayerSize.Width;
+                        offset.Y = m_newLayerSize.Height - m_oldLayerSize.Height;
                         break;
                 }
                 m_layerOffsetCommand = new LayerOffsetCommand(m_layer, offset, false, false);

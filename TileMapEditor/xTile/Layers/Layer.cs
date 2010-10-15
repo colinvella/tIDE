@@ -322,6 +322,8 @@ namespace xTile.Layers
                 m_tileArray = new TileArray(this, m_tiles);
 
                 m_layerSize = value;
+
+                m_map.UpdateDisplaySize();
             }
         }
 
