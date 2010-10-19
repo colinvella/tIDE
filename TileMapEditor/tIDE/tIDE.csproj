@@ -415,6 +415,9 @@
     <EmbeddedResource Include="Dialogs\CommandHistoryDialog.es-ES.resx">
       <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CommandHistoryDialog.fr-FR.resx">
+      <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CommandHistoryDialog.it-IT.resx">
       <DependentUpon>CommandHistoryDialog.cs</DependentUpon>
     </EmbeddedResource>
