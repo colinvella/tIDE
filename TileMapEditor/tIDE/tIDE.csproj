@@ -450,6 +450,9 @@
     <EmbeddedResource Include="Dialogs\LayerOffsetDialog.es-ES.resx">
       <DependentUpon>LayerOffsetDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LayerOffsetDialog.fr-FR.resx">
+      <DependentUpon>LayerOffsetDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\LayerOffsetDialog.it-IT.resx">
       <DependentUpon>LayerOffsetDialog.cs</DependentUpon>
     </EmbeddedResource>
