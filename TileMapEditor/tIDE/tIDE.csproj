@@ -428,6 +428,9 @@
     <EmbeddedResource Include="Dialogs\CustomPropertiesDialog.es-ES.resx">
       <DependentUpon>CustomPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CustomPropertiesDialog.fr-FR.resx">
+      <DependentUpon>CustomPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CustomPropertiesDialog.it-IT.resx">
       <DependentUpon>CustomPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
