@@ -403,6 +403,9 @@
     <EmbeddedResource Include="Dialogs\AutoTileDialog.es-ES.resx">
       <DependentUpon>AutoTileDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AutoTileDialog.fr-FR.resx">
+      <DependentUpon>AutoTileDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AutoTileDialog.it-IT.resx">
       <DependentUpon>AutoTileDialog.cs</DependentUpon>
     </EmbeddedResource>

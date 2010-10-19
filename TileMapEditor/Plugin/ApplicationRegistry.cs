@@ -20,6 +20,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&File";
+                            case Language.French: return "&Fichier";
                             case Language.Spanish: return "&Archivo";
                             case Language.Italian: return "&Fascicolo";
                             default: throw new Exception();
@@ -37,6 +38,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Edit";
+                            case Language.French: return "&Edition";
                             case Language.Spanish: return "&Edita";
                             case Language.Italian: return "&Modifica";
                             default: throw new Exception();
@@ -54,6 +56,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&View";
+                            case Language.French: return "&Affichage";
                             case Language.Spanish: return "&Ver";
                             case Language.Italian: return "&Visualizza";
                             default: throw new Exception();
@@ -71,6 +74,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Map";
+                            case Language.French: return "&Carte";
                             case Language.Spanish: return "&Mapa";
                             case Language.Italian: return "Ma&ppa";
                             default: throw new Exception();
@@ -88,6 +92,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Layer";
+                            case Language.French: return "&Strate";
                             case Language.Spanish: return "&Capa";
                             case Language.Italian: return "&Strato";
                             default: throw new Exception();
@@ -105,6 +110,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Tile Sheet";
+                            case Language.French: return "&Feuille de Tuiles";
                             case Language.Spanish: return "&Hoja de Azulejos";
                             case Language.Italian: return "Foglio di &Piastre";
                             default: throw new Exception();
@@ -122,6 +128,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Plugin";
+                            case Language.French: return "Mo&dule";
                             case Language.Spanish: return "Módul&o";
                             case Language.Italian: return "Mo&dulo";
                             default: throw new Exception();
@@ -139,6 +146,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Help";
+                            case Language.French: return "&Aide";
                             case Language.Spanish: return "A&yuda";
                             case Language.Italian: return "&Aiuto";
                             default: throw new Exception();
@@ -151,6 +159,7 @@ namespace TileMapEditor.Plugin
         private enum Language
         {
             English,
+            French,
             Spanish,
             Italian
         }
@@ -161,11 +170,13 @@ namespace TileMapEditor.Plugin
             {
                 CultureInfo cultureInfo = Thread.CurrentThread.CurrentUICulture;
                 string code = cultureInfo.Name;
-                if (code == "en-GB")
+                if (code.StartsWith("en-"))
                     return Language.English;
-                else if (code == "es-ES")
+                if (code.StartsWith("fr-"))
+                    return Language.French;
+                if (code.StartsWith("es-"))
                     return Language.Spanish;
-                else if (code == "it-IT")
+                if (code.StartsWith("it-"))
                     return Language.Italian;
                 else
                     return Language.English;
