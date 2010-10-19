@@ -462,6 +462,9 @@
     <EmbeddedResource Include="Dialogs\LayerPropertiesDialog.es-ES.resx">
       <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LayerPropertiesDialog.fr-FR.resx">
+      <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\LayerPropertiesDialog.it-IT.resx">
       <DependentUpon>LayerPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
