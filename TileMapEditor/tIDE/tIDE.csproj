@@ -437,6 +437,9 @@
     <EmbeddedResource Include="Dialogs\FormatCompatibilityDialog.es-ES.resx">
       <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\FormatCompatibilityDialog.fr-FR.resx">
+      <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FormatCompatibilityDialog.it-IT.resx">
       <DependentUpon>FormatCompatibilityDialog.cs</DependentUpon>
     </EmbeddedResource>

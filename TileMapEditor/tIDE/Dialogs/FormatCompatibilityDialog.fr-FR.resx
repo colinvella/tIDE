@@ -118,97 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_overallCompatibilityLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_overallCompatibilityValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_notesDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;m_compatibilityNotesLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CompatiblityLevel.HeaderText" xml:space="preserve">
-    <value>Compatiblity Level</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityValue.Name" xml:space="preserve">
-    <value>m_overallCompatibilityValue</value>
-  </data>
-  <data name="&gt;&gt;m_compatibilityNotesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CompatibilityLevelIcon.Width" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="m_overallCompatibilityLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 262</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.Name" xml:space="preserve">
-    <value>m_okButton</value>
-  </data>
-  <data name="m_notesDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>559, 150</value>
+  <data name="m_overallCompatibilityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
   </data>
   <data name="m_overallCompatibilityLabel.Text" xml:space="preserve">
-    <value>Overall Compatibility</value>
+    <value>Compatibilité Générale</value>
   </data>
-  <data name="&gt;&gt;m_overallCompatibilityValue.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="m_overallCompatibilityValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 13</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Format Compatibility Report</value>
-  </data>
-  <data name="CompatibilityLevelIcon.MinimumWidth" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="m_overallCompatibilityValue.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="m_compatibilityNotesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
   </data>
   <data name="m_compatibilityNotesLabel.Text" xml:space="preserve">
-    <value>Compatibility Notes</value>
-  </data>
-  <data name="&gt;&gt;Remarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_compatibilityNotesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 47</value>
-  </data>
-  <data name="&gt;&gt;m_compatibilityNotesLabel.Name" xml:space="preserve">
-    <value>m_compatibilityNotesLabel</value>
-  </data>
-  <data name="&gt;&gt;m_notesDataGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_notesDataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_overallCompatibilityValue.Text" xml:space="preserve">
-    <value>(compatibility)</value>
+    <value>Notes sur la Compatibilité</value>
   </data>
   <data name="m_cancelButton.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
+    <value>&amp;Annulez</value>
+  </data>
+  <data name="CompatiblityLevel.HeaderText" xml:space="preserve">
+    <value>Niveau de Compatibilité</value>
+  </data>
+  <data name="Remarks.HeaderText" xml:space="preserve">
+    <value>Remarques</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -973,148 +902,7 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="Remarks.HeaderText" xml:space="preserve">
-    <value>Remarks</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Rapport de Compatibilité de Format</value>
   </data>
-  <data name="&gt;&gt;CompatiblityLevel.Name" xml:space="preserve">
-    <value>CompatiblityLevel</value>
-  </data>
-  <data name="m_cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 227</value>
-  </data>
-  <data name="m_overallCompatibilityLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_overallCompatibilityLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 13</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityLabel.Name" xml:space="preserve">
-    <value>m_overallCompatibilityLabel</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CompatibilityLevelIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 227</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CompatibilityLevelIcon.Name" xml:space="preserve">
-    <value>CompatibilityLevelIcon</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;CompatiblityLevel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_cancelButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="m_compatibilityNotesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="m_okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_okButton.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="m_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;m_notesDataGridView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_cancelButton.Name" xml:space="preserve">
-    <value>m_cancelButton</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="m_compatibilityNotesLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;m_compatibilityNotesLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_overallCompatibilityValue.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_compatibilityNotesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
-  </data>
-  <data name="m_overallCompatibilityValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="m_notesDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 63</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormatCompatibilityDialog</value>
-  </data>
-  <data name="&gt;&gt;m_notesDataGridView.Name" xml:space="preserve">
-    <value>m_notesDataGridView</value>
-  </data>
-  <data name="CompatibilityLevelIcon.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="m_overallCompatibilityValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
-  </data>
-  <data name="&gt;&gt;m_notesDataGridView.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;m_okButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Remarks.Name" xml:space="preserve">
-    <value>Remarks</value>
-  </data>
-  <metadata name="m_compatibilityNotesLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="CompatibilityLevelIcon.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="m_overallCompatibilityLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="Remarks.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CompatiblityLevel.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>French (France)</value>
-  </metadata>
 </root>
