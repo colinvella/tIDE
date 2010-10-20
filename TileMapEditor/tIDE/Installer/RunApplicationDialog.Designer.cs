@@ -42,7 +42,7 @@
             m_yesButton.AccessibleName = null;
             resources.ApplyResources(m_yesButton, "m_yesButton");
             m_yesButton.BackgroundImage = null;
-            m_yesButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            m_yesButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             m_yesButton.Font = null;
             m_yesButton.Name = "m_yesButton";
             m_yesButton.UseVisualStyleBackColor = true;
