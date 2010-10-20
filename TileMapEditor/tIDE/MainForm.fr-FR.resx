@@ -118,20 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+  <data name="m_mapTreeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 228</value>
   </data>
-  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 25</value>
+  <data name="m_splitContainerVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 463</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_splitContainerVertical.SplitterDistance" type="System.Int32, mscorlib">
+    <value>228</value>
+  </data>
+  <data name="m_mapPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 441</value>
+  </data>
+  <data name="m_mapPanel.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAADx4VGlsZSwgVmVyc2lvbj0xLjIuMC4wLCBDdWx0dXJlPW5ldXRy
+        YWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAABp4VGlsZS5EaW1lbnNpb25zLlJlY3RhbmdsZQIAAAAI
+        TG9jYXRpb24EU2l6ZQQEGXhUaWxlLkRpbWVuc2lvbnMuTG9jYXRpb24CAAAAFXhUaWxlLkRpbWVuc2lv
+        bnMuU2l6ZQIAAAACAAAABf3///8ZeFRpbGUuRGltZW5zaW9ucy5Mb2NhdGlvbgIAAAABWAFZAAAICAIA
+        AAAAAAAAAAAAAAX8////FXhUaWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAAFV2lkdGgGSGVpZ2h0AAAICAIA
+        AAAgAgAAtwEAAAs=
+</value>
+  </data>
+  <data name="m_toolStripContainerInner.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 441</value>
+  </data>
+  <data name="m_toolStripContainerInner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>579, 463</value>
+  </data>
+  <data name="m_splitContainerLeftRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 463</value>
+  </data>
+  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 463</value>
   </data>
   <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 25</value>
+    <value>211, 50</value>
   </data>
-  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 50</value>
   </data>
+  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 25</value>
+  </data>
+  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 25</value>
+  </data>
   <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 50</value>
+    <value>235, 0</value>
+  </data>
+  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
   </data>
   <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
@@ -404,13 +442,13 @@
     <value>&amp;Affichage</value>
   </data>
   <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="m_mapPropertiesMenuItem.Text" xml:space="preserve">
     <value>Propriétés...</value>
   </data>
   <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="m_mapStatisticsMenuItem.Text" xml:space="preserve">
     <value>Statistiques...</value>
@@ -484,11 +522,77 @@
   <data name="m_layerMenuItem.Text" xml:space="preserve">
     <value>&amp;Strate</value>
   </data>
+  <data name="m_tileSheetNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetNewMenuItem.Text" xml:space="preserve">
+    <value>Nouveau...</value>
+  </data>
+  <data name="m_tileSheetPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetPropertiesMenuItem.Text" xml:space="preserve">
+    <value>Propriétés...</value>
+  </data>
+  <data name="m_tileSheetAutoTilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetAutoTilesMenuItem.Text" xml:space="preserve">
+    <value>Auto Tuiles...</value>
+  </data>
+  <data name="m_tileSheetSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 6</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableMenuItem.Text" xml:space="preserve">
+    <value>Activer Mise à Jour Automatique</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableMenuItem.Text" xml:space="preserve">
+    <value>Désactiver Mise à Jour Automatique</value>
+  </data>
+  <data name="m_tileSheetSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 6</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesMenuItem.Text" xml:space="preserve">
+    <value>Éliminez Dépendances</value>
+  </data>
+  <data name="m_tileSheetDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="m_tileSheetDeleteMenuItem.Text" xml:space="preserve">
+    <value>Supprimez</value>
+  </data>
   <data name="m_tileSheetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 20</value>
   </data>
   <data name="m_tileSheetMenuItem.Text" xml:space="preserve">
     <value>&amp;Fueille des Tuiles</value>
+  </data>
+  <data name="m_pluginReloadMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="m_pluginReloadMenuItem.Text" xml:space="preserve">
+    <value>Recharger les Modules</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 6</value>
+  </data>
+  <data name="m_pluginNoneLoadedMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="m_pluginNoneLoadedMenuItem.Text" xml:space="preserve">
+    <value>Aucun Module Chargé</value>
   </data>
   <data name="m_pluginMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 20</value>
@@ -520,17 +624,14 @@
   <data name="m_helpAboutMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 22</value>
   </data>
+  <data name="m_helpAboutMenuItem.Text" xml:space="preserve">
+    <value>&amp;A Propos</value>
+  </data>
   <data name="m_helpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
   </data>
   <data name="m_helpMenuItem.Text" xml:space="preserve">
     <value>Ai&amp;de</value>
-  </data>
-  <data name="m_menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 75</value>
-  </data>
-  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 99</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1294,9 +1395,5 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
