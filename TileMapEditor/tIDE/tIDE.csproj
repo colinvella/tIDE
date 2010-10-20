@@ -517,6 +517,9 @@
     <EmbeddedResource Include="Dialogs\TileBrushDialog.es-ES.resx">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TileBrushDialog.fr-FR.resx">
+      <DependentUpon>TileBrushDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TileBrushDialog.it-IT.resx">
       <DependentUpon>TileBrushDialog.cs</DependentUpon>
     </EmbeddedResource>

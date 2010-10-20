@@ -134,14 +134,15 @@
   <data name="&gt;&gt;m_renameButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_listView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;m_listView.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_deleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
-  </data>
-  <data name="m_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 48</value>
   </data>
   <data name="&gt;&gt;m_renameButton.Name" xml:space="preserve">
     <value>m_renameButton</value>
@@ -153,13 +154,16 @@
     <value>497, 377</value>
   </data>
   <data name="&gt;&gt;m_deleteBrushMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>584, 412</value>
+  </data>
+  <data name="m_deleteBrushMessageBox.Caption" xml:space="preserve">
+    <value>Delete tile brush '[m_selectedTileBrush.Id]'</value>
   </data>
   <data name="m_cancelButton.Text" xml:space="preserve">
     <value>&amp;Cancel</value>
@@ -177,19 +181,13 @@
     <value>&amp;Apply</value>
   </data>
   <data name="&gt;&gt;m_duplicteIdMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_listView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 359</value>
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="m_okButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;m_listView.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="m_deleteButton.Text" xml:space="preserve">
-    <value>&amp;Delete</value>
   </data>
   <data name="&gt;&gt;m_deleteMenuItem.Name" xml:space="preserve">
     <value>m_deleteMenuItem</value>
@@ -224,9 +222,6 @@
   <data name="&gt;&gt;m_renameButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="m_deleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
-  </data>
   <data name="m_closeButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>497, 377</value>
   </data>
@@ -257,7 +252,6 @@
   <data name="&gt;&gt;m_listView.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -266,6 +260,9 @@
   </data>
   <data name="m_duplicteIdMessageBox.Text" xml:space="preserve">
     <value>The tile brush Id '[m_newLabel]' is already in use</value>
+  </data>
+  <data name="&gt;&gt;m_renameMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_renameButton.Text" xml:space="preserve">
     <value>&amp;Rename</value>
@@ -290,6 +287,9 @@
   </data>
   <data name="&gt;&gt;m_okButton.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_cancelButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -345,9 +345,6 @@
   <data name="&gt;&gt;m_duplicteIdMessageBox.Name" xml:space="preserve">
     <value>m_duplicteIdMessageBox</value>
   </data>
-  <data name="m_listView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="m_okButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
@@ -363,8 +360,8 @@
   <data name="m_deleteBrushMessageBox.Text" xml:space="preserve">
     <value>Are you sure you want to delete this tile brush?</value>
   </data>
-  <data name="&gt;&gt;m_okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_deleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
   </data>
   <data name="m_listView.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -372,8 +369,8 @@
   <data name="m_renameButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="m_listView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="m_contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 48</value>
   </data>
   <data name="m_deleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -399,8 +396,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_renameButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 377</value>
+  <data name="m_listView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 359</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1168,17 +1165,20 @@
   <data name="&gt;&gt;m_closeButton.Name" xml:space="preserve">
     <value>m_closeButton</value>
   </data>
-  <data name="m_deleteBrushMessageBox.Caption" xml:space="preserve">
-    <value>Delete tile brush '[m_selectedTileBrush.Id]'</value>
+  <data name="m_deleteButton.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
   </data>
   <data name="m_okButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="m_renameMenuItem.Text" xml:space="preserve">
+    <value>Rename</value>
+  </data>
   <data name="m_duplicteIdMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;m_renameMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_listView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="m_renameMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 22</value>
@@ -1186,8 +1186,8 @@
   <data name="m_deleteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="m_renameMenuItem.Text" xml:space="preserve">
-    <value>Rename</value>
+  <data name="m_renameButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 377</value>
   </data>
   <metadata name="m_contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1195,13 +1195,13 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Spanish (Spain)</value>
+  <metadata name="m_duplicteIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>382, 17</value>
   </metadata>
   <metadata name="m_deleteBrushMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>182, 17</value>
   </metadata>
-  <metadata name="m_duplicteIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>382, 17</value>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>French (France)</value>
   </metadata>
 </root>
