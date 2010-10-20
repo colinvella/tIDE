@@ -571,6 +571,9 @@
     <EmbeddedResource Include="Dialogs\TileSheetPropertiesDialog.es-ES.resx">
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TileSheetPropertiesDialog.fr-FR.resx">
+      <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TileSheetPropertiesDialog.it-IT.resx">
       <DependentUpon>TileSheetPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>

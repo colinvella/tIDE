@@ -119,65 +119,65 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_labelTileSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+    <value>32, 13</value>
   </data>
   <data name="m_labelTileSize.Text" xml:space="preserve">
-    <value>Tamaño</value>
+    <value>Taille</value>
   </data>
   <data name="m_labelTileSizeBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>37, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Margen</value>
+    <value>Marge</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 49</value>
+    <value>140, 49</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 75</value>
+    <value>139, 75</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>66, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Espaciamiento</value>
+    <value>Espacement</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>66, 13</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Espaciamiento</value>
+    <value>Espacement</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>37, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Margen</value>
+    <value>Marge</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+    <value>32, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Tamaño</value>
+    <value>Taille</value>
   </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Cancela</value>
+    <value>&amp;Annulez</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>&amp;Aplica</value>
+    <value>A&amp;ppliquez</value>
   </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
-    <value>&amp;Cierre</value>
+    <value>&amp;Fermez</value>
   </data>
   <data name="m_tabImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
-        CgAAAk1TRnQBSQFMAgEBAwEAATABAAEwAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CgAAAk1TRnQBSQFMAgEBAwEAAVgBAAFYAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -224,113 +224,92 @@
         AwAC/wHwAQEB/AMABv8CAAs=
 </value>
   </data>
-  <data name="m_labelImageSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
-  </data>
-  <data name="m_labelImageSource.Text" xml:space="preserve">
-    <value>Fuente de la Imagen</value>
-  </data>
-  <data name="m_buttonBrowse.Text" xml:space="preserve">
-    <value>Seleccione...</value>
-  </data>
-  <data name="m_textBoxImageSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 305</value>
-  </data>
-  <data name="m_textBoxImageSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 20</value>
-  </data>
-  <data name="m_textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 33</value>
-  </data>
-  <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 264</value>
-  </data>
-  <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
-  </data>
-  <data name="m_labelDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="m_textBoxId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 7</value>
-  </data>
-  <data name="m_textBoxId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 20</value>
-  </data>
-  <data name="m_buttonDoneSwapping.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="m_buttonDoneSwapping.Text" xml:space="preserve">
-    <value>Intercambio Terminado</value>
-  </data>
-  <data name="m_buttonSwapTiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="m_buttonSwapTiles.Text" xml:space="preserve">
-    <value>Intercambio de Azulejos</value>
-  </data>
-  <data name="m_textBoxTileWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 19</value>
-  </data>
-  <data name="m_textBoxTileHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 19</value>
-  </data>
-  <data name="m_textBoxLeftMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 45</value>
-  </data>
-  <data name="m_textBoxSpacingY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 71</value>
-  </data>
-  <data name="m_textBoxTopMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 45</value>
-  </data>
-  <data name="m_textBoxSpacingX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 71</value>
-  </data>
-  <data name="m_groupBoxCustomSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 101</value>
-  </data>
-  <data name="m_comboBoxSpacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 103</value>
-  </data>
-  <data name="m_comboBoxSpacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
-  </data>
-  <data name="m_comboBoxMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 76</value>
-  </data>
-  <data name="m_comboBoxMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
-  </data>
-  <data name="m_comboBoxTileSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 49</value>
-  </data>
-  <data name="m_comboBoxTileSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
-  </data>
-  <data name="m_buttonAutoDetect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 23</value>
-  </data>
-  <data name="m_buttonAutoDetect.Text" xml:space="preserve">
-    <value>Detección Automática</value>
-  </data>
-  <data name="m_groupBoxQuickSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 136</value>
-  </data>
-  <data name="m_groupBoxQuickSettings.Text" xml:space="preserve">
-    <value>Configuración Rápida</value>
-  </data>
-  <data name="m_panelImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 7</value>
-  </data>
-  <data name="m_panelImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 320</value>
+  <data name="m_tabGeneral.Text" xml:space="preserve">
+    <value>Général</value>
   </data>
   <data name="m_tabAlignment.Text" xml:space="preserve">
-    <value>Alineación</value>
+    <value>Alignement</value>
   </data>
   <data name="m_tabCustomProperties.Text" xml:space="preserve">
-    <value>Propiedades Personalizadas</value>
+    <value>Propriétés Personnalisées</value>
+  </data>
+  <data name="m_labelImageSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="m_labelImageSource.Text" xml:space="preserve">
+    <value>Source de l'Image</value>
+  </data>
+  <data name="m_buttonBrowse.Text" xml:space="preserve">
+    <value>Recherchez...</value>
+  </data>
+  <data name="m_buttonDoneSwapping.Text" xml:space="preserve">
+    <value>Fait Échange</value>
+  </data>
+  <data name="m_buttonSwapTiles.Text" xml:space="preserve">
+    <value>Échangez le Tuiles</value>
+  </data>
+  <data name="m_groupBoxCustomSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 101</value>
+  </data>
+  <data name="m_groupBoxCustomSettings.Text" xml:space="preserve">
+    <value>Réglages Personnalisés</value>
+  </data>
+  <data name="m_textBoxTileWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 19</value>
+  </data>
+  <data name="m_textBoxTileHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 19</value>
+  </data>
+  <data name="m_textBoxLeftMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 45</value>
+  </data>
+  <data name="m_textBoxSpacingY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 71</value>
+  </data>
+  <data name="m_textBoxTopMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 45</value>
+  </data>
+  <data name="m_textBoxSpacingX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 71</value>
+  </data>
+  <data name="m_groupBoxQuickSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 136</value>
+  </data>
+  <data name="m_groupBoxQuickSettings.Text" xml:space="preserve">
+    <value>Réglage Rapide</value>
+  </data>
+  <data name="m_comboBoxSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 103</value>
+  </data>
+  <data name="m_comboBoxSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 21</value>
+  </data>
+  <data name="m_comboBoxMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 76</value>
+  </data>
+  <data name="m_comboBoxMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 21</value>
+  </data>
+  <data name="m_comboBoxTileSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 49</value>
+  </data>
+  <data name="m_comboBoxTileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 21</value>
+  </data>
+  <data name="m_buttonAutoDetect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 23</value>
+  </data>
+  <data name="m_buttonAutoDetect.Text" xml:space="preserve">
+    <value>Détection Automatique</value>
+  </data>
+  <data name="m_panelImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 6</value>
+  </data>
+  <data name="m_panelImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>322, 318</value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Caption" xml:space="preserve">
+    <value>Propriétés de Feuille des Tuiles</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1095,11 +1074,22 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Propiedades de la Hoja de Azulejos</value>
+    <value>Propriétés de Feuille des Tuiles</value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Text" xml:space="preserve">
+    <value>Aucune source de l'image sélectionnée</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Propriétés de Feuille des Tuiles</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
+    <value>L'ID spécifié est déjà utilisé par une autre feuille de tuiles</value>
+  </data>
+  <data name="m_tileSizeFixedMessageBox.Caption" xml:space="preserve">
+    <value>Propriétés de Feuille des Tuiles</value>
+  </data>
+  <data name="m_tileSizeFixedMessageBox.Text" xml:space="preserve">
+    <value>La taille des tuiles ne peut être changé que ce fuille de tuiles est actuellement en cours d'utilisation</value>
   </data>
 </root>
