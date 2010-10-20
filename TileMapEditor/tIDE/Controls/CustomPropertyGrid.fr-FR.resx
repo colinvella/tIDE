@@ -123,4 +123,16 @@
   <data name="PropertyValue.HeaderText" xml:space="preserve">
     <value>Valeur</value>
   </data>
+  <data name="m_noNameMessageBox.Caption" xml:space="preserve">
+    <value>Propriétés Personnalisées</value>
+  </data>
+  <data name="m_noNameMessageBox.Text" xml:space="preserve">
+    <value>Pas de nom bien déterminé</value>
+  </data>
+  <data name="m_duplicateNameMessageBox.Caption" xml:space="preserve">
+    <value>Propriétés Personnalisées</value>
+  </data>
+  <data name="m_duplicateNameMessageBox.Text" xml:space="preserve">
+    <value>Une autre propriété du même nom est déjà défini</value>
+  </data>
 </root>

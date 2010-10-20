@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomPropertyGrid));
             this.m_dataGridView = new System.Windows.Forms.DataGridView();
-            this.m_noNameMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_duplicateNameMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.PropertyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PropertyValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.m_noNameMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_duplicateNameMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.m_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,18 @@
             this.m_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserDeletedRow);
             this.m_dataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.OnCellValidating);
             // 
+            // PropertyName
+            // 
+            this.PropertyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.PropertyName, "PropertyName");
+            this.PropertyName.Name = "PropertyName";
+            // 
+            // PropertyValue
+            // 
+            this.PropertyValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.PropertyValue, "PropertyValue");
+            this.PropertyValue.Name = "PropertyValue";
+            // 
             // m_noNameMessageBox
             // 
             resources.ApplyResources(this.m_noNameMessageBox, "m_noNameMessageBox");
@@ -74,18 +86,6 @@
             this.m_duplicateNameMessageBox.HelpFilePath = null;
             this.m_duplicateNameMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
             this.m_duplicateNameMessageBox.Owner = this;
-            // 
-            // PropertyName
-            // 
-            this.PropertyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.PropertyName, "PropertyName");
-            this.PropertyName.Name = "PropertyName";
-            // 
-            // PropertyValue
-            // 
-            this.PropertyValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.PropertyValue, "PropertyValue");
-            this.PropertyValue.Name = "PropertyValue";
             // 
             // CustomPropertyGrid
             // 

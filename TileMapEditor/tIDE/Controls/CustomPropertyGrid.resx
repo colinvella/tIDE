@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;m_dataGridView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;m_duplicateNameMessageBox.Name" xml:space="preserve">
     <value>m_duplicateNameMessageBox</value>
   </data>
@@ -165,11 +168,11 @@
   <data name="m_dataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="m_dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>421, 150</value>
-  </data>
   <data name="m_duplicateNameMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>
+  </data>
+  <data name="m_dataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="&gt;&gt;PropertyValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -177,11 +180,8 @@
   <data name="m_duplicateNameMessageBox.Text" xml:space="preserve">
     <value>Another property with the same name is already defined</value>
   </data>
-  <data name="m_dataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;m_duplicateNameMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="m_dataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>421, 150</value>
   </data>
   <data name="m_duplicateNameMessageBox.Caption" xml:space="preserve">
     <value>Custom Properties</value>
@@ -189,29 +189,29 @@
   <data name="PropertyName.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="&gt;&gt;m_dataGridView.Name" xml:space="preserve">
-    <value>m_dataGridView</value>
-  </data>
-  <data name="&gt;&gt;m_noNameMessageBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_duplicateNameMessageBox.Type" xml:space="preserve">
     <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;PropertyName.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_noNameMessageBox.Type" xml:space="preserve">
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_dataGridView.Name" xml:space="preserve">
+    <value>m_dataGridView</value>
+  </data>
+  <data name="m_dataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
   <data name="m_noNameMessageBox.Caption" xml:space="preserve">
     <value>Custom Properties</value>
   </data>
-  <data name="m_dataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;m_dataGridView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PropertyName.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="m_noNameMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>French (France)</value>
@@ -222,7 +222,7 @@
   <metadata name="PropertyValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="PropertyName.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="m_noNameMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>
