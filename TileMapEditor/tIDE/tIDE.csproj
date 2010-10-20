@@ -360,6 +360,9 @@
     <EmbeddedResource Include="Controls\CustomPropertyGrid.es-ES.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomPropertyGrid.fr-FR.resx">
+      <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomPropertyGrid.it-IT.resx">
       <DependentUpon>CustomPropertyGrid.cs</DependentUpon>
     </EmbeddedResource>
