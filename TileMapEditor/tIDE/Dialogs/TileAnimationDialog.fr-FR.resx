@@ -119,43 +119,43 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_frameIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
+    <value>122, 13</value>
   </data>
   <data name="m_frameIntervalLabel.Text" xml:space="preserve">
-    <value>Intervalo del Cuadro (ms)</value>
+    <value>Intervalle de l'image (ms)</value>
   </data>
   <data name="m_framePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="m_framePropertiesMenuItem.Text" xml:space="preserve">
-    <value>Propiedades del Cuadro...</value>
+    <value>Propriétés du Image...</value>
   </data>
   <data name="m_menuItemSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 6</value>
+    <value>186, 6</value>
   </data>
   <data name="m_frameDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="m_frameDeleteMenuItem.Text" xml:space="preserve">
-    <value>Borra el Cuadro</value>
+    <value>Supprimez l'Image</value>
   </data>
   <data name="m_frameContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 54</value>
+    <value>190, 54</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>&amp;Aplica</value>
+    <value>A&amp;ppliquez</value>
   </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
-    <value>&amp;Cancela</value>
+    <value>&amp;Annulez</value>
   </data>
   <data name="m_frameIntervalTextbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 377</value>
+    <value>140, 377</value>
   </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
-    <value>&amp;Cierra</value>
+    <value>&amp;Fermez</value>
   </data>
   <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
-    <value>Animación de los Azulejos</value>
+    <value>Animation des Tuiles</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -921,9 +921,9 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Animación de los Azulejos</value>
+    <value>Animation des Tuiles</value>
   </data>
   <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
-    <value>Tamaño del Azulejo Incompatibles</value>
+    <value>Taille des tuiles incompatibles</value>
   </data>
 </root>
