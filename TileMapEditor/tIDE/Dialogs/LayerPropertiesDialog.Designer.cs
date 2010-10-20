@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label m_labelDescription;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LayerPropertiesDialog));
+            System.Windows.Forms.Label m_labelDescription;
             System.Windows.Forms.Label m_labelId;
             this.m_buttonOk = new System.Windows.Forms.Button();
             this.m_buttonCancel = new System.Windows.Forms.Button();
@@ -67,22 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_numericLayerWidth)).BeginInit();
             this.m_tabCustomProperties.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_labelDescription
-            // 
-            m_labelDescription.AccessibleDescription = null;
-            m_labelDescription.AccessibleName = null;
-            resources.ApplyResources(m_labelDescription, "m_labelDescription");
-            m_labelDescription.Font = null;
-            m_labelDescription.Name = "m_labelDescription";
-            // 
-            // m_labelId
-            // 
-            m_labelId.AccessibleDescription = null;
-            m_labelId.AccessibleName = null;
-            resources.ApplyResources(m_labelId, "m_labelId");
-            m_labelId.Font = null;
-            m_labelId.Name = "m_labelId";
             // 
             // m_buttonOk
             // 
@@ -384,6 +368,14 @@
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.TextChanged += new System.EventHandler(this.OnFieldChanged);
             // 
+            // m_labelDescription
+            // 
+            m_labelDescription.AccessibleDescription = null;
+            m_labelDescription.AccessibleName = null;
+            resources.ApplyResources(m_labelDescription, "m_labelDescription");
+            m_labelDescription.Font = null;
+            m_labelDescription.Name = "m_labelDescription";
+            // 
             // m_textBoxId
             // 
             this.m_textBoxId.AccessibleDescription = null;
@@ -393,6 +385,14 @@
             this.m_textBoxId.Font = null;
             this.m_textBoxId.Name = "m_textBoxId";
             this.m_textBoxId.TextChanged += new System.EventHandler(this.OnFieldChanged);
+            // 
+            // m_labelId
+            // 
+            m_labelId.AccessibleDescription = null;
+            m_labelId.AccessibleName = null;
+            resources.ApplyResources(m_labelId, "m_labelId");
+            m_labelId.Font = null;
+            m_labelId.Name = "m_labelId";
             // 
             // m_tabCustomProperties
             // 

@@ -255,11 +255,14 @@
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 289</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 263</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
     <value>The specified Id is already used by another Layer</value>
@@ -278,6 +281,9 @@
   </data>
   <data name="m_customPropertyGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 326</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>pixels</value>
@@ -305,9 +311,6 @@
   </data>
   <data name="m_buttonApply.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;m_tabGeneral.Parent" xml:space="preserve">
     <value>m_customTabControl</value>
@@ -350,9 +353,6 @@
   </data>
   <data name="m_numericLayerHeight.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
-  </data>
-  <data name="m_alignmentButton.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -435,14 +435,11 @@
   <data name="m_alignmentButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>400, 261</value>
   </data>
-  <data name="m_numericTileWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 287</value>
+  <data name="m_numericTileWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>253, 289</value>
-  </data>
-  <data name="m_tabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
   </data>
   <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 333</value>
@@ -467,12 +464,6 @@
   </data>
   <data name="m_numericTileWidth.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="m_numericTileHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 287</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 289</value>
   </data>
   <data name="m_customPropertyGrid.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1252,9 +1243,6 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="&gt;&gt;m_duplicateIdMessageBox.Name" xml:space="preserve">
-    <value>m_duplicateIdMessageBox</value>
-  </data>
   <data name="m_buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -1321,14 +1309,14 @@
   <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
     <value>m_buttonOk</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="m_buttonClose.Text" xml:space="preserve">
     <value>&amp;Close</value>
   </data>
-  <data name="m_checkBoxVisible.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 302</value>
+  <data name="m_numericTileHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 287</value>
   </data>
   <data name="&gt;&gt;m_checkBoxVisible.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
@@ -1339,8 +1327,17 @@
   <data name="&gt;&gt;m_tabImageList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;m_customPropertyGrid.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1354,14 +1351,17 @@
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
   </data>
+  <data name="m_numericTileWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 287</value>
+  </data>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="m_tabGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_checkBoxVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 302</value>
   </data>
   <data name="m_buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1372,8 +1372,8 @@
   <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="m_numericTileWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;m_duplicateIdMessageBox.Name" xml:space="preserve">
+    <value>m_duplicateIdMessageBox</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 289</value>
@@ -1384,8 +1384,8 @@
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 263</value>
   </data>
-  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="m_tabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="m_lblAlignment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1447,14 +1447,60 @@
   <data name="m_buttonApply.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="m_alignmentButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="&gt;&gt;m_numericLayerWidth.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
+  </data>
+  <data name="m_tabImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADk
+        CAAAAk1TRnQBSQFMAgEBAgEAAeABAAH4AQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/1EAAbULZiUACe0GAAG1
+        Af8B9AHzARkECQK1AWYmAAHtBxoB7QUAAbUB/wG1AfcB8wX3AbUBZicAAe0HmAHtBAAB7wP/AfQB8wEZ
+        Ad0DCQFmJQAJ7QKYAe0DAAG1Af8C9wH/BfcBCQFmJgAB7QcaAe0CuwHtAgABtQX/AfQB8wEZAd0BCQFm
+        JwAB7QeYBO0BAAHvBv8BBwFKARkB3QFmAwAB/yEACWACmAHtAwAB7wH/AfMBbgHyAf8BvAFKAVIBQwH3
+        AWYCAAG8AU8iAAFgBzgBYAK7Ae0CAAG7Af8BHAGZAUoB7wFKAXkB6gFZARACIgHvAUkBUCMAAWAHAgFg
+        A+0BAAG7Af8B8wEcAZoBSgF5AeoBegFKAVgCUgFKAlAkAAFgBzwBYAMAA7sB7wEcAZoBSgGaAUoCegFZ
+        AVgBUgFyAZclAAFgB9MBYAYAAfQBHAGaAUoBmgN6AlkBcwGXJgAJYAYAAfQBHAOaAnoBeQHsApg2AAH0
+        AxwB7QFzAewB8AKYYAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGAFwAD/wEABP8EAAL/
+        AQABDwQAAYABPwEAAQ8EAAHAAR8BAAEPBAAB4AEPAQABDwQAAYABBwEAAQ8EAAHAAQMBAAEPBAAB4AEB
+        AQABDgQAAYABBwEAAQwEAAHAAQMGAAHgAQEGAAHwAQcGAAH4AQMB8AUAAfwBAQH4BQAC/wH8BQAE/xoA
+        Cw==
+</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>x</value>
@@ -1492,8 +1538,8 @@
   <data name="&gt;&gt;m_labelDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
-    <value>m_customTabControl</value>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="m_numericLayerWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -1540,9 +1586,6 @@
   <data name="&gt;&gt;m_tabGeneral.Name" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;m_numericTileHeight.Name" xml:space="preserve">
     <value>m_numericTileHeight</value>
   </data>
@@ -1561,57 +1604,14 @@
   <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 22</value>
   </data>
-  <data name="m_tabImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADk
-        CAAAAk1TRnQBSQFMAgEBAgEAAeABAAHwAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
-        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
-        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
-        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
-        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
-        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
-        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
-        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
-        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
-        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
-        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
-        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
-        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
-        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
-        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
-        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
-        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
-        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
-        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
-        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
-        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
-        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
-        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
-        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
-        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
-        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
-        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
-        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/1EAAbULZiUACe0GAAG1
-        Af8B9AHzARkECQK1AWYmAAHtBxoB7QUAAbUB/wG1AfcB8wX3AbUBZicAAe0HmAHtBAAB7wP/AfQB8wEZ
-        Ad0DCQFmJQAJ7QKYAe0DAAG1Af8C9wH/BfcBCQFmJgAB7QcaAe0CuwHtAgABtQX/AfQB8wEZAd0BCQFm
-        JwAB7QeYBO0BAAHvBv8BBwFKARkB3QFmAwAB/yEACWACmAHtAwAB7wH/AfMBbgHyAf8BvAFKAVIBQwH3
-        AWYCAAG8AU8iAAFgBzgBYAK7Ae0CAAG7Af8BHAGZAUoB7wFKAXkB6gFZARACIgHvAUkBUCMAAWAHAgFg
-        A+0BAAG7Af8B8wEcAZoBSgF5AeoBegFKAVgCUgFKAlAkAAFgBzwBYAMAA7sB7wEcAZoBSgGaAUoCegFZ
-        AVgBUgFyAZclAAFgB9MBYAYAAfQBHAGaAUoBmgN6AlkBcwGXJgAJYAYAAfQBHAOaAnoBeQHsApg2AAH0
-        AxwB7QFzAewB8AKYYAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGAFwAD/wEABP8EAAL/
-        AQABDwQAAYABPwEAAQ8EAAHAAR8BAAEPBAAB4AEPAQABDwQAAYABBwEAAQ8EAAHAAQMBAAEPBAAB4AEB
-        AQABDgQAAYABBwEAAQwEAAHAAQMGAAHgAQEGAAHwAQcGAAH4AQMB8AUAAfwBAQH4BQAC/wH8BQAE/xoA
-        Cw==
-</value>
+  <data name="&gt;&gt;m_numericLayerWidth.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;m_labelId.Parent" xml:space="preserve">
     <value>m_tabGeneral</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;m_tabCustomProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1667,8 +1667,8 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="&gt;&gt;m_numericLayerWidth.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
