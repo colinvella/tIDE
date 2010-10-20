@@ -110,7 +110,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Tile Sheet";
-                            case Language.French: return "&Feuille de Tuiles";
+                            case Language.French: return "&Feuille des Tuiles";
                             case Language.Spanish: return "&Hoja de Azulejos";
                             case Language.Italian: return "Foglio di &Piastre";
                             default: throw new Exception();
@@ -128,7 +128,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Plugin";
-                            case Language.French: return "Mo&dule";
+                            case Language.French: return "&Module";
                             case Language.Spanish: return "Módul&o";
                             case Language.Italian: return "Mo&dulo";
                             default: throw new Exception();
@@ -146,7 +146,7 @@ namespace TileMapEditor.Plugin
                         switch (CurrentLanguage)
                         {
                             case Language.English: return "&Help";
-                            case Language.French: return "&Aide";
+                            case Language.French: return "Ai&de";
                             case Language.Spanish: return "A&yuda";
                             case Language.Italian: return "&Aiuto";
                             default: throw new Exception();
