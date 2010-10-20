@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_139477DB820965A1B584FAC641D610A4"
+        "MsmKey" = "8:_0B79715A804AFB46414EC881279B2B80"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -39,24 +39,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
+        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
+        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
-        "OwnerKey" = "8:_139477DB820965A1B584FAC641D610A4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
-        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_139477DB820965A1B584FAC641D610A4"
+        "OwnerKey" = "8:_0B79715A804AFB46414EC881279B2B80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
+        "OwnerKey" = "8:_765676D7A8175B49F9E291D509EF90F2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -118,7 +118,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\tIDESetup121.msi"
+        "OutputFilename" = "8:Release\\tIDESetup122.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -259,14 +259,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_139477DB820965A1B584FAC641D610A4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B79715A804AFB46414EC881279B2B80"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.2.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.2.1.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_139477DB820965A1B584FAC641D610A4"
+                    "_0B79715A804AFB46414EC881279B2B80"
                     {
                     "Name" = "8:TileMapEditor.Plugin.dll"
                     "Attributes" = "3:512"
@@ -310,34 +310,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C1D6D84C6D743038E647C8C01F89DA4"
-            {
-            "SourcePath" = "8:tIDE.ico"
-            "TargetName" = "8:tIDE.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF8C3A0DEF4F53302A175BF1337BB307"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_765676D7A8175B49F9E291D509EF90F2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:xTile, Version=1.2.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_DF8C3A0DEF4F53302A175BF1337BB307"
+                    "_765676D7A8175B49F9E291D509EF90F2"
                     {
                     "Name" = "8:xTile.dll"
                     "Attributes" = "3:512"
@@ -359,6 +339,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C1D6D84C6D743038E647C8C01F89DA4"
+            {
+            "SourcePath" = "8:tIDE.ico"
+            "TargetName" = "8:tIDE.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
