@@ -383,6 +383,9 @@
     <EmbeddedResource Include="Controls\MapTreeView.es-ES.resx">
       <DependentUpon>MapTreeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapTreeView.fr-FR.resx">
+      <DependentUpon>MapTreeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MapTreeView.it-IT.resx">
       <DependentUpon>MapTreeView.cs</DependentUpon>
     </EmbeddedResource>
