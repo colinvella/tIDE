@@ -410,7 +410,7 @@
     <value>m_contentRichTextBox</value>
   </data>
   <data name="&gt;&gt;m_contentRichTextBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomRichTextBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TileMapEditor.Controls.CustomRichTextBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_contentRichTextBox.Parent" xml:space="preserve">
     <value>m_contentPanel</value>
@@ -554,37 +554,37 @@
     <value>Magenta</value>
   </data>
   <data name="m_helpContentsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>73, 22</value>
   </data>
   <data name="m_helpContentsButton.Text" xml:space="preserve">
-    <value>Contents</value>
+    <value>Contenu</value>
   </data>
   <data name="m_helpIndexButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="m_helpIndexButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 22</value>
+    <value>59, 22</value>
   </data>
   <data name="m_helpIndexButton.Text" xml:space="preserve">
-    <value>Index</value>
+    <value>Indice</value>
   </data>
   <data name="m_helpSearchButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="m_helpSearchButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
+    <value>87, 22</value>
   </data>
   <data name="m_helpSearchButton.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>Recherchez</value>
   </data>
   <data name="m_searchTextbox.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 25</value>
   </data>
   <data name="m_searchTextbox.Text" xml:space="preserve">
-    <value>enter search criteria here</value>
+    <value>entrez des critères de recherche ici</value>
   </data>
   <data name="m_searchTextbox.ToolTipText" xml:space="preserve">
-    <value>Enter search criteria here</value>
+    <value>Entrez des critères de recherche ici</value>
   </data>
   <data name="m_searchTextbox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -593,7 +593,7 @@
     <value>3, 0</value>
   </data>
   <data name="m_toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>437, 25</value>
+    <value>464, 25</value>
   </data>
   <data name="m_toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1162,7 +1162,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>tIDE Help</value>
+    <value>tIDE Aide</value>
   </data>
   <data name="&gt;&gt;m_helpContentsButton.Name" xml:space="preserve">
     <value>m_helpContentsButton</value>
@@ -1192,13 +1192,13 @@
     <value>m_noContentMessageBox</value>
   </data>
   <data name="&gt;&gt;m_noContentMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_badContentMessageBox.Name" xml:space="preserve">
     <value>m_badContentMessageBox</value>
   </data>
   <data name="&gt;&gt;m_badContentMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>HelpForm</value>
