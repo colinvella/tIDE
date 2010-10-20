@@ -42,24 +42,35 @@
             // 
             // m_labelCaption
             // 
+            m_labelCaption.AccessibleDescription = null;
+            m_labelCaption.AccessibleName = null;
+            resources.ApplyResources(m_labelCaption, "m_labelCaption");
             m_labelCaption.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             m_labelCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(m_labelCaption, "m_labelCaption");
+            m_labelCaption.Font = null;
             m_labelCaption.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             m_labelCaption.Name = "m_labelCaption";
             // 
             // m_panelContent
             // 
+            m_panelContent.AccessibleDescription = null;
+            m_panelContent.AccessibleName = null;
+            resources.ApplyResources(m_panelContent, "m_panelContent");
+            m_panelContent.BackgroundImage = null;
             m_panelContent.Controls.Add(this.m_tileListView);
             m_panelContent.Controls.Add(this.m_comboBoxTileSheets);
-            resources.ApplyResources(m_panelContent, "m_panelContent");
+            m_panelContent.Font = null;
             m_panelContent.Name = "m_panelContent";
             // 
             // m_tileListView
             // 
-            this.m_tileListView.AutoArrange = false;
-            this.m_tileListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_tileListView.AccessibleDescription = null;
+            this.m_tileListView.AccessibleName = null;
             resources.ApplyResources(this.m_tileListView, "m_tileListView");
+            this.m_tileListView.AutoArrange = false;
+            this.m_tileListView.BackgroundImage = null;
+            this.m_tileListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_tileListView.Font = null;
             this.m_tileListView.LargeImageList = this.m_tileImageList;
             this.m_tileListView.MultiSelect = false;
             this.m_tileListView.Name = "m_tileListView";
@@ -78,18 +89,26 @@
             // 
             // m_comboBoxTileSheets
             // 
+            this.m_comboBoxTileSheets.AccessibleDescription = null;
+            this.m_comboBoxTileSheets.AccessibleName = null;
             resources.ApplyResources(this.m_comboBoxTileSheets, "m_comboBoxTileSheets");
+            this.m_comboBoxTileSheets.BackgroundImage = null;
             this.m_comboBoxTileSheets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_comboBoxTileSheets.Font = null;
             this.m_comboBoxTileSheets.FormattingEnabled = true;
             this.m_comboBoxTileSheets.Name = "m_comboBoxTileSheets";
             this.m_comboBoxTileSheets.SelectedIndexChanged += new System.EventHandler(this.OnSelectTileSheet);
             // 
             // TilePicker
             // 
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = null;
             this.Controls.Add(m_panelContent);
             this.Controls.Add(m_labelCaption);
+            this.Font = null;
             this.Name = "TilePicker";
             m_panelContent.ResumeLayout(false);
             this.ResumeLayout(false);

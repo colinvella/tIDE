@@ -392,6 +392,9 @@
     <EmbeddedResource Include="Controls\TilePicker.es-ES.resx">
       <DependentUpon>TilePicker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TilePicker.fr-FR.resx">
+      <DependentUpon>TilePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TilePicker.it-IT.resx">
       <DependentUpon>TilePicker.cs</DependentUpon>
     </EmbeddedResource>
