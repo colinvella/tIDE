@@ -121,6 +121,16 @@ namespace TileMapEditor.Dialogs
 
         #endregion
 
+        private void OnProjectLinkClicked(object sender,
+            LinkLabelLinkClickedEventArgs linkLabelLinkClickedEventArgs)
+        {
+            if (m_lnkProject.Tag != null)
+            {
+                string url = m_lnkProject.Tag.ToString();
+                System.Diagnostics.Process.Start(url);
+            }
+        }
+
 
     }
 }

@@ -30,6 +30,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Panel m_backgroundPanel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
+            this.m_lnkProject = new System.Windows.Forms.LinkLabel();
             this.m_labelCompanyName = new System.Windows.Forms.Label();
             this.m_labelCopyright = new System.Windows.Forms.Label();
             this.m_labelProductName = new System.Windows.Forms.Label();
@@ -43,75 +44,64 @@
             // 
             // m_backgroundPanel
             // 
-            m_backgroundPanel.AccessibleDescription = null;
-            m_backgroundPanel.AccessibleName = null;
-            resources.ApplyResources(m_backgroundPanel, "m_backgroundPanel");
             m_backgroundPanel.BackColor = System.Drawing.Color.Transparent;
-            m_backgroundPanel.BackgroundImage = null;
             m_backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            m_backgroundPanel.Controls.Add(this.m_lnkProject);
             m_backgroundPanel.Controls.Add(this.m_labelCompanyName);
             m_backgroundPanel.Controls.Add(this.m_labelCopyright);
             m_backgroundPanel.Controls.Add(this.m_labelProductName);
             m_backgroundPanel.Controls.Add(this.labelVersion);
             m_backgroundPanel.Controls.Add(this.m_buttonOk);
             m_backgroundPanel.Controls.Add(this.m_textBoxDescription);
-            m_backgroundPanel.Font = null;
+            resources.ApplyResources(m_backgroundPanel, "m_backgroundPanel");
             m_backgroundPanel.Name = "m_backgroundPanel";
+            // 
+            // m_lnkProject
+            // 
+            resources.ApplyResources(this.m_lnkProject, "m_lnkProject");
+            this.m_lnkProject.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.m_lnkProject.LinkColor = System.Drawing.Color.Maroon;
+            this.m_lnkProject.Name = "m_lnkProject";
+            this.m_lnkProject.TabStop = true;
+            this.m_lnkProject.Tag = "http://tide.codeplex.com";
+            this.m_lnkProject.UseCompatibleTextRendering = true;
+            this.m_lnkProject.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnProjectLinkClicked);
             // 
             // m_labelCompanyName
             // 
-            this.m_labelCompanyName.AccessibleDescription = null;
-            this.m_labelCompanyName.AccessibleName = null;
             resources.ApplyResources(this.m_labelCompanyName, "m_labelCompanyName");
-            this.m_labelCompanyName.Font = null;
             this.m_labelCompanyName.Name = "m_labelCompanyName";
             // 
             // m_labelCopyright
             // 
-            this.m_labelCopyright.AccessibleDescription = null;
-            this.m_labelCopyright.AccessibleName = null;
             resources.ApplyResources(this.m_labelCopyright, "m_labelCopyright");
-            this.m_labelCopyright.Font = null;
             this.m_labelCopyright.Name = "m_labelCopyright";
             // 
             // m_labelProductName
             // 
-            this.m_labelProductName.AccessibleDescription = null;
-            this.m_labelProductName.AccessibleName = null;
             resources.ApplyResources(this.m_labelProductName, "m_labelProductName");
             this.m_labelProductName.ForeColor = System.Drawing.Color.White;
             this.m_labelProductName.Name = "m_labelProductName";
             // 
             // labelVersion
             // 
-            this.labelVersion.AccessibleDescription = null;
-            this.labelVersion.AccessibleName = null;
             resources.ApplyResources(this.labelVersion, "labelVersion");
-            this.labelVersion.Font = null;
             this.labelVersion.ForeColor = System.Drawing.Color.White;
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelVersion.Name = "labelVersion";
             // 
             // m_buttonOk
             // 
-            this.m_buttonOk.AccessibleDescription = null;
-            this.m_buttonOk.AccessibleName = null;
             resources.ApplyResources(this.m_buttonOk, "m_buttonOk");
-            this.m_buttonOk.BackgroundImage = null;
             this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_buttonOk.Font = null;
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_textBoxDescription
             // 
-            this.m_textBoxDescription.AccessibleDescription = null;
-            this.m_textBoxDescription.AccessibleName = null;
-            resources.ApplyResources(this.m_textBoxDescription, "m_textBoxDescription");
             this.m_textBoxDescription.BackColor = System.Drawing.SystemColors.Info;
-            this.m_textBoxDescription.BackgroundImage = null;
             this.m_textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_textBoxDescription.Font = null;
+            resources.ApplyResources(this.m_textBoxDescription, "m_textBoxDescription");
             this.m_textBoxDescription.Name = "m_textBoxDescription";
             this.m_textBoxDescription.ReadOnly = true;
             this.m_textBoxDescription.TabStop = false;
@@ -125,15 +115,12 @@
             // AboutDialog
             // 
             this.AcceptButton = this.m_buttonOk;
-            this.AccessibleDescription = null;
-            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
             this.CancelButton = this.m_buttonOk;
             this.Controls.Add(m_backgroundPanel);
             this.DoubleBuffered = true;
-            this.Font = null;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -156,5 +143,6 @@
         private System.Windows.Forms.Label m_labelCopyright;
         private System.Windows.Forms.Label m_labelCompanyName;
         private System.Windows.Forms.Timer m_timer;
+        private System.Windows.Forms.LinkLabel m_lnkProject;
     }
 }
