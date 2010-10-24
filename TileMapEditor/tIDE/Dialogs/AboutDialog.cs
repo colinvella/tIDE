@@ -21,6 +21,16 @@ namespace TileMapEditor.Dialogs
                 Close();
         }
 
+        private void OnProjectLinkClicked(object sender,
+            LinkLabelLinkClickedEventArgs linkLabelLinkClickedEventArgs)
+        {
+            if (m_lnkProject.Tag != null)
+            {
+                string url = m_lnkProject.Tag.ToString();
+                System.Diagnostics.Process.Start(url);
+            }
+        }
+
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
             m_fadeDirection = -0.05;
@@ -120,17 +130,5 @@ namespace TileMapEditor.Dialogs
         }
 
         #endregion
-
-        private void OnProjectLinkClicked(object sender,
-            LinkLabelLinkClickedEventArgs linkLabelLinkClickedEventArgs)
-        {
-            if (m_lnkProject.Tag != null)
-            {
-                string url = m_lnkProject.Tag.ToString();
-                System.Diagnostics.Process.Start(url);
-            }
-        }
-
-
     }
 }
