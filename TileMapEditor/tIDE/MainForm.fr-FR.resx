@@ -157,7 +157,7 @@
     <value>Effacez tuiles [ E ]</value>
   </data>
   <data name="m_toolsDropperButton.ToolTipText" xml:space="preserve">
-    <value>Cueillez tuiles de le strate [ P ]</value>
+    <value>Cueillez tuiles du qalue [ P ]</value>
   </data>
   <data name="m_toolsTextureButton.ToolTipText" xml:space="preserve">
     <value>Posez des tuiles prélevées dans une région sélectionnée</value>
@@ -202,7 +202,7 @@
     <value>Aperçu avant impression</value>
   </data>
   <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
-    <value>Imprimez le strate sélectionné</value>
+    <value>Imprimez le calque sélectionné</value>
   </data>
   <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
     <value>Accédez aux options générales</value>
@@ -235,28 +235,28 @@
     <value>194, 25</value>
   </data>
   <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
-    <value>Nouveau Strate</value>
+    <value>Nouveau calque</value>
   </data>
   <data name="m_layerPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Propriétés du strate</value>
+    <value>Propriétés du calque</value>
   </data>
   <data name="m_layerOffsetButton.ToolTipText" xml:space="preserve">
-    <value>Compensation du strate horizontalement et / ou à la verticale</value>
+    <value>Compensation du calque horizontalement et / ou à la verticale</value>
   </data>
   <data name="m_layerMakeInvisibileButton.ToolTipText" xml:space="preserve">
-    <value>Fais le strate visible</value>
+    <value>Fais le calque visible</value>
   </data>
   <data name="m_layerMakeVisibileButton.ToolTipText" xml:space="preserve">
-    <value>Fais le strate invisible</value>
+    <value>Fais le calque invisible</value>
   </data>
   <data name="m_layerBringForwardButton.ToolTipText" xml:space="preserve">
-    <value>Apportez le strate avant</value>
+    <value>Apportez le calque avant</value>
   </data>
   <data name="m_layerSendBackwardButton.ToolTipText" xml:space="preserve">
-    <value>Envoyer le strate arrière</value>
+    <value>Envoyer le calque arrière</value>
   </data>
   <data name="m_layerDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Supprimez le strate</value>
+    <value>Supprimez le calque</value>
   </data>
   <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 25</value>
@@ -283,7 +283,7 @@
     <value>Supprimez la zone sélectionnée</value>
   </data>
   <data name="m_editSelectAllButton.ToolTipText" xml:space="preserve">
-    <value>Sélectionnez tout le strate</value>
+    <value>Sélectionnez tout le calque</value>
   </data>
   <data name="m_editClearSelectionButton.ToolTipText" xml:space="preserve">
     <value>Effacez la sélection</value>
@@ -316,10 +316,10 @@
     <value>Voir en mode fenêtré</value>
   </data>
   <data name="m_viewLayersShowAllButton.ToolTipText" xml:space="preserve">
-    <value>Voir toutes les strates</value>
+    <value>Voir toutes les calques</value>
   </data>
   <data name="m_viewLayersHighlightSelectedButton.ToolTipText" xml:space="preserve">
-    <value>Mettez en surbrillance seulement le strate sélectionné</value>
+    <value>Mettez en surbrillance seulement le calque sélectionné</value>
   </data>
   <data name="m_viewShowTileGuidesButton.ToolTipText" xml:space="preserve">
     <value>Voir le guides de tuiles</value>
@@ -565,13 +565,13 @@
     <value>357, 22</value>
   </data>
   <data name="m_viewLayersShowAllMenuItem.Text" xml:space="preserve">
-    <value>Voir Tous les Strates</value>
+    <value>Voir Tous les Calques</value>
   </data>
   <data name="m_viewLayersHighlightSelectedMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>357, 22</value>
   </data>
   <data name="m_viewLayersHighlightSelectedMenuItem.Text" xml:space="preserve">
-    <value>Mettez en surbrillance seulement le Strate Sélectionné</value>
+    <value>Mettez en surbrillance seulement le Calque Sélectionné</value>
   </data>
   <data name="m_viewShowTileGuidesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>357, 22</value>
@@ -679,7 +679,7 @@
     <value>65, 20</value>
   </data>
   <data name="m_layerMenuItem.Text" xml:space="preserve">
-    <value>&amp;Strate</value>
+    <value>&amp;Calque</value>
   </data>
   <data name="m_tileSheetNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>263, 22</value>

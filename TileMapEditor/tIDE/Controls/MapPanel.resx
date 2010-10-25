@@ -229,7 +229,7 @@
     <value>353, 17</value>
   </metadata>
   <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
-    <value>Éditeur du Strate</value>
+    <value>Éditeur du Calque</value>
   </data>
   <data name="m_tileSizeMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>
@@ -286,7 +286,7 @@
     <value>527, 17</value>
   </metadata>
   <data name="m_textureToolMessageBox.Caption" xml:space="preserve">
-    <value>Éditeur du Strate</value>
+    <value>Éditeur du Calque</value>
   </data>
   <data name="m_textureToolMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
     <value>0</value>

@@ -122,7 +122,7 @@
     <value>49, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Strate ID</value>
+    <value>Calque ID</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -149,13 +149,13 @@
     <value>184, 17</value>
   </data>
   <data name="m_chkWrapHorizontal.Text" xml:space="preserve">
-    <value>Enroulez le strate horizontalement</value>
+    <value>Enroulez le calque horizontalement</value>
   </data>
   <data name="m_chkWrapVertical.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 17</value>
   </data>
   <data name="m_chkWrapVertical.Text" xml:space="preserve">
-    <value>Enroulez le strate verticalement</value>
+    <value>Enroulez le calque verticalement</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -921,6 +921,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Décalage de Strate</value>
+    <value>Décalage de Calque</value>
   </data>
 </root>

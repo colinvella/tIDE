@@ -198,7 +198,7 @@
     <value>78, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Taille du Strate</value>
+    <value>Taille du Calque</value>
   </data>
   <data name="m_labelDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 51</value>
@@ -213,7 +213,7 @@
     <value>Propriétés Personnalisées</value>
   </data>
   <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
-    <value>Propriétés de le Strate</value>
+    <value>Propriétés du Calque</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -979,9 +979,9 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Propriétés de le Strate</value>
+    <value>Propriétés du Calque</value>
   </data>
   <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
-    <value>L'ID spécifié est déjà utilisé par une autre strate</value>
+    <value>L'ID spécifié est déjà utilisé par un autre calque</value>
   </data>
 </root>
