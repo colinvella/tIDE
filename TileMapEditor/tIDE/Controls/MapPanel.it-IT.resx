@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_verticalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 0</value>
+  </data>
+  <data name="m_verticalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 220</value>
+  </data>
+  <data name="m_horizontalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 203</value>
+  </data>
+  <data name="m_horizontalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 17</value>
+  </data>
   <data name="m_tilePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
@@ -133,8 +145,14 @@
   <data name="m_tileContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 48</value>
   </data>
+  <data name="m_innerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 203</value>
+  </data>
   <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
     <value>Editore dello Strato</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 220</value>
   </data>
   <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
     <value>Dimensioni delle piastre incompatibili</value>

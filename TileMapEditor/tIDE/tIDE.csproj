@@ -373,6 +373,9 @@
     <EmbeddedResource Include="Controls\MapPanel.es-ES.resx">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapPanel.fr-FR.resx">
+      <DependentUpon>MapPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MapPanel.it-IT.resx">
       <DependentUpon>MapPanel.cs</DependentUpon>
     </EmbeddedResource>
