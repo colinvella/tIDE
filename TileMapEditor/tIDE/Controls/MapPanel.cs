@@ -30,6 +30,7 @@ namespace TileMapEditor.Controls
         private const int MAX_ZOOM = 10;
 
         private Map m_map;
+        private Bitmap m_backBuffer = null;
 
         private CommandHistory m_commandHistory;
         private Layer m_selectedLayer;
@@ -408,8 +409,14 @@ namespace TileMapEditor.Controls
             m_innerPanel.Invalidate();
         }
 
-        private void OnResizeDisplay(object sender, EventArgs e)
+        private void OnResizeDisplay(object sender, EventArgs eventArgs)
         {
+            Bitmap oldBuffer = m_backBuffer;
+            m_backBuffer = new Bitmap(ClientSize.Width, ClientSize.Height);
+            Graphics graphics = Graphics.FromImage(m_backBuffer);
+            if (oldBuffer != null)
+                graphics.DrawImage(oldBuffer, Point.Empty);
+
             if (m_autoScaleViewport)
             {
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
@@ -770,7 +777,10 @@ namespace TileMapEditor.Controls
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
         {
-            m_graphics = paintEventArgs.Graphics;
+            //m_graphics = paintEventArgs.Graphics;
+            //Graphics graphicsBack = Graphics.FromImage(m_backBuffer);
+            m_graphics = Graphics.FromImage(m_backBuffer);
+            m_graphics.Clear(this.BackColor);
 
             if (m_map != null)
             {
@@ -784,6 +794,9 @@ namespace TileMapEditor.Controls
                     m_graphics.DrawString("Add layers to this map", this.Font, SystemBrushes.ControlDark,
                         (ClientRectangle.Width - (int)stringSize.Width) / 2,
                         (ClientRectangle.Height - (int)stringSize.Height) / 2);
+
+                    paintEventArgs.Graphics.DrawImage(m_backBuffer, Point.Empty);
+
                     return;
                 }
 
@@ -847,6 +860,9 @@ namespace TileMapEditor.Controls
                 m_graphics.Transform = new Matrix();
                 m_graphics.FillRectangle(new SolidBrush(Color.FromArgb(64, SystemColors.ControlDarkDark)), ClientRectangle);
             }
+
+            // draw backbuffer
+            paintEventArgs.Graphics.DrawImage(m_backBuffer, Point.Empty);
         }
 
         #endregion
@@ -960,9 +976,80 @@ namespace TileMapEditor.Controls
             System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(
                 location.X, location.Y, tileSize.Width, tileSize.Height);
 
-            m_graphics.DrawImage(tileBitmap, destRect,
-                0, 0, tileSize.Width, tileSize.Height,
-                GraphicsUnit.Pixel, m_imageAttributes);
+            if (tile.BlendMode == BlendMode.Alpha)
+            {
+                m_graphics.DrawImage(tileBitmap, destRect,
+                    0, 0, tileSize.Width, tileSize.Height,
+                    GraphicsUnit.Pixel, m_imageAttributes);
+            }
+            else
+            {
+                // manual additive blending using back buffer bitmap
+
+                // determine clipping
+                int minSrcX = 0;
+                int minSrcY = 0;
+                int maxSrcX = tileSize.Width;
+                int maxSrcY = tileSize.Height;
+
+                int minDstX = destRect.X;
+                int minDstY = destRect.Y;
+                int maxDstX = destRect.Right;
+                int maxDstY = destRect.Bottom;
+
+                // clip min x
+                if (minDstX < 0)
+                {
+                    minSrcX = -minDstX;
+                    minDstX = 0;
+                }
+
+                // clip min y
+                if (minDstY < 0)
+                {
+                    minSrcY = -minDstY;
+                    minDstY = 0;
+                }
+
+                // clip max x
+                if (maxDstX > m_backBuffer.Width)
+                {
+                    int difference = maxDstX - m_backBuffer.Width;
+                    maxSrcX -= difference;
+                    maxDstX = m_backBuffer.Width;
+                }
+
+                // clip max y
+                if (maxDstY > m_backBuffer.Height)
+                {
+                    int difference = maxDstY - m_backBuffer.Height;
+                    maxSrcY -= difference;
+                    maxDstY = m_backBuffer.Height;
+                }
+
+                // draw only if clipped region within buffer
+                if (minSrcX < maxSrcX && minSrcY < maxSrcY)
+                {
+                    int srcY = minSrcY;
+                    for (int dstY = minDstY; dstY < maxDstY; dstY++)
+                    {
+                        int srcX = minSrcX;
+                        for (int dstX = minDstX; dstX < maxDstX; dstX++)
+                        {
+                            Color backPixel = m_backBuffer.GetPixel(dstX, dstY);
+                            Color tilePixel = tileBitmap.GetPixel(srcX, srcY);
+                            Color destPixel = Color.FromArgb(backPixel.A,
+                                (byte)Math.Min(255, backPixel.R + ((int)tilePixel.R * tilePixel.A) / 255),
+                                (byte)Math.Min(255, backPixel.G + ((int)tilePixel.G * tilePixel.A) / 255),
+                                (byte)Math.Min(255, backPixel.B + ((int)tilePixel.B * tilePixel.A) / 255));
+
+                            m_backBuffer.SetPixel(dstX, dstY, destPixel);
+                            ++srcX;
+                        }
+                        ++srcY;
+                    }
+                }
+            }
         }
 
         public void EndScene()
