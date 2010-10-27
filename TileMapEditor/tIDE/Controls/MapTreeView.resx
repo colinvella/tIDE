@@ -130,8 +130,8 @@
   <data name="&gt;&gt;m_treeView.Name" xml:space="preserve">
     <value>m_treeView</value>
   </data>
-  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetPropertiesMenuItem</value>
   </data>
   <data name="m_treePanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 130</value>
@@ -165,6 +165,9 @@
   <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Name" xml:space="preserve">
     <value>m_tileSheetsContextMenuStrip</value>
   </data>
+  <data name="m_treeView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
   <data name="&gt;&gt;m_tileSheetNewMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -174,23 +177,17 @@
   <data name="m_labelCaption.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="m_tileSheetDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
   </data>
   <data name="&gt;&gt;m_imageList.Name" xml:space="preserve">
     <value>m_imageList</value>
   </data>
-  <data name="&gt;&gt;m_treeView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_layerSendBackwardMenuItem.Name" xml:space="preserve">
-    <value>m_layerSendBackwardMenuItem</value>
+  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_layerPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
-  </data>
-  <data name="m_layerMakeInvisibileMenuItem.Text" xml:space="preserve">
-    <value>Make Invisible</value>
   </data>
   <data name="&gt;&gt;m_imageList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -200,6 +197,9 @@
   </data>
   <data name="&gt;&gt;m_layerNewMenuItem.Name" xml:space="preserve">
     <value>m_layerNewMenuItem</value>
+  </data>
+  <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
   </data>
   <data name="m_layerSendBackwardMenuItem.Text" xml:space="preserve">
     <value>Send Backward</value>
@@ -213,9 +213,6 @@
   <data name="&gt;&gt;m_tileSheetContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -228,8 +225,8 @@
   <data name="m_layerDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
   </data>
-  <data name="m_tileSheetPropertiesMenuItem.Text" xml:space="preserve">
-    <value>Properties...</value>
+  <data name="m_tileSheetAutoTilesMenuItem.Text" xml:space="preserve">
+    <value>Auto Tuiles...</value>
   </data>
   <data name="m_mapPropertiesMenuItem.Text" xml:space="preserve">
     <value>Properties...</value>
@@ -237,35 +234,29 @@
   <data name="&gt;&gt;m_layerSendBackwardMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
+    <value>m_treePanel</value>
+  </data>
   <data name="m_labelCaption.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="m_tileSheetAutoTilesMenuItem.Text" xml:space="preserve">
-    <value>Auto Tuiles...</value>
+  <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Name" xml:space="preserve">
+    <value>m_layerMakeInvisibileMenuItem</value>
   </data>
   <data name="&gt;&gt;m_tileSheetContextMenuStrip.Name" xml:space="preserve">
     <value>m_tileSheetContextMenuStrip</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
   <data name="m_labelCaption.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_layerNewMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetPropertiesMenuItem</value>
-  </data>
   <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_labelCaption.Name" xml:space="preserve">
-    <value>m_labelCaption</value>
+  <data name="m_layerMakeInvisibileMenuItem.Text" xml:space="preserve">
+    <value>Make Invisible</value>
   </data>
   <data name="m_layerDeleteMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
@@ -273,14 +264,11 @@
   <data name="&gt;&gt;m_labelCaption.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
-  </data>
   <data name="m_layerBringForwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
+  <data name="m_tileSheetPropertiesMenuItem.Text" xml:space="preserve">
+    <value>Properties...</value>
   </data>
   <data name="m_labelCaption.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 20</value>
@@ -290,9 +278,6 @@
   </data>
   <data name="m_treeView.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Name" xml:space="preserve">
-    <value>m_layerMakeInvisibileMenuItem</value>
   </data>
   <data name="m_tileSheetDeleteMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
@@ -309,8 +294,14 @@
   <data name="m_treeView.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 130</value>
   </data>
+  <data name="&gt;&gt;m_mapContextMenuStrip.Name" xml:space="preserve">
+    <value>m_mapContextMenuStrip</value>
+  </data>
   <data name="&gt;&gt;m_tileSheetNewMenuItem.Name" xml:space="preserve">
     <value>m_tileSheetNewMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_layerPropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_layerPropertiesMenuItem</value>
   </data>
   <data name="m_mapContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 48</value>
@@ -428,11 +419,11 @@
         AT8BgAEBAv8BwAH/AcAJ/xYACw==
 </value>
   </data>
-  <data name="&gt;&gt;m_treePanel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
   </data>
-  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Name" xml:space="preserve">
-    <value>m_layerMakeVisibileMenuItem</value>
+  <data name="&gt;&gt;m_layerSendBackwardMenuItem.Name" xml:space="preserve">
+    <value>m_layerSendBackwardMenuItem</value>
   </data>
   <data name="&gt;&gt;m_mapContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -440,8 +431,8 @@
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_labelCaption.Name" xml:space="preserve">
+    <value>m_labelCaption</value>
   </data>
   <data name="m_labelCaption.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -449,11 +440,11 @@
   <data name="&gt;&gt;m_layerPropertiesMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_mapStatisticsMenuItem.Name" xml:space="preserve">
-    <value>m_mapStatisticsMenuItem</value>
-  </data>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_layersContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 26</value>
@@ -473,10 +464,16 @@
   <data name="m_layerSendBackwardMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_tileSheetAutoTilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="m_tileSheetDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 22</value>
   </data>
   <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Type" xml:space="preserve">
@@ -485,8 +482,8 @@
   <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 22</value>
   </data>
-  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
-    <value>m_treePanel</value>
+  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Name" xml:space="preserve">
+    <value>m_layerMakeVisibileMenuItem</value>
   </data>
   <data name="&gt;&gt;m_layerContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -510,14 +507,14 @@
         EAAAABNUaWxlU2hlZXRGb2xkZXIucG5nAAAAAAs=
 </value>
   </data>
-  <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetAutoTilesMenuItem</value>
+  <data name="&gt;&gt;m_treeView.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="m_tileSheetsContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 26</value>
   </data>
-  <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+  <data name="&gt;&gt;m_treePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_layerDeleteMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -525,20 +522,23 @@
   <data name="m_treePanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 20</value>
   </data>
-  <data name="&gt;&gt;m_treePanel.Name" xml:space="preserve">
-    <value>m_treePanel</value>
+  <data name="&gt;&gt;m_treePanel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_tileSheetNewMenuItem.Text" xml:space="preserve">
     <value>New...</value>
   </data>
-  <data name="m_labelCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_layerNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetDeleteMenuItem</value>
   </data>
   <data name="&gt;&gt;m_layersContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -546,8 +546,8 @@
   <data name="&gt;&gt;m_labelCaption.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_mapContextMenuStrip.Name" xml:space="preserve">
-    <value>m_mapContextMenuStrip</value>
+  <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetAutoTilesMenuItem</value>
   </data>
   <data name="m_treeView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -555,8 +555,8 @@
   <data name="m_layerSendBackwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
   </data>
-  <data name="&gt;&gt;m_layerPropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_layerPropertiesMenuItem</value>
+  <data name="&gt;&gt;m_mapStatisticsMenuItem.Name" xml:space="preserve">
+    <value>m_mapStatisticsMenuItem</value>
   </data>
   <data name="m_mapStatisticsMenuItem.Text" xml:space="preserve">
     <value>Statistics</value>
@@ -567,8 +567,8 @@
   <data name="m_layerBringForwardMenuItem.Text" xml:space="preserve">
     <value>Bring Forward</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetDeleteMenuItem</value>
+  <data name="&gt;&gt;m_treePanel.Name" xml:space="preserve">
+    <value>m_treePanel</value>
   </data>
   <data name="m_tileSheetPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 22</value>
@@ -576,26 +576,23 @@
   <data name="&gt;&gt;m_layerBringForwardMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_treePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_labelCaption.Text" xml:space="preserve">
     <value>Map Explorer</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_labelCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;m_layerBringForwardMenuItem.Name" xml:space="preserve">
     <value>m_layerBringForwardMenuItem</value>
   </data>
-  <data name="m_treeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
   </data>
   <metadata name="toolStripSeparator1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
-  </metadata>
-  <metadata name="m_mapContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>477, 17</value>
   </metadata>
   <metadata name="m_imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -606,8 +603,8 @@
   <metadata name="m_labelCaption.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="toolStripSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="m_mapContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>477, 17</value>
   </metadata>
   <metadata name="m_layerContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>309, 17</value>
@@ -618,8 +615,8 @@
   <metadata name="toolStripMenuItem1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="toolStripSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>139</value>
@@ -629,6 +626,9 @@
   </metadata>
   <metadata name="m_tileSheetContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>French (France)</value>
