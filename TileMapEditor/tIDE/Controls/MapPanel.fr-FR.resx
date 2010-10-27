@@ -119,19 +119,16 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_verticalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 0</value>
+    <value>279, 0</value>
   </data>
   <data name="m_verticalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 218</value>
+    <value>17, 216</value>
   </data>
   <data name="m_horizontalScrollBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 201</value>
+    <value>0, 199</value>
   </data>
   <data name="m_horizontalScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 17</value>
-  </data>
-  <data name="m_tileContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 48</value>
+    <value>279, 17</value>
   </data>
   <data name="m_tilePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 22</value>
@@ -145,14 +142,17 @@
   <data name="tileAnimationToolStripMenuItem.Text" xml:space="preserve">
     <value>Animation de la Tuile... </value>
   </data>
+  <data name="m_tileContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 48</value>
+  </data>
   <data name="m_innerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 201</value>
+    <value>279, 199</value>
   </data>
   <data name="m_tileSizeMessageBox.Caption" xml:space="preserve">
     <value>Éditeur du Calque</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 218</value>
+    <value>296, 216</value>
   </data>
   <data name="m_tileSizeMessageBox.Text" xml:space="preserve">
     <value>Taille des tuiles incompatibles </value>
