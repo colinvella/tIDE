@@ -151,8 +151,8 @@ namespace xTile.Display
         /// </summary>
         public void EndScene()
         {
-            m_spriteBatchAdditive.End();
             m_spriteBatchAlpha.End();
+            m_spriteBatchAdditive.End();
         }
 
         #endregion
