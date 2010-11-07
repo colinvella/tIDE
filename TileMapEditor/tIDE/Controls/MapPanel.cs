@@ -93,50 +93,6 @@ namespace TileMapEditor.Controls
             return layerLocation;
         }
 
-        private void PerformAutoScroll()
-        {
-            int maxDeltaX = ClientRectangle.Width / 10;
-            int maxDeltaY = ClientRectangle.Height / 10;
-
-            int deltaX = Math.Min(Math.Max(1, m_selectedLayer.TileSize.Width * m_zoom / 4), maxDeltaX);
-            int deltaY = Math.Min(Math.Max(1, m_selectedLayer.TileSize.Height * m_zoom / 4), maxDeltaY);
-
-            int scrollWidth = Math.Min(m_selectedLayer.TileSize.Width * m_zoom, m_viewport.Width / 10);
-            int scrollHeight = Math.Min(m_selectedLayer.TileSize.Height * m_zoom, m_viewport.Height / 10);
-
-            if (m_mouseLocation.X < scrollWidth)
-            {
-                int newScrollValue = Math.Max(m_horizontalScrollBar.Minimum, m_horizontalScrollBar.Value - deltaX);
-                m_horizontalScrollBar.Value = newScrollValue;
-                OnHorizontalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
-            }
-            else if (m_mouseLocation.X > ClientSize.Width - scrollWidth)
-            {
-                int newScrollValue = Math.Min(
-                    m_horizontalScrollBar.Maximum - m_horizontalScrollBar.LargeChange,
-                    m_horizontalScrollBar.Value + deltaX);
-                newScrollValue = Math.Max(m_horizontalScrollBar.Minimum, newScrollValue);
-                m_horizontalScrollBar.Value = newScrollValue;
-                OnHorizontalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
-            }
-
-            if (m_mouseLocation.Y < scrollHeight)
-            {
-                int newScrollValue = Math.Max(m_verticalScrollBar.Minimum, m_verticalScrollBar.Value - deltaY);
-                m_verticalScrollBar.Value = newScrollValue;
-                OnVerticalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
-            }
-            else if (m_mouseLocation.Y > ClientRectangle.Height - scrollHeight)
-            {
-                int newScrollValue = Math.Min(
-                    m_verticalScrollBar.Maximum - m_verticalScrollBar.LargeChange,
-                    m_verticalScrollBar.Value + deltaY);
-                newScrollValue = Math.Max(m_verticalScrollBar.Minimum, newScrollValue);
-                m_verticalScrollBar.Value = newScrollValue;
-                OnVerticalScroll(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, newScrollValue));
-            }
-        }
-
         private void SelectTiles()
         {
             if (m_selectedLayer == null)
@@ -655,8 +611,6 @@ namespace TileMapEditor.Controls
 
             if (m_selectedLayer == null)
                 return;
-
-            PerformAutoScroll();
 
             m_tileLayerLocation
                 = ConvertViewportOffsetToLayerLocation(m_mouseLocation);
