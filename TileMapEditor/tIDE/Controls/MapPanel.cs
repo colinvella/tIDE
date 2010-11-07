@@ -1201,7 +1201,12 @@ namespace TileMapEditor.Controls
         public xTile.Dimensions.Rectangle Viewport
         {
             get { return m_viewport; }
-            set { m_viewport = value; }
+            set
+            {
+                m_viewport = value;
+                m_horizontalScrollBar.Value = m_viewport.X;
+                m_verticalScrollBar.Value = m_viewport.Y;
+            }
         }
 
         public bool AutoScaleViewport

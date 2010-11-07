@@ -619,6 +619,11 @@ namespace TileMapEditor
 
         private void OnKeyDown(object sender, KeyEventArgs keyEventArgs)
         {
+            Layer selectedLayer = null;
+            if (m_selectedComponent != null
+                && m_selectedComponent is Layer)
+                selectedLayer = (Layer)m_selectedComponent;
+
             switch (keyEventArgs.KeyCode)
             {
                 case Keys.S:
@@ -648,6 +653,46 @@ namespace TileMapEditor
                     break;
                 case Keys.ControlKey:
                     m_mapPanel.CtrlKeyPressed = true;
+                    break;
+                case Keys.Left:
+                    if (selectedLayer != null)
+                    {
+                        Rectangle viewport = m_mapPanel.Viewport;
+                        viewport.X = Math.Max(0,
+                            viewport.X - selectedLayer.TileSize.Width);
+                        m_mapPanel.Viewport = viewport;
+                        keyEventArgs.Handled = true;
+                    }    
+                    break;
+                case Keys.Right:
+                    if (selectedLayer != null)
+                    {
+                        Rectangle viewport = m_mapPanel.Viewport;
+                        viewport.X = Math.Min(m_map.DisplaySize.Width - viewport.Width,
+                            viewport.X + selectedLayer.TileSize.Width);
+                        m_mapPanel.Viewport = viewport;
+                        keyEventArgs.Handled = true;
+                    }
+                    break;
+                case Keys.Up:
+                    if (selectedLayer != null)
+                    {
+                        Rectangle viewport = m_mapPanel.Viewport;
+                        viewport.Y = Math.Max(0,
+                            viewport.Y - selectedLayer.TileSize.Height);
+                        m_mapPanel.Viewport = viewport;
+                        keyEventArgs.Handled = true;
+                    }
+                    break;
+                case Keys.Down:
+                    if (selectedLayer != null)
+                    {
+                        Rectangle viewport = m_mapPanel.Viewport;
+                        viewport.Y = Math.Min(m_map.DisplaySize.Height - viewport.Height,
+                            viewport.Y + selectedLayer.TileSize.Height);
+                        m_mapPanel.Viewport = viewport;
+                        keyEventArgs.Handled = true;
+                    }
                     break;
             }
         }
