@@ -118,7 +118,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\tIDESetup122.msi"
+        "OutputFilename" = "8:Release\\tIDESetup123.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -266,11 +266,6 @@
             "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.2.1.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_139477DB820965A1B584FAC641D610A4"
-                    {
-                    "Name" = "8:TileMapEditor.Plugin.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:TileMapEditor.Plugin.dll"
             "TargetName" = "8:"
@@ -334,14 +329,9 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:xTile, Version=1.2.2.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:xTile, Version=1.2.2.0, Culture=neutral, PublicKeyToken=737c45b5921cd681, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_DF8C3A0DEF4F53302A175BF1337BB307"
-                    {
-                    "Name" = "8:xTile.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:xTile.dll"
             "TargetName" = "8:"
@@ -461,23 +451,23 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:tIDE v1.2.2"
-        "ProductCode" = "8:{FDC7C7D3-A69F-4B50-89D7-F6EC073E239A}"
-        "PackageCode" = "8:{B97FA15B-407D-490C-AF61-9D2B0D61D910}"
+        "ProductName" = "8:tIDE v1.2.3"
+        "ProductCode" = "8:{50706EE1-3EAC-41D4-B59F-25E8F3D039E7}"
+        "PackageCode" = "8:{039F4654-CD62-4D43-9537-8D721C747BD2}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.2.2"
+        "ProductVersion" = "8:1.2.3"
         "Manufacturer" = "8:Colin Vella"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://tide.codeplex.com"
-        "Title" = "8:tIDE Tile Map Editor v1.2.2"
+        "Title" = "8:tIDE Tile Map Editor v1.2.3"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Colin Vella"
         "Keywords" = "8:tIDE tile map editor"
-        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v1.2.2"
+        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v1.2.3"
         "ARPURLINFOABOUT" = "8:http://tide.codeplex.com"
         "ARPPRODUCTICON" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "ARPIconIndex" = "3:0"
