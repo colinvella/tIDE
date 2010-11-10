@@ -29,4 +29,21 @@ using System.Runtime.InteropServices;
 //      Revision
 //
 [assembly: AssemblyVersion("1.2.3.0")]
+
+#if WINDOWS
+
 [assembly: AssemblyFileVersionAttribute("1.2.3.0")]
+
+#elif XBOX
+
+
+#elif WINDOWS_PHONE
+
+[assembly: AssemblyFileVersionAttribute("1.2.3.0")]
+      
+#else
+
+#error The platform is not specified or is unsupported by this game.
+
+#endif
+
