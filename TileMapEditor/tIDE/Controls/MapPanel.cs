@@ -47,6 +47,9 @@ namespace TileMapEditor.Controls
         private Location m_tileLayerLocation;
         private Location m_dragTileStart;
 
+        private bool m_dragViewMode;
+        private Point m_dragViewPosition;
+
         private TileSelection m_tileSelection;
         private bool m_ctrlKeyPressed;
 
@@ -353,6 +356,13 @@ namespace TileMapEditor.Controls
             }
         }
 
+        private void RestrictViewportToMap()
+        {
+            // ensure viewport within map
+            m_viewport.X = Math.Min(m_map.DisplaySize.Width - m_viewport.Width, Math.Max(0, m_viewport.X));
+            m_viewport.Y = Math.Min(m_map.DisplaySize.Height - m_viewport.Height, Math.Max(0, m_viewport.Y));
+        }
+
         private void OnHorizontalScroll(object sender, ScrollEventArgs scrollEventArgs)
         {
             m_viewport.Location.X = scrollEventArgs.NewValue;
@@ -584,7 +594,15 @@ namespace TileMapEditor.Controls
             }
             else if (mouseEventArgs.Button == MouseButtons.Middle)
             {
-                PickTile();
+                if (m_editTool == EditTool.Select)
+                {
+                    // drag mode
+                    m_dragViewMode = true;
+                    m_dragViewPosition = mouseEventArgs.Location;
+                    Cursor = Cursors.Hand;
+                }
+                else
+                    PickTile();
             }
             else if (mouseEventArgs.Button == MouseButtons.Right)
             {
@@ -627,6 +645,23 @@ namespace TileMapEditor.Controls
                 }
             }
 
+            if (m_dragViewMode)
+            {
+                int deltaX = (m_dragViewPosition.X - m_mouseLocation.X) / m_zoom;
+                int deltaY = (m_dragViewPosition.Y - m_mouseLocation.Y) / m_zoom;
+
+                if (deltaX != 0 || deltaY != 0)
+                {
+                    m_dragViewPosition.X = m_mouseLocation.X;
+                    m_dragViewPosition.Y = m_mouseLocation.Y;
+
+                    m_viewport.X += deltaX;
+                    m_viewport.Y += deltaY;
+
+                    RestrictViewportToMap();
+                }
+            }
+
             if (TileHover != null)
             {
                 Tile tile = m_selectedLayer.IsValidTileLocation(m_tileLayerLocation)
@@ -645,6 +680,14 @@ namespace TileMapEditor.Controls
                 {
                     case EditTool.Select: SelectTiles(); break;
                     case EditTool.TileBlock: DrawTileBlock(); break;
+                }
+            }
+            else if (mouseEventArgs.Button == MouseButtons.Middle)
+            {
+                if (m_editTool == EditTool.Select)
+                {
+                    m_dragViewMode = false;
+                    Cursor = Cursors.Arrow;
                 }
             }
 
@@ -1032,6 +1075,9 @@ namespace TileMapEditor.Controls
 
                 if (m_map != null && !m_map.Layers.Contains(m_selectedLayer))
                     SelectedLayer = null;
+
+                if (m_map != null)
+                    RestrictViewportToMap();
             }
         }
 
@@ -1082,6 +1128,8 @@ namespace TileMapEditor.Controls
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
                 m_viewport.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
                 m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+
+                RestrictViewportToMap();
 
                 m_tileGuidePen.Width = m_tileSelectionPen.Width = 1.0f / m_zoom;
                 m_dashPattern[0] = m_dashPattern[1] = m_dashPattern[2] = m_dashPattern[3] = 1.0f / m_zoom;
