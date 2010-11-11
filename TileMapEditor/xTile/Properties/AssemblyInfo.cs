@@ -36,6 +36,7 @@ using System.Runtime.InteropServices;
 
 #elif XBOX
 
+#elif ZUNE
 
 #elif WINDOWS_PHONE
 

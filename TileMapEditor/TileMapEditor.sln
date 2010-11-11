@@ -194,6 +194,7 @@ Global
 		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Debug|Zune.ActiveCfg = Debug
 		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Release|Any CPU.ActiveCfg = Release
 		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Release|Mixed Platforms.ActiveCfg = Release
+		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Release|Mixed Platforms.Build.0 = Release
 		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Release|x86.ActiveCfg = Release
 		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Release|Xbox 360.ActiveCfg = Release
 		{68BB36BC-48BA-4F91-AD63-0CFD660CC09C}.Release|Zune.ActiveCfg = Release
@@ -207,8 +208,8 @@ Global
 		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Zune.ActiveCfg = Debug|Zune
 		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Debug|Zune.Build.0 = Debug|Zune
 		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Any CPU.ActiveCfg = Release|Zune
-		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Mixed Platforms.ActiveCfg = Release|Zune
-		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Mixed Platforms.Build.0 = Release|Zune
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Mixed Platforms.Build.0 = Release|x86
 		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|x86.ActiveCfg = Release|x86
 		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|x86.Build.0 = Release|x86
 		{5BAD950D-BC43-4264-83AE-78A9FCBDA27F}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
@@ -241,7 +242,6 @@ Global
 		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|Any CPU.ActiveCfg = Release|Xbox 360
 		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|Mixed Platforms.ActiveCfg = Release|Xbox 360
 		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|Mixed Platforms.Build.0 = Release|Xbox 360
-		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|Mixed Platforms.Deploy.0 = Release|Xbox 360
 		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|x86.ActiveCfg = Release|Xbox 360
 		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
 		{1CEC6C4C-B7EC-4678-9606-4E34E08371FC}.Release|Xbox 360.Build.0 = Release|Xbox 360
@@ -259,7 +259,6 @@ Global
 		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|Any CPU.ActiveCfg = Release|Zune
 		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|Mixed Platforms.ActiveCfg = Release|Zune
 		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|Mixed Platforms.Build.0 = Release|Zune
-		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|Mixed Platforms.Deploy.0 = Release|Zune
 		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|x86.ActiveCfg = Release|Zune
 		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|Xbox 360.ActiveCfg = Release|Zune
 		{8AC82B40-EA25-4DC4-A7A3-369D8E1C3F43}.Release|Zune.ActiveCfg = Release|Zune
