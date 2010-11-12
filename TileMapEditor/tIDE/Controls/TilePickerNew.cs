@@ -25,6 +25,29 @@ namespace TileMapEditor.Controls
             m_selectedTileIndex = -1;
         }
 
+        public void UpdatePicker()
+        {
+            if (m_map == null)
+            {
+                m_comboBoxTileSheets.Items.Clear();
+                return;
+            }
+
+            string selectedItem = m_comboBoxTileSheets.SelectedItem == null
+                ? null : m_comboBoxTileSheets.SelectedItem.ToString();
+            m_comboBoxTileSheets.Items.Clear();
+            foreach (TileSheet tileSheet in m_map.TileSheets)
+                m_comboBoxTileSheets.Items.Add(tileSheet.Id);
+            m_comboBoxTileSheets.SelectedItem = selectedItem;
+
+            if (m_comboBoxTileSheets.Items.Count > 0)
+                m_comboBoxTileSheets.SelectedIndex = 0;
+
+            UpdateWatchers();
+
+            m_tilePanel.Invalidate();
+        }
+
         public void RefreshSelectedTileSheet()
         {
             if (m_comboBoxTileSheets.SelectedIndex < 0)
@@ -52,6 +75,16 @@ namespace TileMapEditor.Controls
         #endregion
 
         #region Public Properties
+
+        public Map Map
+        {
+            get { return m_map; }
+            set
+            {
+                m_map = value;
+                UpdatePicker();
+            }
+        }
 
         public TileSheet SelectedTileSheet
         {
@@ -129,28 +162,27 @@ namespace TileMapEditor.Controls
 
         #region Private Methods
 
-        public void UpdatePicker()
+        private int GetTileIndex(Point panelPosition)
         {
-            if (m_map == null)
-            {
-                m_comboBoxTileSheets.Items.Clear();
-                m_tilePanel.Invalidate();
-                return;
-            }
+            if (m_tileSheet == null)
+                return -1;
 
-            string selectedItem = m_comboBoxTileSheets.SelectedItem == null
-                ? null : m_comboBoxTileSheets.SelectedItem.ToString();
-            m_comboBoxTileSheets.Items.Clear();
-            foreach (TileSheet tileSheet in m_map.TileSheets)
-                m_comboBoxTileSheets.Items.Add(tileSheet.Id);
-            m_comboBoxTileSheets.SelectedItem = selectedItem;
+            int slotWidth = m_tileSheet.TileSize.Width + 1;
+            int slotHeight = m_tileSheet.TileSize.Height + 1;
 
-            if (m_comboBoxTileSheets.Items.Count > 0)
-                m_comboBoxTileSheets.SelectedIndex = 0;
+            int tileCount = m_tileSheet.TileCount;
+            int tilesAcross = (m_tilePanel.ClientRectangle.Width + 1) / slotWidth;
+            int tilesDown = 1 + (tileCount - 1) / tilesAcross;
 
-            m_tilePanel.Invalidate();
+            int tileX = panelPosition.X / slotWidth;
+            int tileY = panelPosition.Y / slotHeight;
 
-            UpdateWatchers();
+            int tileIndex = tileY * tilesAcross + tileX;
+
+            if (tileIndex >= tileCount)
+                return -1;
+
+            return tileIndex;
         }
 
         private void UpdateWatchers()
@@ -176,6 +208,46 @@ namespace TileMapEditor.Controls
         private void OnSelectTileSheet(object sender, EventArgs eventArgs)
         {
             RefreshSelectedTileSheet();
+        }
+
+        private void OnTilePanelMouseDown(object sender, MouseEventArgs mouseEventArgs)
+        {
+            /*
+            if (TileSelected != null)
+                TileSelected(this,
+                    new TilePickerEventArgs(m_tileSheet, SelectedTileIndex));
+            */
+        }
+
+        private void OnTilePanelMouseUp(object sender, MouseEventArgs mouseEventArgs)
+        {
+            m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
+            if (m_selectedTileIndex >= 0 && TileSelected != null)
+            {
+                TileSelected(this,
+                    new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
+            }
+        }
+
+        private void OnDragLeave(object sender, EventArgs eventArgs)
+        {
+            if (m_comboBoxTileSheets.SelectedIndex < 0)
+                return;
+
+            if (m_selectedTileIndex < 0)
+                return;
+
+            TilePickerEventArgs tilePickerEventArgs = new TilePickerEventArgs(
+                m_map.TileSheets[m_comboBoxTileSheets.SelectedIndex],
+                m_selectedTileIndex);
+
+            if (TileDrag != null)
+                TileDrag(this, tilePickerEventArgs);
+        }
+
+        private void OnDragGiveFeedback(object sender, GiveFeedbackEventArgs giveFeedbackEventArgs)
+        {
+            giveFeedbackEventArgs.UseDefaultCursors = false;
         }
 
         private void OnTileSheetImageSourceChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
@@ -212,7 +284,7 @@ namespace TileMapEditor.Controls
 
             TileImageCache tileImageCache = TileImageCache.Instance;
 
-            int tilesAcross = (m_tilePanel.ClientRectangle.Width + 1) / m_tileSheet.TileSize.Width;
+            int tilesAcross = (m_tilePanel.ClientRectangle.Width + 1) / (m_tileSheet.TileSize.Width + 1);
             int tilesDown = 1 + (m_tileSheet.TileCount - 1) / tilesAcross;
             for (int tileY = 0; tileY < tilesDown; tileY++)
             {
@@ -223,6 +295,9 @@ namespace TileMapEditor.Controls
                         break;
                     Bitmap tileBitmap = tileImageCache.GetTileBitmap(m_tileSheet, tileIndex);
                     graphics.DrawImageUnscaled(tileBitmap, tileX, tileY);
+
+                    if (tileIndex == m_selectedTileIndex)
+                        graphics.DrawRectangle(Pens.Black, tileX, tileY, m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height);
                 }
             }
         }
@@ -238,5 +313,6 @@ namespace TileMapEditor.Controls
         private int m_selectedTileIndex;
 
         #endregion
+
     }
 }
