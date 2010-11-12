@@ -80,6 +80,7 @@
             this.m_tilePanel.Size = new System.Drawing.Size(150, 109);
             this.m_tilePanel.TabIndex = 3;
             this.m_tilePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTilePanelPaint);
+            this.m_tilePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseMove);
             this.m_tilePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseDown);
             this.m_tilePanel.DragLeave += new System.EventHandler(this.OnDragLeave);
             this.m_tilePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseUp);

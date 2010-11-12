@@ -24,7 +24,7 @@ namespace TileMapEditor.Controls
             m_watchers = new Dictionary<TileSheet, FileSystemWatcher>();
             m_selectedTileIndex = -1;
 
-            m_selectionBrush = new SolidBrush(Color.FromArgb(128, Color.Aqua));
+            m_selectionBrush = new SolidBrush(Color.FromArgb(128, Color.SkyBlue));
         }
 
         public void UpdatePicker()
@@ -173,7 +173,7 @@ namespace TileMapEditor.Controls
             int slotHeight = m_tileSheet.TileSize.Height + 1;
 
             int tileCount = m_tileSheet.TileCount;
-            int tilesAcross = (m_tilePanel.ClientRectangle.Width + 1) / slotWidth;
+            int tilesAcross = Math.Max(1, (m_tilePanel.ClientRectangle.Width + 1) / slotWidth);
             int tilesDown = 1 + (tileCount - 1) / tilesAcross;
 
             int tileX = panelPosition.X / slotWidth;
@@ -219,6 +219,17 @@ namespace TileMapEditor.Controls
                 TileSelected(this,
                     new TilePickerEventArgs(m_tileSheet, SelectedTileIndex));
             */
+        }
+
+        private void OnTilePanelMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        {
+            int newHoverTileIndex = GetTileIndex(mouseEventArgs.Location);
+
+            if (m_hoverTileIndex != newHoverTileIndex)
+            {
+                m_hoverTileIndex = newHoverTileIndex;
+                m_tilePanel.Invalidate();
+            }
         }
 
         private void OnTilePanelMouseUp(object sender, MouseEventArgs mouseEventArgs)
@@ -303,11 +314,17 @@ namespace TileMapEditor.Controls
 
                     if (tileIndex == m_selectedTileIndex)
                     {
-                        graphics.DrawRectangle(Pens.DarkCyan,
-                            tileX * slotWidth - 1, tileY * slotHeight - 1,
-                            slotWidth + 1, slotHeight + 1);
                         graphics.FillRectangle(m_selectionBrush,
                             tileX * slotWidth, tileY * slotHeight,
+                            slotWidth, slotHeight);
+                        graphics.DrawRectangle(Pens.DarkCyan,
+                            tileX * slotWidth - 1, tileY * slotHeight - 1,
+                            slotWidth, slotHeight);
+                    }
+                    else if (tileIndex == m_hoverTileIndex)
+                    {
+                        graphics.DrawRectangle(Pens.Black,
+                            tileX * slotWidth - 1, tileY * slotHeight - 1,
                             slotWidth, slotHeight);
                     }
                 }
@@ -322,7 +339,9 @@ namespace TileMapEditor.Controls
         private TileSheet m_tileSheet;
         private bool m_autoUpdate;
         private Dictionary<TileSheet, FileSystemWatcher> m_watchers;
+        private int m_hoverTileIndex;
         private int m_selectedTileIndex;
+
         private Brush m_selectionBrush;
 
         #endregion
