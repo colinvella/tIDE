@@ -378,7 +378,7 @@ namespace TileMapEditor.Controls
         private void OnResizeDisplay(object sender, EventArgs eventArgs)
         {
             Bitmap oldBuffer = m_backBuffer;
-            m_backBuffer = new Bitmap(ClientSize.Width, ClientSize.Height);
+            m_backBuffer = new Bitmap(Math.Max(1, ClientSize.Width), Math.Max(1, ClientSize.Height));
             Graphics graphics = Graphics.FromImage(m_backBuffer);
             if (oldBuffer != null)
                 graphics.DrawImage(oldBuffer, Point.Empty);

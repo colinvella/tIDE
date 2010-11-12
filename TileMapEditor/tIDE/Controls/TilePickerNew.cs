@@ -23,6 +23,8 @@ namespace TileMapEditor.Controls
             m_autoUpdate = false;
             m_watchers = new Dictionary<TileSheet, FileSystemWatcher>();
             m_selectedTileIndex = -1;
+
+            m_selectionBrush = new SolidBrush(Color.FromArgb(128, Color.Aqua));
         }
 
         public void UpdatePicker()
@@ -224,6 +226,7 @@ namespace TileMapEditor.Controls
             m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
             if (m_selectedTileIndex >= 0 && TileSelected != null)
             {
+                m_tilePanel.Invalidate();
                 TileSelected(this,
                     new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
             }
@@ -277,14 +280,16 @@ namespace TileMapEditor.Controls
         {
             Graphics graphics = paintEventArgs.Graphics;
 
-            graphics.Clear(BackColor);
+            //graphics.Clear(BackColor);
 
             if (m_tileSheet == null)
                 return;
 
             TileImageCache tileImageCache = TileImageCache.Instance;
 
-            int tilesAcross = (m_tilePanel.ClientRectangle.Width + 1) / (m_tileSheet.TileSize.Width + 1);
+            int slotWidth = m_tileSheet.TileSize.Width + 1;
+            int slotHeight = m_tileSheet.TileSize.Height + 1;
+            int tilesAcross = Math.Max(1, (m_tilePanel.ClientRectangle.Width + 1) / slotWidth);
             int tilesDown = 1 + (m_tileSheet.TileCount - 1) / tilesAcross;
             for (int tileY = 0; tileY < tilesDown; tileY++)
             {
@@ -294,10 +299,17 @@ namespace TileMapEditor.Controls
                     if (tileIndex >= m_tileSheet.TileCount)
                         break;
                     Bitmap tileBitmap = tileImageCache.GetTileBitmap(m_tileSheet, tileIndex);
-                    graphics.DrawImageUnscaled(tileBitmap, tileX, tileY);
+                    graphics.DrawImageUnscaled(tileBitmap, tileX * slotWidth, tileY * slotHeight);
 
                     if (tileIndex == m_selectedTileIndex)
-                        graphics.DrawRectangle(Pens.Black, tileX, tileY, m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height);
+                    {
+                        graphics.DrawRectangle(Pens.DarkCyan,
+                            tileX * slotWidth - 1, tileY * slotHeight - 1,
+                            slotWidth + 1, slotHeight + 1);
+                        graphics.FillRectangle(m_selectionBrush,
+                            tileX * slotWidth, tileY * slotHeight,
+                            slotWidth, slotHeight);
+                    }
                 }
             }
         }
@@ -311,6 +323,7 @@ namespace TileMapEditor.Controls
         private bool m_autoUpdate;
         private Dictionary<TileSheet, FileSystemWatcher> m_watchers;
         private int m_selectedTileIndex;
+        private Brush m_selectionBrush;
 
         #endregion
 

@@ -70,6 +70,7 @@
             // m_tilePanel
             // 
             this.m_tilePanel.AutoScroll = true;
+            this.m_tilePanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_tilePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_tilePanel.Controls.Add(this.m_toolStrip);
             this.m_tilePanel.Dock = System.Windows.Forms.DockStyle.Fill;
