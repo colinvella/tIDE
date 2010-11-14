@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePickerNew));
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             this.m_tilePanel = new TileMapEditor.Controls.CustomPanel();
+            this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_indexOrderButton = new System.Windows.Forms.ToolStripButton();
             this.m_mruOrderButton = new System.Windows.Forms.ToolStripButton();
@@ -72,6 +73,7 @@
             this.m_tilePanel.AutoScroll = true;
             this.m_tilePanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_tilePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_tilePanel.Controls.Add(this.m_verticalScrollBar);
             this.m_tilePanel.Controls.Add(this.m_toolStrip);
             this.m_tilePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_tilePanel.Location = new System.Drawing.Point(0, 41);
@@ -85,6 +87,16 @@
             this.m_tilePanel.DragLeave += new System.EventHandler(this.OnDragLeave);
             this.m_tilePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseUp);
             this.m_tilePanel.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.OnDragGiveFeedback);
+            // 
+            // m_verticalScrollBar
+            // 
+            this.m_verticalScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_verticalScrollBar.Location = new System.Drawing.Point(131, 0);
+            this.m_verticalScrollBar.Name = "m_verticalScrollBar";
+            this.m_verticalScrollBar.Size = new System.Drawing.Size(17, 82);
+            this.m_verticalScrollBar.TabIndex = 1;
+            this.m_verticalScrollBar.Visible = false;
+            this.m_verticalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnVerticalScroll);
             // 
             // m_toolStrip
             // 
@@ -150,5 +162,6 @@
         private System.Windows.Forms.ToolStripButton m_indexOrderButton;
         private System.Windows.Forms.ToolStripButton m_mruOrderButton;
         private System.Windows.Forms.ToolStripButton m_imageOrderButton;
+        private System.Windows.Forms.VScrollBar m_verticalScrollBar;
     }
 }

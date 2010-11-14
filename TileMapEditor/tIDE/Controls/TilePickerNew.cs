@@ -212,6 +212,11 @@ namespace TileMapEditor.Controls
             RefreshSelectedTileSheet();
         }
 
+        private void OnVerticalScroll(object sender, ScrollEventArgs scrollEventArgs)
+        {
+            m_tilePanel.Invalidate();
+        }
+
         private void OnTilePanelMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
             /*
@@ -302,6 +307,7 @@ namespace TileMapEditor.Controls
             int slotHeight = m_tileSheet.TileSize.Height + 1;
             int tilesAcross = Math.Max(1, (m_tilePanel.ClientRectangle.Width + 1) / slotWidth);
             int tilesDown = 1 + (m_tileSheet.TileCount - 1) / tilesAcross;
+            int scrollOffsetY = -m_verticalScrollBar.Value;
             for (int tileY = 0; tileY < tilesDown; tileY++)
             {
                 for (int tileX = 0; tileX < tilesAcross; tileX++)
@@ -310,24 +316,42 @@ namespace TileMapEditor.Controls
                     if (tileIndex >= m_tileSheet.TileCount)
                         break;
                     Bitmap tileBitmap = tileImageCache.GetTileBitmap(m_tileSheet, tileIndex);
-                    graphics.DrawImageUnscaled(tileBitmap, tileX * slotWidth, tileY * slotHeight);
+                    graphics.DrawImageUnscaled(tileBitmap,
+                        tileX * slotWidth, tileY * slotHeight + scrollOffsetY);
 
                     if (tileIndex == m_selectedTileIndex)
                     {
                         graphics.FillRectangle(m_selectionBrush,
-                            tileX * slotWidth, tileY * slotHeight,
+                            tileX * slotWidth, tileY * slotHeight + scrollOffsetY,
                             slotWidth, slotHeight);
                         graphics.DrawRectangle(Pens.DarkCyan,
-                            tileX * slotWidth - 1, tileY * slotHeight - 1,
+                            tileX * slotWidth - 1, tileY * slotHeight + scrollOffsetY - 1,
                             slotWidth, slotHeight);
                     }
                     else if (tileIndex == m_hoverTileIndex)
                     {
                         graphics.DrawRectangle(Pens.Black,
-                            tileX * slotWidth - 1, tileY * slotHeight - 1,
+                            tileX * slotWidth - 1, tileY * slotHeight + scrollOffsetY - 1,
                             slotWidth, slotHeight);
                     }
                 }
+            }
+
+            int requiredHeight = tilesDown * slotHeight - 1;
+
+            if (requiredHeight > m_tilePanel.ClientSize.Height
+                && !m_verticalScrollBar.Visible)
+            {
+                m_verticalScrollBar.Visible = true;
+                m_verticalScrollBar.Maximum = requiredHeight;
+                m_verticalScrollBar.LargeChange = m_tilePanel.ClientSize.Height;
+                m_tilePanel.Invalidate();
+            }
+            else if (requiredHeight <= m_tilePanel.ClientSize.Height
+                && m_verticalScrollBar.Visible)
+            {
+                m_verticalScrollBar.Visible = false;
+                m_tilePanel.Invalidate();
             }
         }
 
