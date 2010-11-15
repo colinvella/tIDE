@@ -169,11 +169,15 @@ namespace TileMapEditor.Controls
             if (m_tileSheet == null)
                 return -1;
 
+            int clientWidth = m_tilePanel.ClientRectangle.Width;
+            if (m_verticalScrollBar.Visible)
+                clientWidth -= m_verticalScrollBar.Width;
+
             int slotWidth = m_tileSheet.TileSize.Width + 1;
             int slotHeight = m_tileSheet.TileSize.Height + 1;
 
             int tileCount = m_tileSheet.TileCount;
-            int tilesAcross = Math.Max(1, (m_tilePanel.ClientRectangle.Width + 1) / slotWidth);
+            int tilesAcross = Math.Max(1, (clientWidth + 1) / slotWidth);
             int tilesDown = 1 + (tileCount - 1) / tilesAcross;
 
             int tileX = panelPosition.X / slotWidth;
@@ -303,9 +307,13 @@ namespace TileMapEditor.Controls
 
             TileImageCache tileImageCache = TileImageCache.Instance;
 
+            int availableWidth = m_tilePanel.ClientRectangle.Width;
+            if (m_verticalScrollBar.Visible)
+                availableWidth -= m_verticalScrollBar.Width;
+
             int slotWidth = m_tileSheet.TileSize.Width + 1;
             int slotHeight = m_tileSheet.TileSize.Height + 1;
-            int tilesAcross = Math.Max(1, (m_tilePanel.ClientRectangle.Width + 1) / slotWidth);
+            int tilesAcross = Math.Max(1, (availableWidth + 1) / slotWidth);
             int tilesDown = 1 + (m_tileSheet.TileCount - 1) / tilesAcross;
             int scrollOffsetY = -m_verticalScrollBar.Value;
             for (int tileY = 0; tileY < tilesDown; tileY++)
@@ -328,7 +336,8 @@ namespace TileMapEditor.Controls
                             tileX * slotWidth - 1, tileY * slotHeight + scrollOffsetY - 1,
                             slotWidth, slotHeight);
                     }
-                    else if (tileIndex == m_hoverTileIndex)
+
+                    if (tileIndex == m_hoverTileIndex)
                     {
                         graphics.DrawRectangle(Pens.Black,
                             tileX * slotWidth - 1, tileY * slotHeight + scrollOffsetY - 1,
