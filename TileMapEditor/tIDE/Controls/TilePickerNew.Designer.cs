@@ -37,6 +37,7 @@
             this.m_indexOrderButton = new System.Windows.Forms.ToolStripButton();
             this.m_mruOrderButton = new System.Windows.Forms.ToolStripButton();
             this.m_imageOrderButton = new System.Windows.Forms.ToolStripButton();
+            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             m_labelCaption = new System.Windows.Forms.Label();
             this.m_tilePanel.SuspendLayout();
             this.m_toolStrip.SuspendLayout();
@@ -73,6 +74,7 @@
             this.m_tilePanel.AutoScroll = true;
             this.m_tilePanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
             this.m_tilePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_tilePanel.Controls.Add(this.m_horizontalScrollBar);
             this.m_tilePanel.Controls.Add(this.m_verticalScrollBar);
             this.m_tilePanel.Controls.Add(this.m_toolStrip);
             this.m_tilePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,6 +140,15 @@
             this.m_imageOrderButton.Size = new System.Drawing.Size(23, 22);
             this.m_imageOrderButton.Text = "toolStripButton3";
             // 
+            // m_horizontalScrollBar
+            // 
+            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 65);
+            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(131, 17);
+            this.m_horizontalScrollBar.TabIndex = 2;
+            this.m_horizontalScrollBar.Visible = false;
+            // 
             // TilePickerNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +174,6 @@
         private System.Windows.Forms.ToolStripButton m_mruOrderButton;
         private System.Windows.Forms.ToolStripButton m_imageOrderButton;
         private System.Windows.Forms.VScrollBar m_verticalScrollBar;
+        private System.Windows.Forms.HScrollBar m_horizontalScrollBar;
     }
 }
