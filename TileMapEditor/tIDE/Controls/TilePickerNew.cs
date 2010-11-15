@@ -14,6 +14,13 @@ namespace TileMapEditor.Controls
 {
     public partial class TilePickerNew : UserControl
     {
+        private enum OrderMode
+        {
+            Indexed,
+            MRU,
+            Image
+        }
+
         #region Public Methods
 
         public TilePickerNew()
@@ -23,10 +30,14 @@ namespace TileMapEditor.Controls
             m_autoUpdate = false;
             m_watchers = new Dictionary<TileSheet, FileSystemWatcher>();
             m_selectedTileIndex = -1;
+            m_orderMode = OrderMode.Indexed;
 
             m_selectionBrush = new SolidBrush(Color.FromArgb(128, Color.SkyBlue));
 
-            UpdateAvailableSize();
+            m_visibleSize = new Size();
+            m_requiredSize = new Size();
+
+            UpdateInternalDimensions();
         }
 
         public void UpdatePicker()
@@ -62,6 +73,8 @@ namespace TileMapEditor.Controls
                 m_tileSheet = m_map.GetTileSheet(tileSheetId);
             }
 
+            m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            UpdateInternalDimensions();
             m_tilePanel.Invalidate();
 
             /*
@@ -115,9 +128,8 @@ namespace TileMapEditor.Controls
             set
             {
                 m_selectedTileIndex = value;
+                m_focusOnTile = true;
                 m_tilePanel.Invalidate();
-
-                //TODO ensure tile visible
             }
         }
 
@@ -163,24 +175,62 @@ namespace TileMapEditor.Controls
 
         #region Private Methods
 
-        private void UpdateAvailableSize()
+        private void UpdateInternalDimensions()
         {
-            //TODO: depends on order mode
+            if (m_tileSheet == null)
+                return;
 
-            m_availableWidth = m_tilePanel.ClientSize.Width;
+            m_visibleSize.Width = m_tilePanel.ClientSize.Width;
             if (m_verticalScrollBar.Visible)
-                m_availableWidth -= m_verticalScrollBar.Width;
-            m_availableWidth = Math.Max(0, m_availableWidth);
+                m_visibleSize.Width -= m_verticalScrollBar.Width;
+            m_visibleSize.Width = Math.Max(0, m_visibleSize.Width);
 
-            m_availableHeight = m_tilePanel.ClientSize.Height;
-            if (m_verticalScrollBar.Visible)
-                m_availableHeight -= m_verticalScrollBar.Height;
+            m_visibleSize.Height = m_tilePanel.ClientSize.Height - m_toolStrip.Height;
+            if (m_horizontalScrollBar.Visible)
+                m_visibleSize.Height -= m_horizontalScrollBar.Height;
+            m_visibleSize.Height = Math.Max(0, m_visibleSize.Height);
+
+            int tileCount = m_tileSheet.TileCount;
+            int slotWidth = m_tileSheet.TileSize.Width + 1;
+            int slotHeight = m_tileSheet.TileSize.Height + 1;
+
+            switch (m_orderMode)
+            {
+                case OrderMode.Indexed:
+                case OrderMode.MRU:
+                    m_requiredSize.Width = m_visibleSize.Width;
+                    m_requiredSize.Height = (tileCount * slotWidth * slotHeight) / m_visibleSize.Width;
+                    break;
+                case OrderMode.Image:
+                    m_requiredSize.Width = m_tileSheet.SheetSize.Width * slotWidth;
+                    m_requiredSize.Height = m_tileSheet.SheetSize.Height * slotHeight;
+                    break;
+            }
+
+            if (!m_horizontalScrollBar.Visible && m_requiredSize.Width > m_visibleSize.Width)
+            {
+                m_horizontalScrollBar.Visible = true;
+                m_horizontalScrollBar.Maximum = m_requiredSize.Width - m_visibleSize.Width;
+                m_horizontalScrollBar.LargeChange = m_visibleSize.Width;
+                UpdateInternalDimensions();
+            }
+
+            if (!m_verticalScrollBar.Visible && m_requiredSize.Height > m_visibleSize.Height)
+            {
+                m_verticalScrollBar.Visible = true;
+                m_verticalScrollBar.Maximum = m_requiredSize.Height - m_visibleSize.Height;
+                m_verticalScrollBar.LargeChange = m_visibleSize.Height;
+                UpdateInternalDimensions();
+            }
         }
 
         private int GetTileIndex(Point panelPosition)
         {
             if (m_tileSheet == null)
                 return -1;
+
+            if (m_horizontalScrollBar.Visible)
+                panelPosition.X += m_horizontalScrollBar.Value;
 
             if (m_verticalScrollBar.Visible)
                 panelPosition.Y += m_verticalScrollBar.Value;
@@ -189,7 +239,7 @@ namespace TileMapEditor.Controls
             int slotHeight = m_tileSheet.TileSize.Height + 1;
 
             int tileCount = m_tileSheet.TileCount;
-            int tilesAcross = Math.Max(1, (m_availableWidth + 1) / slotWidth);
+            int tilesAcross = Math.Max(1, m_requiredSize.Width / slotWidth);
             int tilesDown = 1 + (tileCount - 1) / tilesAcross;
 
             int tileX = panelPosition.X / slotWidth;
@@ -201,6 +251,13 @@ namespace TileMapEditor.Controls
                 return -1;
 
             return tileIndex;
+        }
+
+        private void UpdateOrderButtons()
+        {
+            m_indexOrderButton.Checked = m_orderMode == OrderMode.Indexed;
+            m_mruOrderButton.Checked = m_orderMode == OrderMode.MRU;
+            m_imageOrderButton.Checked = m_orderMode == OrderMode.Image;
         }
 
         private void UpdateWatchers()
@@ -221,11 +278,16 @@ namespace TileMapEditor.Controls
                 fileSystemWatcher.Changed += this.OnTileSheetImageSourceChanged;
                 fileSystemWatcher.EnableRaisingEvents = true;
             }
+        }       
+
+        private void OnTilePanelResize(object sender, EventArgs eventArgs)
+        {
+            m_tilePanel.Invalidate();
         }
 
-        private void OnSelectTileSheet(object sender, EventArgs eventArgs)
+        private void OnHorizontalScroll(object sender, ScrollEventArgs e)
         {
-            RefreshSelectedTileSheet();
+            m_tilePanel.Invalidate();
         }
 
         private void OnVerticalScroll(object sender, ScrollEventArgs scrollEventArgs)
@@ -280,6 +342,38 @@ namespace TileMapEditor.Controls
             giveFeedbackEventArgs.UseDefaultCursors = false;
         }
 
+        private void OnOrderIndexed(object sender, EventArgs eventArgs)
+        {
+            m_orderMode = OrderMode.Indexed;
+            UpdateOrderButtons();
+            m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            UpdateInternalDimensions();
+            m_tilePanel.Invalidate();
+        }
+
+        private void OnOrderMru(object sender, EventArgs eventArgs)
+        {
+            m_orderMode = OrderMode.MRU;
+            UpdateOrderButtons();
+            m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            UpdateInternalDimensions();
+            m_tilePanel.Invalidate();
+        }
+
+        private void OnOrderImage(object sender, EventArgs eventArgs)
+        {
+            m_orderMode = OrderMode.Image;
+            UpdateOrderButtons();
+            m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            UpdateInternalDimensions();
+            m_tilePanel.Invalidate();
+        }
+
+        private void OnSelectTileSheet(object sender, EventArgs eventArgs)
+        {
+            RefreshSelectedTileSheet();
+        }
+
         private void OnTileSheetImageSourceChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
             foreach (TileSheet tileSheet in m_map.TileSheets)
@@ -314,8 +408,9 @@ namespace TileMapEditor.Controls
 
             int slotWidth = m_tileSheet.TileSize.Width + 1;
             int slotHeight = m_tileSheet.TileSize.Height + 1;
-            int tilesAcross = Math.Max(1, (m_availableWidth + 1) / slotWidth);
+            int tilesAcross = Math.Max(1, m_requiredSize.Width / slotWidth);
             int tilesDown = 1 + (m_tileSheet.TileCount - 1) / tilesAcross;
+            int scrollOffsetX = -m_horizontalScrollBar.Value;
             int scrollOffsetY = -m_verticalScrollBar.Value;
             for (int tileY = 0; tileY < tilesDown; tileY++)
             {
@@ -325,46 +420,60 @@ namespace TileMapEditor.Controls
                     if (tileIndex >= m_tileSheet.TileCount)
                         break;
                     Bitmap tileBitmap = tileImageCache.GetTileBitmap(m_tileSheet, tileIndex);
+
+                    int imageX = tileX * slotWidth + scrollOffsetX;
+                    int imageY = tileY * slotHeight + scrollOffsetY;
+
                     graphics.DrawImageUnscaled(tileBitmap,
-                        tileX * slotWidth, tileY * slotHeight + scrollOffsetY);
+                        imageX, tileY * slotHeight + scrollOffsetY);
 
                     if (tileIndex == m_selectedTileIndex)
                     {
                         graphics.FillRectangle(m_selectionBrush,
-                            tileX * slotWidth, tileY * slotHeight + scrollOffsetY,
+                            imageX, imageY,
                             slotWidth, slotHeight);
                         graphics.DrawRectangle(Pens.DarkCyan,
-                            tileX * slotWidth - 1, tileY * slotHeight + scrollOffsetY - 1,
+                            imageX - 1, imageY - 1,
                             slotWidth, slotHeight);
+
+                        // scroll and re-trigger paint until visible
+                        if (m_focusOnTile)
+                        {
+                            m_focusOnTile = false;
+
+                            if (imageX < 0)
+                            {
+                                m_focusOnTile = true;
+                                m_horizontalScrollBar.Value += imageX;
+                                m_tilePanel.Invalidate();
+                            }
+                            if (imageY < 0)
+                            {
+                                m_focusOnTile = true;
+                                m_verticalScrollBar.Value += imageY;
+                                m_tilePanel.Invalidate();
+                            }
+                            if (imageX + slotWidth > m_visibleSize.Width)
+                            {
+                                m_focusOnTile = true;
+                                m_horizontalScrollBar.Value += imageX + slotWidth - m_visibleSize.Width;
+                                m_tilePanel.Invalidate();
+                            }
+                            if (imageY + slotHeight > m_visibleSize.Height)
+                            {
+                                m_focusOnTile = true;
+                                m_verticalScrollBar.Value += imageY + slotHeight - m_visibleSize.Height;
+                                m_tilePanel.Invalidate();
+                            }
+                        }
                     }
 
                     if (tileIndex == m_hoverTileIndex)
                     {
                         graphics.DrawRectangle(Pens.Black,
-                            tileX * slotWidth - 1, tileY * slotHeight + scrollOffsetY - 1,
-                            slotWidth, slotHeight);
+                            imageX - 1, imageY - 1, slotWidth, slotHeight);
                     }
                 }
-            }
-
-            int requiredHeight = tilesDown * slotHeight - 1;
-
-            if (requiredHeight > m_availableHeight
-                && !m_verticalScrollBar.Visible)
-            {
-                m_verticalScrollBar.Visible = true;
-                m_verticalScrollBar.Maximum = requiredHeight;
-                m_verticalScrollBar.LargeChange = m_tilePanel.ClientSize.Height;
-                UpdateAvailableSize();
-                m_tilePanel.Invalidate();
-            }
-            else if (requiredHeight <= m_availableHeight
-                && m_verticalScrollBar.Visible)
-            {
-                m_verticalScrollBar.Visible = false;
-                m_verticalScrollBar.Value = 0;
-                UpdateAvailableSize();
-                m_tilePanel.Invalidate();
             }
         }
 
@@ -374,18 +483,21 @@ namespace TileMapEditor.Controls
 
         private Map m_map;
         private TileSheet m_tileSheet;
+        private OrderMode m_orderMode;
         private bool m_autoUpdate;
         private Dictionary<TileSheet, FileSystemWatcher> m_watchers;
         private int m_hoverTileIndex;
         private int m_selectedTileIndex;
 
-        private int m_availableWidth;
-        private int m_availableHeight;
+        private Size m_visibleSize;
+        private Size m_requiredSize;
+        private bool m_focusOnTile;
 
         private Brush m_selectionBrush;
 
         private bool m_leftMouseDown;
 
         #endregion
+
     }
 }

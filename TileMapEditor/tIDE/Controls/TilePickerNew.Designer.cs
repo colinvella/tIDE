@@ -86,6 +86,7 @@
             this.m_tilePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTilePanelPaint);
             this.m_tilePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseMove);
             this.m_tilePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseDown);
+            this.m_tilePanel.Resize += new System.EventHandler(this.OnTilePanelResize);
             this.m_tilePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseUp);
             this.m_tilePanel.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.OnDragGiveFeedback);
             // 
@@ -97,6 +98,7 @@
             this.m_horizontalScrollBar.Size = new System.Drawing.Size(131, 17);
             this.m_horizontalScrollBar.TabIndex = 2;
             this.m_horizontalScrollBar.Visible = false;
+            this.m_horizontalScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OnHorizontalScroll);
             // 
             // m_verticalScrollBar
             // 
@@ -123,12 +125,16 @@
             // 
             // m_indexOrderButton
             // 
+            this.m_indexOrderButton.Checked = true;
+            this.m_indexOrderButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_indexOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.m_indexOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("m_indexOrderButton.Image")));
             this.m_indexOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_indexOrderButton.Name = "m_indexOrderButton";
             this.m_indexOrderButton.Size = new System.Drawing.Size(23, 22);
-            this.m_indexOrderButton.Text = "toolStripButton1";
+            this.m_indexOrderButton.Text = "Index Order";
+            this.m_indexOrderButton.ToolTipText = "View tiles in index order";
+            this.m_indexOrderButton.Click += new System.EventHandler(this.OnOrderIndexed);
             // 
             // m_mruOrderButton
             // 
@@ -137,7 +143,9 @@
             this.m_mruOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_mruOrderButton.Name = "m_mruOrderButton";
             this.m_mruOrderButton.Size = new System.Drawing.Size(23, 22);
-            this.m_mruOrderButton.Text = "toolStripButton2";
+            this.m_mruOrderButton.Text = "MRU Order";
+            this.m_mruOrderButton.ToolTipText = "View tiles in order of the most recently used";
+            this.m_mruOrderButton.Click += new System.EventHandler(this.OnOrderMru);
             // 
             // m_imageOrderButton
             // 
@@ -146,7 +154,9 @@
             this.m_imageOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_imageOrderButton.Name = "m_imageOrderButton";
             this.m_imageOrderButton.Size = new System.Drawing.Size(23, 22);
-            this.m_imageOrderButton.Text = "toolStripButton3";
+            this.m_imageOrderButton.Text = "Image Order";
+            this.m_imageOrderButton.ToolTipText = "View tiles in order of their source image configuration";
+            this.m_imageOrderButton.Click += new System.EventHandler(this.OnOrderImage);
             // 
             // TilePickerNew
             // 
