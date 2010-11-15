@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePickerNew));
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             this.m_tilePanel = new TileMapEditor.Controls.CustomPanel();
+            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_indexOrderButton = new System.Windows.Forms.ToolStripButton();
             this.m_mruOrderButton = new System.Windows.Forms.ToolStripButton();
             this.m_imageOrderButton = new System.Windows.Forms.ToolStripButton();
-            this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             m_labelCaption = new System.Windows.Forms.Label();
             this.m_tilePanel.SuspendLayout();
             this.m_toolStrip.SuspendLayout();
@@ -86,9 +86,17 @@
             this.m_tilePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTilePanelPaint);
             this.m_tilePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseMove);
             this.m_tilePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseDown);
-            this.m_tilePanel.DragLeave += new System.EventHandler(this.OnDragLeave);
             this.m_tilePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnTilePanelMouseUp);
             this.m_tilePanel.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.OnDragGiveFeedback);
+            // 
+            // m_horizontalScrollBar
+            // 
+            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 65);
+            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
+            this.m_horizontalScrollBar.Size = new System.Drawing.Size(131, 17);
+            this.m_horizontalScrollBar.TabIndex = 2;
+            this.m_horizontalScrollBar.Visible = false;
             // 
             // m_verticalScrollBar
             // 
@@ -139,15 +147,6 @@
             this.m_imageOrderButton.Name = "m_imageOrderButton";
             this.m_imageOrderButton.Size = new System.Drawing.Size(23, 22);
             this.m_imageOrderButton.Text = "toolStripButton3";
-            // 
-            // m_horizontalScrollBar
-            // 
-            this.m_horizontalScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_horizontalScrollBar.Location = new System.Drawing.Point(0, 65);
-            this.m_horizontalScrollBar.Name = "m_horizontalScrollBar";
-            this.m_horizontalScrollBar.Size = new System.Drawing.Size(131, 17);
-            this.m_horizontalScrollBar.TabIndex = 2;
-            this.m_horizontalScrollBar.Visible = false;
             // 
             // TilePickerNew
             // 

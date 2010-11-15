@@ -159,9 +159,6 @@ namespace TileMapEditor.Controls
         [Category("Behavior"), Description("Occurs when the tile is selected")]
         public event TilePickerEventHandler TileSelected;
 
-        [Category("Behavior"), Description("Occurs when a tile is dragged from the picker")]
-        public event TilePickerEventHandler TileDrag;
-
         #endregion
 
         #region Private Methods
@@ -238,49 +235,44 @@ namespace TileMapEditor.Controls
 
         private void OnTilePanelMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
-            /*
-            if (TileSelected != null)
-                TileSelected(this,
-                    new TilePickerEventArgs(m_tileSheet, SelectedTileIndex));
-            */
+            m_leftMouseDown = true;
+
+            m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
+            if (m_selectedTileIndex >= 0)
+            {
+                if (TileSelected != null)
+                    TileSelected(this,
+                        new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
+
+                m_tilePanel.Invalidate();
+            }
         }
 
         private void OnTilePanelMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
-            int newHoverTileIndex = GetTileIndex(mouseEventArgs.Location);
-
-            if (m_hoverTileIndex != newHoverTileIndex)
+            if (mouseEventArgs.Button == MouseButtons.None)
             {
-                m_hoverTileIndex = newHoverTileIndex;
-                m_tilePanel.Invalidate();
+                int newHoverTileIndex = GetTileIndex(mouseEventArgs.Location);
+
+                if (m_hoverTileIndex != newHoverTileIndex)
+                {
+                    m_hoverTileIndex = newHoverTileIndex;
+                    m_tilePanel.Invalidate();
+                }
+            }
+            else if (mouseEventArgs.Button == MouseButtons.Left)
+            {
+                if (m_tileSheet != null
+                    && m_selectedTileIndex >= 0 && m_selectedTileIndex < m_tileSheet.TileCount)
+                {
+                    DoDragDrop(m_selectedTileIndex, DragDropEffects.All);
+                }
             }
         }
 
         private void OnTilePanelMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
-            m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
-            if (m_selectedTileIndex >= 0 && TileSelected != null)
-            {
-                m_tilePanel.Invalidate();
-                TileSelected(this,
-                    new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
-            }
-        }
-
-        private void OnDragLeave(object sender, EventArgs eventArgs)
-        {
-            if (m_comboBoxTileSheets.SelectedIndex < 0)
-                return;
-
-            if (m_selectedTileIndex < 0)
-                return;
-
-            TilePickerEventArgs tilePickerEventArgs = new TilePickerEventArgs(
-                m_map.TileSheets[m_comboBoxTileSheets.SelectedIndex],
-                m_selectedTileIndex);
-
-            if (TileDrag != null)
-                TileDrag(this, tilePickerEventArgs);
+            m_leftMouseDown = false;
         }
 
         private void OnDragGiveFeedback(object sender, GiveFeedbackEventArgs giveFeedbackEventArgs)
@@ -392,7 +384,8 @@ namespace TileMapEditor.Controls
 
         private Brush m_selectionBrush;
 
-        #endregion
+        private bool m_leftMouseDown;
 
+        #endregion
     }
 }

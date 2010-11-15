@@ -124,10 +124,12 @@ namespace TileMapEditor.Dialogs
                 Cursor = Cursors.Default;
         }
 
-        private void OnTileDrag(object sender, TilePickerEventArgs tilePickerEventArgs)
+        private void OnTileDragEnter(object sender, DragEventArgs dragEventArgs)
         {
-            m_draggedTileSheet = tilePickerEventArgs.TileSheet;
-            m_draggedTileIndex = tilePickerEventArgs.TileIndex;
+            dragEventArgs.Effect = DragDropEffects.Copy;
+
+            m_draggedTileSheet = m_tilePicker.SelectedTileSheet;
+            m_draggedTileIndex = m_tilePicker.SelectedTileIndex;
 
             Bitmap tileImage = TileImageCache.Instance.GetTileBitmap(
                 m_draggedTileSheet, m_draggedTileIndex);
@@ -139,11 +141,6 @@ namespace TileMapEditor.Dialogs
             iconInfo.Icon = false;
 
             Cursor = new Cursor(CreateIconIndirect(ref iconInfo));
-        }
-
-        private void OnTileDragEnter(object sender, DragEventArgs dragEventArgs)
-        {
-            dragEventArgs.Effect = DragDropEffects.Copy;
         }
 
         private void OnTileDragDrop(object sender, DragEventArgs dragEventArgs)
