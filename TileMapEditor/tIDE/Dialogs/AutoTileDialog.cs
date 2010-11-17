@@ -118,6 +118,7 @@ namespace TileMapEditor.Dialogs
                 OnLeaveNewId(sender, EventArgs.Empty);
         }
 
+        /*
         private void OnTileDrag(object sender, TilePickerEventArgs tilePickerEventArgs)
         {
             m_draggedTileIndex = tilePickerEventArgs.TileIndex;
@@ -132,11 +133,12 @@ namespace TileMapEditor.Dialogs
             iconInfo.Icon = false;
 
             Cursor = new Cursor(CreateIconIndirect(ref iconInfo));
-        }
+        }*/
 
         private void OnTileDragEnter(object sender, DragEventArgs dragEventArgs)
         {
             dragEventArgs.Effect = DragDropEffects.Copy;
+            m_draggedTileIndex = m_tilePicker.SelectedTileIndex;
         }
 
         private void OnTileDragDrop(object sender, DragEventArgs dragEventArgs)

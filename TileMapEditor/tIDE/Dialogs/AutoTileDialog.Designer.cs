@@ -41,7 +41,7 @@
             this.m_btnRename = new System.Windows.Forms.Button();
             this.m_txtNewId = new System.Windows.Forms.TextBox();
             this.m_btnCancel = new System.Windows.Forms.Button();
-            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
+            this.m_tilePicker = new TileMapEditor.Controls.TilePickerNew();
             this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
             this.m_noIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
             this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
@@ -200,7 +200,6 @@
             this.m_tilePicker.Map = null;
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.SelectedTileSheet = null;
-            this.m_tilePicker.TileDrag += new TileMapEditor.Controls.TilePickerEventHandler(this.OnTileDrag);
             // 
             // m_panelTemplate
             // 
@@ -275,7 +274,7 @@
 
         private System.Windows.Forms.Button m_btnNew;
         private System.Windows.Forms.SplitContainer m_splitContainer;
-        private TileMapEditor.Controls.TilePicker m_tilePicker;
+        private TileMapEditor.Controls.TilePickerNew m_tilePicker;
         private TileMapEditor.Controls.CustomPanel m_panelTemplate;
         private System.Windows.Forms.ComboBox m_cmbId;
         private System.Windows.Forms.Button m_btnDelete;
