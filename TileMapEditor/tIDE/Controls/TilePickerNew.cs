@@ -37,6 +37,8 @@ namespace TileMapEditor.Controls
             m_visibleSize = new Size();
             m_requiredSize = new Size();
 
+            m_indexToMru = new List<int>();
+
             UpdateInternalDimensions();
         }
 
@@ -72,6 +74,8 @@ namespace TileMapEditor.Controls
                 string tileSheetId = m_comboBoxTileSheets.SelectedItem.ToString();
                 m_tileSheet = m_map.GetTileSheet(tileSheetId);
             }
+
+            ResetMru();
 
             m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
             m_horizontalScrollBar.Value = m_verticalScrollBar.Value = 0;
@@ -130,6 +134,7 @@ namespace TileMapEditor.Controls
             {
                 m_selectedTileIndex = value;
                 m_focusOnTile = true;
+                UpdateMru(m_selectedTileIndex);
                 m_tilePanel.Invalidate();
             }
         }
@@ -250,6 +255,26 @@ namespace TileMapEditor.Controls
             return tileIndex;
         }
 
+        private void ResetMru()
+        {
+            m_indexToMru.Clear();
+
+            if (m_tileSheet == null)
+                return;
+
+            for (int index = 0; index < m_tileSheet.TileCount; index++)
+                m_indexToMru.Add(index);
+        }
+
+        private void UpdateMru(int tileIndex)
+        {
+            if (tileIndex < 0)
+                return;
+
+            m_indexToMru.Remove(tileIndex);
+            m_indexToMru.Insert(0, tileIndex);
+        }
+
         private void UpdateOrderButtons()
         {
             m_indexOrderButton.Checked = m_orderMode == OrderMode.Indexed;
@@ -299,6 +324,14 @@ namespace TileMapEditor.Controls
             m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
             if (m_selectedTileIndex >= 0)
             {
+                if (m_orderMode == OrderMode.MRU)
+                    m_selectedTileIndex = m_indexToMru[m_selectedTileIndex];
+
+                UpdateMru(m_selectedTileIndex);
+
+                if (m_orderMode == OrderMode.MRU)
+                    m_focusOnTile = true;
+
                 if (TileSelected != null)
                     TileSelected(this,
                         new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
@@ -421,9 +454,15 @@ namespace TileMapEditor.Controls
                 for (int tileX = 0; tileX < tilesAcross; tileX++)
                 {
                     int tileIndex = tileY * tilesAcross + tileX;
+
                     if (tileIndex >= m_tileSheet.TileCount)
                         break;
-                    Bitmap tileBitmap = tileImageCache.GetTileBitmap(m_tileSheet, tileIndex);
+
+                    int drawTileIndex = m_orderMode == OrderMode.MRU
+                        ? m_indexToMru[tileIndex]
+                        : tileIndex;
+
+                    Bitmap tileBitmap = tileImageCache.GetTileBitmap(m_tileSheet, drawTileIndex);
 
                     int imageX = tileX * slotWidth + scrollOffsetX;
                     int imageY = tileY * slotHeight + scrollOffsetY;
@@ -431,7 +470,7 @@ namespace TileMapEditor.Controls
                     graphics.DrawImageUnscaled(tileBitmap,
                         imageX, tileY * slotHeight + scrollOffsetY);
 
-                    if (tileIndex == m_selectedTileIndex)
+                    if (drawTileIndex == m_selectedTileIndex)
                     {
                         graphics.FillRectangle(m_selectionBrush,
                             imageX, imageY,
@@ -500,6 +539,8 @@ namespace TileMapEditor.Controls
         private Brush m_selectionBrush;
 
         private bool m_leftMouseDown;
+
+        private List<int> m_indexToMru;
 
         #endregion
 
