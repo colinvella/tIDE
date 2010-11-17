@@ -223,6 +223,11 @@ namespace TileMapEditor.Controls
                 return;
 
             Tile tile = m_selectedLayer.Tiles[m_tileLayerLocation];
+            if (tile != null)
+            {
+                m_selectedTileSheet = tile.TileSheet;
+                m_selectedTileIndex = tile.TileIndex;
+            }
 
             if (TilePicked != null)
                 TilePicked(new MapPanelEventArgs(tile, m_tileLayerLocation));
