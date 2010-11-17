@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label m_labelCaption;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePickerNew));
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             this.m_tilePanel = new TileMapEditor.Controls.CustomPanel();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
@@ -128,7 +127,7 @@
             this.m_indexOrderButton.Checked = true;
             this.m_indexOrderButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_indexOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_indexOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("m_indexOrderButton.Image")));
+            this.m_indexOrderButton.Image = global::TileMapEditor.Properties.Resources.TileOrderIndexed;
             this.m_indexOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_indexOrderButton.Name = "m_indexOrderButton";
             this.m_indexOrderButton.Size = new System.Drawing.Size(23, 22);
@@ -139,7 +138,7 @@
             // m_mruOrderButton
             // 
             this.m_mruOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_mruOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("m_mruOrderButton.Image")));
+            this.m_mruOrderButton.Image = global::TileMapEditor.Properties.Resources.TileOrderMru;
             this.m_mruOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_mruOrderButton.Name = "m_mruOrderButton";
             this.m_mruOrderButton.Size = new System.Drawing.Size(23, 22);
@@ -150,7 +149,7 @@
             // m_imageOrderButton
             // 
             this.m_imageOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_imageOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("m_imageOrderButton.Image")));
+            this.m_imageOrderButton.Image = global::TileMapEditor.Properties.Resources.TileOrderImage;
             this.m_imageOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_imageOrderButton.Name = "m_imageOrderButton";
             this.m_imageOrderButton.Size = new System.Drawing.Size(23, 22);

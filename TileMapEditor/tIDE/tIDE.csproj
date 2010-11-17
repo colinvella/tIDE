@@ -730,6 +730,9 @@
     <None Include="Resources\FileOptions.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\TileOrderImage.png" />
+    <None Include="Resources\TileOrderMru.png" />
+    <None Include="Resources\TileOrderIndexed.png" />
     <None Include="Resources\LayerOffset.png" />
     <None Include="Resources\TileSheetAlignment.png" />
     <None Include="Resources\OptionsLanguage.png" />
