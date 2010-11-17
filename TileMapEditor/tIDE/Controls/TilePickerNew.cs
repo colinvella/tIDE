@@ -74,6 +74,7 @@ namespace TileMapEditor.Controls
             }
 
             m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            m_horizontalScrollBar.Value = m_verticalScrollBar.Value = 0;
             UpdateInternalDimensions();
             m_tilePanel.Invalidate();
 
@@ -180,14 +181,10 @@ namespace TileMapEditor.Controls
             if (m_tileSheet == null)
                 return;
 
-            m_visibleSize.Width = m_tilePanel.ClientSize.Width;
-            if (m_verticalScrollBar.Visible)
-                m_visibleSize.Width -= m_verticalScrollBar.Width;
+            m_visibleSize.Width = m_tilePanel.ClientSize.Width - m_verticalScrollBar.Width;
             m_visibleSize.Width = Math.Max(0, m_visibleSize.Width);
 
-            m_visibleSize.Height = m_tilePanel.ClientSize.Height - m_toolStrip.Height;
-            if (m_horizontalScrollBar.Visible)
-                m_visibleSize.Height -= m_horizontalScrollBar.Height;
+            m_visibleSize.Height = m_tilePanel.ClientSize.Height - m_horizontalScrollBar.Height - m_toolStrip.Height;
             m_visibleSize.Height = Math.Max(0, m_visibleSize.Height);
 
             int tileCount = m_tileSheet.TileCount;
@@ -210,7 +207,7 @@ namespace TileMapEditor.Controls
             if (!m_horizontalScrollBar.Visible && m_requiredSize.Width > m_visibleSize.Width)
             {
                 m_horizontalScrollBar.Visible = true;
-                m_horizontalScrollBar.Maximum = m_requiredSize.Width - m_visibleSize.Width;
+                m_horizontalScrollBar.Maximum = m_requiredSize.Width;
                 m_horizontalScrollBar.LargeChange = m_visibleSize.Width;
                 UpdateInternalDimensions();
             }
@@ -218,7 +215,7 @@ namespace TileMapEditor.Controls
             if (!m_verticalScrollBar.Visible && m_requiredSize.Height > m_visibleSize.Height)
             {
                 m_verticalScrollBar.Visible = true;
-                m_verticalScrollBar.Maximum = m_requiredSize.Height - m_visibleSize.Height;
+                m_verticalScrollBar.Maximum = m_requiredSize.Height;
                 m_verticalScrollBar.LargeChange = m_visibleSize.Height;
                 UpdateInternalDimensions();
             }
@@ -347,8 +344,10 @@ namespace TileMapEditor.Controls
             m_orderMode = OrderMode.Indexed;
             UpdateOrderButtons();
             m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            m_horizontalScrollBar.Value = m_verticalScrollBar.Value = 0;
             UpdateInternalDimensions();
             m_tilePanel.Invalidate();
+            SelectedTileIndex = SelectedTileIndex;
         }
 
         private void OnOrderMru(object sender, EventArgs eventArgs)
@@ -356,8 +355,10 @@ namespace TileMapEditor.Controls
             m_orderMode = OrderMode.MRU;
             UpdateOrderButtons();
             m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            m_horizontalScrollBar.Value = m_verticalScrollBar.Value = 0;
             UpdateInternalDimensions();
             m_tilePanel.Invalidate();
+            SelectedTileIndex = SelectedTileIndex;
         }
 
         private void OnOrderImage(object sender, EventArgs eventArgs)
@@ -365,12 +366,15 @@ namespace TileMapEditor.Controls
             m_orderMode = OrderMode.Image;
             UpdateOrderButtons();
             m_horizontalScrollBar.Visible = m_verticalScrollBar.Visible = false;
+            m_horizontalScrollBar.Value = m_verticalScrollBar.Value = 0;
             UpdateInternalDimensions();
             m_tilePanel.Invalidate();
+            SelectedTileIndex = SelectedTileIndex;
         }
 
         private void OnSelectTileSheet(object sender, EventArgs eventArgs)
         {
+            m_selectedTileIndex = -1;
             RefreshSelectedTileSheet();
         }
 
