@@ -300,10 +300,11 @@ namespace TileMapEditor.Controls
                 fileSystemWatcher.Changed += this.OnTileSheetImageSourceChanged;
                 fileSystemWatcher.EnableRaisingEvents = true;
             }
-        }       
+        }
 
         private void OnTilePanelResize(object sender, EventArgs eventArgs)
         {
+            UpdateInternalDimensions();
             m_tilePanel.Invalidate();
         }
 
@@ -543,6 +544,5 @@ namespace TileMapEditor.Controls
         private List<int> m_indexToMru;
 
         #endregion
-
     }
 }
