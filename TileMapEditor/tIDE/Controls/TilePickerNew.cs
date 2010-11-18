@@ -461,7 +461,7 @@ namespace TileMapEditor.Controls
                                 tileIndex = m_indexToMru[tileIndex];
                             tileBrushElements.Add(new TileBrushElement(
                                 new StaticTile(dummyLayer, m_tileSheet, BlendMode.Alpha, tileIndex),
-                                new xTile.Dimensions.Location(tileX, tileY)));
+                                new xTile.Dimensions.Location(tileX - m_brushStart.X, tileY - m_brushStart.Y)));
                         }
                     }
 
