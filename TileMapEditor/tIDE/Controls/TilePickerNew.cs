@@ -209,10 +209,12 @@ namespace TileMapEditor.Controls
                     break;
             }
 
+            m_horizontalScrollBar.Maximum = m_requiredSize.Width;
+            m_verticalScrollBar.Maximum = m_requiredSize.Height;
+
             if (!m_horizontalScrollBar.Visible && m_requiredSize.Width > m_visibleSize.Width)
             {
                 m_horizontalScrollBar.Visible = true;
-                m_horizontalScrollBar.Maximum = m_requiredSize.Width;
                 m_horizontalScrollBar.LargeChange = m_visibleSize.Width;
                 UpdateInternalDimensions();
             }
@@ -220,7 +222,6 @@ namespace TileMapEditor.Controls
             if (!m_verticalScrollBar.Visible && m_requiredSize.Height > m_visibleSize.Height)
             {
                 m_verticalScrollBar.Visible = true;
-                m_verticalScrollBar.Maximum = m_requiredSize.Height;
                 m_verticalScrollBar.LargeChange = m_visibleSize.Height;
                 UpdateInternalDimensions();
             }
@@ -487,25 +488,26 @@ namespace TileMapEditor.Controls
 
                             if (imageX < 0)
                             {
-                                m_focusOnTile = true;
                                 m_horizontalScrollBar.Value += imageX;
                                 m_tilePanel.Invalidate();
                             }
+
                             if (imageY < 0)
                             {
-                                m_focusOnTile = true;
                                 m_verticalScrollBar.Value += imageY;
                                 m_tilePanel.Invalidate();
                             }
-                            if (imageX + slotWidth > m_visibleSize.Width)
+
+                            if (tilesAcross > 1
+                                && imageX + slotWidth > m_visibleSize.Width)
                             {
-                                m_focusOnTile = true;
                                 m_horizontalScrollBar.Value += imageX + slotWidth - m_visibleSize.Width;
                                 m_tilePanel.Invalidate();
                             }
-                            if (imageY + slotHeight > m_visibleSize.Height)
+
+                            if (tilesDown > 1
+                                && imageY + slotHeight > m_visibleSize.Height)
                             {
-                                m_focusOnTile = true;
                                 m_verticalScrollBar.Value += imageY + slotHeight - m_visibleSize.Height;
                                 m_tilePanel.Invalidate();
                             }
