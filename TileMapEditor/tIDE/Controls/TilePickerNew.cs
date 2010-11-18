@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using xTile.Tiles;
 using xTile;
 using System.IO;
+using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor.Controls
 {
@@ -185,14 +186,15 @@ namespace TileMapEditor.Controls
             }
         }
 
-
-
         #endregion
 
         #region Public Events
 
-        [Category("Behavior"), Description("Occurs when the tile is selected")]
+        [Category("Behavior"), Description("Occurs when a single tile is selected")]
         public event TilePickerEventHandler TileSelected;
+
+        [Category("Behavior"), Description("Occurs when a tile region is selected")]
+        public event TilePickerEventHandler TileBrushSelected;
 
         #endregion
 
@@ -434,6 +436,34 @@ namespace TileMapEditor.Controls
                             new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
 
                     m_tilePanel.Invalidate();
+                }
+            }
+            else
+            {
+                if (TileBrushSelected != null)
+                {
+                    // tile brush selected
+                    int tileCount = m_tileSheet.TileCount;
+                    int tilesAcross = Math.Max(1, m_requiredSize.Width / (m_tileSheet.TileSize.Width + 1));
+                    int tilesDown = 1 + (tileCount - 1) / tilesAcross;
+                    List<TileBrushElement> tileBrushElements = new List<TileBrushElement>();
+                    for (int tileY = m_brushStart.Y; tileY <= m_brushEnd.Y; tileY++)
+                    {
+                        for (int tileX = m_brushStart.X; tileX <= m_brushEnd.X; tileX++)
+                        {
+                            int tileIndex = tileY * tilesAcross + tileX;
+                            if (tileIndex >= tileCount)
+                                continue;
+                            if (m_orderMode == OrderMode.MRU)
+                                tileIndex = m_indexToMru[tileIndex];
+                            tileBrushElements.Add(new TileBrushElement(
+                                new StaticTile(null, m_tileSheet, BlendMode.Alpha, tileIndex),
+                                new xTile.Dimensions.Location(tileX, tileY)));
+                        }
+                    }
+
+                    TileBrush tileBrush = new TileBrush("TilePickerBrush", tileBrushElements);
+                    TileBrushSelected(this, new TilePickerEventArgs(tileBrush));
                 }
             }
         }
