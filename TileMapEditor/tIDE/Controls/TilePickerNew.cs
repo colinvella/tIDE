@@ -244,6 +244,23 @@ namespace TileMapEditor.Controls
             }
         }
 
+        private Point GetTilePosition(Point panelPosition)
+        {
+            if (m_horizontalScrollBar.Visible)
+                panelPosition.X += m_horizontalScrollBar.Value;
+
+            if (m_verticalScrollBar.Visible)
+                panelPosition.Y += m_verticalScrollBar.Value;
+
+            int slotWidth = m_tileSheet.TileSize.Width + 1;
+            int slotHeight = m_tileSheet.TileSize.Height + 1;
+
+            Point tilePosition = new Point(
+                panelPosition.X / slotWidth, panelPosition.Y / slotHeight);
+
+            return tilePosition;
+        }
+
         private int GetTileIndex(Point panelPosition)
         {
             if (m_tileSheet == null)
@@ -340,6 +357,10 @@ namespace TileMapEditor.Controls
         {
             if (mouseEventArgs.Button != MouseButtons.Left)
                 return;
+
+            m_leftMouseDown = true;
+            m_brushStart = GetTilePosition(mouseEventArgs.Location);
+            m_brushEnd = m_brushStart;
         }
 
         private void OnTilePanelMouseMove(object sender, MouseEventArgs mouseEventArgs)
@@ -354,13 +375,35 @@ namespace TileMapEditor.Controls
                     m_tilePanel.Invalidate();
                 }
             }
-            else if (mouseEventArgs.Button == MouseButtons.Left
-                && m_allowTileDragging)
+            else if (mouseEventArgs.Button == MouseButtons.Left)
             {
-                if (m_tileSheet != null
-                    && m_selectedTileIndex >= 0 && m_selectedTileIndex < m_tileSheet.TileCount)
+                if (m_allowTileDragging)
                 {
-                    DoDragDrop(m_selectedTileIndex, DragDropEffects.All);
+                    if (m_tileSheet != null
+                        && m_selectedTileIndex >= 0 && m_selectedTileIndex < m_tileSheet.TileCount)
+                    {
+                        DoDragDrop(m_selectedTileIndex, DragDropEffects.All);
+                    }
+                }
+                else
+                {
+                    // brush drag / select
+                    m_brushEnd = GetTilePosition(mouseEventArgs.Location);
+
+                    if (m_brushEnd.X < m_brushStart.X)
+                    {
+                        int temp = m_brushStart.X;
+                        m_brushStart.X = m_brushEnd.X;
+                        m_brushEnd.X = temp;
+                    }
+
+                    if (m_brushEnd.Y < m_brushStart.Y)
+                    {
+                        int temp = m_brushStart.Y;
+                        m_brushStart.Y = m_brushEnd.Y;
+                        m_brushEnd.Y = temp;
+                    }
+                    m_tilePanel.Invalidate();
                 }
             }
         }
@@ -370,22 +413,28 @@ namespace TileMapEditor.Controls
             if (mouseEventArgs.Button != MouseButtons.Left)
                 return;
 
-            m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
-            if (m_selectedTileIndex >= 0)
+            m_leftMouseDown = false;
+
+            if (m_brushEnd == m_brushStart)
             {
-                if (m_orderMode == OrderMode.MRU)
-                    m_selectedTileIndex = m_indexToMru[m_selectedTileIndex];
+                // single tile selected
+                m_selectedTileIndex = GetTileIndex(mouseEventArgs.Location);
+                if (m_selectedTileIndex >= 0)
+                {
+                    if (m_orderMode == OrderMode.MRU)
+                        m_selectedTileIndex = m_indexToMru[m_selectedTileIndex];
 
-                UpdateMru(m_selectedTileIndex);
+                    UpdateMru(m_selectedTileIndex);
 
-                if (m_orderMode == OrderMode.MRU)
-                    m_focusOnTile = true;
+                    if (m_orderMode == OrderMode.MRU)
+                        m_focusOnTile = true;
 
-                if (TileSelected != null)
-                    TileSelected(this,
-                        new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
+                    if (TileSelected != null)
+                        TileSelected(this,
+                            new TilePickerEventArgs(m_tileSheet, m_selectedTileIndex));
 
-                m_tilePanel.Invalidate();
+                    m_tilePanel.Invalidate();
+                }
             }
         }
 
@@ -541,6 +590,20 @@ namespace TileMapEditor.Controls
                     }
                 }
             }
+
+            if (m_leftMouseDown)
+            {
+                int selectionX = m_brushStart.X * slotWidth - 1;
+                int selectionY = m_brushStart.Y * slotWidth - 1;
+                int selectionWidth = (m_brushEnd.X - m_brushStart.X + 1) * slotWidth;
+                int selectionHeight = (m_brushEnd.Y - m_brushStart.Y + 1) * slotWidth;
+                if (m_horizontalScrollBar.Visible)
+                    selectionX -= m_horizontalScrollBar.Value;
+                if (m_verticalScrollBar.Visible)
+                    selectionY -= m_verticalScrollBar.Value;
+                graphics.DrawRectangle(Pens.Black,
+                    selectionX, selectionY, selectionWidth, selectionHeight);
+            }
         }
 
         #endregion
@@ -555,6 +618,10 @@ namespace TileMapEditor.Controls
         private Dictionary<TileSheet, FileSystemWatcher> m_watchers;
         private int m_hoverTileIndex;
         private int m_selectedTileIndex;
+
+        private bool m_leftMouseDown;
+        private Point m_brushStart;
+        private Point m_brushEnd;
 
         private Size m_visibleSize;
         private Size m_requiredSize;
