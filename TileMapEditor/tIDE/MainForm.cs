@@ -1483,7 +1483,9 @@ namespace TileMapEditor
 
         private void OnPickerTileBrushSelected(object sender, TilePickerEventArgs tilePickerEventArgs)
         {
-            MessageBox.Show("Picker bursh");
+            m_mapPanel.EditTool = EditTool.TileBrush;
+            m_mapPanel.SelectedTileBrush = tilePickerEventArgs.TileBrush;
+            UpdateToolButtons();
         }
 
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
