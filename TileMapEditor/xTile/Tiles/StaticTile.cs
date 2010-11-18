@@ -103,7 +103,7 @@ namespace xTile.Tiles
         /// <returns>String representation of the tile</returns>
         public override string ToString()
         {
-            return "Static TileIndex=" + m_tileIndex + " BlendMode=" + BlendMode;
+            return "Static Tile Index=" + m_tileIndex + " BlendMode=" + BlendMode;
         }
 
         #endregion
