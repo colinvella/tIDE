@@ -105,6 +105,7 @@
             this.m_tilePicker.AccessibleDescription = null;
             this.m_tilePicker.AccessibleName = null;
             this.m_tilePicker.AllowDrop = true;
+            this.m_tilePicker.AllowTileDragging = true;
             resources.ApplyResources(this.m_tilePicker, "m_tilePicker");
             this.m_tilePicker.BackgroundImage = null;
             this.m_tilePicker.Font = null;

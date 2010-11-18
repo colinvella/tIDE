@@ -124,6 +124,9 @@
   <data name="m_frameIntervalLabel.Text" xml:space="preserve">
     <value>Intervalle de l'image (ms)</value>
   </data>
+  <data name="m_frameContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 54</value>
+  </data>
   <data name="m_framePropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
@@ -138,9 +141,6 @@
   </data>
   <data name="m_frameDeleteMenuItem.Text" xml:space="preserve">
     <value>Supprimez l'Image</value>
-  </data>
-  <data name="m_frameContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 54</value>
   </data>
   <data name="m_buttonApply.Text" xml:space="preserve">
     <value>A&amp;ppliquez</value>
