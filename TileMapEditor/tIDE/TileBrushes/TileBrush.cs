@@ -68,7 +68,7 @@ namespace TileMapEditor.TileBrushes
             foreach (TileBrushElement tileBrushElement in tileBrushElements)
             {
                 m_brushSize.Width = Math.Max(m_brushSize.Width, tileBrushElement.Location.X + 1);
-                m_brushSize.Height = Math.Max(m_brushSize.Width, tileBrushElement.Location.Y + 1);
+                m_brushSize.Height = Math.Max(m_brushSize.Height, tileBrushElement.Location.Y + 1);
                 if (tileBrushElement.Tile != null)
                     m_tileSize = tileBrushElement.Tile.TileSheet.TileSize;
             }
