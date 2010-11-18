@@ -15,7 +15,7 @@ using TileMapEditor.Controls;
 namespace TileMapEditor.TileBrushes
 {
     [Serializable]
-    internal class TileBrush
+    public class TileBrush
     {
         #region Internal Methods
 
