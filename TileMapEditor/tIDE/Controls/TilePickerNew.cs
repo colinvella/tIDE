@@ -446,6 +446,9 @@ namespace TileMapEditor.Controls
                     int tileCount = m_tileSheet.TileCount;
                     int tilesAcross = Math.Max(1, m_requiredSize.Width / (m_tileSheet.TileSize.Width + 1));
                     int tilesDown = 1 + (tileCount - 1) / tilesAcross;
+                    xTile.Layers.Layer dummyLayer = new xTile.Layers.Layer(
+                        "", m_tileSheet.Map,
+                        new xTile.Dimensions.Size(1, 1), m_tileSheet.TileSize);
                     List<TileBrushElement> tileBrushElements = new List<TileBrushElement>();
                     for (int tileY = m_brushStart.Y; tileY <= m_brushEnd.Y; tileY++)
                     {
@@ -457,7 +460,7 @@ namespace TileMapEditor.Controls
                             if (m_orderMode == OrderMode.MRU)
                                 tileIndex = m_indexToMru[tileIndex];
                             tileBrushElements.Add(new TileBrushElement(
-                                new StaticTile(null, m_tileSheet, BlendMode.Alpha, tileIndex),
+                                new StaticTile(dummyLayer, m_tileSheet, BlendMode.Alpha, tileIndex),
                                 new xTile.Dimensions.Location(tileX, tileY)));
                         }
                     }

@@ -1481,6 +1481,11 @@ namespace TileMapEditor
             }
         }
 
+        private void OnPickerTileBrushSelected(object sender, TilePickerEventArgs tilePickerEventArgs)
+        {
+            MessageBox.Show("Picker bursh");
+        }
+
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
             xTile.ObjectModel.Component component = mapTreeViewEventArgs.Component;
@@ -1661,6 +1666,5 @@ namespace TileMapEditor
         }
 
         #endregion
-
     }
 }
