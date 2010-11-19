@@ -1211,8 +1211,8 @@ namespace TileMapEditor.Controls
             set
             {
                 m_viewport = value;
-                m_horizontalScrollBar.Value = m_viewport.X;
-                m_verticalScrollBar.Value = m_viewport.Y;
+                m_horizontalScrollBar.Value = Math.Max(0, m_viewport.X);
+                m_verticalScrollBar.Value = Math.Max(0, m_viewport.Y);
             }
         }
 
