@@ -104,6 +104,13 @@ namespace TileMapEditor.Controls
             get { return m_map; }
             set
             {
+                if (m_map != value)
+                {
+                    m_tileSheet = null;
+                    m_selectedTileIndex = -1;
+                    m_comboBoxTileSheets.SelectedIndex = -1;
+                }
+
                 m_map = value;
                 UpdatePicker();
             }
@@ -357,6 +364,9 @@ namespace TileMapEditor.Controls
 
         private void OnTilePanelMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
+            if (m_tileSheet == null)
+                return;
+
             if (mouseEventArgs.Button != MouseButtons.Left)
                 return;
 
@@ -367,6 +377,9 @@ namespace TileMapEditor.Controls
 
         private void OnTilePanelMouseMove(object sender, MouseEventArgs mouseEventArgs)
         {
+            if (m_tileSheet == null)
+                return;
+
             if (mouseEventArgs.Button == MouseButtons.None)
             {
                 int newHoverTileIndex = GetTileIndex(mouseEventArgs.Location);
@@ -412,6 +425,9 @@ namespace TileMapEditor.Controls
 
         private void OnTilePanelMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
+            if (m_tileSheet == null)
+                return;
+
             if (mouseEventArgs.Button != MouseButtons.Left)
                 return;
 

@@ -573,6 +573,9 @@ namespace TileMapEditor.Controls
 
         private void OnMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
+            if (m_selectedLayer == null)
+                return;
+
             m_mouseLocation.X = mouseEventArgs.X;
             m_mouseLocation.Y = mouseEventArgs.Y;
 
@@ -628,12 +631,12 @@ namespace TileMapEditor.Controls
             // needed for mouse wheel event to work
             this.Focus();
 
+            if (m_selectedLayer == null)
+                return;
+
             m_mouseInside = true;
             m_mouseLocation.X = mouseEventArgs.X;
             m_mouseLocation.Y = mouseEventArgs.Y;
-
-            if (m_selectedLayer == null)
-                return;
 
             m_tileLayerLocation
                 = ConvertViewportOffsetToLayerLocation(m_mouseLocation);
@@ -679,6 +682,9 @@ namespace TileMapEditor.Controls
 
         private void OnMouseUp(object sender, MouseEventArgs mouseEventArgs)
         {
+            if (m_selectedLayer == null)
+                return;
+
             if (mouseEventArgs.Button == MouseButtons.Left)
             {
                 switch (m_editTool)
