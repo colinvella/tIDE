@@ -120,11 +120,13 @@
   <data name="m_labelCaption.Text" xml:space="preserve">
     <value>Cueilleur du Tuile</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_horizontalScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="m_indexOrderButton.ToolTipText" xml:space="preserve">
+    <value>Voir tuiles par ordre de l'index</value>
   </data>
-  <data name="m_verticalScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="m_mruOrderButton.ToolTipText" xml:space="preserve">
+    <value>Voir tuiles par ordre du plus récemment utilisés</value>
+  </data>
+  <data name="m_imageOrderButton.ToolTipText" xml:space="preserve">
+    <value>Voir les carreaux dans l'ordre dicté par l'image source</value>
   </data>
 </root>

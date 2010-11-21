@@ -120,4 +120,13 @@
   <data name="m_labelCaption.Text" xml:space="preserve">
     <value>Selector de Azulejos</value>
   </data>
+  <data name="m_indexOrderButton.ToolTipText" xml:space="preserve">
+    <value>Ver los azulejos por orden de índice</value>
+  </data>
+  <data name="m_mruOrderButton.ToolTipText" xml:space="preserve">
+    <value>Ver los cuadros por orden de los más usados recientemente</value>
+  </data>
+  <data name="m_imageOrderButton.ToolTipText" xml:space="preserve">
+    <value>Ver azulejos en el orden dictado por la imagen de origen</value>
+  </data>
 </root>
