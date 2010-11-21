@@ -13,7 +13,7 @@ using TileMapEditor.TileBrushes;
 
 namespace TileMapEditor.Controls
 {
-    public partial class TilePickerNew : UserControl
+    public partial class TilePicker : UserControl
     {
         private enum OrderMode
         {
@@ -24,7 +24,7 @@ namespace TileMapEditor.Controls
 
         #region Public Methods
 
-        public TilePickerNew()
+        public TilePicker()
         {
             InitializeComponent();
 
@@ -695,4 +695,6 @@ namespace TileMapEditor.Controls
 
         #endregion
     }
+
+    public delegate void TilePickerEventHandler(object sender, TilePickerEventArgs tilePickerEventArgs);
 }

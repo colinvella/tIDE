@@ -44,7 +44,7 @@
             this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
             this.m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
             this.m_mapTreeView = new TileMapEditor.Controls.MapTreeView();
-            this.m_tilePicker = new TileMapEditor.Controls.TilePickerNew();
+            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_toolStripContainerInner = new System.Windows.Forms.ToolStripContainer();
             this.m_statusStrip = new System.Windows.Forms.StatusStrip();
             this.m_tileLocationStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -2672,7 +2672,7 @@
         private System.Windows.Forms.ToolStripButton m_editRedoButton;
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator1;
         private System.Windows.Forms.SplitContainer m_splitContainerLeftRight;
-        private TileMapEditor.Controls.TilePickerNew m_tilePicker;
+        private TileMapEditor.Controls.TilePicker m_tilePicker;
         private TileMapEditor.Controls.MapPanel m_mapPanel;
         private System.Windows.Forms.ToolStrip m_mapToolStrip;
         private System.Windows.Forms.ToolStripButton m_mapPropertiesButton;

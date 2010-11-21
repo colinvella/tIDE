@@ -197,11 +197,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ThemedColors.cs" />
-    <Compile Include="Controls\TilePickerNew.cs">
+    <Compile Include="Controls\TilePicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TilePickerNew.Designer.cs">
-      <DependentUpon>TilePickerNew.cs</DependentUpon>
+    <Compile Include="Controls\TilePicker.Designer.cs">
+      <DependentUpon>TilePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\AutoTileDialog.cs">
       <SubType>Form</SubType>
@@ -320,12 +320,6 @@
     <Compile Include="TileBrushes\TileBrushElement.cs" />
     <Compile Include="TileImageCache.cs" />
     <Compile Include="Controls\MapPanelEventArgs.cs" />
-    <Compile Include="Controls\TilePicker.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\TilePicker.Designer.cs">
-      <DependentUpon>TilePicker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\TilePickerEventArgs.cs" />
     <Compile Include="TileSelection.cs" />
     <Compile Include="Dialogs\LayerPropertiesDialog.cs">
@@ -409,19 +403,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TilePicker.resx">
       <DependentUpon>TilePicker.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TilePickerNew.es-ES.resx">
-      <DependentUpon>TilePickerNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TilePickerNew.fr-FR.resx">
-      <DependentUpon>TilePickerNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TilePickerNew.it-IT.resx">
-      <DependentUpon>TilePickerNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TilePickerNew.resx">
-      <DependentUpon>TilePickerNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AboutDialog.it-IT.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>

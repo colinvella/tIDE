@@ -32,7 +32,7 @@
             System.Windows.Forms.Label m_lblId;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTileDialog));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
-            this.m_tilePicker = new TileMapEditor.Controls.TilePickerNew();
+            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
             this.m_btnNew = new System.Windows.Forms.Button();
             this.m_cmbId = new System.Windows.Forms.ComboBox();
@@ -208,7 +208,7 @@
 
         private System.Windows.Forms.Button m_btnNew;
         private System.Windows.Forms.SplitContainer m_splitContainer;
-        private TileMapEditor.Controls.TilePickerNew m_tilePicker;
+        private TileMapEditor.Controls.TilePicker m_tilePicker;
         private TileMapEditor.Controls.CustomPanel m_panelTemplate;
         private System.Windows.Forms.ComboBox m_cmbId;
         private System.Windows.Forms.Button m_btnDelete;

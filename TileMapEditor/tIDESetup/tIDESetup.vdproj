@@ -21,7 +21,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_139477DB820965A1B584FAC641D610A4"
+        "MsmKey" = "8:_11C33837EB48840D23F031D8F0623EB3"
+        "OwnerKey" = "8:_16C6B103B4CFD35E95485A775E29AC0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_11C33837EB48840D23F031D8F0623EB3"
+        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_16C6B103B4CFD35E95485A775E29AC0C"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,18 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
-        "OwnerKey" = "8:_139477DB820965A1B584FAC641D610A4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
-        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_139477DB820965A1B584FAC641D610A4"
+        "OwnerKey" = "8:_16C6B103B4CFD35E95485A775E29AC0C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DF8C3A0DEF4F53302A175BF1337BB307"
+        "OwnerKey" = "8:_11C33837EB48840D23F031D8F0623EB3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -118,7 +118,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\tIDESetup123.msi"
+        "OutputFilename" = "8:Release\\tIDESetup124.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -259,13 +259,49 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_139477DB820965A1B584FAC641D610A4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_11C33837EB48840D23F031D8F0623EB3"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:xTile, Version=1.2.3.0, Culture=neutral, PublicKeyToken=737c45b5921cd681, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_11C33837EB48840D23F031D8F0623EB3"
+                    {
+                    "Name" = "8:xTile.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:xTile.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_16C6B103B4CFD35E95485A775E29AC0C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:TileMapEditor.Plugin, Version=1.2.1.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
+                    "_16C6B103B4CFD35E95485A775E29AC0C"
+                    {
+                    "Name" = "8:TileMapEditor.Plugin.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TileMapEditor.Plugin.dll"
             "TargetName" = "8:"
@@ -323,32 +359,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF8C3A0DEF4F53302A175BF1337BB307"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:xTile, Version=1.2.2.0, Culture=neutral, PublicKeyToken=737c45b5921cd681, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:xTile.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -451,23 +461,23 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:tIDE v1.2.3"
-        "ProductCode" = "8:{50706EE1-3EAC-41D4-B59F-25E8F3D039E7}"
-        "PackageCode" = "8:{039F4654-CD62-4D43-9537-8D721C747BD2}"
+        "ProductName" = "8:tIDE v1.2.4"
+        "ProductCode" = "8:{584D6DA1-BD72-40E6-BEF0-974FD634CE49}"
+        "PackageCode" = "8:{840435B5-D928-4AAD-A996-0B6081FAF073}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.2.3"
+        "ProductVersion" = "8:1.2.4"
         "Manufacturer" = "8:Colin Vella"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://tide.codeplex.com"
-        "Title" = "8:tIDE Tile Map Editor v1.2.3"
+        "Title" = "8:tIDE Tile Map Editor v1.2.4"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Colin Vella"
         "Keywords" = "8:tIDE tile map editor"
-        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v1.2.3"
+        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v1.2.4"
         "ARPURLINFOABOUT" = "8:http://tide.codeplex.com"
         "ARPPRODUCTICON" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "ARPIconIndex" = "3:0"

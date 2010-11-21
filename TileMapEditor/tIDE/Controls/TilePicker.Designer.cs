@@ -1,6 +1,6 @@
 ﻿namespace TileMapEditor.Controls
 {
-    partial class TilePickerNew
+    partial class TilePicker
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label m_labelCaption;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePickerNew));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePicker));
             System.Windows.Forms.ToolStripLabel m_lblIdx;
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
             this.m_tilePanel = new TileMapEditor.Controls.CustomPanel();

@@ -35,7 +35,7 @@
             System.Windows.Forms.SplitContainer m_splitContainerInner;
             System.Windows.Forms.ToolStripSeparator m_menuItemSeparator;
             TileMapEditor.Controls.CustomPanel m_customPanel;
-            this.m_tilePicker = new TileMapEditor.Controls.TilePickerNew();
+            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
             this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
             this.m_animationListView = new TileMapEditor.Controls.CustomListView();
             this.m_frameContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -341,7 +341,7 @@
         private System.Windows.Forms.Button m_buttonOk;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonCancel;
-        private TileMapEditor.Controls.TilePickerNew m_tilePicker;
+        private TileMapEditor.Controls.TilePicker m_tilePicker;
         private TileMapEditor.Controls.CustomPanel m_previewPanel;
         private TileMapEditor.Controls.CustomListView m_animationListView;
         private System.Windows.Forms.ImageList m_imageListAnimation;
