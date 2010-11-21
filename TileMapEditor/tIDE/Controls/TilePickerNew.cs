@@ -68,6 +68,8 @@ namespace TileMapEditor.Controls
 
         public void RefreshSelectedTileSheet()
         {
+            m_lblIdxValue.Text = "";
+
             if (m_comboBoxTileSheets.SelectedIndex < 0)
                 m_tileSheet = null;
             else
@@ -288,6 +290,9 @@ namespace TileMapEditor.Controls
             int tilesAcross = Math.Max(1, m_requiredSize.Width / slotWidth);
             int tilesDown = 1 + (tileCount - 1) / tilesAcross;
 
+            if (panelPosition.X >= tilesAcross * slotWidth)
+                return -1;
+
             int tileX = panelPosition.X / slotWidth;
             int tileY = panelPosition.Y / slotHeight;
 
@@ -387,6 +392,14 @@ namespace TileMapEditor.Controls
                 if (m_hoverTileIndex != newHoverTileIndex)
                 {
                     m_hoverTileIndex = newHoverTileIndex;
+
+                    int tileIndex = m_hoverTileIndex;
+                    if (m_orderMode == OrderMode.MRU)
+                        tileIndex = m_indexToMru[tileIndex];
+                    m_lblIdxValue.Text = m_hoverTileIndex < 0
+                        ? ""
+                        : m_hoverTileIndex.ToString();
+
                     m_tilePanel.Invalidate();
                 }
             }
