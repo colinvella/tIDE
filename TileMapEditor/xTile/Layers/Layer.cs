@@ -112,8 +112,6 @@ namespace xTile.Layers
         /// <returns>Viewport in layer pixel coordinates</returns>
         public Rectangle ConvertMapToLayerViewport(Rectangle mapViewport)
         {
-            Size mapDisplaySize = m_map.DisplaySize;
-
             return new Rectangle(
                 ConvertMapToLayerLocation(
                     mapViewport.Location, mapViewport.Size),
