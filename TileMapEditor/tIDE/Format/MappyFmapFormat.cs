@@ -18,7 +18,7 @@ namespace tIDE.Format
             throw new NotImplementedException();
         }
 
-        public Map Load(System.IO.Stream stream)
+        public Map Load(Stream stream)
         {
             throw new NotImplementedException();
         }
@@ -45,6 +45,56 @@ namespace tIDE.Format
         public string FileExtension
         {
             get { return "fmp"; }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private string ReadSequence(Stream stream, int count)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            while (count-- > 0)
+            {
+                int byt = stream.ReadByte();
+                if (byt < 0)
+                    break;
+                stringBuilder.Append((char)byt);
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        private void ReadSequence(Stream stream, string sequence)
+        {
+            long position = stream.Position;
+            string readSequence = ReadSequence(stream, sequence.Length);
+
+            if (readSequence != sequence)
+                throw new Exception("Expected sequence '" + sequence + "' at position " + position);
+        }
+
+        private long ReadLong(Stream stream)
+        {
+            return 0;
+        }
+
+        private void LoadHeader(Stream stream)
+        {
+            byte[] headerForm = new byte[4];
+            if (stream.Read(headerForm, 0, 4) != 4)
+                throw new Exception("Mappy Header: Unexpected end of file at position " + stream.Position);
+            ReadSequence(stream, "FORM");
+        }
+
+        #endregion
+
+        #region Private Classes
+
+        private class Chunk
+        {
+            private string m_strHeader;
+            private byte[] m_data;
         }
 
         #endregion
