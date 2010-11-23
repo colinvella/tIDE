@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class TileSheetPropertiesDialog
     {
@@ -44,7 +44,7 @@
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonClose = new System.Windows.Forms.Button();
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
+            this.m_customTabControl = new tIDE.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_labelImageSource = new System.Windows.Forms.Label();
             this.m_buttonBrowse = new System.Windows.Forms.Button();
@@ -68,14 +68,14 @@
             this.m_comboBoxMargin = new System.Windows.Forms.ComboBox();
             this.m_comboBoxTileSize = new System.Windows.Forms.ComboBox();
             this.m_buttonAutoDetect = new System.Windows.Forms.Button();
-            this.m_panelImage = new TileMapEditor.Controls.CustomPanel();
+            this.m_panelImage = new tIDE.Controls.CustomPanel();
             this.m_trackBarZoom = new System.Windows.Forms.TrackBar();
             this.m_labelZoom = new System.Windows.Forms.Label();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
-            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_noImageSourceMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_tileSizeFixedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_customPropertyGrid = new tIDE.Controls.CustomPropertyGrid();
+            this.m_noImageSourceMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_duplicateIdMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_tileSizeFixedMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             m_labelTileSize = new System.Windows.Forms.Label();
             m_labelTileSizeBy = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -234,7 +234,7 @@
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabAlignment);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
-            this.m_customTabControl.DisplayStyle = TileMapEditor.Controls.TabStyle.VisualStudio;
+            this.m_customTabControl.DisplayStyle = tIDE.Controls.TabStyle.VisualStudio;
             // 
             // 
             // 
@@ -603,7 +603,7 @@
             this.m_panelImage.AccessibleDescription = null;
             this.m_panelImage.AccessibleName = null;
             resources.ApplyResources(this.m_panelImage, "m_panelImage");
-            this.m_panelImage.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
+            this.m_panelImage.BackgroundImage = global::tIDE.Properties.Resources.ImageBackground;
             this.m_panelImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_panelImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_panelImage.Font = null;
@@ -653,27 +653,27 @@
             this.m_customPropertyGrid.BackgroundImage = null;
             this.m_customPropertyGrid.Font = null;
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
-            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyChanged += new tIDE.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // m_noImageSourceMessageBox
             // 
             resources.ApplyResources(this.m_noImageSourceMessageBox, "m_noImageSourceMessageBox");
             this.m_noImageSourceMessageBox.HelpFilePath = null;
-            this.m_noImageSourceMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_noImageSourceMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_noImageSourceMessageBox.Owner = this;
             // 
             // m_duplicateIdMessageBox
             // 
             resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
             this.m_duplicateIdMessageBox.HelpFilePath = null;
-            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_duplicateIdMessageBox.Owner = this;
             // 
             // m_tileSizeFixedMessageBox
             // 
             resources.ApplyResources(this.m_tileSizeFixedMessageBox, "m_tileSizeFixedMessageBox");
             this.m_tileSizeFixedMessageBox.HelpFilePath = null;
-            this.m_tileSizeFixedMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_tileSizeFixedMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_tileSizeFixedMessageBox.Owner = this;
             // 
             // TileSheetPropertiesDialog
@@ -720,7 +720,7 @@
 
         private System.Windows.Forms.Button m_buttonOk;
         private System.Windows.Forms.Button m_buttonCancel;
-        private TileMapEditor.Controls.CustomTabControl m_customTabControl;
+        private tIDE.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxDescription;
@@ -736,11 +736,11 @@
         private System.Windows.Forms.NumericUpDown m_textBoxSpacingX;
         private System.Windows.Forms.NumericUpDown m_textBoxTopMargin;
         private System.Windows.Forms.NumericUpDown m_textBoxLeftMargin;
-        private TileMapEditor.Controls.CustomPanel m_panelImage;
+        private tIDE.Controls.CustomPanel m_panelImage;
         private System.Windows.Forms.TextBox m_textBoxImageSource;
         private System.Windows.Forms.Label m_labelZoom;
         private System.Windows.Forms.TrackBar m_trackBarZoom;
-        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
+        private tIDE.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Button m_buttonAutoDetect;
         private System.Windows.Forms.GroupBox m_groupBoxCustomSettings;
         private System.Windows.Forms.GroupBox m_groupBoxQuickSettings;
@@ -751,9 +751,9 @@
         private System.Windows.Forms.Button m_buttonSwapTiles;
         private System.Windows.Forms.Button m_buttonClose;
         private System.Windows.Forms.Button m_buttonDoneSwapping;
-        private TileMapEditor.Controls.CustomMessageBox m_noImageSourceMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_tileSizeFixedMessageBox;
+        private tIDE.Controls.CustomMessageBox m_noImageSourceMessageBox;
+        private tIDE.Controls.CustomMessageBox m_duplicateIdMessageBox;
+        private tIDE.Controls.CustomMessageBox m_tileSizeFixedMessageBox;
         private System.Windows.Forms.ImageList m_tabImageList;
     }
 }

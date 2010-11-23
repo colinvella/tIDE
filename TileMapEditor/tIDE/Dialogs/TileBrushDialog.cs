@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 using xTile;
 
-using TileMapEditor.Commands;
-using TileMapEditor.TileBrushes;
+using tIDE.Commands;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     internal partial class TileBrushDialog : Form
     {

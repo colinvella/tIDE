@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Localisation;
+using tIDE.Localisation;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class OptonsDialog : Form
     {

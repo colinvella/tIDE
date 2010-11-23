@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-using TileMapEditor.Plugin.Interface;
+using tIDE.Plugin.Interface;
 
-namespace TileMapEditor.Plugin
+namespace tIDE.Plugin
 {
     public interface IPlugin
     {

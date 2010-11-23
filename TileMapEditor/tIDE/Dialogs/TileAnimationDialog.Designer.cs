@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class TileAnimationDialog
     {
@@ -34,10 +34,10 @@
             System.Windows.Forms.SplitContainer m_splitContainerOuter;
             System.Windows.Forms.SplitContainer m_splitContainerInner;
             System.Windows.Forms.ToolStripSeparator m_menuItemSeparator;
-            TileMapEditor.Controls.CustomPanel m_customPanel;
-            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
-            this.m_previewPanel = new TileMapEditor.Controls.CustomPanel();
-            this.m_animationListView = new TileMapEditor.Controls.CustomListView();
+            tIDE.Controls.CustomPanel m_customPanel;
+            this.m_tilePicker = new tIDE.Controls.TilePicker();
+            this.m_previewPanel = new tIDE.Controls.CustomPanel();
+            this.m_animationListView = new tIDE.Controls.CustomListView();
             this.m_frameContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_framePropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_frameDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,12 +48,12 @@
             this.m_frameIntervalTextbox = new System.Windows.Forms.NumericUpDown();
             this.m_animationTimer = new System.Windows.Forms.Timer(this.components);
             this.m_buttonClose = new System.Windows.Forms.Button();
-            this.m_tileSizeMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_tileSizeMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             m_frameIntervalLabel = new System.Windows.Forms.Label();
             m_splitContainerOuter = new System.Windows.Forms.SplitContainer();
             m_splitContainerInner = new System.Windows.Forms.SplitContainer();
             m_menuItemSeparator = new System.Windows.Forms.ToolStripSeparator();
-            m_customPanel = new TileMapEditor.Controls.CustomPanel();
+            m_customPanel = new tIDE.Controls.CustomPanel();
             m_splitContainerOuter.Panel1.SuspendLayout();
             m_splitContainerOuter.Panel2.SuspendLayout();
             m_splitContainerOuter.SuspendLayout();
@@ -187,7 +187,7 @@
             this.m_framePropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_framePropertiesMenuItem, "m_framePropertiesMenuItem");
             this.m_framePropertiesMenuItem.BackgroundImage = null;
-            this.m_framePropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimationFrameProperties;
+            this.m_framePropertiesMenuItem.Image = global::tIDE.Properties.Resources.TileAnimationFrameProperties;
             this.m_framePropertiesMenuItem.Name = "m_framePropertiesMenuItem";
             this.m_framePropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_framePropertiesMenuItem.Click += new System.EventHandler(this.OnFrameProperties);
@@ -205,7 +205,7 @@
             this.m_frameDeleteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_frameDeleteMenuItem, "m_frameDeleteMenuItem");
             this.m_frameDeleteMenuItem.BackgroundImage = null;
-            this.m_frameDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimationFrameDelete;
+            this.m_frameDeleteMenuItem.Image = global::tIDE.Properties.Resources.TileAnimationFrameDelete;
             this.m_frameDeleteMenuItem.Name = "m_frameDeleteMenuItem";
             this.m_frameDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_frameDeleteMenuItem.Click += new System.EventHandler(this.OnDeleteFrame);
@@ -298,7 +298,7 @@
             // 
             resources.ApplyResources(this.m_tileSizeMessageBox, "m_tileSizeMessageBox");
             this.m_tileSizeMessageBox.HelpFilePath = null;
-            this.m_tileSizeMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_tileSizeMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_tileSizeMessageBox.Owner = this;
             // 
             // TileAnimationDialog
@@ -341,9 +341,9 @@
         private System.Windows.Forms.Button m_buttonOk;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonCancel;
-        private TileMapEditor.Controls.TilePicker m_tilePicker;
-        private TileMapEditor.Controls.CustomPanel m_previewPanel;
-        private TileMapEditor.Controls.CustomListView m_animationListView;
+        private tIDE.Controls.TilePicker m_tilePicker;
+        private tIDE.Controls.CustomPanel m_previewPanel;
+        private tIDE.Controls.CustomListView m_animationListView;
         private System.Windows.Forms.ImageList m_imageListAnimation;
         private System.Windows.Forms.ContextMenuStrip m_frameContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem m_frameDeleteMenuItem;
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Timer m_animationTimer;
         private System.Windows.Forms.ToolStripMenuItem m_framePropertiesMenuItem;
         private System.Windows.Forms.Button m_buttonClose;
-        private TileMapEditor.Controls.CustomMessageBox m_tileSizeMessageBox;
+        private tIDE.Controls.CustomMessageBox m_tileSizeMessageBox;
 
     }
 }

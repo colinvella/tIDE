@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class CustomPropertiesDialog
     {
@@ -33,7 +33,7 @@
             this.m_buttonCancel = new System.Windows.Forms.Button();
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonClose = new System.Windows.Forms.Button();
-            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
+            this.m_customPropertyGrid = new tIDE.Controls.CustomPropertyGrid();
             this.SuspendLayout();
             // 
             // m_buttonOk
@@ -88,8 +88,8 @@
             this.m_customPropertyGrid.BackgroundImage = null;
             this.m_customPropertyGrid.Font = null;
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
-            this.m_customPropertyGrid.PropertyDeleted += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
-            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyDeleted += new tIDE.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyChanged += new tIDE.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // CustomPropertiesDialog
             // 
@@ -118,7 +118,7 @@
 
         private System.Windows.Forms.Button m_buttonOk;
         private System.Windows.Forms.Button m_buttonCancel;
-        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
+        private tIDE.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonClose;
     }

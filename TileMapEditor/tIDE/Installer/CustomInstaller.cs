@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace TileMapEditor.Installer
+namespace tIDE.Installer
 {
     [RunInstaller(true)]
     public partial class CustomInstaller : System.Configuration.Install.Installer

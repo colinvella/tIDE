@@ -8,7 +8,7 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Layers;
 
-namespace TileMapEditor.Plugin.Interface
+namespace tIDE.Plugin.Interface
 {
     public interface IEditor: IElement
     {

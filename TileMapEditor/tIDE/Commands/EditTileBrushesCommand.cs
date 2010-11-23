@@ -5,9 +5,9 @@ using System.Text;
 
 using xTile;
 
-using TileMapEditor.TileBrushes;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class EditTileBrushesCommand: Command
     {

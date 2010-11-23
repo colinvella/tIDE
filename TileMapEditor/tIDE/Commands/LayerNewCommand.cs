@@ -6,7 +6,7 @@ using System.Text;
 using xTile;
 using xTile.Layers;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class LayerNewCommand: Command
     {

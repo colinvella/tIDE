@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading;
 
-namespace TileMapEditor.Localisation
+namespace tIDE.Localisation
 {
     class LanguageManager
     {

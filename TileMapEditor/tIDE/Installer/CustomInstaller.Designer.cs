@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Installer
+﻿namespace tIDE.Installer
 {
     partial class CustomInstaller
     {

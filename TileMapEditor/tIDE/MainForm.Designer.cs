@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor
+﻿namespace tIDE
 {
     partial class MainForm
     {
@@ -43,15 +43,15 @@
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_splitContainerLeftRight = new System.Windows.Forms.SplitContainer();
             this.m_splitContainerVertical = new System.Windows.Forms.SplitContainer();
-            this.m_mapTreeView = new TileMapEditor.Controls.MapTreeView();
-            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
+            this.m_mapTreeView = new tIDE.Controls.MapTreeView();
+            this.m_tilePicker = new tIDE.Controls.TilePicker();
             this.m_toolStripContainerInner = new System.Windows.Forms.ToolStripContainer();
             this.m_statusStrip = new System.Windows.Forms.StatusStrip();
             this.m_tileLocationStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_tileSheetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_tileIndexStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_tilePropertiesStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_mapPanel = new TileMapEditor.Controls.MapPanel();
+            this.m_mapPanel = new tIDE.Controls.MapPanel();
             this.m_toolsToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_toolsSelectButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsSingleTileButton = new System.Windows.Forms.ToolStripButton();
@@ -59,7 +59,7 @@
             this.m_toolsEraserButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsDropperButton = new System.Windows.Forms.ToolStripButton();
             this.m_toolsTextureButton = new System.Windows.Forms.ToolStripButton();
-            this.m_toolsTileBrushButton = new TileMapEditor.Controls.CustomToolStripSplitButton();
+            this.m_toolsTileBrushButton = new tIDE.Controls.CustomToolStripSplitButton();
             this.m_mapToolStrip = new System.Windows.Forms.ToolStrip();
             this.m_mapPropertiesButton = new System.Windows.Forms.ToolStripButton();
             this.m_mapStatisticsButton = new System.Windows.Forms.ToolStripButton();
@@ -219,11 +219,11 @@
             this.m_helpSearchMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.m_helpAboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_loadErrorMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_saveErrorMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_unsavedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_hasDependencyMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_dependencyRemovedMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_loadErrorMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_saveErrorMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_unsavedMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_hasDependencyMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_dependencyRemovedMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             m_layerToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             m_layerToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             m_layerToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -384,7 +384,7 @@
             this.m_mapTreeView.Name = "m_mapTreeView";
             this.m_mapTreeView.SelectedComponent = null;
             this.m_mapTreeView.NewTileSheet += new System.EventHandler(this.OnTileSheetNew);
-            this.m_mapTreeView.ComponentChanged += new TileMapEditor.Controls.MapTreeViewEventHandler(this.OnTreeComponentChanged);
+            this.m_mapTreeView.ComponentChanged += new tIDE.Controls.MapTreeViewEventHandler(this.OnTreeComponentChanged);
             this.m_mapTreeView.MapStatistics += new System.EventHandler(this.OnMapStatistics);
             this.m_mapTreeView.LayerVisibility += new System.EventHandler(this.OnLayerVisibility);
             this.m_mapTreeView.BringLayerForward += new System.EventHandler(this.OnLayerBringForward);
@@ -407,8 +407,8 @@
             this.m_tilePicker.Map = null;
             this.m_tilePicker.Name = "m_tilePicker";
             this.m_tilePicker.SelectedTileSheet = null;
-            this.m_tilePicker.TileBrushSelected += new TileMapEditor.Controls.TilePickerEventHandler(this.OnPickerTileBrushSelected);
-            this.m_tilePicker.TileSelected += new TileMapEditor.Controls.TilePickerEventHandler(this.OnPickerTileSelected);
+            this.m_tilePicker.TileBrushSelected += new tIDE.Controls.TilePickerEventHandler(this.OnPickerTileBrushSelected);
+            this.m_tilePicker.TileSelected += new tIDE.Controls.TilePickerEventHandler(this.OnPickerTileSelected);
             // 
             // m_toolStripContainerInner
             // 
@@ -510,7 +510,7 @@
             this.m_tilePropertiesStatusLabel.AccessibleName = null;
             resources.ApplyResources(this.m_tilePropertiesStatusLabel, "m_tilePropertiesStatusLabel");
             this.m_tilePropertiesStatusLabel.BackgroundImage = null;
-            this.m_tilePropertiesStatusLabel.Image = global::TileMapEditor.Properties.Resources.TilePropertiesIndicator;
+            this.m_tilePropertiesStatusLabel.Image = global::tIDE.Properties.Resources.TilePropertiesIndicator;
             this.m_tilePropertiesStatusLabel.Margin = new System.Windows.Forms.Padding(32, 3, 0, 2);
             this.m_tilePropertiesStatusLabel.Name = "m_tilePropertiesStatusLabel";
             // 
@@ -522,7 +522,7 @@
             this.m_mapPanel.AutoScaleViewport = true;
             this.m_mapPanel.BackgroundImage = null;
             this.m_mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_mapPanel.EditTool = TileMapEditor.Controls.EditTool.SingleTile;
+            this.m_mapPanel.EditTool = tIDE.Controls.EditTool.SingleTile;
             this.m_mapPanel.Font = null;
             this.m_mapPanel.Map = null;
             this.m_mapPanel.Name = "m_mapPanel";
@@ -533,9 +533,9 @@
             this.m_mapPanel.MapChanged += new System.EventHandler(this.OnMapChanged);
             this.m_mapPanel.SelectionChanged += new System.EventHandler(this.OnTileSelectionChanged);
             this.m_mapPanel.ZoomChanged += new System.EventHandler(this.OnZoomChanged);
-            this.m_mapPanel.TilePropertiesChanged += new TileMapEditor.Controls.MapPanelEventHandler(this.OnTilePropertiesChanged);
-            this.m_mapPanel.TileHover += new TileMapEditor.Controls.MapPanelEventHandler(this.OnTileHover);
-            this.m_mapPanel.TilePicked += new TileMapEditor.Controls.MapPanelEventHandler(this.OnMapTilePicked);
+            this.m_mapPanel.TilePropertiesChanged += new tIDE.Controls.MapPanelEventHandler(this.OnTilePropertiesChanged);
+            this.m_mapPanel.TileHover += new tIDE.Controls.MapPanelEventHandler(this.OnTileHover);
+            this.m_mapPanel.TilePicked += new tIDE.Controls.MapPanelEventHandler(this.OnMapTilePicked);
             // 
             // m_toolsToolStrip
             // 
@@ -561,7 +561,7 @@
             resources.ApplyResources(this.m_toolsSelectButton, "m_toolsSelectButton");
             this.m_toolsSelectButton.BackgroundImage = null;
             this.m_toolsSelectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsSelectButton.Image = global::TileMapEditor.Properties.Resources.ToolsSelect;
+            this.m_toolsSelectButton.Image = global::tIDE.Properties.Resources.ToolsSelect;
             this.m_toolsSelectButton.Name = "m_toolsSelectButton";
             this.m_toolsSelectButton.Click += new System.EventHandler(this.OnToolsSelect);
             // 
@@ -572,7 +572,7 @@
             resources.ApplyResources(this.m_toolsSingleTileButton, "m_toolsSingleTileButton");
             this.m_toolsSingleTileButton.BackgroundImage = null;
             this.m_toolsSingleTileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsSingleTileButton.Image = global::TileMapEditor.Properties.Resources.ToolsSingleTile;
+            this.m_toolsSingleTileButton.Image = global::tIDE.Properties.Resources.ToolsSingleTile;
             this.m_toolsSingleTileButton.Name = "m_toolsSingleTileButton";
             this.m_toolsSingleTileButton.Click += new System.EventHandler(this.OnToolsSingleTile);
             // 
@@ -583,7 +583,7 @@
             resources.ApplyResources(this.m_toolsTileBlockButton, "m_toolsTileBlockButton");
             this.m_toolsTileBlockButton.BackgroundImage = null;
             this.m_toolsTileBlockButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsTileBlockButton.Image = global::TileMapEditor.Properties.Resources.ToolsTileBlock;
+            this.m_toolsTileBlockButton.Image = global::tIDE.Properties.Resources.ToolsTileBlock;
             this.m_toolsTileBlockButton.Name = "m_toolsTileBlockButton";
             this.m_toolsTileBlockButton.Click += new System.EventHandler(this.OnToolsTileBlock);
             // 
@@ -594,7 +594,7 @@
             resources.ApplyResources(this.m_toolsEraserButton, "m_toolsEraserButton");
             this.m_toolsEraserButton.BackgroundImage = null;
             this.m_toolsEraserButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsEraserButton.Image = global::TileMapEditor.Properties.Resources.ToolsEraser;
+            this.m_toolsEraserButton.Image = global::tIDE.Properties.Resources.ToolsEraser;
             this.m_toolsEraserButton.Name = "m_toolsEraserButton";
             this.m_toolsEraserButton.Click += new System.EventHandler(this.OnToolsEraser);
             // 
@@ -605,7 +605,7 @@
             resources.ApplyResources(this.m_toolsDropperButton, "m_toolsDropperButton");
             this.m_toolsDropperButton.BackgroundImage = null;
             this.m_toolsDropperButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsDropperButton.Image = global::TileMapEditor.Properties.Resources.ToolsDropper;
+            this.m_toolsDropperButton.Image = global::tIDE.Properties.Resources.ToolsDropper;
             this.m_toolsDropperButton.Name = "m_toolsDropperButton";
             this.m_toolsDropperButton.Click += new System.EventHandler(this.OnToolsDropper);
             // 
@@ -616,7 +616,7 @@
             resources.ApplyResources(this.m_toolsTextureButton, "m_toolsTextureButton");
             this.m_toolsTextureButton.BackgroundImage = null;
             this.m_toolsTextureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsTextureButton.Image = global::TileMapEditor.Properties.Resources.ToolsTexture;
+            this.m_toolsTextureButton.Image = global::tIDE.Properties.Resources.ToolsTexture;
             this.m_toolsTextureButton.Name = "m_toolsTextureButton";
             this.m_toolsTextureButton.Click += new System.EventHandler(this.OnToolsTexture);
             // 
@@ -629,7 +629,7 @@
             this.m_toolsTileBrushButton.Checked = false;
             this.m_toolsTileBrushButton.CheckState = System.Windows.Forms.CheckState.Unchecked;
             this.m_toolsTileBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_toolsTileBrushButton.Image = global::TileMapEditor.Properties.Resources.ToolsTileBrush;
+            this.m_toolsTileBrushButton.Image = global::tIDE.Properties.Resources.ToolsTileBrush;
             this.m_toolsTileBrushButton.Name = "m_toolsTileBrushButton";
             this.m_toolsTileBrushButton.ButtonClick += new System.EventHandler(this.OnToolsTileBrush);
             // 
@@ -652,7 +652,7 @@
             resources.ApplyResources(this.m_mapPropertiesButton, "m_mapPropertiesButton");
             this.m_mapPropertiesButton.BackgroundImage = null;
             this.m_mapPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_mapPropertiesButton.Image = global::TileMapEditor.Properties.Resources.MapProperties;
+            this.m_mapPropertiesButton.Image = global::tIDE.Properties.Resources.MapProperties;
             this.m_mapPropertiesButton.Name = "m_mapPropertiesButton";
             this.m_mapPropertiesButton.Click += new System.EventHandler(this.OnMapProperties);
             // 
@@ -663,7 +663,7 @@
             resources.ApplyResources(this.m_mapStatisticsButton, "m_mapStatisticsButton");
             this.m_mapStatisticsButton.BackgroundImage = null;
             this.m_mapStatisticsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_mapStatisticsButton.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsButton.Image = global::tIDE.Properties.Resources.MapStatistics;
             this.m_mapStatisticsButton.Name = "m_mapStatisticsButton";
             this.m_mapStatisticsButton.Click += new System.EventHandler(this.OnMapStatistics);
             // 
@@ -694,7 +694,7 @@
             resources.ApplyResources(this.m_fileNewButton, "m_fileNewButton");
             this.m_fileNewButton.BackgroundImage = null;
             this.m_fileNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileNewButton.Image = global::TileMapEditor.Properties.Resources.FileNew;
+            this.m_fileNewButton.Image = global::tIDE.Properties.Resources.FileNew;
             this.m_fileNewButton.Name = "m_fileNewButton";
             this.m_fileNewButton.Click += new System.EventHandler(this.OnFileNew);
             // 
@@ -705,7 +705,7 @@
             resources.ApplyResources(this.m_fileOpenButton, "m_fileOpenButton");
             this.m_fileOpenButton.BackgroundImage = null;
             this.m_fileOpenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileOpenButton.Image = global::TileMapEditor.Properties.Resources.FileOpen;
+            this.m_fileOpenButton.Image = global::tIDE.Properties.Resources.FileOpen;
             this.m_fileOpenButton.Name = "m_fileOpenButton";
             this.m_fileOpenButton.Click += new System.EventHandler(this.OnFileOpen);
             // 
@@ -723,7 +723,7 @@
             resources.ApplyResources(this.m_fileSaveButton, "m_fileSaveButton");
             this.m_fileSaveButton.BackgroundImage = null;
             this.m_fileSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileSaveButton.Image = global::TileMapEditor.Properties.Resources.FileSave;
+            this.m_fileSaveButton.Image = global::tIDE.Properties.Resources.FileSave;
             this.m_fileSaveButton.Name = "m_fileSaveButton";
             this.m_fileSaveButton.Click += new System.EventHandler(this.OnFileSave);
             // 
@@ -734,7 +734,7 @@
             resources.ApplyResources(this.m_fileSaveAsButton, "m_fileSaveAsButton");
             this.m_fileSaveAsButton.BackgroundImage = null;
             this.m_fileSaveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileSaveAsButton.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
+            this.m_fileSaveAsButton.Image = global::tIDE.Properties.Resources.FileSaveAs;
             this.m_fileSaveAsButton.Name = "m_fileSaveAsButton";
             this.m_fileSaveAsButton.Click += new System.EventHandler(this.OnFileSaveAs);
             // 
@@ -752,7 +752,7 @@
             resources.ApplyResources(this.m_filePageSetupButton, "m_filePageSetupButton");
             this.m_filePageSetupButton.BackgroundImage = null;
             this.m_filePageSetupButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_filePageSetupButton.Image = global::TileMapEditor.Properties.Resources.FilePageSetup;
+            this.m_filePageSetupButton.Image = global::tIDE.Properties.Resources.FilePageSetup;
             this.m_filePageSetupButton.Name = "m_filePageSetupButton";
             this.m_filePageSetupButton.Click += new System.EventHandler(this.OnFilePageSetup);
             // 
@@ -763,7 +763,7 @@
             resources.ApplyResources(this.m_filePrintPreviewButton, "m_filePrintPreviewButton");
             this.m_filePrintPreviewButton.BackgroundImage = null;
             this.m_filePrintPreviewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_filePrintPreviewButton.Image = global::TileMapEditor.Properties.Resources.FilePrintPreview;
+            this.m_filePrintPreviewButton.Image = global::tIDE.Properties.Resources.FilePrintPreview;
             this.m_filePrintPreviewButton.Name = "m_filePrintPreviewButton";
             this.m_filePrintPreviewButton.Click += new System.EventHandler(this.OnFilePrintPreview);
             // 
@@ -774,7 +774,7 @@
             resources.ApplyResources(this.m_filePrintButton, "m_filePrintButton");
             this.m_filePrintButton.BackgroundImage = null;
             this.m_filePrintButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_filePrintButton.Image = global::TileMapEditor.Properties.Resources.FilePrint;
+            this.m_filePrintButton.Image = global::tIDE.Properties.Resources.FilePrint;
             this.m_filePrintButton.Name = "m_filePrintButton";
             this.m_filePrintButton.Click += new System.EventHandler(this.OnFilePrint);
             // 
@@ -785,7 +785,7 @@
             resources.ApplyResources(this.m_fileOptionsButton, "m_fileOptionsButton");
             this.m_fileOptionsButton.BackgroundImage = null;
             this.m_fileOptionsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_fileOptionsButton.Image = global::TileMapEditor.Properties.Resources.FileOptions;
+            this.m_fileOptionsButton.Image = global::tIDE.Properties.Resources.FileOptions;
             this.m_fileOptionsButton.Name = "m_fileOptionsButton";
             this.m_fileOptionsButton.Click += new System.EventHandler(this.OnFileOptions);
             // 
@@ -815,7 +815,7 @@
             resources.ApplyResources(this.m_tileSheetNewButton, "m_tileSheetNewButton");
             this.m_tileSheetNewButton.BackgroundImage = null;
             this.m_tileSheetNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetNewButton.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
+            this.m_tileSheetNewButton.Image = global::tIDE.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewButton.Name = "m_tileSheetNewButton";
             this.m_tileSheetNewButton.Click += new System.EventHandler(this.OnTileSheetNew);
             // 
@@ -826,7 +826,7 @@
             resources.ApplyResources(this.m_tileSheetPropertiesButton, "m_tileSheetPropertiesButton");
             this.m_tileSheetPropertiesButton.BackgroundImage = null;
             this.m_tileSheetPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetPropertiesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
+            this.m_tileSheetPropertiesButton.Image = global::tIDE.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesButton.Name = "m_tileSheetPropertiesButton";
             this.m_tileSheetPropertiesButton.Click += new System.EventHandler(this.OnTileSheetProperties);
             // 
@@ -837,7 +837,7 @@
             resources.ApplyResources(this.m_tileSheetAutoTilesButton, "m_tileSheetAutoTilesButton");
             this.m_tileSheetAutoTilesButton.BackgroundImage = null;
             this.m_tileSheetAutoTilesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetAutoTilesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoTiles;
+            this.m_tileSheetAutoTilesButton.Image = global::tIDE.Properties.Resources.TileSheetAutoTiles;
             this.m_tileSheetAutoTilesButton.Name = "m_tileSheetAutoTilesButton";
             this.m_tileSheetAutoTilesButton.Click += new System.EventHandler(this.OnTileSheetAutoTiles);
             // 
@@ -855,7 +855,7 @@
             resources.ApplyResources(this.m_tileSheetAutoUpdateEnableButton, "m_tileSheetAutoUpdateEnableButton");
             this.m_tileSheetAutoUpdateEnableButton.BackgroundImage = null;
             this.m_tileSheetAutoUpdateEnableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetAutoUpdateEnableButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateEnable;
+            this.m_tileSheetAutoUpdateEnableButton.Image = global::tIDE.Properties.Resources.TileSheetAutoUpdateEnable;
             this.m_tileSheetAutoUpdateEnableButton.Name = "m_tileSheetAutoUpdateEnableButton";
             this.m_tileSheetAutoUpdateEnableButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
             // 
@@ -866,7 +866,7 @@
             resources.ApplyResources(this.m_tileSheetAutoUpdateDisableButton, "m_tileSheetAutoUpdateDisableButton");
             this.m_tileSheetAutoUpdateDisableButton.BackgroundImage = null;
             this.m_tileSheetAutoUpdateDisableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetAutoUpdateDisableButton.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateDisable;
+            this.m_tileSheetAutoUpdateDisableButton.Image = global::tIDE.Properties.Resources.TileSheetAutoUpdateDisable;
             this.m_tileSheetAutoUpdateDisableButton.Name = "m_tileSheetAutoUpdateDisableButton";
             this.m_tileSheetAutoUpdateDisableButton.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
             // 
@@ -884,7 +884,7 @@
             resources.ApplyResources(this.m_tileSheetRemoveDependenciesButton, "m_tileSheetRemoveDependenciesButton");
             this.m_tileSheetRemoveDependenciesButton.BackgroundImage = null;
             this.m_tileSheetRemoveDependenciesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetRemoveDependenciesButton.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesButton.Image = global::tIDE.Properties.Resources.TileSheetRemoveDependencies;
             this.m_tileSheetRemoveDependenciesButton.Name = "m_tileSheetRemoveDependenciesButton";
             this.m_tileSheetRemoveDependenciesButton.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
             // 
@@ -895,7 +895,7 @@
             resources.ApplyResources(this.m_tileSheetDeleteButton, "m_tileSheetDeleteButton");
             this.m_tileSheetDeleteButton.BackgroundImage = null;
             this.m_tileSheetDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_tileSheetDeleteButton.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
+            this.m_tileSheetDeleteButton.Image = global::tIDE.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteButton.Name = "m_tileSheetDeleteButton";
             this.m_tileSheetDeleteButton.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
@@ -927,7 +927,7 @@
             resources.ApplyResources(this.m_layerNewButton, "m_layerNewButton");
             this.m_layerNewButton.BackgroundImage = null;
             this.m_layerNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerNewButton.Image = global::TileMapEditor.Properties.Resources.LayerNew;
+            this.m_layerNewButton.Image = global::tIDE.Properties.Resources.LayerNew;
             this.m_layerNewButton.Name = "m_layerNewButton";
             this.m_layerNewButton.Click += new System.EventHandler(this.OnLayerNew);
             // 
@@ -938,7 +938,7 @@
             resources.ApplyResources(this.m_layerPropertiesButton, "m_layerPropertiesButton");
             this.m_layerPropertiesButton.BackgroundImage = null;
             this.m_layerPropertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerPropertiesButton.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
+            this.m_layerPropertiesButton.Image = global::tIDE.Properties.Resources.LayerProperties;
             this.m_layerPropertiesButton.Name = "m_layerPropertiesButton";
             this.m_layerPropertiesButton.Click += new System.EventHandler(this.OnLayerProperties);
             // 
@@ -949,7 +949,7 @@
             resources.ApplyResources(this.m_layerOffsetButton, "m_layerOffsetButton");
             this.m_layerOffsetButton.BackgroundImage = null;
             this.m_layerOffsetButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerOffsetButton.Image = global::TileMapEditor.Properties.Resources.LayerOffset;
+            this.m_layerOffsetButton.Image = global::tIDE.Properties.Resources.LayerOffset;
             this.m_layerOffsetButton.Name = "m_layerOffsetButton";
             this.m_layerOffsetButton.Click += new System.EventHandler(this.OnLayerOffset);
             // 
@@ -967,7 +967,7 @@
             resources.ApplyResources(this.m_layerMakeInvisibileButton, "m_layerMakeInvisibileButton");
             this.m_layerMakeInvisibileButton.BackgroundImage = null;
             this.m_layerMakeInvisibileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerMakeInvisibileButton.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
+            this.m_layerMakeInvisibileButton.Image = global::tIDE.Properties.Resources.LayerInvisible;
             this.m_layerMakeInvisibileButton.Name = "m_layerMakeInvisibileButton";
             this.m_layerMakeInvisibileButton.Click += new System.EventHandler(this.OnLayerVisibility);
             // 
@@ -978,7 +978,7 @@
             resources.ApplyResources(this.m_layerMakeVisibileButton, "m_layerMakeVisibileButton");
             this.m_layerMakeVisibileButton.BackgroundImage = null;
             this.m_layerMakeVisibileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerMakeVisibileButton.Image = global::TileMapEditor.Properties.Resources.LayerVisible;
+            this.m_layerMakeVisibileButton.Image = global::tIDE.Properties.Resources.LayerVisible;
             this.m_layerMakeVisibileButton.Name = "m_layerMakeVisibileButton";
             this.m_layerMakeVisibileButton.Click += new System.EventHandler(this.OnLayerVisibility);
             // 
@@ -996,7 +996,7 @@
             resources.ApplyResources(this.m_layerBringForwardButton, "m_layerBringForwardButton");
             this.m_layerBringForwardButton.BackgroundImage = null;
             this.m_layerBringForwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerBringForwardButton.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
+            this.m_layerBringForwardButton.Image = global::tIDE.Properties.Resources.LayerBringForward;
             this.m_layerBringForwardButton.Name = "m_layerBringForwardButton";
             this.m_layerBringForwardButton.Click += new System.EventHandler(this.OnLayerBringForward);
             // 
@@ -1007,7 +1007,7 @@
             resources.ApplyResources(this.m_layerSendBackwardButton, "m_layerSendBackwardButton");
             this.m_layerSendBackwardButton.BackgroundImage = null;
             this.m_layerSendBackwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerSendBackwardButton.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
+            this.m_layerSendBackwardButton.Image = global::tIDE.Properties.Resources.LayerSendBackward;
             this.m_layerSendBackwardButton.Name = "m_layerSendBackwardButton";
             this.m_layerSendBackwardButton.Click += new System.EventHandler(this.OnLayerSendBackward);
             // 
@@ -1025,7 +1025,7 @@
             resources.ApplyResources(this.m_layerDeleteButton, "m_layerDeleteButton");
             this.m_layerDeleteButton.BackgroundImage = null;
             this.m_layerDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_layerDeleteButton.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
+            this.m_layerDeleteButton.Image = global::tIDE.Properties.Resources.LayerDelete;
             this.m_layerDeleteButton.Name = "m_layerDeleteButton";
             this.m_layerDeleteButton.Click += new System.EventHandler(this.OnLayerDelete);
             // 
@@ -1061,7 +1061,7 @@
             resources.ApplyResources(this.m_editUndoButton, "m_editUndoButton");
             this.m_editUndoButton.BackgroundImage = null;
             this.m_editUndoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editUndoButton.Image = global::TileMapEditor.Properties.Resources.EditUndo;
+            this.m_editUndoButton.Image = global::tIDE.Properties.Resources.EditUndo;
             this.m_editUndoButton.Name = "m_editUndoButton";
             this.m_editUndoButton.Click += new System.EventHandler(this.OnEditUndo);
             // 
@@ -1072,7 +1072,7 @@
             resources.ApplyResources(this.m_editRedoButton, "m_editRedoButton");
             this.m_editRedoButton.BackgroundImage = null;
             this.m_editRedoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editRedoButton.Image = global::TileMapEditor.Properties.Resources.EditRedo;
+            this.m_editRedoButton.Image = global::tIDE.Properties.Resources.EditRedo;
             this.m_editRedoButton.Name = "m_editRedoButton";
             this.m_editRedoButton.Click += new System.EventHandler(this.OnEditRedo);
             // 
@@ -1083,7 +1083,7 @@
             resources.ApplyResources(this.m_editHistoryButton, "m_editHistoryButton");
             this.m_editHistoryButton.BackgroundImage = null;
             this.m_editHistoryButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editHistoryButton.Image = global::TileMapEditor.Properties.Resources.EditHistory;
+            this.m_editHistoryButton.Image = global::tIDE.Properties.Resources.EditHistory;
             this.m_editHistoryButton.Name = "m_editHistoryButton";
             this.m_editHistoryButton.Click += new System.EventHandler(this.OnEditHistory);
             // 
@@ -1101,7 +1101,7 @@
             resources.ApplyResources(this.m_editCutButton, "m_editCutButton");
             this.m_editCutButton.BackgroundImage = null;
             this.m_editCutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editCutButton.Image = global::TileMapEditor.Properties.Resources.EditCut;
+            this.m_editCutButton.Image = global::tIDE.Properties.Resources.EditCut;
             this.m_editCutButton.Name = "m_editCutButton";
             this.m_editCutButton.Click += new System.EventHandler(this.OnEditCut);
             // 
@@ -1112,7 +1112,7 @@
             resources.ApplyResources(this.m_editCopyButton, "m_editCopyButton");
             this.m_editCopyButton.BackgroundImage = null;
             this.m_editCopyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editCopyButton.Image = global::TileMapEditor.Properties.Resources.EditCopy;
+            this.m_editCopyButton.Image = global::tIDE.Properties.Resources.EditCopy;
             this.m_editCopyButton.Name = "m_editCopyButton";
             this.m_editCopyButton.Click += new System.EventHandler(this.OnEditCopy);
             // 
@@ -1123,7 +1123,7 @@
             resources.ApplyResources(this.m_editPasteButton, "m_editPasteButton");
             this.m_editPasteButton.BackgroundImage = null;
             this.m_editPasteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editPasteButton.Image = global::TileMapEditor.Properties.Resources.EditPaste;
+            this.m_editPasteButton.Image = global::tIDE.Properties.Resources.EditPaste;
             this.m_editPasteButton.Name = "m_editPasteButton";
             this.m_editPasteButton.Click += new System.EventHandler(this.OnEditPaste);
             // 
@@ -1134,7 +1134,7 @@
             resources.ApplyResources(this.m_editDeleteButton, "m_editDeleteButton");
             this.m_editDeleteButton.BackgroundImage = null;
             this.m_editDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editDeleteButton.Image = global::TileMapEditor.Properties.Resources.EditDelete;
+            this.m_editDeleteButton.Image = global::tIDE.Properties.Resources.EditDelete;
             this.m_editDeleteButton.Name = "m_editDeleteButton";
             this.m_editDeleteButton.Click += new System.EventHandler(this.OnEditDelete);
             // 
@@ -1152,7 +1152,7 @@
             resources.ApplyResources(this.m_editSelectAllButton, "m_editSelectAllButton");
             this.m_editSelectAllButton.BackgroundImage = null;
             this.m_editSelectAllButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editSelectAllButton.Image = global::TileMapEditor.Properties.Resources.EditSelectAll;
+            this.m_editSelectAllButton.Image = global::tIDE.Properties.Resources.EditSelectAll;
             this.m_editSelectAllButton.Name = "m_editSelectAllButton";
             this.m_editSelectAllButton.Click += new System.EventHandler(this.OnEditSelectAll);
             // 
@@ -1163,7 +1163,7 @@
             resources.ApplyResources(this.m_editClearSelectionButton, "m_editClearSelectionButton");
             this.m_editClearSelectionButton.BackgroundImage = null;
             this.m_editClearSelectionButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editClearSelectionButton.Image = global::TileMapEditor.Properties.Resources.EditClearSelection;
+            this.m_editClearSelectionButton.Image = global::tIDE.Properties.Resources.EditClearSelection;
             this.m_editClearSelectionButton.Name = "m_editClearSelectionButton";
             this.m_editClearSelectionButton.Click += new System.EventHandler(this.OnEditClearSelection);
             // 
@@ -1174,7 +1174,7 @@
             resources.ApplyResources(this.m_editInvertSelectionButton, "m_editInvertSelectionButton");
             this.m_editInvertSelectionButton.BackgroundImage = null;
             this.m_editInvertSelectionButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editInvertSelectionButton.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
+            this.m_editInvertSelectionButton.Image = global::tIDE.Properties.Resources.EditInvertSelection;
             this.m_editInvertSelectionButton.Name = "m_editInvertSelectionButton";
             this.m_editInvertSelectionButton.Click += new System.EventHandler(this.OnEditInvertSelection);
             // 
@@ -1192,7 +1192,7 @@
             resources.ApplyResources(this.m_editMakeTileBrushButton, "m_editMakeTileBrushButton");
             this.m_editMakeTileBrushButton.BackgroundImage = null;
             this.m_editMakeTileBrushButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editMakeTileBrushButton.Image = global::TileMapEditor.Properties.Resources.EditMakeTileBrush;
+            this.m_editMakeTileBrushButton.Image = global::tIDE.Properties.Resources.EditMakeTileBrush;
             this.m_editMakeTileBrushButton.Name = "m_editMakeTileBrushButton";
             this.m_editMakeTileBrushButton.Click += new System.EventHandler(this.OnEditMakeTileBrush);
             // 
@@ -1203,7 +1203,7 @@
             resources.ApplyResources(this.m_editManageTileBrushesButton, "m_editManageTileBrushesButton");
             this.m_editManageTileBrushesButton.BackgroundImage = null;
             this.m_editManageTileBrushesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_editManageTileBrushesButton.Image = global::TileMapEditor.Properties.Resources.EditManageTileBrushes;
+            this.m_editManageTileBrushesButton.Image = global::tIDE.Properties.Resources.EditManageTileBrushes;
             this.m_editManageTileBrushesButton.Name = "m_editManageTileBrushesButton";
             this.m_editManageTileBrushesButton.Click += new System.EventHandler(this.OnEditManageTileBrushes);
             // 
@@ -1235,7 +1235,7 @@
             this.m_viewZoomLabel.AccessibleName = null;
             resources.ApplyResources(this.m_viewZoomLabel, "m_viewZoomLabel");
             this.m_viewZoomLabel.BackgroundImage = null;
-            this.m_viewZoomLabel.Image = global::TileMapEditor.Properties.Resources.ViewZoom;
+            this.m_viewZoomLabel.Image = global::tIDE.Properties.Resources.ViewZoom;
             this.m_viewZoomLabel.Name = "m_viewZoomLabel";
             // 
             // m_viewZoomComboBox
@@ -1266,7 +1266,7 @@
             resources.ApplyResources(this.m_viewZoomInButton, "m_viewZoomInButton");
             this.m_viewZoomInButton.BackgroundImage = null;
             this.m_viewZoomInButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewZoomInButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
+            this.m_viewZoomInButton.Image = global::tIDE.Properties.Resources.ViewZoomIn;
             this.m_viewZoomInButton.Name = "m_viewZoomInButton";
             this.m_viewZoomInButton.Click += new System.EventHandler(this.OnViewZoomIn);
             // 
@@ -1277,7 +1277,7 @@
             resources.ApplyResources(this.m_viewZoomOutButton, "m_viewZoomOutButton");
             this.m_viewZoomOutButton.BackgroundImage = null;
             this.m_viewZoomOutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewZoomOutButton.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
+            this.m_viewZoomOutButton.Image = global::tIDE.Properties.Resources.ViewZoomOut;
             this.m_viewZoomOutButton.Name = "m_viewZoomOutButton";
             this.m_viewZoomOutButton.Click += new System.EventHandler(this.OnViewZoomOut);
             // 
@@ -1295,7 +1295,7 @@
             resources.ApplyResources(this.m_viewFullScreenButton, "m_viewFullScreenButton");
             this.m_viewFullScreenButton.BackgroundImage = null;
             this.m_viewFullScreenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewFullScreenButton.Image = global::TileMapEditor.Properties.Resources.ViewFullScreen;
+            this.m_viewFullScreenButton.Image = global::tIDE.Properties.Resources.ViewFullScreen;
             this.m_viewFullScreenButton.Name = "m_viewFullScreenButton";
             this.m_viewFullScreenButton.Click += new System.EventHandler(this.OnViewWindowMode);
             // 
@@ -1306,7 +1306,7 @@
             resources.ApplyResources(this.m_viewWindowedButton, "m_viewWindowedButton");
             this.m_viewWindowedButton.BackgroundImage = null;
             this.m_viewWindowedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewWindowedButton.Image = global::TileMapEditor.Properties.Resources.ViewWindowed;
+            this.m_viewWindowedButton.Image = global::tIDE.Properties.Resources.ViewWindowed;
             this.m_viewWindowedButton.Name = "m_viewWindowedButton";
             this.m_viewWindowedButton.Click += new System.EventHandler(this.OnViewWindowMode);
             // 
@@ -1324,7 +1324,7 @@
             resources.ApplyResources(this.m_viewLayersShowAllButton, "m_viewLayersShowAllButton");
             this.m_viewLayersShowAllButton.BackgroundImage = null;
             this.m_viewLayersShowAllButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewLayersShowAllButton.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingShowAll;
+            this.m_viewLayersShowAllButton.Image = global::tIDE.Properties.Resources.ViewLayerCompositingShowAll;
             this.m_viewLayersShowAllButton.Name = "m_viewLayersShowAllButton";
             this.m_viewLayersShowAllButton.Click += new System.EventHandler(this.OnViewLayerCompositing);
             // 
@@ -1335,7 +1335,7 @@
             resources.ApplyResources(this.m_viewLayersHighlightSelectedButton, "m_viewLayersHighlightSelectedButton");
             this.m_viewLayersHighlightSelectedButton.BackgroundImage = null;
             this.m_viewLayersHighlightSelectedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewLayersHighlightSelectedButton.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingDimUnselected;
+            this.m_viewLayersHighlightSelectedButton.Image = global::tIDE.Properties.Resources.ViewLayerCompositingDimUnselected;
             this.m_viewLayersHighlightSelectedButton.Name = "m_viewLayersHighlightSelectedButton";
             this.m_viewLayersHighlightSelectedButton.Click += new System.EventHandler(this.OnViewLayerCompositing);
             // 
@@ -1346,7 +1346,7 @@
             resources.ApplyResources(this.m_viewShowTileGuidesButton, "m_viewShowTileGuidesButton");
             this.m_viewShowTileGuidesButton.BackgroundImage = null;
             this.m_viewShowTileGuidesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewShowTileGuidesButton.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesShow;
+            this.m_viewShowTileGuidesButton.Image = global::tIDE.Properties.Resources.VewTileGuidesShow;
             this.m_viewShowTileGuidesButton.Name = "m_viewShowTileGuidesButton";
             this.m_viewShowTileGuidesButton.Click += new System.EventHandler(this.OnViewTileGuides);
             // 
@@ -1357,7 +1357,7 @@
             resources.ApplyResources(this.m_viewHideTileGuidesButton, "m_viewHideTileGuidesButton");
             this.m_viewHideTileGuidesButton.BackgroundImage = null;
             this.m_viewHideTileGuidesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_viewHideTileGuidesButton.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesHide;
+            this.m_viewHideTileGuidesButton.Image = global::tIDE.Properties.Resources.VewTileGuidesHide;
             this.m_viewHideTileGuidesButton.Name = "m_viewHideTileGuidesButton";
             this.m_viewHideTileGuidesButton.Click += new System.EventHandler(this.OnViewTileGuides);
             // 
@@ -1403,7 +1403,7 @@
             this.m_fileRecentFilesMenuItem,
             m_fileSeparator5,
             this.m_fileExitMenuItem});
-            this.m_fileMenuItem.Image = global::TileMapEditor.Properties.Resources.File;
+            this.m_fileMenuItem.Image = global::tIDE.Properties.Resources.File;
             this.m_fileMenuItem.Name = "m_fileMenuItem";
             this.m_fileMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -1413,7 +1413,7 @@
             this.m_fileNewMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_fileNewMenuItem, "m_fileNewMenuItem");
             this.m_fileNewMenuItem.BackgroundImage = null;
-            this.m_fileNewMenuItem.Image = global::TileMapEditor.Properties.Resources.FileNew;
+            this.m_fileNewMenuItem.Image = global::tIDE.Properties.Resources.FileNew;
             this.m_fileNewMenuItem.Name = "m_fileNewMenuItem";
             this.m_fileNewMenuItem.ShortcutKeyDisplayString = null;
             this.m_fileNewMenuItem.Click += new System.EventHandler(this.OnFileNew);
@@ -1424,7 +1424,7 @@
             this.m_fileOpenMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_fileOpenMenuItem, "m_fileOpenMenuItem");
             this.m_fileOpenMenuItem.BackgroundImage = null;
-            this.m_fileOpenMenuItem.Image = global::TileMapEditor.Properties.Resources.FileOpen;
+            this.m_fileOpenMenuItem.Image = global::tIDE.Properties.Resources.FileOpen;
             this.m_fileOpenMenuItem.Name = "m_fileOpenMenuItem";
             this.m_fileOpenMenuItem.ShortcutKeyDisplayString = null;
             this.m_fileOpenMenuItem.Click += new System.EventHandler(this.OnFileOpen);
@@ -1442,7 +1442,7 @@
             this.m_fileSaveMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_fileSaveMenuItem, "m_fileSaveMenuItem");
             this.m_fileSaveMenuItem.BackgroundImage = null;
-            this.m_fileSaveMenuItem.Image = global::TileMapEditor.Properties.Resources.FileSave;
+            this.m_fileSaveMenuItem.Image = global::tIDE.Properties.Resources.FileSave;
             this.m_fileSaveMenuItem.Name = "m_fileSaveMenuItem";
             this.m_fileSaveMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -1452,7 +1452,7 @@
             this.m_fileSaveAsMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_fileSaveAsMenuItem, "m_fileSaveAsMenuItem");
             this.m_fileSaveAsMenuItem.BackgroundImage = null;
-            this.m_fileSaveAsMenuItem.Image = global::TileMapEditor.Properties.Resources.FileSaveAs;
+            this.m_fileSaveAsMenuItem.Image = global::tIDE.Properties.Resources.FileSaveAs;
             this.m_fileSaveAsMenuItem.Name = "m_fileSaveAsMenuItem";
             this.m_fileSaveAsMenuItem.ShortcutKeyDisplayString = null;
             this.m_fileSaveAsMenuItem.Click += new System.EventHandler(this.OnFileSaveAs);
@@ -1470,7 +1470,7 @@
             this.m_filePageSetupMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_filePageSetupMenuItem, "m_filePageSetupMenuItem");
             this.m_filePageSetupMenuItem.BackgroundImage = null;
-            this.m_filePageSetupMenuItem.Image = global::TileMapEditor.Properties.Resources.FilePageSetup;
+            this.m_filePageSetupMenuItem.Image = global::tIDE.Properties.Resources.FilePageSetup;
             this.m_filePageSetupMenuItem.Name = "m_filePageSetupMenuItem";
             this.m_filePageSetupMenuItem.ShortcutKeyDisplayString = null;
             this.m_filePageSetupMenuItem.Click += new System.EventHandler(this.OnFilePageSetup);
@@ -1481,7 +1481,7 @@
             this.m_filePrintPreviewMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_filePrintPreviewMenuItem, "m_filePrintPreviewMenuItem");
             this.m_filePrintPreviewMenuItem.BackgroundImage = null;
-            this.m_filePrintPreviewMenuItem.Image = global::TileMapEditor.Properties.Resources.FilePrintPreview;
+            this.m_filePrintPreviewMenuItem.Image = global::tIDE.Properties.Resources.FilePrintPreview;
             this.m_filePrintPreviewMenuItem.Name = "m_filePrintPreviewMenuItem";
             this.m_filePrintPreviewMenuItem.ShortcutKeyDisplayString = null;
             this.m_filePrintPreviewMenuItem.Click += new System.EventHandler(this.OnFilePrintPreview);
@@ -1492,7 +1492,7 @@
             this.m_filePrintMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_filePrintMenuItem, "m_filePrintMenuItem");
             this.m_filePrintMenuItem.BackgroundImage = null;
-            this.m_filePrintMenuItem.Image = global::TileMapEditor.Properties.Resources.FilePrint;
+            this.m_filePrintMenuItem.Image = global::tIDE.Properties.Resources.FilePrint;
             this.m_filePrintMenuItem.Name = "m_filePrintMenuItem";
             this.m_filePrintMenuItem.ShortcutKeyDisplayString = null;
             this.m_filePrintMenuItem.Click += new System.EventHandler(this.OnFilePrint);
@@ -1510,7 +1510,7 @@
             this.m_fileOptionsMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_fileOptionsMenuItem, "m_fileOptionsMenuItem");
             this.m_fileOptionsMenuItem.BackgroundImage = null;
-            this.m_fileOptionsMenuItem.Image = global::TileMapEditor.Properties.Resources.FileOptions;
+            this.m_fileOptionsMenuItem.Image = global::tIDE.Properties.Resources.FileOptions;
             this.m_fileOptionsMenuItem.Name = "m_fileOptionsMenuItem";
             this.m_fileOptionsMenuItem.ShortcutKeyDisplayString = null;
             this.m_fileOptionsMenuItem.Click += new System.EventHandler(this.OnFileOptions);
@@ -1528,7 +1528,7 @@
             this.m_fileRecentFilesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_fileRecentFilesMenuItem, "m_fileRecentFilesMenuItem");
             this.m_fileRecentFilesMenuItem.BackgroundImage = null;
-            this.m_fileRecentFilesMenuItem.Image = global::TileMapEditor.Properties.Resources.FileOpenRecent;
+            this.m_fileRecentFilesMenuItem.Image = global::tIDE.Properties.Resources.FileOpenRecent;
             this.m_fileRecentFilesMenuItem.Name = "m_fileRecentFilesMenuItem";
             this.m_fileRecentFilesMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -1571,7 +1571,7 @@
             this.m_editMenuSeparator3,
             this.m_editMakeTileBrushMenuItem,
             this.m_editManageTileBrushesMenuItem});
-            this.m_editMenuItem.Image = global::TileMapEditor.Properties.Resources.Edit;
+            this.m_editMenuItem.Image = global::tIDE.Properties.Resources.Edit;
             this.m_editMenuItem.Name = "m_editMenuItem";
             this.m_editMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -1581,7 +1581,7 @@
             this.m_editUndoMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editUndoMenuItem, "m_editUndoMenuItem");
             this.m_editUndoMenuItem.BackgroundImage = null;
-            this.m_editUndoMenuItem.Image = global::TileMapEditor.Properties.Resources.EditUndo;
+            this.m_editUndoMenuItem.Image = global::tIDE.Properties.Resources.EditUndo;
             this.m_editUndoMenuItem.Name = "m_editUndoMenuItem";
             this.m_editUndoMenuItem.ShortcutKeyDisplayString = null;
             this.m_editUndoMenuItem.Click += new System.EventHandler(this.OnEditUndo);
@@ -1592,7 +1592,7 @@
             this.m_editRedoMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editRedoMenuItem, "m_editRedoMenuItem");
             this.m_editRedoMenuItem.BackgroundImage = null;
-            this.m_editRedoMenuItem.Image = global::TileMapEditor.Properties.Resources.EditRedo;
+            this.m_editRedoMenuItem.Image = global::tIDE.Properties.Resources.EditRedo;
             this.m_editRedoMenuItem.Name = "m_editRedoMenuItem";
             this.m_editRedoMenuItem.ShortcutKeyDisplayString = null;
             this.m_editRedoMenuItem.Click += new System.EventHandler(this.OnEditRedo);
@@ -1603,7 +1603,7 @@
             this.m_editHistoryMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editHistoryMenuItem, "m_editHistoryMenuItem");
             this.m_editHistoryMenuItem.BackgroundImage = null;
-            this.m_editHistoryMenuItem.Image = global::TileMapEditor.Properties.Resources.EditHistory;
+            this.m_editHistoryMenuItem.Image = global::tIDE.Properties.Resources.EditHistory;
             this.m_editHistoryMenuItem.Name = "m_editHistoryMenuItem";
             this.m_editHistoryMenuItem.ShortcutKeyDisplayString = null;
             this.m_editHistoryMenuItem.Click += new System.EventHandler(this.OnEditHistory);
@@ -1621,7 +1621,7 @@
             this.m_editCutMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editCutMenuItem, "m_editCutMenuItem");
             this.m_editCutMenuItem.BackgroundImage = null;
-            this.m_editCutMenuItem.Image = global::TileMapEditor.Properties.Resources.EditCut;
+            this.m_editCutMenuItem.Image = global::tIDE.Properties.Resources.EditCut;
             this.m_editCutMenuItem.Name = "m_editCutMenuItem";
             this.m_editCutMenuItem.ShortcutKeyDisplayString = null;
             this.m_editCutMenuItem.Click += new System.EventHandler(this.OnEditCut);
@@ -1632,7 +1632,7 @@
             this.m_editCopyMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editCopyMenuItem, "m_editCopyMenuItem");
             this.m_editCopyMenuItem.BackgroundImage = null;
-            this.m_editCopyMenuItem.Image = global::TileMapEditor.Properties.Resources.EditCopy;
+            this.m_editCopyMenuItem.Image = global::tIDE.Properties.Resources.EditCopy;
             this.m_editCopyMenuItem.Name = "m_editCopyMenuItem";
             this.m_editCopyMenuItem.ShortcutKeyDisplayString = null;
             this.m_editCopyMenuItem.Click += new System.EventHandler(this.OnEditCopy);
@@ -1643,7 +1643,7 @@
             this.m_editPasteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editPasteMenuItem, "m_editPasteMenuItem");
             this.m_editPasteMenuItem.BackgroundImage = null;
-            this.m_editPasteMenuItem.Image = global::TileMapEditor.Properties.Resources.EditPaste;
+            this.m_editPasteMenuItem.Image = global::tIDE.Properties.Resources.EditPaste;
             this.m_editPasteMenuItem.Name = "m_editPasteMenuItem";
             this.m_editPasteMenuItem.ShortcutKeyDisplayString = null;
             this.m_editPasteMenuItem.Click += new System.EventHandler(this.OnEditPaste);
@@ -1654,7 +1654,7 @@
             this.m_editDeleteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editDeleteMenuItem, "m_editDeleteMenuItem");
             this.m_editDeleteMenuItem.BackgroundImage = null;
-            this.m_editDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.EditDelete;
+            this.m_editDeleteMenuItem.Image = global::tIDE.Properties.Resources.EditDelete;
             this.m_editDeleteMenuItem.Name = "m_editDeleteMenuItem";
             this.m_editDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_editDeleteMenuItem.Click += new System.EventHandler(this.OnEditDelete);
@@ -1672,7 +1672,7 @@
             this.m_editSelectAllMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editSelectAllMenuItem, "m_editSelectAllMenuItem");
             this.m_editSelectAllMenuItem.BackgroundImage = null;
-            this.m_editSelectAllMenuItem.Image = global::TileMapEditor.Properties.Resources.EditSelectAll;
+            this.m_editSelectAllMenuItem.Image = global::tIDE.Properties.Resources.EditSelectAll;
             this.m_editSelectAllMenuItem.Name = "m_editSelectAllMenuItem";
             this.m_editSelectAllMenuItem.ShortcutKeyDisplayString = null;
             this.m_editSelectAllMenuItem.Click += new System.EventHandler(this.OnEditSelectAll);
@@ -1683,7 +1683,7 @@
             this.m_editClearSelectionMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editClearSelectionMenuItem, "m_editClearSelectionMenuItem");
             this.m_editClearSelectionMenuItem.BackgroundImage = null;
-            this.m_editClearSelectionMenuItem.Image = global::TileMapEditor.Properties.Resources.EditClearSelection;
+            this.m_editClearSelectionMenuItem.Image = global::tIDE.Properties.Resources.EditClearSelection;
             this.m_editClearSelectionMenuItem.Name = "m_editClearSelectionMenuItem";
             this.m_editClearSelectionMenuItem.ShortcutKeyDisplayString = null;
             this.m_editClearSelectionMenuItem.Click += new System.EventHandler(this.OnEditClearSelection);
@@ -1694,7 +1694,7 @@
             this.m_editInvertSelectionMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editInvertSelectionMenuItem, "m_editInvertSelectionMenuItem");
             this.m_editInvertSelectionMenuItem.BackgroundImage = null;
-            this.m_editInvertSelectionMenuItem.Image = global::TileMapEditor.Properties.Resources.EditInvertSelection;
+            this.m_editInvertSelectionMenuItem.Image = global::tIDE.Properties.Resources.EditInvertSelection;
             this.m_editInvertSelectionMenuItem.Name = "m_editInvertSelectionMenuItem";
             this.m_editInvertSelectionMenuItem.ShortcutKeyDisplayString = null;
             this.m_editInvertSelectionMenuItem.Click += new System.EventHandler(this.OnEditInvertSelection);
@@ -1712,7 +1712,7 @@
             this.m_editMakeTileBrushMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editMakeTileBrushMenuItem, "m_editMakeTileBrushMenuItem");
             this.m_editMakeTileBrushMenuItem.BackgroundImage = null;
-            this.m_editMakeTileBrushMenuItem.Image = global::TileMapEditor.Properties.Resources.EditMakeTileBrush;
+            this.m_editMakeTileBrushMenuItem.Image = global::tIDE.Properties.Resources.EditMakeTileBrush;
             this.m_editMakeTileBrushMenuItem.Name = "m_editMakeTileBrushMenuItem";
             this.m_editMakeTileBrushMenuItem.ShortcutKeyDisplayString = null;
             this.m_editMakeTileBrushMenuItem.Click += new System.EventHandler(this.OnEditMakeTileBrush);
@@ -1723,7 +1723,7 @@
             this.m_editManageTileBrushesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_editManageTileBrushesMenuItem, "m_editManageTileBrushesMenuItem");
             this.m_editManageTileBrushesMenuItem.BackgroundImage = null;
-            this.m_editManageTileBrushesMenuItem.Image = global::TileMapEditor.Properties.Resources.EditManageTileBrushes;
+            this.m_editManageTileBrushesMenuItem.Image = global::tIDE.Properties.Resources.EditManageTileBrushes;
             this.m_editManageTileBrushesMenuItem.Name = "m_editManageTileBrushesMenuItem";
             this.m_editManageTileBrushesMenuItem.ShortcutKeyDisplayString = null;
             this.m_editManageTileBrushesMenuItem.Click += new System.EventHandler(this.OnEditManageTileBrushes);
@@ -1747,7 +1747,7 @@
             this.m_viewShowTileGuidesMenuItem,
             this.m_viewHideTileGuidesMenuItem,
             this.m_viewViewportMenuItem});
-            this.m_viewMenuItem.Image = global::TileMapEditor.Properties.Resources.View;
+            this.m_viewMenuItem.Image = global::tIDE.Properties.Resources.View;
             this.m_viewMenuItem.Name = "m_viewMenuItem";
             this.m_viewMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -1768,7 +1768,7 @@
             this.m_viewZoomBy8MenuItem,
             this.m_viewZoomBy9MenuItem,
             this.m_viewZoomBy10MenuItem});
-            this.m_viewZoomMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoom;
+            this.m_viewZoomMenuItem.Image = global::tIDE.Properties.Resources.ViewZoom;
             this.m_viewZoomMenuItem.Name = "m_viewZoomMenuItem";
             this.m_viewZoomMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -1888,7 +1888,7 @@
             this.m_viewZoomInMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewZoomInMenuItem, "m_viewZoomInMenuItem");
             this.m_viewZoomInMenuItem.BackgroundImage = null;
-            this.m_viewZoomInMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoomIn;
+            this.m_viewZoomInMenuItem.Image = global::tIDE.Properties.Resources.ViewZoomIn;
             this.m_viewZoomInMenuItem.Name = "m_viewZoomInMenuItem";
             this.m_viewZoomInMenuItem.Click += new System.EventHandler(this.OnViewZoomIn);
             // 
@@ -1898,7 +1898,7 @@
             this.m_viewZoomOutMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewZoomOutMenuItem, "m_viewZoomOutMenuItem");
             this.m_viewZoomOutMenuItem.BackgroundImage = null;
-            this.m_viewZoomOutMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewZoomOut;
+            this.m_viewZoomOutMenuItem.Image = global::tIDE.Properties.Resources.ViewZoomOut;
             this.m_viewZoomOutMenuItem.Name = "m_viewZoomOutMenuItem";
             this.m_viewZoomOutMenuItem.Click += new System.EventHandler(this.OnViewZoomOut);
             // 
@@ -1915,7 +1915,7 @@
             this.m_viewFullScreenMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewFullScreenMenuItem, "m_viewFullScreenMenuItem");
             this.m_viewFullScreenMenuItem.BackgroundImage = null;
-            this.m_viewFullScreenMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewFullScreen;
+            this.m_viewFullScreenMenuItem.Image = global::tIDE.Properties.Resources.ViewFullScreen;
             this.m_viewFullScreenMenuItem.Name = "m_viewFullScreenMenuItem";
             this.m_viewFullScreenMenuItem.ShortcutKeyDisplayString = null;
             this.m_viewFullScreenMenuItem.Click += new System.EventHandler(this.OnViewWindowMode);
@@ -1926,7 +1926,7 @@
             this.m_viewWindowedMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewWindowedMenuItem, "m_viewWindowedMenuItem");
             this.m_viewWindowedMenuItem.BackgroundImage = null;
-            this.m_viewWindowedMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewWindowed;
+            this.m_viewWindowedMenuItem.Image = global::tIDE.Properties.Resources.ViewWindowed;
             this.m_viewWindowedMenuItem.Name = "m_viewWindowedMenuItem";
             this.m_viewWindowedMenuItem.ShortcutKeyDisplayString = null;
             this.m_viewWindowedMenuItem.Click += new System.EventHandler(this.OnViewWindowMode);
@@ -1944,7 +1944,7 @@
             this.m_viewLayersShowAllMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewLayersShowAllMenuItem, "m_viewLayersShowAllMenuItem");
             this.m_viewLayersShowAllMenuItem.BackgroundImage = null;
-            this.m_viewLayersShowAllMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingShowAll;
+            this.m_viewLayersShowAllMenuItem.Image = global::tIDE.Properties.Resources.ViewLayerCompositingShowAll;
             this.m_viewLayersShowAllMenuItem.Name = "m_viewLayersShowAllMenuItem";
             this.m_viewLayersShowAllMenuItem.ShortcutKeyDisplayString = null;
             this.m_viewLayersShowAllMenuItem.Click += new System.EventHandler(this.OnViewLayerCompositing);
@@ -1955,7 +1955,7 @@
             this.m_viewLayersHighlightSelectedMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewLayersHighlightSelectedMenuItem, "m_viewLayersHighlightSelectedMenuItem");
             this.m_viewLayersHighlightSelectedMenuItem.BackgroundImage = null;
-            this.m_viewLayersHighlightSelectedMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewLayerCompositingDimUnselected;
+            this.m_viewLayersHighlightSelectedMenuItem.Image = global::tIDE.Properties.Resources.ViewLayerCompositingDimUnselected;
             this.m_viewLayersHighlightSelectedMenuItem.Name = "m_viewLayersHighlightSelectedMenuItem";
             this.m_viewLayersHighlightSelectedMenuItem.ShortcutKeyDisplayString = null;
             this.m_viewLayersHighlightSelectedMenuItem.Click += new System.EventHandler(this.OnViewLayerCompositing);
@@ -1966,7 +1966,7 @@
             this.m_viewShowTileGuidesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewShowTileGuidesMenuItem, "m_viewShowTileGuidesMenuItem");
             this.m_viewShowTileGuidesMenuItem.BackgroundImage = null;
-            this.m_viewShowTileGuidesMenuItem.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesShow;
+            this.m_viewShowTileGuidesMenuItem.Image = global::tIDE.Properties.Resources.VewTileGuidesShow;
             this.m_viewShowTileGuidesMenuItem.Name = "m_viewShowTileGuidesMenuItem";
             this.m_viewShowTileGuidesMenuItem.ShortcutKeyDisplayString = null;
             this.m_viewShowTileGuidesMenuItem.Click += new System.EventHandler(this.OnViewTileGuides);
@@ -1977,7 +1977,7 @@
             this.m_viewHideTileGuidesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_viewHideTileGuidesMenuItem, "m_viewHideTileGuidesMenuItem");
             this.m_viewHideTileGuidesMenuItem.BackgroundImage = null;
-            this.m_viewHideTileGuidesMenuItem.Image = global::TileMapEditor.Properties.Resources.VewTileGuidesHide;
+            this.m_viewHideTileGuidesMenuItem.Image = global::tIDE.Properties.Resources.VewTileGuidesHide;
             this.m_viewHideTileGuidesMenuItem.Name = "m_viewHideTileGuidesMenuItem";
             this.m_viewHideTileGuidesMenuItem.ShortcutKeyDisplayString = null;
             this.m_viewHideTileGuidesMenuItem.Click += new System.EventHandler(this.OnViewTileGuides);
@@ -2002,7 +2002,7 @@
             this.m_viewViewport1600x1200MenuItem,
             this.m_viewViewport1920x1080MenuItem,
             this.m_viewViewport1920x1200MenuItem});
-            this.m_viewViewportMenuItem.Image = global::TileMapEditor.Properties.Resources.ViewViewport;
+            this.m_viewViewportMenuItem.Image = global::tIDE.Properties.Resources.ViewViewport;
             this.m_viewViewportMenuItem.Name = "m_viewViewportMenuItem";
             this.m_viewViewportMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -2160,7 +2160,7 @@
             this.m_mapMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_mapPropertiesMenuItem,
             this.m_mapStatisticsMenuItem});
-            this.m_mapMenuItem.Image = global::TileMapEditor.Properties.Resources.Map;
+            this.m_mapMenuItem.Image = global::tIDE.Properties.Resources.Map;
             this.m_mapMenuItem.Name = "m_mapMenuItem";
             this.m_mapMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -2170,7 +2170,7 @@
             this.m_mapPropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_mapPropertiesMenuItem, "m_mapPropertiesMenuItem");
             this.m_mapPropertiesMenuItem.BackgroundImage = null;
-            this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
+            this.m_mapPropertiesMenuItem.Image = global::tIDE.Properties.Resources.MapProperties;
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
             this.m_mapPropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
@@ -2181,7 +2181,7 @@
             this.m_mapStatisticsMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_mapStatisticsMenuItem, "m_mapStatisticsMenuItem");
             this.m_mapStatisticsMenuItem.BackgroundImage = null;
-            this.m_mapStatisticsMenuItem.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsMenuItem.Image = global::tIDE.Properties.Resources.MapStatistics;
             this.m_mapStatisticsMenuItem.Name = "m_mapStatisticsMenuItem";
             this.m_mapStatisticsMenuItem.ShortcutKeyDisplayString = null;
             this.m_mapStatisticsMenuItem.Click += new System.EventHandler(this.OnMapStatistics);
@@ -2204,7 +2204,7 @@
             this.m_layerSendBackwardMenuItem,
             m_layerSeparator3,
             this.m_layerDeleteMenuItem});
-            this.m_layerMenuItem.Image = global::TileMapEditor.Properties.Resources.Layer;
+            this.m_layerMenuItem.Image = global::tIDE.Properties.Resources.Layer;
             this.m_layerMenuItem.Name = "m_layerMenuItem";
             this.m_layerMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -2214,7 +2214,7 @@
             this.m_layerNewMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerNewMenuItem, "m_layerNewMenuItem");
             this.m_layerNewMenuItem.BackgroundImage = null;
-            this.m_layerNewMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerNew;
+            this.m_layerNewMenuItem.Image = global::tIDE.Properties.Resources.LayerNew;
             this.m_layerNewMenuItem.Name = "m_layerNewMenuItem";
             this.m_layerNewMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerNewMenuItem.Click += new System.EventHandler(this.OnLayerNew);
@@ -2225,7 +2225,7 @@
             this.m_layerPropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerPropertiesMenuItem, "m_layerPropertiesMenuItem");
             this.m_layerPropertiesMenuItem.BackgroundImage = null;
-            this.m_layerPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
+            this.m_layerPropertiesMenuItem.Image = global::tIDE.Properties.Resources.LayerProperties;
             this.m_layerPropertiesMenuItem.Name = "m_layerPropertiesMenuItem";
             this.m_layerPropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerPropertiesMenuItem.Click += new System.EventHandler(this.OnLayerProperties);
@@ -2236,7 +2236,7 @@
             this.m_layerOffsetMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerOffsetMenuItem, "m_layerOffsetMenuItem");
             this.m_layerOffsetMenuItem.BackgroundImage = null;
-            this.m_layerOffsetMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerOffset;
+            this.m_layerOffsetMenuItem.Image = global::tIDE.Properties.Resources.LayerOffset;
             this.m_layerOffsetMenuItem.Name = "m_layerOffsetMenuItem";
             this.m_layerOffsetMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerOffsetMenuItem.Click += new System.EventHandler(this.OnLayerOffset);
@@ -2254,7 +2254,7 @@
             this.m_layerMakeInvisibleMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerMakeInvisibleMenuItem, "m_layerMakeInvisibleMenuItem");
             this.m_layerMakeInvisibleMenuItem.BackgroundImage = null;
-            this.m_layerMakeInvisibleMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
+            this.m_layerMakeInvisibleMenuItem.Image = global::tIDE.Properties.Resources.LayerInvisible;
             this.m_layerMakeInvisibleMenuItem.Name = "m_layerMakeInvisibleMenuItem";
             this.m_layerMakeInvisibleMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerMakeInvisibleMenuItem.Click += new System.EventHandler(this.OnLayerVisibility);
@@ -2265,7 +2265,7 @@
             this.m_layerMakeVisibleMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerMakeVisibleMenuItem, "m_layerMakeVisibleMenuItem");
             this.m_layerMakeVisibleMenuItem.BackgroundImage = null;
-            this.m_layerMakeVisibleMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerVisible;
+            this.m_layerMakeVisibleMenuItem.Image = global::tIDE.Properties.Resources.LayerVisible;
             this.m_layerMakeVisibleMenuItem.Name = "m_layerMakeVisibleMenuItem";
             this.m_layerMakeVisibleMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerMakeVisibleMenuItem.Click += new System.EventHandler(this.OnLayerVisibility);
@@ -2283,7 +2283,7 @@
             this.m_layerBringForwardMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerBringForwardMenuItem, "m_layerBringForwardMenuItem");
             this.m_layerBringForwardMenuItem.BackgroundImage = null;
-            this.m_layerBringForwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
+            this.m_layerBringForwardMenuItem.Image = global::tIDE.Properties.Resources.LayerBringForward;
             this.m_layerBringForwardMenuItem.Name = "m_layerBringForwardMenuItem";
             this.m_layerBringForwardMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerBringForwardMenuItem.Click += new System.EventHandler(this.OnLayerBringForward);
@@ -2294,7 +2294,7 @@
             this.m_layerSendBackwardMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerSendBackwardMenuItem, "m_layerSendBackwardMenuItem");
             this.m_layerSendBackwardMenuItem.BackgroundImage = null;
-            this.m_layerSendBackwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
+            this.m_layerSendBackwardMenuItem.Image = global::tIDE.Properties.Resources.LayerSendBackward;
             this.m_layerSendBackwardMenuItem.Name = "m_layerSendBackwardMenuItem";
             this.m_layerSendBackwardMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerSendBackwardMenuItem.Click += new System.EventHandler(this.OnLayerSendBackward);
@@ -2312,7 +2312,7 @@
             this.m_layerDeleteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerDeleteMenuItem, "m_layerDeleteMenuItem");
             this.m_layerDeleteMenuItem.BackgroundImage = null;
-            this.m_layerDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
+            this.m_layerDeleteMenuItem.Image = global::tIDE.Properties.Resources.LayerDelete;
             this.m_layerDeleteMenuItem.Name = "m_layerDeleteMenuItem";
             this.m_layerDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerDeleteMenuItem.Click += new System.EventHandler(this.OnLayerDelete);
@@ -2333,7 +2333,7 @@
             this.m_tileSheetSeparator2,
             this.m_tileSheetRemoveDependenciesMenuItem,
             this.m_tileSheetDeleteMenuItem});
-            this.m_tileSheetMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheet;
+            this.m_tileSheetMenuItem.Image = global::tIDE.Properties.Resources.TileSheet;
             this.m_tileSheetMenuItem.Name = "m_tileSheetMenuItem";
             this.m_tileSheetMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -2343,7 +2343,7 @@
             this.m_tileSheetNewMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetNewMenuItem, "m_tileSheetNewMenuItem");
             this.m_tileSheetNewMenuItem.BackgroundImage = null;
-            this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
+            this.m_tileSheetNewMenuItem.Image = global::tIDE.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
             this.m_tileSheetNewMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
@@ -2354,7 +2354,7 @@
             this.m_tileSheetPropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetPropertiesMenuItem, "m_tileSheetPropertiesMenuItem");
             this.m_tileSheetPropertiesMenuItem.BackgroundImage = null;
-            this.m_tileSheetPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
+            this.m_tileSheetPropertiesMenuItem.Image = global::tIDE.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesMenuItem.Name = "m_tileSheetPropertiesMenuItem";
             this.m_tileSheetPropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
@@ -2365,7 +2365,7 @@
             this.m_tileSheetAutoTilesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetAutoTilesMenuItem, "m_tileSheetAutoTilesMenuItem");
             this.m_tileSheetAutoTilesMenuItem.BackgroundImage = null;
-            this.m_tileSheetAutoTilesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoTiles;
+            this.m_tileSheetAutoTilesMenuItem.Image = global::tIDE.Properties.Resources.TileSheetAutoTiles;
             this.m_tileSheetAutoTilesMenuItem.Name = "m_tileSheetAutoTilesMenuItem";
             this.m_tileSheetAutoTilesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetAutoTilesMenuItem.Click += new System.EventHandler(this.OnTileSheetAutoTiles);
@@ -2383,7 +2383,7 @@
             this.m_tileSheetAutoUpdateEnableMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetAutoUpdateEnableMenuItem, "m_tileSheetAutoUpdateEnableMenuItem");
             this.m_tileSheetAutoUpdateEnableMenuItem.BackgroundImage = null;
-            this.m_tileSheetAutoUpdateEnableMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateEnable;
+            this.m_tileSheetAutoUpdateEnableMenuItem.Image = global::tIDE.Properties.Resources.TileSheetAutoUpdateEnable;
             this.m_tileSheetAutoUpdateEnableMenuItem.Name = "m_tileSheetAutoUpdateEnableMenuItem";
             this.m_tileSheetAutoUpdateEnableMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetAutoUpdateEnableMenuItem.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
@@ -2394,7 +2394,7 @@
             this.m_tileSheetAutoUpdateDisableMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetAutoUpdateDisableMenuItem, "m_tileSheetAutoUpdateDisableMenuItem");
             this.m_tileSheetAutoUpdateDisableMenuItem.BackgroundImage = null;
-            this.m_tileSheetAutoUpdateDisableMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoUpdateDisable;
+            this.m_tileSheetAutoUpdateDisableMenuItem.Image = global::tIDE.Properties.Resources.TileSheetAutoUpdateDisable;
             this.m_tileSheetAutoUpdateDisableMenuItem.Name = "m_tileSheetAutoUpdateDisableMenuItem";
             this.m_tileSheetAutoUpdateDisableMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetAutoUpdateDisableMenuItem.Click += new System.EventHandler(this.OnTileSheetAutoUpdate);
@@ -2412,7 +2412,7 @@
             this.m_tileSheetRemoveDependenciesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetRemoveDependenciesMenuItem, "m_tileSheetRemoveDependenciesMenuItem");
             this.m_tileSheetRemoveDependenciesMenuItem.BackgroundImage = null;
-            this.m_tileSheetRemoveDependenciesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesMenuItem.Image = global::tIDE.Properties.Resources.TileSheetRemoveDependencies;
             this.m_tileSheetRemoveDependenciesMenuItem.Name = "m_tileSheetRemoveDependenciesMenuItem";
             this.m_tileSheetRemoveDependenciesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetRemoveDependenciesMenuItem.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
@@ -2423,7 +2423,7 @@
             this.m_tileSheetDeleteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetDeleteMenuItem, "m_tileSheetDeleteMenuItem");
             this.m_tileSheetDeleteMenuItem.BackgroundImage = null;
-            this.m_tileSheetDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
+            this.m_tileSheetDeleteMenuItem.Image = global::tIDE.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteMenuItem.Name = "m_tileSheetDeleteMenuItem";
             this.m_tileSheetDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
@@ -2438,7 +2438,7 @@
             this.m_pluginReloadMenuItem,
             this.toolStripSeparator1,
             this.m_pluginNoneLoadedMenuItem});
-            this.m_pluginMenuItem.Image = global::TileMapEditor.Properties.Resources.Plugin;
+            this.m_pluginMenuItem.Image = global::tIDE.Properties.Resources.Plugin;
             this.m_pluginMenuItem.Name = "m_pluginMenuItem";
             this.m_pluginMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -2448,7 +2448,7 @@
             this.m_pluginReloadMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_pluginReloadMenuItem, "m_pluginReloadMenuItem");
             this.m_pluginReloadMenuItem.BackgroundImage = null;
-            this.m_pluginReloadMenuItem.Image = global::TileMapEditor.Properties.Resources.PluginReload;
+            this.m_pluginReloadMenuItem.Image = global::tIDE.Properties.Resources.PluginReload;
             this.m_pluginReloadMenuItem.Name = "m_pluginReloadMenuItem";
             this.m_pluginReloadMenuItem.ShortcutKeyDisplayString = null;
             this.m_pluginReloadMenuItem.Click += new System.EventHandler(this.OnPluginsReload);
@@ -2481,7 +2481,7 @@
             this.m_helpSearchMenuItem,
             this.toolStripSeparator5,
             this.m_helpAboutMenuItem});
-            this.m_helpMenuItem.Image = global::TileMapEditor.Properties.Resources.Help;
+            this.m_helpMenuItem.Image = global::tIDE.Properties.Resources.Help;
             this.m_helpMenuItem.Name = "m_helpMenuItem";
             this.m_helpMenuItem.ShortcutKeyDisplayString = null;
             // 
@@ -2491,7 +2491,7 @@
             this.m_helpContentsMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_helpContentsMenuItem, "m_helpContentsMenuItem");
             this.m_helpContentsMenuItem.BackgroundImage = null;
-            this.m_helpContentsMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpContents;
+            this.m_helpContentsMenuItem.Image = global::tIDE.Properties.Resources.HelpContents;
             this.m_helpContentsMenuItem.Name = "m_helpContentsMenuItem";
             this.m_helpContentsMenuItem.ShortcutKeyDisplayString = null;
             this.m_helpContentsMenuItem.Click += new System.EventHandler(this.OnHelpContents);
@@ -2502,7 +2502,7 @@
             this.m_helpIndexMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_helpIndexMenuItem, "m_helpIndexMenuItem");
             this.m_helpIndexMenuItem.BackgroundImage = null;
-            this.m_helpIndexMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpIndex;
+            this.m_helpIndexMenuItem.Image = global::tIDE.Properties.Resources.HelpIndex;
             this.m_helpIndexMenuItem.Name = "m_helpIndexMenuItem";
             this.m_helpIndexMenuItem.ShortcutKeyDisplayString = null;
             this.m_helpIndexMenuItem.Click += new System.EventHandler(this.OnHelpIndex);
@@ -2513,7 +2513,7 @@
             this.m_helpSearchMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_helpSearchMenuItem, "m_helpSearchMenuItem");
             this.m_helpSearchMenuItem.BackgroundImage = null;
-            this.m_helpSearchMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpSearch;
+            this.m_helpSearchMenuItem.Image = global::tIDE.Properties.Resources.HelpSearch;
             this.m_helpSearchMenuItem.Name = "m_helpSearchMenuItem";
             this.m_helpSearchMenuItem.ShortcutKeyDisplayString = null;
             this.m_helpSearchMenuItem.Click += new System.EventHandler(this.OnHelpSearch);
@@ -2531,7 +2531,7 @@
             this.m_helpAboutMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_helpAboutMenuItem, "m_helpAboutMenuItem");
             this.m_helpAboutMenuItem.BackgroundImage = null;
-            this.m_helpAboutMenuItem.Image = global::TileMapEditor.Properties.Resources.HelpAbout;
+            this.m_helpAboutMenuItem.Image = global::tIDE.Properties.Resources.HelpAbout;
             this.m_helpAboutMenuItem.Name = "m_helpAboutMenuItem";
             this.m_helpAboutMenuItem.ShortcutKeyDisplayString = null;
             this.m_helpAboutMenuItem.Click += new System.EventHandler(this.OnHelpAbout);
@@ -2540,14 +2540,14 @@
             // 
             resources.ApplyResources(this.m_loadErrorMessageBox, "m_loadErrorMessageBox");
             this.m_loadErrorMessageBox.HelpFilePath = null;
-            this.m_loadErrorMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_loadErrorMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_loadErrorMessageBox.Owner = this;
             // 
             // m_saveErrorMessageBox
             // 
             resources.ApplyResources(this.m_saveErrorMessageBox, "m_saveErrorMessageBox");
             this.m_saveErrorMessageBox.HelpFilePath = null;
-            this.m_saveErrorMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_saveErrorMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_saveErrorMessageBox.Owner = this;
             // 
             // m_unsavedMessageBox
@@ -2555,21 +2555,21 @@
             this.m_unsavedMessageBox.Buttons = System.Windows.Forms.MessageBoxButtons.YesNo;
             resources.ApplyResources(this.m_unsavedMessageBox, "m_unsavedMessageBox");
             this.m_unsavedMessageBox.HelpFilePath = null;
-            this.m_unsavedMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Warning;
+            this.m_unsavedMessageBox.Icon = tIDE.Controls.MessageIcon.Warning;
             this.m_unsavedMessageBox.Owner = this;
             // 
             // m_hasDependencyMessageBox
             // 
             resources.ApplyResources(this.m_hasDependencyMessageBox, "m_hasDependencyMessageBox");
             this.m_hasDependencyMessageBox.HelpFilePath = null;
-            this.m_hasDependencyMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_hasDependencyMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_hasDependencyMessageBox.Owner = this;
             // 
             // m_dependencyRemovedMessageBox
             // 
             resources.ApplyResources(this.m_dependencyRemovedMessageBox, "m_dependencyRemovedMessageBox");
             this.m_dependencyRemovedMessageBox.HelpFilePath = null;
-            this.m_dependencyRemovedMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Information;
+            this.m_dependencyRemovedMessageBox.Icon = tIDE.Controls.MessageIcon.Information;
             this.m_dependencyRemovedMessageBox.Owner = this;
             // 
             // MainForm
@@ -2672,8 +2672,8 @@
         private System.Windows.Forms.ToolStripButton m_editRedoButton;
         private System.Windows.Forms.ToolStripSeparator m_editToolStripSeparator1;
         private System.Windows.Forms.SplitContainer m_splitContainerLeftRight;
-        private TileMapEditor.Controls.TilePicker m_tilePicker;
-        private TileMapEditor.Controls.MapPanel m_mapPanel;
+        private tIDE.Controls.TilePicker m_tilePicker;
+        private tIDE.Controls.MapPanel m_mapPanel;
         private System.Windows.Forms.ToolStrip m_mapToolStrip;
         private System.Windows.Forms.ToolStripButton m_mapPropertiesButton;
         private System.Windows.Forms.ToolStrip m_tileSheetToolStrip;
@@ -2724,7 +2724,7 @@
         private System.Windows.Forms.ToolStripButton m_toolsTileBlockButton;
         private System.Windows.Forms.ToolStripButton m_toolsEraserButton;
         private System.Windows.Forms.ToolStripButton m_toolsDropperButton;
-        private TileMapEditor.Controls.CustomToolStripSplitButton m_toolsTileBrushButton;
+        private tIDE.Controls.CustomToolStripSplitButton m_toolsTileBrushButton;
         private System.Windows.Forms.ToolStripContainer m_toolStripContainerInner;
         private System.Windows.Forms.ToolStripMenuItem m_editMakeTileBrushMenuItem;
         private System.Windows.Forms.ToolStripButton m_editMakeTileBrushButton;
@@ -2808,11 +2808,11 @@
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetAutoUpdateDisableMenuItem;
         private System.Windows.Forms.ToolStripButton m_tileSheetAutoUpdateDisableButton;
         private System.Windows.Forms.ToolStripMenuItem m_pluginNoneLoadedMenuItem;
-        private TileMapEditor.Controls.CustomMessageBox m_loadErrorMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_saveErrorMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_unsavedMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_hasDependencyMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_dependencyRemovedMessageBox;
+        private tIDE.Controls.CustomMessageBox m_loadErrorMessageBox;
+        private tIDE.Controls.CustomMessageBox m_saveErrorMessageBox;
+        private tIDE.Controls.CustomMessageBox m_unsavedMessageBox;
+        private tIDE.Controls.CustomMessageBox m_hasDependencyMessageBox;
+        private tIDE.Controls.CustomMessageBox m_dependencyRemovedMessageBox;
         private System.Windows.Forms.ToolStripMenuItem m_layerOffsetMenuItem;
         private System.Windows.Forms.ToolStripButton m_layerOffsetButton;
     }

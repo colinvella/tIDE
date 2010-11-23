@@ -3,7 +3,7 @@
  * See http://www.codeproject.com/info/cpol10.aspx for details
  */
 
-namespace TileMapEditor.Controls.TabStyleProviders
+namespace tIDE.Controls.TabStyleProviders
 {
 	using System;
 	using System.Drawing;

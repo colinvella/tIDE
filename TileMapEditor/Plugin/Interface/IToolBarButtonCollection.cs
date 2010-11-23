@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace TileMapEditor.Plugin.Interface
+namespace tIDE.Plugin.Interface
 {
     public interface IToolBarButtonCollection
     {

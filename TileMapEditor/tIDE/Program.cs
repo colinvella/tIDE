@@ -4,9 +4,9 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
-using TileMapEditor.Localisation;
+using tIDE.Localisation;
 
-namespace TileMapEditor
+namespace tIDE
 {
     static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class MapStatisticsDialog
     {
@@ -32,7 +32,7 @@
             this.m_buttonClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.m_textBoxStatistics = new TileMapEditor.Controls.CustomRichTextBox();
+            this.m_textBoxStatistics = new tIDE.Controls.CustomRichTextBox();
             this.SuspendLayout();
             // 
             // m_buttonClose
@@ -103,6 +103,6 @@
         private System.Windows.Forms.Button m_buttonClose;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private TileMapEditor.Controls.CustomRichTextBox m_textBoxStatistics;
+        private tIDE.Controls.CustomRichTextBox m_textBoxStatistics;
     }
 }

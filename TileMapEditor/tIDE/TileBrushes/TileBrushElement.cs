@@ -7,9 +7,9 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Tiles;
 
-using TileMapEditor.Controls;
+using tIDE.Controls;
 
-namespace TileMapEditor.TileBrushes
+namespace tIDE.TileBrushes
 {
     [Serializable]
     public struct TileBrushElement

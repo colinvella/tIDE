@@ -9,9 +9,9 @@ using System.Windows.Forms;
 using xTile.Tiles;
 using xTile;
 using System.IO;
-using TileMapEditor.TileBrushes;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     public partial class TilePicker : UserControl
     {

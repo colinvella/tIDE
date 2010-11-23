@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Threading;
 using System.Collections.ObjectModel;
 
-namespace TileMapEditor.Localisation
+namespace tIDE.Localisation
 {
     class Language
     {

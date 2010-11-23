@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Plugin.Interface;
+using tIDE.Plugin.Interface;
 
-namespace TileMapEditor.Plugin.Bridge
+namespace tIDE.Plugin.Bridge
 {
     internal class ToolBarButtonBridge: ElementBridge, IToolBarButton
     {

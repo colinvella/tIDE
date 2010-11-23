@@ -5,7 +5,7 @@ using System.Text;
 
 using xTile.Layers;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal enum LayerOrderCommandType
     {

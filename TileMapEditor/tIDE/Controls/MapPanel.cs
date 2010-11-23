@@ -16,11 +16,11 @@ using xTile.Display;
 using xTile.Layers;
 using xTile.Tiles;
 
-using TileMapEditor.Commands;
-using TileMapEditor.Dialogs;
-using TileMapEditor.TileBrushes;
+using tIDE.Commands;
+using tIDE.Dialogs;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     [ToolboxBitmapAttribute(typeof(Panel))]
     public partial class MapPanel : UserControl, IDisplayDevice

@@ -8,8 +8,8 @@ using System.Windows.Forms;
 using xTile;
 using xTile.Dimensions;
 
-using TileMapEditor.Plugin;
-using TileMapEditor.Plugin.Interface;
+using tIDE.Plugin;
+using tIDE.Plugin.Interface;
 
 namespace TestPlugin
 {

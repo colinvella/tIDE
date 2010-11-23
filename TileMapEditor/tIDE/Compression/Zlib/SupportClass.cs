@@ -2,7 +2,7 @@
 using System;
 
 
-namespace TileMapEditor.Compression.Zlib
+namespace tIDE.Compression.Zlib
 {
 	public class SupportClass
 	{

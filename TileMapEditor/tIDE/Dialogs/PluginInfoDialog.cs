@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Plugin;
+using tIDE.Plugin;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class PluginInfoDialog : Form
     {

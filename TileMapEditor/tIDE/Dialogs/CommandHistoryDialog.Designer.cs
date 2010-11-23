@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class CommandHistoryDialog
     {

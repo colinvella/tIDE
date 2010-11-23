@@ -9,9 +9,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-using TileMapEditor.Controls.TabStyleProviders;
+using tIDE.Controls.TabStyleProviders;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
 	[System.ComponentModel.ToolboxItem(false)]
 	public abstract class TabStyleProvider : Component

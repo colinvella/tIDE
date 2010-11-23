@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using TileMapEditor.Plugin.Interface;
+using tIDE.Plugin.Interface;
 
-namespace TileMapEditor.Plugin.Bridge
+namespace tIDE.Plugin.Bridge
 {
     internal abstract class ElementBridge: IElement
     {

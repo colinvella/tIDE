@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 using xTile.Tiles;
 
-using TileMapEditor.Commands;
+using tIDE.Commands;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class CustomPropertiesDialog : Form
     {
@@ -31,7 +31,7 @@ namespace TileMapEditor.Dialogs
         }
 
         private void OnPropertyChangedOrDeleted(object sender,
-            TileMapEditor.Controls.CustomPropertyEventArgs customPropertyEventArgs)
+            tIDE.Controls.CustomPropertyEventArgs customPropertyEventArgs)
         {
             m_buttonOk.Enabled = m_buttonApply.Enabled = true;
             m_buttonCancel.Visible = true;

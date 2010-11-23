@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace TileMapEditor.Help
+namespace tIDE.Help
 {
     public partial class HelpForm : Form
     {

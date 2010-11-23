@@ -11,9 +11,9 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Layers;
 
-using TileMapEditor.Commands;
+using tIDE.Commands;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class LayerPropertiesDialog : Form
     {
@@ -50,7 +50,7 @@ namespace TileMapEditor.Dialogs
         }
 
         private void OnPropertyChangedOrDeleted(object sender,
-            TileMapEditor.Controls.CustomPropertyEventArgs customPropertyEventArgs)
+            tIDE.Controls.CustomPropertyEventArgs customPropertyEventArgs)
         {
             MarkAsModified();
         }

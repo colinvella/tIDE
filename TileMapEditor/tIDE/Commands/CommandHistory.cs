@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class CommandHistory
     {

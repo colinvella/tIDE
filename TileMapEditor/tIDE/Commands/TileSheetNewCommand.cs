@@ -6,9 +6,9 @@ using System.Text;
 using xTile;
 using xTile.Tiles;
 
-using TileMapEditor.Controls;
+using tIDE.Controls;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class TileSheetNewCommand: Command
     {

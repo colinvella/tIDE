@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     [ToolboxBitmapAttribute(typeof(RichTextBox))]
     public class CustomRichTextBox : RichTextBox

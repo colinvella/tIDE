@@ -7,7 +7,7 @@ using xTile.Dimensions;
 using xTile.Layers;
 using xTile.Tiles;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class ToolsEraseTileCommand: Command
     {

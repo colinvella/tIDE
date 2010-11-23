@@ -44,7 +44,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * and contributors of zlib.
 */
 using System;
-namespace TileMapEditor.Compression.Zlib
+namespace tIDE.Compression.Zlib
 {
 	
 	sealed class Adler32

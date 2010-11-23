@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace TileMapEditor.Format
+namespace tIDE.Format
 {
     internal class PathHelper
     {

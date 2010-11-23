@@ -8,7 +8,7 @@ using xTile.Dimensions;
 using xTile.Layers;
 using xTile.Tiles;
 
-namespace TileMapEditor.TileBrushes
+namespace tIDE.TileBrushes
 {
     internal class TileBrushCollection
     {

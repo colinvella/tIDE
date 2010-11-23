@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class AboutDialog
     {
@@ -117,7 +117,7 @@
             this.AcceptButton = this.m_buttonOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
+            this.BackgroundImage = global::tIDE.Properties.Resources.AboutBackground;
             this.CancelButton = this.m_buttonOk;
             this.Controls.Add(m_backgroundPanel);
             this.DoubleBuffered = true;

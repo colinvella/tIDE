@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 using xTile.Tiles;
 
-using TileMapEditor.Commands;
-using TileMapEditor.Controls;
+using tIDE.Commands;
+using tIDE.Controls;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class TilePropertiesDialog : Form
     {

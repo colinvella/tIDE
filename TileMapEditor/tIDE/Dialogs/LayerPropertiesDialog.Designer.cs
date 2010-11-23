@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class LayerPropertiesDialog
     {
@@ -37,9 +37,9 @@
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonClose = new System.Windows.Forms.Button();
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
+            this.m_customTabControl = new tIDE.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
-            this.m_alignmentButton = new TileMapEditor.Controls.AlignmentButton();
+            this.m_alignmentButton = new tIDE.Controls.AlignmentButton();
             this.m_lblAlignment = new System.Windows.Forms.Label();
             this.m_checkBoxVisible = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@
             this.m_textBoxDescription = new System.Windows.Forms.TextBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
-            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
-            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_customPropertyGrid = new tIDE.Controls.CustomPropertyGrid();
+            this.m_duplicateIdMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             m_labelDescription = new System.Windows.Forms.Label();
             m_labelId = new System.Windows.Forms.Label();
             this.m_customTabControl.SuspendLayout();
@@ -128,7 +128,7 @@
             this.m_customTabControl.BackgroundImage = null;
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
-            this.m_customTabControl.DisplayStyle = TileMapEditor.Controls.TabStyle.VisualStudio;
+            this.m_customTabControl.DisplayStyle = tIDE.Controls.TabStyle.VisualStudio;
             // 
             // 
             // 
@@ -185,11 +185,11 @@
             // 
             this.m_alignmentButton.AccessibleDescription = null;
             this.m_alignmentButton.AccessibleName = null;
-            this.m_alignmentButton.Alignment = TileMapEditor.Controls.Alignment.Centre;
+            this.m_alignmentButton.Alignment = tIDE.Controls.Alignment.Centre;
             resources.ApplyResources(this.m_alignmentButton, "m_alignmentButton");
             this.m_alignmentButton.BackgroundImage = null;
             this.m_alignmentButton.Font = null;
-            this.m_alignmentButton.Image = global::TileMapEditor.Properties.Resources.Layer;
+            this.m_alignmentButton.Image = global::tIDE.Properties.Resources.Layer;
             this.m_alignmentButton.MaximumSize = new System.Drawing.Size(66, 66);
             this.m_alignmentButton.MinimumSize = new System.Drawing.Size(66, 66);
             this.m_alignmentButton.Name = "m_alignmentButton";
@@ -414,14 +414,14 @@
             this.m_customPropertyGrid.BackgroundImage = null;
             this.m_customPropertyGrid.Font = null;
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
-            this.m_customPropertyGrid.PropertyDeleted += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
-            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyDeleted += new tIDE.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyChanged += new tIDE.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // m_duplicateIdMessageBox
             // 
             resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
             this.m_duplicateIdMessageBox.HelpFilePath = null;
-            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_duplicateIdMessageBox.Owner = this;
             // 
             // LayerPropertiesDialog
@@ -459,12 +459,12 @@
 
         private System.Windows.Forms.Button m_buttonOk;
         private System.Windows.Forms.Button m_buttonCancel;
-        private TileMapEditor.Controls.CustomTabControl m_customTabControl;
+        private tIDE.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxDescription;
         private System.Windows.Forms.TextBox m_textBoxId;
-        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
+        private tIDE.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.NumericUpDown m_numericLayerHeight;
         private System.Windows.Forms.NumericUpDown m_numericLayerWidth;
         private System.Windows.Forms.NumericUpDown m_numericTileHeight;
@@ -472,7 +472,7 @@
         private System.Windows.Forms.CheckBox m_checkBoxVisible;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.Button m_buttonClose;
-        private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
+        private tIDE.Controls.CustomMessageBox m_duplicateIdMessageBox;
         private System.Windows.Forms.ImageList m_tabImageList;
         private System.Windows.Forms.Label m_lblAlignment;
         private System.Windows.Forms.Label label4;
@@ -481,6 +481,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private TileMapEditor.Controls.AlignmentButton m_alignmentButton;
+        private tIDE.Controls.AlignmentButton m_alignmentButton;
     }
 }

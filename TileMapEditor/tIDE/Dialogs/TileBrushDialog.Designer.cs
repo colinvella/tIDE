@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class TileBrushDialog
     {
@@ -40,8 +40,8 @@
             this.m_renameButton = new System.Windows.Forms.Button();
             this.m_deleteButton = new System.Windows.Forms.Button();
             this.m_closeButton = new System.Windows.Forms.Button();
-            this.m_deleteBrushMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_duplicteIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_deleteBrushMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_duplicteIdMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             this.m_contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +84,7 @@
             this.m_listView.AccessibleDescription = null;
             this.m_listView.AccessibleName = null;
             resources.ApplyResources(this.m_listView, "m_listView");
-            this.m_listView.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
+            this.m_listView.BackgroundImage = global::tIDE.Properties.Resources.ImageBackground;
             this.m_listView.BackgroundImageTiled = true;
             this.m_listView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_listView.ContextMenuStrip = this.m_contextMenuStrip;
@@ -165,14 +165,14 @@
             this.m_deleteBrushMessageBox.Buttons = System.Windows.Forms.MessageBoxButtons.YesNo;
             resources.ApplyResources(this.m_deleteBrushMessageBox, "m_deleteBrushMessageBox");
             this.m_deleteBrushMessageBox.HelpFilePath = null;
-            this.m_deleteBrushMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Question;
+            this.m_deleteBrushMessageBox.Icon = tIDE.Controls.MessageIcon.Question;
             this.m_deleteBrushMessageBox.Owner = this;
             // 
             // m_duplicteIdMessageBox
             // 
             resources.ApplyResources(this.m_duplicteIdMessageBox, "m_duplicteIdMessageBox");
             this.m_duplicteIdMessageBox.HelpFilePath = null;
-            this.m_duplicteIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicteIdMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_duplicteIdMessageBox.Owner = this;
             // 
             // TileBrushDialog
@@ -212,7 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem m_renameMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_deleteMenuItem;
         private System.Windows.Forms.Button m_closeButton;
-        private TileMapEditor.Controls.CustomMessageBox m_deleteBrushMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_duplicteIdMessageBox;
+        private tIDE.Controls.CustomMessageBox m_deleteBrushMessageBox;
+        private tIDE.Controls.CustomMessageBox m_duplicteIdMessageBox;
     }
 }

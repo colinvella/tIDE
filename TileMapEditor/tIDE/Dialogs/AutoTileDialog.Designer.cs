@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class AutoTileDialog
     {
@@ -32,8 +32,8 @@
             System.Windows.Forms.Label m_lblId;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTileDialog));
             this.m_splitContainer = new System.Windows.Forms.SplitContainer();
-            this.m_tilePicker = new TileMapEditor.Controls.TilePicker();
-            this.m_panelTemplate = new TileMapEditor.Controls.CustomPanel();
+            this.m_tilePicker = new tIDE.Controls.TilePicker();
+            this.m_panelTemplate = new tIDE.Controls.CustomPanel();
             this.m_btnNew = new System.Windows.Forms.Button();
             this.m_cmbId = new System.Windows.Forms.ComboBox();
             this.m_btnDelete = new System.Windows.Forms.Button();
@@ -43,9 +43,9 @@
             this.m_btnRename = new System.Windows.Forms.Button();
             this.m_txtNewId = new System.Windows.Forms.TextBox();
             this.m_btnCancel = new System.Windows.Forms.Button();
-            this.m_noIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_duplicateIdMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_deleteMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_noIdMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_duplicateIdMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_deleteMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             m_lblId = new System.Windows.Forms.Label();
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
@@ -84,7 +84,7 @@
             // 
             this.m_panelTemplate.AllowDrop = true;
             this.m_panelTemplate.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.m_panelTemplate.BackgroundImage = global::TileMapEditor.Properties.Resources.AutoTileTemplate;
+            this.m_panelTemplate.BackgroundImage = global::tIDE.Properties.Resources.AutoTileTemplate;
             resources.ApplyResources(this.m_panelTemplate, "m_panelTemplate");
             this.m_panelTemplate.Name = "m_panelTemplate";
             this.m_panelTemplate.Paint += new System.Windows.Forms.PaintEventHandler(this.OnTemplatePaint);
@@ -159,13 +159,13 @@
             // m_noIdMessageBox
             // 
             resources.ApplyResources(this.m_noIdMessageBox, "m_noIdMessageBox");
-            this.m_noIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_noIdMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_noIdMessageBox.Owner = this;
             // 
             // m_duplicateIdMessageBox
             // 
             resources.ApplyResources(this.m_duplicateIdMessageBox, "m_duplicateIdMessageBox");
-            this.m_duplicateIdMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateIdMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_duplicateIdMessageBox.Owner = this;
             // 
             // m_deleteMessageBox
@@ -173,7 +173,7 @@
             this.m_deleteMessageBox.Buttons = System.Windows.Forms.MessageBoxButtons.YesNo;
             resources.ApplyResources(this.m_deleteMessageBox, "m_deleteMessageBox");
             this.m_deleteMessageBox.DefaultButton = System.Windows.Forms.MessageBoxDefaultButton.Button2;
-            this.m_deleteMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Question;
+            this.m_deleteMessageBox.Icon = tIDE.Controls.MessageIcon.Question;
             this.m_deleteMessageBox.Owner = this;
             // 
             // AutoTileDialog
@@ -208,8 +208,8 @@
 
         private System.Windows.Forms.Button m_btnNew;
         private System.Windows.Forms.SplitContainer m_splitContainer;
-        private TileMapEditor.Controls.TilePicker m_tilePicker;
-        private TileMapEditor.Controls.CustomPanel m_panelTemplate;
+        private tIDE.Controls.TilePicker m_tilePicker;
+        private tIDE.Controls.CustomPanel m_panelTemplate;
         private System.Windows.Forms.ComboBox m_cmbId;
         private System.Windows.Forms.Button m_btnDelete;
         private System.Windows.Forms.Button m_btnOk;
@@ -218,9 +218,9 @@
         private System.Windows.Forms.Button m_btnRename;
         private System.Windows.Forms.TextBox m_txtNewId;
         private System.Windows.Forms.Button m_btnCancel;
-        private TileMapEditor.Controls.CustomMessageBox m_noIdMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_duplicateIdMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_deleteMessageBox;
+        private tIDE.Controls.CustomMessageBox m_noIdMessageBox;
+        private tIDE.Controls.CustomMessageBox m_duplicateIdMessageBox;
+        private tIDE.Controls.CustomMessageBox m_deleteMessageBox;
 
 
     }

@@ -7,9 +7,9 @@ using xTile.Dimensions;
 using xTile.ObjectModel;
 using xTile.Tiles;
 
-using TileMapEditor.AutoTiles;
+using tIDE.AutoTiles;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class TileSheetAutoTilesCommand: Command
     {

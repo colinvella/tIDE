@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     public partial class CustomMessageBox : Component
     {

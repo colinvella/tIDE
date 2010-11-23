@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using xTile.Layers;
-using TileMapEditor.Commands;
+using tIDE.Commands;
 using xTile.Dimensions;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class LayerOffsetDialog : Form
     {

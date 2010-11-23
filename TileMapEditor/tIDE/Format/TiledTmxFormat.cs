@@ -14,10 +14,10 @@ using xTile.ObjectModel;
 using xTile.Layers;
 using xTile.Tiles;
 
-using TileMapEditor.Compression.Zlib;
-using TileMapEditor.Dialogs;
+using tIDE.Compression.Zlib;
+using tIDE.Dialogs;
 
-namespace TileMapEditor.Format
+namespace tIDE.Format
 {
     public enum TmxEncoding
     {

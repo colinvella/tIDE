@@ -13,9 +13,9 @@ using System.Security.Permissions;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-using TileMapEditor.Controls.TabStyleProviders;
+using tIDE.Controls.TabStyleProviders;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
 	
 	[ToolboxBitmapAttribute(typeof(TabControl))]

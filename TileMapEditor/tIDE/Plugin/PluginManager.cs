@@ -6,12 +6,12 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Controls;
-using TileMapEditor.Dialogs;
-using TileMapEditor.Plugin.Interface;
-using TileMapEditor.Plugin.Bridge;
+using tIDE.Controls;
+using tIDE.Dialogs;
+using tIDE.Plugin.Interface;
+using tIDE.Plugin.Bridge;
 
-namespace TileMapEditor.Plugin
+namespace tIDE.Plugin
 {
     public class PluginManager
     {

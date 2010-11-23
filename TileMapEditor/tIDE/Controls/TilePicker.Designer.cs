@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Controls
+﻿namespace tIDE.Controls
 {
     partial class TilePicker
     {
@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TilePicker));
             System.Windows.Forms.ToolStripLabel m_lblIdx;
             this.m_comboBoxTileSheets = new System.Windows.Forms.ComboBox();
-            this.m_tilePanel = new TileMapEditor.Controls.CustomPanel();
+            this.m_tilePanel = new tIDE.Controls.CustomPanel();
             this.m_horizontalScrollBar = new System.Windows.Forms.HScrollBar();
             this.m_verticalScrollBar = new System.Windows.Forms.VScrollBar();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
@@ -82,7 +82,7 @@
             this.m_tilePanel.AccessibleDescription = null;
             this.m_tilePanel.AccessibleName = null;
             resources.ApplyResources(this.m_tilePanel, "m_tilePanel");
-            this.m_tilePanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
+            this.m_tilePanel.BackgroundImage = global::tIDE.Properties.Resources.ImageBackground;
             this.m_tilePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_tilePanel.Controls.Add(this.m_horizontalScrollBar);
             this.m_tilePanel.Controls.Add(this.m_verticalScrollBar);
@@ -140,7 +140,7 @@
             this.m_indexOrderButton.Checked = true;
             this.m_indexOrderButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_indexOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_indexOrderButton.Image = global::TileMapEditor.Properties.Resources.TileOrderIndexed;
+            this.m_indexOrderButton.Image = global::tIDE.Properties.Resources.TileOrderIndexed;
             this.m_indexOrderButton.Name = "m_indexOrderButton";
             this.m_indexOrderButton.Click += new System.EventHandler(this.OnOrderIndexed);
             // 
@@ -151,7 +151,7 @@
             resources.ApplyResources(this.m_mruOrderButton, "m_mruOrderButton");
             this.m_mruOrderButton.BackgroundImage = null;
             this.m_mruOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_mruOrderButton.Image = global::TileMapEditor.Properties.Resources.TileOrderMru;
+            this.m_mruOrderButton.Image = global::tIDE.Properties.Resources.TileOrderMru;
             this.m_mruOrderButton.Name = "m_mruOrderButton";
             this.m_mruOrderButton.Click += new System.EventHandler(this.OnOrderMru);
             // 
@@ -162,7 +162,7 @@
             resources.ApplyResources(this.m_imageOrderButton, "m_imageOrderButton");
             this.m_imageOrderButton.BackgroundImage = null;
             this.m_imageOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_imageOrderButton.Image = global::TileMapEditor.Properties.Resources.TileOrderImage;
+            this.m_imageOrderButton.Image = global::tIDE.Properties.Resources.TileOrderImage;
             this.m_imageOrderButton.Name = "m_imageOrderButton";
             this.m_imageOrderButton.Click += new System.EventHandler(this.OnOrderImage);
             // 

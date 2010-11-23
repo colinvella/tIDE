@@ -7,7 +7,7 @@ using xTile.Dimensions;
 using xTile.ObjectModel;
 using xTile.Tiles;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class TileSheetPropertiesCommand: Command
     {

@@ -12,9 +12,9 @@ using xTile;
 using xTile.ObjectModel;
 using xTile.Layers;
 using xTile.Tiles;
-using TileMapEditor.Localisation;
+using tIDE.Localisation;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     [ToolboxBitmapAttribute(typeof(TreeView))]
     public partial class MapTreeView : UserControl

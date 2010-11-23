@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 using xTile.Format;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class FormatCompatibilityDialog : Form
     {

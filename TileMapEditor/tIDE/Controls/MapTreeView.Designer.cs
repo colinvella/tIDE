@@ -1,6 +1,6 @@
 ﻿using xTile;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     partial class MapTreeView
     {
@@ -158,7 +158,7 @@ namespace TileMapEditor.Controls
             this.m_layerNewMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerNewMenuItem, "m_layerNewMenuItem");
             this.m_layerNewMenuItem.BackgroundImage = null;
-            this.m_layerNewMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerNew;
+            this.m_layerNewMenuItem.Image = global::tIDE.Properties.Resources.LayerNew;
             this.m_layerNewMenuItem.Name = "m_layerNewMenuItem";
             this.m_layerNewMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerNewMenuItem.Click += new System.EventHandler(this.OnLayerNew);
@@ -188,7 +188,7 @@ namespace TileMapEditor.Controls
             this.m_layerPropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerPropertiesMenuItem, "m_layerPropertiesMenuItem");
             this.m_layerPropertiesMenuItem.BackgroundImage = null;
-            this.m_layerPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerProperties;
+            this.m_layerPropertiesMenuItem.Image = global::tIDE.Properties.Resources.LayerProperties;
             this.m_layerPropertiesMenuItem.Name = "m_layerPropertiesMenuItem";
             this.m_layerPropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerPropertiesMenuItem.Click += new System.EventHandler(this.OnLayerProperties);
@@ -199,7 +199,7 @@ namespace TileMapEditor.Controls
             this.m_layerMakeInvisibileMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerMakeInvisibileMenuItem, "m_layerMakeInvisibileMenuItem");
             this.m_layerMakeInvisibileMenuItem.BackgroundImage = null;
-            this.m_layerMakeInvisibileMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerInvisible;
+            this.m_layerMakeInvisibileMenuItem.Image = global::tIDE.Properties.Resources.LayerInvisible;
             this.m_layerMakeInvisibileMenuItem.Name = "m_layerMakeInvisibileMenuItem";
             this.m_layerMakeInvisibileMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerMakeInvisibileMenuItem.Click += new System.EventHandler(this.OnLayerVisibility);
@@ -210,7 +210,7 @@ namespace TileMapEditor.Controls
             this.m_layerMakeVisibileMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerMakeVisibileMenuItem, "m_layerMakeVisibileMenuItem");
             this.m_layerMakeVisibileMenuItem.BackgroundImage = null;
-            this.m_layerMakeVisibileMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerVisible;
+            this.m_layerMakeVisibileMenuItem.Image = global::tIDE.Properties.Resources.LayerVisible;
             this.m_layerMakeVisibileMenuItem.Name = "m_layerMakeVisibileMenuItem";
             this.m_layerMakeVisibileMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerMakeVisibileMenuItem.Click += new System.EventHandler(this.OnLayerVisibility);
@@ -221,7 +221,7 @@ namespace TileMapEditor.Controls
             this.m_layerBringForwardMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerBringForwardMenuItem, "m_layerBringForwardMenuItem");
             this.m_layerBringForwardMenuItem.BackgroundImage = null;
-            this.m_layerBringForwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerBringForward;
+            this.m_layerBringForwardMenuItem.Image = global::tIDE.Properties.Resources.LayerBringForward;
             this.m_layerBringForwardMenuItem.Name = "m_layerBringForwardMenuItem";
             this.m_layerBringForwardMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerBringForwardMenuItem.Click += new System.EventHandler(this.OnLayerBringForward);
@@ -232,7 +232,7 @@ namespace TileMapEditor.Controls
             this.m_layerSendBackwardMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerSendBackwardMenuItem, "m_layerSendBackwardMenuItem");
             this.m_layerSendBackwardMenuItem.BackgroundImage = null;
-            this.m_layerSendBackwardMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerSendBackward;
+            this.m_layerSendBackwardMenuItem.Image = global::tIDE.Properties.Resources.LayerSendBackward;
             this.m_layerSendBackwardMenuItem.Name = "m_layerSendBackwardMenuItem";
             this.m_layerSendBackwardMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerSendBackwardMenuItem.Click += new System.EventHandler(this.OnLayerSendBackward);
@@ -243,7 +243,7 @@ namespace TileMapEditor.Controls
             this.m_layerDeleteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_layerDeleteMenuItem, "m_layerDeleteMenuItem");
             this.m_layerDeleteMenuItem.BackgroundImage = null;
-            this.m_layerDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.LayerDelete;
+            this.m_layerDeleteMenuItem.Image = global::tIDE.Properties.Resources.LayerDelete;
             this.m_layerDeleteMenuItem.Name = "m_layerDeleteMenuItem";
             this.m_layerDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_layerDeleteMenuItem.Click += new System.EventHandler(this.OnLayerDelete);
@@ -266,7 +266,7 @@ namespace TileMapEditor.Controls
             this.m_mapPropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_mapPropertiesMenuItem, "m_mapPropertiesMenuItem");
             this.m_mapPropertiesMenuItem.BackgroundImage = null;
-            this.m_mapPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.MapProperties;
+            this.m_mapPropertiesMenuItem.Image = global::tIDE.Properties.Resources.MapProperties;
             this.m_mapPropertiesMenuItem.Name = "m_mapPropertiesMenuItem";
             this.m_mapPropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_mapPropertiesMenuItem.Click += new System.EventHandler(this.OnMapProperties);
@@ -277,7 +277,7 @@ namespace TileMapEditor.Controls
             this.m_mapStatisticsMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_mapStatisticsMenuItem, "m_mapStatisticsMenuItem");
             this.m_mapStatisticsMenuItem.BackgroundImage = null;
-            this.m_mapStatisticsMenuItem.Image = global::TileMapEditor.Properties.Resources.MapStatistics;
+            this.m_mapStatisticsMenuItem.Image = global::tIDE.Properties.Resources.MapStatistics;
             this.m_mapStatisticsMenuItem.Name = "m_mapStatisticsMenuItem";
             this.m_mapStatisticsMenuItem.ShortcutKeyDisplayString = null;
             this.m_mapStatisticsMenuItem.Click += new System.EventHandler(this.OnMapStatistics);
@@ -299,7 +299,7 @@ namespace TileMapEditor.Controls
             this.m_tileSheetNewMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetNewMenuItem, "m_tileSheetNewMenuItem");
             this.m_tileSheetNewMenuItem.BackgroundImage = null;
-            this.m_tileSheetNewMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetNew;
+            this.m_tileSheetNewMenuItem.Image = global::tIDE.Properties.Resources.TileSheetNew;
             this.m_tileSheetNewMenuItem.Name = "m_tileSheetNewMenuItem";
             this.m_tileSheetNewMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetNewMenuItem.Click += new System.EventHandler(this.OnTileSheetNew);
@@ -324,7 +324,7 @@ namespace TileMapEditor.Controls
             this.m_tileSheetPropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetPropertiesMenuItem, "m_tileSheetPropertiesMenuItem");
             this.m_tileSheetPropertiesMenuItem.BackgroundImage = null;
-            this.m_tileSheetPropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetProperties;
+            this.m_tileSheetPropertiesMenuItem.Image = global::tIDE.Properties.Resources.TileSheetProperties;
             this.m_tileSheetPropertiesMenuItem.Name = "m_tileSheetPropertiesMenuItem";
             this.m_tileSheetPropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetPropertiesMenuItem.Click += new System.EventHandler(this.OnTileSheetProperties);
@@ -335,7 +335,7 @@ namespace TileMapEditor.Controls
             this.m_tileSheetAutoTilesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetAutoTilesMenuItem, "m_tileSheetAutoTilesMenuItem");
             this.m_tileSheetAutoTilesMenuItem.BackgroundImage = null;
-            this.m_tileSheetAutoTilesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetAutoTiles;
+            this.m_tileSheetAutoTilesMenuItem.Image = global::tIDE.Properties.Resources.TileSheetAutoTiles;
             this.m_tileSheetAutoTilesMenuItem.Name = "m_tileSheetAutoTilesMenuItem";
             this.m_tileSheetAutoTilesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetAutoTilesMenuItem.Click += new System.EventHandler(this.OnTileSheetAutoTiles);
@@ -346,7 +346,7 @@ namespace TileMapEditor.Controls
             this.m_tileSheetDeleteMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tileSheetDeleteMenuItem, "m_tileSheetDeleteMenuItem");
             this.m_tileSheetDeleteMenuItem.BackgroundImage = null;
-            this.m_tileSheetDeleteMenuItem.Image = global::TileMapEditor.Properties.Resources.TileSheetDelete;
+            this.m_tileSheetDeleteMenuItem.Image = global::tIDE.Properties.Resources.TileSheetDelete;
             this.m_tileSheetDeleteMenuItem.Name = "m_tileSheetDeleteMenuItem";
             this.m_tileSheetDeleteMenuItem.ShortcutKeyDisplayString = null;
             this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);

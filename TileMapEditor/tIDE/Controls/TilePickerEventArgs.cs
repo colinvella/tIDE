@@ -5,9 +5,9 @@ using System.Text;
 
 using xTile;
 using xTile.Tiles;
-using TileMapEditor.TileBrushes;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     public class TilePickerEventArgs: EventArgs
     {

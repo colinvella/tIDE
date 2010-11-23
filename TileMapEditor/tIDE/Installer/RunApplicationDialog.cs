@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace TileMapEditor.Installer
+namespace tIDE.Installer
 {
     public partial class RunApplicationDialog : Form
     {

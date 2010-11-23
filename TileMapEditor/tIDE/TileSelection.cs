@@ -8,9 +8,9 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Layers;
 
-using TileMapEditor.Controls;
+using tIDE.Controls;
 
-namespace TileMapEditor
+namespace tIDE
 {
     public class TileSelection
     {

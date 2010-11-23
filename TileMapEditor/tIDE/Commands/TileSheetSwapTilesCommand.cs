@@ -10,7 +10,7 @@ using xTile.Dimensions;
 using xTile.Layers;
 using xTile.Tiles;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     class TileSheetSwapTilesCommand : Command
     {

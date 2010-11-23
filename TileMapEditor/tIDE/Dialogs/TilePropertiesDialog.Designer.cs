@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class TilePropertiesDialog
     {
@@ -41,14 +41,14 @@
             this.m_buttonApply = new System.Windows.Forms.Button();
             this.m_buttonClose = new System.Windows.Forms.Button();
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_customTabControl = new TileMapEditor.Controls.CustomTabControl();
+            this.m_customTabControl = new tIDE.Controls.CustomTabControl();
             this.m_tabGeneral = new System.Windows.Forms.TabPage();
             this.m_textBoxTileIndex = new System.Windows.Forms.TextBox();
             this.m_textBoxTileSheet = new System.Windows.Forms.TextBox();
             this.m_comboBoxBlendMode = new System.Windows.Forms.ComboBox();
             this.m_textBoxId = new System.Windows.Forms.TextBox();
             this.m_tabCustomProperties = new System.Windows.Forms.TabPage();
-            this.m_customPropertyGrid = new TileMapEditor.Controls.CustomPropertyGrid();
+            this.m_customPropertyGrid = new tIDE.Controls.CustomPropertyGrid();
             m_labelTileIndex = new System.Windows.Forms.Label();
             m_labelTileSheet = new System.Windows.Forms.Label();
             m_labelBlendMode = new System.Windows.Forms.Label();
@@ -170,7 +170,7 @@
             this.m_customTabControl.BackgroundImage = null;
             this.m_customTabControl.Controls.Add(this.m_tabGeneral);
             this.m_customTabControl.Controls.Add(this.m_tabCustomProperties);
-            this.m_customTabControl.DisplayStyle = TileMapEditor.Controls.TabStyle.VisualStudio;
+            this.m_customTabControl.DisplayStyle = tIDE.Controls.TabStyle.VisualStudio;
             // 
             // 
             // 
@@ -279,7 +279,7 @@
             this.m_customPropertyGrid.BackgroundImage = null;
             this.m_customPropertyGrid.Font = null;
             this.m_customPropertyGrid.Name = "m_customPropertyGrid";
-            this.m_customPropertyGrid.PropertyChanged += new TileMapEditor.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
+            this.m_customPropertyGrid.PropertyChanged += new tIDE.Controls.CustomPropertyEventHandler(this.OnPropertyChangedOrDeleted);
             // 
             // TilePropertiesDialog
             // 
@@ -313,11 +313,11 @@
         private System.Windows.Forms.Button m_buttonCancel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private TileMapEditor.Controls.CustomTabControl m_customTabControl;
+        private tIDE.Controls.CustomTabControl m_customTabControl;
         private System.Windows.Forms.TabPage m_tabGeneral;
         private System.Windows.Forms.TabPage m_tabCustomProperties;
         private System.Windows.Forms.TextBox m_textBoxId;
-        private TileMapEditor.Controls.CustomPropertyGrid m_customPropertyGrid;
+        private tIDE.Controls.CustomPropertyGrid m_customPropertyGrid;
         private System.Windows.Forms.Button m_buttonApply;
         private System.Windows.Forms.TextBox m_textBoxTileIndex;
         private System.Windows.Forms.TextBox m_textBoxTileSheet;

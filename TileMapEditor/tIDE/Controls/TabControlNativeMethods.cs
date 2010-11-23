@@ -10,7 +10,7 @@ using System.Security.Permissions;
 using System.Windows.Forms;
 using System;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
 	/// <summary>
 	/// Description of NativeMethods.

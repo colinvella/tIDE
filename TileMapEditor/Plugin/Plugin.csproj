@@ -8,7 +8,7 @@
     <ProjectGuid>{2787F0CD-8BFD-4696-AAAA-629452D05A21}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TileMapEditor.Plugin</RootNamespace>
+    <RootNamespace>tIDE.Plugin</RootNamespace>
     <AssemblyName>tIDE.Plugin</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace TileMapEditor.Plugin.Interface
+namespace tIDE.Plugin.Interface
 {
     public interface IToolBarButton: IElement
     {

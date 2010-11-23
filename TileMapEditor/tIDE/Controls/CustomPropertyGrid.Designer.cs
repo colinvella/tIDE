@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Controls
+﻿namespace tIDE.Controls
 {
     partial class CustomPropertyGrid
     {
@@ -33,8 +33,8 @@
             this.m_dataGridView = new System.Windows.Forms.DataGridView();
             this.PropertyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PropertyValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.m_noNameMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_duplicateNameMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_noNameMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_duplicateNameMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.m_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,14 +77,14 @@
             // 
             resources.ApplyResources(this.m_noNameMessageBox, "m_noNameMessageBox");
             this.m_noNameMessageBox.HelpFilePath = null;
-            this.m_noNameMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_noNameMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_noNameMessageBox.Owner = this;
             // 
             // m_duplicateNameMessageBox
             // 
             resources.ApplyResources(this.m_duplicateNameMessageBox, "m_duplicateNameMessageBox");
             this.m_duplicateNameMessageBox.HelpFilePath = null;
-            this.m_duplicateNameMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_duplicateNameMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_duplicateNameMessageBox.Owner = this;
             // 
             // CustomPropertyGrid

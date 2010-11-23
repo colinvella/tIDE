@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class OptonsDialog
     {
@@ -34,7 +34,7 @@
             this.m_okButton = new System.Windows.Forms.Button();
             this.m_cancelButton = new System.Windows.Forms.Button();
             this.m_tabImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_tabControl = new TileMapEditor.Controls.CustomTabControl();
+            this.m_tabControl = new tIDE.Controls.CustomTabControl();
             this.m_recentFilesTabPage = new System.Windows.Forms.TabPage();
             this.m_clearHistoryButton = new System.Windows.Forms.Button();
             this.m_recentFileCountUpDown = new System.Windows.Forms.NumericUpDown();
@@ -94,7 +94,7 @@
             this.m_tabControl.BackgroundImage = null;
             this.m_tabControl.Controls.Add(this.m_recentFilesTabPage);
             this.m_tabControl.Controls.Add(this.m_languageTabPage);
-            this.m_tabControl.DisplayStyle = TileMapEditor.Controls.TabStyle.VisualStudio;
+            this.m_tabControl.DisplayStyle = tIDE.Controls.TabStyle.VisualStudio;
             // 
             // 
             // 
@@ -219,7 +219,7 @@
 
         #endregion
 
-        private TileMapEditor.Controls.CustomTabControl m_tabControl;
+        private tIDE.Controls.CustomTabControl m_tabControl;
         private System.Windows.Forms.TabPage m_recentFilesTabPage;
         private System.Windows.Forms.TabPage m_languageTabPage;
         private System.Windows.Forms.Button m_okButton;

@@ -7,7 +7,7 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Tiles;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     public class MapPanelEventArgs: EventArgs
     {

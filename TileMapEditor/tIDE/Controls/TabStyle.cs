@@ -5,7 +5,7 @@
 
 using System.Windows.Forms;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
 	public enum TabStyle{
 		None = 0,

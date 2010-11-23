@@ -13,10 +13,10 @@ using xTile.Dimensions;
 using xTile.Layers;
 using xTile.Tiles;
 
-using TileMapEditor.Commands;
-using TileMapEditor.Controls;
+using tIDE.Commands;
+using tIDE.Controls;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class TileAnimationDialog : Form
     {

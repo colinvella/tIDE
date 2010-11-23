@@ -7,7 +7,7 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Tiles;
 
-namespace TileMapEditor
+namespace tIDE
 {
     public class TileImageCache
     {

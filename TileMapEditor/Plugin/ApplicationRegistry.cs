@@ -5,7 +5,7 @@ using System.Text;
 using System.Globalization;
 using System.Threading;
 
-namespace TileMapEditor.Plugin
+namespace tIDE.Plugin
 {
     public class ApplicationRegistry
     {

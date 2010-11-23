@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     [ToolboxBitmapAttribute(typeof(ListView))]
     class CustomListView : ListView

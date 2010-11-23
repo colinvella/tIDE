@@ -8,10 +8,10 @@ using xTile;
 using xTile.Dimensions;
 using xTile.Layers;
 
-using TileMapEditor.Controls;
-using TileMapEditor.Plugin.Interface;
+using tIDE.Controls;
+using tIDE.Plugin.Interface;
 
-namespace TileMapEditor.Plugin.Bridge
+namespace tIDE.Plugin.Bridge
 {
     class EditorBridge : ElementBridge, IEditor
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using TileMapEditor.TileBrushes;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor
+namespace tIDE
 {
     internal class ClipBoardManager
     {

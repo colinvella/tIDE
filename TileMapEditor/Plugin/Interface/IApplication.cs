@@ -5,7 +5,7 @@ using System.Text;
 
 using xTile;
 
-namespace TileMapEditor.Plugin.Interface
+namespace tIDE.Plugin.Interface
 {
     public interface IApplication
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     internal struct IconInfo
     {

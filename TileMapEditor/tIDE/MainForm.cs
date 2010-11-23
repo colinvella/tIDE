@@ -15,19 +15,19 @@ using xTile.Layers;
 using xTile.ObjectModel;
 using xTile.Tiles;
 
-using TileMapEditor.AutoTiles;
-using TileMapEditor.Commands;
-using TileMapEditor.Controls;
-using TileMapEditor.Dialogs;
-using TileMapEditor.Format;
-using TileMapEditor.Help;
-using TileMapEditor.Plugin;
-using TileMapEditor.TileBrushes;
+using tIDE.AutoTiles;
+using tIDE.Commands;
+using tIDE.Controls;
+using tIDE.Dialogs;
+using tIDE.Format;
+using tIDE.Help;
+using tIDE.Plugin;
+using tIDE.TileBrushes;
 using System.Globalization;
 using System.Threading;
-using TileMapEditor.Localisation;
+using tIDE.Localisation;
 
-namespace TileMapEditor
+namespace tIDE
 {
     public partial class MainForm : Form
     {

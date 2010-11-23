@@ -7,9 +7,9 @@ using xTile.Dimensions;
 using xTile.Layers;
 using xTile.Tiles;
 
-using TileMapEditor.TileBrushes;
+using tIDE.TileBrushes;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class EditCutCommand: Command
     {

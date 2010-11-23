@@ -7,9 +7,9 @@ using xTile.Layers;
 using xTile.Dimensions;
 using xTile.ObjectModel;
 using xTile.Tiles;
-using TileMapEditor.Controls;
+using tIDE.Controls;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class LayerPropertiesCommand: Command
     {

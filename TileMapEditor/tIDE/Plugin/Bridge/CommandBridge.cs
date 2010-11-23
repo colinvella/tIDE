@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using TileMapEditor.Plugin.Interface;
+using tIDE.Plugin.Interface;
 
-using TileMapEditor.Commands;
+using tIDE.Commands;
 
-namespace TileMapEditor.Plugin.Bridge
+namespace tIDE.Plugin.Bridge
 {
     internal class CommandBridge: Command
     {

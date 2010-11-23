@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
 
 	internal sealed class ThemedColors

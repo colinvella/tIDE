@@ -5,7 +5,7 @@ using System.Text;
 
 using xTile.ObjectModel;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     public class CustomPropertyEventArgs: EventArgs
     {

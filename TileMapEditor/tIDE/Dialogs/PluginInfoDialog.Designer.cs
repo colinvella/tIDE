@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Dialogs
+﻿namespace tIDE.Dialogs
 {
     partial class PluginInfoDialog
     {
@@ -56,7 +56,7 @@
             this.m_panel.AccessibleDescription = null;
             this.m_panel.AccessibleName = null;
             resources.ApplyResources(this.m_panel, "m_panel");
-            this.m_panel.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutPluginBackground;
+            this.m_panel.BackgroundImage = global::tIDE.Properties.Resources.AboutPluginBackground;
             this.m_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_panel.Controls.Add(this.m_okButton);
             this.m_panel.Controls.Add(this.m_labelAuthor);

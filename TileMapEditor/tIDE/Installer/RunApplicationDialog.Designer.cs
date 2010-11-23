@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Installer
+﻿namespace tIDE.Installer
 {
     partial class RunApplicationDialog
     {
@@ -74,7 +74,7 @@
             this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TileMapEditor.Properties.Resources.AboutBackground;
+            this.BackgroundImage = global::tIDE.Properties.Resources.AboutBackground;
             this.CancelButton = m_noButton;
             this.Controls.Add(m_noButton);
             this.Controls.Add(m_yesButton);

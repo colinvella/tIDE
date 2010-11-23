@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 
-namespace TileMapEditor
+namespace tIDE
 {
     class RecentFilesManager
     {

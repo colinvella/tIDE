@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TileMapEditor.Plugin.Interface
+namespace tIDE.Plugin.Interface
 {
     public interface IMenuItem: IElement
     {

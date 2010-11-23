@@ -6,7 +6,7 @@ using System.Text;
 using xTile.Dimensions;
 using xTile.Layers;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal enum ChangeSelectionType
     {

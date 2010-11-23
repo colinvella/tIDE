@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Help
+﻿namespace tIDE.Help
 {
     partial class HelpForm
     {
@@ -35,15 +35,15 @@
             this.m_indexTreeView = new System.Windows.Forms.TreeView();
             this.m_searchListView = new System.Windows.Forms.ListView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
-            this.m_contentRichTextBox = new TileMapEditor.Controls.CustomRichTextBox();
+            this.m_contentRichTextBox = new tIDE.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_helpContentsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpIndexButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpSearchButton = new System.Windows.Forms.ToolStripButton();
             this.m_searchTextbox = new System.Windows.Forms.ToolStripTextBox();
-            this.m_noContentMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_badContentMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_noContentMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_badContentMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             this.m_splitContainer.Panel1.SuspendLayout();
             this.m_splitContainer.Panel2.SuspendLayout();
             this.m_splitContainer.SuspendLayout();
@@ -145,21 +145,21 @@
             // 
             this.m_helpContentsButton.Checked = true;
             this.m_helpContentsButton.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.m_helpContentsButton.Image = global::TileMapEditor.Properties.Resources.HelpContents;
+            this.m_helpContentsButton.Image = global::tIDE.Properties.Resources.HelpContents;
             resources.ApplyResources(this.m_helpContentsButton, "m_helpContentsButton");
             this.m_helpContentsButton.Name = "m_helpContentsButton";
             this.m_helpContentsButton.Click += new System.EventHandler(this.OnHelpContents);
             // 
             // m_helpIndexButton
             // 
-            this.m_helpIndexButton.Image = global::TileMapEditor.Properties.Resources.HelpIndex;
+            this.m_helpIndexButton.Image = global::tIDE.Properties.Resources.HelpIndex;
             resources.ApplyResources(this.m_helpIndexButton, "m_helpIndexButton");
             this.m_helpIndexButton.Name = "m_helpIndexButton";
             this.m_helpIndexButton.Click += new System.EventHandler(this.OnHelpIndex);
             // 
             // m_helpSearchButton
             // 
-            this.m_helpSearchButton.Image = global::TileMapEditor.Properties.Resources.HelpSearch;
+            this.m_helpSearchButton.Image = global::tIDE.Properties.Resources.HelpSearch;
             resources.ApplyResources(this.m_helpSearchButton, "m_helpSearchButton");
             this.m_helpSearchButton.Name = "m_helpSearchButton";
             this.m_helpSearchButton.Click += new System.EventHandler(this.OnHelpSearch);
@@ -176,13 +176,13 @@
             // m_noContentMessageBox
             // 
             resources.ApplyResources(this.m_noContentMessageBox, "m_noContentMessageBox");
-            this.m_noContentMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_noContentMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_noContentMessageBox.Owner = this;
             // 
             // m_badContentMessageBox
             // 
             resources.ApplyResources(this.m_badContentMessageBox, "m_badContentMessageBox");
-            this.m_badContentMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_badContentMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_badContentMessageBox.Owner = this;
             // 
             // HelpForm
@@ -212,7 +212,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer m_splitContainer;
-        private TileMapEditor.Controls.CustomRichTextBox m_contentRichTextBox;
+        private tIDE.Controls.CustomRichTextBox m_contentRichTextBox;
         private System.Windows.Forms.ToolStripContainer m_toolStripContainer;
         private System.Windows.Forms.Panel m_contentPanel;
         private System.Windows.Forms.TreeView m_topicTreeView;
@@ -223,7 +223,7 @@
         private System.Windows.Forms.TreeView m_indexTreeView;
         private System.Windows.Forms.ToolStripTextBox m_searchTextbox;
         private System.Windows.Forms.ListView m_searchListView;
-        private TileMapEditor.Controls.CustomMessageBox m_noContentMessageBox;
-        private TileMapEditor.Controls.CustomMessageBox m_badContentMessageBox;
+        private tIDE.Controls.CustomMessageBox m_noContentMessageBox;
+        private tIDE.Controls.CustomMessageBox m_badContentMessageBox;
     }
 }

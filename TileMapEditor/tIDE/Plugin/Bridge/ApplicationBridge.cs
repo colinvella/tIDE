@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Commands;
-using TileMapEditor.Controls;
-using TileMapEditor.Plugin.Interface;
+using tIDE.Commands;
+using tIDE.Controls;
+using tIDE.Plugin.Interface;
 
-namespace TileMapEditor.Plugin.Bridge
+namespace tIDE.Plugin.Bridge
 {
     internal class ApplicationBridge: ElementBridge, IApplication, IToolBarCollection
     {

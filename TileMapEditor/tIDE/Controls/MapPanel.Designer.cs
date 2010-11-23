@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Controls
+﻿namespace tIDE.Controls
 {
     partial class MapPanel
     {
@@ -36,9 +36,9 @@
             this.m_tileContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_tilePropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileAnimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_innerPanel = new TileMapEditor.Controls.CustomPanel();
-            this.m_tileSizeMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
-            this.m_textureToolMessageBox = new TileMapEditor.Controls.CustomMessageBox(this.components);
+            this.m_innerPanel = new tIDE.Controls.CustomPanel();
+            this.m_tileSizeMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
+            this.m_textureToolMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             this.m_tileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +84,7 @@
             this.m_tilePropertiesMenuItem.AccessibleName = null;
             resources.ApplyResources(this.m_tilePropertiesMenuItem, "m_tilePropertiesMenuItem");
             this.m_tilePropertiesMenuItem.BackgroundImage = null;
-            this.m_tilePropertiesMenuItem.Image = global::TileMapEditor.Properties.Resources.TileProperties;
+            this.m_tilePropertiesMenuItem.Image = global::tIDE.Properties.Resources.TileProperties;
             this.m_tilePropertiesMenuItem.Name = "m_tilePropertiesMenuItem";
             this.m_tilePropertiesMenuItem.ShortcutKeyDisplayString = null;
             this.m_tilePropertiesMenuItem.Click += new System.EventHandler(this.OnTileProperties);
@@ -95,7 +95,7 @@
             this.tileAnimationToolStripMenuItem.AccessibleName = null;
             resources.ApplyResources(this.tileAnimationToolStripMenuItem, "tileAnimationToolStripMenuItem");
             this.tileAnimationToolStripMenuItem.BackgroundImage = null;
-            this.tileAnimationToolStripMenuItem.Image = global::TileMapEditor.Properties.Resources.TileAnimation;
+            this.tileAnimationToolStripMenuItem.Image = global::tIDE.Properties.Resources.TileAnimation;
             this.tileAnimationToolStripMenuItem.Name = "tileAnimationToolStripMenuItem";
             this.tileAnimationToolStripMenuItem.ShortcutKeyDisplayString = null;
             this.tileAnimationToolStripMenuItem.Click += new System.EventHandler(this.OnTileAnimation);
@@ -105,7 +105,7 @@
             this.m_innerPanel.AccessibleDescription = null;
             this.m_innerPanel.AccessibleName = null;
             resources.ApplyResources(this.m_innerPanel, "m_innerPanel");
-            this.m_innerPanel.BackgroundImage = global::TileMapEditor.Properties.Resources.ImageBackground;
+            this.m_innerPanel.BackgroundImage = global::tIDE.Properties.Resources.ImageBackground;
             this.m_innerPanel.Font = null;
             this.m_innerPanel.Name = "m_innerPanel";
             this.m_innerPanel.MouseLeave += new System.EventHandler(this.OnMouseLeave);
@@ -120,14 +120,14 @@
             // 
             resources.ApplyResources(this.m_tileSizeMessageBox, "m_tileSizeMessageBox");
             this.m_tileSizeMessageBox.HelpFilePath = null;
-            this.m_tileSizeMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_tileSizeMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_tileSizeMessageBox.Owner = this;
             // 
             // m_textureToolMessageBox
             // 
             resources.ApplyResources(this.m_textureToolMessageBox, "m_textureToolMessageBox");
             this.m_textureToolMessageBox.HelpFilePath = null;
-            this.m_textureToolMessageBox.Icon = TileMapEditor.Controls.MessageIcon.Error;
+            this.m_textureToolMessageBox.Icon = tIDE.Controls.MessageIcon.Error;
             this.m_textureToolMessageBox.Owner = this;
             // 
             // MapPanel

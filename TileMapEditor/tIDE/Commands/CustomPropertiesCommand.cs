@@ -5,7 +5,7 @@ using System.Text;
 
 using xTile.ObjectModel;
 
-namespace TileMapEditor.Commands
+namespace tIDE.Commands
 {
     internal class CustomPropertiesCommand: Command
     {

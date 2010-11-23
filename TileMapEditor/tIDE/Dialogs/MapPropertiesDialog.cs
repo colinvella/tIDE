@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 using xTile;
 
-using TileMapEditor.Commands;
-using TileMapEditor.Controls;
-using TileMapEditor.Localisation;
+using tIDE.Commands;
+using tIDE.Controls;
+using tIDE.Localisation;
 
-namespace TileMapEditor.Dialogs
+namespace tIDE.Dialogs
 {
     public partial class MapPropertiesDialog : Form
     {

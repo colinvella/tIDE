@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TileMapEditor.Properties;
+using tIDE.Properties;
 
-namespace TileMapEditor.Controls
+namespace tIDE.Controls
 {
     public partial class AlignmentButton : UserControl
     {

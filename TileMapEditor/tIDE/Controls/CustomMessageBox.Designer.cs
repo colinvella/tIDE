@@ -1,4 +1,4 @@
-﻿namespace TileMapEditor.Controls
+﻿namespace tIDE.Controls
 {
     partial class CustomMessageBox
     {
