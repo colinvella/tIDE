@@ -66,6 +66,9 @@ namespace tIDE
         {
             // Tiled TMX format
             xTile.Format.FormatManager.Instance.RegisterMapFormat(new TiledTmxFormat());
+
+            // Mappy FMP format
+            xTile.Format.FormatManager.Instance.RegisterMapFormat(new MappyFmapFormat());
         }
 
         private string GenerateFileDialogFilter()

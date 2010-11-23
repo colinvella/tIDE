@@ -6,6 +6,7 @@ using System.Text;
 
 using xTile;
 using xTile.Format;
+using System.Windows.Forms;
 
 namespace tIDE.Format
 {
@@ -20,7 +21,13 @@ namespace tIDE.Format
 
         public Map Load(Stream stream)
         {
-            throw new NotImplementedException();
+            ReadHeader(stream);
+            foreach (Chunk chunk in ReadChunks(stream))
+            {
+                MessageBox.Show("Chunk ID = " + chunk.Id + ", Len = " + chunk.Data.Length);
+            }
+
+            return null;
         }
 
         public void Store(Map map, Stream stream)
@@ -76,25 +83,62 @@ namespace tIDE.Format
 
         private long ReadLong(Stream stream)
         {
-            return 0;
+            byte[] longBytes = new byte[4];
+
+            long position = stream.Position;
+            if (stream.Read(longBytes, 0, 4) != 4)
+                throw new Exception("Error reading long at position " + position);
+
+            long value = (longBytes[0] << 24) | (longBytes[1] << 16)
+                | (longBytes[2] << 8) | longBytes[3];
+
+            return value;
         }
 
-        private void LoadHeader(Stream stream)
+        private void ReadHeader(Stream stream)
         {
-            byte[] headerForm = new byte[4];
-            if (stream.Read(headerForm, 0, 4) != 4)
-                throw new Exception("Mappy Header: Unexpected end of file at position " + stream.Position);
             ReadSequence(stream, "FORM");
+            long storedLength = ReadLong(stream);
+            long actualLength = stream.Length - 8;
+            if (storedLength != actualLength)
+                throw new Exception(
+                    "Mappy Header: File body length mismatch: stored = " + storedLength + ", actual = " + actualLength);
+            ReadSequence(stream, "FMAP");
+        }
+
+        private Chunk ReadChunk(Stream stream)
+        {
+            string chunkId = ReadSequence(stream, 4);
+            long chunkLength = ReadLong(stream);
+            byte[] chunkData = new byte[chunkLength];
+            if (stream.Read(chunkData, 0, (int) chunkLength) != chunkLength)
+                throw new Exception("End-of-file reading data for chuck id " + chunkId);
+
+            Chunk chunk = new Chunk();
+            chunk.Id = chunkId;
+            chunk.Data = chunkData;
+            return chunk;
+        }
+
+        private IEnumerable<Chunk> ReadChunks(Stream stream)
+        {
+            List<Chunk> chunks = new List<Chunk>();
+            while (stream.Position < stream.Length)
+            {
+                Chunk chunk = ReadChunk(stream);
+                chunks.Add(chunk);
+            }
+            return chunks;
         }
 
         #endregion
 
         #region Private Classes
 
-        private class Chunk
+        private struct Chunk
         {
-            private string m_strHeader;
-            private byte[] m_data;
+            internal string Id;
+            internal byte[] Data;
         }
 
         #endregion
