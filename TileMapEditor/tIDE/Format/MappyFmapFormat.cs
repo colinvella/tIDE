@@ -22,12 +22,25 @@ namespace tIDE.Format
         public Map Load(Stream stream)
         {
             ReadHeader(stream);
+
+            Map map = new Map();
+
             foreach (Chunk chunk in ReadChunks(stream))
             {
-                MessageBox.Show("Chunk ID = " + chunk.Id + ", Len = " + chunk.Data.Length);
+                //MessageBox.Show("Chunk ID = " + chunk.Id + ", Len = " + chunk.Data.Length);
+
+                if (chunk.Id == "ATHR")
+                {
+                    string authors = ASCIIEncoding.ASCII.GetString(chunk.Data);
+                    string[] authorLines = authors.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
+                    StringBuilder stringBuilder = new StringBuilder();
+                    foreach (string authorLine in authorLines)
+                        stringBuilder.AppendLine(authorLine);
+                    map.Description = stringBuilder.ToString();
+                }
             }
 
-            return null;
+            return map;
         }
 
         public void Store(Map map, Stream stream)
