@@ -26,6 +26,9 @@ namespace tIDE.Format
 
             MphdRecord mphdHeader = null;
             Color[] colourMap = null;
+            BlockRecord[] blockRecords = null;
+            AnimationRecord[] animationRecords = null;
+            short[][] layers = new short[8][];
 
             Map map = new Map();
 
@@ -39,7 +42,18 @@ namespace tIDE.Format
                     mphdHeader = ReadChunkMPHD(stream, chunk);
                 else if (chunk.Id == "CMAP")
                     colourMap = ReadChunkCMAP(stream, chunk);
-
+                else if (chunk.Id == "BKDT")
+                    blockRecords = ReadChunkBKDT(stream, chunk, mphdHeader);
+                else if (chunk.Id == "ANDT")
+                    animationRecords = ReadChunkANDT(stream, chunk, mphdHeader);
+                else if (chunk.Id == "BODY")
+                    layers[0] = ReadChunkLayer(stream, chunk, mphdHeader);
+                else if (chunk.Id.Length == 4 && chunk.Id.StartsWith("LYR"))
+                {
+                    char chLast = chunk.Id[3];
+                    if (chLast >= '1' && chLast <= '7')
+                        layers[chLast - '0'] = ReadChunkLayer(stream, chunk, mphdHeader);
+                }
             }
 
             return map;
@@ -371,26 +385,74 @@ namespace tIDE.Format
             return colourMap;
         }
 
-        private BkdtRecord[] ReadChunkBKDT(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        private BlockRecord[] ReadChunkBKDT(Stream stream, Chunk chunk, MphdRecord mphdHeader)
         {
-            stream.Position = chunk.FilePosition;
+            BlockRecord[] blockRecords = new BlockRecord[mphdHeader.NumBlockStruct];
             bool lsb = mphdHeader.LSB;
             for(int index = 0; index < mphdHeader.NumBlockStruct; index++)
             {
-                BkdtRecord bkdtRecord = new BkdtRecord();
-                bkdtRecord.BackgroundOffset = ReadSignedLong(stream, lsb);
-                bkdtRecord.ForegroundOffset = ReadSignedLong(stream, lsb);
-                bkdtRecord.User1 = ReadUnsignedLong(stream, lsb);
-                bkdtRecord.User2 = ReadUnsignedLong(stream, lsb);
-                bkdtRecord.User3 = ReadUnsignedShort(stream, lsb);
-                bkdtRecord.User4 = ReadUnsignedShort(stream, lsb);
-                bkdtRecord.User5 = ReadUnsignedByte(stream);
-                bkdtRecord.User6 = ReadUnsignedByte(stream);
-                bkdtRecord.User7 = ReadUnsignedByte(stream);
-                bkdtRecord.Flags = ReadUnsignedByte(stream);
+                stream.Position = chunk.FilePosition + mphdHeader.BlockStructSize * index;
+
+                BlockRecord blockRecord = new BlockRecord();
+                blockRecord.BackgroundOffset = ReadSignedLong(stream, lsb);
+                blockRecord.ForegroundOffset = ReadSignedLong(stream, lsb);
+                blockRecord.BackgroundOffset2 = ReadSignedLong(stream, lsb);
+                blockRecord.ForegroundOffset2 = ReadSignedLong(stream, lsb);
+                blockRecord.User1 = ReadUnsignedLong(stream, lsb);
+                blockRecord.User2 = ReadUnsignedLong(stream, lsb);
+                blockRecord.User3 = ReadUnsignedShort(stream, lsb);
+                blockRecord.User4 = ReadUnsignedShort(stream, lsb);
+                blockRecord.User5 = ReadUnsignedByte(stream);
+                blockRecord.User6 = ReadUnsignedByte(stream);
+                blockRecord.User7 = ReadUnsignedByte(stream);
+                blockRecord.Flags = ReadUnsignedByte(stream);
+                blockRecords[index] = blockRecord;
             }
 
-            return null;
+            return blockRecords;
+        }
+
+        private AnimationRecord[] ReadChunkANDT(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        {
+            List<AnimationRecord> animationRecords = new List<AnimationRecord>();
+            bool lsb = mphdHeader.LSB;
+            stream.Position = chunk.FilePosition;
+            while (true)
+            {
+                AnimationRecord animationRecord = new AnimationRecord();
+                animationRecord.Type = ReadSignedByte(stream);
+                animationRecord.Delay = ReadSignedByte(stream);
+                animationRecord.Counter = ReadSignedByte(stream);
+                animationRecord.UserInfo = ReadSignedByte(stream);
+                animationRecord.CurrentOffset = ReadSignedLong(stream, lsb);
+                animationRecord.StartOffset = ReadSignedLong(stream, lsb);
+                animationRecord.EndOffset = ReadSignedLong(stream, lsb);
+
+                animationRecords.Add(animationRecord);
+                if (animationRecord.Type < 0)
+                    break;
+            }
+
+            return animationRecords.ToArray();
+        }
+
+        private short[] ReadChunkLayer(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        {
+            bool lsb = mphdHeader.LSB;
+            short[] offsets = new short[chunk.Length / 2];
+            for (int index = 0; index < offsets.Length; index++)
+            {
+                short offset = ReadShort(stream, lsb);
+                if (mphdHeader.VersionHigh > 0)
+                {
+                    if (offset < 1)
+                        offset /= mphdHeader.BlockStructSize;
+                    else
+                        offset /= AnimationRecord.SIZE;
+                }
+                offsets[index] = offset;
+            }
+            return offsets;
         }
 
         #endregion
@@ -432,13 +494,26 @@ namespace tIDE.Format
             internal short Pillars;
         }
 
-        private class BkdtRecord
+        private class BlockRecord
         {
             internal long BackgroundOffset, ForegroundOffset;
+            internal long BackgroundOffset2, ForegroundOffset2;
             internal ulong User1, User2;
             internal ushort User3, User4;
             internal byte User5, User6, User7;
             internal byte Flags;
+        }
+
+        private class AnimationRecord
+        {
+            internal const int SIZE = 16;
+            internal sbyte Type;
+            internal sbyte Delay;
+            internal sbyte Counter;
+            internal sbyte UserInfo;
+            internal long  CurrentOffset;
+            internal long  StartOffset;
+            internal long  EndOffset;
         }
 
         #endregion
