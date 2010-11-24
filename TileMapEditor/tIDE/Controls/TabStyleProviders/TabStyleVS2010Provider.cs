@@ -32,7 +32,7 @@ namespace tIDE.Controls.TabStyleProviders
 		protected override Brush GetTabBackgroundBrush(int index){
 			LinearGradientBrush fillBrush = null;
 
-			//	Capture the colours dependant on selection state of the tab
+			//	Capture the colourMap dependant on selection state of the tab
 			Color dark = Color.Transparent;
 			Color light = Color.Transparent;
 
@@ -87,7 +87,7 @@ namespace tIDE.Controls.TabStyleProviders
 
 		public override Brush GetPageBackgroundBrush(int index){
 
-			//	Capture the colours dependant on selection state of the tab
+			//	Capture the colourMap dependant on selection state of the tab
 			Color light = Color.Transparent;
 			
 			if (this._TabControl.SelectedIndex == index) {
