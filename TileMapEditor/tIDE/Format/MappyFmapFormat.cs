@@ -24,7 +24,7 @@ namespace tIDE.Format
         {
             ReadHeader(stream);
 
-            MphdHeader mphdHeader = null;
+            MphdRecord mphdHeader = null;
             Color[] colourMap = null;
 
             Map map = new Map();
@@ -73,7 +73,7 @@ namespace tIDE.Format
 
         #region Private Methods
 
-        private byte ReadByte(Stream stream)
+        private byte ReadUnsignedByte(Stream stream)
         {
             int byt = stream.ReadByte();
             if (byt < 0)
@@ -120,7 +120,71 @@ namespace tIDE.Format
             return lsb ? ReadShortLsb(stream) : ReadShortMsb(stream);
         }
 
-        private long ReadLongMsb(Stream stream)
+        private ushort ReadUnsignedShortMsb(Stream stream)
+        {
+            byte[] shortBytes = new byte[2];
+
+            long position = stream.Position;
+            if (stream.Read(shortBytes, 0, 2) != 2)
+                throw new Exception("Error reading MSB short int at position " + position);
+
+            ushort value = (ushort)((shortBytes[0] << 8) | shortBytes[1]);
+
+            return value;
+        }
+
+        private ushort ReadUnsignedShortLsb(Stream stream)
+        {
+            byte[] shortBytes = new byte[2];
+
+            long position = stream.Position;
+            if (stream.Read(shortBytes, 0, 2) != 2)
+                throw new Exception("Error reading MSB short int at position " + position);
+
+            ushort value = (ushort)((shortBytes[1] << 8) | shortBytes[0]);
+
+            return value;
+        }
+
+        private ushort ReadUnsignedShort(Stream stream, bool lsb)
+        {
+            return lsb ? ReadUnsignedShortLsb(stream) : ReadUnsignedShortMsb(stream);
+        }
+
+        private ulong ReadUnsignedLongMsb(Stream stream)
+        {
+            byte[] longBytes = new byte[4];
+
+            long position = stream.Position;
+            if (stream.Read(longBytes, 0, 4) != 4)
+                throw new Exception("Error reading MSB long at position " + position);
+
+            ulong value = (ulong)((longBytes[0] << 24) | (longBytes[1] << 16)
+                | (longBytes[2] << 8) | longBytes[3]);
+
+            return value;
+        }
+
+        private ulong ReadUnsignedLongLsb(Stream stream)
+        {
+            byte[] longBytes = new byte[4];
+
+            long position = stream.Position;
+            if (stream.Read(longBytes, 0, 4) != 4)
+                throw new Exception("Error reading LSB long at position " + position);
+
+            ulong value = (ulong)((longBytes[3] << 24) | (longBytes[2] << 16)
+                | (longBytes[1] << 8) | longBytes[0]);
+
+            return value;
+        }
+
+        private ulong ReadUnsignedLong(Stream stream, bool lsb)
+        {
+            return lsb ? ReadUnsignedLongLsb(stream) : ReadUnsignedLongMsb(stream);
+        }
+
+        private long ReadSignedLongMsb(Stream stream)
         {
             byte[] longBytes = new byte[4];
 
@@ -134,7 +198,7 @@ namespace tIDE.Format
             return value;
         }
 
-        private long ReadLongLsb(Stream stream)
+        private long ReadSignedLongLsb(Stream stream)
         {
             byte[] longBytes = new byte[4];
 
@@ -148,9 +212,9 @@ namespace tIDE.Format
             return value;
         }
 
-        private long ReadLong(Stream stream, bool lsb)
+        private long ReadSignedLong(Stream stream, bool lsb)
         {
-            return lsb ? ReadLongLsb(stream) : ReadLongMsb(stream);
+            return lsb ? ReadSignedLongLsb(stream) : ReadSignedLongMsb(stream);
         }
 
         private string ReadSequence(Stream stream, int count)
@@ -190,7 +254,7 @@ namespace tIDE.Format
         private void ReadHeader(Stream stream)
         {
             ReadSequence(stream, "FORM");
-            long storedLength = ReadLongMsb(stream);
+            long storedLength = ReadSignedLongMsb(stream);
             long actualLength = stream.Length - 8;
             if (storedLength != actualLength)
                 throw new Exception(
@@ -201,7 +265,7 @@ namespace tIDE.Format
         private Chunk MapChunk(Stream stream)
         {
             string chunkId = ReadSequence(stream, 4);
-            long chunkLength = ReadLongMsb(stream);
+            long chunkLength = ReadSignedLongMsb(stream);
             if (chunkLength > int.MaxValue)
                 throw new Exception("Chunk sizes greater than " + int.MaxValue + " not supported");
             if (stream.Position + chunkLength > stream.Length)
@@ -241,49 +305,53 @@ namespace tIDE.Format
             map.Description = stringBuilder.ToString();
         }
 
-        private MphdHeader ReadChunkMPHD(Stream stream, Chunk chunk)
+        private MphdRecord ReadChunkMPHD(Stream stream, Chunk chunk)
         {
-            MphdHeader mphdHeader = new MphdHeader();
+            MphdRecord mphdRecord = new MphdRecord();
 
             stream.Position = chunk.FilePosition;
-            mphdHeader.VersionHigh = ReadSignedByte(stream);
-            mphdHeader.VersionLow = ReadSignedByte(stream);
-            mphdHeader.LSB = ReadSignedByte(stream) != 0;
-            mphdHeader.MapType = ReadSignedByte(stream);
-            mphdHeader.MapWidth = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.MapHeight = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.Reserved1 = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.Reserved2 = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.BlockWidth = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.BlockHeight = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.BlockDepth = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.BlockStructSize = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.NumBlockStruct = ReadShort(stream, mphdHeader.LSB);
-            mphdHeader.NumBlockGfx = ReadShort(stream, mphdHeader.LSB);
+            mphdRecord.VersionHigh = ReadSignedByte(stream);
+            mphdRecord.VersionLow = ReadSignedByte(stream);
+            mphdRecord.LSB = ReadSignedByte(stream) != 0;
+            mphdRecord.MapType = ReadSignedByte(stream);
+
+            if (mphdRecord.MapType != 0)
+                throw new Exception("Only MapType = 0 is supported");
+
+            mphdRecord.MapWidth = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.MapHeight = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.Reserved1 = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.Reserved2 = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.BlockWidth = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.BlockHeight = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.BlockDepth = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.BlockStructSize = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.NumBlockStruct = ReadShort(stream, mphdRecord.LSB);
+            mphdRecord.NumBlockGfx = ReadShort(stream, mphdRecord.LSB);
 
             if (chunk.Length > 24)
             {
-                mphdHeader.ColourKeyIndex = ReadByte(stream);
-                mphdHeader.ColourKeyRed = ReadByte(stream);
-                mphdHeader.ColourKeyGreen = ReadByte(stream);
-                mphdHeader.ColourKeyBlue = ReadByte(stream);
+                mphdRecord.ColourKeyIndex = ReadUnsignedByte(stream);
+                mphdRecord.ColourKeyRed = ReadUnsignedByte(stream);
+                mphdRecord.ColourKeyGreen = ReadUnsignedByte(stream);
+                mphdRecord.ColourKeyBlue = ReadUnsignedByte(stream);
 
                 if (chunk.Length > 28)
                 {
-                    mphdHeader.BlockGapX = ReadShort(stream, mphdHeader.LSB);
-                    mphdHeader.BlockGapY = ReadShort(stream, mphdHeader.LSB);
-                    mphdHeader.BlockStaggerX = ReadShort(stream, mphdHeader.LSB);
-                    mphdHeader.BlockStaggerY = ReadShort(stream, mphdHeader.LSB);
+                    mphdRecord.BlockGapX = ReadShort(stream, mphdRecord.LSB);
+                    mphdRecord.BlockGapY = ReadShort(stream, mphdRecord.LSB);
+                    mphdRecord.BlockStaggerX = ReadShort(stream, mphdRecord.LSB);
+                    mphdRecord.BlockStaggerY = ReadShort(stream, mphdRecord.LSB);
 
                     if (chunk.Length > 36)
                     {
-                        mphdHeader.ClickMask = ReadShort(stream, mphdHeader.LSB);
-                        mphdHeader.Pillars = ReadShort(stream, mphdHeader.LSB);
+                        mphdRecord.ClickMask = ReadShort(stream, mphdRecord.LSB);
+                        mphdRecord.Pillars = ReadShort(stream, mphdRecord.LSB);
                     }
                 }
             }
 
-            return mphdHeader;
+            return mphdRecord;
         }
 
         private Color[] ReadChunkCMAP(Stream stream, Chunk chunk)
@@ -293,14 +361,36 @@ namespace tIDE.Format
             Color[] colourMap = new Color[colourCount];
             for (int index = 0; index < colourCount; index++)
             {
-                byte red = ReadByte(stream);
-                byte green = ReadByte(stream);
-                byte blue = ReadByte(stream);
+                byte red = ReadUnsignedByte(stream);
+                byte green = ReadUnsignedByte(stream);
+                byte blue = ReadUnsignedByte(stream);
                 Color colour = Color.FromArgb(red, green, blue);
                 colourMap[index] = colour;
             }
 
             return colourMap;
+        }
+
+        private BkdtRecord[] ReadChunkBKDT(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        {
+            stream.Position = chunk.FilePosition;
+            bool lsb = mphdHeader.LSB;
+            for(int index = 0; index < mphdHeader.NumBlockStruct; index++)
+            {
+                BkdtRecord bkdtRecord = new BkdtRecord();
+                bkdtRecord.BackgroundOffset = ReadSignedLong(stream, lsb);
+                bkdtRecord.ForegroundOffset = ReadSignedLong(stream, lsb);
+                bkdtRecord.User1 = ReadUnsignedLong(stream, lsb);
+                bkdtRecord.User2 = ReadUnsignedLong(stream, lsb);
+                bkdtRecord.User3 = ReadUnsignedShort(stream, lsb);
+                bkdtRecord.User4 = ReadUnsignedShort(stream, lsb);
+                bkdtRecord.User5 = ReadUnsignedByte(stream);
+                bkdtRecord.User6 = ReadUnsignedByte(stream);
+                bkdtRecord.User7 = ReadUnsignedByte(stream);
+                bkdtRecord.Flags = ReadUnsignedByte(stream);
+            }
+
+            return null;
         }
 
         #endregion
@@ -314,7 +404,7 @@ namespace tIDE.Format
             internal int Length;
         }
 
-        private class MphdHeader
+        private class MphdRecord
         {
             internal sbyte VersionHigh;
             internal sbyte VersionLow;
@@ -340,6 +430,15 @@ namespace tIDE.Format
             internal short BlockStaggerY;
             internal short ClickMask;
             internal short Pillars;
+        }
+
+        private class BkdtRecord
+        {
+            internal long BackgroundOffset, ForegroundOffset;
+            internal ulong User1, User2;
+            internal ushort User3, User4;
+            internal byte User5, User6, User7;
+            internal byte Flags;
         }
 
         #endregion
