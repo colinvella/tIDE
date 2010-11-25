@@ -443,6 +443,7 @@ namespace tIDE.Format
 
         private Image ReadChuckBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
         {
+            stream.Position = chunk.FilePosition;
             byte[] imageData = new byte[chunk.Length];
             stream.Read(imageData, 0, chunk.Length);
 
@@ -484,16 +485,19 @@ namespace tIDE.Format
             }
 
             BitmapData bitmapData = imageSource.LockBits(new Rectangle(Point.Empty, imageSource.Size), ImageLockMode.WriteOnly, pixelFormat);
-            Marshal.Copy(imageData, 8, bitmapData.Scan0, imageData.Length - 8);
+            Marshal.Copy(imageData, 0, bitmapData.Scan0, imageData.Length);
             imageSource.UnlockBits(bitmapData);
 
-            for (int y = 0; y < imageSource.Height; y++)
+            if (mphdRecord.BlockDepth > 8)
             {
-                for (int x = 0; x < imageSource.Width; x++)
+                for (int y = 0; y < imageSource.Height; y++)
                 {
-                    Color c = imageSource.GetPixel(x, y);
-                    c = Color.FromArgb(c.B, c.G, c.R);
-                    imageSource.SetPixel(x, y, c);
+                    for (int x = 0; x < imageSource.Width; x++)
+                    {
+                        Color c = imageSource.GetPixel(x, y);
+                        c = Color.FromArgb(c.B, c.G, c.R);
+                        imageSource.SetPixel(x, y, c);
+                    }
                 }
             }
 
