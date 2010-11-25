@@ -8,6 +8,8 @@ using xTile;
 using xTile.Format;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
 
 namespace tIDE.Format
 {
@@ -24,10 +26,11 @@ namespace tIDE.Format
         {
             ReadHeader(stream);
 
-            MphdRecord mphdHeader = null;
+            MphdRecord mphdRecord = null;
             Color[] colourMap = null;
             BlockRecord[] blockRecords = null;
             AnimationRecord[] animationRecords = null;
+            Image imageSource = null;
             short[][] layers = new short[8][];
 
             Map map = new Map();
@@ -39,20 +42,22 @@ namespace tIDE.Format
                 if (chunk.Id == "ATHR")
                     ReadChunkATHR(stream, chunk, map);
                 else if (chunk.Id == "MPHD")
-                    mphdHeader = ReadChunkMPHD(stream, chunk);
+                    mphdRecord = ReadChunkMPHD(stream, chunk);
                 else if (chunk.Id == "CMAP")
                     colourMap = ReadChunkCMAP(stream, chunk);
                 else if (chunk.Id == "BKDT")
-                    blockRecords = ReadChunkBKDT(stream, chunk, mphdHeader);
+                    blockRecords = ReadChunkBKDT(stream, chunk, mphdRecord);
                 else if (chunk.Id == "ANDT")
-                    animationRecords = ReadChunkANDT(stream, chunk, mphdHeader);
+                    animationRecords = ReadChunkANDT(stream, chunk, mphdRecord);
+                else if (chunk.Id == "BGFX")
+                    imageSource = ReadChuckBGFX(stream, chunk, mphdRecord, colourMap);
                 else if (chunk.Id == "BODY")
-                    layers[0] = ReadChunkLayer(stream, chunk, mphdHeader);
+                    layers[0] = ReadChunkLayer(stream, chunk, mphdRecord);
                 else if (chunk.Id.Length == 4 && chunk.Id.StartsWith("LYR"))
                 {
                     char chLast = chunk.Id[3];
                     if (chLast >= '1' && chLast <= '7')
-                        layers[chLast - '0'] = ReadChunkLayer(stream, chunk, mphdHeader);
+                        layers[chLast - '0'] = ReadChunkLayer(stream, chunk, mphdRecord);
                 }
             }
 
@@ -385,13 +390,13 @@ namespace tIDE.Format
             return colourMap;
         }
 
-        private BlockRecord[] ReadChunkBKDT(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        private BlockRecord[] ReadChunkBKDT(Stream stream, Chunk chunk, MphdRecord mphdRecord)
         {
-            BlockRecord[] blockRecords = new BlockRecord[mphdHeader.NumBlockStruct];
-            bool lsb = mphdHeader.LSB;
-            for(int index = 0; index < mphdHeader.NumBlockStruct; index++)
+            BlockRecord[] blockRecords = new BlockRecord[mphdRecord.NumBlockStruct];
+            bool lsb = mphdRecord.LSB;
+            for(int index = 0; index < mphdRecord.NumBlockStruct; index++)
             {
-                stream.Position = chunk.FilePosition + mphdHeader.BlockStructSize * index;
+                stream.Position = chunk.FilePosition + mphdRecord.BlockStructSize * index;
 
                 BlockRecord blockRecord = new BlockRecord();
                 blockRecord.BackgroundOffset = ReadSignedLong(stream, lsb);
@@ -412,10 +417,10 @@ namespace tIDE.Format
             return blockRecords;
         }
 
-        private AnimationRecord[] ReadChunkANDT(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        private AnimationRecord[] ReadChunkANDT(Stream stream, Chunk chunk, MphdRecord mphdRecord)
         {
             List<AnimationRecord> animationRecords = new List<AnimationRecord>();
-            bool lsb = mphdHeader.LSB;
+            bool lsb = mphdRecord.LSB;
             stream.Position = chunk.FilePosition;
             while (true)
             {
@@ -436,17 +441,80 @@ namespace tIDE.Format
             return animationRecords.ToArray();
         }
 
-        private short[] ReadChunkLayer(Stream stream, Chunk chunk, MphdRecord mphdHeader)
+        private Image ReadChuckBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
         {
-            bool lsb = mphdHeader.LSB;
+            byte[] imageData = new byte[chunk.Length];
+            stream.Read(imageData, 0, chunk.Length);
+
+            int tileCount = mphdRecord.NumBlockStruct;
+            int imageWidth = mphdRecord.BlockWidth;
+            int imageHeight = mphdRecord.BlockHeight * tileCount;
+            PixelFormat pixelFormat = PixelFormat.Undefined;
+            if (mphdRecord.BlockDepth == 8)
+                pixelFormat = PixelFormat.Format8bppIndexed;
+            else if (mphdRecord.BlockDepth == 16)
+                pixelFormat = PixelFormat.Format16bppRgb565;
+            else if (mphdRecord.BlockDepth == 24)
+                pixelFormat = PixelFormat.Format24bppRgb;
+            else if (mphdRecord.BlockDepth == 32)
+                pixelFormat = PixelFormat.Format32bppArgb;
+            else if (mphdRecord.BlockDepth == 64)
+                pixelFormat = PixelFormat.Format64bppArgb;
+            
+            Bitmap imageSource = new Bitmap(imageWidth, imageHeight, pixelFormat);
+            if (mphdRecord.BlockDepth == 8)
+            {
+                // set palette
+                if (colourMap != null)
+                    for (int index = 0; index < colourMap.Length; index++)
+                        imageSource.Palette.Entries[index] = colourMap[index];
+
+                // de-interleave bit planes
+                /*
+                byte[] indexData = new byte[chunk.Length];
+                int planeOffset = chunk.Length / 8;
+                for (int index = 0; index < chunk.Length; index++)
+                {
+                    indexData[index] = 0;
+                    for (int plane = 0; plane < 8; plane++)
+                        indexData[index] |= (byte)(((imageData[plane * planeOffset + index / 8] >> plane) & 1)<< (7 - plane));
+                }
+                imageData = indexData;
+                */
+            }
+
+            BitmapData bitmapData = imageSource.LockBits(new Rectangle(Point.Empty, imageSource.Size), ImageLockMode.WriteOnly, pixelFormat);
+            Marshal.Copy(imageData, 8, bitmapData.Scan0, imageData.Length - 8);
+            imageSource.UnlockBits(bitmapData);
+
+            for (int y = 0; y < imageSource.Height; y++)
+            {
+                for (int x = 0; x < imageSource.Width; x++)
+                {
+                    Color c = imageSource.GetPixel(x, y);
+                    c = Color.FromArgb(c.B, c.G, c.R);
+                    imageSource.SetPixel(x, y, c);
+                }
+            }
+
+            //imageSource.Save("C:\\test.gif", ImageFormat.Gif);
+            imageSource.Save("C:\\test.png", ImageFormat.Png);
+
+            return imageSource;
+        }
+
+
+        private short[] ReadChunkLayer(Stream stream, Chunk chunk, MphdRecord mphdRecord)
+        {
+            bool lsb = mphdRecord.LSB;
             short[] offsets = new short[chunk.Length / 2];
             for (int index = 0; index < offsets.Length; index++)
             {
                 short offset = ReadShort(stream, lsb);
-                if (mphdHeader.VersionHigh > 0)
+                if (mphdRecord.VersionHigh > 0)
                 {
                     if (offset < 1)
-                        offset /= mphdHeader.BlockStructSize;
+                        offset /= mphdRecord.BlockStructSize;
                     else
                         offset /= AnimationRecord.SIZE;
                 }
