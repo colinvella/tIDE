@@ -443,60 +443,84 @@ namespace tIDE.Format
 
         private Image ReadChuckBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
         {
-            stream.Position = chunk.FilePosition;
-            byte[] imageData = new byte[chunk.Length];
-            stream.Read(imageData, 0, chunk.Length);
-
-            int tileCount = mphdRecord.NumBlockStruct;
+            int tileCount = mphdRecord.NumBlockStruct - 1;
             int imageWidth = mphdRecord.BlockWidth;
             int imageHeight = mphdRecord.BlockHeight * tileCount;
-            PixelFormat pixelFormat = PixelFormat.Undefined;
-            if (mphdRecord.BlockDepth == 8)
-                pixelFormat = PixelFormat.Format8bppIndexed;
-            else if (mphdRecord.BlockDepth == 16)
-                pixelFormat = PixelFormat.Format16bppRgb565;
-            else if (mphdRecord.BlockDepth == 24)
-                pixelFormat = PixelFormat.Format24bppRgb;
-            else if (mphdRecord.BlockDepth == 32)
-                pixelFormat = PixelFormat.Format32bppArgb;
-            else if (mphdRecord.BlockDepth == 64)
-                pixelFormat = PixelFormat.Format64bppArgb;
+
+            byte[] imageData = new byte[chunk.Length];
+            stream.Position = chunk.FilePosition;
+            stream.Read(imageData, 0, chunk.Length);
             
-            Bitmap imageSource = new Bitmap(imageWidth, imageHeight, pixelFormat);
+            Bitmap imageSource = new Bitmap(imageWidth, imageHeight, PixelFormat.Format32bppArgb);
             if (mphdRecord.BlockDepth == 8)
             {
-                // set palette
-                if (colourMap != null)
-                    for (int index = 0; index < colourMap.Length; index++)
-                        imageSource.Palette.Entries[index] = colourMap[index];
-
-                // de-interleave bit planes
-                /*
-                byte[] indexData = new byte[chunk.Length];
-                int planeOffset = chunk.Length / 8;
-                for (int index = 0; index < chunk.Length; index++)
+                for (int pixelY = 0; pixelY < imageHeight; pixelY++)
                 {
-                    indexData[index] = 0;
-                    for (int plane = 0; plane < 8; plane++)
-                        indexData[index] |= (byte)(((imageData[plane * planeOffset + index / 8] >> plane) & 1)<< (7 - plane));
-                }
-                imageData = indexData;
-                */
-            }
-
-            BitmapData bitmapData = imageSource.LockBits(new Rectangle(Point.Empty, imageSource.Size), ImageLockMode.WriteOnly, pixelFormat);
-            Marshal.Copy(imageData, 0, bitmapData.Scan0, imageData.Length);
-            imageSource.UnlockBits(bitmapData);
-
-            if (mphdRecord.BlockDepth > 8)
-            {
-                for (int y = 0; y < imageSource.Height; y++)
-                {
-                    for (int x = 0; x < imageSource.Width; x++)
+                    for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
-                        Color c = imageSource.GetPixel(x, y);
-                        c = Color.FromArgb(c.B, c.G, c.R);
-                        imageSource.SetPixel(x, y, c);
+                        byte colourIndex = imageData[pixelY * imageWidth + pixelX];
+                        if (colourIndex != mphdRecord.ColourKeyIndex)
+                            imageSource.SetPixel(pixelX, pixelY, colourMap[colourIndex]);
+                    }
+                }
+            }
+            else if (mphdRecord.BlockDepth == 16)
+            {
+                for (int pixelY = 0; pixelY < imageHeight; pixelY++)
+                {
+                    for (int pixelX = 0; pixelX < imageWidth; pixelX++)
+                    {
+                        int colourOffset = (pixelY * imageWidth + pixelX) * 2;
+                        ushort colourValue = (ushort) (imageData[colourOffset] | (imageData[colourOffset + 1] << 8));
+                        byte alpha = 255;
+                        byte red = (byte)(colourValue & 31);
+                        byte green = (byte)((colourValue >> 5) & 63);
+                        byte blue = (byte)((colourValue >> 11) & 31);
+                        red *= 8;
+                        green *= 4;
+                        blue *= 8;
+                        if (red == mphdRecord.ColourKeyRed
+                            && green == mphdRecord.ColourKeyGreen
+                            && blue == mphdRecord.ColourKeyBlue)
+                            alpha = 0;
+                        Color colour = Color.FromArgb(alpha, red, green, blue);
+                        imageSource.SetPixel(pixelX, pixelY, colour);
+                    }
+                }
+            }
+            else if (mphdRecord.BlockDepth == 24)
+            {
+                for (int pixelY = 0; pixelY < imageHeight; pixelY++)
+                {
+                    for (int pixelX = 0; pixelX < imageWidth; pixelX++)
+                    {
+                        int colourOffset = (pixelY * imageWidth + pixelX) * 3;
+                        byte alpha = 255;
+                        byte red = imageData[colourOffset + 0];
+                        byte green = imageData[colourOffset + 1];
+                        byte blue = imageData[colourOffset + 2];
+                        if (red == mphdRecord.ColourKeyRed
+                            && green == mphdRecord.ColourKeyGreen
+                            && blue == mphdRecord.ColourKeyBlue)
+                            alpha = 0;
+                        Color colour = Color.FromArgb(alpha, red, green, blue);
+                        imageSource.SetPixel(pixelX, pixelY, colour);
+                    }
+                }
+            }
+            else if (mphdRecord.BlockDepth == 32)
+            {
+                for (int pixelY = 0; pixelY < imageHeight; pixelY++)
+                {
+                    for (int pixelX = 0; pixelX < imageWidth; pixelX++)
+                    {
+                        int colourOffset = (pixelY * imageWidth + pixelX) * 4;
+                        byte alpha = imageData[colourOffset];
+                        byte red = imageData[colourOffset + 1];
+                        byte green = imageData[colourOffset + 2];
+                        byte blue = imageData[colourOffset + 3];
+                        Color colour = Color.FromArgb(alpha, red, green, blue);
+                        imageSource.SetPixel(pixelX, pixelY, colour);
                     }
                 }
             }
