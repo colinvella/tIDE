@@ -35,29 +35,54 @@ namespace tIDE.Format
 
             Map map = new Map();
 
-            foreach (Chunk chunk in MapChunks(stream))
-            {
-                //MessageBox.Show("Chunk ID = " + chunk.Id + ", Len = " + chunk.Data.Length);
+            Dictionary<string, Chunk> chunks = MapChunks(stream);
 
-                if (chunk.Id == "ATHR")
-                    ReadChunkATHR(stream, chunk, map);
-                else if (chunk.Id == "MPHD")
-                    mphdRecord = ReadChunkMPHD(stream, chunk);
-                else if (chunk.Id == "CMAP")
-                    colourMap = ReadChunkCMAP(stream, chunk);
-                else if (chunk.Id == "BKDT")
-                    blockRecords = ReadChunkBKDT(stream, chunk, mphdRecord);
-                else if (chunk.Id == "ANDT")
-                    animationRecords = ReadChunkANDT(stream, chunk, mphdRecord);
-                else if (chunk.Id == "BGFX")
-                    imageSource = ReadChuckBGFX(stream, chunk, mphdRecord, colourMap);
-                else if (chunk.Id == "BODY")
-                    layers[0] = ReadChunkLayer(stream, chunk, mphdRecord);
-                else if (chunk.Id.Length == 4 && chunk.Id.StartsWith("LYR"))
+            if (!chunks.ContainsKey("MPHD"))
+                throw new Exception("Header chunk MPHD missing");
+            Chunk mphdChunk = chunks["MPHD"];
+            mphdRecord = ReadChunkMPHD(stream, mphdChunk);
+
+            if (mphdRecord.BlockDepth == 8)
+            {
+                if (!chunks.ContainsKey("CMAP"))
+                    throw new Exception("Colour map chuck CMAP is required for 8bit graphics blocks");
+                Chunk cmapChunk = chunks["CMAP"];
+                colourMap = ReadChunkCMAP(stream, cmapChunk);
+            }
+
+            if (chunks.ContainsKey("ATHR"))
+                ReadChunkATHR(stream, chunks["ATHR"], map);
+
+            if (!chunks.ContainsKey("BKDT"))
+                throw new Exception("Block data chunk BKDT missing");
+            Chunk bkdtChunk = chunks["BKDT"];
+            blockRecords = ReadChunkBKDT(stream, bkdtChunk, mphdRecord);
+
+            // optional ?
+            if (chunks.ContainsKey("ANDT"))
+            {
+                Chunk andtChunk = chunks["ANDT"];
+                animationRecords = ReadChunkANDT(stream, andtChunk, mphdRecord);
+            }
+
+            if (!chunks.ContainsKey("BGFX"))
+                throw new Exception("Block graphics chunk BGFX missing");
+            Chunk bgfxChunk = chunks["BGFX"];
+            imageSource = ReadChuckBGFX(stream, bgfxChunk, mphdRecord, colourMap);
+
+            if (!chunks.ContainsKey("BODY"))
+                throw new Exception("Body chunk BODY missing");
+            Chunk bodyChunk = chunks["BODY"];
+            layers[0] = ReadChunkLayer(stream, bodyChunk, mphdRecord);
+
+            // additional layers
+            for (int layer = 1; layer <= 7; layer++)
+            {
+                string chunkId = "LYR" + layer;
+                if (chunks.ContainsKey(chunkId))
                 {
-                    char chLast = chunk.Id[3];
-                    if (chLast >= '1' && chLast <= '7')
-                        layers[chLast - '0'] = ReadChunkLayer(stream, chunk, mphdRecord);
+                    Chunk layerChuck = chunks[chunkId];
+                    layers[layer] = ReadChunkLayer(stream, layerChuck, mphdRecord);
                 }
             }
 
@@ -300,13 +325,13 @@ namespace tIDE.Format
             return chunk;
         }
 
-        private IEnumerable<Chunk> MapChunks(Stream stream)
+        private Dictionary<string, Chunk> MapChunks(Stream stream)
         {
-            List<Chunk> chunks = new List<Chunk>();
+            Dictionary<string, Chunk> chunks = new Dictionary<string, Chunk>();
             while (stream.Position < stream.Length)
             {
                 Chunk chunk = MapChunk(stream);
-                chunks.Add(chunk);
+                chunks[chunk.Id] = chunk;
             }
             return chunks;
         }
@@ -554,7 +579,6 @@ namespace tIDE.Format
 
             return imageSource;
         }
-
 
         private short[] ReadChunkLayer(Stream stream, Chunk chunk, MphdRecord mphdRecord)
         {
