@@ -464,6 +464,30 @@ namespace tIDE.Format
                     }
                 }
             }
+            else if (mphdRecord.BlockDepth == 15)
+            {
+                for (int pixelY = 0; pixelY < imageHeight; pixelY++)
+                {
+                    for (int pixelX = 0; pixelX < imageWidth; pixelX++)
+                    {
+                        int colourOffset = (pixelY * imageWidth + pixelX) * 2;
+                        ushort colourValue = (ushort)(imageData[colourOffset] | (imageData[colourOffset + 1] << 8));
+                        byte alpha = 255;
+                        byte red = (byte)(colourValue & 31);
+                        byte green = (byte)((colourValue >> 5) & 31);
+                        byte blue = (byte)((colourValue >> 10) & 31);
+                        red *= 4;
+                        green *= 4;
+                        blue *= 4;
+                        if (red == mphdRecord.ColourKeyRed
+                            && green == mphdRecord.ColourKeyGreen
+                            && blue == mphdRecord.ColourKeyBlue)
+                            alpha = 0;
+                        Color colour = Color.FromArgb(alpha, red, green, blue);
+                        imageSource.SetPixel(pixelX, pixelY, colour);
+                    }
+                }
+            }
             else if (mphdRecord.BlockDepth == 16)
             {
                 for (int pixelY = 0; pixelY < imageHeight; pixelY++)
