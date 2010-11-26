@@ -21,7 +21,51 @@ namespace tIDE.Format
 
         public CompatibilityReport DetermineCompatibility(xTile.Map map)
         {
-            throw new NotImplementedException();
+            List<CompatibilityNote> compatibilityNotes = new List<CompatibilityNote>();
+
+            if (map.TileSheets.Count != 1)
+                compatibilityNotes.Add(
+                    new CompatibilityNote(CompatibilityLevel.None, "Map must use exactly one tile sheet"));
+
+            if (map.Layers.Count == 0)
+                compatibilityNotes.Add(
+                    new CompatibilityNote(CompatibilityLevel.None, "Map must have at least one layer"));
+
+            if (map.Layers.Count > 8)
+                compatibilityNotes.Add(
+                    new CompatibilityNote(CompatibilityLevel.None, "Map must have no more than 8 layers"));
+
+            xTile.Dimensions.Size layerSize = map.Layers[0].LayerSize;
+
+            foreach (Layer layer in map.Layers)
+                if (layer.LayerSize != layerSize)
+                {
+                    compatibilityNotes.Add(
+                        new CompatibilityNote(CompatibilityLevel.None, "All layers must be of the same size"));
+                    break;
+                }
+
+            xTile.Dimensions.Size tileSize = map.Layers[0].TileSize;
+            foreach (Layer layer in map.Layers)
+                if (layer.TileSize != tileSize)
+                {
+                    compatibilityNotes.Add
+                        (new CompatibilityNote(CompatibilityLevel.None,
+                            "All layers must share a common tile size dictated by the tile sheet"));
+                    break;
+                }
+
+            compatibilityNotes.Add(
+                new CompatibilityNote(CompatibilityLevel.Partial, "Tile, layer and map attributes will not be stored"));
+
+            compatibilityNotes.Add(
+                new CompatibilityNote(CompatibilityLevel.Partial, "Auto-tiling definitions will not be stored"));
+
+            compatibilityNotes.Add(
+                new CompatibilityNote(CompatibilityLevel.Partial, "Brush definitions will not be stored"));
+
+            CompatibilityReport compatibilityReport = new CompatibilityReport(compatibilityNotes);
+            return compatibilityReport;
         }
 
         public Map Load(Stream stream)
