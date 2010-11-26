@@ -143,6 +143,17 @@ namespace tIDE.Format
                         {
                             layer.Tiles[tileX, tileY] = new StaticTile(layer, tileSheet, BlendMode.Alpha, tileIndex);
                         }
+                        else
+                        {
+                            AnimationRecord animationRecord = animationRecords[-tileIndex - 1];
+                            StaticTile[] tileFrames = new StaticTile[animationRecord.Frames.Length];
+                            for (int frameIndex = 0; frameIndex < animationRecord.Frames.Length; frameIndex++)
+                            {
+                                tileFrames[frameIndex] = new StaticTile(layer, tileSheet, BlendMode.Alpha, animationRecord.Frames[frameIndex]);
+                            }
+                            AnimatedTile animatedTile = new AnimatedTile(layer, tileFrames, (long)animationRecord.Delay * 20);
+                            layer.Tiles[tileX, tileY] = animatedTile;
+                        }
                     }
                 }
             }
@@ -504,6 +515,11 @@ namespace tIDE.Format
         {
             bool lsb = mphdRecord.LSB;
 
+            // temp
+            stream.Position = chunk.FilePosition;
+            byte[] buffer = new byte[chunk.Length];
+            stream.Read(buffer, 0, chunk.Length);
+
             // count structures backwards
             stream.Position = chunk.FilePosition + chunk.Length - AnimationRecord.SIZE;
             int animationCount = 0;
@@ -519,6 +535,7 @@ namespace tIDE.Format
             int animationIndex = 0;
             while (true)
             {
+                long recordPosition = stream.Position;
                 AnimationRecord animationRecord = new AnimationRecord();
 
                 animationRecord.Type = ReadSignedByte(stream);
@@ -532,9 +549,20 @@ namespace tIDE.Format
                 animationRecord.StartOffset = ReadSignedLong(stream, lsb);
                 animationRecord.EndOffset = ReadSignedLong(stream, lsb);
 
+                // offsets are negative offsets into a list of frame indices (32bit) at the beginning of the chunk
+                int frameCount = (int)((animationRecord.EndOffset - animationRecord.StartOffset) / 4);
+
+                // move (backwards) to frame indices at beginning of chunk
+                animationRecord.Frames = new int[frameCount];
+                stream.Position += animationRecord.StartOffset;
+                for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
+                {
+                    animationRecord.Frames[frameIndex] = (int)(ReadSignedLong(stream, lsb) / mphdRecord.BlockStructSize);
+                }
+
                 animationRecords[animationIndex++] = animationRecord;
 
-                stream.Position -= AnimationRecord.SIZE;
+                stream.Position = recordPosition - AnimationRecord.SIZE;
             }
 
             return animationRecords;
@@ -738,6 +766,7 @@ namespace tIDE.Format
             internal long  CurrentOffset;
             internal long  StartOffset;
             internal long  EndOffset;
+            internal int[] Frames;
         }
 
         #endregion
