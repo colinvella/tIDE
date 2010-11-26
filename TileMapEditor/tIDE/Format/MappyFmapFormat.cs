@@ -557,7 +557,9 @@ namespace tIDE.Format
                 stream.Position += animationRecord.StartOffset;
                 for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
                 {
-                    animationRecord.Frames[frameIndex] = (int)(ReadSignedLong(stream, lsb) / mphdRecord.BlockStructSize);
+                    animationRecord.Frames[frameIndex] = (int)ReadSignedLong(stream, lsb);
+                    if (mphdRecord.VersionHigh < 1)
+                         animationRecord.Frames[frameIndex] /= mphdRecord.BlockStructSize;
                 }
 
                 animationRecords[animationIndex++] = animationRecord;
