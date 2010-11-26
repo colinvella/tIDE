@@ -210,6 +210,22 @@ namespace tIDE.Format
 
         public void Store(Map map, Stream stream)
         {
+            // ATHR chunk
+            WriteChunkATHR(stream, map);
+
+            // MPHD chunk
+
+
+            // BKDT chunk
+
+            // ANDT chunk
+
+            // BGFX chunk
+
+            // BODY chunk
+
+            // LYR? chunks
+
             throw new NotImplementedException();
         }
 
@@ -414,6 +430,88 @@ namespace tIDE.Format
             }
         }
 
+        private void Write(Stream stream, byte value)
+        {
+            stream.WriteByte(value);
+        }
+
+        private void Write(Stream stream, sbyte value)
+        {
+            stream.WriteByte((byte)value);
+        }
+
+        private void WriteMsb(Stream stream, short value)
+        {
+            byte[] shortBytes = new byte[2];
+
+            shortBytes[0] = (byte) (value >> 8);
+            shortBytes[1] = (byte) (value & 0xFF);
+
+            stream.Write(shortBytes, 0, 2);
+        }
+
+        private void WriteLsb(Stream stream, short value)
+        {
+            byte[] shortBytes = new byte[2];
+
+            shortBytes[0] = (byte)(value & 0xFF);
+            shortBytes[1] = (byte)(value >> 8);
+
+            stream.Write(shortBytes, 0, 2);
+        }
+
+        private void Write(Stream stream, bool lsb, short value)
+        {
+            if (lsb)
+                WriteLsb(stream, value);
+            else
+                WriteMsb(stream, value);
+        }
+
+        private void WriteMsb(Stream stream, long value)
+        {
+            byte[] longBytes = new byte[4];
+
+            longBytes[0] = (byte)(value >> 24);
+            longBytes[1] = (byte)((value >> 16) & 0xFF);
+            longBytes[2] = (byte)((value >> 8) & 0xFF);
+            longBytes[3] = (byte)(value & 0xFF);
+
+            stream.Write(longBytes, 0, 4);
+        }
+
+        private void WriteLsb(Stream stream, long value)
+        {
+            byte[] longBytes = new byte[4];
+
+            longBytes[0] = (byte)(value & 0xFF);
+            longBytes[1] = (byte)((value >> 8) & 0xFF);
+            longBytes[2] = (byte)((value >> 16) & 0xFF);
+            longBytes[3] = (byte)(value >> 24);
+
+            stream.Write(longBytes, 0, 4);
+        }
+
+        private void Write(Stream stream, bool lsb, long value)
+        {
+            if (lsb)
+                WriteLsb(stream, value);
+            else
+                WriteMsb(stream, value);
+        }
+
+        private void WriteSequence(Stream stream, string sequence)
+        {
+            byte[] byteSequence = ASCIIEncoding.ASCII.GetBytes(sequence);
+            stream.Write(byteSequence, 0, byteSequence.Length);
+        }
+
+        private void WriteNullTerminatedString(Stream stream, string sequence)
+        {
+            WriteSequence(stream, sequence);
+            stream.WriteByte(0);
+        }
+
         private void ReadHeader(Stream stream)
         {
             ReadSequence(stream, "FORM");
@@ -463,6 +561,35 @@ namespace tIDE.Format
             string authors = ASCIIEncoding.ASCII.GetString(chunkData);
             string[] authorLines = authors.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
             return authorLines;
+        }
+
+        private void WriteChunkATHR(Stream stream, Map map)
+        {
+            // ATHR chunk
+            string[] authorLines = map.Description.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            int athrChunkLength = 0;
+            foreach (string authorLine in authorLines)
+                athrChunkLength += authorLine.Length + 1;
+
+            bool athrPadding = false;
+            if (athrChunkLength % 2 != 0)
+            {
+                ++athrChunkLength;
+                athrPadding = true;
+            }
+
+            WriteSequence(stream, "ATHR");
+            WriteMsb(stream, (long)athrChunkLength);
+            foreach (string authorLine in authorLines)
+                WriteNullTerminatedString(stream, authorLine);
+            if (athrPadding)
+                Write(stream, (byte)0);
+        }
+
+        private void WriteChunkMPHD(Stream stream, Map map)
+        {
+            WriteSequence(stream, "MPHD");
+            // TODO
         }
 
         private MphdRecord ReadChunkMPHD(Stream stream, Chunk chunk)
