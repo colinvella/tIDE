@@ -502,13 +502,29 @@ namespace tIDE.Format
 
         private AnimationRecord[] ReadChunkANDT(Stream stream, Chunk chunk, MphdRecord mphdRecord)
         {
-            List<AnimationRecord> animationRecords = new List<AnimationRecord>();
             bool lsb = mphdRecord.LSB;
-            stream.Position = chunk.FilePosition;
+
+            // count structures backwards
+            stream.Position = chunk.FilePosition + chunk.Length - AnimationRecord.SIZE;
+            int animationCount = 0;
+            while (ReadSignedByte(stream) != -1)
+            {
+                ++animationCount;
+                stream.Position -= (AnimationRecord.SIZE + 1);
+            }
+
+            AnimationRecord[] animationRecords = new AnimationRecord[animationCount];
+
+            stream.Position = chunk.FilePosition + chunk.Length - AnimationRecord.SIZE;
+            int animationIndex = 0;
             while (true)
             {
                 AnimationRecord animationRecord = new AnimationRecord();
+
                 animationRecord.Type = ReadSignedByte(stream);
+                if (animationRecord.Type == -1)
+                    break;
+
                 animationRecord.Delay = ReadSignedByte(stream);
                 animationRecord.Counter = ReadSignedByte(stream);
                 animationRecord.UserInfo = ReadSignedByte(stream);
@@ -516,12 +532,12 @@ namespace tIDE.Format
                 animationRecord.StartOffset = ReadSignedLong(stream, lsb);
                 animationRecord.EndOffset = ReadSignedLong(stream, lsb);
 
-                animationRecords.Add(animationRecord);
-                if (animationRecord.Type < 0)
-                    break;
+                animationRecords[animationIndex++] = animationRecord;
+
+                stream.Position -= AnimationRecord.SIZE;
             }
 
-            return animationRecords.ToArray();
+            return animationRecords;
         }
 
         private Image ReadChuckBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
