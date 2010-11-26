@@ -55,6 +55,9 @@ namespace tIDE.Format
                     break;
                 }
 
+            if (map.Description.Split(new char[] { '\r', 'n' }, StringSplitOptions.RemoveEmptyEntries).Length > 4)
+                compatibilityNotes.Add(new CompatibilityNote(CompatibilityLevel.None, "Map description should not exceed 4 paragraphs"));
+
             compatibilityNotes.Add(
                 new CompatibilityNote(CompatibilityLevel.Partial, "Tile, layer and map attributes will not be stored"));
 
