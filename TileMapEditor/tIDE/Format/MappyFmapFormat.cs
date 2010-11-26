@@ -137,9 +137,9 @@ namespace tIDE.Format
                 {
                     for (int tileX = 0; tileX < mapSize.Width; tileX++)
                     {
-                        int tileIndex = tileY * mapSize.Width + tileX;
-                        int blockIndex = layers[layerIndex][tileIndex];
-                        if (blockIndex >= 0)
+                        int layerOffset = tileY * mapSize.Width + tileX;
+                        int tileIndex = layers[layerIndex][layerOffset];
+                        if (tileIndex >= 0)
                         {
                             layer.Tiles[tileX, tileY] = new StaticTile(layer, tileSheet, BlendMode.Alpha, tileIndex);
                         }

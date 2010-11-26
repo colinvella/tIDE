@@ -490,7 +490,10 @@ namespace tIDE
             }
             catch (Exception exception)
             {
-                m_loadErrorMessageBox.VariableDictionary["message"] = exception.Message;
+                string message = exception.Message;
+                if (exception.InnerException != null)
+                    message += " Inner Message: " + exception.InnerException.Message;
+                m_loadErrorMessageBox.VariableDictionary["message"] = message;
                 m_loadErrorMessageBox.Show();                   
             }
 
