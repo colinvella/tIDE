@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using xTile.Tiles;
+using xTile.Layers;
 
 namespace tIDE.Format
 {
@@ -27,13 +29,12 @@ namespace tIDE.Format
             ReadHeader(stream);
 
             MphdRecord mphdRecord = null;
+            string[] authorLines = null;
             Color[] colourMap = null;
             BlockRecord[] blockRecords = null;
             AnimationRecord[] animationRecords = null;
             Image imageSource = null;
             short[][] layers = new short[8][];
-
-            Map map = new Map();
 
             Dictionary<string, Chunk> chunks = MapChunks(stream);
 
@@ -51,7 +52,7 @@ namespace tIDE.Format
             }
 
             if (chunks.ContainsKey("ATHR"))
-                ReadChunkATHR(stream, chunks["ATHR"], map);
+                authorLines = ReadChunkATHR(stream, chunks["ATHR"]);
 
             if (!chunks.ContainsKey("BKDT"))
                 throw new Exception("Block data chunk BKDT missing");
@@ -83,6 +84,66 @@ namespace tIDE.Format
                 {
                     Chunk layerChuck = chunks[chunkId];
                     layers[layer] = ReadChunkLayer(stream, layerChuck, mphdRecord);
+                }
+            }
+
+            // new map
+            Map map = new Map();
+
+            // attach ATHR lines as description
+            if (authorLines != null)
+            {
+                StringBuilder stringBuilder = new StringBuilder();
+                foreach (string authorLine in authorLines)
+                    stringBuilder.AppendLine(authorLine);
+                map.Description = stringBuilder.ToString();
+            }
+
+            // prompt user to save tilesheet image source
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.CheckPathExists = true;
+            saveFileDialog.Filter = "Portable Network Geaphics (*.png)|*.png";
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.Title = "Save tile sheet image source as";
+            saveFileDialog.ValidateNames = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
+                throw new Exception("Mappy FMAP file import aborted");
+
+            string tileSheetImageSource = saveFileDialog.FileName;
+
+            imageSource.Save(tileSheetImageSource, ImageFormat.Png);
+
+            // determine global tile size
+            xTile.Dimensions.Size tileSize = new xTile.Dimensions.Size(mphdRecord.BlockWidth, mphdRecord.BlockHeight);
+
+            // add tilesheet
+            TileSheet tileSheet = new TileSheet(map, tileSheetImageSource,
+                new xTile.Dimensions.Size(1, mphdRecord.NumBlockGfx), tileSize);
+            map.AddTileSheet(tileSheet);
+
+            // determine global map size
+            xTile.Dimensions.Size mapSize = new xTile.Dimensions.Size(mphdRecord.MapWidth, mphdRecord.MapHeight);
+
+            // create layers
+            for (int layerIndex = 0; layerIndex < 8; layerIndex++)
+            {
+                if (layers[layerIndex] == null)
+                    continue;
+
+                string layerId = layerIndex == 0 ? "BODY" : "LYR" + layerIndex;
+                Layer layer = new Layer(layerId, map, mapSize, tileSize);
+                map.AddLayer(layer);
+                for (int tileY = 0; tileY < mapSize.Height; tileY++)
+                {
+                    for (int tileX = 0; tileX < mapSize.Width; tileX++)
+                    {
+                        int tileIndex = tileY * mapSize.Width + tileX;
+                        int blockIndex = layers[layerIndex][tileIndex];
+                        if (blockIndex >= 0)
+                        {
+                            layer.Tiles[tileX, tileY] = new StaticTile(layer, tileSheet, BlendMode.Alpha, tileIndex);
+                        }
+                    }
                 }
             }
 
@@ -336,17 +397,14 @@ namespace tIDE.Format
             return chunks;
         }
 
-        private void ReadChunkATHR(Stream stream, Chunk chunk, Map map)
+        private string[] ReadChunkATHR(Stream stream, Chunk chunk)
         {
             stream.Position = chunk.FilePosition;
             byte[] chunkData = new byte[chunk.Length];
             stream.Read(chunkData, 0, chunk.Length);
             string authors = ASCIIEncoding.ASCII.GetString(chunkData);
             string[] authorLines = authors.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (string authorLine in authorLines)
-                stringBuilder.AppendLine(authorLine);
-            map.Description = stringBuilder.ToString();
+            return authorLines;
         }
 
         private MphdRecord ReadChunkMPHD(Stream stream, Chunk chunk)
@@ -468,7 +526,7 @@ namespace tIDE.Format
 
         private Image ReadChuckBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
         {
-            int tileCount = mphdRecord.NumBlockStruct - 1;
+            int tileCount = mphdRecord.NumBlockStruct;
             int imageWidth = mphdRecord.BlockWidth;
             int imageHeight = mphdRecord.BlockHeight * tileCount;
 
@@ -477,13 +535,14 @@ namespace tIDE.Format
             stream.Read(imageData, 0, chunk.Length);
             
             Bitmap imageSource = new Bitmap(imageWidth, imageHeight, PixelFormat.Format32bppArgb);
+            int pixelIndex = 0;
             if (mphdRecord.BlockDepth == 8)
             {
                 for (int pixelY = 0; pixelY < imageHeight; pixelY++)
                 {
                     for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
-                        byte colourIndex = imageData[pixelY * imageWidth + pixelX];
+                        byte colourIndex = imageData[pixelIndex++];
                         if (colourIndex != mphdRecord.ColourKeyIndex)
                             imageSource.SetPixel(pixelX, pixelY, colourMap[colourIndex]);
                     }
@@ -495,8 +554,7 @@ namespace tIDE.Format
                 {
                     for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
-                        int colourOffset = (pixelY * imageWidth + pixelX) * 2;
-                        ushort colourValue = (ushort)(imageData[colourOffset] | (imageData[colourOffset + 1] << 8));
+                        ushort colourValue = (ushort)(imageData[pixelIndex++] | (imageData[pixelIndex++] << 8));
                         byte alpha = 255;
                         byte red = (byte)(colourValue & 31);
                         byte green = (byte)((colourValue >> 5) & 31);
@@ -519,8 +577,7 @@ namespace tIDE.Format
                 {
                     for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
-                        int colourOffset = (pixelY * imageWidth + pixelX) * 2;
-                        ushort colourValue = (ushort) (imageData[colourOffset] | (imageData[colourOffset + 1] << 8));
+                        ushort colourValue = (ushort)(imageData[pixelIndex++] | (imageData[pixelIndex++] << 8));
                         byte alpha = 255;
                         byte red = (byte)(colourValue & 31);
                         byte green = (byte)((colourValue >> 5) & 63);
@@ -543,11 +600,10 @@ namespace tIDE.Format
                 {
                     for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
-                        int colourOffset = (pixelY * imageWidth + pixelX) * 3;
                         byte alpha = 255;
-                        byte red = imageData[colourOffset + 0];
-                        byte green = imageData[colourOffset + 1];
-                        byte blue = imageData[colourOffset + 2];
+                        byte red   = imageData[pixelIndex++];
+                        byte green = imageData[pixelIndex++];
+                        byte blue  = imageData[pixelIndex++];
                         if (red == mphdRecord.ColourKeyRed
                             && green == mphdRecord.ColourKeyGreen
                             && blue == mphdRecord.ColourKeyBlue)
@@ -563,19 +619,15 @@ namespace tIDE.Format
                 {
                     for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
-                        int colourOffset = (pixelY * imageWidth + pixelX) * 4;
-                        byte alpha = imageData[colourOffset];
-                        byte red = imageData[colourOffset + 1];
-                        byte green = imageData[colourOffset + 2];
-                        byte blue = imageData[colourOffset + 3];
+                        byte alpha = imageData[pixelIndex++];
+                        byte red = imageData[pixelIndex++];
+                        byte green = imageData[pixelIndex++];
+                        byte blue = imageData[pixelIndex++];
                         Color colour = Color.FromArgb(alpha, red, green, blue);
                         imageSource.SetPixel(pixelX, pixelY, colour);
                     }
                 }
             }
-
-            //imageSource.Save("C:\\test.gif", ImageFormat.Gif);
-            imageSource.Save("C:\\test.png", ImageFormat.Png);
 
             return imageSource;
         }
@@ -584,12 +636,13 @@ namespace tIDE.Format
         {
             bool lsb = mphdRecord.LSB;
             short[] offsets = new short[chunk.Length / 2];
+            stream.Position = chunk.FilePosition;
             for (int index = 0; index < offsets.Length; index++)
             {
                 short offset = ReadShort(stream, lsb);
-                if (mphdRecord.VersionHigh > 0)
+                if (mphdRecord.VersionHigh < 1)
                 {
-                    if (offset < 1)
+                    if (offset >= 0)
                         offset /= mphdRecord.BlockStructSize;
                     else
                         offset /= AnimationRecord.SIZE;
