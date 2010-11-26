@@ -533,7 +533,15 @@ namespace tIDE.Format
             byte[] imageData = new byte[chunk.Length];
             stream.Position = chunk.FilePosition;
             stream.Read(imageData, 0, chunk.Length);
-            
+
+            bool applyColourKeying = false;
+            if (mphdRecord.BlockDepth < 32)
+            {
+                applyColourKeying = MessageBox.Show(
+                    "Apply colour keying?", "Mappy BGFX Chunk",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+            }
+
             Bitmap imageSource = new Bitmap(imageWidth, imageHeight, PixelFormat.Format32bppArgb);
             int pixelIndex = 0;
             if (mphdRecord.BlockDepth == 8)
@@ -543,7 +551,7 @@ namespace tIDE.Format
                     for (int pixelX = 0; pixelX < imageWidth; pixelX++)
                     {
                         byte colourIndex = imageData[pixelIndex++];
-                        if (colourIndex != mphdRecord.ColourKeyIndex)
+                        if (!applyColourKeying || colourIndex != mphdRecord.ColourKeyIndex)
                             imageSource.SetPixel(pixelX, pixelY, colourMap[colourIndex]);
                     }
                 }
@@ -562,7 +570,8 @@ namespace tIDE.Format
                         red *= 4;
                         green *= 4;
                         blue *= 4;
-                        if (red == mphdRecord.ColourKeyRed
+                        if (applyColourKeying
+                            && red == mphdRecord.ColourKeyRed
                             && green == mphdRecord.ColourKeyGreen
                             && blue == mphdRecord.ColourKeyBlue)
                             alpha = 0;
@@ -585,7 +594,8 @@ namespace tIDE.Format
                         red *= 8;
                         green *= 4;
                         blue *= 8;
-                        if (red == mphdRecord.ColourKeyRed
+                        if (applyColourKeying
+                            && red == mphdRecord.ColourKeyRed
                             && green == mphdRecord.ColourKeyGreen
                             && blue == mphdRecord.ColourKeyBlue)
                             alpha = 0;
@@ -604,7 +614,8 @@ namespace tIDE.Format
                         byte red   = imageData[pixelIndex++];
                         byte green = imageData[pixelIndex++];
                         byte blue  = imageData[pixelIndex++];
-                        if (red == mphdRecord.ColourKeyRed
+                        if (applyColourKeying
+                            && red == mphdRecord.ColourKeyRed
                             && green == mphdRecord.ColourKeyGreen
                             && blue == mphdRecord.ColourKeyBlue)
                             alpha = 0;
