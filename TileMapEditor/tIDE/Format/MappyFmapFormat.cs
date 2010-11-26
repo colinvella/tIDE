@@ -589,7 +589,25 @@ namespace tIDE.Format
         private void WriteChunkMPHD(Stream stream, Map map)
         {
             WriteSequence(stream, "MPHD");
+
+            // write dummy length
+            long chunkLengthPosition = stream.Position;
+            WriteMsb(stream, (long)0);
+
+            long chunkDataStart = stream.Position;
+
             // TODO
+            // ....
+
+            long chunkDataEnd = stream.Position;
+            long chunkLength = chunkDataEnd - chunkDataStart;
+           
+            // update chunk length
+            stream.Position = chunkLengthPosition;
+            WriteMsb(stream, chunkLength);
+
+            // restore stream to end of chunk
+            stream.Position = chunkDataEnd;
         }
 
         private MphdRecord ReadChunkMPHD(Stream stream, Chunk chunk)
