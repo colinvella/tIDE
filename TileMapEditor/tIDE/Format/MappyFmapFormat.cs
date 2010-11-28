@@ -214,13 +214,18 @@ namespace tIDE.Format
             WriteChunkATHR(stream, map);
 
             // MPHD chunk
+            WriteChunkMPHD(stream, map);
 
+            // no CMAP chunk
 
             // BKDT chunk
+            WriteChunkBKDT(stream, map);
 
             // ANDT chunk
+            // todo
 
             // BGFX chunk
+            WriteChunkBGFX(stream, map);
 
             // BODY chunk
 
@@ -500,6 +505,38 @@ namespace tIDE.Format
                 WriteMsb(stream, value);
         }
 
+        private void WriteMsb(Stream stream, ulong value)
+        {
+            byte[] longBytes = new byte[4];
+
+            longBytes[0] = (byte)(value >> 24);
+            longBytes[1] = (byte)((value >> 16) & 0xFF);
+            longBytes[2] = (byte)((value >> 8) & 0xFF);
+            longBytes[3] = (byte)(value & 0xFF);
+
+            stream.Write(longBytes, 0, 4);
+        }
+
+        private void WriteLsb(Stream stream, ulong value)
+        {
+            byte[] longBytes = new byte[4];
+
+            longBytes[0] = (byte)(value & 0xFF);
+            longBytes[1] = (byte)((value >> 8) & 0xFF);
+            longBytes[2] = (byte)((value >> 16) & 0xFF);
+            longBytes[3] = (byte)(value >> 24);
+
+            stream.Write(longBytes, 0, 4);
+        }
+
+        private void Write(Stream stream, bool lsb, ulong value)
+        {
+            if (lsb)
+                WriteLsb(stream, value);
+            else
+                WriteMsb(stream, value);
+        }
+
         private void WriteSequence(Stream stream, string sequence)
         {
             byte[] byteSequence = ASCIIEncoding.ASCII.GetBytes(sequence);
@@ -586,30 +623,6 @@ namespace tIDE.Format
                 Write(stream, (byte)0);
         }
 
-        private void WriteChunkMPHD(Stream stream, Map map)
-        {
-            WriteSequence(stream, "MPHD");
-
-            // write dummy length
-            long chunkLengthPosition = stream.Position;
-            WriteMsb(stream, (long)0);
-
-            long chunkDataStart = stream.Position;
-
-            // TODO
-            // ....
-
-            long chunkDataEnd = stream.Position;
-            long chunkLength = chunkDataEnd - chunkDataStart;
-           
-            // update chunk length
-            stream.Position = chunkLengthPosition;
-            WriteMsb(stream, chunkLength);
-
-            // restore stream to end of chunk
-            stream.Position = chunkDataEnd;
-        }
-
         private MphdRecord ReadChunkMPHD(Stream stream, Chunk chunk)
         {
             MphdRecord mphdRecord = new MphdRecord();
@@ -659,6 +672,67 @@ namespace tIDE.Format
             return mphdRecord;
         }
 
+        private void WriteChunkMPHD(Stream stream, Map map)
+        {
+            WriteSequence(stream, "MPHD");
+
+            // write dummy length
+            long chunkLengthPosition = stream.Position;
+            WriteMsb(stream, (long)0);
+
+            long chunkDataStart = stream.Position;
+
+            // write version (1.0)
+            Write(stream, (sbyte)1);
+            Write(stream, (sbyte)0);
+
+            // write LSB (true)
+            Write(stream, (sbyte)1);
+
+            // write map type (0)
+            Write(stream, (sbyte)0);
+
+            // write map dimensions
+            short mapWidth = (short)map.Layers[0].LayerSize.Width;
+            short mapHeight = (short)map.Layers[0].LayerSize.Height;
+            WriteLsb(stream, mapWidth);
+            WriteLsb(stream, mapHeight);
+
+            // write 2 reserved shorts (0)
+            WriteLsb(stream, (short)0);
+            WriteLsb(stream, (short)0);
+
+            // write tile dimensions
+            short blockWidth = (short)map.TileSheets[0].TileSize.Width;
+            short blockHeight = (short)map.TileSheets[0].TileSize.Height;
+            WriteLsb(stream, blockWidth);
+            WriteLsb(stream, blockHeight);
+
+            // write blockdepth (forced to 32bpp)
+            WriteLsb(stream, (short)32);
+
+            // write block struct size (forced to 32 bytes)
+            WriteLsb(stream, (short)32);
+
+            // write num blocks and gfx blocks (= tile count)
+            short blockCount = (short)map.TileSheets[0].TileCount;
+            WriteLsb(stream, blockCount);
+            WriteLsb(stream, blockCount);
+
+            // do not write colour key indices/values, block gaps/staggers
+            // and click mask, pillars
+
+            long chunkDataEnd = stream.Position;
+            long chunkLength = chunkDataEnd - chunkDataStart;
+
+            // update chunk length
+            stream.Position = chunkLengthPosition;
+            WriteMsb(stream, chunkLength);
+
+            // restore stream to end of chunk
+            stream.Position = chunkDataEnd;
+        }
+
         private Color[] ReadChunkCMAP(Stream stream, Chunk chunk)
         {
             stream.Position = chunk.FilePosition;
@@ -701,6 +775,72 @@ namespace tIDE.Format
             }
 
             return blockRecords;
+        }
+
+        private void WriteChunkBKDT(Stream stream, Map map)
+        {
+            short blockCount = (short) map.TileSheets[0].TileCount;
+
+            WriteSequence(stream, "BKDT");
+            // block records asumed 32 bytes
+            WriteMsb(stream, blockCount * 32);
+
+            // block size assumes 32bpp
+            xTile.Dimensions.Size blockSize = map.TileSheets[0].TileSize;
+            int blockByteSize = blockSize.Width * blockSize.Height * 4;
+
+            for (int index = 0; index < blockCount; index++)
+            {
+                // bg, f2, bg2, fg2 offsets
+                WriteLsb(stream, (long) (index * blockByteSize));
+                WriteLsb(stream, (long) 0);
+                WriteLsb(stream, (long) 0);
+                WriteLsb(stream, (long) 0);
+
+                // user1, user2 ulongs
+                WriteLsb(stream, (ulong)0);
+                WriteLsb(stream, (ulong)0);
+
+                // user3, user4 ushorts
+                WriteLsb(stream, (ushort)0);
+                WriteLsb(stream, (ushort)0);
+
+                // user5 - user7, flags unsigned bytes
+                Write(stream, (byte)0);
+                Write(stream, (byte)0);
+                Write(stream, (byte)0);
+                Write(stream, (byte)0);
+            }
+        }
+
+        private void WriteChunkBGFX(Stream stream, Map map)
+        {
+            TileImageCache tileImageCache = TileImageCache.Instance;
+            TileSheet tileSheet = map.TileSheets[0];
+            xTile.Dimensions.Size tileSize = tileSheet.TileSize;
+            int tileCount = tileSheet.TileCount;
+            Rectangle tileRectangle = new Rectangle(0, 0, tileSize.Width, tileSize.Height);
+
+            // assume 32bpp
+            int blockSizeBytes = tileSize.Area * 4;
+
+            byte[] buffer = new byte[blockSizeBytes];
+
+            WriteSequence(stream, "BGFX");
+            // assume 32bpp gfx
+            WriteMsb(stream, (long)(blockSizeBytes * tileCount));
+
+            for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
+            {
+                Bitmap tileBitmap = tileImageCache.GetTileBitmap(tileSheet, tileIndex);
+                BitmapData bitmapData = tileBitmap.LockBits(tileRectangle, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+                IntPtr dataPointer = bitmapData.Scan0;
+
+                System.Runtime.InteropServices.Marshal.Copy(dataPointer, buffer, 0, blockSizeBytes);
+
+                stream.Write(buffer, 0, blockSizeBytes);
+            }
         }
 
         private AnimationRecord[] ReadChunkANDT(Stream stream, Chunk chunk, MphdRecord mphdRecord)
