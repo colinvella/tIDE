@@ -210,6 +210,9 @@ namespace tIDE.Format
 
         public void Store(Map map, Stream stream)
         {
+            // main file header
+            WriteHeader(stream);
+
             // ATHR chunk
             WriteChunkATHR(stream, map);
 
@@ -236,6 +239,13 @@ namespace tIDE.Format
                 string chunkId = "LYR" + layerIndex;
                 WriteChunkLayer(stream, map.Layers[layerIndex], chunkId);
             }
+
+            // update header
+            long dataEnd = stream.Position;
+            long contentLength = dataEnd - 8;
+            stream.Position = 4;
+            WriteMsb(stream, contentLength);
+            stream.Position = dataEnd;
         }
 
         #endregion
@@ -477,6 +487,34 @@ namespace tIDE.Format
                 WriteMsb(stream, value);
         }
 
+        private void WriteMsb(Stream stream, ushort value)
+        {
+            byte[] shortBytes = new byte[2];
+
+            shortBytes[0] = (byte)(value >> 8);
+            shortBytes[1] = (byte)(value & 0xFF);
+
+            stream.Write(shortBytes, 0, 2);
+        }
+
+        private void WriteLsb(Stream stream, ushort value)
+        {
+            byte[] shortBytes = new byte[2];
+
+            shortBytes[0] = (byte)(value & 0xFF);
+            shortBytes[1] = (byte)(value >> 8);
+
+            stream.Write(shortBytes, 0, 2);
+        }
+
+        private void Write(Stream stream, bool lsb, ushort value)
+        {
+            if (lsb)
+                WriteLsb(stream, value);
+            else
+                WriteMsb(stream, value);
+        }
+
         private void WriteMsb(Stream stream, long value)
         {
             byte[] longBytes = new byte[4];
@@ -562,6 +600,14 @@ namespace tIDE.Format
                 throw new Exception(
                     "Mappy Header: File body length mismatch: stored = " + storedLength + ", actual = " + actualLength);
             ReadSequence(stream, "FMAP");
+        }
+
+        private void WriteHeader(Stream stream)
+        {
+            WriteSequence(stream, "FORM");
+            // file length place holder
+            WriteMsb(stream, (long)0);
+            WriteSequence(stream, "FMAP");
         }
 
         private Chunk MapChunk(Stream stream)
