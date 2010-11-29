@@ -225,7 +225,7 @@ namespace tIDE.Format
             WriteChunkBKDT(stream, map);
 
             // ANDT chunk
-            // todo
+            WriteChunkANDT(stream, map);
 
             // BGFX chunk
             WriteChunkBGFX(stream, map);
@@ -922,6 +922,10 @@ namespace tIDE.Format
             return animationRecords;
         }
 
+        private void WriteChunkANDT(Stream stream, Map map)
+        {
+        }
+
         private Image ReadChunkBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
         {
             int tileCount = mphdRecord.NumBlockStruct;
@@ -1096,12 +1100,14 @@ namespace tIDE.Format
 
         private void WriteChunkLayer(Stream stream, Layer layer, string chunkId)
         {
+            // BODY or LYR1 .. LYR7
             WriteSequence(stream, chunkId);
 
             // size is array of shorts
             int layerWidth = layer.LayerSize.Width;
             int layerHeight = layer.LayerSize.Height;
             WriteMsb(stream, (long)(layerWidth * layerHeight * 2));
+
             for (int tileY = 0; tileY < layerHeight; tileY++)
             {
                 for (int tileX = 0; tileX < layerWidth; tileX++)
