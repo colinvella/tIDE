@@ -55,7 +55,8 @@ namespace tIDE.Format
                     break;
                 }
 
-            if (map.Description.Split(new char[] { '\r', 'n' }, StringSplitOptions.RemoveEmptyEntries).Length > 4)
+            string[] descriptionParagraphs = map.Description.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            if (descriptionParagraphs.Length > 4)
                 compatibilityNotes.Add(new CompatibilityNote(CompatibilityLevel.None, "Map description should not exceed 4 paragraphs"));
 
             compatibilityNotes.Add(
@@ -164,7 +165,7 @@ namespace tIDE.Format
             xTile.Dimensions.Size tileSize = new xTile.Dimensions.Size(mphdRecord.BlockWidth, mphdRecord.BlockHeight);
 
             // add tilesheet
-            TileSheet tileSheet = new TileSheet(map, tileSheetImageSource,
+            TileSheet tileSheet = new TileSheet("BGFX", map, tileSheetImageSource,
                 new xTile.Dimensions.Size(1, mphdRecord.NumBlockGfx), tileSize);
             map.AddTileSheet(tileSheet);
 
@@ -1116,7 +1117,7 @@ namespace tIDE.Format
                     if (tile == null)
                         WriteLsb(stream, (short)0);
                     else if (tile is StaticTile)
-                        WriteLsb(stream, (short)tile.TileIndex);
+                        WriteLsb(stream, (short)(tile.TileIndex * 32));
                     else if (tile is AnimatedTile)
                         // TODO
                         WriteLsb(stream, (short)0);
