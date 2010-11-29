@@ -1052,8 +1052,6 @@ namespace tIDE.Format
             // assume 32bpp
             int blockSizeBytes = tileSize.Area * 4;
 
-            byte[] buffer = new byte[blockSizeBytes];
-
             WriteSequence(stream, "BGFX");
             // assume 32bpp gfx
             WriteMsb(stream, (long)(blockSizeBytes * tileCount));
@@ -1061,15 +1059,18 @@ namespace tIDE.Format
             for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
             {
                 Bitmap tileBitmap = tileImageCache.GetTileBitmap(tileSheet, tileIndex);
-                BitmapData bitmapData = tileBitmap.LockBits(tileRectangle, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
 
-                IntPtr dataPointer = bitmapData.Scan0;
-
-                System.Runtime.InteropServices.Marshal.Copy(dataPointer, buffer, 0, blockSizeBytes);
-
-                tileBitmap.UnlockBits(bitmapData);
-
-                stream.Write(buffer, 0, blockSizeBytes);
+                for (int pixelY = 0; pixelY < tileSize.Height; pixelY++)
+                {
+                    for (int pixelX = 0; pixelX < tileSize.Width; pixelX++)
+                    {
+                        Color color = tileBitmap.GetPixel(pixelX, pixelY);
+                        Write(stream, color.A);
+                        Write(stream, color.R);
+                        Write(stream, color.G);
+                        Write(stream, color.B);
+                    }
+                }                
             }
         }
 
