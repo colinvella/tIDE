@@ -116,7 +116,7 @@ namespace tIDE.Format
             if (!chunks.ContainsKey("BGFX"))
                 throw new Exception("Block graphics chunk BGFX missing");
             Chunk bgfxChunk = chunks["BGFX"];
-            imageSource = ReadChuckBGFX(stream, bgfxChunk, mphdRecord, colourMap);
+            imageSource = ReadChunkBGFX(stream, bgfxChunk, mphdRecord, colourMap);
 
             if (!chunks.ContainsKey("BODY"))
                 throw new Exception("Body chunk BODY missing");
@@ -228,10 +228,14 @@ namespace tIDE.Format
             WriteChunkBGFX(stream, map);
 
             // BODY chunk
+            WriteChunkLayer(stream, map.Layers[0], "BODY");
 
             // LYR? chunks
-
-            throw new NotImplementedException();
+            for (int layerIndex = 1; layerIndex < map.Layers.Count; layerIndex++)
+            {
+                string chunkId = "LYR" + layerIndex;
+                WriteChunkLayer(stream, map.Layers[layerIndex], chunkId);
+            }
         }
 
         #endregion
@@ -813,36 +817,6 @@ namespace tIDE.Format
             }
         }
 
-        private void WriteChunkBGFX(Stream stream, Map map)
-        {
-            TileImageCache tileImageCache = TileImageCache.Instance;
-            TileSheet tileSheet = map.TileSheets[0];
-            xTile.Dimensions.Size tileSize = tileSheet.TileSize;
-            int tileCount = tileSheet.TileCount;
-            Rectangle tileRectangle = new Rectangle(0, 0, tileSize.Width, tileSize.Height);
-
-            // assume 32bpp
-            int blockSizeBytes = tileSize.Area * 4;
-
-            byte[] buffer = new byte[blockSizeBytes];
-
-            WriteSequence(stream, "BGFX");
-            // assume 32bpp gfx
-            WriteMsb(stream, (long)(blockSizeBytes * tileCount));
-
-            for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
-            {
-                Bitmap tileBitmap = tileImageCache.GetTileBitmap(tileSheet, tileIndex);
-                BitmapData bitmapData = tileBitmap.LockBits(tileRectangle, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-
-                IntPtr dataPointer = bitmapData.Scan0;
-
-                System.Runtime.InteropServices.Marshal.Copy(dataPointer, buffer, 0, blockSizeBytes);
-
-                stream.Write(buffer, 0, blockSizeBytes);
-            }
-        }
-
         private AnimationRecord[] ReadChunkANDT(Stream stream, Chunk chunk, MphdRecord mphdRecord)
         {
             bool lsb = mphdRecord.LSB;
@@ -902,7 +876,7 @@ namespace tIDE.Format
             return animationRecords;
         }
 
-        private Image ReadChuckBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
+        private Image ReadChunkBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
         {
             int tileCount = mphdRecord.NumBlockStruct;
             int imageWidth = mphdRecord.BlockWidth;
@@ -1021,6 +995,38 @@ namespace tIDE.Format
             return imageSource;
         }
 
+        private void WriteChunkBGFX(Stream stream, Map map)
+        {
+            TileImageCache tileImageCache = TileImageCache.Instance;
+            TileSheet tileSheet = map.TileSheets[0];
+            xTile.Dimensions.Size tileSize = tileSheet.TileSize;
+            int tileCount = tileSheet.TileCount;
+            Rectangle tileRectangle = new Rectangle(0, 0, tileSize.Width, tileSize.Height);
+
+            // assume 32bpp
+            int blockSizeBytes = tileSize.Area * 4;
+
+            byte[] buffer = new byte[blockSizeBytes];
+
+            WriteSequence(stream, "BGFX");
+            // assume 32bpp gfx
+            WriteMsb(stream, (long)(blockSizeBytes * tileCount));
+
+            for (int tileIndex = 0; tileIndex < tileCount; tileIndex++)
+            {
+                Bitmap tileBitmap = tileImageCache.GetTileBitmap(tileSheet, tileIndex);
+                BitmapData bitmapData = tileBitmap.LockBits(tileRectangle, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+                IntPtr dataPointer = bitmapData.Scan0;
+
+                System.Runtime.InteropServices.Marshal.Copy(dataPointer, buffer, 0, blockSizeBytes);
+
+                tileBitmap.UnlockBits(bitmapData);
+
+                stream.Write(buffer, 0, blockSizeBytes);
+            }
+        }
+
         private short[] ReadChunkLayer(Stream stream, Chunk chunk, MphdRecord mphdRecord)
         {
             bool lsb = mphdRecord.LSB;
@@ -1039,6 +1045,32 @@ namespace tIDE.Format
                 offsets[index] = offset;
             }
             return offsets;
+        }
+
+        private void WriteChunkLayer(Stream stream, Layer layer, string chunkId)
+        {
+            WriteSequence(stream, chunkId);
+
+            // size is array of shorts
+            int layerWidth = layer.LayerSize.Width;
+            int layerHeight = layer.LayerSize.Height;
+            WriteMsb(stream, (long)(layerWidth * layerHeight * 2));
+            for (int tileY = 0; tileY < layerHeight; tileY++)
+            {
+                for (int tileX = 0; tileX < layerWidth; tileX++)
+                {
+                    Tile tile = layer.Tiles[tileX, tileY];
+                    if (tile == null)
+                        WriteLsb(stream, (short)0);
+                    else if (tile is StaticTile)
+                        WriteLsb(stream, (short)tile.TileIndex);
+                    else if (tile is AnimatedTile)
+                        // TODO
+                        WriteLsb(stream, (short)0);
+                    else
+                        throw new Exception("Unknown tile type: " + tile.GetType());
+                }
+            }
         }
 
         #endregion
