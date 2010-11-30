@@ -44,8 +44,8 @@ namespace tIDE.Commands
             if (m_offset == Location.Origin)
                 return;
 
-            int layerWidth = m_layer.LayerSize.Width;
-            int layerHeight = m_layer.LayerSize.Height;
+            int layerWidth = m_layer.LayerWidth;
+            int layerHeight = m_layer.LayerHeight;
 
             // backup tiles
             m_tiles = new Tile[layerWidth, layerHeight];
@@ -92,8 +92,8 @@ namespace tIDE.Commands
             if (m_offset == Location.Origin)
                 return;
 
-            int layerWidth = m_layer.LayerSize.Width;
-            int layerHeight = m_layer.LayerSize.Height;
+            int layerWidth = m_layer.LayerWidth;
+            int layerHeight = m_layer.LayerHeight;
 
             // restore tiles
             for (int tileY = 0; tileY < layerHeight; tileY++)

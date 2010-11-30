@@ -26,11 +26,11 @@ namespace tIDE.Dialogs
             m_lblLayerId.Text = m_layer.Id;
             m_lblLayerSize.Text = m_layer.LayerSize.ToString();
 
-            int horizontalExtent = m_layer.LayerSize.Width - 1;
+            int horizontalExtent = m_layer.LayerWidth - 1;
             m_nudOffsetHorizontal.Minimum = -horizontalExtent;
             m_nudOffsetHorizontal.Maximum = horizontalExtent;
 
-            int verticalExtent = m_layer.LayerSize.Height - 1;
+            int verticalExtent = m_layer.LayerHeight - 1;
             m_nudOffsetVertical.Minimum = -verticalExtent;
             m_nudOffsetVertical.Maximum = verticalExtent;
         }

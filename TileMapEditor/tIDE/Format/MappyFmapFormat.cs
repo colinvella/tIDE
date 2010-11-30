@@ -744,8 +744,8 @@ namespace tIDE.Format
             Write(stream, (sbyte)0);
 
             // write map dimensions
-            short mapWidth = (short)map.Layers[0].LayerSize.Width;
-            short mapHeight = (short)map.Layers[0].LayerSize.Height;
+            short mapWidth = (short)map.Layers[0].LayerWidth;
+            short mapHeight = (short)map.Layers[0].LayerHeight;
             WriteLsb(stream, mapWidth);
             WriteLsb(stream, mapHeight);
 
@@ -754,8 +754,8 @@ namespace tIDE.Format
             WriteLsb(stream, (short)0);
 
             // write tile dimensions
-            short blockWidth = (short)map.TileSheets[0].TileSize.Width;
-            short blockHeight = (short)map.TileSheets[0].TileSize.Height;
+            short blockWidth = (short)map.TileSheets[0].TileWidth;
+            short blockHeight = (short)map.TileSheets[0].TileHeight;
             WriteLsb(stream, blockWidth);
             WriteLsb(stream, blockHeight);
 
@@ -929,9 +929,9 @@ namespace tIDE.Format
             List<AnimatedTile> animatedTiles = new List<AnimatedTile>();
             foreach (Layer layer in map.Layers)
             {
-                for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+                for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
                 {
-                    for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                    for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                     {
                         Tile tile = layer.Tiles[tileX, tileY];
                     }
@@ -1117,8 +1117,8 @@ namespace tIDE.Format
             WriteSequence(stream, chunkId);
 
             // size is array of shorts
-            int layerWidth = layer.LayerSize.Width;
-            int layerHeight = layer.LayerSize.Height;
+            int layerWidth = layer.LayerWidth;
+            int layerHeight = layer.LayerHeight;
             WriteMsb(stream, (long)(layerWidth * layerHeight * 2));
 
             for (int tileY = 0; tileY < layerHeight; tileY++)

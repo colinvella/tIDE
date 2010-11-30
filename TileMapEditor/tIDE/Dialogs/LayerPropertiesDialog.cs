@@ -60,10 +60,10 @@ namespace tIDE.Dialogs
             m_textBoxId.Text = m_layer.Id;
             m_textBoxDescription.Text = m_layer.Description;
 
-            m_numericLayerWidth.Value = m_layer.LayerSize.Width;
-            m_numericLayerHeight.Value = m_layer.LayerSize.Height;
-            m_numericTileWidth.Value = m_layer.TileSize.Width;
-            m_numericTileHeight.Value = m_layer.TileSize.Height;
+            m_numericLayerWidth.Value = m_layer.LayerWidth;
+            m_numericLayerHeight.Value = m_layer.LayerHeight;
+            m_numericTileWidth.Value = m_layer.TileWidth;
+            m_numericTileHeight.Value = m_layer.TileHeight;
 
             m_checkBoxVisible.Checked = m_layer.Visible;
 

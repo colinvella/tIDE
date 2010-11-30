@@ -364,8 +364,8 @@ namespace tIDE.Controls
         private void RestrictViewportToMap()
         {
             // ensure viewport within map
-            m_viewport.X = Math.Min(m_map.DisplaySize.Width - m_viewport.Width, Math.Max(0, m_viewport.X));
-            m_viewport.Y = Math.Min(m_map.DisplaySize.Height - m_viewport.Height, Math.Max(0, m_viewport.Y));
+            m_viewport.X = Math.Min(m_map.DisplayWidth - m_viewport.Width, Math.Max(0, m_viewport.X));
+            m_viewport.Y = Math.Min(m_map.DisplayHeight - m_viewport.Height, Math.Max(0, m_viewport.Y));
         }
 
         private void OnHorizontalScroll(object sender, ScrollEventArgs scrollEventArgs)
@@ -827,8 +827,8 @@ namespace tIDE.Controls
 
                 // map border
                 Location borderCorner = -m_viewport.Location;
-                borderCorner.X += m_map.DisplaySize.Width;
-                borderCorner.Y += m_map.DisplaySize.Height;
+                borderCorner.X += m_map.DisplayWidth;
+                borderCorner.Y += m_map.DisplayHeight;
 
                 float inverseZoom = 1.0f / m_zoom;
                 Pen borderPen = new Pen(Color.Black);
@@ -931,7 +931,7 @@ namespace tIDE.Controls
 
         public Image GenerateImage(Layer layer)
         {
-            Bitmap bitmap = new Bitmap(m_map.DisplaySize.Width, m_map.DisplaySize.Height);
+            Bitmap bitmap = new Bitmap(m_map.DisplayWidth, m_map.DisplayHeight);
             Graphics graphics = Graphics.FromImage(bitmap);
 
             Graphics oldGraphics = m_graphics;

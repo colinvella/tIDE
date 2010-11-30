@@ -88,7 +88,7 @@ namespace tIDE.Controls
             /*
             // ensure tiles within 256 wide/high and preserve aspect ratio
             System.Drawing.Size tileSize = new System.Drawing.Size(
-                m_tileSheet.TileSize.Width, m_tileSheet.TileSize.Height);
+                m_tileSheet.TileWidth, m_tileSheet.TileHeight);
             int maxDimension = Math.Max(tileSize.Width, tileSize.Height);
             if (maxDimension > 256)
             {
@@ -221,8 +221,8 @@ namespace tIDE.Controls
             m_visibleSize.Height = Math.Max(0, m_visibleSize.Height);
 
             int tileCount = m_tileSheet.TileCount;
-            int slotWidth = m_tileSheet.TileSize.Width + 1;
-            int slotHeight = m_tileSheet.TileSize.Height + 1;
+            int slotWidth = m_tileSheet.TileWidth + 1;
+            int slotHeight = m_tileSheet.TileHeight + 1;
 
             switch (m_orderMode)
             {
@@ -263,8 +263,8 @@ namespace tIDE.Controls
             if (m_verticalScrollBar.Visible)
                 panelPosition.Y += m_verticalScrollBar.Value;
 
-            int slotWidth = m_tileSheet.TileSize.Width + 1;
-            int slotHeight = m_tileSheet.TileSize.Height + 1;
+            int slotWidth = m_tileSheet.TileWidth + 1;
+            int slotHeight = m_tileSheet.TileHeight + 1;
 
             Point tilePosition = new Point(
                 panelPosition.X / slotWidth, panelPosition.Y / slotHeight);
@@ -283,8 +283,8 @@ namespace tIDE.Controls
             if (m_verticalScrollBar.Visible)
                 panelPosition.Y += m_verticalScrollBar.Value;
 
-            int slotWidth = m_tileSheet.TileSize.Width + 1;
-            int slotHeight = m_tileSheet.TileSize.Height + 1;
+            int slotWidth = m_tileSheet.TileWidth + 1;
+            int slotHeight = m_tileSheet.TileHeight + 1;
 
             int tileCount = m_tileSheet.TileCount;
             int tilesAcross = Math.Max(1, m_requiredSize.Width / slotWidth);
@@ -473,7 +473,7 @@ namespace tIDE.Controls
                 {
                     // tile brush selected
                     int tileCount = m_tileSheet.TileCount;
-                    int tilesAcross = Math.Max(1, m_requiredSize.Width / (m_tileSheet.TileSize.Width + 1));
+                    int tilesAcross = Math.Max(1, m_requiredSize.Width / (m_tileSheet.TileWidth + 1));
                     int tilesDown = 1 + (tileCount - 1) / tilesAcross;
                     xTile.Layers.Layer dummyLayer = new xTile.Layers.Layer(
                         "", m_tileSheet.Map,
@@ -576,8 +576,8 @@ namespace tIDE.Controls
 
             TileImageCache tileImageCache = TileImageCache.Instance;
 
-            int slotWidth = m_tileSheet.TileSize.Width + 1;
-            int slotHeight = m_tileSheet.TileSize.Height + 1;
+            int slotWidth = m_tileSheet.TileWidth + 1;
+            int slotHeight = m_tileSheet.TileHeight + 1;
             int tilesAcross = Math.Max(1, m_requiredSize.Width / slotWidth);
             int tilesDown = 1 + (m_tileSheet.TileCount - 1) / tilesAcross;
             int scrollOffsetX = -m_horizontalScrollBar.Value;

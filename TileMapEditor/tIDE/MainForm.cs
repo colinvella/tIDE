@@ -665,7 +665,7 @@ namespace tIDE
                     {
                         Rectangle viewport = m_mapPanel.Viewport;
                         viewport.X = Math.Max(0,
-                            viewport.X - selectedLayer.TileSize.Width);
+                            viewport.X - selectedLayer.TileWidth);
                         m_mapPanel.Viewport = viewport;
                         keyEventArgs.Handled = true;
                     }    
@@ -674,8 +674,8 @@ namespace tIDE
                     if (selectedLayer != null)
                     {
                         Rectangle viewport = m_mapPanel.Viewport;
-                        viewport.X = Math.Min(m_map.DisplaySize.Width - viewport.Width,
-                            viewport.X + selectedLayer.TileSize.Width);
+                        viewport.X = Math.Min(m_map.DisplayWidth - viewport.Width,
+                            viewport.X + selectedLayer.TileWidth);
                         m_mapPanel.Viewport = viewport;
                         keyEventArgs.Handled = true;
                     }
@@ -685,7 +685,7 @@ namespace tIDE
                     {
                         Rectangle viewport = m_mapPanel.Viewport;
                         viewport.Y = Math.Max(0,
-                            viewport.Y - selectedLayer.TileSize.Height);
+                            viewport.Y - selectedLayer.TileHeight);
                         m_mapPanel.Viewport = viewport;
                         keyEventArgs.Handled = true;
                     }
@@ -694,8 +694,8 @@ namespace tIDE
                     if (selectedLayer != null)
                     {
                         Rectangle viewport = m_mapPanel.Viewport;
-                        viewport.Y = Math.Min(m_map.DisplaySize.Height - viewport.Height,
-                            viewport.Y + selectedLayer.TileSize.Height);
+                        viewport.Y = Math.Min(m_map.DisplayHeight - viewport.Height,
+                            viewport.Y + selectedLayer.TileHeight);
                         m_mapPanel.Viewport = viewport;
                         keyEventArgs.Handled = true;
                     }

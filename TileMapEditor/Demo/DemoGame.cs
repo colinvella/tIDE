@@ -155,12 +155,12 @@ namespace Demo
             m_viewPort.Location.Y += (int)(leftThumbStick.Y * 4.0f);
 
             // limit viewport to map
-            m_viewPort.Location.X = Math.Max(0, m_viewPort.Location.X);
-            m_viewPort.Location.Y = Math.Max(0, m_viewPort.Location.Y);
+            m_viewPort.Location.X = Math.Max(0, m_viewPort.X);
+            m_viewPort.Location.Y = Math.Max(0, m_viewPort.Y);
             m_viewPort.Location.X = Math.Min(
-                m_map.DisplaySize.Width - m_viewPort.Width, m_viewPort.Location.X);
+                m_map.DisplayWidth - m_viewPort.Width, m_viewPort.X);
             m_viewPort.Location.Y = Math.Min(
-                m_map.DisplaySize.Height - m_viewPort.Height, m_viewPort.Location.Y);
+                m_map.DisplayHeight - m_viewPort.Height, m_viewPort.Y);
 
             // update map for animations etc.
             m_map.Update(gameTime.ElapsedGameTime.Milliseconds);

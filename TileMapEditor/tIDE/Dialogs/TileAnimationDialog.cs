@@ -55,7 +55,7 @@ namespace tIDE.Dialogs
             if (m_imageListAnimation.Images.Count == 0)
             {
                 m_imageListAnimation.ImageSize = new System.Drawing.Size(
-                    newTileFrame.TileSheet.TileSize.Width, newTileFrame.TileSheet.TileSize.Height);
+                    newTileFrame.TileSheet.TileWidth, newTileFrame.TileSheet.TileHeight);
             }
 
             // determine or add new image index

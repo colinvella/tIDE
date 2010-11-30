@@ -185,12 +185,12 @@ namespace tIDE.Dialogs
             m_textBoxDescription.Text = m_tileSheet.Description;
             m_textBoxImageSource.Text = m_tileSheet.ImageSource;
 
-            m_textBoxTileWidth.Value = m_tileSheet.TileSize.Width;
-            m_textBoxTileHeight.Value = m_tileSheet.TileSize.Height;
-            m_textBoxLeftMargin.Value = m_tileSheet.Margin.Width;
-            m_textBoxTopMargin.Value = m_tileSheet.Margin.Height;
-            m_textBoxSpacingX.Value = m_tileSheet.Spacing.Width;
-            m_textBoxSpacingY.Value = m_tileSheet.Spacing.Height;
+            m_textBoxTileWidth.Value = m_tileSheet.TileWidth;
+            m_textBoxTileHeight.Value = m_tileSheet.TileHeight;
+            m_textBoxLeftMargin.Value = m_tileSheet.MarginWidth;
+            m_textBoxTopMargin.Value = m_tileSheet.MarginHeight;
+            m_textBoxSpacingX.Value = m_tileSheet.SpacingWidth;
+            m_textBoxSpacingY.Value = m_tileSheet.SpacingHeight;
 
             UpdateComboBoxes();
 
@@ -542,8 +542,8 @@ namespace tIDE.Dialogs
                 pixelLocation.Y /= m_trackBarZoom.Value;
                 pixelLocation.X += (int)m_previewOffset.X;
                 pixelLocation.Y += (int)m_previewOffset.Y;
-                pixelLocation.X = Math.Min(pixelLocation.X, m_tileSheet.SheetSize.Width * m_tileSheet.TileSize.Width - 1);
-                pixelLocation.Y = Math.Min(pixelLocation.Y, m_tileSheet.SheetSize.Height * m_tileSheet.TileSize.Width - 1);
+                pixelLocation.X = Math.Min(pixelLocation.X, m_tileSheet.SheetWidth * m_tileSheet.TileWidth - 1);
+                pixelLocation.Y = Math.Min(pixelLocation.Y, m_tileSheet.SheetHeight * m_tileSheet.TileWidth - 1);
                 m_tileHoverIndex = m_tileSheet.GetTileIndex(pixelLocation);
             }
             else
@@ -596,8 +596,8 @@ namespace tIDE.Dialogs
                 }
             }
 
-            if ((m_tileSheet.TileSize.Width != m_textBoxTileWidth.Value
-                || m_tileSheet.TileSize.Height != m_textBoxTileHeight.Value)
+            if ((m_tileSheet.TileWidth != m_textBoxTileWidth.Value
+                || m_tileSheet.TileHeight != m_textBoxTileHeight.Value)
                 && m_tileSheet.Map.DependsOnTileSheet(m_tileSheet))
             {
                 m_tileSizeFixedMessageBox.Show();

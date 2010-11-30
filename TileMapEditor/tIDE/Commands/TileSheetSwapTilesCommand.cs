@@ -74,9 +74,9 @@ namespace tIDE.Commands
             foreach (Layer layer in map.Layers)
             {
                 Location tileLocation = new Location();
-                for (tileLocation.Y = 0; tileLocation.Y < layer.LayerSize.Height; tileLocation.Y++)
+                for (tileLocation.Y = 0; tileLocation.Y < layer.LayerHeight; tileLocation.Y++)
                 {
-                    for (tileLocation.X = 0; tileLocation.X < layer.LayerSize.Width; tileLocation.X++)
+                    for (tileLocation.X = 0; tileLocation.X < layer.LayerWidth; tileLocation.X++)
                     {
                         Tile tile = layer.Tiles[tileLocation];
                         if (tile == null)

@@ -428,11 +428,11 @@ namespace xTile.Format
             TileSheet previousTileSheet = null;
             int nullCount = 0;
 
-            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+            for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
             {
                 xmlWriter.WriteStartElement("Row");
 
-                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                 {
                     Tile currentTile = layer.Tiles[tileX, tileY];
 

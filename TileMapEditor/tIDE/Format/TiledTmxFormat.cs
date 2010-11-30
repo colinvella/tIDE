@@ -64,14 +64,14 @@ namespace tIDE.Format
                     if (layer == firstLayer)
                         continue;
 
-                    if (layer.LayerSize.Width != firstLayer.LayerSize.Width)
+                    if (layer.LayerWidth != firstLayer.LayerWidth)
                         layerWidthMismatch = true;
-                    if (layer.LayerSize.Height != firstLayer.LayerSize.Height)
+                    if (layer.LayerHeight != firstLayer.LayerHeight)
                         layerHeightMismatch = true;
 
-                    if (layer.TileSize.Width != firstLayer.TileSize.Width)
+                    if (layer.TileWidth != firstLayer.TileWidth)
                         tileWidthMismatch = true;
-                    if (layer.TileSize.Height != firstLayer.TileSize.Height)
+                    if (layer.TileHeight != firstLayer.TileHeight)
                         tileHeightMismatch = true;
                 }
 
@@ -179,10 +179,10 @@ namespace tIDE.Format
             if (map.Layers.Count > 0)
             {
                 Layer firstLayer = map.Layers[0];
-                mapWidth = firstLayer.LayerSize.Width;
-                mapHeight = firstLayer.LayerSize.Height;
-                tileWidth = firstLayer.TileSize.Width;
-                tileHeight = firstLayer.TileSize.Height;
+                mapWidth = firstLayer.LayerWidth;
+                mapHeight = firstLayer.LayerHeight;
+                tileWidth = firstLayer.TileWidth;
+                tileHeight = firstLayer.TileHeight;
             }
 
             xmlWriter.WriteAttributeString("width", mapWidth.ToString());
@@ -346,10 +346,10 @@ namespace tIDE.Format
 
             xmlWriter.WriteAttributeString("firstgid", firstGid.ToString());
             xmlWriter.WriteAttributeString("name", tileSheet.Id);
-            xmlWriter.WriteAttributeString("tilewidth", tileSheet.TileSize.Width.ToString());
-            xmlWriter.WriteAttributeString("tileheight", tileSheet.TileSize.Height.ToString());
-            xmlWriter.WriteAttributeString("spacing", tileSheet.Spacing.Width.ToString());
-            xmlWriter.WriteAttributeString("margin", tileSheet.Margin.Width.ToString());
+            xmlWriter.WriteAttributeString("tilewidth", tileSheet.TileWidth.ToString());
+            xmlWriter.WriteAttributeString("tileheight", tileSheet.TileHeight.ToString());
+            xmlWriter.WriteAttributeString("spacing", tileSheet.SpacingWidth.ToString());
+            xmlWriter.WriteAttributeString("margin", tileSheet.MarginWidth.ToString());
 
             xmlWriter.WriteStartElement("image");
             xmlWriter.WriteAttributeString("source", tileSheet.ImageSource);
@@ -459,7 +459,7 @@ namespace tIDE.Format
                 layer.Tiles[tileLocation] = LoadStaticTile(layer, gid);
 
                 ++tileLocation.X;
-                if (tileLocation.X >= layer.LayerSize.Width)
+                if (tileLocation.X >= layer.LayerWidth)
                 {
                     tileLocation.X = 0;
                     ++tileLocation.Y;
@@ -533,7 +533,7 @@ namespace tIDE.Format
                 layer.Tiles[tileLocation] = LoadStaticTile(layer, gid);
 
                 ++tileLocation.X;
-                if (tileLocation.X >= layer.LayerSize.Width)
+                if (tileLocation.X >= layer.LayerWidth)
                 {
                     tileLocation.X = 0;
                     ++tileLocation.Y;
@@ -560,7 +560,7 @@ namespace tIDE.Format
                 layer.Tiles[tileLocation] = LoadStaticTile(layer, gid);
 
                 ++tileLocation.X;
-                if (tileLocation.X >= layer.LayerSize.Width)
+                if (tileLocation.X >= layer.LayerWidth)
                 {
                     tileLocation.X = 0;
                     ++tileLocation.Y;
@@ -714,8 +714,8 @@ namespace tIDE.Format
             xmlWriter.WriteStartElement("layer");
 
             xmlWriter.WriteAttributeString("name", layer.Id);
-            xmlWriter.WriteAttributeString("width", layer.LayerSize.Width.ToString());
-            xmlWriter.WriteAttributeString("height", layer.LayerSize.Height.ToString());
+            xmlWriter.WriteAttributeString("width", layer.LayerWidth.ToString());
+            xmlWriter.WriteAttributeString("height", layer.LayerHeight.ToString());
 
             // visible by default - specify property otherwise
             if (!layer.Visible)
@@ -760,9 +760,9 @@ namespace tIDE.Format
 
             // convert to TMX tile indices using firstGid of each tile set
             List<int> tileIndices = new List<int>();
-            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+            for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
             {
-                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                 {
                     Tile tile = layer.Tiles[tileX, tileY];
 

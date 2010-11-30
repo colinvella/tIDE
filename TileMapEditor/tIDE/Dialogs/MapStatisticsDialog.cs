@@ -113,8 +113,8 @@ namespace tIDE.Dialogs
             foreach (TileSheet tileSheet in layer.Map.TileSheets)
                 tileSheetUsage[tileSheet] = 0;
             
-            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
-                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+            for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
+                for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                 {
                     Tile tile = layer.Tiles[tileX, tileY];
                     if (tile == null)
@@ -279,8 +279,8 @@ namespace tIDE.Dialogs
                 int totalTiles = layer.LayerSize.Area;
 
                 int tileSheetTiles = 0;
-                for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
-                    for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
+                    for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                     {
                         Tile tile = layer.Tiles[tileX, tileY];
                         if (tile != null && tile.TileSheet == tileSheet)
