@@ -53,12 +53,48 @@ namespace xTile.Tiles
         }
 
         /// <summary>
-        /// Width and geight of the tiles in pixels for this TileSheet
+        /// Width of the TileSheet in tiles
+        /// </summary>
+        public int SheetWidth
+        {
+            get { return m_sheetSize.Width; }
+            set { m_sheetSize.Width = value; }
+        }
+
+        /// <summary>
+        /// Height of the TileSheet in tiles
+        /// </summary>
+        public int SheetHeight
+        {
+            get { return m_sheetSize.Height; }
+            set { m_sheetSize.Height = value; }
+        }
+
+        /// <summary>
+        /// Width and height of the tiles in pixels for this TileSheet
         /// </summary>
         public Size TileSize
         {
             get { return m_tileSize; }
             set { m_tileSize = value; }
+        }
+
+        /// <summary>
+        /// Width of the tiles in pixels for this TileSheet
+        /// </summary>
+        public int TileWidth
+        {
+            get { return m_tileSize.Width; }
+            set { m_tileSize.Width = value; }
+        }
+
+        /// <summary>
+        /// Height of the tiles in pixels for this TileSheet
+        /// </summary>
+        public int TileHeight
+        {
+            get { return m_tileSize.Height; }
+            set { m_tileSize.Height = value; }
         }
 
         /// <summary>
@@ -71,6 +107,24 @@ namespace xTile.Tiles
         }
 
         /// <summary>
+        /// Margin from the left edge of the image source
+        /// </summary>
+        public int MarginWidth
+        {
+            get { return m_margin.Width; }
+            set { m_margin.Width = value; }
+        }
+
+        /// <summary>
+        /// Margin from the top edge of the image source
+        /// </summary>
+        public int MarginHeight
+        {
+            get { return m_margin.Height; }
+            set { m_margin.Height = value; }
+        }
+
+        /// <summary>
         /// Horizontal and vertical padding in pixels between tiles in the
         /// image source
         /// </summary>
@@ -78,6 +132,26 @@ namespace xTile.Tiles
         {
             get { return m_spacing; }
             set { m_spacing = value; }
+        }
+
+        /// <summary>
+        /// Horizontal padding in pixels between tiles in the
+        /// image source
+        /// </summary>
+        public int SpacingWidth
+        {
+            get { return m_spacing.Width; }
+            set { m_spacing.Width = value; }
+        }
+
+        /// <summary>
+        /// Vertical padding in pixels between tiles in the
+        /// image source
+        /// </summary>
+        public int SpacingHeight
+        {
+            get { return m_spacing.Height; }
+            set { m_spacing.Height = value; }
         }
 
         /// <summary>

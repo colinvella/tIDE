@@ -42,6 +42,24 @@ namespace xTile
         }
 
         /// <summary>
+        /// Display width of the map in pixels. Corresponds to the width of
+        /// the largest layer
+        /// </summary>
+        public int DisplayWidth
+        {
+            get { return m_displaySize.Width; }
+        }
+
+        /// <summary>
+        /// Display height of the map in pixels. Corresponds to the height of
+        /// the largest layer
+        /// </summary>
+        public int DisplayHeight
+        {
+            get { return m_displaySize.Height; }
+        }
+
+        /// <summary>
         /// Layer collection contained in the Map
         /// </summary>
         public ReadOnlyCollection<Layer> Layers

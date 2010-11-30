@@ -326,12 +326,48 @@ namespace xTile.Layers
         }
 
         /// <summary>
+        /// Width of this layer in tiles
+        /// </summary>
+        public int LayerWidth
+        {
+            get { return m_layerSize.Width; }
+            set { LayerSize = new Size(value, m_layerSize.Height); }
+        }
+
+        /// <summary>
+        /// Height of this layer in tiles
+        /// </summary>
+        public int LayerHeight
+        {
+            get { return m_layerSize.Height; }
+            set { LayerSize = new Size(m_layerSize.Width, value); }
+        }
+
+        /// <summary>
         /// Width and height of the tiles used in this layer
         /// </summary>
         public Size TileSize
         {
             get { return m_tileSize; }
             set { m_tileSize = value; }
+        }
+
+        /// <summary>
+        /// Width of the tiles used in this layer
+        /// </summary>
+        public int TileWidth
+        {
+            get { return m_tileSize.Width; }
+            set { m_tileSize.Width = value; }
+        }
+
+        /// <summary>
+        /// Height of the tiles used in this layer
+        /// </summary>
+        public int TileHeight
+        {
+            get { return m_tileSize.Height; }
+            set { m_tileSize.Height = value; }
         }
 
         /// <summary>
@@ -345,6 +381,22 @@ namespace xTile.Layers
                     m_layerSize.Width * m_tileSize.Width,
                     m_layerSize.Height * m_tileSize.Height);
             }
+        }
+
+        /// <summary>
+        /// Width of this layer in pixels
+        /// </summary>
+        public int DisplayWidth
+        {
+            get { return m_layerSize.Width * m_tileSize.Width; }
+        }
+
+        /// <summary>
+        /// Height of this layer in pixels
+        /// </summary>
+        public int DisplayHeight
+        {
+            get { return m_layerSize.Height * m_tileSize.Height; }
         }
 
         /// <summary>
