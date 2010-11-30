@@ -925,6 +925,18 @@ namespace tIDE.Format
 
         private void WriteChunkANDT(Stream stream, Map map)
         {
+            // build list of unique animations
+            List<AnimatedTile> animatedTiles = new List<AnimatedTile>();
+            foreach (Layer layer in map.Layers)
+            {
+                for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+                {
+                    for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                    {
+                        Tile tile = layer.Tiles[tileX, tileY];
+                    }
+                }
+            }
         }
 
         private Image ReadChunkBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
