@@ -211,8 +211,9 @@ namespace tIDE.Format
                                 case 8: // PPFR -+
                                     StaticTile[] pingPongFrames = new StaticTile[tileFrames.Length * 2 - 1];
                                     Array.Copy(tileFrames, pingPongFrames, tileFrames.Length);
-                                    Array.Copy(tileFrames, 1, pingPongFrames, tileFrames.Length, tileFrames.Length - 1);
+                                    Array.Copy(tileFrames, 0, pingPongFrames, tileFrames.Length, tileFrames.Length - 1);
                                     Array.Reverse(pingPongFrames, tileFrames.Length, tileFrames.Length - 1);
+                                    tileFrames = pingPongFrames;
                                     break;
                                 default: // treat all other cases as LOOPF
                                     // 0 = NONE
@@ -249,19 +250,19 @@ namespace tIDE.Format
             WriteChunkBKDT(stream, map);
 
             // ANDT chunk
-            WriteChunkANDT(stream, map);
+            AnimatedTile[] animatedTiles = WriteChunkANDT(stream, map);
 
             // BGFX chunk
             WriteChunkBGFX(stream, map);
 
             // BODY chunk
-            WriteChunkLayer(stream, map.Layers[0], "BODY");
+            WriteChunkLayer(stream, map.Layers[0], "BODY", animatedTiles);
 
             // LYR? chunks
             for (int layerIndex = 1; layerIndex < map.Layers.Count; layerIndex++)
             {
                 string chunkId = "LYR" + layerIndex;
-                WriteChunkLayer(stream, map.Layers[layerIndex], chunkId);
+                WriteChunkLayer(stream, map.Layers[layerIndex], chunkId, animatedTiles);
             }
 
             // update header
@@ -891,11 +892,6 @@ namespace tIDE.Format
         {
             bool lsb = mphdRecord.LSB;
 
-            // temp
-            stream.Position = chunk.FilePosition;
-            byte[] buffer = new byte[chunk.Length];
-            stream.Read(buffer, 0, chunk.Length);
-
             // count structures backwards
             stream.Position = chunk.FilePosition + chunk.Length - AnimationRecord.SIZE;
             int animationCount = 0;
@@ -969,7 +965,7 @@ namespace tIDE.Format
             return true;
         }
 
-        private void WriteChunkANDT(Stream stream, Map map)
+        private AnimatedTile[] WriteChunkANDT(Stream stream, Map map)
         {
             // build list of unique animations
             List<AnimatedTile> animatedTiles = new List<AnimatedTile>();
@@ -999,9 +995,66 @@ namespace tIDE.Format
 
             // if there are no animations, do not write ANDT chunk at all
             if (animatedTiles.Count == 0)
-                return;
+                return null;
 
-            
+            // determine offsets length
+            int offsetsLength = 0;
+            foreach (AnimatedTile animatedTile in animatedTiles)
+                offsetsLength += (animatedTile.TileFrames.Length + 1) * 4; // +1 is for anim ref tile
+
+            // chunk length is space for offsets + termination ani record + all ani records
+            int chunkLength = offsetsLength + (animatedTiles.Count + 1) * AnimationRecord.SIZE;
+
+            // write chunk header
+            WriteSequence(stream, "ANDT");
+            WriteMsb(stream, (long)chunkLength);
+
+            long chunkStart = stream.Position;
+
+            // write animation offsets
+            List<long> animationPositions = new List<long>();
+            foreach (AnimatedTile animatedTile in animatedTiles)
+            {
+                // animation ref tile
+                WriteLsb(stream, (long)(animatedTile.TileFrames[0].TileIndex * 32));
+
+                // keep track of stream pos to compute anim offsets
+                animationPositions.Add(stream.Position - chunkStart);
+
+                // animation indices * block struct size
+                foreach (StaticTile tileFrame in animatedTile.TileFrames)
+                    WriteLsb(stream, (long) (tileFrame.TileIndex * 32));
+            }
+
+            // write termination animation record
+            Write(stream, (sbyte)-1);    // type = end of animations
+            Write(stream, (sbyte)0);     // delay
+            Write(stream, (sbyte)0);     // counter
+            Write(stream, (sbyte)0);     // user info
+            WriteLsb(stream, (long)0);   // current offset
+            WriteLsb(stream, (long)0);   // start offset
+            WriteLsb(stream, (long)0);   // end offset
+
+            // write animation records
+            for (int index = 0; index < animatedTiles.Count; index++)
+            {
+                AnimatedTile animatedTile = animatedTiles[index];
+                long animationPosition = animationPositions[index];
+
+                sbyte delay = (sbyte)(animatedTile.FrameInterval / 20);
+                long animationOffsetStart = animationPosition - chunkLength;
+                long animationOffsetend = animationOffsetStart + animatedTile.TileFrames.Length * 4;
+
+                Write(stream, (byte)1);                   // type = LOOPF
+                Write(stream, delay);                     // delay
+                Write(stream, (sbyte)0);                  // counter
+                Write(stream, (sbyte)0);                  // user info
+                WriteLsb(stream, animationOffsetStart);   // current offset
+                WriteLsb(stream, animationOffsetStart);   // start offset
+                WriteLsb(stream, animationOffsetend);     // end offset
+            }
+
+            return animatedTiles.ToArray();
         }
 
         private Image ReadChunkBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
@@ -1176,7 +1229,7 @@ namespace tIDE.Format
             return offsets;
         }
 
-        private void WriteChunkLayer(Stream stream, Layer layer, string chunkId)
+        private void WriteChunkLayer(Stream stream, Layer layer, string chunkId, AnimatedTile[] animatedTiles)
         {
             // BODY or LYR1 .. LYR7
             WriteSequence(stream, chunkId);
@@ -1196,8 +1249,30 @@ namespace tIDE.Format
                     else if (tile is StaticTile)
                         WriteLsb(stream, (short)(tile.TileIndex * 32));
                     else if (tile is AnimatedTile)
-                        // TODO
-                        WriteLsb(stream, (short)0);
+                    {
+                        if (animatedTiles == null)
+                            WriteLsb(stream, (short)0);
+                        else
+                        {
+                            AnimatedTile animatedTile = (AnimatedTile)tile;
+                            int animationIndex = -1;
+                            for (int listIndex = 0; listIndex < animatedTiles.Length; listIndex++)
+                            {
+                                if (AnimationsMatch(animatedTile, animatedTiles[listIndex]))
+                                {
+                                    animationIndex = listIndex;
+                                    break;
+                                }
+                            }
+                            if (animationIndex < 0)
+                                WriteLsb(stream, (short)0);
+                            else
+                            {
+                                short animationOffset = (short)((animationIndex - animatedTiles.Length) * AnimationRecord.SIZE);
+                                WriteLsb(stream, animationOffset);
+                            }
+                        }
+                    }
                     else
                         throw new Exception("Unknown tile type: " + tile.GetType());
                 }
