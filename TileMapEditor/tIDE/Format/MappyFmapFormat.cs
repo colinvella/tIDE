@@ -195,10 +195,33 @@ namespace tIDE.Format
                         {
                             AnimationRecord animationRecord = animationRecords[-tileIndex - 1];
                             StaticTile[] tileFrames = new StaticTile[animationRecord.Frames.Length];
+
                             for (int frameIndex = 0; frameIndex < animationRecord.Frames.Length; frameIndex++)
-                            {
                                 tileFrames[frameIndex] = new StaticTile(layer, tileSheet, BlendMode.Alpha, animationRecord.Frames[frameIndex]);
+
+                            // process loop types
+                            switch (animationRecord.Type)
+                            {
+                                case 2: // LOOPR: loop backward
+                                    Array.Reverse(tileFrames);
+                                    break;
+                                case 5: // PPFF -+
+                                case 6: // PPRR  | - different states for ping-pong animation
+                                case 7: // PPRF  | - treat all the same
+                                case 8: // PPFR -+
+                                    StaticTile[] pingPongFrames = new StaticTile[tileFrames.Length * 2 - 1];
+                                    Array.Copy(tileFrames, pingPongFrames, tileFrames.Length);
+                                    Array.Copy(tileFrames, 1, pingPongFrames, tileFrames.Length, tileFrames.Length - 1);
+                                    Array.Reverse(pingPongFrames, tileFrames.Length, tileFrames.Length - 1);
+                                    break;
+                                default: // treat all other cases as LOOPF
+                                    // 0 = NONE
+                                    // 1 = LOOPF: loop forward
+                                    // 3 = ONCE, 4 = ONCEH: one-off animations
+                                    // 9 = ONCES: one-off animations
+                                    break;
                             }
+
                             AnimatedTile animatedTile = new AnimatedTile(layer, tileFrames, (long)animationRecord.Delay * 20);
                             layer.Tiles[tileX, tileY] = animatedTile;
                         }
@@ -907,7 +930,8 @@ namespace tIDE.Format
 
                 // move (backwards) to frame indices at beginning of chunk
                 animationRecord.Frames = new int[frameCount];
-                stream.Position += animationRecord.StartOffset;
+                //stream.Position += animationRecord.StartOffset;
+                stream.Position = chunk.FilePosition + chunk.Length + animationRecord.StartOffset;
                 for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
                 {
                     animationRecord.Frames[frameIndex] = (int)ReadSignedLong(stream, lsb);
@@ -920,7 +944,29 @@ namespace tIDE.Format
                 stream.Position = recordPosition - AnimationRecord.SIZE;
             }
 
+            stream.Position = chunk.FilePosition + chunk.Length;
+
             return animationRecords;
+        }
+
+        private bool AnimationsMatch(AnimatedTile animatedTile1, AnimatedTile animatedTile2)
+        {
+            if (animatedTile1.FrameInterval != animatedTile2.FrameInterval)
+                return false;
+            if (animatedTile1.TileFrames.Length != animatedTile2.TileFrames.Length)
+                return false;
+
+            for (int index = 0; index < animatedTile1.TileFrames.Length; index++)
+            {
+                StaticTile tileFrame1 = animatedTile1.TileFrames[index];
+                StaticTile tileFrame2 = animatedTile2.TileFrames[index];
+                if (tileFrame1.TileSheet != tileFrame2.TileSheet)
+                    return false;
+                if (tileFrame1.TileIndex != tileFrame2.TileIndex)
+                    return false;
+            }
+
+            return true;
         }
 
         private void WriteChunkANDT(Stream stream, Map map)
@@ -934,9 +980,28 @@ namespace tIDE.Format
                     for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                     {
                         Tile tile = layer.Tiles[tileX, tileY];
+                        if (tile == null || !(tile is AnimatedTile))
+                            continue;
+                        AnimatedTile newAnimatedTile = (AnimatedTile)tile;
+
+                        bool matches = false;
+                        foreach (AnimatedTile animatedTile in animatedTiles)
+                            if (AnimationsMatch(animatedTile, newAnimatedTile))
+                            {
+                                matches = true;
+                                break;
+                            }
+                        if (!matches)
+                            animatedTiles.Add(newAnimatedTile);
                     }
                 }
             }
+
+            // if there are no animations, do not write ANDT chunk at all
+            if (animatedTiles.Count == 0)
+                return;
+
+            
         }
 
         private Image ReadChunkBGFX(Stream stream, Chunk chunk, MphdRecord mphdRecord, Color[] colourMap)
