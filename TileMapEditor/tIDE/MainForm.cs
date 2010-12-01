@@ -1194,6 +1194,8 @@ namespace tIDE
             UpdateFileControls();
             UpdateEditControls();
             UpdateLayerControls();
+
+            m_mapPanel.SelectedLayer = layer;
         }
 
         private void OnLayerProperties(object sender, EventArgs eventArgs)
@@ -1331,6 +1333,11 @@ namespace tIDE
             UpdateEditControls();
             UpdateTileSheetControls();
             m_tilePicker.UpdatePicker();
+
+            m_tilePicker.SelectedTileSheet = tileSheet;
+            m_tilePicker.SelectedTileIndex = tileSheet.TileCount > 0 ? 0 : -1;
+            m_mapPanel.SelectedTileSheet = tileSheet;
+            m_mapPanel.SelectedTileIndex = m_tilePicker.SelectedTileIndex;
         }
 
         private void OnTileSheetProperties(object sender, EventArgs eventArgs)

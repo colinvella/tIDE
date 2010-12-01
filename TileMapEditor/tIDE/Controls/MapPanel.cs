@@ -364,8 +364,8 @@ namespace tIDE.Controls
         private void RestrictViewportToMap()
         {
             // ensure viewport within map
-            m_viewport.X = Math.Min(m_map.DisplayWidth - m_viewport.Width, Math.Max(0, m_viewport.X));
-            m_viewport.Y = Math.Min(m_map.DisplayHeight - m_viewport.Height, Math.Max(0, m_viewport.Y));
+            m_viewport.X = Math.Max(0, Math.Min(m_viewport.X, m_map.DisplayWidth - m_viewport.Width));
+            m_viewport.Y = Math.Max(0, Math.Min(m_viewport.Y, m_map.DisplayHeight - m_viewport.Height));
         }
 
         private void OnHorizontalScroll(object sender, ScrollEventArgs scrollEventArgs)
@@ -1121,6 +1121,7 @@ namespace tIDE.Controls
                 {
                     m_selectedLayer = value;
                     m_tileSelection.Clear();
+                    OnResizeDisplay(this, EventArgs.Empty);
                     Invalidate(true);
                 }
             }
