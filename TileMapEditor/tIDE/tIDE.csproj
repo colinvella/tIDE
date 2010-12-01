@@ -23,7 +23,7 @@
     <ManifestCertificateThumbprint>757FD256334516B643817BA6487710D1F2C08240</ManifestCertificateThumbprint>
     <ManifestKeyFile>TileMapEditor_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>false</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <TargetZone>LocalIntranet</TargetZone>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
     <PublishUrl>publish\</PublishUrl>
