@@ -28,11 +28,11 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.2.3.0")]
+[assembly: AssemblyVersion("1.2.5.0")]
 
 #if WINDOWS
 
-[assembly: AssemblyFileVersionAttribute("1.2.3.0")]
+[assembly: AssemblyFileVersionAttribute("1.2.5.0")]
 
 #elif XBOX
 
