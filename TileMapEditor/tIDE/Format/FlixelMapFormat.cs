@@ -125,12 +125,12 @@ namespace tIDE.Format
 
         public string Name
         {
-            get { return "Flixel Map Format"; }
+            get { return "Flixel Multilayer Map Format"; }
         }
 
         public string FileExtensionDescriptor
         {
-            get { return "Flixel Map Files (*.flixel)"; }
+            get { return "Flixel Multilayer Map Files (*.flixel)"; }
         }
 
         public string FileExtension
