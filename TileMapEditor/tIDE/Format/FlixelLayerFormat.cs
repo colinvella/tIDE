@@ -70,10 +70,18 @@ namespace tIDE.Format
         {
             Map map = new Map("Flixel Map");
 
+            // if using wait cursor, switch to default one during dialog
+            bool useWaitCursor = Application.UseWaitCursor;
+            Application.UseWaitCursor = false;
+            Application.DoEvents();
+
             TileSheet tilesheet = new TileSheet("Flixel Tile Sheet", map, "", new Size(10, 10), new Size(16, 15));
             TileSheetPropertiesDialog tileSheetPropertiesDialog = new TileSheetPropertiesDialog(tilesheet, true, null);
             if (tileSheetPropertiesDialog.ShowDialog() == DialogResult.Cancel)
                 throw new Exception("No tile sheet configured");
+
+            Application.UseWaitCursor = useWaitCursor;
+            Application.DoEvents();
 
             TextReader layerTextReader = new StreamReader(stream);
 
