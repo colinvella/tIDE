@@ -69,6 +69,10 @@ namespace tIDE
 
             // Mappy FMP format
             xTile.Format.FormatManager.Instance.RegisterMapFormat(new MappyFmapFormat());
+
+            // Flixel map format
+            xTile.Format.FormatManager.Instance.RegisterMapFormat(new FlixelMapFormat());
+
         }
 
         private string GenerateFileDialogFilter()

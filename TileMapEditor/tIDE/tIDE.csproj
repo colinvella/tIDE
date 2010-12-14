@@ -228,6 +228,7 @@
     <Compile Include="Dialogs\TiledFormatOptionsDialog.Designer.cs">
       <DependentUpon>TiledFormatOptionsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Format\FlixelMapFormat.cs" />
     <Compile Include="Format\MappyFmapFormat.cs" />
     <Compile Include="Format\PathHelper.cs" />
     <Compile Include="Format\TiledTmxFormat.cs" />
