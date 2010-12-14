@@ -73,6 +73,9 @@ namespace tIDE
             // Flixel map format
             xTile.Format.FormatManager.Instance.RegisterMapFormat(new FlixelMapFormat());
 
+            // Flixel layer format
+            xTile.Format.FormatManager.Instance.RegisterMapFormat(new FlixelLayerFormat());
+
         }
 
         private string GenerateFileDialogFilter()

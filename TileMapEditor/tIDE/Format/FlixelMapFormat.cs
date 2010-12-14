@@ -318,7 +318,7 @@ namespace tIDE.Format
             {
                 string layerLine = layerTextReader.ReadLine();
                 if (layerLine == null)
-                    return;
+                    break;
 
                 string[] tokens = layerLine.Split(commas);
                 int tileX = 0;

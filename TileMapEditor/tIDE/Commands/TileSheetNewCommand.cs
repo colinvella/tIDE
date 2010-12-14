@@ -28,14 +28,19 @@ namespace tIDE.Commands
         {
             TileImageCache.Instance.Refresh(m_newTileSheet);
             m_map.AddTileSheet(m_newTileSheet);
-            m_mapTreeView.UpdateTree();
-            m_mapTreeView.SelectedComponent = m_newTileSheet;
+            if (m_mapTreeView != null)
+            {
+                m_mapTreeView.UpdateTree();
+                m_mapTreeView.SelectedComponent = m_newTileSheet;
+            }
         }
 
         public override void Undo()
         {
             m_map.RemoveTileSheet(m_newTileSheet);
-            m_mapTreeView.UpdateTree();
+
+            if (m_mapTreeView != null)
+                m_mapTreeView.UpdateTree();
         }
     }
 }
