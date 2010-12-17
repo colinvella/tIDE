@@ -1112,7 +1112,7 @@
     <value>309, 25</value>
   </data>
   <data name="m_tileSheetToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 25</value>
+    <value>185, 25</value>
   </data>
   <data name="m_tileSheetToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>

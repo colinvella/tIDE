@@ -212,6 +212,9 @@ namespace tIDE.Controls
         [Category("Behavior"), Description("Occurs when tile sheet auto tiles are requested from the context menu")]
         public event EventHandler TileSheetAutoTiles;
 
+        [Category("Behavior"), Description("Occurs when editing of the tile sheet image source is requested from the context menu")]
+        public event EventHandler TileSheetEditImageSource;
+
         [Category("Behavior"), Description("Occurs when a tile sheet deletion is requested from the context menu")]
         public event EventHandler DeleteTileSheet;
 
@@ -392,6 +395,12 @@ namespace tIDE.Controls
         {
             if (TileSheetAutoTiles != null)
                 TileSheetAutoTiles(this, eventArgs);
+        }
+
+        private void OnTileSheetEditImageSource(object sender, EventArgs eventArgs)
+        {
+            if (TileSheetEditImageSource != null)
+                TileSheetEditImageSource(this, EventArgs.Empty);
         }
 
         private void OnTileSheetDelete(object sender, EventArgs eventArgs)

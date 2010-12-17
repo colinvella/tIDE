@@ -117,376 +117,208 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_tileSheetNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="m_layerPropertiesMenuItem.Text" xml:space="preserve">
-    <value>Properties...</value>
-  </data>
-  <data name="m_layerMakeInvisibileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="&gt;&gt;m_treeView.Name" xml:space="preserve">
-    <value>m_treeView</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetPropertiesMenuItem</value>
-  </data>
-  <data name="m_treePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 130</value>
-  </data>
-  <data name="&gt;&gt;m_treePanel.Name" xml:space="preserve">
-    <value>m_treePanel</value>
-  </data>
-  <data name="m_layerMakeVisibileMenuItem.Text" xml:space="preserve">
-    <value>Make Visible</value>
-  </data>
+  <metadata name="m_labelCaption.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_treeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="m_labelCaption.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;m_mapPropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_mapPropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_mapPropertiesMenuItem</value>
-  </data>
-  <data name="m_treePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_layerNewMenuItem.Text" xml:space="preserve">
-    <value>New...</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_layerMakeVisibileMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_layerBringForwardMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Name" xml:space="preserve">
-    <value>m_tileSheetsContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetNewMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_mapStatisticsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_labelCaption.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
-  </data>
-  <data name="&gt;&gt;m_imageList.Name" xml:space="preserve">
-    <value>m_imageList</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_labelCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Name" xml:space="preserve">
-    <value>m_layerMakeVisibileMenuItem</value>
-  </data>
-  <data name="m_layerPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="&gt;&gt;m_imageList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_layerMakeVisibileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="&gt;&gt;m_layerNewMenuItem.Name" xml:space="preserve">
-    <value>m_layerNewMenuItem</value>
-  </data>
-  <data name="m_layerSendBackwardMenuItem.Text" xml:space="preserve">
-    <value>Send Backward</value>
-  </data>
-  <data name="&gt;&gt;m_layersContextMenuStrip.Name" xml:space="preserve">
-    <value>m_layersContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetAutoTilesMenuItem</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;m_layerContextMenuStrip.Name" xml:space="preserve">
-    <value>m_layerContextMenuStrip</value>
-  </data>
-  <data name="m_layerContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 148</value>
-  </data>
-  <data name="m_layerDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="m_layerBringForwardMenuItem.Text" xml:space="preserve">
-    <value>Bring Forward</value>
-  </data>
-  <data name="m_tileSheetAutoTilesMenuItem.Text" xml:space="preserve">
-    <value>Auto Tiles...</value>
-  </data>
-  <data name="m_mapPropertiesMenuItem.Text" xml:space="preserve">
-    <value>Properties...</value>
-  </data>
-  <data name="&gt;&gt;m_layerSendBackwardMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_labelCaption.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Name" xml:space="preserve">
-    <value>m_layerMakeInvisibileMenuItem</value>
+  <data name="m_labelCaption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_labelCaption.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="m_labelCaption.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="m_labelCaption.Text" xml:space="preserve">
+    <value>Map Explorer</value>
   </data>
-  <data name="&gt;&gt;m_layerNewMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_labelCaption.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_labelCaption.Name" xml:space="preserve">
+    <value>m_labelCaption</value>
   </data>
-  <data name="m_layerMakeInvisibileMenuItem.Text" xml:space="preserve">
-    <value>Make Invisible</value>
+  <data name="&gt;&gt;m_labelCaption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_layerDeleteMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
+  <data name="&gt;&gt;m_labelCaption.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;m_labelCaption.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="m_layerBringForwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+  <metadata name="m_treePanel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="&gt;&gt;m_treeView.Name" xml:space="preserve">
+    <value>m_treeView</value>
   </data>
-  <data name="m_tileSheetPropertiesMenuItem.Text" xml:space="preserve">
-    <value>Properties...</value>
+  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_labelCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
+    <value>m_treePanel</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+  <data name="&gt;&gt;m_treeView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_treePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_treePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="m_treePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 130</value>
+  </data>
+  <data name="m_treePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_treePanel.Name" xml:space="preserve">
+    <value>m_treePanel</value>
+  </data>
+  <data name="&gt;&gt;m_treePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_treePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_treePanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="m_treeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="m_treeView.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="m_tileSheetDeleteMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;m_layerDeleteMenuItem.Name" xml:space="preserve">
-    <value>m_layerDeleteMenuItem</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MapTreeView</value>
-  </data>
-  <data name="m_treeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 130</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetNewMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetNewMenuItem</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetContextMenuStrip.Name" xml:space="preserve">
-    <value>m_tileSheetContextMenuStrip</value>
-  </data>
+  <metadata name="m_imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="m_imageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACq
-        GAAAAk1TRnQBSQFMAgEBBgEAAXQBAAF0AQABEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABIAMAAQEBAAEgBgABIBIAA4YB/wFZApkB/wNqAf8DWQH/A1IB/wNIAf8DQAH/AywB/wMcAf8DFQH/
-        Aw8B/wMJAf8DCQH/zAADhgH/AZABqQGtAf8BWQLMAf8BWQGZAcwB/wFZAZkBzAH/AVkBmQHMAf8BWQGZ
-        AcwB/wFZAZkBzAH/AVkBmQHMAf8BWQGZAcwB/wFZAZkBzAH/AVkBmQHMAf8CJgFZAf8DwAH/yAADhgH/
-        AVkCzAH/AZABqQGtAf8BWQHMAv8BWQHMAv8BWQHMAv8BJgHMAv8BJgHMAv8BJgHMAv8BJgGZAv8BJgGZ
-        AcwB/wEAAZkBzAH/ASYBWQGZAf8DNQH/FAADwAH/A8AB/wPAAf8DwAH/A8AB/wQAA8AB/wPAAf8DwAH/
-        A8AB/wPAAf+IAAOGAf8BWQHMAv8BkAGpAa0B/wGZAswB/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wEm
-        AcwC/wEmAcwC/wEmAcwC/wEmAZkC/wEAAZkBzAH/AiYBWQH/A+MB/w0AAcwC/wFZA/8BAAHMAv8BWQP/
-        AQABzAL/A8AC/wEmAZkC/wEmAZkC/wEmAZkC/wEmAZkC/wEmAZkB/wPAAf+IAAOWAf8BmQHMAv8BAAHM
-        Av8BkAGpAa0B/wGZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wEmAcwC/wEmAcwC/wEmAcwC/wEm
-        AZkC/wEmAVkBmQH/AlkBmQH/DQABWQL/AQABzAL/AQABWQL/AQABzAL/AQABWQL/A8AC/wEmAcwC/wEm
-        AcwC/wEmAcwC/wEmAcwC/wEmAcwB/wPAAf+IAAOWAf8BmQHMAv8BAAFZAv8BkAGpAa0B/wGZAswB/wFZ
-        AcwC/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wEmAcwC/wEmAcwC/wEmAZkBzAH/A1IB/wPq
-        Af8JAAHMAv8BAAFZAv8BAAHMAv8BAAFZAv8BAAHMAv8DwAH/AcwBJgFZAf8BzAEmAVkB/wHMASYBWQL/
-        ASYBmQH/AcwBJgFZAf8DwAH/iAABkAGpAa0B/wGZAcwC/wEAAcwC/wEAAVkC/wGQAakBrQH/AZkBzAL/
-        AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/AVkBzAL/AVkBzAL/AVkBzAL/AVkBmQHMAf8DhgH/
-        CQABWQL/AQABWQL/AQABWQL/AQABWQL/AQABWQL/A8AC/wEmAZkC/wEmAZkB/wHMASYBWQL/ASYBzAL/
-        ASYBmQH/A8AB/4gAAZABqQGtAf8BmQHMAv8BAAFZAv8BAAFZAv8BkAGpAa0B/wGQAakBrQH/AZABqQGt
-        Af8BkAGpAa0B/wGQAakBrQH/AZABqQGtAf8BkAGpAa0B/wFZApkB/wFZApkB/wOGAf8DhgH/AVkCmQH/
-        CgAC/wEAAVkC/wIAAv8BAAFZAv8CAAL/BAAB/wEmAZkC/wEmAZkB/wHMASYBWQL/ASYBzAL/ASYBmQH/
-        jAABkAGpAa0B/wGZA/8CAAL/AQABWQL/AgAC/wEAAVkC/wIAAv8BWQHMA/8BJgGZAv8BJgGZAf8BzAEm
-        AVkC/wEmAcwC/wEmAZkB/xgAA8AB/wPAAf8DwAH/A8AB/wPAAf8EAAPAAf8DwAH/A8AB/wPAAf8DwAH/
-        iAABkAGpAa0B/wGZA/8BmQP/AzUB/wM1Af8DNQH/AzUB/wM1Af8BkAGpAa0B/wM1Af8DNQH/AzUB/wM1
-        Af8DNQH/EAAB/wHMAVkC/wHMAVkC/wHMAVkC/wHMAVkC/wHMAVkB/wPAAf8BAAHMAv8BAAFZAv8BAAFZ
-        Av8BAAFZAv8BAAHMAv8DwAH/iAABkAGpAa0B/wGZAswC/wHMAVkC/wHMAVkC/wHMAVkC/wHMAVkC/wHM
-        AVkB/wM1Af8BAAHMAv8BAAFZAv8BAAFZAv8BAAFZAv8BAAHMAv8DNQH/EAAB/wHMAVkC/wHMAVkC/wHM
-        AVkC/wHMAVkC/wHMAVkB/wPAAf8BAAHMAv8BAAFZAv8BAAFZAv8BAAFZAv8BAAHMAv8DwAH/iAAD6gH/
-        AZABqQGtAv8BzAFZAv8BzAFZAv8BzAFZAv8BzAFZAv8BzAFZAf8DNQH/AQABzAL/AQABWQL/AQABWQL/
-        AQABWQL/AQABzAL/AzUB/xAAAf8BmQEmAv8BmQEmAv8BmQEmAv8BmQEmAv8BmQEmAf8DwAH/AQABWQL/
-        AQABzAL/AQABzAL/AQABzAL/AQABWQL/A8AB/5AAAf8BmQEmAv8BmQEmAv8BmQEmAv8BmQEmAv8BmQEm
-        Af8DNQH/AQABWQL/AQABzAL/AQABzAL/AQABzAL/AQABWQL/AzUB/xAAAf8BmQEmAv8BmQEmAv8BmQEm
-        Av8BmQEmAv8BmQEmAf8DwAH/AQABgAEAAf8BAAFZASYB/wEAAYABAAH/AQABWQEmAf8BAAGAAQAB/wPA
-        Af+QAAH/AZkBJgL/AZkBJgL/AZkBJgL/AZkBJgL/AZkBJgH/AzUB/wEAAYABAAH/AQABWQEmAf8BAAGA
-        AQAB/wEAAVkBJgH/AQABgAEAAf8DNQH/EAAB/wGZAQAC/wGZAQAC/wGZAQAC/wGZAQAC/wGZAQAB/wQA
-        ASYB/wEAAf8BAAH/AcwB/wEmAf8BAAH/AQAB/wHMAf8BJgH/AQAB/5QAAf8BmQEAAv8BmQEAAv8BmQEA
-        Av8BmQEAAv8BmQEAAf8EAAEmAf8BAAH/AQAB/wHMAf8BJgH/AQAB/wEAAf8BzAH/ASYB/wEAAf//AP8A
-        DgADhgH/AVkCmQH/A2oB/wNZAf8DUgH/A0gB/wNAAf8DLAH/AxwB/wMVAf8DDwH/AwkB/wMJAf+QAAM1
-        Af8DNQH/AzUB/wM1Af8DNQH/AzUB/wM1Af8DNQH/AzUB/wM1Af8DNQH/AzUB/wM1Af8DNQH/BAADhgH/
-        AZABqQGtAf8BWQLMAf8BWQGZAcwB/wFZAZkBzAH/AVkBmQHMAf8BWQGZAcwB/wFZAZkBzAH/AVkBmQHM
-        Af8BWQGZAcwB/wFZAZkBzAH/AVkBmQHMAf8CJgFZAf8DwAH/EAABWQEAASYB/wFZAQABJgH/AVkBAAEm
-        Af8BWQEAASYB/wFZAQABJgH/AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/AVkBAAEmAf8cAAPAAf8DwAH/
-        A8AB/wPAAf8DwAH/A8AB/wPAAf8DwAH/A8AB/xgAAzUB/wEAAswB/wEAAswB/wEAAswB/wEAAswB/wEA
-        AswB/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wM1Af8EAAOGAf8BWQLM
-        Af8BkAGpAa0B/wFZAcwC/wFZAcwC/wFZAcwC/wEmAcwC/wEmAcwC/wEmAcwC/wEmAZkC/wEmAZkBzAH/
-        AQABmQHMAf8BJgFZAZkB/wM1Af8UAAFZAQABJgH/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/
-        AQABzAL/AQABzAL/AVkBAAEmAf8cAAPAAf8BxgHWAe8B/wHGAdYB7wH/AcYB1gHvAf8BxgHWAe8B/wHG
-        AdYB7wH/AcYB1gHvAf8BxgHWAe8B/wPAAf8UAAM1Af8BAALMAf8BAALMAf8BAALMAf8BAALMAf8BAALM
-        Af8BAALMAf8BAAHMAv8BAAHMAv8BAAHMAv8BAAHMAv8BAAHMAv8BAAHMAv8DNQH/BAADhgH/AVkBzAL/
-        AZABqQGtAf8BmQLMAf8BWQHMAv8BWQHMAv8BWQHMAv8BWQHMAv8BJgHMAv8BJgHMAv8BJgHMAv8BJgGZ
-        Av8BAAGZAcwB/wImAVkB/wPjAf8UAAFZAQABJgH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AQABgAEA
-        Af8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BWQEAASYB/xwAA8AB/wHAAdwBwAH/AcAB3AHAAf8BwAHc
-        AcAB/wHAAdwBwAH/AcAB3AHAAf8BwAHcAcAB/wHAAdwBwAH/A8AB/xAAAzUB/wEAAYABAAH/AQABgAEA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACo
+        GAAAAk1TRnQBSQFMAgEBBgEAAXwBAAF8AQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEgBgABIBIAA4YB/wFYApkB/wNpAf8DWAH/A1EB/wNHAf8DPwH/AysB/wMbAf8DFAH/
+        Aw4B/wMIAf8DCAH/zAADhgH/AZABqQGtAf8BWALMAf8BWAGZAcwB/wFYAZkBzAH/AVgBmQHMAf8BWAGZ
+        AcwB/wFYAZkBzAH/AVgBmQHMAf8BWAGZAcwB/wFYAZkBzAH/AVgBmQHMAf8CJQFYAf8DwAH/yAADhgH/
+        AVgCzAH/AZABqQGtAf8BWAHMAv8BWAHMAv8BWAHMAv8BJQHMAv8BJQHMAv8BJQHMAv8BJQGZAv8BJQGZ
+        AcwB/wEAAZkBzAH/ASUBWAGZAf8DNAH/FAADwAH/A8AB/wPAAf8DwAH/A8AB/wQAA8AB/wPAAf8DwAH/
+        A8AB/wPAAf+IAAOGAf8BWAHMAv8BkAGpAa0B/wGZAswB/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wEl
+        AcwC/wElAcwC/wElAcwC/wElAZkC/wEAAZkBzAH/AiUBWAH/A+MB/w0AAcwC/wFYA/8BAAHMAv8BWAP/
+        AQABzAL/A8AC/wElAZkC/wElAZkC/wElAZkC/wElAZkC/wElAZkB/wPAAf+IAAOWAf8BmQHMAv8BAAHM
+        Av8BkAGpAa0B/wGZAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wElAcwC/wElAcwC/wElAcwC/wEl
+        AZkC/wElAVgBmQH/AlgBmQH/DQABWAL/AQABzAL/AQABWAL/AQABzAL/AQABWAL/A8AC/wElAcwC/wEl
+        AcwC/wElAcwC/wElAcwC/wElAcwB/wPAAf+IAAOWAf8BmQHMAv8BAAFYAv8BkAGpAa0B/wGZAswB/wFY
+        AcwC/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wElAcwC/wElAcwC/wElAZkBzAH/A1EB/wPq
+        Af8JAAHMAv8BAAFYAv8BAAHMAv8BAAFYAv8BAAHMAv8DwAH/AcwBJQFYAf8BzAElAVgB/wHMASUBWAL/
+        ASUBmQH/AcwBJQFYAf8DwAH/iAABkAGpAa0B/wGZAcwC/wEAAcwC/wEAAVgC/wGQAakBrQH/AZkBzAL/
+        AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/AVgBzAL/AVgBzAL/AVgBzAL/AVgBmQHMAf8DhgH/
+        CQABWAL/AQABWAL/AQABWAL/AQABWAL/AQABWAL/A8AC/wElAZkC/wElAZkB/wHMASUBWAL/ASUBzAL/
+        ASUBmQH/A8AB/4gAAZABqQGtAf8BmQHMAv8BAAFYAv8BAAFYAv8BkAGpAa0B/wGQAakBrQH/AZABqQGt
+        Af8BkAGpAa0B/wGQAakBrQH/AZABqQGtAf8BkAGpAa0B/wFYApkB/wFYApkB/wOGAf8DhgH/AVgCmQH/
+        CgAC/wEAAVgC/wIAAv8BAAFYAv8CAAL/BAAB/wElAZkC/wElAZkB/wHMASUBWAL/ASUBzAL/ASUBmQH/
+        jAABkAGpAa0B/wGZA/8CAAL/AQABWAL/AgAC/wEAAVgC/wIAAv8BWAHMA/8BJQGZAv8BJQGZAf8BzAEl
+        AVgC/wElAcwC/wElAZkB/xgAA8AB/wPAAf8DwAH/A8AB/wPAAf8EAAPAAf8DwAH/A8AB/wPAAf8DwAH/
+        iAABkAGpAa0B/wGZA/8BmQP/AzQB/wM0Af8DNAH/AzQB/wM0Af8BkAGpAa0B/wM0Af8DNAH/AzQB/wM0
+        Af8DNAH/EAAB/wHMAVgC/wHMAVgC/wHMAVgC/wHMAVgC/wHMAVgB/wPAAf8BAAHMAv8BAAFYAv8BAAFY
+        Av8BAAFYAv8BAAHMAv8DwAH/iAABkAGpAa0B/wGZAswC/wHMAVgC/wHMAVgC/wHMAVgC/wHMAVgC/wHM
+        AVgB/wM0Af8BAAHMAv8BAAFYAv8BAAFYAv8BAAFYAv8BAAHMAv8DNAH/EAAB/wHMAVgC/wHMAVgC/wHM
+        AVgC/wHMAVgC/wHMAVgB/wPAAf8BAAHMAv8BAAFYAv8BAAFYAv8BAAFYAv8BAAHMAv8DwAH/iAAD6gH/
+        AZABqQGtAv8BzAFYAv8BzAFYAv8BzAFYAv8BzAFYAv8BzAFYAf8DNAH/AQABzAL/AQABWAL/AQABWAL/
+        AQABWAL/AQABzAL/AzQB/xAAAf8BmQElAv8BmQElAv8BmQElAv8BmQElAv8BmQElAf8DwAH/AQABWAL/
+        AQABzAL/AQABzAL/AQABzAL/AQABWAL/A8AB/5AAAf8BmQElAv8BmQElAv8BmQElAv8BmQElAv8BmQEl
+        Af8DNAH/AQABWAL/AQABzAL/AQABzAL/AQABzAL/AQABWAL/AzQB/xAAAf8BmQElAv8BmQElAv8BmQEl
+        Av8BmQElAv8BmQElAf8DwAH/AQABgAEAAf8BAAFYASUB/wEAAYABAAH/AQABWAElAf8BAAGAAQAB/wPA
+        Af+QAAH/AZkBJQL/AZkBJQL/AZkBJQL/AZkBJQL/AZkBJQH/AzQB/wEAAYABAAH/AQABWAElAf8BAAGA
+        AQAB/wEAAVgBJQH/AQABgAEAAf8DNAH/EAAB/wGZAQAC/wGZAQAC/wGZAQAC/wGZAQAC/wGZAQAB/wQA
+        ASUB/wEAAf8BAAH/AcwB/wElAf8BAAH/AQAB/wHMAf8BJQH/AQAB/5QAAf8BmQEAAv8BmQEAAv8BmQEA
+        Av8BmQEAAv8BmQEAAf8EAAElAf8BAAH/AQAB/wHMAf8BJQH/AQAB/wEAAf8BzAH/ASUB/wEAAf//AP8A
+        DgADhgH/AVgCmQH/A2kB/wNYAf8DUQH/A0cB/wM/Af8DKwH/AxsB/wMUAf8DDgH/AwgB/wMIAf+QAAM0
+        Af8DNAH/AzQB/wM0Af8DNAH/AzQB/wM0Af8DNAH/AzQB/wM0Af8DNAH/AzQB/wM0Af8DNAH/BAADhgH/
+        AZABqQGtAf8BWALMAf8BWAGZAcwB/wFYAZkBzAH/AVgBmQHMAf8BWAGZAcwB/wFYAZkBzAH/AVgBmQHM
+        Af8BWAGZAcwB/wFYAZkBzAH/AVgBmQHMAf8CJQFYAf8DwAH/EAABWAEAASUB/wFYAQABJQH/AVgBAAEl
+        Af8BWAEAASUB/wFYAQABJQH/AVgBAAElAf8BWAEAASUB/wFYAQABJQH/AVgBAAElAf8cAAPAAf8DwAH/
+        A8AB/wPAAf8DwAH/A8AB/wPAAf8DwAH/A8AB/xgAAzQB/wEAAswB/wEAAswB/wEAAswB/wEAAswB/wEA
+        AswB/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wEAAcwC/wM0Af8EAAOGAf8BWALM
+        Af8BkAGpAa0B/wFYAcwC/wFYAcwC/wFYAcwC/wElAcwC/wElAcwC/wElAcwC/wElAZkC/wElAZkBzAH/
+        AQABmQHMAf8BJQFYAZkB/wM0Af8UAAFYAQABJQH/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/
+        AQABzAL/AQABzAL/AVgBAAElAf8cAAPAAf8BxgHWAe8B/wHGAdYB7wH/AcYB1gHvAf8BxgHWAe8B/wHG
+        AdYB7wH/AcYB1gHvAf8BxgHWAe8B/wPAAf8UAAM0Af8BAALMAf8BAALMAf8BAALMAf8BAALMAf8BAALM
+        Af8BAALMAf8BAAHMAv8BAAHMAv8BAAHMAv8BAAHMAv8BAAHMAv8BAAHMAv8DNAH/BAADhgH/AVgBzAL/
+        AZABqQGtAf8BmQLMAf8BWAHMAv8BWAHMAv8BWAHMAv8BWAHMAv8BJQHMAv8BJQHMAv8BJQHMAv8BJQGZ
+        Av8BAAGZAcwB/wIlAVgB/wPjAf8UAAFYAQABJQH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AQABgAEA
+        Af8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BWAEAASUB/xwAA8AB/wHAAdwBwAH/AcAB3AHAAf8BwAHc
+        AcAB/wHAAdwBwAH/AcAB3AHAAf8BwAHcAcAB/wHAAdwBwAH/A8AB/xAAAzQB/wEAAYABAAH/AQABgAEA
         Af8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BAALMAf8BAALMAf8BAAHMAv8BAAHMAv8BAAHMAv8BAAHM
-        Av8BAAHMAv8DNQH/BAADlgH/AZkBzAL/AVkCzAH/AZABqQGtAf8BmQHMAv8BWQHMAv8BWQHMAv8BWQHM
-        Av8BWQHMAv8BJgHMAv8BJgHMAv8BJgHMAv8BJgGZAv8BJgFZAZkB/wJZAZkB/xgAAVkBAAEmAf8BJgH/
-        AQAB/wEmAf8BAAH/ASYB/wEAAf8BJgH/AQAB/wEmAf8BAAH/ASYB/wEAAf8BJgH/AQAB/wFZAQABJgH/
+        Av8BAAHMAv8DNAH/BAADlgH/AZkBzAL/AVgCzAH/AZABqQGtAf8BmQHMAv8BWAHMAv8BWAHMAv8BWAHM
+        Av8BWAHMAv8BJQHMAv8BJQHMAv8BJQHMAv8BJQGZAv8BJQFYAZkB/wJYAZkB/xgAAVgBAAElAf8BJQH/
+        AQAB/wElAf8BAAH/ASUB/wEAAf8BJQH/AQAB/wElAf8BAAH/ASUB/wEAAf8BJQH/AQAB/wFYAQABJQH/
         HAADwAH/AcAB3AHAAf8BwAHcAcAB/wHAAdwBwAH/AcAB3AHAAf8BwAHcAcAB/wHAAdwBwAH/AcAB3AHA
-        Af8DwAH/DAADNQH/AQABzAEAAf8BAAHMAQAB/wEAAcwBAAH/AQABzAEAAf8BAAHMAQAB/wEAAYABAAH/
-        AQACzAH/AQACzAH/AQACzAH/AQACzAH/AQACzAH/AQACzAH/AzUB/wQAA5YB/wGZAcwC/wOWAf8BkAGp
-        Aa0B/wGZAswB/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wFZAcwC/wEmAcwC/wEmAcwC/wEm
-        AZkBzAH/A1IB/wPqAf8YAAFZAQABJgL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/
-        AZkBAAH/AVkBAAEmAf8cAAPAAf8B8AHKAaYB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYB/wHwAcoBpgH/
-        AfABygGmAf8B8AHKAaYB/wPAAf8IAAM1Af8BJgH/AQAB/wEmAf8BAAH/ASYB/wEAAf8BJgH/AQAB/wEm
-        Af8BAAH/AQABzAEAAf8BAAGAAQAB/wEAAswB/wEAAswB/wEAAswB/wEAAswB/wEAAswB/wM1Af8EAAGQ
+        Af8DwAH/DAADNAH/AQABzAEAAf8BAAHMAQAB/wEAAcwBAAH/AQABzAEAAf8BAAHMAQAB/wEAAYABAAH/
+        AQACzAH/AQACzAH/AQACzAH/AQACzAH/AQACzAH/AQACzAH/AzQB/wQAA5YB/wGZAcwC/wOWAf8BkAGp
+        Aa0B/wGZAswB/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wFYAcwC/wElAcwC/wElAcwC/wEl
+        AZkBzAH/A1EB/wPqAf8YAAFYAQABJQL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/
+        AZkBAAH/AVgBAAElAf8cAAPAAf8B8AHKAaYB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYB/wHwAcoBpgH/
+        AfABygGmAf8B8AHKAaYB/wPAAf8IAAM0Af8BJQH/AQAB/wElAf8BAAH/ASUB/wEAAf8BJQH/AQAB/wEl
+        Af8BAAH/AQABzAEAAf8BAAGAAQAB/wEAAswB/wEAAswB/wEAAswB/wEAAswB/wEAAswB/wM0Af8EAAGQ
         AakBrQH/AZkBzAL/AZkD/wOWAf8BkAGpAa0B/wGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/wGZ
-        AcwC/wFZAcwC/wFZAcwC/wFZAcwC/wFZAZkBzAH/A4YB/xwAAVkBAAEmAf8BWQEAASYB/wFZAQABJgH/
-        AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/HAADwAH/A8AB/wPA
-        Af8DwAH/A8AB/wPAAf8DwAH/A8AB/wPAAf8EAAM1Av8BmQHMAv8BmQHMAv8BmQHMAv8BmQHMAf8CzAEA
-        Af8BJgH/AQAB/wEAAcwBAAH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BAAGAAQAB/wM1
+        AcwC/wFYAcwC/wFYAcwC/wFYAcwC/wFYAZkBzAH/A4YB/xwAAVgBAAElAf8BWAEAASUB/wFYAQABJQH/
+        AVgBAAElAf8BWAEAASUB/wFYAQABJQH/AVgBAAElAf8BWAEAASUB/wFYAQABJQH/HAADwAH/A8AB/wPA
+        Af8DwAH/A8AB/wPAAf8DwAH/A8AB/wPAAf8EAAM0Av8BmQHMAv8BmQHMAv8BmQHMAv8BmQHMAf8CzAEA
+        Af8BJQH/AQAB/wEAAcwBAAH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BAAGAAQAB/wM0
         Af8EAAGQAakBrQH/AZkBzAL/AZkD/wGZA/8BkAGpAa0B/wGQAakBrQH/AZABqQGtAf8BkAGpAa0B/wGQ
-        AakBrQH/AZABqQGtAf8BkAGpAa0B/wFZApkB/wFZApkB/wOGAf8DhgH/AVkCmQH/hAADNQL/AZkBzAL/
-        AZkBzAL/AZkBzAH/AswBAAH/AswBAAH/AswBAAH/ASYB/wEAAf8BAAHMAQAB/wEAAcwBAAH/AQABzAEA
-        Af8BAAHMAQAB/wEAAcwBAAH/AzUB/wQAAZABqQGtAf8BmQP/AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/
-        AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/AZkBzAGZAf8BmQHM
-        AZkB/wOWAf+MAAM1Av8BWQHMAv8BWQHMAf8CzAEAAf8CzAEAAf8CzAEAAf8CzAEAAf8CzAEAAf8BJgH/
-        AQAB/wEmAf8BAAH/ASYB/wEAAf8BJgH/AQAB/wEmAf8BAAH/AzUB/wQAAZABqQGtAf8BmQP/AZkD/wFZ
-        AQABJgH/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AVkBAAEmAf8CzAGZ
-        Af8CzAGZAf8DlgH/EAADsgH/A1kB/wMAAf8DAAH/A1kB/wOyAf8oAAOyAf8DSAH/A0gB/wNIAf8DSAH/
-        A7IB/yAAAzUC/wFZAZkB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLM
-        AQAB/wLMAQAB/wLMAQAB/wLMAQAB/wM1Af8EAAGQAakBrQH/AZkCzAH/AZkD/wGZA/8BWQEAASYB/wEA
-        AYABAAH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AVkBAAEm
-        Af8DlgH/A5YB/wOWAf8EAAOyAf8DAAH/A8AC/wGZAQAB/wFZASYBAAL/AZkBAAX/A8AB/wNZAf8cAAOy
-        Af8DSAH/AlkBmQH/AlkBmQH/AlkBmQH/AlkBmQH/AlkBmQH/AlkBmQH/A0gB/xwAAzUB/wLMAQAB/wLM
+        AakBrQH/AZABqQGtAf8BkAGpAa0B/wFYApkB/wFYApkB/wOGAf8DhgH/AVgCmQH/hAADNAL/AZkBzAL/
+        AZkBzAL/AZkBzAH/AswBAAH/AswBAAH/AswBAAH/ASUB/wEAAf8BAAHMAQAB/wEAAcwBAAH/AQABzAEA
+        Af8BAAHMAQAB/wEAAcwBAAH/AzQB/wQAAZABqQGtAf8BmQP/AVgBAAElAf8BWAEAASUB/wFYAQABJQH/
+        AVgBAAElAf8BWAEAASUB/wFYAQABJQH/AVgBAAElAf8BWAEAASUB/wFYAQABJQH/AZkBzAGZAf8BmQHM
+        AZkB/wOWAf+MAAM0Av8BWAHMAv8BWAHMAf8CzAEAAf8CzAEAAf8CzAEAAf8CzAEAAf8CzAEAAf8BJQH/
+        AQAB/wElAf8BAAH/ASUB/wEAAf8BJQH/AQAB/wElAf8BAAH/AzQB/wQAAZABqQGtAf8BmQP/AZkD/wFY
+        AQABJQH/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AQABzAL/AVgBAAElAf8CzAGZ
+        Af8CzAGZAf8DlgH/EAADsgH/A1gB/wMAAf8DAAH/A1gB/wOyAf8oAAOyAf8DRwH/A0cB/wNHAf8DRwH/
+        A7IB/yAAAzQC/wFYAZkB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLM
+        AQAB/wLMAQAB/wLMAQAB/wLMAQAB/wM0Af8EAAGQAakBrQH/AZkCzAH/AZkD/wGZA/8BWAEAASUB/wEA
+        AYABAAH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AQABgAEAAf8BAAGAAQAB/wEAAYABAAH/AVgBAAEl
+        Af8DlgH/A5YB/wOWAf8EAAOyAf8DAAH/A8AC/wGZAQAB/wFYASUBAAL/AZkBAAX/A8AB/wNYAf8cAAOy
+        Af8DRwH/AlgBmQH/AlgBmQH/AlgBmQH/AlgBmQH/AlgBmQH/AlgBmQH/A0cB/xwAAzQB/wLMAQAB/wLM
         AQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLMAQAB/wLM
-        AQAB/wM1Af8EAAPqAf8BkAGpAa0B/wGQAakBrQH/AZABqQGtAf8BkAGpAa0B/wFZAQABJgH/ASYB/wEA
-        Af8BJgH/AQAB/wEmAf8BAAH/ASYB/wEAAf8BJgH/AQAB/wEmAf8BAAH/ASYB/wEAAf8BWQEAASYB/wgA
-        A7IB/wPABv8BmQEAAf8BWQEmAQAB/wMAAf8BWQEmAQAC/wGZAQAF/wPAAf8DsgH/FAADsgH/AlkBmQH/
-        AZABqQGtAf8BkAGpAa0B/wKZAcwB/wKZAcwB/wKZAcwB/wKZAcwB/wGQAakBrQH/AlkBmQH/A7IB/xgA
-        AzUB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/
-        AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wM1Af8cAAFZAQABJgL/AZkBAAL/
-        AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAH/AVkBAAEmAf8EAAOyAf8DwAb/AZkBAAH/
-        AVkBJgEAAf8DAAH/AVkBJgEAAv8BmQEABf8DwAH/A7IB/xQAA7IB/wGQAakBrQH/ApkBzAH/AZkCzAH/
-        AZkCzAH/AZkCzAH/AZkCzAH/AZkCzAH/ApkBzAH/AZABqQGtAf8DsgH/GAADNQH/AcwBmQEAAf8BzAGZ
+        AQAB/wM0Af8EAAPqAf8BkAGpAa0B/wGQAakBrQH/AZABqQGtAf8BkAGpAa0B/wFYAQABJQH/ASUB/wEA
+        Af8BJQH/AQAB/wElAf8BAAH/ASUB/wEAAf8BJQH/AQAB/wElAf8BAAH/ASUB/wEAAf8BWAEAASUB/wgA
+        A7IB/wPABv8BmQEAAf8BWAElAQAB/wMAAf8BWAElAQAC/wGZAQAF/wPAAf8DsgH/FAADsgH/AlgBmQH/
+        AZABqQGtAf8BkAGpAa0B/wKZAcwB/wKZAcwB/wKZAcwB/wKZAcwB/wGQAakBrQH/AlgBmQH/A7IB/xgA
+        AzQB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/
+        AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wM0Af8cAAFYAQABJQL/AZkBAAL/
+        AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAL/AZkBAAH/AVgBAAElAf8EAAOyAf8DwAb/AZkBAAH/
+        AVgBJQEAAf8DAAH/AVgBJQEAAv8BmQEABf8DwAH/A7IB/xQAA7IB/wGQAakBrQH/ApkBzAH/AZkCzAH/
+        AZkCzAH/AZkCzAH/AZkCzAH/AZkCzAH/ApkBzAH/AZABqQGtAf8DsgH/GAADNAH/AcwBmQEAAf8BzAGZ
         AQAB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/
-        AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AzUB/yAAAVkBAAEmAf8BWQEAASYB/wFZAQABJgH/AVkBAAEm
-        Af8BWQEAASYB/wFZAQABJgH/AVkBAAEmAf8BWQEAASYB/wFZAQABJgH/BAADWQH/A8AG/wGZAQAB/wFZ
-        ASYBAAL/AZkBAAH/A8AB/wMAAf8DsgH/HAADSAH/ApkBzAH/AZkCzAH/AZkCzAH/AZkCzAH/AZkCzAH/
-        ApkBzAH/A0gB/wOyAf8cAAM1Af8DNQH/AzUB/wM1Af8DNQH/AzUB/wM1Af8DNQH/AzUB/wM1Af8DNQH/
-        AzUB/wM1Af8DNQH/TAADsgH/A1kB/wMAAf8DAAH/A1kB/wOyAf8oAAOyAf8DSAH/A0gB/wNIAf8DSAH/
+        AcwBmQEAAf8BzAGZAQAB/wHMAZkBAAH/AzQB/yAAAVgBAAElAf8BWAEAASUB/wFYAQABJQH/AVgBAAEl
+        Af8BWAEAASUB/wFYAQABJQH/AVgBAAElAf8BWAEAASUB/wFYAQABJQH/BAADWAH/A8AG/wGZAQAB/wFY
+        ASUBAAL/AZkBAAH/A8AB/wMAAf8DsgH/HAADRwH/ApkBzAH/AZkCzAH/AZkCzAH/AZkCzAH/AZkCzAH/
+        ApkBzAH/A0cB/wOyAf8cAAM0Af8DNAH/AzQB/wM0Af8DNAH/AzQB/wM0Af8DNAH/AzQB/wM0Af8DNAH/
+        AzQB/wM0Af8DNAH/TAADsgH/A1gB/wMAAf8DAAH/A1gB/wOyAf8oAAOyAf8DRwH/A0cB/wNHAf8DRwH/
         A7IB//8AIQABQgFNAT4HAAE+AwABKAMAAUADAAEgAwABAQEAAQEGAAEBFgAD/wIAAQcC/wUAAQMC/wUA
         AQMB4AGDBQABAQHAAQMFAAEBAcABAwYAAcABAwYAAcABAwYAAcEBBwUAAQcB4AGDBQABAwHAAQMFAAED
         AcABAwUAAQMBwAEDBAABwAEDAcABAwQAAcABAwHBAQcEAAHBAQcC/wQABP8EAAL/AQABBwT/AYABAQEA
         AQMBwAEfAcABHwGAAQEBAAEDAeABDwHgAQ8BgAEBAQABAQHwAQcB8AEHAYABAQEAAQEB+AEDAfgBAwGA
         AQECAAH8AQEB/AEBAYABAQIAAf4BAAH+AQABgAEBAgAE/wGAAQEBAAEDBP8BgAEBAQABAQHgAX8B4AF/
         AYABAQIAAYABPwGAAT8BgAEBAQABAwEAAR8BAAEfAYABAQH8AQEBAAEfAQABHwGAAQEB/gEAAYABPwGA
-        AT8BgAEBAv8BwAH/AcAJ/xYACw==
+        AT8BgAEBAv8BwAH/AcAJ/ws=
 </value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
-  </data>
-  <data name="&gt;&gt;m_layerSendBackwardMenuItem.Name" xml:space="preserve">
-    <value>m_layerSendBackwardMenuItem</value>
-  </data>
-  <data name="&gt;&gt;m_mapContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_labelCaption.Name" xml:space="preserve">
-    <value>m_labelCaption</value>
-  </data>
-  <data name="m_labelCaption.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_layerPropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_mapStatisticsMenuItem.Name" xml:space="preserve">
-    <value>m_mapStatisticsMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_layersContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 26</value>
-  </data>
-  <data name="&gt;&gt;m_treePanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="m_tileSheetContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 76</value>
-  </data>
-  <data name="m_treePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_labelCaption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_layerSendBackwardMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_tileSheetAutoTilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="m_tileSheetDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
-    <value>m_treePanel</value>
-  </data>
-  <data name="&gt;&gt;m_layerContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_treeView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="m_treeView.Nodes" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -507,127 +339,331 @@
         EAAAABNUaWxlU2hlZXRGb2xkZXIucG5nAAAAAAs=
 </value>
   </data>
-  <data name="&gt;&gt;m_treeView.ZOrder" xml:space="preserve">
+  <data name="m_treeView.SelectedImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="m_tileSheetsContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 26</value>
-  </data>
-  <data name="&gt;&gt;m_layerDeleteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_treePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
-  </data>
-  <data name="&gt;&gt;m_treePanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_tileSheetNewMenuItem.Text" xml:space="preserve">
-    <value>New...</value>
-  </data>
-  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_layerNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="&gt;&gt;m_layersContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_labelCaption.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_mapContextMenuStrip.Name" xml:space="preserve">
-    <value>m_mapContextMenuStrip</value>
+  <data name="m_treeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 130</value>
   </data>
   <data name="m_treeView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;m_treeView.Name" xml:space="preserve">
+    <value>m_treeView</value>
+  </data>
+  <data name="&gt;&gt;m_treeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_treeView.Parent" xml:space="preserve">
+    <value>m_treePanel</value>
+  </data>
+  <data name="&gt;&gt;m_treeView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="m_tileSheetSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="m_tileSheetSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <metadata name="toolStripSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <metadata name="m_layersContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>136, 17</value>
+  </metadata>
+  <data name="m_layersContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 26</value>
+  </data>
+  <data name="&gt;&gt;m_layersContextMenuStrip.Name" xml:space="preserve">
+    <value>m_layersContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;m_layersContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_layerNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="m_layerNewMenuItem.Text" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <metadata name="m_layerContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>309, 17</value>
+  </metadata>
+  <data name="m_layerContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 148</value>
+  </data>
+  <data name="&gt;&gt;m_layerContextMenuStrip.Name" xml:space="preserve">
+    <value>m_layerContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;m_layerContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_layerPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="m_layerPropertiesMenuItem.Text" xml:space="preserve">
+    <value>Properties...</value>
+  </data>
+  <data name="m_layerMakeInvisibileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="m_layerMakeInvisibileMenuItem.Text" xml:space="preserve">
+    <value>Make Invisible</value>
+  </data>
+  <data name="m_layerMakeVisibileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="m_layerMakeVisibileMenuItem.Text" xml:space="preserve">
+    <value>Make Visible</value>
+  </data>
+  <data name="m_layerMakeVisibileMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_layerBringForwardMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_layerBringForwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="m_layerBringForwardMenuItem.Text" xml:space="preserve">
+    <value>Bring Forward</value>
+  </data>
+  <data name="m_layerSendBackwardMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="m_layerSendBackwardMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
   </data>
-  <data name="&gt;&gt;m_layerPropertiesMenuItem.Name" xml:space="preserve">
-    <value>m_layerPropertiesMenuItem</value>
+  <data name="m_layerSendBackwardMenuItem.Text" xml:space="preserve">
+    <value>Send Backward</value>
+  </data>
+  <data name="m_layerDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="m_layerDeleteMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <metadata name="m_mapContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>477, 17</value>
+  </metadata>
+  <data name="m_mapContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 48</value>
+  </data>
+  <data name="&gt;&gt;m_mapContextMenuStrip.Name" xml:space="preserve">
+    <value>m_mapContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;m_mapContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="m_mapPropertiesMenuItem.Text" xml:space="preserve">
+    <value>Properties...</value>
+  </data>
+  <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
   </data>
   <data name="m_mapStatisticsMenuItem.Text" xml:space="preserve">
     <value>Statistics</value>
   </data>
-  <data name="m_treeView.SelectedImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <metadata name="m_tileSheetsContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>668, 17</value>
+  </metadata>
+  <data name="m_tileSheetsContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 26</value>
   </data>
-  <data name="m_mapContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 48</value>
+  <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Name" xml:space="preserve">
+    <value>m_tileSheetsContextMenuStrip</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Name" xml:space="preserve">
-    <value>m_tileSheetDeleteMenuItem</value>
+  <data name="&gt;&gt;m_tileSheetsContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="m_tileSheetNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="m_tileSheetNewMenuItem.Text" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <metadata name="m_tileSheetContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="m_tileSheetPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>178, 22</value>
   </data>
-  <data name="&gt;&gt;m_layerBringForwardMenuItem.Type" xml:space="preserve">
+  <data name="m_tileSheetPropertiesMenuItem.Text" xml:space="preserve">
+    <value>Properties...</value>
+  </data>
+  <data name="m_tileSheetAutoTilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="m_tileSheetAutoTilesMenuItem.Text" xml:space="preserve">
+    <value>Auto Tiles...</value>
+  </data>
+  <metadata name="m_tileSheetSeparator1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="m_tileSheetSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 6</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceMenuItem.Text" xml:space="preserve">
+    <value>Edit Image Source...</value>
+  </data>
+  <data name="m_tileSheetDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="m_tileSheetDeleteMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="m_tileSheetContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 126</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetContextMenuStrip.Name" xml:space="preserve">
+    <value>m_tileSheetContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>139</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;m_imageList.Name" xml:space="preserve">
+    <value>m_imageList</value>
+  </data>
+  <data name="&gt;&gt;m_imageList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetSeparator2.Name" xml:space="preserve">
+    <value>m_tileSheetSeparator2</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_layerNewMenuItem.Name" xml:space="preserve">
+    <value>m_layerNewMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_layerNewMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_treePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_layerPropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_layerPropertiesMenuItem</value>
   </data>
-  <data name="m_labelCaption.Text" xml:space="preserve">
-    <value>Map Explorer</value>
+  <data name="&gt;&gt;m_layerPropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Name" xml:space="preserve">
+    <value>m_layerMakeInvisibileMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_layerMakeInvisibileMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Name" xml:space="preserve">
+    <value>m_layerMakeVisibileMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_layerMakeVisibileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_layerBringForwardMenuItem.Name" xml:space="preserve">
     <value>m_layerBringForwardMenuItem</value>
   </data>
-  <data name="m_treeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;m_layerBringForwardMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="toolStripSeparator1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="m_imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="m_layersContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>136, 17</value>
-  </metadata>
-  <metadata name="m_labelCaption.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="m_mapContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>477, 17</value>
-  </metadata>
-  <metadata name="m_layerContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>309, 17</value>
-  </metadata>
-  <metadata name="m_tileSheetsContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>668, 17</value>
-  </metadata>
-  <metadata name="toolStripMenuItem1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="toolStripSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>139</value>
-  </metadata>
-  <metadata name="m_treePanel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="m_tileSheetContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="&gt;&gt;m_layerSendBackwardMenuItem.Name" xml:space="preserve">
+    <value>m_layerSendBackwardMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_layerSendBackwardMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_layerDeleteMenuItem.Name" xml:space="preserve">
+    <value>m_layerDeleteMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_layerDeleteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_mapPropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_mapPropertiesMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_mapPropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_mapStatisticsMenuItem.Name" xml:space="preserve">
+    <value>m_mapStatisticsMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_mapStatisticsMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetNewMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetNewMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetNewMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetPropertiesMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetPropertiesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetAutoTilesMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetAutoTilesMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetDeleteMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetDeleteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetSeparator1.Name" xml:space="preserve">
+    <value>m_tileSheetSeparator1</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetEditImageSourceMenuItem.Name" xml:space="preserve">
+    <value>m_tileSheetEditImageSourceMenuItem</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetEditImageSourceMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MapTreeView</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

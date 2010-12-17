@@ -1797,6 +1797,7 @@
             this.m_mapTreeView.TileSheetAutoTiles += new System.EventHandler(this.OnTileSheetAutoTiles);
             this.m_mapTreeView.NewLayer += new System.EventHandler(this.OnLayerNew);
             this.m_mapTreeView.DeleteLayer += new System.EventHandler(this.OnLayerDelete);
+            this.m_mapTreeView.TileSheetEditImageSource += new System.EventHandler(this.OnTileSheetEditImageSource);
             this.m_mapTreeView.TileSheetProperties += new System.EventHandler(this.OnTileSheetProperties);
             // 
             // m_tilePicker
