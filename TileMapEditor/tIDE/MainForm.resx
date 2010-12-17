@@ -632,7 +632,7 @@
     <value>toolStripContainer1</value>
   </data>
   <metadata name="m_layerToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 99</value>
+    <value>3, 0</value>
   </metadata>
   <data name="m_layerToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -773,7 +773,7 @@
     <value>Delete Layer</value>
   </data>
   <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>235, 74</value>
   </data>
   <data name="m_layerToolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 25</value>
@@ -793,8 +793,320 @@
   <data name="&gt;&gt;m_layerToolStrip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="m_viewToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>3, 74</value>
+  </metadata>
+  <data name="m_viewToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="m_viewZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 22</value>
+  </data>
+  <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
+    <value>Zooming factor</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
+    <value>To Scale</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items1" xml:space="preserve">
+    <value>x 2</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items2" xml:space="preserve">
+    <value>x 3</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items3" xml:space="preserve">
+    <value>x 4</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items4" xml:space="preserve">
+    <value>x 5</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items5" xml:space="preserve">
+    <value>x 6</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items6" xml:space="preserve">
+    <value>x 7</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items7" xml:space="preserve">
+    <value>x 8</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items8" xml:space="preserve">
+    <value>x 9</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items9" xml:space="preserve">
+    <value>x 10</value>
+  </data>
+  <data name="m_viewZoomComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="m_viewZoomInButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewZoomInButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewZoomInButton.Text" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="m_viewZoomOutButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_viewZoomOutButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewZoomOutButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewZoomOutButton.Text" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="m_viewSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="m_viewFullScreenButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewFullScreenButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewFullScreenButton.Text" xml:space="preserve">
+    <value>Full Screen</value>
+  </data>
+  <data name="m_viewFullScreenButton.ToolTipText" xml:space="preserve">
+    <value>View in full screen mode</value>
+  </data>
+  <data name="m_viewWindowedButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewWindowedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewWindowedButton.Text" xml:space="preserve">
+    <value>Windowed</value>
+  </data>
+  <data name="m_viewWindowedButton.ToolTipText" xml:space="preserve">
+    <value>View in windowed mode</value>
+  </data>
+  <data name="m_viewWindowedButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_viewSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="m_viewLayersShowAllButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewLayersShowAllButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewLayersShowAllButton.Text" xml:space="preserve">
+    <value>Layer Mode</value>
+  </data>
+  <data name="m_viewLayersShowAllButton.ToolTipText" xml:space="preserve">
+    <value>Show all layers</value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.Text" xml:space="preserve">
+    <value>Highlight Selected Layer Only</value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.ToolTipText" xml:space="preserve">
+    <value>Highlight selected layer only</value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_viewShowTileGuidesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewShowTileGuidesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewShowTileGuidesButton.Text" xml:space="preserve">
+    <value>Show Tile Guides</value>
+  </data>
+  <data name="m_viewShowTileGuidesButton.ToolTipText" xml:space="preserve">
+    <value>Show tile guides</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.Text" xml:space="preserve">
+    <value>Hide Tile Guides</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
+    <value>Hide tile guides</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 74</value>
+  </data>
+  <data name="m_viewToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 25</value>
+  </data>
+  <data name="m_viewToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_viewToolStrip.Name" xml:space="preserve">
+    <value>m_viewToolStrip</value>
+  </data>
+  <data name="&gt;&gt;m_viewToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_viewToolStrip.Parent" xml:space="preserve">
+    <value>m_toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;m_viewToolStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="m_tileSheetToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>309, 25</value>
+  </metadata>
+  <data name="m_tileSheetToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="m_tileSheetNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetNewButton.Text" xml:space="preserve">
+    <value>New Tile Sheet</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.Text" xml:space="preserve">
+    <value>Tile Sheet Properties</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.Text" xml:space="preserve">
+    <value>Auto Tiles</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
+    <value>Manage tile sheet auto tiles</value>
+  </data>
+  <data name="m_tileSheetToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.Text" xml:space="preserve">
+    <value>Enable Auto Update</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
+    <value>Enable automatic update of tile sheets from disk</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.Text" xml:space="preserve">
+    <value>Disable Auto Update</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
+    <value>Disable automatic update of tile sheets from disk</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.Text" xml:space="preserve">
+    <value>Edit Image Source</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.ToolTipText" xml:space="preserve">
+    <value>Open the tile sheet's image source in a paint application</value>
+  </data>
+  <data name="m_tileSheetToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
+    <value>Remove dependencies on this Tile Sheet</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.Text" xml:space="preserve">
+    <value>Delete Tile Sheet</value>
+  </data>
+  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 25</value>
+  </data>
+  <data name="m_tileSheetToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 25</value>
+  </data>
+  <data name="m_tileSheetToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetToolStrip.Name" xml:space="preserve">
+    <value>m_tileSheetToolStrip</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetToolStrip.Parent" xml:space="preserve">
+    <value>m_toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetToolStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="m_editToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 50</value>
+    <value>3, 25</value>
   </metadata>
   <data name="m_editToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -989,145 +1301,136 @@
     <value>m_toolStripContainer.TopToolStripPanel</value>
   </data>
   <data name="&gt;&gt;m_editToolStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="m_tileSheetToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 25</value>
-  </metadata>
-  <data name="m_tileSheetToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="m_tileSheetNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetNewButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetNewButton.Text" xml:space="preserve">
-    <value>New Tile Sheet</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.Text" xml:space="preserve">
-    <value>Tile Sheet Properties</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.Text" xml:space="preserve">
-    <value>Auto Tiles</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
-    <value>Manage tile sheet auto tiles</value>
-  </data>
-  <data name="m_tileSheetToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.Text" xml:space="preserve">
-    <value>Enable Auto Update</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
-    <value>Enable automatic update of tile sheets from disk</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.Text" xml:space="preserve">
-    <value>Disable Auto Update</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
-    <value>Disable automatic update of tile sheets from disk</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.Text" xml:space="preserve">
-    <value>Edit Image Source</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.ToolTipText" xml:space="preserve">
-    <value>Open the tile sheet's image source in a paint application</value>
-  </data>
-  <data name="m_tileSheetToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
-    <value>Remove dependencies on this Tile Sheet</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.Text" xml:space="preserve">
-    <value>Delete Tile Sheet</value>
-  </data>
-  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 25</value>
-  </data>
-  <data name="m_tileSheetToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 25</value>
-  </data>
-  <data name="m_tileSheetToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetToolStrip.Name" xml:space="preserve">
-    <value>m_tileSheetToolStrip</value>
+  <metadata name="m_fileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>3, 99</value>
+  </metadata>
+  <data name="m_fileToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetToolStrip.Type" xml:space="preserve">
+  <data name="m_fileNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_fileNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_fileNewButton.Text" xml:space="preserve">
+    <value>New Map</value>
+  </data>
+  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
+    <value>New map</value>
+  </data>
+  <data name="m_fileOpenButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_fileOpenButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_fileOpenButton.Text" xml:space="preserve">
+    <value>Open Map</value>
+  </data>
+  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
+    <value>Open map</value>
+  </data>
+  <data name="m_fileToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="m_fileSaveButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_fileSaveButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_fileSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_fileSaveButton.Text" xml:space="preserve">
+    <value>Save Map</value>
+  </data>
+  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
+    <value>Save map</value>
+  </data>
+  <data name="m_fileSaveAsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_fileSaveAsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
+    <value>Save Map As</value>
+  </data>
+  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
+    <value>Save map as...</value>
+  </data>
+  <data name="m_fileToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="m_filePageSetupButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_filePageSetupButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_filePageSetupButton.Text" xml:space="preserve">
+    <value>Page Setup</value>
+  </data>
+  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
+    <value>Configure page settings for printing</value>
+  </data>
+  <data name="m_filePrintPreviewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_filePrintPreviewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
+    <value>Print Preview</value>
+  </data>
+  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
+    <value>Print preview</value>
+  </data>
+  <data name="m_filePrintButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_filePrintButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_filePrintButton.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="m_fileOptionsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_fileOptionsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="m_fileOptionsButton.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
+    <value>Access general options</value>
+  </data>
+  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="m_fileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 25</value>
+  </data>
+  <data name="m_fileToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_fileToolStrip.Name" xml:space="preserve">
+    <value>m_fileToolStrip</value>
+  </data>
+  <data name="&gt;&gt;m_fileToolStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetToolStrip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_fileToolStrip.Parent" xml:space="preserve">
     <value>m_toolStripContainer.TopToolStripPanel</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;m_fileToolStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="m_menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 75</value>
@@ -1946,181 +2249,7 @@
     <value>m_toolStripContainer.TopToolStripPanel</value>
   </data>
   <data name="&gt;&gt;m_menuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="m_viewToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 99</value>
-  </metadata>
-  <data name="m_viewToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="m_viewZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 22</value>
-  </data>
-  <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
-    <value>Zooming factor</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
-    <value>To Scale</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items1" xml:space="preserve">
-    <value>x 2</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items2" xml:space="preserve">
-    <value>x 3</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items3" xml:space="preserve">
-    <value>x 4</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items4" xml:space="preserve">
-    <value>x 5</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items5" xml:space="preserve">
-    <value>x 6</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items6" xml:space="preserve">
-    <value>x 7</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items7" xml:space="preserve">
-    <value>x 8</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items8" xml:space="preserve">
-    <value>x 9</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items9" xml:space="preserve">
-    <value>x 10</value>
-  </data>
-  <data name="m_viewZoomComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 25</value>
-  </data>
-  <data name="m_viewZoomInButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewZoomInButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewZoomInButton.Text" xml:space="preserve">
-    <value>Zoom In</value>
-  </data>
-  <data name="m_viewZoomOutButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_viewZoomOutButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewZoomOutButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewZoomOutButton.Text" xml:space="preserve">
-    <value>Zoom Out</value>
-  </data>
-  <data name="m_viewSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="m_viewFullScreenButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewFullScreenButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewFullScreenButton.Text" xml:space="preserve">
-    <value>Full Screen</value>
-  </data>
-  <data name="m_viewFullScreenButton.ToolTipText" xml:space="preserve">
-    <value>View in full screen mode</value>
-  </data>
-  <data name="m_viewWindowedButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewWindowedButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewWindowedButton.Text" xml:space="preserve">
-    <value>Windowed</value>
-  </data>
-  <data name="m_viewWindowedButton.ToolTipText" xml:space="preserve">
-    <value>View in windowed mode</value>
-  </data>
-  <data name="m_viewWindowedButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_viewSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="m_viewLayersShowAllButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewLayersShowAllButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewLayersShowAllButton.Text" xml:space="preserve">
-    <value>Layer Mode</value>
-  </data>
-  <data name="m_viewLayersShowAllButton.ToolTipText" xml:space="preserve">
-    <value>Show all layers</value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.Text" xml:space="preserve">
-    <value>Highlight Selected Layer Only</value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.ToolTipText" xml:space="preserve">
-    <value>Highlight selected layer only</value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_viewShowTileGuidesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewShowTileGuidesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewShowTileGuidesButton.Text" xml:space="preserve">
-    <value>Show Tile Guides</value>
-  </data>
-  <data name="m_viewShowTileGuidesButton.ToolTipText" xml:space="preserve">
-    <value>Show tile guides</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.Text" xml:space="preserve">
-    <value>Hide Tile Guides</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
-    <value>Hide tile guides</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 74</value>
-  </data>
-  <data name="m_viewToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 25</value>
-  </data>
-  <data name="m_viewToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;m_viewToolStrip.Name" xml:space="preserve">
-    <value>m_viewToolStrip</value>
-  </data>
-  <data name="&gt;&gt;m_viewToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_viewToolStrip.Parent" xml:space="preserve">
-    <value>m_toolStripContainer.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_viewToolStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <metadata name="m_mapToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>194, 0</value>
@@ -2147,7 +2276,7 @@
     <value>Map statistics</value>
   </data>
   <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 74</value>
+    <value>92, 99</value>
   </data>
   <data name="m_mapToolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 25</value>
@@ -2165,135 +2294,6 @@
     <value>m_toolStripContainer.TopToolStripPanel</value>
   </data>
   <data name="&gt;&gt;m_mapToolStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="m_fileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>165, 25</value>
-  </metadata>
-  <data name="m_fileToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="m_fileNewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_fileNewButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_fileNewButton.Text" xml:space="preserve">
-    <value>New Map</value>
-  </data>
-  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
-    <value>New map</value>
-  </data>
-  <data name="m_fileOpenButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_fileOpenButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_fileOpenButton.Text" xml:space="preserve">
-    <value>Open Map</value>
-  </data>
-  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
-    <value>Open map</value>
-  </data>
-  <data name="m_fileToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="m_fileSaveButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_fileSaveButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_fileSaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_fileSaveButton.Text" xml:space="preserve">
-    <value>Save Map</value>
-  </data>
-  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
-    <value>Save map</value>
-  </data>
-  <data name="m_fileSaveAsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_fileSaveAsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
-    <value>Save Map As</value>
-  </data>
-  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
-    <value>Save map as...</value>
-  </data>
-  <data name="m_fileToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="m_filePageSetupButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_filePageSetupButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_filePageSetupButton.Text" xml:space="preserve">
-    <value>Page Setup</value>
-  </data>
-  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
-    <value>Configure page settings for printing</value>
-  </data>
-  <data name="m_filePrintPreviewButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_filePrintPreviewButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
-    <value>Print Preview</value>
-  </data>
-  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
-    <value>Print preview</value>
-  </data>
-  <data name="m_filePrintButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_filePrintButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_filePrintButton.Text" xml:space="preserve">
-    <value>Print</value>
-  </data>
-  <data name="m_fileOptionsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_fileOptionsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="m_fileOptionsButton.Text" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
-    <value>Access general options</value>
-  </data>
-  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 99</value>
-  </data>
-  <data name="m_fileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 25</value>
-  </data>
-  <data name="m_fileToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;m_fileToolStrip.Name" xml:space="preserve">
-    <value>m_fileToolStrip</value>
-  </data>
-  <data name="&gt;&gt;m_fileToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_fileToolStrip.Parent" xml:space="preserve">
-    <value>m_toolStripContainer.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_fileToolStrip.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Name" xml:space="preserve">
@@ -3101,9 +3101,6 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -3170,64 +3167,76 @@
   <data name="&gt;&gt;m_toolsTextureButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileNewButton.Name" xml:space="preserve">
-    <value>m_fileNewButton</value>
+  <data name="&gt;&gt;m_toolsTileBrushButton.Name" xml:space="preserve">
+    <value>m_toolsTileBrushButton</value>
   </data>
-  <data name="&gt;&gt;m_fileNewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_toolsTileBrushButton.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomToolStripSplitButton, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_layerNewButton.Name" xml:space="preserve">
+    <value>m_layerNewButton</value>
+  </data>
+  <data name="&gt;&gt;m_layerNewButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileOpenButton.Name" xml:space="preserve">
-    <value>m_fileOpenButton</value>
+  <data name="&gt;&gt;m_layerPropertiesButton.Name" xml:space="preserve">
+    <value>m_layerPropertiesButton</value>
   </data>
-  <data name="&gt;&gt;m_fileOpenButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerPropertiesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileToolStripSeparator1.Name" xml:space="preserve">
-    <value>m_fileToolStripSeparator1</value>
+  <data name="&gt;&gt;m_layerOffsetButton.Name" xml:space="preserve">
+    <value>m_layerOffsetButton</value>
   </data>
-  <data name="&gt;&gt;m_fileToolStripSeparator1.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerOffsetButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_layerToolStripSeparator1.Name" xml:space="preserve">
+    <value>m_layerToolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;m_layerToolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileSaveButton.Name" xml:space="preserve">
-    <value>m_fileSaveButton</value>
+  <data name="&gt;&gt;m_layerMakeInvisibileButton.Name" xml:space="preserve">
+    <value>m_layerMakeInvisibileButton</value>
   </data>
-  <data name="&gt;&gt;m_fileSaveButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerMakeInvisibileButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileSaveAsButton.Name" xml:space="preserve">
-    <value>m_fileSaveAsButton</value>
+  <data name="&gt;&gt;m_layerMakeVisibileButton.Name" xml:space="preserve">
+    <value>m_layerMakeVisibileButton</value>
   </data>
-  <data name="&gt;&gt;m_fileSaveAsButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerMakeVisibileButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileToolStripSeparator2.Name" xml:space="preserve">
-    <value>m_fileToolStripSeparator2</value>
+  <data name="&gt;&gt;m_layerToolStripSeparator2.Name" xml:space="preserve">
+    <value>m_layerToolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;m_fileToolStripSeparator2.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerToolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_filePageSetupButton.Name" xml:space="preserve">
-    <value>m_filePageSetupButton</value>
+  <data name="&gt;&gt;m_layerBringForwardButton.Name" xml:space="preserve">
+    <value>m_layerBringForwardButton</value>
   </data>
-  <data name="&gt;&gt;m_filePageSetupButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerBringForwardButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_filePrintPreviewButton.Name" xml:space="preserve">
-    <value>m_filePrintPreviewButton</value>
+  <data name="&gt;&gt;m_layerSendBackwardButton.Name" xml:space="preserve">
+    <value>m_layerSendBackwardButton</value>
   </data>
-  <data name="&gt;&gt;m_filePrintPreviewButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerSendBackwardButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_filePrintButton.Name" xml:space="preserve">
-    <value>m_filePrintButton</value>
+  <data name="&gt;&gt;m_layerToolStripSeparator3.Name" xml:space="preserve">
+    <value>m_layerToolStripSeparator3</value>
   </data>
-  <data name="&gt;&gt;m_filePrintButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_layerToolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_fileOptionsButton.Name" xml:space="preserve">
-    <value>m_fileOptionsButton</value>
+  <data name="&gt;&gt;m_layerDeleteButton.Name" xml:space="preserve">
+    <value>m_layerDeleteButton</value>
   </data>
-  <data name="&gt;&gt;m_fileOptionsButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_layerDeleteButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_editUndoButton.Name" xml:space="preserve">
@@ -3320,84 +3329,6 @@
   <data name="&gt;&gt;m_editManageTileBrushesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_mapPropertiesButton.Name" xml:space="preserve">
-    <value>m_mapPropertiesButton</value>
-  </data>
-  <data name="&gt;&gt;m_mapPropertiesButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_mapStatisticsButton.Name" xml:space="preserve">
-    <value>m_mapStatisticsButton</value>
-  </data>
-  <data name="&gt;&gt;m_mapStatisticsButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerNewButton.Name" xml:space="preserve">
-    <value>m_layerNewButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerNewButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerPropertiesButton.Name" xml:space="preserve">
-    <value>m_layerPropertiesButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerPropertiesButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerOffsetButton.Name" xml:space="preserve">
-    <value>m_layerOffsetButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerOffsetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator1.Name" xml:space="preserve">
-    <value>m_layerToolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeInvisibileButton.Name" xml:space="preserve">
-    <value>m_layerMakeInvisibileButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeInvisibileButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeVisibileButton.Name" xml:space="preserve">
-    <value>m_layerMakeVisibileButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerMakeVisibileButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator2.Name" xml:space="preserve">
-    <value>m_layerToolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerBringForwardButton.Name" xml:space="preserve">
-    <value>m_layerBringForwardButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerBringForwardButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerSendBackwardButton.Name" xml:space="preserve">
-    <value>m_layerSendBackwardButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerSendBackwardButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator3.Name" xml:space="preserve">
-    <value>m_layerToolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;m_layerToolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_layerDeleteButton.Name" xml:space="preserve">
-    <value>m_layerDeleteButton</value>
-  </data>
-  <data name="&gt;&gt;m_layerDeleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;m_tileSheetNewButton.Name" xml:space="preserve">
     <value>m_tileSheetNewButton</value>
   </data>
@@ -3432,6 +3363,12 @@
     <value>m_tileSheetAutoUpdateDisableButton</value>
   </data>
   <data name="&gt;&gt;m_tileSheetAutoUpdateDisableButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetEditImageSourceButton.Name" xml:space="preserve">
+    <value>m_tileSheetEditImageSourceButton</value>
+  </data>
+  <data name="&gt;&gt;m_tileSheetEditImageSourceButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_tileSheetToolStripSeparator2.Name" xml:space="preserve">
@@ -4148,17 +4085,77 @@
   <data name="&gt;&gt;m_viewHideTileGuidesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetEditImageSourceButton.Name" xml:space="preserve">
-    <value>m_tileSheetEditImageSourceButton</value>
+  <data name="&gt;&gt;m_mapPropertiesButton.Name" xml:space="preserve">
+    <value>m_mapPropertiesButton</value>
   </data>
-  <data name="&gt;&gt;m_tileSheetEditImageSourceButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_mapPropertiesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;m_toolsTileBrushButton.Name" xml:space="preserve">
-    <value>m_toolsTileBrushButton</value>
+  <data name="&gt;&gt;m_mapStatisticsButton.Name" xml:space="preserve">
+    <value>m_mapStatisticsButton</value>
   </data>
-  <data name="&gt;&gt;m_toolsTileBrushButton.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomToolStripSplitButton, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;m_mapStatisticsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileNewButton.Name" xml:space="preserve">
+    <value>m_fileNewButton</value>
+  </data>
+  <data name="&gt;&gt;m_fileNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileOpenButton.Name" xml:space="preserve">
+    <value>m_fileOpenButton</value>
+  </data>
+  <data name="&gt;&gt;m_fileOpenButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileToolStripSeparator1.Name" xml:space="preserve">
+    <value>m_fileToolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;m_fileToolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileSaveButton.Name" xml:space="preserve">
+    <value>m_fileSaveButton</value>
+  </data>
+  <data name="&gt;&gt;m_fileSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileSaveAsButton.Name" xml:space="preserve">
+    <value>m_fileSaveAsButton</value>
+  </data>
+  <data name="&gt;&gt;m_fileSaveAsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileToolStripSeparator2.Name" xml:space="preserve">
+    <value>m_fileToolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;m_fileToolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_filePageSetupButton.Name" xml:space="preserve">
+    <value>m_filePageSetupButton</value>
+  </data>
+  <data name="&gt;&gt;m_filePageSetupButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_filePrintPreviewButton.Name" xml:space="preserve">
+    <value>m_filePrintPreviewButton</value>
+  </data>
+  <data name="&gt;&gt;m_filePrintPreviewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_filePrintButton.Name" xml:space="preserve">
+    <value>m_filePrintButton</value>
+  </data>
+  <data name="&gt;&gt;m_filePrintButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_fileOptionsButton.Name" xml:space="preserve">
+    <value>m_fileOptionsButton</value>
+  </data>
+  <data name="&gt;&gt;m_fileOptionsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_loadErrorMessageBox.Name" xml:space="preserve">
     <value>m_loadErrorMessageBox</value>

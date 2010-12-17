@@ -60,8 +60,9 @@ namespace tIDE.Controls
             this.m_tileSheetContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.m_tileSheetPropertiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetAutoTilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_tileSheetDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_tileSheetEditImageSourceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_tileSheetDeleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_tileSheetRemoveDependenciesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             m_labelCaption = new System.Windows.Forms.Label();
             m_treePanel = new System.Windows.Forms.Panel();
             m_tileSheetSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -126,6 +127,11 @@ namespace tIDE.Controls
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // m_tileSheetSeparator1
+            // 
+            m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
+            resources.ApplyResources(m_tileSheetSeparator1, "m_tileSheetSeparator1");
             // 
             // m_layersContextMenuStrip
             // 
@@ -242,6 +248,7 @@ namespace tIDE.Controls
             m_tileSheetSeparator1,
             this.m_tileSheetEditImageSourceMenuItem,
             m_tileSheetSeparator2,
+            this.m_tileSheetRemoveDependenciesMenuItem,
             this.m_tileSheetDeleteMenuItem});
             this.m_tileSheetContextMenuStrip.Name = "m_tileSheetContextMenuStrip";
             resources.ApplyResources(this.m_tileSheetContextMenuStrip, "m_tileSheetContextMenuStrip");
@@ -260,6 +267,13 @@ namespace tIDE.Controls
             resources.ApplyResources(this.m_tileSheetAutoTilesMenuItem, "m_tileSheetAutoTilesMenuItem");
             this.m_tileSheetAutoTilesMenuItem.Click += new System.EventHandler(this.OnTileSheetAutoTiles);
             // 
+            // m_tileSheetEditImageSourceMenuItem
+            // 
+            this.m_tileSheetEditImageSourceMenuItem.Image = global::tIDE.Properties.Resources.TileSheetEditImageSource;
+            this.m_tileSheetEditImageSourceMenuItem.Name = "m_tileSheetEditImageSourceMenuItem";
+            resources.ApplyResources(this.m_tileSheetEditImageSourceMenuItem, "m_tileSheetEditImageSourceMenuItem");
+            this.m_tileSheetEditImageSourceMenuItem.Click += new System.EventHandler(this.OnTileSheetEditImageSource);
+            // 
             // m_tileSheetDeleteMenuItem
             // 
             this.m_tileSheetDeleteMenuItem.Image = global::tIDE.Properties.Resources.TileSheetDelete;
@@ -267,17 +281,12 @@ namespace tIDE.Controls
             resources.ApplyResources(this.m_tileSheetDeleteMenuItem, "m_tileSheetDeleteMenuItem");
             this.m_tileSheetDeleteMenuItem.Click += new System.EventHandler(this.OnTileSheetDelete);
             // 
-            // m_tileSheetSeparator1
+            // m_tileSheetRemoveDependenciesMenuItem
             // 
-            m_tileSheetSeparator1.Name = "m_tileSheetSeparator1";
-            resources.ApplyResources(m_tileSheetSeparator1, "m_tileSheetSeparator1");
-            // 
-            // m_tileSheetEditImageSourceMenuItem
-            // 
-            this.m_tileSheetEditImageSourceMenuItem.Image = global::tIDE.Properties.Resources.TileSheetEditImageSource;
-            this.m_tileSheetEditImageSourceMenuItem.Name = "m_tileSheetEditImageSourceMenuItem";
-            resources.ApplyResources(this.m_tileSheetEditImageSourceMenuItem, "m_tileSheetEditImageSourceMenuItem");
-            this.m_tileSheetEditImageSourceMenuItem.Click += new System.EventHandler(this.OnTileSheetEditImageSource);
+            this.m_tileSheetRemoveDependenciesMenuItem.Image = global::tIDE.Properties.Resources.TileSheetRemoveDependencies;
+            this.m_tileSheetRemoveDependenciesMenuItem.Name = "m_tileSheetRemoveDependenciesMenuItem";
+            resources.ApplyResources(this.m_tileSheetRemoveDependenciesMenuItem, "m_tileSheetRemoveDependenciesMenuItem");
+            this.m_tileSheetRemoveDependenciesMenuItem.Click += new System.EventHandler(this.OnTileSheetRemoveDependencies);
             // 
             // MapTreeView
             // 
@@ -317,6 +326,7 @@ namespace tIDE.Controls
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetAutoTilesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_layerMakeVisibileMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_tileSheetEditImageSourceMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_tileSheetRemoveDependenciesMenuItem;
 
 
         #region Public Methods
