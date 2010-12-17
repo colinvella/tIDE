@@ -908,6 +908,13 @@ namespace tIDE.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap TileSheetEditImageSource {
+            get {
+                object obj = ResourceManager.GetObject("TileSheetEditImageSource", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TileSheetNew {
             get {
                 object obj = ResourceManager.GetObject("TileSheetNew", resourceCulture);

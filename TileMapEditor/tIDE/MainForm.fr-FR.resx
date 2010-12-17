@@ -133,7 +133,7 @@
   </data>
   <data name="m_mapPanel.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEh4VGlsZSwgVmVyc2lvbj0xLjIuMy4wLCBDdWx0dXJlPW5ldXRy
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEh4VGlsZSwgVmVyc2lvbj0xLjIuNS4wLCBDdWx0dXJlPW5ldXRy
         YWwsIFB1YmxpY0tleVRva2VuPTczN2M0NWI1OTIxY2Q2ODEFAQAAABp4VGlsZS5EaW1lbnNpb25zLlJl
         Y3RhbmdsZQIAAAAITG9jYXRpb24EU2l6ZQQEGXhUaWxlLkRpbWVuc2lvbnMuTG9jYXRpb24CAAAAFXhU
         aWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAACAAAABf3///8ZeFRpbGUuRGltZW5zaW9ucy5Mb2NhdGlvbgIA
@@ -174,14 +174,68 @@
   <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>784, 438</value>
   </data>
-  <data name="m_mapPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Propriétés de la carte</value>
+  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
+    <value>Nouveau fueille du tuiles</value>
   </data>
-  <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
-    <value>Statistiques de la carte</value>
+  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Propriétés de la feuille de tuiles</value>
   </data>
-  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 99</value>
+  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
+    <value>Gérez les auto tuiles de la feuille de tuiles</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
+    <value>Activer mise à jour automatique des feuilles de tuiles à partir du disque</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
+    <value>Désactiver mise à jour automatique des feuilles de tuiles à partir du disque</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
+    <value>Supprimez les dépendances sur cette feuille de tuiles</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Supprimez le fueille du tuiles</value>
+  </data>
+  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 74</value>
+  </data>
+  <data name="m_editUndoButton.ToolTipText" xml:space="preserve">
+    <value>Défais</value>
+  </data>
+  <data name="m_editRedoButton.ToolTipText" xml:space="preserve">
+    <value>Réfais</value>
+  </data>
+  <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
+    <value>Accédez à l'histoire des commandes défaire / refaire</value>
+  </data>
+  <data name="m_editCutButton.ToolTipText" xml:space="preserve">
+    <value>Coupez la zone sélectionnée</value>
+  </data>
+  <data name="m_editCopyButton.ToolTipText" xml:space="preserve">
+    <value>Copiez la zone sélectionnée</value>
+  </data>
+  <data name="m_editPasteButton.ToolTipText" xml:space="preserve">
+    <value>Collez une sélection coupée ou copiée</value>
+  </data>
+  <data name="m_editDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Supprimez la zone sélectionnée</value>
+  </data>
+  <data name="m_editSelectAllButton.ToolTipText" xml:space="preserve">
+    <value>Sélectionnez tout le calque</value>
+  </data>
+  <data name="m_editClearSelectionButton.ToolTipText" xml:space="preserve">
+    <value>Effacez la sélection</value>
+  </data>
+  <data name="m_editInvertSelectionButton.ToolTipText" xml:space="preserve">
+    <value>Inversez la sélection</value>
+  </data>
+  <data name="m_editMakeTileBrushButton.ToolTipText" xml:space="preserve">
+    <value>Fais un nouveau pinceau de tuiles de la sélection actuelle</value>
+  </data>
+  <data name="m_editManageTileBrushesButton.ToolTipText" xml:space="preserve">
+    <value>Gérez les pinceaux de tuiles</value>
+  </data>
+  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 74</value>
   </data>
   <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
     <value>Facteur de zoom</value>
@@ -210,29 +264,62 @@
   <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
     <value>Masquer le guides de tuiles</value>
   </data>
-  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
-    <value>Nouveau fueille du tuiles</value>
+  <data name="m_viewToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 0</value>
   </data>
-  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Propriétés de la feuille de tuiles</value>
+  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
+    <value>Nouvelle carte</value>
   </data>
-  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
-    <value>Gérez les auto tuiles de la feuille de tuiles</value>
+  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
+    <value>Ouvrez une carte</value>
   </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
-    <value>Activer mise à jour automatique des feuilles de tuiles à partir du disque</value>
+  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
+    <value>Enregistrer la carte</value>
   </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
-    <value>Désactiver mise à jour automatique des feuilles de tuiles à partir du disque</value>
+  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
+    <value>Enregistrer la carte sous...</value>
   </data>
-  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
-    <value>Supprimez les dépendances sur cette feuille de tuiles</value>
+  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
+    <value>Configurez les paramètres de page pour l'impression</value>
   </data>
-  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Supprimez le fueille du tuiles</value>
+  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
+    <value>Aperçu avant impression</value>
   </data>
-  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 74</value>
+  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
+    <value>Imprimez le calque sélectionné</value>
+  </data>
+  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
+    <value>Accédez aux options générales</value>
+  </data>
+  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
+    <value>Nouveau calque</value>
+  </data>
+  <data name="m_layerPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Propriétés du calque</value>
+  </data>
+  <data name="m_layerOffsetButton.ToolTipText" xml:space="preserve">
+    <value>Compensation du calque horizontalement et / ou à la verticale</value>
+  </data>
+  <data name="m_layerMakeInvisibileButton.ToolTipText" xml:space="preserve">
+    <value>Fais le calque visible</value>
+  </data>
+  <data name="m_layerMakeVisibileButton.ToolTipText" xml:space="preserve">
+    <value>Fais le calque invisible</value>
+  </data>
+  <data name="m_layerBringForwardButton.ToolTipText" xml:space="preserve">
+    <value>Apportez le calque avant</value>
+  </data>
+  <data name="m_layerSendBackwardButton.ToolTipText" xml:space="preserve">
+    <value>Envoyer le calque arrière</value>
+  </data>
+  <data name="m_layerDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Supprimez le calque</value>
+  </data>
+  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 49</value>
   </data>
   <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
@@ -697,100 +784,16 @@
     <value>Ai&amp;de</value>
   </data>
   <data name="m_menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 50</value>
+    <value>0, 25</value>
   </data>
-  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
-    <value>Nouvelle carte</value>
+  <data name="m_mapPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Propriétés de la carte</value>
   </data>
-  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
-    <value>Ouvrez une carte</value>
+  <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
+    <value>Statistiques de la carte</value>
   </data>
-  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
-    <value>Enregistrer la carte</value>
-  </data>
-  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
-    <value>Enregistrer la carte sous...</value>
-  </data>
-  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
-    <value>Configurez les paramètres de page pour l'impression</value>
-  </data>
-  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
-    <value>Aperçu avant impression</value>
-  </data>
-  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
-    <value>Imprimez le calque sélectionné</value>
-  </data>
-  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
-    <value>Accédez aux options générales</value>
-  </data>
-  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 25</value>
-  </data>
-  <data name="m_editUndoButton.ToolTipText" xml:space="preserve">
-    <value>Défais</value>
-  </data>
-  <data name="m_editRedoButton.ToolTipText" xml:space="preserve">
-    <value>Réfais</value>
-  </data>
-  <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
-    <value>Accédez à l'histoire des commandes défaire / refaire</value>
-  </data>
-  <data name="m_editCutButton.ToolTipText" xml:space="preserve">
-    <value>Coupez la zone sélectionnée</value>
-  </data>
-  <data name="m_editCopyButton.ToolTipText" xml:space="preserve">
-    <value>Copiez la zone sélectionnée</value>
-  </data>
-  <data name="m_editPasteButton.ToolTipText" xml:space="preserve">
-    <value>Collez une sélection coupée ou copiée</value>
-  </data>
-  <data name="m_editDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Supprimez la zone sélectionnée</value>
-  </data>
-  <data name="m_editSelectAllButton.ToolTipText" xml:space="preserve">
-    <value>Sélectionnez tout le calque</value>
-  </data>
-  <data name="m_editClearSelectionButton.ToolTipText" xml:space="preserve">
-    <value>Effacez la sélection</value>
-  </data>
-  <data name="m_editInvertSelectionButton.ToolTipText" xml:space="preserve">
-    <value>Inversez la sélection</value>
-  </data>
-  <data name="m_editMakeTileBrushButton.ToolTipText" xml:space="preserve">
-    <value>Fais un nouveau pinceau de tuiles de la sélection actuelle</value>
-  </data>
-  <data name="m_editManageTileBrushesButton.ToolTipText" xml:space="preserve">
-    <value>Gérez les pinceaux de tuiles</value>
-  </data>
-  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
-    <value>Nouveau calque</value>
-  </data>
-  <data name="m_layerPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Propriétés du calque</value>
-  </data>
-  <data name="m_layerOffsetButton.ToolTipText" xml:space="preserve">
-    <value>Compensation du calque horizontalement et / ou à la verticale</value>
-  </data>
-  <data name="m_layerMakeInvisibileButton.ToolTipText" xml:space="preserve">
-    <value>Fais le calque visible</value>
-  </data>
-  <data name="m_layerMakeVisibileButton.ToolTipText" xml:space="preserve">
-    <value>Fais le calque invisible</value>
-  </data>
-  <data name="m_layerBringForwardButton.ToolTipText" xml:space="preserve">
-    <value>Apportez le calque avant</value>
-  </data>
-  <data name="m_layerSendBackwardButton.ToolTipText" xml:space="preserve">
-    <value>Envoyer le calque arrière</value>
-  </data>
-  <data name="m_layerDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Supprimez le calque</value>
-  </data>
-  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 25</value>
+  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 99</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -1,15 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TileMapEditor.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="tIDE.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="RecentFiles" Type="System.Collections.Specialized.StringCollection" Scope="User">
+    <Setting Name="RecentFiles" Description="The recent files opened or saved in tIDE" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Language" Type="System.Globalization.CultureInfo" Scope="User">
+    <Setting Name="Language" Description="The current interface language" Type="System.Globalization.CultureInfo" Scope="User">
       <Value Profile="(Default)">(Default)</Value>
     </Setting>
-    <Setting Name="RecentFilesMaxCount" Type="System.Byte" Scope="User">
+    <Setting Name="RecentFilesMaxCount" Description="Maximum number of recent files recalled" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="ImageEditingTool" Description="Path to the associated image editor" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

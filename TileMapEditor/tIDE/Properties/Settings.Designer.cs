@@ -23,7 +23,11 @@ namespace tIDE.Properties {
             }
         }
         
+        /// <summary>
+        /// The recent files opened or saved in tIDE
+        /// </summary>
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("The recent files opened or saved in tIDE")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Specialized.StringCollection RecentFiles {
             get {
@@ -34,7 +38,11 @@ namespace tIDE.Properties {
             }
         }
         
+        /// <summary>
+        /// The current interface language
+        /// </summary>
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("The current interface language")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("(Default)")]
         public global::System.Globalization.CultureInfo Language {
@@ -46,7 +54,11 @@ namespace tIDE.Properties {
             }
         }
         
+        /// <summary>
+        /// Maximum number of recent files recalled
+        /// </summary>
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("Maximum number of recent files recalled")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public byte RecentFilesMaxCount {
@@ -55,6 +67,22 @@ namespace tIDE.Properties {
             }
             set {
                 this["RecentFilesMaxCount"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// Path to the associated image editor
+        /// </summary>
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("Path to the associated image editor")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageEditingTool {
+            get {
+                return ((string)(this["ImageEditingTool"]));
+            }
+            set {
+                this["ImageEditingTool"] = value;
             }
         }
     }

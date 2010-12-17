@@ -26,6 +26,7 @@ using tIDE.TileBrushes;
 using System.Globalization;
 using System.Threading;
 using tIDE.Localisation;
+using System.Diagnostics;
 
 namespace tIDE
 {
@@ -346,11 +347,13 @@ namespace tIDE
 
         private void UpdateTileSheetControls()
         {
-            // properties, auto tiles and delete enabled if tile sheet selected
+            // properties, auto tiles, edit image, and delete enabled if tile sheet selected
             m_tileSheetPropertiesMenuItem.Enabled
                 = m_tileSheetPropertiesButton.Enabled
                 = m_tileSheetAutoTilesMenuItem.Enabled
                 = m_tileSheetAutoTilesButton.Enabled
+                = m_tileSheetEditImageSourceMenuItem.Enabled
+                = m_tileSheetEditImageSourceButton.Enabled
                 = m_tileSheetDeleteMenuItem.Enabled
                 = m_tileSheetDeleteButton.Enabled
                 = m_mapTreeView.SelectedComponent is TileSheet;
@@ -1404,6 +1407,22 @@ namespace tIDE
         {
             m_tilePicker.AutoUpdate = !m_tilePicker.AutoUpdate;
             UpdateTileSheetControls();
+        }
+
+        private void OnTileSheetEditImageSource(object sender, EventArgs eventArgs)
+        {
+            if (m_selectedComponent == null
+                || !(m_selectedComponent is TileSheet))
+                return;
+
+            TileSheet tileSheet = (TileSheet)m_selectedComponent;
+
+            string imageEditingTool = Properties.Settings.Default.ImageEditingTool;
+
+            if (imageEditingTool.Length == 0)
+                Process.Start(tileSheet.ImageSource);
+            else
+                Process.Start(imageEditingTool, tileSheet.ImageSource);
         }
 
         private void OnTileSheetRemoveDependencies(object sender, EventArgs e)

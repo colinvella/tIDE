@@ -723,6 +723,7 @@
     <None Include="Resources\FileOptions.png" />
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
+    <None Include="Resources\TileSheetEditImageSource.png" />
     <None Include="Resources\TileOrderImage.png" />
     <None Include="Resources\TileOrderMru.png" />
     <None Include="Resources\TileOrderIndexed.png" />
