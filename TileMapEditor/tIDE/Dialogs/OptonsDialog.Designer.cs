@@ -41,41 +41,36 @@
             this.m_languageTabPage = new System.Windows.Forms.TabPage();
             this.m_languageComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_imageEditingTabPage = new System.Windows.Forms.TabPage();
+            this.m_rdbDefaultAssociation = new System.Windows.Forms.RadioButton();
+            this.m_rdbSpecificTool = new System.Windows.Forms.RadioButton();
+            this.m_txtEditingToolPath = new System.Windows.Forms.TextBox();
+            this.m_btnBrowseEditingTool = new System.Windows.Forms.Button();
             m_recentFileCountLabel = new System.Windows.Forms.Label();
             this.m_tabControl.SuspendLayout();
             this.m_recentFilesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_recentFileCountUpDown)).BeginInit();
             this.m_languageTabPage.SuspendLayout();
+            this.m_imageEditingTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_recentFileCountLabel
             // 
-            m_recentFileCountLabel.AccessibleDescription = null;
-            m_recentFileCountLabel.AccessibleName = null;
             resources.ApplyResources(m_recentFileCountLabel, "m_recentFileCountLabel");
-            m_recentFileCountLabel.Font = null;
             m_recentFileCountLabel.Name = "m_recentFileCountLabel";
             // 
             // m_okButton
             // 
-            this.m_okButton.AccessibleDescription = null;
-            this.m_okButton.AccessibleName = null;
             resources.ApplyResources(this.m_okButton, "m_okButton");
-            this.m_okButton.BackgroundImage = null;
             this.m_okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.m_okButton.Font = null;
             this.m_okButton.Name = "m_okButton";
             this.m_okButton.UseVisualStyleBackColor = true;
             this.m_okButton.Click += new System.EventHandler(this.OnDialogOk);
             // 
             // m_cancelButton
             // 
-            this.m_cancelButton.AccessibleDescription = null;
-            this.m_cancelButton.AccessibleName = null;
             resources.ApplyResources(this.m_cancelButton, "m_cancelButton");
-            this.m_cancelButton.BackgroundImage = null;
             this.m_cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cancelButton.Font = null;
             this.m_cancelButton.Name = "m_cancelButton";
             this.m_cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -85,15 +80,14 @@
             this.m_tabImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.m_tabImageList.Images.SetKeyName(0, "FileOpenRecent.png");
             this.m_tabImageList.Images.SetKeyName(1, "OptionsLanguage.png");
+            this.m_tabImageList.Images.SetKeyName(2, "TileSheetEditImageSource.png");
             // 
             // m_tabControl
             // 
-            this.m_tabControl.AccessibleDescription = null;
-            this.m_tabControl.AccessibleName = null;
             resources.ApplyResources(this.m_tabControl, "m_tabControl");
-            this.m_tabControl.BackgroundImage = null;
             this.m_tabControl.Controls.Add(this.m_recentFilesTabPage);
             this.m_tabControl.Controls.Add(this.m_languageTabPage);
+            this.m_tabControl.Controls.Add(this.m_imageEditingTabPage);
             this.m_tabControl.DisplayStyle = tIDE.Controls.TabStyle.VisualStudio;
             // 
             // 
@@ -113,7 +107,6 @@
             this.m_tabControl.DisplayStyleProvider.TextColorDisabled = System.Drawing.SystemColors.ControlDark;
             this.m_tabControl.DisplayStyleProvider.TextColorSelected = System.Drawing.SystemColors.ControlText;
             this.m_tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.m_tabControl.Font = null;
             this.m_tabControl.HotTrack = true;
             this.m_tabControl.ImageList = this.m_tabImageList;
             this.m_tabControl.Name = "m_tabControl";
@@ -121,35 +114,24 @@
             // 
             // m_recentFilesTabPage
             // 
-            this.m_recentFilesTabPage.AccessibleDescription = null;
-            this.m_recentFilesTabPage.AccessibleName = null;
-            resources.ApplyResources(this.m_recentFilesTabPage, "m_recentFilesTabPage");
             this.m_recentFilesTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.m_recentFilesTabPage.BackgroundImage = null;
             this.m_recentFilesTabPage.Controls.Add(this.m_clearHistoryButton);
             this.m_recentFilesTabPage.Controls.Add(m_recentFileCountLabel);
             this.m_recentFilesTabPage.Controls.Add(this.m_recentFileCountUpDown);
-            this.m_recentFilesTabPage.Font = null;
+            resources.ApplyResources(this.m_recentFilesTabPage, "m_recentFilesTabPage");
             this.m_recentFilesTabPage.Name = "m_recentFilesTabPage";
             this.m_recentFilesTabPage.UseVisualStyleBackColor = true;
             // 
             // m_clearHistoryButton
             // 
-            this.m_clearHistoryButton.AccessibleDescription = null;
-            this.m_clearHistoryButton.AccessibleName = null;
             resources.ApplyResources(this.m_clearHistoryButton, "m_clearHistoryButton");
-            this.m_clearHistoryButton.BackgroundImage = null;
-            this.m_clearHistoryButton.Font = null;
             this.m_clearHistoryButton.Name = "m_clearHistoryButton";
             this.m_clearHistoryButton.UseVisualStyleBackColor = true;
             this.m_clearHistoryButton.Click += new System.EventHandler(this.OnClearHistory);
             // 
             // m_recentFileCountUpDown
             // 
-            this.m_recentFileCountUpDown.AccessibleDescription = null;
-            this.m_recentFileCountUpDown.AccessibleName = null;
             resources.ApplyResources(this.m_recentFileCountUpDown, "m_recentFileCountUpDown");
-            this.m_recentFileCountUpDown.Font = null;
             this.m_recentFileCountUpDown.Maximum = new decimal(new int[] {
             25,
             0,
@@ -159,49 +141,71 @@
             // 
             // m_languageTabPage
             // 
-            this.m_languageTabPage.AccessibleDescription = null;
-            this.m_languageTabPage.AccessibleName = null;
-            resources.ApplyResources(this.m_languageTabPage, "m_languageTabPage");
             this.m_languageTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.m_languageTabPage.BackgroundImage = null;
             this.m_languageTabPage.Controls.Add(this.m_languageComboBox);
             this.m_languageTabPage.Controls.Add(this.label1);
-            this.m_languageTabPage.Font = null;
+            resources.ApplyResources(this.m_languageTabPage, "m_languageTabPage");
             this.m_languageTabPage.Name = "m_languageTabPage";
             this.m_languageTabPage.UseVisualStyleBackColor = true;
             // 
             // m_languageComboBox
             // 
-            this.m_languageComboBox.AccessibleDescription = null;
-            this.m_languageComboBox.AccessibleName = null;
-            resources.ApplyResources(this.m_languageComboBox, "m_languageComboBox");
-            this.m_languageComboBox.BackgroundImage = null;
             this.m_languageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_languageComboBox.Font = null;
             this.m_languageComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.m_languageComboBox, "m_languageComboBox");
             this.m_languageComboBox.Name = "m_languageComboBox";
             // 
             // label1
             // 
-            this.label1.AccessibleDescription = null;
-            this.label1.AccessibleName = null;
             resources.ApplyResources(this.label1, "label1");
-            this.label1.Font = null;
             this.label1.Name = "label1";
+            // 
+            // m_imageEditingTabPage
+            // 
+            this.m_imageEditingTabPage.Controls.Add(this.m_btnBrowseEditingTool);
+            this.m_imageEditingTabPage.Controls.Add(this.m_txtEditingToolPath);
+            this.m_imageEditingTabPage.Controls.Add(this.m_rdbSpecificTool);
+            this.m_imageEditingTabPage.Controls.Add(this.m_rdbDefaultAssociation);
+            resources.ApplyResources(this.m_imageEditingTabPage, "m_imageEditingTabPage");
+            this.m_imageEditingTabPage.Name = "m_imageEditingTabPage";
+            this.m_imageEditingTabPage.UseVisualStyleBackColor = true;
+            // 
+            // m_rdbDefaultAssociation
+            // 
+            resources.ApplyResources(this.m_rdbDefaultAssociation, "m_rdbDefaultAssociation");
+            this.m_rdbDefaultAssociation.Checked = true;
+            this.m_rdbDefaultAssociation.Name = "m_rdbDefaultAssociation";
+            this.m_rdbDefaultAssociation.TabStop = true;
+            this.m_rdbDefaultAssociation.UseVisualStyleBackColor = true;
+            this.m_rdbDefaultAssociation.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
+            // 
+            // m_rdbSpecificTool
+            // 
+            resources.ApplyResources(this.m_rdbSpecificTool, "m_rdbSpecificTool");
+            this.m_rdbSpecificTool.Name = "m_rdbSpecificTool";
+            this.m_rdbSpecificTool.UseVisualStyleBackColor = true;
+            // 
+            // m_txtEditingToolPath
+            // 
+            resources.ApplyResources(this.m_txtEditingToolPath, "m_txtEditingToolPath");
+            this.m_txtEditingToolPath.Name = "m_txtEditingToolPath";
+            // 
+            // m_btnBrowseEditingTool
+            // 
+            resources.ApplyResources(this.m_btnBrowseEditingTool, "m_btnBrowseEditingTool");
+            this.m_btnBrowseEditingTool.Name = "m_btnBrowseEditingTool";
+            this.m_btnBrowseEditingTool.UseVisualStyleBackColor = true;
+            this.m_btnBrowseEditingTool.Click += new System.EventHandler(this.OnBrowseEditingTool);
             // 
             // OptonsDialog
             // 
             this.AcceptButton = this.m_okButton;
-            this.AccessibleDescription = null;
-            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = null;
             this.CancelButton = this.m_cancelButton;
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_okButton);
             this.Controls.Add(this.m_tabControl);
-            this.Font = null;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OptonsDialog";
@@ -213,6 +217,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_recentFileCountUpDown)).EndInit();
             this.m_languageTabPage.ResumeLayout(false);
             this.m_languageTabPage.PerformLayout();
+            this.m_imageEditingTabPage.ResumeLayout(false);
+            this.m_imageEditingTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -229,5 +235,10 @@
         private System.Windows.Forms.ComboBox m_languageComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList m_tabImageList;
+        private System.Windows.Forms.TabPage m_imageEditingTabPage;
+        private System.Windows.Forms.RadioButton m_rdbDefaultAssociation;
+        private System.Windows.Forms.RadioButton m_rdbSpecificTool;
+        private System.Windows.Forms.Button m_btnBrowseEditingTool;
+        private System.Windows.Forms.TextBox m_txtEditingToolPath;
     }
 }
