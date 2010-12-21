@@ -124,6 +124,12 @@
   <data name="m_recentFileCountLabel.Text" xml:space="preserve">
     <value>fascicoli recenti mostrati </value>
   </data>
+  <data name="m_languageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="m_languageLabel.Text" xml:space="preserve">
+    <value>Lingua dell'interfaccia:</value>
+  </data>
   <data name="m_cancelButton.Text" xml:space="preserve">
     <value>&amp;Annulla</value>
   </data>
@@ -131,8 +137,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC0
-        CQAAAk1TRnQBSQFMAgEBAgEAATABAAEwAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAe
+        CwAAAk1TRnQBSQFMAgEBAwEAATgBAAE4AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -161,38 +167,60 @@
         AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
         AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
         AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/xYAAbsBeQGRAbMBtAG7
-        JgAOFAQAAbQBrQGLAlIBbQGLAa0BiwG7JAABFAU3BzgBFAMAAbQCiwFsAVIBMQErAUsBbAKLAbQjAAEU
-        BjcGOAEUAgABtAOLARIBUgErATEBKwFLAWYCiwG7IgABFAECAQADAgI3AQAEOAEUAgABiwGGAosFUgEx
-        AUoBiwGGAYsiAAEUATMCAAIzAQICAAQ3ARQBAAGRA4sBcwFTAVIBWARSAa4CiwG1IQABFAE8AQAB+QEA
-        ATwBAAH5AQAENwEUAQADiwGuAVgBWQF6AlkBegF0AewDiwGRIQABFAHXAQABLAH5AQAC+QEABAIBFAEA
-        AosBrQHPARwCegGgAeUBmAK0Aa0CiwGuIQABFAHXAQABLAT5AQAEMwEUAQABiwGtAc8BtAEHAaABwwHC
-        AbsB1QG0AdUBkQFRAW0BriEAARQB0QEAASwE+QEABDwBFAEAAc8BrQHtARwBtQMJAtwB1QG0AXQBMQFM
-        AXQhAAEUAdABAAEsBPkBAAS4ARQBAAG1AXMBHAG1AdwBCQMZAQkB3AG0AXkCUgGZIQABFAG4AQABLAT5
-        AQAEuAEUAQAB8QF0Ae0BtAIJARkB/wIZAdwB2wEcAVkBUgH0IQABFAGyAQABLAT5AQAEsgEUAgABmQFS
-        ARwBmQEJBBkB3AG7ARwBeQEaIgABFAGyAQABLAT5AQAEsgEUAwABdAFTAVkBmQQJAdwBuwEcAe8jAAIU
-        AQAFLAEABRQEAAGZAVICeQEHAQkC2wG0Abw4AAEHAu8BuwIJJQABQgFNAT4HAAE+AwABKAMAAUADAAEQ
-        AwABAQEAAQEFAAGAFwAD/wEAAv8B+AEfBAABgAEBAeABBwQAAYABAQHAAQMEAAGAAQEBgAEBBAABgAEB
-        AYABAQQAAYABAQYAAYABAQYAAYABAQYAAYABAQYAAYABAQYAAYABAQYAAYABAQYAAYABAQGAAQEEAAGA
-        AQEBwAEDBAABgAEBAeABBwQAAeABPwH4AR8EAAs=
+        CgABzwFtAfMZAA4UBAABtAGtAYsCUgFtAYsBrQGLAbsIAAEcAXQBHAH0GAABFAU3BzgBFAMAAbQCiwFs
+        AVIBMQErAUsBbAKLAbQHAAHzAQcBGgEHAfQXAAEUBjcGOAEUAgABtAOLARIBUgErATEBKwFLAWYCiwG7
+        BwAB9AHwAfQB7wHzFgABFAECAQADAgI3AQAEOAEUAgABiwGGAosFUgExAUoBiwGGAYsIAAH0AQcBRgFu
+        AfMVAAEUATMCAAIzAQICAAQ3ARQBAAGRA4sBcwFTAVIBWARSAa4CiwG1CAAB8wFvAUYBbgH0FAABFAE8
+        AQAB+QEAATwBAAH5AQAENwEUAQADiwGuAVgBWQF6AlkBegF0AewDiwGRAwABGwGZAnQBmQLzAW8BRgFu
+        Af8TAAEUAdcBAAEsAfkBAAL5AQAEAgEUAQACiwGtAc8BHAJ6AaAB5QGYArQBrQKLAa4DAAGTAZkCmgGZ
+        AXQBmQHzAW8BRgGTAf8SAAEUAdcBAAEsBPkBAAQzARQBAAGLAa0BzwG0AQcBoAHDAcIBuwHVAbQB1QGR
+        AVEBbQGuAwABmQF0BJoBdAGZAfQBkwFvAZMB/xEAARQB0QEAASwE+QEABDwBFAEAAc8BrQHtARwBtQMJ
+        AtwB1QG0AXQBMQFMAXQDAAH/AXQBmgOZAZoBdAGZAf8B7gFvAbwRAAEUAdABAAEsBPkBAAS4ARQBAAG1
+        AXMBHAG1AdwBCQMZAQkB3AG0AXkCUgGZARoEdAGaAXQBAAF0ApoBkwGZAQABGgFuEQABFAG4AQABLAT5
+        AQAEuAEUAQAB8QF0Ae0BtAIJARkB/wIZAdwB2wEcAVkBUgH0AZMFmgN0AZoB7QGLAe0UAAEUAbIBAAEs
+        BPkBAASyARQCAAGZAVIBHAGZAQkEGQHcAbsBHAF5ARoBAAEaApkDeQGZAZoBmQF5AbQB3AGtFAABFAGy
+        AQABLAT5AQAEsgEUAwABdAFTAVkBmQQJAdwBuwEcAe8CAAH2ARoBmQGaAW8B6QFMAVIBUQFSAe8BtAG8
+        FAACFAEABSwBAAUUBAABmQFSAnkBBwEJAtsBtAG8BAAB/wEbARoBRgEWAUYBUgF6AVEBmQEaAf8oAAEH
+        Au8BuwIJBwAC/wEaARcBdAF5AVgBmQHzAf8UAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUA
+        AYAXAAP/AQAC/wH4AR8B+AH/AgABgAEBAeABBwH4AX8CAAGAAQEBwAEDAfgBPwIAAYABAQGAAQEB/AEf
+        AgABgAEBAYABAQH+AQ8CAAGAAQECAAH/AQcCAAGAAQECAAHgAQMCAAGAAQECAAHgAQECAAGAAQECAAHg
+        AwABgAEBAgAB4AMAAYABAQIAAQEBBAIAAYABAQMAAQcCAAGAAQEBgAEBAQABBwIAAYABAQHAAQMBAAEH
+        AgABgAEBAeABBwGAAQcCAAHgAT8B+AEfAcABDwIACw==
 </value>
+  </data>
+  <data name="m_recentFilesTabPage.Text" xml:space="preserve">
+    <value>Fascicoli Recenti</value>
+  </data>
+  <data name="m_languageTabPage.Text" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="m_btnBrowseEditingTool.Text" xml:space="preserve">
+    <value>Seleziona...</value>
+  </data>
+  <data name="m_rdbSpecificTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 17</value>
+  </data>
+  <data name="m_rdbSpecificTool.Text" xml:space="preserve">
+    <value>Utilizza un programma di modificazione specifico</value>
+  </data>
+  <data name="m_rdbDefaultAssociation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 17</value>
+  </data>
+  <data name="m_rdbDefaultAssociation.Text" xml:space="preserve">
+    <value>Utilizza le associazioni dei fascicoli predefiniti</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_imageEditingTabPage.ImageIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_imageEditingTabPage.Text" xml:space="preserve">
+    <value>Modifica delle Immagini</value>
   </data>
   <data name="m_clearHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 23</value>
   </data>
   <data name="m_clearHistoryButton.Text" xml:space="preserve">
     <value>&amp;Cancella Cronologia</value>
-  </data>
-  <data name="m_recentFilesTabPage.Text" xml:space="preserve">
-    <value>Fascicoli Recenti</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Lingua dell interfaccia</value>
-  </data>
-  <data name="m_languageTabPage.Text" xml:space="preserve">
-    <value>Lingua</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -956,6 +984,10 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Opzioni</value>
