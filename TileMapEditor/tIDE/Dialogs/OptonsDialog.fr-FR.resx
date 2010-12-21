@@ -182,23 +182,26 @@
         AgABgAEBAeABBwGAAQcCAAHgAT8B+AEfAcABDwIACw==
 </value>
   </data>
+  <data name="m_recentFilesTabPage.Text" xml:space="preserve">
+    <value>Fichiers Récents</value>
+  </data>
+  <data name="m_languageTabPage.Text" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="m_imageEditingTabPage.Text" xml:space="preserve">
+    <value>Modification des Images</value>
+  </data>
   <data name="m_clearHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 23</value>
   </data>
   <data name="m_clearHistoryButton.Text" xml:space="preserve">
     <value>Effacez l'&amp;Histoire</value>
   </data>
-  <data name="m_recentFilesTabPage.Text" xml:space="preserve">
-    <value>Fichiers Récents</value>
-  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Langue de l'Interface de l'Utilisateur:</value>
-  </data>
-  <data name="m_languageTabPage.Text" xml:space="preserve">
-    <value>Langue</value>
   </data>
   <data name="m_btnBrowseEditingTool.Text" xml:space="preserve">
     <value>Recherche...</value>
@@ -214,9 +217,6 @@
   </data>
   <data name="m_rdbDefaultAssociation.Text" xml:space="preserve">
     <value>Utilisez association de fichier par défaut</value>
-  </data>
-  <data name="m_imageEditingTabPage.Text" xml:space="preserve">
-    <value>Modification des Images</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
