@@ -133,8 +133,12 @@
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 200</value>
   </data>
-  <data name="&gt;&gt;m_recentFileCountLabel.Name" xml:space="preserve">
-    <value>m_recentFileCountLabel</value>
+  <data name="m_imageEditingTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_btnBrowseEditingTool.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;m_languageComboBox.Name" xml:space="preserve">
     <value>m_languageComboBox</value>
@@ -161,7 +165,6 @@
   <data name="m_tabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_btnBrowseEditingTool.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -174,8 +177,8 @@
   <data name="&gt;&gt;m_imageEditingTabPage.Parent" xml:space="preserve">
     <value>m_tabControl</value>
   </data>
-  <data name="m_languageLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;m_recentFilesTabPage.Name" xml:space="preserve">
+    <value>m_recentFilesTabPage</value>
   </data>
   <data name="&gt;&gt;m_languageLabel.Name" xml:space="preserve">
     <value>m_languageLabel</value>
@@ -188,9 +191,6 @@
   </data>
   <data name="m_clearHistoryButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 32</value>
-  </data>
-  <data name="m_languageComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 24</value>
   </data>
   <data name="m_recentFileCountLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -213,14 +213,14 @@
   <data name="&gt;&gt;m_languageTabPage.Name" xml:space="preserve">
     <value>m_languageTabPage</value>
   </data>
-  <data name="m_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
   <data name="&gt;&gt;m_rdbDefaultAssociation.Name" xml:space="preserve">
     <value>m_rdbDefaultAssociation</value>
   </data>
   <data name="&gt;&gt;m_languageTabPage.Parent" xml:space="preserve">
     <value>m_tabControl</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>384, 162</value>
   </data>
   <data name="m_okButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 129</value>
@@ -240,11 +240,11 @@
   <data name="m_languageLabel.Text" xml:space="preserve">
     <value>User interface language:</value>
   </data>
-  <data name="m_txtEditingToolPath.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="m_recentFilesTabPage.ImageKey" xml:space="preserve">
     <value>FileOpenRecent.png</value>
+  </data>
+  <data name="&gt;&gt;m_recentFileCountLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;m_tabControl.Type" xml:space="preserve">
     <value>tIDE.Controls.CustomTabControl, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
@@ -258,8 +258,8 @@
   <data name="m_imageEditingTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="m_btnBrowseEditingTool.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;m_tabImageList.Name" xml:space="preserve">
+    <value>m_tabImageList</value>
   </data>
   <data name="m_btnBrowseEditingTool.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -282,11 +282,11 @@
   <data name="&gt;&gt;m_rdbDefaultAssociation.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_recentFileCountLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;m_recentFileCountLabel.Name" xml:space="preserve">
+    <value>m_recentFileCountLabel</value>
   </data>
-  <data name="&gt;&gt;m_btnBrowseEditingTool.Parent" xml:space="preserve">
-    <value>m_imageEditingTabPage</value>
+  <data name="m_recentFileCountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 11</value>
   </data>
   <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -330,8 +330,8 @@
   <data name="&gt;&gt;m_okButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Options</value>
+  <data name="m_languageTabPage.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
   <data name="&gt;&gt;m_rdbSpecificTool.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -357,6 +357,9 @@
   <data name="&gt;&gt;m_recentFileCountLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="m_rdbSpecificTool.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="m_imageEditingTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -365,9 +368,6 @@
   </data>
   <data name="m_rdbDefaultAssociation.Text" xml:space="preserve">
     <value>Use default file association</value>
-  </data>
-  <data name="m_okButton.Text" xml:space="preserve">
-    <value>&amp;OK</value>
   </data>
   <data name="m_rdbSpecificTool.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -417,11 +417,11 @@
   <data name="m_clearHistoryButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 162</value>
-  </data>
   <data name="&gt;&gt;m_rdbSpecificTool.Name" xml:space="preserve">
     <value>m_rdbSpecificTool</value>
+  </data>
+  <data name="m_okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="&gt;&gt;m_languageComboBox.Parent" xml:space="preserve">
     <value>m_languageTabPage</value>
@@ -444,6 +444,9 @@
   <data name="&gt;&gt;m_txtEditingToolPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;m_btnBrowseEditingTool.Parent" xml:space="preserve">
+    <value>m_imageEditingTabPage</value>
+  </data>
   <data name="&gt;&gt;m_imageEditingTabPage.Name" xml:space="preserve">
     <value>m_imageEditingTabPage</value>
   </data>
@@ -453,35 +456,32 @@
   <data name="&gt;&gt;m_txtEditingToolPath.Parent" xml:space="preserve">
     <value>m_imageEditingTabPage</value>
   </data>
-  <data name="&gt;&gt;m_recentFilesTabPage.Name" xml:space="preserve">
-    <value>m_recentFilesTabPage</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Options</value>
   </data>
   <data name="m_rdbDefaultAssociation.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 17</value>
   </data>
-  <data name="m_languageTabPage.Text" xml:space="preserve">
-    <value>Language</value>
+  <data name="m_txtEditingToolPath.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="m_clearHistoryButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="m_rdbSpecificTool.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="m_recentFileCountLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;m_rdbSpecificTool.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="m_okButton.Text" xml:space="preserve">
+    <value>&amp;OK</value>
   </data>
-  <data name="m_imageEditingTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="m_languageLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="m_okButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="&gt;&gt;m_rdbDefaultAssociation.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="m_recentFileCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 11</value>
   </data>
   <data name="m_languageLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 13</value>
@@ -504,8 +504,8 @@
   <data name="&gt;&gt;m_languageLabel.Parent" xml:space="preserve">
     <value>m_languageTabPage</value>
   </data>
-  <data name="&gt;&gt;m_recentFileCountLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="m_languageComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 24</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1284,7 +1284,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAe
-        CwAAAk1TRnQBSQFMAgEBAwEAAYABAAGQAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CwAAAk1TRnQBSQFMAgEBAwEAAYABAAGgAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -1379,8 +1379,8 @@
   <data name="m_tabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 111</value>
   </data>
-  <data name="&gt;&gt;m_tabImageList.Name" xml:space="preserve">
-    <value>m_tabImageList</value>
+  <data name="&gt;&gt;m_rdbSpecificTool.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="m_tabImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1393,8 +1393,5 @@
   </metadata>
   <metadata name="m_recentFileCountLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Italian (Italy)</value>
   </metadata>
 </root>

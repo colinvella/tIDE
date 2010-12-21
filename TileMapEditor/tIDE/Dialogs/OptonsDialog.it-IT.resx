@@ -138,7 +138,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAe
-        CwAAAk1TRnQBSQFMAgEBAwEAATgBAAE4AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CwAAAk1TRnQBSQFMAgEBAwEAAUABAAFAAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -175,7 +175,7 @@
         Af8TAAEUAdcBAAEsAfkBAAL5AQAEAgEUAQACiwGtAc8BHAJ6AaAB5QGYArQBrQKLAa4DAAGTAZkCmgGZ
         AXQBmQHzAW8BRgGTAf8SAAEUAdcBAAEsBPkBAAQzARQBAAGLAa0BzwG0AQcBoAHDAcIBuwHVAbQB1QGR
         AVEBbQGuAwABmQF0BJoBdAGZAfQBkwFvAZMB/xEAARQB0QEAASwE+QEABDwBFAEAAc8BrQHtARwBtQMJ
-        AtwB1QG0AXQBMQFMAXQDAAH/AXQBmgOZAZoBdAGZAf8B7gFvAbwRAAEUAdABAAEsBPkBAAS4ARQBAAG1
+        AtwB1QG0AXQBMQFMAXQDAAH/AXQBmgOZAZoBdAGZAf8BvAFvAbwRAAEUAdABAAEsBPkBAAS4ARQBAAG1
         AXMBHAG1AdwBCQMZAQkB3AG0AXkCUgGZARoEdAGaAXQBAAF0ApoBkwGZAQABGgFuEQABFAG4AQABLAT5
         AQAEuAEUAQAB8QF0Ae0BtAIJARkB/wIZAdwB2wEcAVkBUgH0AZMFmgN0AZoB7QGLAe0UAAEUAbIBAAEs
         BPkBAASyARQCAAGZAVIBHAGZAQkEGQHcAbsBHAF5ARoBAAEaApkDeQGZAZoBmQF5AbQB3AGtFAABFAGy
@@ -187,6 +187,12 @@
         AwABgAEBAgAB4AMAAYABAQIAAQEBBAIAAYABAQMAAQcCAAGAAQEBgAEBAQABBwIAAYABAQHAAQMBAAEH
         AgABgAEBAeABBwGAAQcCAAHgAT8B+AEfAcABDwIACw==
 </value>
+  </data>
+  <data name="m_clearHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 23</value>
+  </data>
+  <data name="m_clearHistoryButton.Text" xml:space="preserve">
+    <value>&amp;Cancella Cronologia</value>
   </data>
   <data name="m_recentFilesTabPage.Text" xml:space="preserve">
     <value>Fascicoli Recenti</value>
@@ -215,12 +221,6 @@
   </data>
   <data name="m_imageEditingTabPage.Text" xml:space="preserve">
     <value>Modifica delle Immagini</value>
-  </data>
-  <data name="m_clearHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 23</value>
-  </data>
-  <data name="m_clearHistoryButton.Text" xml:space="preserve">
-    <value>&amp;Cancella Cronologia</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -984,10 +984,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5/rEH8P6xB
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Opzioni</value>
