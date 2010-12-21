@@ -75,7 +75,8 @@
             resources.ApplyResources(this.m_topicTreeView, "m_topicTreeView");
             this.m_topicTreeView.Name = "m_topicTreeView";
             this.m_topicTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            ((System.Windows.Forms.TreeNode)(resources.GetObject("m_topicTreeView.Nodes")))});
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("m_topicTreeView.Nodes"))),
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("m_topicTreeView.Nodes1")))});
             this.m_topicTreeView.ShowNodeToolTips = true;
             this.m_topicTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnTopicSelect);
             // 

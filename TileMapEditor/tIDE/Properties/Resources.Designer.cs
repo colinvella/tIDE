@@ -651,6 +651,13 @@ namespace tIDE.Properties {
             }
         }
         
+        internal static byte[] HelpXnaTutorial {
+            get {
+                object obj = ResourceManager.GetObject("HelpXnaTutorial", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ImageBackground {
             get {
                 object obj = ResourceManager.GetObject("ImageBackground", resourceCulture);
