@@ -42,10 +42,10 @@
             this.m_languageComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_imageEditingTabPage = new System.Windows.Forms.TabPage();
-            this.m_rdbDefaultAssociation = new System.Windows.Forms.RadioButton();
-            this.m_rdbSpecificTool = new System.Windows.Forms.RadioButton();
-            this.m_txtEditingToolPath = new System.Windows.Forms.TextBox();
             this.m_btnBrowseEditingTool = new System.Windows.Forms.Button();
+            this.m_txtEditingToolPath = new System.Windows.Forms.TextBox();
+            this.m_rdbSpecificTool = new System.Windows.Forms.RadioButton();
+            this.m_rdbDefaultAssociation = new System.Windows.Forms.RadioButton();
             m_recentFileCountLabel = new System.Windows.Forms.Label();
             this.m_tabControl.SuspendLayout();
             this.m_recentFilesTabPage.SuspendLayout();
@@ -170,6 +170,24 @@
             this.m_imageEditingTabPage.Name = "m_imageEditingTabPage";
             this.m_imageEditingTabPage.UseVisualStyleBackColor = true;
             // 
+            // m_btnBrowseEditingTool
+            // 
+            resources.ApplyResources(this.m_btnBrowseEditingTool, "m_btnBrowseEditingTool");
+            this.m_btnBrowseEditingTool.Name = "m_btnBrowseEditingTool";
+            this.m_btnBrowseEditingTool.UseVisualStyleBackColor = true;
+            this.m_btnBrowseEditingTool.Click += new System.EventHandler(this.OnBrowseEditingTool);
+            // 
+            // m_txtEditingToolPath
+            // 
+            resources.ApplyResources(this.m_txtEditingToolPath, "m_txtEditingToolPath");
+            this.m_txtEditingToolPath.Name = "m_txtEditingToolPath";
+            // 
+            // m_rdbSpecificTool
+            // 
+            resources.ApplyResources(this.m_rdbSpecificTool, "m_rdbSpecificTool");
+            this.m_rdbSpecificTool.Name = "m_rdbSpecificTool";
+            this.m_rdbSpecificTool.UseVisualStyleBackColor = true;
+            // 
             // m_rdbDefaultAssociation
             // 
             resources.ApplyResources(this.m_rdbDefaultAssociation, "m_rdbDefaultAssociation");
@@ -178,24 +196,6 @@
             this.m_rdbDefaultAssociation.TabStop = true;
             this.m_rdbDefaultAssociation.UseVisualStyleBackColor = true;
             this.m_rdbDefaultAssociation.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
-            // 
-            // m_rdbSpecificTool
-            // 
-            resources.ApplyResources(this.m_rdbSpecificTool, "m_rdbSpecificTool");
-            this.m_rdbSpecificTool.Name = "m_rdbSpecificTool";
-            this.m_rdbSpecificTool.UseVisualStyleBackColor = true;
-            // 
-            // m_txtEditingToolPath
-            // 
-            resources.ApplyResources(this.m_txtEditingToolPath, "m_txtEditingToolPath");
-            this.m_txtEditingToolPath.Name = "m_txtEditingToolPath";
-            // 
-            // m_btnBrowseEditingTool
-            // 
-            resources.ApplyResources(this.m_btnBrowseEditingTool, "m_btnBrowseEditingTool");
-            this.m_btnBrowseEditingTool.Name = "m_btnBrowseEditingTool";
-            this.m_btnBrowseEditingTool.UseVisualStyleBackColor = true;
-            this.m_btnBrowseEditingTool.Click += new System.EventHandler(this.OnBrowseEditingTool);
             // 
             // OptonsDialog
             // 
@@ -206,6 +206,7 @@
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_okButton);
             this.Controls.Add(this.m_tabControl);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OptonsDialog";

@@ -221,7 +221,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAe
-        CwAAAk1TRnQBSQFMAgEBAwEAAVQBAAFUAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CwAAAk1TRnQBSQFMAgEBAwEAAVwBAAFcAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -274,6 +274,21 @@
   <data name="m_tabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="m_clearHistoryButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_clearHistoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="m_clearHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="m_clearHistoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_clearHistoryButton.Text" xml:space="preserve">
+    <value>Clear &amp;History</value>
+  </data>
   <data name="&gt;&gt;m_clearHistoryButton.Name" xml:space="preserve">
     <value>m_clearHistoryButton</value>
   </data>
@@ -284,6 +299,15 @@
     <value>m_recentFilesTabPage</value>
   </data>
   <data name="&gt;&gt;m_clearHistoryButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_recentFileCountUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="m_recentFileCountUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="m_recentFileCountUpDown.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;m_recentFileCountUpDown.Name" xml:space="preserve">
@@ -328,6 +352,15 @@
   <data name="&gt;&gt;m_recentFilesTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="m_languageComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 24</value>
+  </data>
+  <data name="m_languageComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 21</value>
+  </data>
+  <data name="m_languageComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;m_languageComboBox.Name" xml:space="preserve">
     <value>m_languageComboBox</value>
   </data>
@@ -339,6 +372,24 @@
   </data>
   <data name="&gt;&gt;m_languageComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 8</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>User interface language:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -540,105 +591,6 @@
   </data>
   <data name="&gt;&gt;m_tabControl.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="m_clearHistoryButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_clearHistoryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 32</value>
-  </data>
-  <data name="m_clearHistoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_clearHistoryButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="m_clearHistoryButton.Text" xml:space="preserve">
-    <value>Clear &amp;History</value>
-  </data>
-  <data name="&gt;&gt;m_clearHistoryButton.Name" xml:space="preserve">
-    <value>m_clearHistoryButton</value>
-  </data>
-  <data name="&gt;&gt;m_clearHistoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_clearHistoryButton.Parent" xml:space="preserve">
-    <value>m_recentFilesTabPage</value>
-  </data>
-  <data name="&gt;&gt;m_clearHistoryButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_recentFileCountUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="m_recentFileCountUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="m_recentFileCountUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_recentFileCountUpDown.Name" xml:space="preserve">
-    <value>m_recentFileCountUpDown</value>
-  </data>
-  <data name="&gt;&gt;m_recentFileCountUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_recentFileCountUpDown.Parent" xml:space="preserve">
-    <value>m_recentFilesTabPage</value>
-  </data>
-  <data name="&gt;&gt;m_recentFileCountUpDown.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_languageComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 24</value>
-  </data>
-  <data name="m_languageComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 21</value>
-  </data>
-  <data name="m_languageComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_languageComboBox.Name" xml:space="preserve">
-    <value>m_languageComboBox</value>
-  </data>
-  <data name="&gt;&gt;m_languageComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_languageComboBox.Parent" xml:space="preserve">
-    <value>m_languageTabPage</value>
-  </data>
-  <data name="&gt;&gt;m_languageComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 8</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>User interface language:</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>m_languageTabPage</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
