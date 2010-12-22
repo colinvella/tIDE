@@ -31,8 +31,6 @@ namespace tIDE.Plugin
             IMenuItem pluginDropDownMenu
                 = m_applicationBridge.MenuStrip.DropDownMenus[ApplicationRegistry.MenuStrip.PluginMenu.Name];
 
-            //while (pluginDropDownMenu.SubItems.Count<IMenuItem>() > 1)
-            //    pluginDropDownMenu.SubItems.Remove(pluginDropDownMenu.SubItems[1]);
             IMenuItem noPluginsLoaded = null;
             for (int index = 0; index < pluginDropDownMenu.SubItems.Count<IMenuItem>(); )
             {
@@ -112,7 +110,10 @@ namespace tIDE.Plugin
             try
             {
                 if (!Directory.Exists(pluginsPath))
-                    throw new Exception("Plugins path not found");
+                {
+                    UpdatePluginMenu();
+                    return;
+                }
 
                 string[] directoryFiles = Directory.GetFiles(pluginsPath);
 
