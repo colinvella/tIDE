@@ -117,22 +117,248 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainer.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>m_toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;m_contentRichTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_splitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="m_topicTreeView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 0, 4</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_indexTreeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 379</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.Parent" xml:space="preserve">
+    <value>m_toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;m_contentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_helpContentsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>200, 150</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Name" xml:space="preserve">
+    <value>m_splitContainer</value>
+  </data>
+  <data name="&gt;&gt;m_contentRichTextBox.Name" xml:space="preserve">
+    <value>m_contentRichTextBox</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="m_splitContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 387</value>
+  </data>
+  <data name="m_contentRichTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="m_contentRichTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;m_searchListView.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_toolStrip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_indexTreeView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 412</value>
+  </data>
+  <data name="m_contentRichTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 369</value>
+  </data>
+  <data name="&gt;&gt;m_noContentMessageBox.Name" xml:space="preserve">
+    <value>m_noContentMessageBox</value>
+  </data>
+  <data name="&gt;&gt;m_searchListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_searchListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="&gt;&gt;m_indexTreeView.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_topicTreeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="m_splitContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="m_topicTreeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;m_toolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>tIDE Help</value>
+  </data>
+  <data name="m_helpIndexButton.Text" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 387</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_searchTextbox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;m_searchTextbox.Name" xml:space="preserve">
+    <value>m_searchTextbox</value>
+  </data>
+  <data name="&gt;&gt;m_contentRichTextBox.Parent" xml:space="preserve">
+    <value>m_contentPanel</value>
+  </data>
+  <data name="m_topicTreeView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_helpSearchButton.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="m_badContentMessageBox.Caption" xml:space="preserve">
+    <value>Load Help Content</value>
+  </data>
+  <data name="m_searchTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 25</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainer.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;m_badContentMessageBox.Name" xml:space="preserve">
+    <value>m_badContentMessageBox</value>
+  </data>
+  <data name="&gt;&gt;m_helpSearchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_contentPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="m_contentRichTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="m_badContentMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
+  <data name="m_indexTreeView.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_indexTreeView.Name" xml:space="preserve">
+    <value>m_indexTreeView</value>
+  </data>
+  <data name="&gt;&gt;m_contentPanel.Name" xml:space="preserve">
+    <value>m_contentPanel</value>
+  </data>
+  <data name="m_searchListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="m_topicTreeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
+  <data name="m_searchTextbox.Text" xml:space="preserve">
+    <value>entrez des critères de recherche ici</value>
   </data>
-  <data name="m_topicTreeView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 0, 4</value>
+  <data name="m_toolStripContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 412</value>
+  </data>
+  <data name="m_contentRichTextBox.Text" xml:space="preserve">
+    <value>Content Pane</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.Name" xml:space="preserve">
+    <value>m_toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;m_helpSearchButton.Name" xml:space="preserve">
+    <value>m_helpSearchButton</value>
+  </data>
+  <data name="m_noContentMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_splitContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_noContentMessageBox.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_helpContentsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Parent" xml:space="preserve">
+    <value>m_toolStripContainer.ContentPanel</value>
+  </data>
+  <data name="m_contentPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_splitContainer.SplitterDistance" type="System.Int32, mscorlib">
+    <value>194</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_topicTreeView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>HelpForm</value>
+  </data>
+  <data name="m_searchListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 379</value>
+  </data>
+  <data name="&gt;&gt;m_searchListView.Name" xml:space="preserve">
+    <value>m_searchListView</value>
+  </data>
+  <data name="m_toolStripContainer.ContentPanel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="m_topicTreeView.Nodes" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -173,494 +399,157 @@
         U3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVO
         b2RlAgAAAAIAAAAGIAAAAA9FZGl0aW5nIFRvb2xib3gGIQAAAA5FZGl0aW5nVG9vbGJveAD/////CQUA
         AAD/////CQUAAAAGAAAACSMAAAAJJAAAAAklAAAACSYAAAAJJwAAAAkoAAAABikAAAASSGVscEVkaXRp
-        bmdUb29sYm94BQoAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUVAAAABFRleHQETmFtZQlJ
+        bmdUb29sYm94BQoAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUWAAAABFRleHQETmFtZQlJ
         c0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFn
         ZUtleQpDaGlsZENvdW50CWNoaWxkcmVuMAljaGlsZHJlbjEJY2hpbGRyZW4yCWNoaWxkcmVuMwljaGls
         ZHJlbjQJY2hpbGRyZW41CWNoaWxkcmVuNgljaGlsZHJlbjcJY2hpbGRyZW44CWNoaWxkcmVuOQpjaGls
-        ZHJlbjEwCmNoaWxkcmVuMTEIVXNlckRhdGEBAQAAAQABAAQEBAQEBAQEBAQEBAEBCAgIHVN5c3RlbS5X
-        aW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQIAAAAd
-        U3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVO
-        b2RlAgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQIAAAAdU3lzdGVtLldpbmRvd3MuRm9y
-        bXMuVHJlZU5vZGUCAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAAAB1TeXN0ZW0uV2lu
-        ZG93cy5Gb3Jtcy5UcmVlTm9kZQIAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAHVN5
-        c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9k
-        ZQIAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAAgAAAAYqAAAAFERpYWxvZyBCb3gg
-        UmVmZXJlbmNlBisAAAASRGlhbG9nQm94UmVmZXJlbmNlAP////8JBQAAAP////8JBQAAAAwAAAAJLQAA
-        AAkuAAAACS8AAAAJMAAAAAkxAAAACTIAAAAJMwAAAAk0AAAACTUAAAAJNgAAAAk3AAAACTgAAAAGOQAA
-        ABZIZWxwRGlhbG9nQm94UmVmZXJlbmNlBRcAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJ
-        AAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5k
-        ZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGOgAA
-        ABZGaWxlIENvbW1hbmQgUmVmZXJlbmNlBjsAAAAURmlsZUNvbW1hbmRSZWZlcmVuY2UA/////wkFAAAA
-        /////wkFAAAAAAAAAAY9AAAAGEhlbHBGaWxlQ29tbWFuZFJlZmVyZW5jZQUYAAAAHVN5c3RlbS5XaW5k
-        b3dzLkZvcm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VL
-        ZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEB
-        AAABAAEAAQEICAgCAAAABj4AAAAWRWRpdCBDb21tYW5kIFJlZmVyZW5jZQY/AAAAFEVkaXRDb21tYW5k
-        UmVmZXJlbmNlAP////8JBQAAAP////8JBQAAAAAAAAAGQQAAABhIZWxwRWRpdENvbW1hbmRSZWZlcmVu
-        Y2UFGQAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tl
-        ZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNo
-        aWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAZCAAAAFlZpZXcgQ29tbWFuZCBSZWZlcmVu
-        Y2UGQwAAABRWaWV3Q29tbWFuZFJlZmVyZW5jZQD/////CQUAAAD/////CQUAAAAAAAAABkUAAAAYSGVs
-        cFZpZXdDb21tYW5kUmVmZXJlbmNlBRoAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAA
-        BFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQ
-        U2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGRgAAABVN
-        YXAgQ29tbWFuZCBSZWZlcmVuY2UGRwAAABNNYXBDb21tYW5kUmVmZXJlbmNlAP////8JBQAAAP////8J
-        BQAAAAAAAAAGSQAAABdIZWxwTWFwQ29tbWFuZFJlZmVyZW5jZQUbAAAAHVN5c3RlbS5XaW5kb3dzLkZv
-        cm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2Vs
-        ZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEA
-        AQEICAgCAAAABkoAAAAXTGF5ZXIgQ29tbWFuZCBSZWZlcmVuY2UGSwAAABVMYXllckNvbW1hbmRSZWZl
-        cmVuY2UA/////wkFAAAA/////wkFAAAAAAAAAAZNAAAAGUhlbHBMYXllckNvbW1hbmRSZWZlcmVuY2UF
-        HAAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJ
-        bWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxk
-        Q291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAZOAAAAHFRpbGUgU2hlZXQgQ29tbWFuZCBSZWZl
-        cmVuY2UGTwAAABlUaWxlU2hlZXRDb21tYW5kUmVmZXJlbmNlAP////8JBQAAAP////8JBQAAAAAAAAAG
-        UQAAAB1IZWxwVGlsZVNoZWV0Q29tbWFuZFJlZmVyZW5jZQUdAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1z
+        ZHJlbjEwCmNoaWxkcmVuMTEKY2hpbGRyZW4xMghVc2VyRGF0YQEBAAABAAEABAQEBAQEBAQEBAQEBAEB
+        CAgIHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5U
+        cmVlTm9kZQIAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAHVN5c3RlbS5XaW5kb3dz
+        LkZvcm1zLlRyZWVOb2RlAgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQIAAAAdU3lzdGVt
+        LldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAA
+        AB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQIAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJl
+        ZU5vZGUCAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAAAB1TeXN0ZW0uV2luZG93cy5G
+        b3Jtcy5UcmVlTm9kZQIAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUCAAAAHVN5c3RlbS5X
+        aW5kb3dzLkZvcm1zLlRyZWVOb2RlAgAAAAIAAAAGKgAAABREaWFsb2cgQm94IFJlZmVyZW5jZQYrAAAA
+        EkRpYWxvZ0JveFJlZmVyZW5jZQD/////CQUAAAD/////CQUAAAANAAAACS0AAAAJLgAAAAkvAAAACTAA
+        AAAJMQAAAAkyAAAACTMAAAAJNAAAAAk1AAAACTYAAAAJNwAAAAk4AAAACTkAAAAGOgAAABZIZWxwRGlh
+        bG9nQm94UmVmZXJlbmNlBRcAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQE
+        TmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0
+        ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGOwAAABZGaWxlIENv
+        bW1hbmQgUmVmZXJlbmNlBjwAAAAURmlsZUNvbW1hbmRSZWZlcmVuY2UA/////wkFAAAA/////wkFAAAA
+        AAAAAAY+AAAAGEhlbHBGaWxlQ29tbWFuZFJlZmVyZW5jZQUYAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1z
         LlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0
         ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEI
-        CAgCAAAABlIAAAAYUGx1Z2luIENvbW1hbmQgUmVmZXJlbmNlBlMAAAAWUGx1Z2luQ29tbWFuZFJlZmVy
-        ZW5jZQD/////CQUAAAD/////CQUAAAAAAAAABlUAAAAaSGVscFBsdWdpbkNvbW1hbmRSZWZlcmVuY2UF
-        HgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJ
-        bWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxk
-        Q291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAZWAAAAFkhlbHAgQ29tbWFuZCBSZWZlcmVuY2UG
-        VwAAABRIZWxwQ29tbWFuZFJlZmVyZW5jZQD/////CQUAAAD/////CQUAAAAAAAAABlkAAAAYSGVscEhl
-        bHBDb21tYW5kUmVmZXJlbmNlBSMAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRl
-        eHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2Vs
-        ZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGWgAAABNUaWxl
-        IFNlbGVjdGlvbiBUb29sBlsAAAARVGlsZVNlbGVjdGlvblRvb2wA/////wkFAAAA/////wkFAAAAAAAA
-        AAZdAAAAFUhlbHBUaWxlU2VsZWN0aW9uVG9vbAUkAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVO
+        CAgCAAAABj8AAAAWRWRpdCBDb21tYW5kIFJlZmVyZW5jZQZAAAAAFEVkaXRDb21tYW5kUmVmZXJlbmNl
+        AP////8JBQAAAP////8JBQAAAAAAAAAGQgAAABhIZWxwRWRpdENvbW1hbmRSZWZlcmVuY2UFGQAAAB1T
+        eXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUlu
+        ZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQI
+        VXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAZDAAAAFlZpZXcgQ29tbWFuZCBSZWZlcmVuY2UGRAAAABRW
+        aWV3Q29tbWFuZFJlZmVyZW5jZQD/////CQUAAAD/////CQUAAAAAAAAABkYAAAAYSGVscFZpZXdDb21t
+        YW5kUmVmZXJlbmNlBRoAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFt
+        ZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJ
+        bWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGRwAAABVNYXAgQ29tbWFu
+        ZCBSZWZlcmVuY2UGSAAAABNNYXBDb21tYW5kUmVmZXJlbmNlAP////8JBQAAAP////8JBQAAAAAAAAAG
+        SgAAABdIZWxwTWFwQ29tbWFuZFJlZmVyZW5jZQUbAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVO
         b2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFn
         ZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAA
-        Bl4AAAATVGlsZSBQbGFjZW1lbnQgVG9vbAZfAAAAEVRpbGVQbGFjZW1lbnRUb29sAP////8JBQAAAP//
-        //8JBQAAAAAAAAAGYQAAABVIZWxwVGlsZVBsYWNlbWVudFRvb2wFJQAAAB1TeXN0ZW0uV2luZG93cy5G
-        b3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNl
-        bGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQAB
-        AAEBCAgIAgAAAAZiAAAAD1RpbGUgQmxvY2sgVG9vbAZjAAAADVRpbGVCbG9ja1Rvb2wA/////wkFAAAA
-        /////wkFAAAAAAAAAAZlAAAAEUhlbHBUaWxlQmxvY2tUb29sBSYAAAAdU3lzdGVtLldpbmRvd3MuRm9y
-        bXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxl
-        Y3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQAB
-        AQgICAIAAAAGZgAAABBUaWxlIEVyYXNlciBUb29sBmcAAAAOVGlsZUVyYXNlclRvb2wA/////wkFAAAA
-        /////wkFAAAAAAAAAAZpAAAAEkhlbHBUaWxlRXJhc2VyVG9vbAUnAAAAHVN5c3RlbS5XaW5kb3dzLkZv
-        cm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2Vs
-        ZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEA
-        AQEICAgCAAAABmoAAAARVGlsZSBQaWNraW5nIFRvb2wGawAAAA9UaWxlUGlja2luZ1Rvb2wA/////wkF
-        AAAA/////wkFAAAAAAAAAAZtAAAAE0hlbHBUaWxlUGlja2luZ1Rvb2wFKAAAAB1TeXN0ZW0uV2luZG93
-        cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5
-        ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAA
-        AQABAAEBCAgIAgAAAAZuAAAAD1RpbGUgQnJ1c2ggVG9vbAZvAAAADVRpbGVCcnVzaFRvb2wA/////wkF
-        AAAA/////wkFAAAAAAAAAAZxAAAAEUhlbHBUaWxlQnJ1c2hUb29sBS0AAAAdU3lzdGVtLldpbmRvd3Mu
-        Rm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJT
-        ZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEA
-        AQABAQgICAIAAAAGcgAAABBPcGVuIEZpbGUgRGlhbG9nBnMAAAAOT3BlbkZpbGVEaWFsb2cA/////wkF
-        AAAA/////wkFAAAAAAAAAAZ1AAAAEkhlbHBPcGVuRmlsZURpYWxvZwUuAAAAHVN5c3RlbS5XaW5kb3dz
-        LkZvcm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkS
-        U2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAAB
-        AAEAAQEICAgCAAAABnYAAAAQU2F2ZSBGaWxlIERpYWxvZwZ3AAAADlNhdmVGaWxlRGlhbG9nAP////8J
-        BQAAAP////8JBQAAAAAAAAAGeQAAABJIZWxwU2F2ZUZpbGVEaWFsb2cFLwAAAB1TeXN0ZW0uV2luZG93
-        cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5
-        ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAA
-        AQABAAEBCAgIAgAAAAZ6AAAAFU1hcCBQcm9wZXJ0aWVzIERpYWxvZwZ7AAAAE01hcFByb3BlcnRpZXNE
-        aWFsb2cA/////wkFAAAA/////wkFAAAAAAAAAAZ9AAAAF0hlbHBNYXBQcm9wZXJ0aWVzRGlhbG9nBTAA
-        AAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1h
-        Z2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENv
-        dW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGfgAAABVNYXAgU3RhdGlzdGljcyBEaWFsb2cGfwAA
-        ABNNYXBTdGF0aXN0aWNzRGlhbG9nAP////8JBQAAAP////8JBQAAAAAAAAAGgQAAABdIZWxwTWFwU3Rh
-        dGlzdGljc0RpYWxvZwUxAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlCQAAAARUZXh0BE5h
-        bWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVk
-        SW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAABoIAAAAWQ29tbWFuZCBI
-        aXN0b3J5IERpYWxvZwaDAAAAFENvbW1hbmRIaXN0b3J5RGlhbG9nAP////8JBQAAAP////8JBQAAAAAA
-        AAAGhQAAABhIZWxwQ29tbWFuZEhpc3RvcnlEaWFsb2cFMgAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5U
-        cmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVk
-        SW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgI
-        AgAAAAaGAAAAF0xheWVyIFByb3BlcnRpZXMgRGlhbG9nBocAAAAVTGF5ZXJQcm9wZXJ0aWVzRGlhbG9n
-        AP////8JBQAAAP////8JBQAAAAAAAAAGiQAAABlIZWxwTGF5ZXJQcm9wZXJ0aWVzRGlhbG9nBTMAAAAd
-        U3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJ
-        bmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50
-        CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGigAAABxUaWxlIFNoZWV0IFByb3BlcnRpZXMgRGlhbG9n
-        BosAAAAZVGlsZVNoZWV0UHJvcGVydGllc0RpYWxvZwD/////CQUAAAD/////CQUAAAAAAAAABo0AAAAd
-        SGVscFRpbGVTaGVldFByb3BlcnRpZXNEaWFsb2cFNAAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVl
-        Tm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1h
-        Z2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAA
-        AAaOAAAAFlRpbGUgUHJvcGVydGllcyBEaWFsb2cGjwAAABRUaWxlUHJvcGVydGllc0RpYWxvZwD/////
-        CQUAAAD/////CQUAAAAAAAAABpEAAAAYSGVscFRpbGVQcm9wZXJ0aWVzRGlhbG9nBTUAAAAdU3lzdGVt
-        LldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJ
-        bWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJE
-        YXRhAQEAAAEAAQABAQgICAIAAAAGkgAAABVUaWxlIEFuaW1hdGlvbiBEaWFsb2cGkwAAABNUaWxlQW5p
-        bWF0aW9uRGlhbG9nAP////8JBQAAAP////8JBQAAAAAAAAAGlQAAABdIZWxwVGlsZUFuaW1hdGlvbkRp
-        YWxvZwU2AAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVj
-        a2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkK
-        Q2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAABpYAAAARVGlsZSBCcnVzaCBEaWFsb2cG
-        lwAAAA9UaWxlQnJ1c2hEaWFsb2cA/////wkFAAAA/////wkFAAAAAAAAAAaZAAAAE0hlbHBUaWxlQnJ1
-        c2hEaWFsb2cFNwAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlz
-        Q2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdl
-        S2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAaaAAAAElBsdWdpbiBJbmZvIERp
-        YWxvZwabAAAAEFBsdWdpbkluZm9EaWFsb2cA/////wkFAAAA/////wkFAAAAAAAAAAadAAAAFEhlbHBQ
-        bHVnaW5JbmZvRGlhbG9nBTgAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQE
-        TmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0
-        ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGngAAAAxBYm91dCBE
-        aWFsb2cGnwAAAAtBYm91dERpYWxvZwD/////CQUAAAD/////CQUAAAAAAAAABqEAAAAPSGVscEFib3V0
-        RGlhbG9nCw==
-</value>
-  </data>
-  <data name="m_topicTreeView.Nodes1" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAB1TeXN0
+        BksAAAAXTGF5ZXIgQ29tbWFuZCBSZWZlcmVuY2UGTAAAABVMYXllckNvbW1hbmRSZWZlcmVuY2UA////
+        /wkFAAAA/////wkFAAAAAAAAAAZOAAAAGUhlbHBMYXllckNvbW1hbmRSZWZlcmVuY2UFHAAAAB1TeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4
         CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNl
-        ckRhdGEBAQAAAQABAAEBCAgIAgAAAAYDAAAAHnhUaWxlL1hOQSBJbnRlZ3JhdGlvbiBUdXRvcmlhbAYE
-        AAAABXhUaWxlAP////8GBQAAAAD/////CQUAAAAAAAAABgYAAAAPSGVscFhuYVR1dG9yaWFsCw==
+        ckRhdGEBAQAAAQABAAEBCAgIAgAAAAZPAAAAHFRpbGUgU2hlZXQgQ29tbWFuZCBSZWZlcmVuY2UGUAAA
+        ABlUaWxlU2hlZXRDb21tYW5kUmVmZXJlbmNlAP////8JBQAAAP////8JBQAAAAAAAAAGUgAAAB1IZWxw
+        VGlsZVNoZWV0Q29tbWFuZFJlZmVyZW5jZQUdAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2Rl
+        CQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUlu
+        ZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAABlMA
+        AAAYUGx1Z2luIENvbW1hbmQgUmVmZXJlbmNlBlQAAAAWUGx1Z2luQ29tbWFuZFJlZmVyZW5jZQD/////
+        CQUAAAD/////CQUAAAAAAAAABlYAAAAaSGVscFBsdWdpbkNvbW1hbmRSZWZlcmVuY2UFHgAAAB1TeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4
+        CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNl
+        ckRhdGEBAQAAAQABAAEBCAgIAgAAAAZXAAAAFkhlbHAgQ29tbWFuZCBSZWZlcmVuY2UGWAAAABRIZWxw
+        Q29tbWFuZFJlZmVyZW5jZQD/////CQUAAAD/////CQUAAAAAAAAABloAAAAYSGVscEhlbHBDb21tYW5k
+        UmVmZXJlbmNlBSMAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJ
+        c0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFn
+        ZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGWwAAABNUaWxlIFNlbGVjdGlv
+        biBUb29sBlwAAAARVGlsZVNlbGVjdGlvblRvb2wA/////wkFAAAA/////wkFAAAAAAAAAAZeAAAAFUhl
+        bHBUaWxlU2VsZWN0aW9uVG9vbAUkAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlCQAAAARU
+        ZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNl
+        bGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAABl8AAAATVGls
+        ZSBQbGFjZW1lbnQgVG9vbAZgAAAAEVRpbGVQbGFjZW1lbnRUb29sAP////8JBQAAAP////8JBQAAAAAA
+        AAAGYgAAABVIZWxwVGlsZVBsYWNlbWVudFRvb2wFJQAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVl
+        Tm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1h
+        Z2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAA
+        AAZjAAAAD1RpbGUgQmxvY2sgVG9vbAZkAAAADVRpbGVCbG9ja1Rvb2wA/////wkFAAAA/////wkFAAAA
+        AAAAAAZmAAAAEUhlbHBUaWxlQmxvY2tUb29sBSYAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5v
+        ZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdl
+        SW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAG
+        ZwAAABBUaWxlIEVyYXNlciBUb29sBmgAAAAOVGlsZUVyYXNlclRvb2wA/////wkFAAAA/////wkFAAAA
+        AAAAAAZqAAAAEkhlbHBUaWxlRXJhc2VyVG9vbAUnAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVO
+        b2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFn
+        ZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAA
+        BmsAAAARVGlsZSBQaWNraW5nIFRvb2wGbAAAAA9UaWxlUGlja2luZ1Rvb2wA/////wkFAAAA/////wkF
+        AAAAAAAAAAZuAAAAE0hlbHBUaWxlUGlja2luZ1Rvb2wFKAAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5U
+        cmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVk
+        SW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgI
+        AgAAAAZvAAAAD1RpbGUgQnJ1c2ggVG9vbAZwAAAADVRpbGVCcnVzaFRvb2wA/////wkFAAAA/////wkF
+        AAAAAAAAAAZyAAAAEUhlbHBUaWxlQnJ1c2hUb29sBS0AAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJl
+        ZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZElt
+        YWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIA
+        AAAGcwAAABBPcGVuIEZpbGUgRGlhbG9nBnQAAAAOT3BlbkZpbGVEaWFsb2cA/////wkFAAAA/////wkF
+        AAAAAAAAAAZ2AAAAEkhlbHBPcGVuRmlsZURpYWxvZwUuAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRy
+        ZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJ
+        bWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgC
+        AAAABncAAAAQU2F2ZSBGaWxlIERpYWxvZwZ4AAAADlNhdmVGaWxlRGlhbG9nAP////8JBQAAAP////8J
+        BQAAAAAAAAAGegAAABJIZWxwU2F2ZUZpbGVEaWFsb2cFLwAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5U
+        cmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVk
+        SW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgI
+        AgAAAAZ7AAAADk9wdGlvbnMgRGlhbG9nBnwAAAANT3B0aW9uc0RpYWxvZwD/////CQUAAAD/////CQUA
+        AAAAAAAABn4AAAARSGVscE9wdGlvbnNkaWFsb2cFMAAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVl
+        Tm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1h
+        Z2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAA
+        AAZ/AAAAFU1hcCBQcm9wZXJ0aWVzIERpYWxvZwaAAAAAE01hcFByb3BlcnRpZXNEaWFsb2cA/////wkF
+        AAAA/////wkFAAAAAAAAAAaCAAAAF0hlbHBNYXBQcm9wZXJ0aWVzRGlhbG9nBTEAAAAdU3lzdGVtLldp
+        bmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFn
+        ZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRh
+        AQEAAAEAAQABAQgICAIAAAAGgwAAABVNYXAgU3RhdGlzdGljcyBEaWFsb2cGhAAAABNNYXBTdGF0aXN0
+        aWNzRGlhbG9nAP////8JBQAAAP////8JBQAAAAAAAAAGhgAAABdIZWxwTWFwU3RhdGlzdGljc0RpYWxv
+        ZwUyAAAAHVN5c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2Vk
+        CkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hp
+        bGRDb3VudAhVc2VyRGF0YQEBAAABAAEAAQEICAgCAAAABocAAAAWQ29tbWFuZCBIaXN0b3J5IERpYWxv
+        ZwaIAAAAFENvbW1hbmRIaXN0b3J5RGlhbG9nAP////8JBQAAAP////8JBQAAAAAAAAAGigAAABhIZWxw
+        Q29tbWFuZEhpc3RvcnlEaWFsb2cFMwAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAE
+        VGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBT
+        ZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAaLAAAAF0xh
+        eWVyIFByb3BlcnRpZXMgRGlhbG9nBowAAAAVTGF5ZXJQcm9wZXJ0aWVzRGlhbG9nAP////8JBQAAAP//
+        //8JBQAAAAAAAAAGjgAAABlIZWxwTGF5ZXJQcm9wZXJ0aWVzRGlhbG9nBTQAAAAdU3lzdGVtLldpbmRv
+        d3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtl
+        eRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEA
+        AAEAAQABAQgICAIAAAAGjwAAABxUaWxlIFNoZWV0IFByb3BlcnRpZXMgRGlhbG9nBpAAAAAZVGlsZVNo
+        ZWV0UHJvcGVydGllc0RpYWxvZwD/////CQUAAAD/////CQUAAAAAAAAABpIAAAAdSGVscFRpbGVTaGVl
+        dFByb3BlcnRpZXNEaWFsb2cFNQAAAB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4
+        dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxl
+        Y3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAaTAAAAFlRpbGUg
+        UHJvcGVydGllcyBEaWFsb2cGlAAAABRUaWxlUHJvcGVydGllc0RpYWxvZwD/////CQUAAAD/////CQUA
+        AAAAAAAABpYAAAAYSGVscFRpbGVQcm9wZXJ0aWVzRGlhbG9nBTYAAAAdU3lzdGVtLldpbmRvd3MuRm9y
+        bXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNrZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxl
+        Y3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpDaGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQAB
+        AQgICAIAAAAGlwAAABVUaWxlIEFuaW1hdGlvbiBEaWFsb2cGmAAAABNUaWxlQW5pbWF0aW9uRGlhbG9n
+        AP////8JBQAAAP////8JBQAAAAAAAAAGmgAAABdIZWxwVGlsZUFuaW1hdGlvbkRpYWxvZwU3AAAAHVN5
+        c3RlbS5XaW5kb3dzLkZvcm1zLlRyZWVOb2RlCQAAAARUZXh0BE5hbWUJSXNDaGVja2VkCkltYWdlSW5k
+        ZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1hZ2VLZXkKQ2hpbGRDb3VudAhV
+        c2VyRGF0YQEBAAABAAEAAQEICAgCAAAABpsAAAARVGlsZSBCcnVzaCBEaWFsb2cGnAAAAA9UaWxlQnJ1
+        c2hEaWFsb2cA/////wkFAAAA/////wkFAAAAAAAAAAaeAAAAE0hlbHBUaWxlQnJ1c2hEaWFsb2cFOAAA
+        AB1TeXN0ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFn
+        ZUluZGV4CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291
+        bnQIVXNlckRhdGEBAQAAAQABAAEBCAgIAgAAAAafAAAAElBsdWdpbiBJbmZvIERpYWxvZwagAAAAEFBs
+        dWdpbkluZm9EaWFsb2cA/////wkFAAAA/////wkFAAAAAAAAAAaiAAAAFEhlbHBQbHVnaW5JbmZvRGlh
+        bG9nBTkAAAAdU3lzdGVtLldpbmRvd3MuRm9ybXMuVHJlZU5vZGUJAAAABFRleHQETmFtZQlJc0NoZWNr
+        ZWQKSW1hZ2VJbmRleAhJbWFnZUtleRJTZWxlY3RlZEltYWdlSW5kZXgQU2VsZWN0ZWRJbWFnZUtleQpD
+        aGlsZENvdW50CFVzZXJEYXRhAQEAAAEAAQABAQgICAIAAAAGowAAAAxBYm91dCBEaWFsb2cGpAAAAAtB
+        Ym91dERpYWxvZwD/////CQUAAAD/////CQUAAAAAAAAABqYAAAAPSGVscEFib3V0RGlhbG9nCw==
 </value>
-  </data>
-  <data name="m_topicTreeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 379</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_topicTreeView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_topicTreeView.Name" xml:space="preserve">
-    <value>m_topicTreeView</value>
-  </data>
-  <data name="&gt;&gt;m_topicTreeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_topicTreeView.Parent" xml:space="preserve">
-    <value>m_splitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_topicTreeView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_indexTreeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_indexTreeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="m_indexTreeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 379</value>
-  </data>
-  <data name="m_indexTreeView.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_indexTreeView.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_indexTreeView.Name" xml:space="preserve">
-    <value>m_indexTreeView</value>
-  </data>
-  <data name="&gt;&gt;m_indexTreeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_indexTreeView.Parent" xml:space="preserve">
-    <value>m_splitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_indexTreeView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_searchListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_searchListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="m_searchListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 379</value>
-  </data>
-  <data name="m_searchListView.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_searchListView.Name" xml:space="preserve">
-    <value>m_searchListView</value>
-  </data>
-  <data name="&gt;&gt;m_searchListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_searchListView.Parent" xml:space="preserve">
-    <value>m_splitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_searchListView.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_splitContainer.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 0, 4</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel1.Name" xml:space="preserve">
-    <value>m_splitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel1.Parent" xml:space="preserve">
-    <value>m_splitContainer</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_contentPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="m_contentRichTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="m_contentRichTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="m_contentRichTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="m_contentRichTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 369</value>
-  </data>
-  <data name="m_contentRichTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="m_contentRichTextBox.Text" xml:space="preserve">
-    <value>Content Pane</value>
-  </data>
-  <data name="&gt;&gt;m_contentRichTextBox.Name" xml:space="preserve">
-    <value>m_contentRichTextBox</value>
-  </data>
-  <data name="&gt;&gt;m_contentRichTextBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomRichTextBox, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_contentRichTextBox.Parent" xml:space="preserve">
-    <value>m_contentPanel</value>
-  </data>
-  <data name="&gt;&gt;m_contentRichTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_contentPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 4</value>
-  </data>
-  <data name="m_contentPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="m_contentPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="m_contentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 379</value>
-  </data>
-  <data name="m_contentPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_contentPanel.Name" xml:space="preserve">
-    <value>m_contentPanel</value>
-  </data>
-  <data name="&gt;&gt;m_contentPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_contentPanel.Parent" xml:space="preserve">
-    <value>m_splitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;m_contentPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.Name" xml:space="preserve">
-    <value>m_splitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.Parent" xml:space="preserve">
-    <value>m_splitContainer</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_splitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 387</value>
-  </data>
-  <data name="m_splitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>194</value>
-  </data>
-  <data name="m_splitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Name" xml:space="preserve">
-    <value>m_splitContainer</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.Parent" xml:space="preserve">
-    <value>m_toolStripContainer.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;m_splitContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainer.BottomToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.Parent" xml:space="preserve">
-    <value>m_toolStripContainer</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="m_toolStripContainer.ContentPanel.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 387</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainer.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.Parent" xml:space="preserve">
-    <value>m_toolStripContainer</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_toolStripContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainer.LeftToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.Parent" xml:space="preserve">
-    <value>m_toolStripContainer</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_toolStripContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainer.RightToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.Parent" xml:space="preserve">
-    <value>m_toolStripContainer</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_toolStripContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 412</value>
-  </data>
-  <data name="m_toolStripContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <metadata name="m_toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 0</value>
-  </metadata>
-  <data name="m_toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="m_helpContentsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_helpContentsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
-  </data>
-  <data name="m_helpContentsButton.Text" xml:space="preserve">
-    <value>Contenu</value>
-  </data>
-  <data name="m_helpIndexButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_helpIndexButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 22</value>
-  </data>
-  <data name="m_helpIndexButton.Text" xml:space="preserve">
-    <value>Indice</value>
-  </data>
-  <data name="m_helpSearchButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="m_helpSearchButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 22</value>
-  </data>
-  <data name="m_helpSearchButton.Text" xml:space="preserve">
-    <value>Recherchez</value>
-  </data>
-  <data name="m_searchTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 25</value>
-  </data>
-  <data name="m_searchTextbox.Text" xml:space="preserve">
-    <value>entrez des critères de recherche ici</value>
-  </data>
-  <data name="m_searchTextbox.ToolTipText" xml:space="preserve">
-    <value>Entrez des critères de recherche ici</value>
-  </data>
-  <data name="m_searchTextbox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="m_toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 25</value>
   </data>
   <data name="m_toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;m_toolStrip.Name" xml:space="preserve">
-    <value>m_toolStrip</value>
-  </data>
-  <data name="&gt;&gt;m_toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStrip.Parent" xml:space="preserve">
-    <value>m_toolStripContainer.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_toolStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Name" xml:space="preserve">
-    <value>m_toolStripContainer.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Parent" xml:space="preserve">
-    <value>m_toolStripContainer</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.Name" xml:space="preserve">
-    <value>m_toolStripContainer</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_toolStripContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="m_noContentMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>117, 0</value>
-  </metadata>
   <data name="m_noContentMessageBox.Caption" xml:space="preserve">
     <value>Load Help Content</value>
   </data>
-  <data name="m_noContentMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
-    <value>0</value>
+  <data name="m_contentRichTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="m_splitContainer.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 0, 4</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 412</value>
+  <data name="m_badContentMessageBox.Text" xml:space="preserve">
+    <value>Content resource "[m_resourceName]" is in the wrong format</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="m_toolStripContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1165,70 +1054,185 @@
         9v8AAPz/AABczAAAAEoAAOPsAAD//wAAr/8AADH/gAA5/4ABN//AAzP/8A8z/w==
 </value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>200, 150</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>tIDE Aide</value>
-  </data>
-  <data name="&gt;&gt;m_helpContentsButton.Name" xml:space="preserve">
-    <value>m_helpContentsButton</value>
-  </data>
-  <data name="&gt;&gt;m_helpContentsButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_helpIndexButton.Name" xml:space="preserve">
-    <value>m_helpIndexButton</value>
-  </data>
-  <data name="&gt;&gt;m_helpIndexButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_helpSearchButton.Name" xml:space="preserve">
-    <value>m_helpSearchButton</value>
-  </data>
-  <data name="&gt;&gt;m_helpSearchButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_searchTextbox.Name" xml:space="preserve">
-    <value>m_searchTextbox</value>
-  </data>
-  <data name="&gt;&gt;m_searchTextbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_noContentMessageBox.Name" xml:space="preserve">
-    <value>m_noContentMessageBox</value>
-  </data>
-  <data name="&gt;&gt;m_noContentMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_badContentMessageBox.Name" xml:space="preserve">
-    <value>m_badContentMessageBox</value>
-  </data>
-  <data name="&gt;&gt;m_badContentMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>HelpForm</value>
+  <data name="m_indexTreeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;m_toolStripContainer.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_contentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainer.BottomToolStripPanel</value>
+  </data>
+  <data name="m_contentPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="m_noContentMessageBox.Text" xml:space="preserve">
     <value>Content resource "[m_resourceName]" is not defined</value>
   </data>
+  <data name="m_contentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 379</value>
+  </data>
+  <data name="m_topicTreeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 379</value>
+  </data>
+  <data name="&gt;&gt;m_contentPanel.Parent" xml:space="preserve">
+    <value>m_splitContainer.Panel2</value>
+  </data>
+  <data name="m_searchListView.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_topicTreeView.Name" xml:space="preserve">
+    <value>m_topicTreeView</value>
+  </data>
+  <data name="m_indexTreeView.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_toolStripContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;m_searchListView.Parent" xml:space="preserve">
+    <value>m_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_topicTreeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="m_contentPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 4</value>
+  </data>
+  <data name="&gt;&gt;m_badContentMessageBox.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_searchTextbox.ToolTipText" xml:space="preserve">
+    <value>Entrez des critères de recherche ici</value>
+  </data>
+  <data name="m_helpSearchButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_toolStripContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_searchTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.ContentPanel.Name" xml:space="preserve">
+    <value>m_toolStripContainer.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;m_helpIndexButton.Name" xml:space="preserve">
+    <value>m_helpIndexButton</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel1.Name" xml:space="preserve">
+    <value>m_splitContainer.Panel1</value>
+  </data>
+  <data name="m_helpContentsButton.Text" xml:space="preserve">
+    <value>Contents</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>m_toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel2.Name" xml:space="preserve">
+    <value>m_splitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;m_indexTreeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel2.Parent" xml:space="preserve">
+    <value>m_splitContainer</value>
+  </data>
+  <data name="m_toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 25</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>m_toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;m_topicTreeView.Parent" xml:space="preserve">
+    <value>m_splitContainer.Panel1</value>
+  </data>
+  <data name="m_topicTreeView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="&gt;&gt;m_helpContentsButton.Name" xml:space="preserve">
+    <value>m_helpContentsButton</value>
+  </data>
+  <data name="&gt;&gt;m_indexTreeView.Parent" xml:space="preserve">
+    <value>m_splitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;m_splitContainer.Panel1.Parent" xml:space="preserve">
+    <value>m_splitContainer</value>
+  </data>
+  <data name="&gt;&gt;m_toolStrip.Name" xml:space="preserve">
+    <value>m_toolStrip</value>
+  </data>
+  <data name="m_helpIndexButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 22</value>
+  </data>
+  <data name="m_toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="m_helpIndexButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="m_contentPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="m_splitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;m_contentRichTextBox.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomRichTextBox, tIDE, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_toolStripContainer.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>m_toolStripContainer</value>
+  </data>
+  <data name="&gt;&gt;m_helpIndexButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_toolStrip.Parent" xml:space="preserve">
+    <value>m_toolStripContainer.TopToolStripPanel</value>
+  </data>
+  <data name="m_helpSearchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="&gt;&gt;m_helpContentsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_topicTreeView.Nodes1" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAB1TeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQkAAAAEVGV4dAROYW1lCUlzQ2hlY2tlZApJbWFnZUluZGV4
+        CEltYWdlS2V5ElNlbGVjdGVkSW1hZ2VJbmRleBBTZWxlY3RlZEltYWdlS2V5CkNoaWxkQ291bnQIVXNl
+        ckRhdGEBAQAAAQABAAEBCAgIAgAAAAYDAAAAHnhUaWxlL1hOQSBJbnRlZ3JhdGlvbiBUdXRvcmlhbAYE
+        AAAABXhUaWxlAP////8GBQAAAAD/////CQUAAAAAAAAABgYAAAAPSGVscFhuYVR1dG9yaWFsCw==
+</value>
+  </data>
+  <metadata name="m_toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>3, 0</value>
+  </metadata>
+  <metadata name="m_noContentMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>117, 0</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="m_badContentMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>310, 0</value>
   </metadata>
-  <data name="m_badContentMessageBox.Caption" xml:space="preserve">
-    <value>Load Help Content</value>
-  </data>
-  <data name="m_badContentMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
-    <value>0</value>
-  </data>
-  <data name="m_badContentMessageBox.Text" xml:space="preserve">
-    <value>Content resource "[m_resourceName]" is in the wrong format</value>
-  </data>
 </root>
