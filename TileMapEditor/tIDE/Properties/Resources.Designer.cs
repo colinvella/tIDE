@@ -340,6 +340,13 @@ namespace tIDE.Properties {
             }
         }
         
+        internal static byte[] HelpAutoTileDialog {
+            get {
+                object obj = ResourceManager.GetObject("HelpAutoTileDialog", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpCommandHistoryDialog {
             get {
                 object obj = ResourceManager.GetObject("HelpCommandHistoryDialog", resourceCulture);

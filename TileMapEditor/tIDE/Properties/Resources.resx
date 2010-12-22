@@ -535,6 +535,9 @@
   <data name="HelpXnaTutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\XnaTutorial.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="HelpAutoTileDialog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help\AutoTileDialog.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="HelpOptionsDialog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help\OptionsDialog.rtf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
