@@ -532,6 +532,13 @@ namespace tIDE.Properties {
             }
         }
         
+        internal static byte[] HelpOptionsDialog {
+            get {
+                object obj = ResourceManager.GetObject("HelpOptionsDialog", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpPluginCommandReference {
             get {
                 object obj = ResourceManager.GetObject("HelpPluginCommandReference", resourceCulture);
