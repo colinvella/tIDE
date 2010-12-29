@@ -35,13 +35,13 @@
             this.m_indexTreeView = new System.Windows.Forms.TreeView();
             this.m_searchListView = new System.Windows.Forms.ListView();
             this.m_contentPanel = new System.Windows.Forms.Panel();
+            this.m_contentRichTextBox = new tIDE.Controls.CustomRichTextBox();
             this.m_toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_helpContentsButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpIndexButton = new System.Windows.Forms.ToolStripButton();
             this.m_helpSearchButton = new System.Windows.Forms.ToolStripButton();
             this.m_searchTextbox = new System.Windows.Forms.ToolStripTextBox();
-            this.m_contentRichTextBox = new tIDE.Controls.CustomRichTextBox();
             this.m_noContentMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             this.m_badContentMessageBox = new tIDE.Controls.CustomMessageBox(this.components);
             this.m_splitContainer.Panel1.SuspendLayout();
@@ -105,6 +105,17 @@
             this.m_contentPanel.Controls.Add(this.m_contentRichTextBox);
             this.m_contentPanel.Name = "m_contentPanel";
             // 
+            // m_contentRichTextBox
+            // 
+            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
+            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.m_contentRichTextBox.DetectUrls = true;
+            resources.ApplyResources(this.m_contentRichTextBox, "m_contentRichTextBox");
+            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
+            this.m_contentRichTextBox.ReadOnly = true;
+            this.m_contentRichTextBox.SelectionLink = false;
+            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
+            // 
             // m_toolStripContainer
             // 
             // 
@@ -162,17 +173,6 @@
             resources.ApplyResources(this.m_searchTextbox, "m_searchTextbox");
             this.m_searchTextbox.Enter += new System.EventHandler(this.OnEnterSearchTextBox);
             this.m_searchTextbox.TextChanged += new System.EventHandler(this.OnSearchTextChanged);
-            // 
-            // m_contentRichTextBox
-            // 
-            this.m_contentRichTextBox.BackColor = System.Drawing.Color.White;
-            this.m_contentRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.m_contentRichTextBox.DetectUrls = true;
-            resources.ApplyResources(this.m_contentRichTextBox, "m_contentRichTextBox");
-            this.m_contentRichTextBox.Name = "m_contentRichTextBox";
-            this.m_contentRichTextBox.ReadOnly = true;
-            this.m_contentRichTextBox.SelectionLink = false;
-            this.m_contentRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.OnHelpLink);
             // 
             // m_noContentMessageBox
             // 
