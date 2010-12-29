@@ -727,6 +727,7 @@
     <Content Include="Resources\help.ico" />
     <Content Include="Resources\Help.png" />
     <None Include="Resources\Help\AutoTileDialog.rtf" />
+    <None Include="Resources\Help\LayerOffsetDialog.rtf" />
     <None Include="Resources\Help\OptionsDialog.rtf" />
     <None Include="Resources\Help\XnaTutorial.rtf" />
     <None Include="Resources\TileSheetEditImageSource.png" />
