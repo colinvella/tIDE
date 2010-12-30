@@ -567,6 +567,13 @@ namespace tIDE.Properties {
             }
         }
         
+        internal static byte[] HelpSampledTileTool {
+            get {
+                object obj = ResourceManager.GetObject("HelpSampledTileTool", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] HelpSaveFileDialog {
             get {
                 object obj = ResourceManager.GetObject("HelpSaveFileDialog", resourceCulture);

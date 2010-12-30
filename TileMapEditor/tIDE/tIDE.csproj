@@ -729,6 +729,7 @@
     <None Include="Resources\Help\AutoTileDialog.rtf" />
     <None Include="Resources\Help\LayerOffsetDialog.rtf" />
     <None Include="Resources\Help\OptionsDialog.rtf" />
+    <None Include="Resources\Help\SampledTileTool.rtf" />
     <None Include="Resources\Help\XnaTutorial.rtf" />
     <None Include="Resources\TileSheetEditImageSource.png" />
     <None Include="Resources\TileOrderImage.png" />
