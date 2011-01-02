@@ -154,16 +154,19 @@
     <value>784, 413</value>
   </data>
   <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 124</value>
+    <value>188, 75</value>
   </data>
-  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 124</value>
+  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 75</value>
+  </data>
+  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
   </data>
   <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 25</value>
   </data>
-  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 75</value>
+  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 124</value>
   </data>
   <data name="m_toolsSelectButton.Text" xml:space="preserve">
     <value>Select Tiles</value>
@@ -206,6 +209,75 @@
   </data>
   <data name="m_toolsTileBrushButton.ToolTipText" xml:space="preserve">
     <value>Applica un pennello di piastre</value>
+  </data>
+  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
+    <value>Crea un nuovo foglio di piastre</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Accedi gli atributi del foglio piastre selezionato</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
+    <value>Arrangia le auto piastre del foglio selezionato</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
+    <value>Attiva l'auto aggiornamento delle fonti immagine</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
+    <value>Disattiva l'auto aggiornamento delle fonti immagine</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.ToolTipText" xml:space="preserve">
+    <value>Apri l'immagine fonte del foglio di piastre in un'applizione di grafica</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
+    <value>Rimuovi le dipendenze sul foglio piastre selezionato</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Cancella il foglio di piastre selezionato</value>
+  </data>
+  <data name="m_editUndoButton.Text" xml:space="preserve">
+    <value>Disfa</value>
+  </data>
+  <data name="m_editRedoButton.Text" xml:space="preserve">
+    <value>Rifa</value>
+  </data>
+  <data name="m_editHistoryButton.Text" xml:space="preserve">
+    <value>Cronologia Comandi</value>
+  </data>
+  <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
+    <value>Accedi la cronologia dei comandi</value>
+  </data>
+  <data name="m_editCutButton.ToolTipText" xml:space="preserve">
+    <value>Taglia regione selezionata</value>
+  </data>
+  <data name="m_editCopyButton.ToolTipText" xml:space="preserve">
+    <value>Copia regione selezionata</value>
+  </data>
+  <data name="m_editPasteButton.ToolTipText" xml:space="preserve">
+    <value>Incolla selezione tagliata o copiata</value>
+  </data>
+  <data name="m_editDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Cancella regione selezionata</value>
+  </data>
+  <data name="m_editSelectAllButton.ToolTipText" xml:space="preserve">
+    <value>Seleziona l'intero strato</value>
+  </data>
+  <data name="m_editClearSelectionButton.ToolTipText" xml:space="preserve">
+    <value>Annulla la selezione</value>
+  </data>
+  <data name="m_editInvertSelectionButton.ToolTipText" xml:space="preserve">
+    <value>Inverti la selezione</value>
+  </data>
+  <data name="m_editMakeTileBrushButton.ToolTipText" xml:space="preserve">
+    <value>Crea un nuovo penello di piastre dalla selezione corrente</value>
+  </data>
+  <data name="m_editManageTileBrushesButton.ToolTipText" xml:space="preserve">
+    <value>Arrangia i pennelli appartenenti alla mappa</value>
+  </data>
+  <data name="m_mapPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Accedi gli atributi della mappa</value>
+  </data>
+  <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
+    <value>Visualizza statistiche sulla mappa</value>
   </data>
   <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
     <value>Crea una nuova mappa</value>
@@ -260,12 +332,6 @@
   </data>
   <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
     <value>Nascondi la guida piastre</value>
-  </data>
-  <data name="m_mapPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Accedi gli atributi della mappa</value>
-  </data>
-  <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
-    <value>Visualizza statistiche sulla mappa</value>
   </data>
   <data name="m_fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 20</value>
@@ -664,7 +730,7 @@
     <value>235, 22</value>
   </data>
   <data name="m_tileSheetEditImageSourceMenuItem.Text" xml:space="preserve">
-    <value>Modifica l'Immagine...</value>
+    <value>Modifica la Immagine Fonte...</value>
   </data>
   <data name="m_tileSheetSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 6</value>
@@ -673,7 +739,7 @@
     <value>235, 22</value>
   </data>
   <data name="m_tileSheetRemoveDependenciesMenuItem.Text" xml:space="preserve">
-    <value>Rimuovi Dependenze</value>
+    <value>Rimuovi le Dipendenze</value>
   </data>
   <data name="m_tileSheetDeleteMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -735,45 +801,6 @@
   <data name="m_helpAboutMenuItem.Text" xml:space="preserve">
     <value>I&amp;nformazioni...</value>
   </data>
-  <data name="m_editUndoButton.Text" xml:space="preserve">
-    <value>Disfa</value>
-  </data>
-  <data name="m_editRedoButton.Text" xml:space="preserve">
-    <value>Rifa</value>
-  </data>
-  <data name="m_editHistoryButton.Text" xml:space="preserve">
-    <value>Cronologia Comandi</value>
-  </data>
-  <data name="m_editHistoryButton.ToolTipText" xml:space="preserve">
-    <value>Accedi la cronologia dei comandi</value>
-  </data>
-  <data name="m_editCutButton.ToolTipText" xml:space="preserve">
-    <value>Taglia regione selezionata</value>
-  </data>
-  <data name="m_editCopyButton.ToolTipText" xml:space="preserve">
-    <value>Copia regione selezionata</value>
-  </data>
-  <data name="m_editPasteButton.ToolTipText" xml:space="preserve">
-    <value>Incolla selezione tagliata o copiata</value>
-  </data>
-  <data name="m_editDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Cancella regione selezionata</value>
-  </data>
-  <data name="m_editSelectAllButton.ToolTipText" xml:space="preserve">
-    <value>Seleziona l'intero strato</value>
-  </data>
-  <data name="m_editClearSelectionButton.ToolTipText" xml:space="preserve">
-    <value>Annulla la selezione</value>
-  </data>
-  <data name="m_editInvertSelectionButton.ToolTipText" xml:space="preserve">
-    <value>Inverti la selezione</value>
-  </data>
-  <data name="m_editMakeTileBrushButton.ToolTipText" xml:space="preserve">
-    <value>Crea un nuovo penello di piastre dalla selezione corrente</value>
-  </data>
-  <data name="m_editManageTileBrushesButton.ToolTipText" xml:space="preserve">
-    <value>Arrangia i pennelli appartenenti alla mappa</value>
-  </data>
   <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
     <value>Crea un nuovo strato</value>
   </data>
@@ -797,30 +824,6 @@
   </data>
   <data name="m_layerDeleteButton.ToolTipText" xml:space="preserve">
     <value>Cancella lo strato selezionato</value>
-  </data>
-  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
-    <value>Crea un nuovo foglio di piastre</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Accedi gli atributi del foglio piastre selezionato</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
-    <value>Arrangia le auto piastre del foglio selezionato</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
-    <value>Attiva l'auto aggiornamento delle fonti immagine</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
-    <value>Disattiva l'auto aggiornamento delle fonti immagine</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.ToolTipText" xml:space="preserve">
-    <value>Apri l'immagine fonte del foglio di piastre in un'applizione di grafica</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
-    <value>Rimuovi le dipendenze sul foglio piastre selezionato</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Cancella il foglio di piastre selezionato</value>
   </data>
   <data name="m_loadErrorMessageBox.Caption" xml:space="preserve">
     <value>Carica Mappa</value>
@@ -1590,7 +1593,7 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
   <data name="m_loadErrorMessageBox.Text" xml:space="preserve">
     <value>È verificato un errore durante il caricamento del fascicolo. Dettagli: [message]</value>
