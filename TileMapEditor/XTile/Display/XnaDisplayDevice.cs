@@ -93,8 +93,8 @@ namespace xTile.Display
         /// </summary>
         public void BeginScene()
         {
-            m_spriteBatchAlpha.Begin(SpriteBlendMode.AlphaBlend);
-            m_spriteBatchAdditive.Begin(SpriteBlendMode.Additive);
+            m_spriteBatchAlpha.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            m_spriteBatchAdditive.Begin(SpriteSortMode.Deferred, BlendState.Additive);
         }
 
         /// <summary>
@@ -112,7 +112,14 @@ namespace xTile.Display
             #if ZUNE
                 // do nothing - RenderState not defined for Zune
             #else
-                m_graphicsDevice.RenderState.ScissorTestEnable = true;
+            RasterizerState rasterizerState = new RasterizerState();
+            rasterizerState.CullMode = m_graphicsDevice.RasterizerState.CullMode;
+            rasterizerState.DepthBias = m_graphicsDevice.RasterizerState.DepthBias;
+            rasterizerState.FillMode = m_graphicsDevice.RasterizerState.FillMode;
+            rasterizerState.MultiSampleAntiAlias = m_graphicsDevice.RasterizerState.MultiSampleAntiAlias;
+            rasterizerState.ScissorTestEnable = true;
+            rasterizerState.SlopeScaleDepthBias = m_graphicsDevice.RasterizerState.SlopeScaleDepthBias;
+            m_graphicsDevice.RasterizerState = rasterizerState;
             #endif
         }
 

@@ -897,16 +897,6 @@
   <data name="&gt;&gt;m_fileExitMenuItem.Name" xml:space="preserve">
     <value>m_fileExitMenuItem</value>
   </data>
-  <data name="m_mapPanel.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEh4VGlsZSwgVmVyc2lvbj0xLjIuNS4wLCBDdWx0dXJlPW5ldXRy
-        YWwsIFB1YmxpY0tleVRva2VuPTczN2M0NWI1OTIxY2Q2ODEFAQAAABp4VGlsZS5EaW1lbnNpb25zLlJl
-        Y3RhbmdsZQIAAAAITG9jYXRpb24EU2l6ZQQEGXhUaWxlLkRpbWVuc2lvbnMuTG9jYXRpb24CAAAAFXhU
-        aWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAACAAAABf3///8ZeFRpbGUuRGltZW5zaW9ucy5Mb2NhdGlvbgIA
-        AAABWAFZAAAICAIAAAAAAAAAAAAAAAX8////FXhUaWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAAFV2lkdGgG
-        SGVpZ2h0AAAICAIAAAAgAgAAbAEAAAs=
-</value>
-  </data>
   <data name="&gt;&gt;m_tileSheetSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

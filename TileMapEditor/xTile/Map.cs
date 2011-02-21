@@ -27,7 +27,6 @@ namespace xTile
     /// A multi-layer tile-based map implementation. The contained Layers are
     /// ordered by depth
     /// </summary>
-    [Serializable]
     public class Map : DescribedComponent
     {
         #region Public Properties

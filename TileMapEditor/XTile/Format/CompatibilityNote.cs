@@ -19,7 +19,6 @@ namespace xTile.Format
     /// <summary>
     /// Enumeration for the compatiblity level of a given format
     /// </summary>
-    [Serializable]
     public enum CompatibilityLevel
     {
         /// <summary>
@@ -42,7 +41,6 @@ namespace xTile.Format
     /// Represents the level of compatibility and associated remarks
     /// for a given format feature or data configuration
     /// </summary>
-    [Serializable]
     public class CompatibilityNote
     {
         #region Public Properties

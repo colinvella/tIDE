@@ -78,6 +78,7 @@ namespace xTile.Format
         /// <returns>Map instance loaded from stream</returns>
         public Map Load(Stream stream)
         {
+#if WINDOWS
             XmlTextReader xmlReader = new XmlTextReader(stream);
             xmlReader.WhitespaceHandling = WhitespaceHandling.None;
 
@@ -100,6 +101,9 @@ namespace xTile.Format
             LoadProperties(xmlHelper, map);
 
             return map;
+#else
+            throw new NotSupportedException();
+#endif
         }
 
         /// <summary>
@@ -110,6 +114,7 @@ namespace xTile.Format
         /// <param name="stream">Output stream</param>
         public void Store(Map map, Stream stream)
         {
+#if WINDOWS
             XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
             xmlWriter.Formatting = Formatting.Indented;
 
@@ -130,6 +135,9 @@ namespace xTile.Format
             xmlWriter.WriteEndElement();
 
             xmlWriter.Flush();
+#else
+            throw new NotSupportedException();
+#endif
         }
 
         #endregion

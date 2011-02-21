@@ -22,7 +22,6 @@ namespace xTile.Tiles
     /// <summary>
     /// Represents an indexed tile sheet based on a tile image source
     /// </summary>
-    [Serializable]
     public class TileSheet : DescribedComponent
     {
         #region Public Properties

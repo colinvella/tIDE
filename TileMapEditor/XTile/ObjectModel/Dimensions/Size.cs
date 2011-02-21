@@ -19,6 +19,7 @@ namespace xTile.Dimensions
     /// <summary>
     /// Size representation structure in two integral dimensions
     /// </summary>
+    [Serializable]
     public struct Size
     {
         #region Public Static Properties

@@ -21,7 +21,6 @@ namespace xTile.Tiles
     /// <summary>
     /// Static tile implementation
     /// </summary>
-    [Serializable]
     public class StaticTile : Tile
     {
         #region Public Properties

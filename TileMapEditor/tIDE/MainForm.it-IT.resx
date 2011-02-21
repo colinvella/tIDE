@@ -131,16 +131,6 @@
   <data name="m_mapPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 391</value>
   </data>
-  <data name="m_mapPanel.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEh4VGlsZSwgVmVyc2lvbj0xLjIuNS4wLCBDdWx0dXJlPW5ldXRy
-        YWwsIFB1YmxpY0tleVRva2VuPTczN2M0NWI1OTIxY2Q2ODEFAQAAABp4VGlsZS5EaW1lbnNpb25zLlJl
-        Y3RhbmdsZQIAAAAITG9jYXRpb24EU2l6ZQQEGXhUaWxlLkRpbWVuc2lvbnMuTG9jYXRpb24CAAAAFXhU
-        aWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAACAAAABf3///8ZeFRpbGUuRGltZW5zaW9ucy5Mb2NhdGlvbgIA
-        AAABWAFZAAAICAIAAAAAAAAAAAAAAAX8////FXhUaWxlLkRpbWVuc2lvbnMuU2l6ZQIAAAAFV2lkdGgG
-        SGVpZ2h0AAAICAIAAAAgAgAAhQEAAAs=
-</value>
-  </data>
   <data name="m_toolStripContainerInner.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 391</value>
   </data>

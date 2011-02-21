@@ -25,7 +25,6 @@ namespace xTile.Layers
     /// <summary>
     /// Represents a layer within an xTile map
     /// </summary>
-    [Serializable]
     public class Layer : DescribedComponent
     {
         #region Public Methods

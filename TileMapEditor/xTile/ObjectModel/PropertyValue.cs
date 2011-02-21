@@ -19,7 +19,6 @@ namespace xTile.ObjectModel
     /// <summary>
     /// Represents the value of a property within a property collection
     /// </summary>
-    [Serializable]
     public class PropertyValue
     {
         #region Public Properties

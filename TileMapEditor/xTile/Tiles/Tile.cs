@@ -22,7 +22,6 @@ namespace xTile.Tiles
     /// <summary>
     /// Tile Blending Mode
     /// </summary>
-    [Serializable]
     public enum BlendMode
     {
         /// <summary>
@@ -39,7 +38,6 @@ namespace xTile.Tiles
     /// <summary>
     /// Partially abstract, base implementation for all tile types
     /// </summary>
-    [Serializable]
     public abstract class Tile: Component
     {
         #region Public Properties

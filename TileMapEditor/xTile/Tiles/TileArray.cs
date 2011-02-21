@@ -23,7 +23,6 @@ namespace xTile.Tiles
     /// <summary>
     /// Doubly-indexed tile array used to hold tiles within a Layer
     /// </summary>
-    [Serializable]
     public class TileArray
     {
         #region Public Properties

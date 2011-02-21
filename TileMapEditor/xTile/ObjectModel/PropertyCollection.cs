@@ -21,7 +21,6 @@ namespace xTile.ObjectModel
     /// component objects. This class extends the .NET Framework
     /// generic Dictionary class
     /// </summary>
-    [Serializable]
     public class PropertyCollection : Dictionary<string, PropertyValue>
     {
         /// <summary>

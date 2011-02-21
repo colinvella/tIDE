@@ -59,9 +59,12 @@ namespace Demo
 
             // set map viewport to match window size
             m_viewPort = new xTile.Dimensions.Rectangle(
+                new xTile.Dimensions.Location(
+                    GraphicsDevice.Viewport.TitleSafeArea.Left,
+                    GraphicsDevice.Viewport.TitleSafeArea.Top),
                 new xTile.Dimensions.Size(
-                    GraphicsDevice.PresentationParameters.BackBufferWidth,
-                    GraphicsDevice.PresentationParameters.BackBufferHeight));
+                    GraphicsDevice.Viewport.TitleSafeArea.Width,
+                    GraphicsDevice.Viewport.TitleSafeArea.Height));
 
             // set help panel size
 #if WINDOWS
@@ -94,7 +97,7 @@ namespace Demo
 
             // prepare translucent panel for help text
             m_texturePanel = new Texture2D(GraphicsDevice, 1, 1);
-            m_texturePanel.SetData<Color>(new Color[] { new Color(Color.Black, 128) });
+            m_texturePanel.SetData<Color>(new Color[] { new Color(0, 0, 0, 128) });
         }
 
         /// <summary>
@@ -134,7 +137,17 @@ namespace Demo
             // toggle window / fullscreen mode
             if (gamePadButtons.Y == ButtonState.Pressed
                 || keyboardState.IsKeyDown(Keys.Space))
+            {
                 m_graphicsDeviceManager.ToggleFullScreen();
+
+                m_viewPort = new xTile.Dimensions.Rectangle(
+                    new xTile.Dimensions.Location(
+                        GraphicsDevice.Viewport.TitleSafeArea.Left,
+                        GraphicsDevice.Viewport.TitleSafeArea.Top),
+                    new xTile.Dimensions.Size(
+                        GraphicsDevice.Viewport.TitleSafeArea.Width,
+                        GraphicsDevice.Viewport.TitleSafeArea.Height));
+            }
 #endif
 
             // movement via keyboard

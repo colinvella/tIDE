@@ -20,7 +20,6 @@ namespace xTile.Format
     /// <summary>
     /// Represents a report on the compatibility of a map in a given format
     /// </summary>
-    [Serializable]
     public class CompatibilityReport
     {
         #region Public Methods

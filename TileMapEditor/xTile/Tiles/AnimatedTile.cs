@@ -24,7 +24,6 @@ namespace xTile.Tiles
     /// immplementations. The animation is cyclic and regulated by a
     /// constant frame interval
     /// </summary>
-    [Serializable]
     public class AnimatedTile : Tile
     {
         #region Public Properties

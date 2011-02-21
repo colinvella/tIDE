@@ -19,7 +19,6 @@ namespace xTile.ObjectModel
     /// <summary>
     /// Derivation of a Component type with a Description property
     /// </summary>
-    [Serializable]
     public abstract class DescribedComponent : Component
     {
         #region Public Properties

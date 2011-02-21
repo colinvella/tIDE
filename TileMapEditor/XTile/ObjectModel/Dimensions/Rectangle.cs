@@ -19,6 +19,7 @@ namespace xTile.Dimensions
     /// <summary>
     /// Rectangle representation structure
     /// </summary>
+    [Serializable]
     public struct Rectangle
     {
         #region Public Methods

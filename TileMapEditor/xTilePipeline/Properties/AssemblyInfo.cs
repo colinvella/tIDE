@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xTile.Pipeline")]
-[assembly: AssemblyDescription("xTile Content Pipeline")]
+[assembly: AssemblyDescription("xTile Content Pipeline for XNA 4.0")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Colin Vella")]
 [assembly: AssemblyProduct("xTile.Pipeline")]
-[assembly: AssemblyCopyright("Copyright © Colin Vella 2010")]
+[assembly: AssemblyCopyright("Copyright © Colin Vella 2010-2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.2.5.0")]
-[assembly: AssemblyFileVersion("1.2.5.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]

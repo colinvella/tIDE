@@ -20,7 +20,6 @@ namespace xTile.ObjectModel
     /// Base class for all xTile map components. Can be assigned an ID and
     /// optionally one or more custom properties
     /// </summary>
-    [Serializable]
     public abstract class Component
     {
         #region Public Properties

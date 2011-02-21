@@ -19,6 +19,7 @@ namespace xTile.Dimensions
     /// <summary>
     /// Represents a position in two integral dimensions
     /// </summary>
+    [Serializable]
     public struct Location
     {
         #region Public Static Properties
