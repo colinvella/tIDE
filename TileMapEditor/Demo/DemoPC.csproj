@@ -20,7 +20,8 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <XnaUpgrade>1</XnaUpgrade>
+    <XnaUpgrade>
+    </XnaUpgrade>
     <XnaOutputType>Game</XnaOutputType>
     <XnaProfile>HiDef</XnaProfile>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

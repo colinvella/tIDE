@@ -20,7 +20,8 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <XnaUpgrade>1</XnaUpgrade>
+    <XnaUpgrade>
+    </XnaUpgrade>
     <XnaOutputType>Game</XnaOutputType>
     <XnaProfile>HiDef</XnaProfile>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
