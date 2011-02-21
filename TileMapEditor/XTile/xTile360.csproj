@@ -70,7 +70,7 @@
     <DefineConstants>TRACE;XBOX;XBOX360</DefineConstants>
     <XnaCompressContent>true</XnaCompressContent>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Xbox 360\Release\xTile.XML</DocumentationFile>
+    <DocumentationFile>bin\Xbox 360\Release\xTile.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
