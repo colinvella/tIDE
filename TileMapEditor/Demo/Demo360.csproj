@@ -23,7 +23,7 @@
     <XnaUpgrade>
     </XnaUpgrade>
     <XnaOutputType>Game</XnaOutputType>
-    <XnaProfile>HiDef</XnaProfile>
+    <XnaProfile>Reach</XnaProfile>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -175,9 +175,9 @@
       <Project>{13109B6F-4A07-4AC8-B48B-FF4925CCE7F4}</Project>
       <Name>xTile360</Name>
     </ProjectReference>
-    <ProjectReference Include="Content\DemoContent.contentproj">
-      <Project>{D721A4B9-7AF5-4984-8277-3770A9AC7014}</Project>
-      <Name>DemoContent %28Content%29</Name>
+    <ProjectReference Include="Content\Content.contentproj">
+      <Project>{64E1B41D-35F2-4BB8-B083-3116223D5D3B}</Project>
+      <Name>Content</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>

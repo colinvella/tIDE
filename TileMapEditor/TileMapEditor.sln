@@ -38,11 +38,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xTilePC", "xTile\xTilePC.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xTile360", "xTile\xTile360.csproj", "{13109B6F-4A07-4AC8-B48B-FF4925CCE7F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoContent", "Demo\Content\DemoContent.contentproj", "{D721A4B9-7AF5-4984-8277-3770A9AC7014}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content", "Demo\Content\Content.contentproj", "{64E1B41D-35F2-4BB8-B083-3116223D5D3B}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 12
+		SccNumberOfProjects = 11
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs04
 		SccLocalPath0 = .
@@ -77,9 +77,6 @@ Global
 		SccProjectUniqueName10 = xTile\\xTile360.csproj
 		SccProjectName10 = xTile
 		SccLocalPath10 = xTile
-		SccProjectUniqueName11 = Demo\\Content\\DemoContent.contentproj
-		SccProjectName11 = Demo/Content
-		SccLocalPath11 = Demo\\Content
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,16 +220,16 @@ Global
 		{13109B6F-4A07-4AC8-B48B-FF4925CCE7F4}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
 		{13109B6F-4A07-4AC8-B48B-FF4925CCE7F4}.Release|Xbox 360.Build.0 = Release|Xbox 360
 		{13109B6F-4A07-4AC8-B48B-FF4925CCE7F4}.Release|Zune.ActiveCfg = Release|Xbox 360
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Debug|x86.ActiveCfg = Debug|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Debug|Xbox 360.ActiveCfg = Debug|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Debug|Zune.ActiveCfg = Debug|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Release|Any CPU.ActiveCfg = Release|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Release|x86.ActiveCfg = Release|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Release|Xbox 360.ActiveCfg = Release|x86
-		{D721A4B9-7AF5-4984-8277-3770A9AC7014}.Release|Zune.ActiveCfg = Release|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Debug|x86.ActiveCfg = Debug|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Debug|Xbox 360.ActiveCfg = Debug|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Debug|Zune.ActiveCfg = Debug|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Release|Any CPU.ActiveCfg = Release|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Release|x86.ActiveCfg = Release|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Release|Xbox 360.ActiveCfg = Release|x86
+		{64E1B41D-35F2-4BB8-B083-3116223D5D3B}.Release|Zune.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
