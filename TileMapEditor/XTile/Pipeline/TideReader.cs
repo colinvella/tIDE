@@ -18,6 +18,12 @@ namespace xTile.Pipeline
     /// </summary>
     public class TideReader : ContentTypeReader<Map>
     {
+        /// <summary>
+        /// Reads a map from the current stream
+        /// </summary>
+        /// <param name="contentReader">The ContentReader used to read the object</param>
+        /// <param name="existingMap">An existing object to read into</param>
+        /// <returns>A loaded map instance</returns>
         protected override Map Read(ContentReader contentReader, Map existingMap)
         {
             // existing map is ignored
