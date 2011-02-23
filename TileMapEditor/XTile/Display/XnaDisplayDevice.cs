@@ -105,22 +105,19 @@ namespace xTile.Display
         /// <param name="clippingRegion">Clipping region to apply</param>
         public void SetClippingRegion(xTile.Dimensions.Rectangle clippingRegion)
         {
-            m_graphicsDevice.ScissorRectangle = new Microsoft.Xna.Framework.Rectangle(
-                clippingRegion.Location.X, clippingRegion.Location.Y,
-                clippingRegion.Size.Width, clippingRegion.Size.Height);
+            // further clip region within display device's dimensions
+            int nMaxWidth = m_graphicsDevice.PresentationParameters.BackBufferWidth;
+            int nMaxHeight = m_graphicsDevice.PresentationParameters.BackBufferHeight;
 
-            #if ZUNE
-                // do nothing - RenderState not defined for Zune
-            #else
-            RasterizerState rasterizerState = new RasterizerState();
-            rasterizerState.CullMode = m_graphicsDevice.RasterizerState.CullMode;
-            rasterizerState.DepthBias = m_graphicsDevice.RasterizerState.DepthBias;
-            rasterizerState.FillMode = m_graphicsDevice.RasterizerState.FillMode;
-            rasterizerState.MultiSampleAntiAlias = m_graphicsDevice.RasterizerState.MultiSampleAntiAlias;
-            rasterizerState.ScissorTestEnable = true;
-            rasterizerState.SlopeScaleDepthBias = m_graphicsDevice.RasterizerState.SlopeScaleDepthBias;
-            m_graphicsDevice.RasterizerState = rasterizerState;
-            #endif
+            int nClipLeft = Clamp(clippingRegion.X, 0, nMaxWidth);
+            int nClipTop = Clamp(clippingRegion.Y, 0, nMaxHeight);
+            int nClipRight = Clamp(clippingRegion.X + clippingRegion.Width, 0, nMaxWidth);
+            int nClipBottom = Clamp(clippingRegion.Y + clippingRegion.Height, 0, nMaxHeight);
+            int nClipWidth = nClipRight - nClipLeft;
+            int nClipHeight = nClipBottom - nClipTop;
+
+            m_graphicsDevice.Viewport = new Viewport(
+                nClipLeft, nClipTop, nClipWidth, nClipHeight);
         }
 
         /// <summary>
@@ -160,6 +157,15 @@ namespace xTile.Display
         {
             m_spriteBatchAlpha.End();
             m_spriteBatchAdditive.End();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private int Clamp(int nValue, int nMin, int nMax)
+        {
+            return Math.Min(Math.Max(nValue, nMin), nMax);
         }
 
         #endregion
