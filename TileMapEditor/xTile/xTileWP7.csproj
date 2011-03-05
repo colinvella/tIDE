@@ -84,6 +84,7 @@
     <Compile Include="Format\CompatibilityReport.cs" />
     <Compile Include="Format\FormatManager.cs" />
     <Compile Include="Format\IMapFormat.cs" />
+    <Compile Include="Format\TbinFormat.cs" />
     <Compile Include="Format\TideFormat.cs" />
     <Compile Include="Format\XmlHelper.cs" />
     <Compile Include="Layers\Layer.cs" />
