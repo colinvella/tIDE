@@ -36,7 +36,7 @@ namespace xTile.Format
         /// </summary>
         public string Name
         {
-            get { return "TIDE Map File"; }
+            get { return "tIDE Map File"; }
         }
 
         /// <summary>
