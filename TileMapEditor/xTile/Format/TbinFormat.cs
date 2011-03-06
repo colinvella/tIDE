@@ -355,6 +355,7 @@ namespace xTile.Format
             StoreString(stream, layer.Description);
             StoreSize(stream, layer.LayerSize);
             StoreSize(stream, layer.TileSize);
+            StoreProperties(stream, layer);
 
             TileSheet previousTileSheet = null;
             int nullCount = 0;
@@ -411,6 +412,50 @@ namespace xTile.Format
 
         private void LoadLayer(Stream stream, Map map)
         {
+            string id = LoadString(stream);
+            bool visible = LoadBool(stream);
+            string description = LoadString(stream);
+            Size layerSize = LoadSize(stream);
+            Size tileSize = LoadSize(stream);
+            
+            Layer layer = new Layer(id, map, layerSize, tileSize);
+            layer.Description = description;
+            layer.Visible = visible;
+
+            LoadProperties(stream, layer);
+
+            Location tileLocation = Location.Origin;
+            TileSheet tileSheet = null;
+            for (; tileLocation.Y < layerSize.Height; tileLocation.Y++)
+            {
+                tileLocation.X = 0;
+
+                while (tileLocation.X < layerSize.Width)
+                {
+                    char ch = (char)stream.ReadByte();
+                    switch (ch)
+                    {
+                        case 'T':
+                            string tileSheetId = LoadString(stream);
+                            tileSheet = map.GetTileSheet(tileSheetId);
+                            break;
+                        case 'N':
+                            int nullCount = LoadInt32(stream);
+                            tileLocation.X += nullCount;
+                            break;
+                        case 'S':
+                            layer.Tiles[tileLocation] = LoadStaticTile(stream, layer, tileSheet);
+                            ++tileLocation.X;
+                            break;
+                        case 'A':
+                            layer.Tiles[tileLocation] = LoadAnimatedTile(stream, layer);
+                            ++tileLocation.X;
+                            break;
+                    }
+                }
+            }
+
+            map.AddLayer(layer);
         }
 
         private void StoreLayers(Stream stream, Map map)
