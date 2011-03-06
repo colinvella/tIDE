@@ -13,6 +13,7 @@ using xTile;
 using xTile.Display;
 using xTile.Dimensions;
 using xTile.Tiles;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace Demo
 {
@@ -164,6 +165,18 @@ namespace Demo
             // stick movement
             m_viewPort.Location.X += (int)(leftThumbStick.X * 4.0f);
             m_viewPort.Location.Y += (int)(leftThumbStick.Y * 4.0f);
+
+            // touch movement (WP7 and touch-enabled displays)
+            foreach (TouchLocation touchLocation in TouchPanel.GetState())
+            {
+                TouchLocation previousTouchLocation;
+                if (touchLocation.State == TouchLocationState.Moved
+                    && touchLocation.TryGetPreviousLocation(out previousTouchLocation))
+                {
+                    m_viewPort.Location.X += (int)(previousTouchLocation.Position.X - touchLocation.Position.X);
+                    m_viewPort.Location.Y += (int)(previousTouchLocation.Position.Y - touchLocation.Position.Y);
+                }
+            }
 
             // limit viewport to map
             m_viewPort.Location.X = Math.Max(0, m_viewPort.X);
