@@ -132,18 +132,6 @@ namespace xTile.Format
             return stream.ReadByte() > 0;
         }
 
-        private void StoreInt16(Stream stream, Int16 value)
-        {
-            stream.WriteByte((byte)(value & 0xFF));
-            stream.WriteByte((byte)((value >> 8) & 0xFF));
-        }
-
-        private Int16 LoadInt16(Stream stream)
-        {
-            byte[] bytes = LoadSequence(stream, 2);
-            return (Int16)((bytes[1] << 8) | bytes[0]);
-        }
-
         private void StoreInt32(Stream stream, Int32 value)
         {
             stream.WriteByte((byte)(value & 0xFF));
@@ -314,11 +302,50 @@ namespace xTile.Format
 
         private void StoreAnimatedTile(Stream stream, AnimatedTile animatedTile)
         {
+            StoreInt32(stream, (int)animatedTile.FrameInterval);
+            StoreInt32(stream, animatedTile.TileFrames.Count());
+
+            TileSheet prevTileSheet = null;
+            foreach (StaticTile tileFrame in animatedTile.TileFrames)
+            {
+                TileSheet tileSheet = tileFrame.TileSheet;
+                if (tileSheet != prevTileSheet)
+                {
+                    stream.WriteByte((byte)'T');
+                    StoreString(stream, tileSheet.Id);
+                    prevTileSheet = tileSheet;
+                }
+                stream.WriteByte((byte)'S');
+                StoreStaticTile(stream, tileFrame);
+            }
         }
 
-        private AnimatedTile LoadAnimatedTile(Stream stream, Layer layer, TileSheet tileSheet)
+        private AnimatedTile LoadAnimatedTile(Stream stream, Layer layer)
         {
-            return null;
+            long frameInterval = LoadInt32(stream);
+            int tileFrameCount = LoadInt32(stream);
+            List<StaticTile> tileFrames = new List<StaticTile>(tileFrameCount);
+
+            Map map = layer.Map;
+            TileSheet tileSheet = null;
+            while(tileFrameCount > 0)
+            {
+                char ch = (char)stream.ReadByte();
+                if (ch == 'T')
+                {
+                    string tileSheetId = LoadString(stream);
+                    tileSheet = map.GetTileSheet(tileSheetId);
+                }
+                else if (ch == 'S')
+                {
+                    tileFrames.Add(LoadStaticTile(stream, layer, tileSheet));
+                }
+                else
+                    throw new Exception("Expected character byte 'T' or 'S'");
+            }
+
+            AnimatedTile animatedTile = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
+            return animatedTile;
         }
 
         private void StoreLayer(Stream stream, Layer layer)
@@ -362,10 +389,12 @@ namespace xTile.Format
 
                     if (currentTile is StaticTile)
                     {
+                        stream.WriteByte((byte)'S');
                         StoreStaticTile(stream, (StaticTile)currentTile);
                     }
                     else if (currentTile is AnimatedTile)
                     {
+                        stream.WriteByte((byte)'A');
                         StoreAnimatedTile(stream, (AnimatedTile)currentTile);
                     }
                 }
