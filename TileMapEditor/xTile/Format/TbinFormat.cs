@@ -119,6 +119,16 @@ namespace xTile.Format
                         "Byte sequence mismatch. Expected: " + expectedSequence + " Actual: " + sequence);
         }
 
+        private void StoreBool(Stream stream, bool value)
+        {
+            stream.WriteByte((byte)(value ? 1 : 0));
+        }
+
+        private bool LoadBool(Stream stream)
+        {
+            return stream.ReadByte() > 0;
+        }
+
         private void StoreInt16(Stream stream, Int16 value)
         {
             stream.WriteByte((byte)(value & 0xFF));
@@ -143,6 +153,18 @@ namespace xTile.Format
         {
             byte[] bytes = LoadSequence(stream, 4);
             return (Int32)((bytes[3] << 24) | (bytes[2] << 16) | (bytes[1] << 8) | bytes[0]);
+        }
+
+        private void StoreFloat(Stream stream, float value)
+        {
+            byte[] bytes = BitConverter.GetBytes(value);
+            StoreSequence(stream, bytes);
+        }
+
+        private float LoadFloat(Stream stream)
+        {
+            byte[] bytes = LoadSequence(stream, 4);
+            return BitConverter.ToSingle(bytes, 0);
         }
 
         private void StoreString(Stream stream, string value)
@@ -172,8 +194,7 @@ namespace xTile.Format
                 if (propertyValue.Type == typeof(bool))
                 {
                     stream.WriteByte(PROPERTY_BOOL);
-                    bool value = (bool)propertyValue;
-                    stream.WriteByte((byte)(value ? 1 : 0));
+                    StoreBool(stream, (bool)propertyValue);
                 }
                 else if (propertyValue.Type == typeof(bool))
                 {
@@ -183,6 +204,7 @@ namespace xTile.Format
                 else if (propertyValue.Type == typeof(bool))
                 {
                     stream.WriteByte(PROPERTY_FLOAT);
+                    StoreFloat(stream, (float)propertyValue);
                 }
                 else if (propertyValue.Type == typeof(bool))
                 {
@@ -201,7 +223,21 @@ namespace xTile.Format
             {
                 string key = LoadString(stream);
                 byte propertyType = (byte)stream.ReadByte();
-
+                switch (propertyType)
+                {
+                    case PROPERTY_BOOL:
+                        component.Properties[key] = LoadBool(stream);
+                        break;
+                    case PROPERTY_INT:
+                        component.Properties[key] = LoadInt32(stream);
+                        break;
+                    case PROPERTY_FLOAT:
+                        component.Properties[key] = LoadFloat(stream);
+                        break;
+                    case PROPERTY_STRING:
+                        component.Properties[key] = LoadString(stream);
+                        break;
+                }
             }
         }
 
