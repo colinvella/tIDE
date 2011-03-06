@@ -201,17 +201,17 @@ namespace xTile.Format
                     stream.WriteByte(PROPERTY_BOOL);
                     StoreBool(stream, (bool)propertyValue);
                 }
-                else if (propertyValue.Type == typeof(bool))
+                else if (propertyValue.Type == typeof(int))
                 {
                     stream.WriteByte(PROPERTY_INT);
                     StoreInt32(stream, (int)propertyValue);
                 }
-                else if (propertyValue.Type == typeof(bool))
+                else if (propertyValue.Type == typeof(float))
                 {
                     stream.WriteByte(PROPERTY_FLOAT);
                     StoreFloat(stream, (float)propertyValue);
                 }
-                else if (propertyValue.Type == typeof(bool))
+                else if (propertyValue.Type == typeof(string))
                 {
                     stream.WriteByte(PROPERTY_STRING);
                     StoreString(stream, (string)propertyValue);
@@ -270,6 +270,7 @@ namespace xTile.Format
             TileSheet tileSheet = new TileSheet(id, map, imageSource, sheetSize, tileSize);
             tileSheet.Margin = margin;
             tileSheet.Spacing = spacing;
+            LoadProperties(stream, tileSheet);
             map.AddTileSheet(tileSheet);
         }
 
@@ -339,6 +340,7 @@ namespace xTile.Format
                 else if (ch == 'S')
                 {
                     tileFrames.Add(LoadStaticTile(stream, layer, tileSheet));
+                    --tileFrameCount;
                 }
                 else
                     throw new Exception("Expected character byte 'T' or 'S'");
@@ -451,6 +453,8 @@ namespace xTile.Format
                             layer.Tiles[tileLocation] = LoadAnimatedTile(stream, layer);
                             ++tileLocation.X;
                             break;
+                        default:
+                            throw new Exception("Excpected character byte 'T', 'N', 'S' oe 'A'");
                     }
                 }
             }

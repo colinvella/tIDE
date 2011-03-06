@@ -52,11 +52,19 @@ namespace xTile.Format
         }
 
         /// <summary>
-        /// Returns the default tIDE format
+        /// Returns the default tIDE XML format
         /// </summary>
         public IMapFormat DefaultFormat
         {
             get { return m_defaultFormat; }
+        }
+
+        /// <summary>
+        /// Returns the default tIDE binary format (tBIN)
+        /// </summary>
+        public IMapFormat BinaryFormat
+        {
+            get { return m_binaryFormat; }
         }
 
         /// <summary>
@@ -154,9 +162,12 @@ namespace xTile.Format
         {
             m_mapFormats = new Dictionary<string, IMapFormat>();
 
-            // register default format
+            // register default formats
             m_defaultFormat = new TideFormat();
             m_mapFormats[m_defaultFormat.Name] = m_defaultFormat;
+
+            m_binaryFormat = new TbinFormat();
+            m_mapFormats[m_binaryFormat.Name] = m_binaryFormat;
         }
 
         #endregion
@@ -171,6 +182,7 @@ namespace xTile.Format
 
         private Dictionary<string, IMapFormat> m_mapFormats;
         private TideFormat m_defaultFormat;
+        private TbinFormat m_binaryFormat;
 
         #endregion
     }
