@@ -258,20 +258,6 @@ namespace xTile.Format
             }
         }
 
-        private void StoreTileSheets(Stream stream, Map map)
-        {
-            StoreInt32(stream, map.TileSheets.Count);
-            foreach (TileSheet tileSheet in map.TileSheets)
-                StoreTileSheet(stream, tileSheet);
-        }
-
-        private void LoadTileSheets(Stream stream, Map map)
-        {
-            int tileSheetCount = LoadInt32(stream);
-            while (tileSheetCount-- > 0)
-                LoadTileSheet(stream, map);
-        }
-
         private void StoreTileSheet(Stream stream, TileSheet tileSheet)
         {
             StoreString(stream, tileSheet.Id);
@@ -299,18 +285,40 @@ namespace xTile.Format
             map.AddTileSheet(tileSheet);
         }
 
-        private void StoreLayers(Stream stream, Map map)
+        private void StoreTileSheets(Stream stream, Map map)
         {
-            StoreInt32(stream, map.Layers.Count);
-            foreach (Layer layer in map.Layers)
-                StoreLayer(stream, layer);
+            StoreInt32(stream, map.TileSheets.Count);
+            foreach (TileSheet tileSheet in map.TileSheets)
+                StoreTileSheet(stream, tileSheet);
         }
 
-        private void LoadLayers(Stream stream, Map map)
+        private void LoadTileSheets(Stream stream, Map map)
         {
-            int layerCount = LoadInt32(stream);
-            while (layerCount-- > 0)
-                LoadLayer(stream, map);
+            int tileSheetCount = LoadInt32(stream);
+            while (tileSheetCount-- > 0)
+                LoadTileSheet(stream, map);
+        }
+
+        private void StoreStaticTile(Stream stream, StaticTile staticTile)
+        {
+            StoreInt32(stream, staticTile.TileIndex);
+            stream.WriteByte((byte)staticTile.BlendMode);
+        }
+
+        private StaticTile LoadStaticTile(Stream stream, Layer layer, TileSheet tileSheet)
+        {
+            int tileIndex = LoadInt32(stream);
+            BlendMode blendMode = (BlendMode)stream.ReadByte();
+            return new StaticTile(layer, tileSheet, blendMode, tileIndex);
+        }
+
+        private void StoreAnimatedTile(Stream stream, AnimatedTile animatedTile)
+        {
+        }
+
+        private AnimatedTile LoadAnimatedTile(Stream stream, Layer layer, TileSheet tileSheet)
+        {
+            return null;
         }
 
         private void StoreLayer(Stream stream, Layer layer)
@@ -354,12 +362,11 @@ namespace xTile.Format
 
                     if (currentTile is StaticTile)
                     {
-                        //StoreStaticTile((StaticTile)currentTile, xmlWriter);
+                        StoreStaticTile(stream, (StaticTile)currentTile);
                     }
                     else if (currentTile is AnimatedTile)
                     {
-                        AnimatedTile animatedTile = (AnimatedTile)currentTile;
-                        //StoreAnimatedTile(animatedTile, xmlWriter);
+                        StoreAnimatedTile(stream, (AnimatedTile)currentTile);
                     }
                 }
 
@@ -375,6 +382,20 @@ namespace xTile.Format
 
         private void LoadLayer(Stream stream, Map map)
         {
+        }
+
+        private void StoreLayers(Stream stream, Map map)
+        {
+            StoreInt32(stream, map.Layers.Count);
+            foreach (Layer layer in map.Layers)
+                StoreLayer(stream, layer);
+        }
+
+        private void LoadLayers(Stream stream, Map map)
+        {
+            int layerCount = LoadInt32(stream);
+            while (layerCount-- > 0)
+                LoadLayer(stream, map);
         }
 
         #endregion
