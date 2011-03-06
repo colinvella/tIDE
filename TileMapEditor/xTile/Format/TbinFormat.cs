@@ -15,6 +15,9 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using xTile.ObjectModel;
+using xTile.Tiles;
+using xTile.Layers;
+using xTile.Dimensions;
 
 namespace xTile.Format
 {
@@ -184,6 +187,20 @@ namespace xTile.Format
             return encoding.GetString(bytes, 0, length);
         }
 
+        private void StoreSize(Stream stream, Size size)
+        {
+            StoreInt32(stream, size.Width);
+            StoreInt32(stream, size.Height);
+        }
+
+        private Size LoadSize(Stream stream)
+        {
+            Dimensions.Size size = new Size();
+            size.Width = LoadInt32(stream);
+            size.Height = LoadInt32(stream);
+            return size;
+        }
+
         private void StoreProperties(Stream stream, Component component)
         {
             StoreInt32(stream, component.Properties.Count);
@@ -243,17 +260,64 @@ namespace xTile.Format
 
         private void StoreTileSheets(Stream stream, Map map)
         {
+            StoreInt32(stream, map.TileSheets.Count);
+            foreach (TileSheet tileSheet in map.TileSheets)
+                StoreTileSheet(stream, tileSheet);
         }
 
         private void LoadTileSheets(Stream stream, Map map)
         {
+            int tileSheetCount = LoadInt32(stream);
+            while (tileSheetCount-- > 0)
+                LoadTileSheet(stream, map);
+        }
+
+        private void StoreTileSheet(Stream stream, TileSheet tileSheet)
+        {
+            StoreString(stream, tileSheet.Id);
+            StoreString(stream, tileSheet.Description);
+            StoreString(stream, tileSheet.ImageSource);
+            StoreSize(stream, tileSheet.SheetSize);
+            StoreSize(stream, tileSheet.TileSize);
+            StoreSize(stream, tileSheet.Margin);
+            StoreSize(stream, tileSheet.Spacing);
+            StoreProperties(stream, tileSheet);
+        }
+
+        private void LoadTileSheet(Stream stream, Map map)
+        {
+            string id = LoadString(stream);
+            string description = LoadString(stream);
+            string imageSource = LoadString(stream);
+            Size sheetSize = LoadSize(stream);
+            Size tileSize = LoadSize(stream);
+            Size margin = LoadSize(stream);
+            Size spacing = LoadSize(stream);
+            TileSheet tileSheet = new TileSheet(id, map, imageSource, sheetSize, tileSize);
+            tileSheet.Margin = margin;
+            tileSheet.Spacing = spacing;
+            map.AddTileSheet(tileSheet);
         }
 
         private void StoreLayers(Stream stream, Map map)
         {
+            StoreInt32(stream, map.Layers.Count);
+            foreach (Layer layer in map.Layers)
+                StoreLayer(stream, layer);
         }
 
         private void LoadLayers(Stream stream, Map map)
+        {
+            int layerCount = LoadInt32(stream);
+            while (layerCount-- > 0)
+                LoadLayer(stream, map);
+        }
+
+        private void StoreLayer(Stream stream, Layer layer)
+        {
+        }
+
+        private void LoadLayer(Stream stream, Map map)
         {
         }
 
