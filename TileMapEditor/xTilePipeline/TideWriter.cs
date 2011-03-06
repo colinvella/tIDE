@@ -37,7 +37,7 @@ namespace xTile.Pipeline
         protected override void Write(ContentWriter contentWriter, Map map)
         {
             MemoryStream memoryStream = new MemoryStream();
-            FormatManager.Instance.DefaultFormat.Store(map, memoryStream);
+            FormatManager.Instance.BinaryFormat.Store(map, memoryStream);
 
             byte[] data = memoryStream.ToArray();
             contentWriter.Write(data.Length);

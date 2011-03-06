@@ -32,7 +32,7 @@ namespace xTile.Pipeline
             byte[] data = contentReader.ReadBytes(dataLength);
 
             MemoryStream memoryStream = new MemoryStream(data);
-            Map map = FormatManager.Instance.DefaultFormat.Load(memoryStream);
+            Map map = FormatManager.Instance.BinaryFormat.Load(memoryStream);
 
             return map;
         }
