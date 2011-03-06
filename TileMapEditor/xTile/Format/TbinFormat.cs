@@ -315,6 +315,62 @@ namespace xTile.Format
 
         private void StoreLayer(Stream stream, Layer layer)
         {
+            StoreString(stream, layer.Id);
+            StoreBool(stream, layer.Visible);
+            StoreString(stream, layer.Description);
+            StoreSize(stream, layer.LayerSize);
+            StoreSize(stream, layer.TileSize);
+
+            TileSheet previousTileSheet = null;
+            int nullCount = 0;
+
+            for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
+            {
+                for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
+                {
+                    Tile currentTile = layer.Tiles[tileX, tileY];
+
+                    if (currentTile == null)
+                    {
+                        ++nullCount;
+                        continue;
+                    }
+                    else if (nullCount > 0)
+                    {
+                        stream.WriteByte((byte)'N');
+                        StoreInt32(stream, nullCount);
+                        nullCount = 0;
+                    }
+
+                    TileSheet currentTileSheet = currentTile.TileSheet;
+
+                    if (previousTileSheet != currentTileSheet)
+                    {
+                        stream.WriteByte((byte)'T');
+                        StoreString(stream, currentTileSheet == null ? "" : currentTileSheet.Id);
+
+                        previousTileSheet = currentTileSheet;
+                    }
+
+                    if (currentTile is StaticTile)
+                    {
+                        //StoreStaticTile((StaticTile)currentTile, xmlWriter);
+                    }
+                    else if (currentTile is AnimatedTile)
+                    {
+                        AnimatedTile animatedTile = (AnimatedTile)currentTile;
+                        //StoreAnimatedTile(animatedTile, xmlWriter);
+                    }
+                }
+
+                if (nullCount > 0)
+                {
+                    stream.WriteByte((byte)'N');
+                    StoreInt32(stream, nullCount);
+                    nullCount = 0;
+                }
+            }
+
         }
 
         private void LoadLayer(Stream stream, Map map)
