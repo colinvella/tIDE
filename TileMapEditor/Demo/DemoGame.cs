@@ -30,6 +30,12 @@ namespace Demo
         public DemoGame()
         {
             m_graphicsDeviceManager = new GraphicsDeviceManager(this);
+
+#if XBOX
+            m_graphicsDeviceManager.PreferredBackBufferWidth = 1280;
+            m_graphicsDeviceManager.PreferredBackBufferHeight = 720;
+#endif
+
             Content.RootDirectory = "Content";
         }
 
@@ -57,13 +63,9 @@ namespace Demo
 #endif
 
             // set map viewport to match window size
-            m_viewPort = new xTile.Dimensions.Rectangle(
-                new xTile.Dimensions.Location(
-                    GraphicsDevice.Viewport.TitleSafeArea.Left,
-                    GraphicsDevice.Viewport.TitleSafeArea.Top),
-                new xTile.Dimensions.Size(
-                    GraphicsDevice.Viewport.TitleSafeArea.Width,
-                    GraphicsDevice.Viewport.TitleSafeArea.Height));
+            m_viewPort = new xTile.Dimensions.Rectangle(0, 0,
+                m_graphicsDeviceManager.PreferredBackBufferWidth,
+                m_graphicsDeviceManager.PreferredBackBufferHeight);
 
             // set help panel size
 #if WINDOWS
@@ -164,7 +166,7 @@ namespace Demo
 
             // stick movement
             m_viewPort.Location.X += (int)(leftThumbStick.X * 4.0f);
-            m_viewPort.Location.Y += (int)(leftThumbStick.Y * 4.0f);
+            m_viewPort.Location.Y -= (int)(leftThumbStick.Y * 4.0f);
 
             // touch movement (WP7 and touch-enabled displays)
             foreach (TouchLocation touchLocation in TouchPanel.GetState())
