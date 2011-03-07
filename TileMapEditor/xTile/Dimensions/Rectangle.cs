@@ -46,6 +46,19 @@ namespace xTile.Dimensions
         }
 
         /// <summary>
+        /// Constructs a Rectangle with the given location and height
+        /// </summary>
+        /// <param name="x">Horizontal location coordinate</param>
+        /// <param name="y">Vertical location coordinate</param>
+        /// <param name="width">Rectangle width</param>
+        /// <param name="height">Rectangle height</param>
+        public Rectangle(int x, int y, int width, int height)
+        {
+            Location = new Location(x, y);
+            Size = new Size(width, height);
+        }
+
+        /// <summary>
         /// Constructs a Rectangle from another one
         /// </summary>
         /// <param name="rectangle">Rectangle to clone</param>
