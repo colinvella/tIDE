@@ -612,8 +612,13 @@ namespace tIDE
             ArrangeToolStripLayout();
 
             // handle opening by file association or command line
-            if (m_arguments.Length == 1 && m_arguments[0].ToLower().EndsWith(".tide"))
-                OpenFile(m_arguments[0]);
+            if (m_arguments.Length == 1)
+            {
+                string filename = m_arguments[0];
+                string extension = Path.GetExtension(filename).ToLower();
+                if (extension == ".tide" || extension == ".tbin")
+                    OpenFile(filename);
+            }
         }
 
         private void OnMainFormResizeEnd(object sender, EventArgs eventArgs)

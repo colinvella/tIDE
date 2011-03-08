@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3B6AD2A693784165A5C1DDCF177061BB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5EDF56440AB84A17B3A48BD987431371"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,6 +47,12 @@
         {
         "MsmKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_82DE130E4F22C6AE8E0601B99DA53848"
+        "OwnerKey" = "8:_2F5653AEE992F72AAAA84D7F6A581EEE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,38 +69,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F72C682674C16FDA647D58279FE49600"
-        "OwnerKey" = "8:_2F5653AEE992F72AAAA84D7F6A581EEE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F72C682674C16FDA647D58279FE49600"
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+        "OwnerKey" = "8:_2F5653AEE992F72AAAA84D7F6A581EEE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_82DE130E4F22C6AE8E0601B99DA53848"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2F5653AEE992F72AAAA84D7F6A581EEE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F72C682674C16FDA647D58279FE49600"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -136,7 +130,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\tIDESetup200.msi"
+        "OutputFilename" = "8:Release\\tIDESetup201.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -281,7 +275,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:tIDE.Plugin, Version=2.0.0.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:tIDE.Plugin, Version=2.0.1.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
                     "_2F5653AEE992F72AAAA84D7F6A581EEE"
@@ -328,6 +322,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3B6AD2A693784165A5C1DDCF177061BB"
+            {
+            "SourcePath" = "8:tBIN.ico"
+            "TargetName" = "8:tBIN.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5EDF56440AB84A17B3A48BD987431371"
             {
             "SourcePath" = "8:BannerBitmap.bmp"
@@ -352,7 +366,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=737c45b5921cd681, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.1.0, Culture=neutral, PublicKeyToken=737c45b5921cd681, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
                     "_82DE130E4F22C6AE8E0601B99DA53848"
@@ -399,46 +413,38 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F72C682674C16FDA647D58279FE49600"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=737c45b5921cd681, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_F72C682674C16FDA647D58279FE49600"
-                    {
-                    "Name" = "8:xTile.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:xTile.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
+            "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_23DDF814B0F949D48431913EEBF8DEEC"
+            {
+            "Name" = "8:tBIN Binary Map File"
+            "Description" = "8:tBIN Binary Map File"
+            "Extensions" = "8:tbin"
+            "MIME" = "8:bin/tbin"
+            "Icon" = "8:_3B6AD2A693784165A5C1DDCF177061BB"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
+                }
+                "Verbs"
+                {
+                    "{95C0C507-CBF0-42B8-B119-07219E384A4A}:_64C5FAFCF6BF43ADB4380701F74F316B"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_CFF3A724AD8245CB8454DBB083E5C513"
             {
-            "Name" = "8:tIDE Map File"
-            "Description" = "8:tIDE Map File"
+            "Name" = "8:tIDE XML Map File"
+            "Description" = "8:tIDE XML Map File"
             "Extensions" = "8:tide"
-            "MIME" = "8:xnl/tide"
+            "MIME" = "8:xml/tide"
             "Icon" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
             "IconIndex" = "3:0"
                 "Command"
@@ -530,24 +536,24 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:tIDE v2.0.0"
-        "ProductCode" = "8:{8B955341-243E-4EB9-81B3-35CCD4295455}"
-        "PackageCode" = "8:{74838804-7259-4961-AF6A-31B431AE24DD}"
+        "ProductName" = "8:tIDE v2.0.1"
+        "ProductCode" = "8:{4B4345D9-A3BF-409F-A392-3B45C4C3E067}"
+        "PackageCode" = "8:{91D2ACD9-EBA5-493B-909C-DC8975BE1A8C}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.0"
+        "ProductVersion" = "8:2.0.1"
         "Manufacturer" = "8:Colin Vella"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://tide.codeplex.com"
-        "Title" = "8:tIDE Tile Map Editor v2.0.0"
+        "Title" = "8:tIDE Tile Map Editor v2.0.1"
         "Subject" = "8:Tilemap Integrated Development Environment (tIDE) v1.2.6"
         "ARPCONTACT" = "8:Colin Vella"
         "Keywords" = "8:tIDE tile map editor 2D level graphics XNA 4.0"
-        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v2.0.0"
+        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v2.0.1"
         "ARPURLINFOABOUT" = "8:http://tide.codeplex.com"
         "ARPPRODUCTICON" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "ARPIconIndex" = "3:0"
