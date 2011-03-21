@@ -44,6 +44,22 @@ namespace xTile.Display
             set { m_modulationColour = value; }
         }
 
+        /// <summary>
+        /// Spritebatch instance used for alpha blending
+        /// </summary>
+        public SpriteBatch SpriteBatchAlpha
+        {
+            get { return m_spriteBatchAlpha; }
+        }
+
+        /// <summary>
+        /// Spritebatch instance used for additive blending
+        /// </summary>
+        public SpriteBatch SpriteBatchAdditive
+        {
+            get { return m_spriteBatchAdditive; }
+        }
+
         #endregion
 
         #region Public Methods

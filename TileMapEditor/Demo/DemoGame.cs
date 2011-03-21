@@ -14,6 +14,7 @@ using xTile.Display;
 using xTile.Dimensions;
 using xTile.Tiles;
 using Microsoft.Xna.Framework.Input.Touch;
+using xTile.Layers;
 
 namespace Demo
 {
@@ -76,6 +77,17 @@ namespace Demo
                 0, m_viewPort.Height - 56, m_viewPort.Width, 56);
 #endif
 
+            m_vecLeavePositions = new Vector2[20];
+            m_vecLeaveVelocities = new Vector2[m_vecLeavePositions.Length];
+            Random random = new Random();
+            for (int index = 0; index < m_vecLeavePositions.Length; index++)
+            {
+                m_vecLeavePositions[index] = new Vector2(
+                    random.Next(m_viewPort.Width), random.Next(m_viewPort.Height));
+                m_vecLeaveVelocities[index] = new Vector2(
+                    1 + random.Next(4), 1 + random.Next(3));
+            }
+
             base.Initialize();
         }
 
@@ -92,9 +104,13 @@ namespace Demo
             // load font for help text
             m_spriteFontDemo = Content.Load<SpriteFont>("Fonts/Demo");
 
+            m_textureLeaf = Content.Load<Texture2D>("Graphics/Leaf");
+
             // load map from content pipeline and initialise it
             m_map = Content.Load<Map>("Maps\\Map01");
             m_map.LoadTileSheets(m_xnaDisplayDevice);
+
+            m_map.Layers[3].BeforeDraw += OnBeforeLayerDraw;
 
             // prepare translucent panel for help text
             m_texturePanel = new Texture2D(GraphicsDevice, 1, 1);
@@ -150,6 +166,25 @@ namespace Demo
                         GraphicsDevice.Viewport.TitleSafeArea.Height));
             }
 #endif
+
+            // leave animations
+            Random random = new Random();
+            for (int index = 0; index < m_vecLeavePositions.Length; index++)
+            {
+                m_vecLeavePositions[index] += m_vecLeaveVelocities[index];
+                if (m_vecLeavePositions[index].X > m_viewPort.Width)
+                {
+                    m_vecLeavePositions[index].X = -m_textureLeaf.Width;
+                    m_vecLeaveVelocities[index].X = 1 + random.Next(4);
+                    m_vecLeaveVelocities[index].Y = 1 + random.Next(3);
+                }
+                if (m_vecLeavePositions[index].Y > m_viewPort.Height)
+                {
+                    m_vecLeavePositions[index].Y = -m_textureLeaf.Height;
+                    m_vecLeaveVelocities[index].X = 1 + random.Next(4);
+                    m_vecLeaveVelocities[index].Y = 1 + random.Next(3);
+                }
+            }
 
             // movement via keyboard
             if (keyboardState.IsKeyDown(Keys.Left))
@@ -237,6 +272,22 @@ namespace Demo
             m_spriteBatch.DrawString(m_spriteFontDemo, text, textPosition, Color.White);
         }
 
+        /// <summary>
+        /// Intra-layer drawing event handler for rendering wind-swept leaves
+        /// </summary>
+        /// <param name="layerEventArgs"></param>
+        private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
+        {
+            SpriteBatch spriteBatch = m_xnaDisplayDevice.SpriteBatchAlpha;
+
+            foreach (Vector2 vecLeaf in m_vecLeavePositions)
+            {
+                float fRotation = ((vecLeaf.X + vecLeaf.Y) * 0.01f) % MathHelper.TwoPi;
+                spriteBatch.Draw(m_textureLeaf, vecLeaf, null, Color.White, fRotation, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
+            }
+
+        }
+
         #endregion
 
         #region Private Variables
@@ -256,6 +307,9 @@ namespace Demo
         private Microsoft.Xna.Framework.Rectangle m_panelRectangle;
         private Texture2D m_texturePanel;
         private SpriteFont m_spriteFontDemo;
+        private Texture2D m_textureLeaf;
+        private Vector2[] m_vecLeavePositions;
+        private Vector2[] m_vecLeaveVelocities;
 
         #endregion
     }
