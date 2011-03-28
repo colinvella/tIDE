@@ -398,7 +398,7 @@ namespace tIDE.Controls
             UpdateScrollBars();
         }
 
-        private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
+        private void OnBeforeLayerDraw(object sender, LayerEventArgs layerEventArgs)
         {
             m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
 
@@ -414,7 +414,7 @@ namespace tIDE.Controls
 
         }
 
-        private void OnAfterLayerDraw(LayerEventArgs layerEventArgs)
+        private void OnAfterLayerDraw(object sender, LayerEventArgs layerEventArgs)
         {
             if (layerEventArgs.Layer != m_selectedLayer)
                 return;

@@ -83,6 +83,7 @@
     <Compile Include="Format\XmlHelper.cs" />
     <Compile Include="Layers\Layer.cs" />
     <Compile Include="Layers\LayerEventArgs.cs" />
+    <Compile Include="Layers\LayerEventHandler.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="ObjectModel\Component.cs" />
     <Compile Include="ObjectModel\DescribedComponent.cs" />

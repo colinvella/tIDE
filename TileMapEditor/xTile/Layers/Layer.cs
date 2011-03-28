@@ -230,7 +230,7 @@ namespace xTile.Layers
         public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
         {
             if (BeforeDraw != null)
-                BeforeDraw(new LayerEventArgs(this, mapViewport));
+                BeforeDraw(this, new LayerEventArgs(this, mapViewport));
 
             // determine internal tile offset
             Location tileInternalOffset = new Location(
@@ -285,7 +285,7 @@ namespace xTile.Layers
             }
 
             if (AfterDraw != null)
-                AfterDraw(new LayerEventArgs(this, mapViewport));
+                AfterDraw(this, new LayerEventArgs(this, mapViewport));
         }
 
         #endregion
@@ -440,10 +440,4 @@ namespace xTile.Layers
 
         #endregion
     }
-
-    /// <summary>
-    /// Delegate for Layer events
-    /// </summary>
-    /// <param name="layerEventArgs">Argument structure for Layer events</param>
-    public delegate void LayerEventHandler(LayerEventArgs layerEventArgs);
 }

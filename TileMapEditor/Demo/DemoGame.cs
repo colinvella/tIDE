@@ -276,7 +276,7 @@ namespace Demo
         /// Intra-layer drawing event handler for rendering wind-swept leaves
         /// </summary>
         /// <param name="layerEventArgs"></param>
-        private void OnBeforeLayerDraw(LayerEventArgs layerEventArgs)
+        private void OnBeforeLayerDraw(object sender, LayerEventArgs layerEventArgs)
         {
             SpriteBatch spriteBatch = m_xnaDisplayDevice.SpriteBatchAlpha;
 
