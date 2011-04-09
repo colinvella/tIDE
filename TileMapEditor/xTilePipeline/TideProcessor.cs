@@ -21,7 +21,7 @@ namespace xTile.Pipeline
     /// Content processor class for tIDE map files
     /// </summary>
     [ContentProcessor(DisplayName = "tIDE Map Processor")]
-    public class TideProcessor : ContentProcessor<Map, Map>
+    public class TideProcessor : ContentProcessor<MapImport, Map>
     {
         #region Public Methods
 
@@ -31,8 +31,10 @@ namespace xTile.Pipeline
         /// <param map="input">Input map object</param>
         /// <param name="contentProcessorContext">Processor context object</param>
         /// <returns></returns>
-        public override Map Process(Map map, ContentProcessorContext contentProcessorContext)
+        public override Map Process(MapImport mapImport, ContentProcessorContext contentProcessorContext)
         {
+            Map map = mapImport.Map;
+
             // handle invisible layer exclusion
             if (m_excludeInvisibleLayers)
             {
@@ -74,30 +76,24 @@ namespace xTile.Pipeline
                 // get image source
                 string imageSource = tileSheet.ImageSource;
 
-                // build path relative to content directory (remove upward folder refs)
-                string contentSourcePath = imageSource + "";
-                while (contentSourcePath.StartsWith("..\\")
-                    || contentSourcePath.StartsWith("../"))
-                    contentSourcePath = contentSourcePath.Remove(0, 3);
+                // convert relative path to absolute
+                // note: using URI helps resolve \..\ instances
+                string absoluteImagePath = mapImport.MapDirectory + Path.DirectorySeparatorChar + tileSheet.ImageSource;
+                Uri uri = new Uri(absoluteImagePath);
+                absoluteImagePath = Path.GetFullPath(uri.AbsolutePath);
 
                 // not strictly needed, but sets asset dependency
-                string absoluteImagePath = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + contentSourcePath;
                 contentProcessorContext.AddDependency(absoluteImagePath);
 
                 // generate asset name
-                string assetName = null;
-                string extension = Path.GetExtension(contentSourcePath);
-                if (extension != string.Empty)
-                    assetName
-                        = contentSourcePath.Remove(contentSourcePath.Length - extension.Length);
-                else
-                    assetName = contentSourcePath;
+                string assetName = tileSheet.ImageSource.Replace(@"..\", "");
+                assetName = assetName.Remove(assetName.Length - Path.GetExtension(assetName).Length);
 
                 // force build of image source as asset
-                contentProcessorContext.Logger.LogImportantMessage("Discovered dependency on asset '" + contentSourcePath + "'...");
+                contentProcessorContext.Logger.LogImportantMessage("Discovered dependency on asset '" + absoluteImagePath + "'...");
                 ExternalReference<TextureContent> imageSourceReference
                     = contentProcessorContext.BuildAsset<TextureContent, TextureContent>(
-                        new ExternalReference<TextureContent>(contentSourcePath), "TextureProcessor", null, null, assetName);
+                        new ExternalReference<TextureContent>(absoluteImagePath), "TextureProcessor", null, null, assetName);
 
                 tileSheet.ImageSource = assetName;
 

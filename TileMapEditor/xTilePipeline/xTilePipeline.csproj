@@ -128,6 +128,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapImport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TideImporter.cs" />
     <Compile Include="TideProcessor.cs" />
