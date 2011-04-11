@@ -87,6 +87,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="ObjectModel\Component.cs" />
     <Compile Include="ObjectModel\DescribedComponent.cs" />
+    <Compile Include="ObjectModel\IPropertyCollection.cs" />
     <Compile Include="ObjectModel\PropertyCollection.cs" />
     <Compile Include="ObjectModel\PropertyValue.cs" />
     <Compile Include="Pipeline\TideReader.cs" />
@@ -95,6 +96,8 @@
     <Compile Include="Tiles\StaticTile.cs" />
     <Compile Include="Tiles\Tile.cs" />
     <Compile Include="Tiles\TileArray.cs" />
+    <Compile Include="Tiles\TileIndexPropertyAccessor.cs" />
+    <Compile Include="Tiles\TileIndexPropertyCollection.cs" />
     <Compile Include="Tiles\TileSheet.cs" />
   </ItemGroup>
   <ItemGroup>

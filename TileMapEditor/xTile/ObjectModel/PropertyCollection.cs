@@ -17,11 +17,9 @@ using System.Text;
 namespace xTile.ObjectModel
 {
     /// <summary>
-    /// Implementation of a custom property collection used by
-    /// component objects. This class extends the .NET Framework
-    /// generic Dictionary class
+    /// General implementation of the IPropertyCollection interface
     /// </summary>
-    public class PropertyCollection : Dictionary<string, PropertyValue>
+    public class PropertyCollection : Dictionary<string, PropertyValue>, IPropertyCollection
     {
         /// <summary>
         /// Constucts an empty property collection
@@ -36,7 +34,7 @@ namespace xTile.ObjectModel
         /// collection
         /// </summary>
         /// <param name="propertyCollection">Property collection to clone</param>
-        public PropertyCollection(PropertyCollection propertyCollection)
+        public PropertyCollection(IPropertyCollection propertyCollection)
             : base(propertyCollection.Count)
         {
             CopyFrom(propertyCollection);
@@ -46,7 +44,7 @@ namespace xTile.ObjectModel
         /// Copies the given property collection into this collection
         /// </summary>
         /// <param name="propertyCollection">Property collection to copy from</param>
-        public void CopyFrom(PropertyCollection propertyCollection)
+        public void CopyFrom(IPropertyCollection propertyCollection)
         {
             foreach (KeyValuePair<string, PropertyValue> keyValuePair in propertyCollection)
                 this[keyValuePair.Key] = new PropertyValue(keyValuePair.Value);

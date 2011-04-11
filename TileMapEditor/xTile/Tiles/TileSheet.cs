@@ -165,6 +165,14 @@ namespace xTile.Tiles
             }
         }
 
+        /// <summary>
+        /// Custom properties per tile index
+        /// </summary>
+        public TileIndexPropertyAccessor TileIndexProperties
+        {
+            get { return m_tileIndexPropertyAccessor; }
+        }
+
         #endregion
 
         #region Public Methods
@@ -185,6 +193,7 @@ namespace xTile.Tiles
             m_sheetSize = sheetSize;
             m_tileSize = tileSize;
             m_margin = m_spacing = Size.Zero;
+            m_tileIndexPropertyAccessor = new TileIndexPropertyAccessor(this);
         }
 
         /// <summary>
@@ -204,6 +213,7 @@ namespace xTile.Tiles
             m_sheetSize = sheetSize;
             m_tileSize = tileSize;
             m_margin = m_spacing = Size.Zero;
+            m_tileIndexPropertyAccessor = new TileIndexPropertyAccessor(this);
         }
 
         /// <summary>
@@ -247,6 +257,7 @@ namespace xTile.Tiles
         private Size m_tileSize;
         private Size m_margin;
         private Size m_spacing;
+        private TileIndexPropertyAccessor m_tileIndexPropertyAccessor;
 
         #endregion
     }

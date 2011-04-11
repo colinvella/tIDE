@@ -139,8 +139,11 @@
     <Compile Include="Map.cs" />
     <Compile Include="ObjectModel\Component.cs" />
     <Compile Include="ObjectModel\DescribedComponent.cs" />
+    <Compile Include="ObjectModel\IPropertyCollection.cs" />
     <Compile Include="ObjectModel\PropertyCollection.cs" />
     <Compile Include="ObjectModel\PropertyValue.cs" />
+    <Compile Include="Tiles\TileIndexPropertyAccessor.cs" />
+    <Compile Include="Tiles\TileIndexPropertyCollection.cs" />
     <Compile Include="Pipeline\TideReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tiles\AnimatedTile.cs" />

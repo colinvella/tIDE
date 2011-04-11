@@ -36,7 +36,7 @@ namespace xTile.ObjectModel
         /// <summary>
         /// Custom Property collection associated with this Component
         /// </summary>
-        public PropertyCollection Properties { get { return m_propertyCollection; } }
+        public IPropertyCollection Properties { get { return m_propertyCollection; } }
 
         #endregion
 
