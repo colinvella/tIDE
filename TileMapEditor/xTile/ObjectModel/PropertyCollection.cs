@@ -43,7 +43,7 @@ namespace xTile.ObjectModel
         }
 
         /// <summary>
-        /// Copies the givne property collection into this collection
+        /// Copies the given property collection into this collection
         /// </summary>
         /// <param name="propertyCollection">Property collection to copy from</param>
         public void CopyFrom(PropertyCollection propertyCollection)
