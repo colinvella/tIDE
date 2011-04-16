@@ -171,6 +171,8 @@ namespace xTile.Tiles
                 PropertyValue propertyValue = this[key];
                 KeyValuePair<string, PropertyValue> keyValuePair
                     = new KeyValuePair<string, PropertyValue>(key, propertyValue);
+
+                keyValuePairs.Add(keyValuePair);
             }
 
             return keyValuePairs.GetEnumerator();

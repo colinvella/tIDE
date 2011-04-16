@@ -10,6 +10,8 @@ using xTile.Tiles;
 using xTile;
 using System.IO;
 using tIDE.TileBrushes;
+using xTile.ObjectModel;
+using tIDE.Dialogs;
 
 namespace tIDE.Controls
 {
@@ -544,6 +546,24 @@ namespace tIDE.Controls
             RefreshSelectedTileSheet();
         }
 
+        private void OnTilePickerMenuOpening(object sender, CancelEventArgs cancelEventArgs)
+        {
+            if (!Enabled || m_tileSheet == null
+                || m_hoverTileIndex < 0 || m_hoverTileIndex >= m_tileSheet.TileCount)
+                cancelEventArgs.Cancel = true;
+        }
+
+        private void OnTileIndexProperties(object sender, EventArgs evemtArgs)
+        {
+            TileIndexPropertyComponent tileIndexPropertyComponent
+                = new TileIndexPropertyComponent(m_tileSheet.TileIndexProperties[m_hoverTileIndex]);
+
+            CustomPropertiesDialog customPropertiesDialog
+                = new CustomPropertiesDialog("Custom Properties for Tile Index #" + m_hoverTileIndex, tileIndexPropertyComponent);
+
+            customPropertiesDialog.ShowDialog(this);
+        }
+
         private void OnTileSheetImageSourceChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
             foreach (TileSheet tileSheet in m_map.TileSheets)
@@ -692,6 +712,25 @@ namespace tIDE.Controls
         private Brush m_selectionBrush;
 
         private List<int> m_indexToMru;
+
+        #endregion
+
+        #region Private Classes
+
+        private class TileIndexPropertyComponent : xTile.ObjectModel.Component
+        {
+            public TileIndexPropertyComponent(IPropertyCollection propertyCollection)
+            {
+                m_propertyCollection = propertyCollection;
+            }
+
+            public override IPropertyCollection Properties
+            {
+                get { return m_propertyCollection; }
+            }
+
+            private IPropertyCollection m_propertyCollection;
+        }
 
         #endregion
     }

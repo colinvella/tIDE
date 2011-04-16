@@ -41,6 +41,7 @@ namespace tIDE.Dialogs
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
             OnDialogApply(sender, eventArgs);
+            Close();
         }
 
         private void OnDialogApply(object sender, EventArgs eventArgs)
@@ -51,5 +52,11 @@ namespace tIDE.Dialogs
             m_buttonCancel.Visible = false;
             m_buttonClose.Visible = true;
         }
+
+        private void OnDialogClose(object sender, EventArgs eventArgs)
+        {
+            Close();
+        }
+
     }
 }

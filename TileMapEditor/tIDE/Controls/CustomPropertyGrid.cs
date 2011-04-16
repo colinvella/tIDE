@@ -161,7 +161,7 @@ namespace tIDE.Controls
                     newPropertyValue, m_previousPropertyValue);
             }
 
-            if (PropertyChanged != null)
+            if (PropertyChanged != null && customPropertyEventArgs != null)
                 PropertyChanged(this, customPropertyEventArgs);
         }
 
