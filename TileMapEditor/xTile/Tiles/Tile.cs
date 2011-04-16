@@ -65,6 +65,14 @@ namespace xTile.Tiles
         /// </summary>
         public abstract int TileIndex { get; set; }
 
+        /// <summary>
+        /// Custom properties stored at tile index level within the associated tile sheet
+        /// </summary>
+        public IPropertyCollection TileIndexProperties
+        {
+            get { return TileSheet.TileIndexProperties[TileIndex]; }
+        }
+
         #endregion
 
         #region Public Methods

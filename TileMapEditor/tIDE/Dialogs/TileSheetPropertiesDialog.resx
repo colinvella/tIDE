@@ -112,823 +112,758 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_comboBoxSpacing.Items5" xml:space="preserve">
-    <value>4 x 4</value>
-  </data>
-  <data name="&gt;&gt;m_comboBoxSpacing.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="m_labelImageSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="m_textBoxId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 7</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Tile Size</value>
-  </data>
-  <data name="m_buttonClose.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxCustomSettings.Name" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_tabCustomProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileWidth.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileHeight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxImageSource.Name" xml:space="preserve">
-    <value>m_textBoxImageSource</value>
-  </data>
-  <data name="m_labelId.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxCustomSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;m_tabImageList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="m_buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="m_textBoxTileWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;m_labelDescription.Name" xml:space="preserve">
-    <value>m_labelDescription</value>
-  </data>
-  <data name="&gt;&gt;m_noImageSourceMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_tabAlignment.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxImageSource.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_buttonApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 377</value>
-  </data>
-  <data name="&gt;&gt;m_trackBarZoom.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 52</value>
-  </data>
-  <data name="&gt;&gt;m_customPropertyGrid.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_labelDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 414</value>
-  </data>
-  <data name="m_buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_buttonDoneSwapping.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;m_buttonBrowse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_panelImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 6</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxImageSource.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_labelTileSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxLeftMargin.Name" xml:space="preserve">
-    <value>m_textBoxLeftMargin</value>
-  </data>
-  <data name="m_trackBarZoom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 45</value>
-  </data>
-  <data name="&gt;&gt;m_buttonSwapTiles.Parent" xml:space="preserve">
-    <value>m_tabAlignment</value>
-  </data>
-  <data name="m_textBoxSpacingX.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;m_buttonDoneSwapping.Name" xml:space="preserve">
-    <value>m_buttonDoneSwapping</value>
-  </data>
-  <data name="m_tabCustomProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TileSheetPropertiesDialog</value>
-  </data>
-  <data name="m_textBoxTopMargin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="m_buttonSwapTiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 255</value>
-  </data>
-  <data name="m_buttonDoneSwapping.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_labelTileSizeBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileWidth.Name" xml:space="preserve">
-    <value>m_textBoxTileWidth</value>
-  </data>
-  <data name="m_noImageSourceMessageBox.Text" xml:space="preserve">
-    <value>No image source selected</value>
-  </data>
-  <data name="m_buttonApply.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_textBoxTopMargin.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;m_buttonBrowse.Name" xml:space="preserve">
-    <value>m_buttonBrowse</value>
-  </data>
-  <data name="m_textBoxTileHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 19</value>
-  </data>
-  <data name="m_customPropertyGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 324</value>
-  </data>
-  <data name="m_buttonSwapTiles.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;m_duplicateIdMessageBox.Name" xml:space="preserve">
-    <value>m_duplicateIdMessageBox</value>
-  </data>
-  <data name="&gt;&gt;m_tabAlignment.Parent" xml:space="preserve">
-    <value>m_customTabControl</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingY.Name" xml:space="preserve">
-    <value>m_textBoxSpacingY</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_buttonAutoDetect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="m_tabGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_tileSizeFixedMessageBox.Name" xml:space="preserve">
-    <value>m_tileSizeFixedMessageBox</value>
-  </data>
-  <data name="m_buttonBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileWidth.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="&gt;&gt;m_comboBoxTileSize.Parent" xml:space="preserve">
-    <value>m_groupBoxQuickSettings</value>
-  </data>
-  <data name="m_groupBoxCustomSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 148</value>
-  </data>
-  <data name="m_comboBoxSpacing.Items2" xml:space="preserve">
-    <value>1 x 1</value>
-  </data>
-  <data name="m_comboBoxMargin.Items" xml:space="preserve">
-    <value>Custom</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingY.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="m_groupBoxCustomSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="m_textBoxImageSource.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 75</value>
-  </data>
-  <data name="&gt;&gt;m_labelImageSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_labelTileSizeBy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingX.Name" xml:space="preserve">
-    <value>m_textBoxSpacingX</value>
-  </data>
-  <data name="m_trackBarZoom.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="m_buttonDoneSwapping.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 255</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_labelTileSizeBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 23</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 450</value>
-  </data>
-  <data name="m_tileSizeFixedMessageBox.Caption" xml:space="preserve">
-    <value>Tile Sheet Properties</value>
-  </data>
-  <data name="&gt;&gt;m_customTabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
-    <value>m_customTabControl</value>
-  </data>
-  <data name="m_buttonApply.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_trackBarZoom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_buttonBrowse.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxQuickSettings.Parent" xml:space="preserve">
-    <value>m_tabAlignment</value>
-  </data>
-  <data name="m_buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_noImageSourceMessageBox.Name" xml:space="preserve">
-    <value>m_noImageSourceMessageBox</value>
-  </data>
-  <data name="m_buttonBrowse.Text" xml:space="preserve">
-    <value>Browse...</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxQuickSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_buttonAutoDetect.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="m_buttonSwapTiles.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="m_buttonOk.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="m_buttonBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>471, 303</value>
-  </data>
-  <data name="&gt;&gt;m_comboBoxTileSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_buttonSwapTiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 23</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_buttonApply.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="m_labelZoom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;m_tabGeneral.Parent" xml:space="preserve">
-    <value>m_customTabControl</value>
-  </data>
-  <data name="m_labelTileSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_buttonBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_customTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_labelDescription.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="m_textBoxLeftMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 45</value>
-  </data>
-  <data name="m_textBoxSpacingX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="m_buttonAutoDetect.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
-    <value>m_buttonCancel</value>
-  </data>
-  <data name="&gt;&gt;m_labelTileSizeBy.Name" xml:space="preserve">
-    <value>m_labelTileSizeBy</value>
-  </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Name" xml:space="preserve">
-    <value>m_customPropertyGrid</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="m_groupBoxQuickSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_labelZoom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="m_comboBoxMargin.Items5" xml:space="preserve">
-    <value>4 x 4</value>
-  </data>
-  <data name="m_textBoxTopMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 45</value>
-  </data>
-  <data name="&gt;&gt;m_labelId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_customTabControl.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomTabControl, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_comboBoxSpacing.Items3" xml:space="preserve">
-    <value>2 x 2</value>
-  </data>
-  <data name="m_noImageSourceMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
-    <value>0</value>
-  </data>
-  <data name="m_textBoxTileHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="m_labelTileSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="m_labelTileSize.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_customPropertyGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="m_buttonAutoDetect.Text" xml:space="preserve">
-    <value>Auto Detect</value>
-  </data>
-  <data name="m_textBoxSpacingY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 71</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileHeight.Name" xml:space="preserve">
-    <value>m_textBoxTileHeight</value>
-  </data>
-  <data name="m_tabCustomProperties.Text" xml:space="preserve">
-    <value> Custom Properties </value>
-  </data>
-  <data name="&gt;&gt;m_panelImage.Parent" xml:space="preserve">
-    <value>m_tabAlignment</value>
-  </data>
-  <data name="m_textBoxLeftMargin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingX.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxDescription.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 10</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;m_buttonAutoDetect.Name" xml:space="preserve">
-    <value>m_buttonAutoDetect</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_noImageSourceMessageBox.Caption" xml:space="preserve">
-    <value>Tile Sheet Properties</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxId.Name" xml:space="preserve">
-    <value>m_textBoxId</value>
-  </data>
-  <data name="&gt;&gt;m_buttonDoneSwapping.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_labelZoom.Text" xml:space="preserve">
-    <value>Zoom</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 73</value>
-  </data>
-  <data name="m_comboBoxMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 21</value>
-  </data>
-  <data name="m_groupBoxCustomSettings.Text" xml:space="preserve">
-    <value>Custom Settings</value>
-  </data>
-  <data name="m_textBoxImageSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="m_textBoxDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_tabCustomProperties.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;m_labelTileSize.Name" xml:space="preserve">
-    <value>m_labelTileSize</value>
-  </data>
-  <data name="m_labelDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxQuickSettings.Name" xml:space="preserve">
-    <value>m_groupBoxQuickSettings</value>
-  </data>
-  <data name="m_textBoxTileHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;m_labelTileSize.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;m_labelTileSizeBy.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
+  <data name="m_tabAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 333</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>m_groupBoxQuickSettings</value>
-  </data>
-  <data name="&gt;&gt;m_tabCustomProperties.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_labelImageSource.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_labelZoom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="m_buttonCancel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_labelTileSizeBy.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="m_labelTileSizeBy.Text" xml:space="preserve">
-    <value>x</value>
-  </data>
-  <data name="m_comboBoxSpacing.Items4" xml:space="preserve">
-    <value>3 x 3</value>
-  </data>
-  <data name="m_labelZoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 303</value>
-  </data>
-  <data name="m_textBoxSpacingY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;m_labelDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_labelImageSource.Text" xml:space="preserve">
-    <value>Image Source</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_labelImageSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_textBoxTileHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
   </data>
-  <data name="&gt;&gt;m_textBoxImageSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_labelZoom.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="m_buttonOk.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTileHeight.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="&gt;&gt;m_buttonSwapTiles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;m_trackBarZoom.Name" xml:space="preserve">
-    <value>m_trackBarZoom</value>
+  <data name="m_panelImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Spacing</value>
   </data>
-  <data name="m_comboBoxTileSize.Items" xml:space="preserve">
-    <value>Custom</value>
-  </data>
-  <data name="m_labelImageSource.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;m_buttonAutoDetect.Parent" xml:space="preserve">
-    <value>m_groupBoxQuickSettings</value>
-  </data>
-  <data name="m_comboBoxMargin.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTopMargin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_panelImage.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTopMargin.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="m_textBoxSpacingY.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="m_labelTileSizeBy.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_tabAlignment.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="m_panelImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxCustomSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
-    <value>The specified Id is already used by another tile sheet</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;m_tabGeneral.Name" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_buttonBrowse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="m_buttonDoneSwapping.Text" xml:space="preserve">
-    <value>Done Swapping</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;m_buttonDoneSwapping.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>x</value>
-  </data>
-  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;m_buttonSwapTiles.Name" xml:space="preserve">
     <value>m_buttonSwapTiles</value>
   </data>
-  <data name="m_trackBarZoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 297</value>
+  <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;m_buttonApply.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_comboBoxMargin.Items3" xml:space="preserve">
-    <value>2 x 2</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="m_tabAlignment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="m_labelZoom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="m_labelImageSource.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;m_labelTileSizeBy.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="m_labelId.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="m_buttonDoneSwapping.Text" xml:space="preserve">
+    <value>Done Swapping</value>
   </data>
-  <data name="m_customPropertyGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 106</value>
+  <data name="m_buttonCancel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;m_tabCustomProperties.Name" xml:space="preserve">
-    <value>m_tabCustomProperties</value>
+  <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="m_labelImageSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_comboBoxSpacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 103</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingY.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="&gt;&gt;m_tabImageList.Name" xml:space="preserve">
-    <value>m_tabImageList</value>
-  </data>
-  <data name="&gt;&gt;m_customTabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_panelImage.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPanel, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_buttonApply.Name" xml:space="preserve">
-    <value>m_buttonApply</value>
-  </data>
-  <data name="&gt;&gt;m_tabGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;m_labelDescription.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 333</value>
-  </data>
-  <data name="m_comboBoxSpacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 21</value>
-  </data>
-  <data name="m_buttonApply.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;m_panelImage.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="m_duplicateIdMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
-    <value>0</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="m_buttonSwapTiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;m_groupBoxQuickSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Parent" xml:space="preserve">
-    <value>m_tabCustomProperties</value>
-  </data>
-  <data name="m_customPropertyGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="m_labelId.Text" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="m_buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="m_buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="m_customPropertyGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="m_buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="m_groupBoxCustomSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 101</value>
+  </data>
+  <data name="m_buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="m_comboBoxTileSize.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="&gt;&gt;m_textBoxSpacingX.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
-  <data name="m_textBoxId.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;m_textBoxLeftMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_comboBoxMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 21</value>
+  </data>
+  <data name="m_buttonDoneSwapping.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_buttonSwapTiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTileWidth.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="&gt;&gt;m_buttonClose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_tabCustomProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxDescription.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxLeftMargin.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="m_labelTileSize.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_buttonBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_customPropertyGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxMargin.Name" xml:space="preserve">
+    <value>m_comboBoxMargin</value>
+  </data>
+  <data name="m_comboBoxMargin.Items1" xml:space="preserve">
+    <value>0 x 0</value>
+  </data>
+  <data name="m_textBoxLeftMargin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="m_comboBoxSpacing.Items3" xml:space="preserve">
+    <value>2 x 2</value>
+  </data>
+  <data name="&gt;&gt;m_buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_comboBoxTileSize.Items2" xml:space="preserve">
+    <value>16 x 16</value>
+  </data>
+  <data name="m_comboBoxTileSize.Items3" xml:space="preserve">
+    <value>32 x 32</value>
+  </data>
+  <data name="m_labelTileSizeBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="m_labelImageSource.Text" xml:space="preserve">
+    <value>Image Source</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 75</value>
+  </data>
+  <data name="m_comboBoxTileSize.Items7" xml:space="preserve">
+    <value>512 x 512</value>
+  </data>
+  <data name="m_comboBoxTileSize.Items4" xml:space="preserve">
+    <value>64 x 64</value>
+  </data>
+  <data name="m_comboBoxTileSize.Items5" xml:space="preserve">
+    <value>128 x 128</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="m_labelTileSizeBy.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxImageSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tabGeneral.Parent" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxQuickSettings.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="m_textBoxTopMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="m_textBoxTopMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 45</value>
+  </data>
+  <data name="m_labelTileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="m_comboBoxSpacing.Items2" xml:space="preserve">
+    <value>1 x 1</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="m_tabCustomProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="m_comboBoxMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>m_groupBoxQuickSettings</value>
+  </data>
+  <data name="m_comboBoxMargin.Items4" xml:space="preserve">
+    <value>3 x 3</value>
+  </data>
+  <data name="&gt;&gt;m_customPropertyGrid.Name" xml:space="preserve">
+    <value>m_customPropertyGrid</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tile Sheet Properties</value>
+  </data>
+  <data name="m_textBoxTileHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 19</value>
+  </data>
+  <data name="m_labelTileSize.Text" xml:space="preserve">
+    <value>Tile Size</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="m_buttonAutoDetect.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="m_buttonBrowse.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="m_buttonSwapTiles.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_labelImageSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;m_buttonAutoDetect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_textBoxLeftMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 45</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTileWidth.Name" xml:space="preserve">
+    <value>m_textBoxTileWidth</value>
+  </data>
+  <data name="m_tabCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 333</value>
+  </data>
+  <data name="m_buttonAutoDetect.Text" xml:space="preserve">
+    <value>Auto Detect</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
+  <data name="m_textBoxTileWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxQuickSettings.Name" xml:space="preserve">
+    <value>m_groupBoxQuickSettings</value>
+  </data>
+  <data name="m_textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 33</value>
+  </data>
+  <data name="&gt;&gt;m_duplicateIdMessageBox.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTileHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxImageSource.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_textBoxSpacingX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="&gt;&gt;m_panelImage.Name" xml:space="preserve">
+    <value>m_panelImage</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>m_groupBoxQuickSettings</value>
+  </data>
+  <data name="&gt;&gt;m_labelImageSource.Name" xml:space="preserve">
+    <value>m_labelImageSource</value>
+  </data>
+  <data name="m_labelImageSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 308</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_buttonBrowse.Name" xml:space="preserve">
+    <value>m_buttonBrowse</value>
+  </data>
+  <data name="m_labelId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 10</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTopMargin.Name" xml:space="preserve">
+    <value>m_textBoxTopMargin</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="m_buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_noImageSourceMessageBox.Name" xml:space="preserve">
+    <value>m_noImageSourceMessageBox</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+    <value>Tile Sheet Properties</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxSpacingY.Name" xml:space="preserve">
+    <value>m_textBoxSpacingY</value>
+  </data>
+  <data name="m_textBoxDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;m_comboBoxMargin.Parent" xml:space="preserve">
     <value>m_groupBoxQuickSettings</value>
   </data>
-  <data name="m_textBoxSpacingY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
+  <data name="&gt;&gt;m_textBoxTileHeight.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
-    <value>m_labelId</value>
+  <data name="&gt;&gt;m_buttonOk.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 79</value>
+  <data name="&gt;&gt;m_textBoxTileHeight.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
   </data>
-  <data name="&gt;&gt;m_comboBoxSpacing.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_buttonAutoDetect.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_trackBarZoom.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="m_buttonApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_labelTileSizeBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
+  <data name="m_tabAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxSpacingX.Name" xml:space="preserve">
+    <value>m_textBoxSpacingX</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_labelTileSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_tabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="m_labelId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_tabCustomProperties.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_comboBoxMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 76</value>
+  </data>
+  <data name="&gt;&gt;m_labelZoom.Name" xml:space="preserve">
+    <value>m_labelZoom</value>
+  </data>
+  <data name="&gt;&gt;m_buttonBrowse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_comboBoxSpacing.Items" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="m_buttonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 377</value>
+  </data>
+  <data name="m_comboBoxSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 103</value>
+  </data>
+  <data name="&gt;&gt;m_tabAlignment.Parent" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="m_buttonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_buttonSwapTiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="&gt;&gt;m_customTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_buttonAutoDetect.Name" xml:space="preserve">
+    <value>m_buttonAutoDetect</value>
+  </data>
+  <data name="&gt;&gt;m_labelId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_tabCustomProperties.Name" xml:space="preserve">
+    <value>m_tabCustomProperties</value>
+  </data>
+  <data name="m_buttonBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="m_tabAlignment.Text" xml:space="preserve">
+    <value>Alignment</value>
+  </data>
+  <data name="m_labelDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 36</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="&gt;&gt;m_labelDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_labelImageSource.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="m_customTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>450, 450</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_textBoxTileWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="m_labelZoom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 303</value>
+  </data>
+  <data name="m_groupBoxQuickSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="&gt;&gt;m_customPropertyGrid.Parent" xml:space="preserve">
+    <value>m_tabCustomProperties</value>
+  </data>
+  <data name="m_groupBoxCustomSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTopMargin.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="m_buttonAutoDetect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_panelImage.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomPanel, tIDE, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_groupBoxCustomSettings.Text" xml:space="preserve">
+    <value>Custom Settings</value>
+  </data>
+  <data name="m_customTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="m_comboBoxMargin.Items" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="m_buttonApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>416, 377</value>
+  </data>
+  <data name="m_textBoxTileWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 19</value>
+  </data>
+  <data name="m_labelDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_buttonBrowse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="m_textBoxImageSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="m_textBoxSpacingY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 71</value>
+  </data>
+  <data name="m_textBoxTileHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;m_labelTileSizeBy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxTileSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;m_tabAlignment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_labelId.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="m_textBoxLeftMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="m_textBoxId.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="m_tileSizeFixedMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_buttonOk.Text" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="m_comboBoxTileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 21</value>
+  </data>
+  <data name="m_labelId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="m_buttonAutoDetect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>m_groupBoxQuickSettings</value>
   </data>
-  <data name="&gt;&gt;m_labelTileSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_labelDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="m_labelDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="&gt;&gt;m_labelDescription.Name" xml:space="preserve">
+    <value>m_labelDescription</value>
+  </data>
+  <data name="m_groupBoxQuickSettings.Text" xml:space="preserve">
+    <value>Quick Settings</value>
+  </data>
+  <data name="m_labelZoom.Text" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_textBoxTopMargin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxSpacingY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_customTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 359</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_buttonClose.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_customTabControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Tile Size</value>
+  </data>
+  <data name="m_labelImageSource.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_tabAlignment.Name" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="m_labelImageSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="m_tabCustomProperties.Text" xml:space="preserve">
+    <value> Custom Properties </value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="m_comboBoxMargin.Items3" xml:space="preserve">
+    <value>2 x 2</value>
+  </data>
+  <data name="m_panelImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 6</value>
+  </data>
+  <data name="m_buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxCustomSettings.Name" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="&gt;&gt;m_buttonSwapTiles.Parent" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="m_customTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="m_textBoxId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 20</value>
+  </data>
+  <data name="m_buttonApply.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_buttonOk.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_groupBoxQuickSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 136</value>
+  </data>
+  <data name="&gt;&gt;m_buttonDoneSwapping.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxSpacing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
+  </data>
+  <data name="m_tabImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
+        CgAAAk1TRnQBSQFMAgEBAwEAAUQBAAFYAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/xYAC/MxAAEJAdMBAAFD
+        BOsBQwTrAUMB8wG1C2YXAAUUAQAFFAMAAdMCAAHrAfMDAAHrAfMDAAHrAfMBtQH/AfQB8wEZBAkCtQFm
+        FgABOAHlATgB5QE4ARQFygEUAwAB0wIAAesB8wMAAesB8wMAAesB8wG1Af8BtQH3AfMF9wG1AWYWAAEs
+        ATgBLAE4ASwBFAXLARQDAAHTAgAB6wHzAwAB6wHzAwAB6wHzAe8D/wH0AfMBGQHdAwkBZhYAATgBLAE4
+        ASwBOAEUA6gBygGoARQDAAHTAgAB6wTzAesE8wHrAfMBtQH/AvcB/wX3AQkBZhYABSwBFALKAagBywHK
+        ARQDAAEJAdMBAAFDBOsBQwTrAUMB8wG1Bf8B9AHzARkB3QEJAWYWAAH5ASwB+QEsAfkBAALKAagBywHK
+        BAAB0wIAAesB8wMAAesB8wMAAesB8wHvBv8BBwFKARkB3QFmAwAB/xMABRQBAAUUAwAB0wIAAesB8wMA
+        AesB8wMAAesB8wHvAf8B8wFuAfIB/wG8AUoBUgFDAfcBZgIAAbwBTxIABdsBFAE4AywBOAEUAwAB0wIA
+        AesB8wMAAesB8wMAAesB8wG7Af8BHAGZAUoB7wFKAXkB6gFZARACIgHvAUkBUBIABdsBFAE4AywBOAEU
+        AwAB0wIAAesE8wHrBPMB6wHzAbsB/wHzARwBmgFKAXkB6gF6AUoBWAJSAUoCUBIABdQBFAEsAzgBLAEU
+        AwABCQHTAQABQwTrAUME6wFDAQADuwHvARwBmgFKAZoBSgJ6AVkBWAFSAXIBlxIABdQBFAECASgBAgEo
+        AQIBFBYAAfQBHAGaAUoBmgN6AlkBcwGXEgAF0wEAATwBOwE8ATsBPAcAAdMEAAHTBAAB0wYAAfQBHAOa
+        AnoBeQHsApgkAAEJBNMBCQTTAQkHAAH0AxwB7QFzAewB8AKYUAABQgFNAT4HAAE+AwABKAMAAUADAAEQ
+        AwABAQEAAQEFAAGAFwAD/wEAAv8B+AEAAv8CAAL/AZACAAEPAgAB4AGDAbMBnAEAAQ8CAAHAAQMBswGc
+        AQABDwIAAcABAwGzAZwBAAEPAgABwAEDAbACAAEPAgABwAEDAZACAAEPAgABwQEHAbMBnAEAAQ4CAAHg
+        AYMBswGcAQABDAIAAcABAwGzAZwEAAHAAQMBsAUAAcABAwGQAQEEAAHAAQMC/wHwAwABwQEHAfcBvQH4
+        AwAC/wHwAQEB/AMABv8YAAs=
+</value>
+  </data>
+  <data name="m_labelId.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_labelDescription.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 52</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxTopMargin.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1693,176 +1628,380 @@
         +B+sQfgPrEHgB6xBwAOsQYABrEGAAKxBgACsQcABrEHgA6xB+A+sQfgPrEH8H6xB/j+sQf//rEE=
 </value>
   </data>
-  <data name="m_textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 33</value>
+  <data name="m_tabGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="&gt;&gt;m_labelZoom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="&gt;&gt;m_comboBoxMargin.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="m_textBoxId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 7</value>
   </data>
-  <data name="m_comboBoxTileSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 21</value>
-  </data>
-  <data name="&gt;&gt;m_buttonClose.Name" xml:space="preserve">
-    <value>m_buttonClose</value>
-  </data>
-  <data name="&gt;&gt;m_buttonBrowse.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_labelDescription.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 333</value>
-  </data>
-  <data name="m_buttonApply.Text" xml:space="preserve">
-    <value>&amp;Apply</value>
-  </data>
-  <data name="&gt;&gt;m_customTabControl.Name" xml:space="preserve">
-    <value>m_customTabControl</value>
-  </data>
-  <data name="&gt;&gt;m_tabGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="m_textBoxTileWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxTopMargin.Name" xml:space="preserve">
-    <value>m_textBoxTopMargin</value>
-  </data>
-  <data name="m_tabGeneral.Text" xml:space="preserve">
-    <value> General </value>
-  </data>
-  <data name="m_customTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 359</value>
-  </data>
-  <data name="m_buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 377</value>
-  </data>
-  <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="m_buttonAutoDetect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_buttonAutoDetect.Parent" xml:space="preserve">
     <value>m_groupBoxQuickSettings</value>
   </data>
-  <data name="&gt;&gt;m_textBoxLeftMargin.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;m_tabImageList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
+  <data name="&gt;&gt;m_textBoxSpacingY.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_comboBoxSpacing.Parent" xml:space="preserve">
     <value>m_groupBoxQuickSettings</value>
   </data>
-  <data name="&gt;&gt;m_tabAlignment.Name" xml:space="preserve">
-    <value>m_tabAlignment</value>
+  <data name="&gt;&gt;m_buttonCancel.Name" xml:space="preserve">
+    <value>m_buttonCancel</value>
+  </data>
+  <data name="m_textBoxSpacingX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 71</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="m_comboBoxSpacing.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;m_groupBoxCustomSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_labelImageSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_groupBoxCustomSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 148</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxSpacingX.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="m_tabGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="m_labelDescription.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_labelTileSize.Name" xml:space="preserve">
+    <value>m_labelTileSize</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.Name" xml:space="preserve">
+    <value>m_textBoxId</value>
+  </data>
+  <data name="m_comboBoxSpacing.Items5" xml:space="preserve">
+    <value>4 x 4</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
+  </data>
+  <data name="&gt;&gt;m_labelZoom.Parent" xml:space="preserve">
     <value>m_tabAlignment</value>
   </data>
-  <data name="m_labelZoom.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_textBoxImageSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 305</value>
+  <data name="&gt;&gt;m_textBoxLeftMargin.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
   </data>
-  <data name="&gt;&gt;m_comboBoxMargin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 49</value>
+  <data name="m_labelZoom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="m_textBoxLeftMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 20</value>
+  <data name="m_groupBoxQuickSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="m_buttonSwapTiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_trackBarZoom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="m_textBoxTileWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
   </data>
-  <data name="m_comboBoxTileSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 49</value>
+  <data name="m_textBoxSpacingY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="&gt;&gt;m_labelTileSize.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
+  <data name="m_comboBoxSpacing.Items4" xml:space="preserve">
+    <value>3 x 3</value>
   </data>
-  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 377</value>
+  <data name="&gt;&gt;m_textBoxTileWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 264</value>
+  <data name="m_buttonBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>471, 303</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 49</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="m_comboBoxSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 21</value>
   </data>
-  <data name="m_labelImageSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 308</value>
+  <data name="m_tileSizeFixedMessageBox.Text" xml:space="preserve">
+    <value>The tile size cannot be changed as this tile sheet is currently in use</value>
   </data>
-  <data name="m_buttonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="m_comboBoxMargin.Items2" xml:space="preserve">
+    <value>1 x 1</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxCustomSettings.Parent" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_buttonDoneSwapping.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 255</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_labelTileSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_buttonBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="m_customTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>x</value>
+  <data name="&gt;&gt;m_textBoxSpacingY.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="m_groupBoxQuickSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 136</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TileSheetPropertiesDialog</value>
   </data>
-  <data name="m_labelTileSizeBy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="m_tabCustomProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="m_tileSizeFixedMessageBox.Options" type="System.Windows.Forms.MessageBoxOptions, System.Windows.Forms">
+  <data name="m_textBoxLeftMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_buttonDoneSwapping.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="m_comboBoxTileSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 49</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxSpacing.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="m_buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="m_buttonApply.Text" xml:space="preserve">
+    <value>&amp;Apply</value>
+  </data>
+  <data name="m_buttonAutoDetect.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;m_labelImageSource.Name" xml:space="preserve">
-    <value>m_labelImageSource</value>
-  </data>
-  <data name="m_labelDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 36</value>
-  </data>
-  <data name="m_buttonDoneSwapping.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="m_textBoxId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="m_labelId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="m_labelImageSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="m_labelZoom.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="m_textBoxSpacingX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Caption" xml:space="preserve">
+    <value>Tile Sheet Properties</value>
+  </data>
+  <data name="&gt;&gt;m_buttonDoneSwapping.Parent" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_tabGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="m_customPropertyGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_trackBarZoom.Name" xml:space="preserve">
+    <value>m_trackBarZoom</value>
+  </data>
+  <data name="m_comboBoxSpacing.Items1" xml:space="preserve">
+    <value>0 x 0</value>
+  </data>
+  <data name="m_buttonSwapTiles.Text" xml:space="preserve">
+    <value>Swap Tiles</value>
+  </data>
+  <data name="m_labelTileSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="m_noImageSourceMessageBox.Text" xml:space="preserve">
+    <value>No image source selected</value>
+  </data>
+  <data name="m_tabGeneral.Text" xml:space="preserve">
+    <value> General </value>
+  </data>
+  <data name="m_tabAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_textBoxTileHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;m_tabCustomProperties.Parent" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="m_textBoxSpacingX.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="m_buttonSwapTiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 255</value>
+  </data>
+  <data name="&gt;&gt;m_labelTileSizeBy.Parent" xml:space="preserve">
     <value>m_groupBoxCustomSettings</value>
   </data>
-  <data name="m_comboBoxTileSize.Items2" xml:space="preserve">
-    <value>16 x 16</value>
+  <data name="m_textBoxImageSource.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="m_comboBoxTileSize.Items3" xml:space="preserve">
-    <value>32 x 32</value>
+  <data name="m_comboBoxTileSize.Items" xml:space="preserve">
+    <value>Custom</value>
   </data>
-  <data name="&gt;&gt;m_textBoxLeftMargin.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
+  <data name="&gt;&gt;m_panelImage.Parent" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="m_labelTileSizeBy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;m_trackBarZoom.Parent" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="&gt;&gt;m_customPropertyGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxDescription.Name" xml:space="preserve">
+    <value>m_textBoxDescription</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxTileSize.Name" xml:space="preserve">
+    <value>m_comboBoxTileSize</value>
+  </data>
+  <data name="&gt;&gt;m_buttonClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxImageSource.Name" xml:space="preserve">
+    <value>m_textBoxImageSource</value>
+  </data>
+  <data name="m_buttonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxCustomSettings.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_tabImageList.Name" xml:space="preserve">
+    <value>m_tabImageList</value>
+  </data>
+  <data name="&gt;&gt;m_buttonOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_noImageSourceMessageBox.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxQuickSettings.Parent" xml:space="preserve">
+    <value>m_tabAlignment</value>
+  </data>
+  <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
+    <value>m_buttonOk</value>
+  </data>
+  <data name="m_buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_trackBarZoom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 45</value>
+  </data>
+  <data name="&gt;&gt;m_buttonSwapTiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxImageSource.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_textBoxSpacingY.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="&gt;&gt;m_tabGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxQuickSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_customTabControl.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomTabControl, tIDE, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="m_duplicateIdMessageBox.Text" xml:space="preserve">
+    <value>The specified Id is already used by another tile sheet</value>
+  </data>
+  <data name="&gt;&gt;m_groupBoxCustomSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_labelZoom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_labelImageSource.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_labelId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="m_buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 377</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_buttonDoneSwapping.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_labelTileSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_buttonApply.Name" xml:space="preserve">
+    <value>m_buttonApply</value>
+  </data>
+  <data name="m_trackBarZoom.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;m_customTabControl.Name" xml:space="preserve">
+    <value>m_customTabControl</value>
+  </data>
+  <data name="m_textBoxImageSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 20</value>
   </data>
   <data name="m_comboBoxTileSize.Items1" xml:space="preserve">
     <value>8 x 8</value>
@@ -1870,395 +2009,253 @@
   <data name="m_comboBoxTileSize.Items6" xml:space="preserve">
     <value>256 x 256</value>
   </data>
-  <data name="m_comboBoxTileSize.Items7" xml:space="preserve">
-    <value>512 x 512</value>
+  <data name="&gt;&gt;m_buttonOk.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="m_comboBoxTileSize.Items4" xml:space="preserve">
-    <value>64 x 64</value>
+  <data name="m_textBoxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="m_comboBoxTileSize.Items5" xml:space="preserve">
-    <value>128 x 128</value>
-  </data>
-  <data name="&gt;&gt;m_comboBoxTileSize.ZOrder" xml:space="preserve">
+  <data name="m_buttonApply.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;m_textBoxTileWidth.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;m_labelZoom.Parent" xml:space="preserve">
-    <value>m_tabAlignment</value>
+  <data name="m_buttonSwapTiles.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;m_comboBoxSpacing.Name" xml:space="preserve">
-    <value>m_comboBoxSpacing</value>
+  <data name="&gt;&gt;m_tabAlignment.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="m_tabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="m_buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;m_textBoxDescription.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="m_comboBoxMargin.Items1" xml:space="preserve">
-    <value>0 x 0</value>
-  </data>
-  <data name="m_textBoxLeftMargin.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="m_groupBoxQuickSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="m_buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_labelDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_tabImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABc
-        CgAAAk1TRnQBSQFMAgEBAwEAAUQBAAFYAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQCAAEo
-        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
-        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
-        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
-        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
-        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
-        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
-        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
-        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
-        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
-        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
-        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
-        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
-        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
-        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
-        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
-        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
-        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
-        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
-        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
-        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
-        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
-        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
-        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
-        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
-        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
-        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
-        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/xYAC/MxAAEJAdMBAAFD
-        BOsBQwTrAUMB8wG1C2YXAAUUAQAFFAMAAdMCAAHrAfMDAAHrAfMDAAHrAfMBtQH/AfQB8wEZBAkCtQFm
-        FgABOAHlATgB5QE4ARQFygEUAwAB0wIAAesB8wMAAesB8wMAAesB8wG1Af8BtQH3AfMF9wG1AWYWAAEs
-        ATgBLAE4ASwBFAXLARQDAAHTAgAB6wHzAwAB6wHzAwAB6wHzAe8D/wH0AfMBGQHdAwkBZhYAATgBLAE4
-        ASwBOAEUA6gBygGoARQDAAHTAgAB6wTzAesE8wHrAfMBtQH/AvcB/wX3AQkBZhYABSwBFALKAagBywHK
-        ARQDAAEJAdMBAAFDBOsBQwTrAUMB8wG1Bf8B9AHzARkB3QEJAWYWAAH5ASwB+QEsAfkBAALKAagBywHK
-        BAAB0wIAAesB8wMAAesB8wMAAesB8wHvBv8BBwFKARkB3QFmAwAB/xMABRQBAAUUAwAB0wIAAesB8wMA
-        AesB8wMAAesB8wHvAf8B8wFuAfIB/wG8AUoBUgFDAfcBZgIAAbwBTxIABdsBFAE4AywBOAEUAwAB0wIA
-        AesB8wMAAesB8wMAAesB8wG7Af8BHAGZAUoB7wFKAXkB6gFZARACIgHvAUkBUBIABdsBFAE4AywBOAEU
-        AwAB0wIAAesE8wHrBPMB6wHzAbsB/wHzARwBmgFKAXkB6gF6AUoBWAJSAUoCUBIABdQBFAEsAzgBLAEU
-        AwABCQHTAQABQwTrAUME6wFDAQADuwHvARwBmgFKAZoBSgJ6AVkBWAFSAXIBlxIABdQBFAECASgBAgEo
-        AQIBFBYAAfQBHAGaAUoBmgN6AlkBcwGXEgAF0wEAATwBOwE8ATsBPAcAAdMEAAHTBAAB0wYAAfQBHAOa
-        AnoBeQHsApgkAAEJBNMBCQTTAQkHAAH0AxwB7QFzAewB8AKYUAABQgFNAT4HAAE+AwABKAMAAUADAAEQ
-        AwABAQEAAQEFAAGAFwAD/wEAAv8B+AEAAv8CAAL/AZACAAEPAgAB4AGDAbMBnAEAAQ8CAAHAAQMBswGc
-        AQABDwIAAcABAwGzAZwBAAEPAgABwAEDAbACAAEPAgABwAEDAZACAAEPAgABwQEHAbMBnAEAAQ4CAAHg
-        AYMBswGcAQABDAIAAcABAwGzAZwEAAHAAQMBsAUAAcABAwGQAQEEAAHAAQMC/wHwAwABwQEHAfcBvQH4
-        AwAC/wHwAQEB/AMABv8YAAs=
-</value>
-  </data>
-  <data name="m_textBoxTileWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 19</value>
-  </data>
-  <data name="m_comboBoxSpacing.Items1" xml:space="preserve">
-    <value>0 x 0</value>
-  </data>
-  <data name="&gt;&gt;m_trackBarZoom.Parent" xml:space="preserve">
-    <value>m_tabAlignment</value>
-  </data>
-  <data name="m_labelImageSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_textBoxDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="m_buttonCancel.Text" xml:space="preserve">
     <value>&amp;Cancel</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 414</value>
   </data>
-  <data name="m_groupBoxQuickSettings.Text" xml:space="preserve">
-    <value>Quick Settings</value>
-  </data>
-  <data name="&gt;&gt;m_labelZoom.Name" xml:space="preserve">
-    <value>m_labelZoom</value>
-  </data>
-  <data name="m_buttonClose.Text" xml:space="preserve">
-    <value>&amp;Close</value>
-  </data>
-  <data name="m_tabAlignment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 333</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Tile Sheet Properties</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Margin</value>
-  </data>
-  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomPropertyGrid, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_labelId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 13</value>
-  </data>
-  <data name="m_buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;m_buttonSwapTiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;m_buttonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;m_labelId.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="m_textBoxTopMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 20</value>
+  <data name="&gt;&gt;m_labelTileSizeBy.Name" xml:space="preserve">
+    <value>m_labelTileSizeBy</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="m_textBoxDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="m_labelDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="m_tabAlignment.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;m_labelId.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
+  <data name="&gt;&gt;m_buttonClose.Name" xml:space="preserve">
+    <value>m_buttonClose</value>
   </data>
   <data name="m_textBoxDescription.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;m_textBoxTopMargin.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
-  <data name="&gt;&gt;m_textBoxLeftMargin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_panelImage.Name" xml:space="preserve">
-    <value>m_panelImage</value>
-  </data>
-  <data name="m_comboBoxSpacing.Items" xml:space="preserve">
-    <value>Custom</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxId.Parent" xml:space="preserve">
-    <value>m_tabGeneral</value>
-  </data>
-  <data name="&gt;&gt;m_comboBoxTileSize.Name" xml:space="preserve">
-    <value>m_comboBoxTileSize</value>
-  </data>
-  <data name="m_buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="m_buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="m_comboBoxSpacing.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
-  <data name="m_buttonAutoDetect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;m_textBoxTopMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_labelTileSize.Text" xml:space="preserve">
-    <value>Tile Size</value>
-  </data>
-  <data name="m_textBoxSpacingX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 71</value>
-  </data>
-  <data name="m_buttonSwapTiles.Text" xml:space="preserve">
-    <value>Swap Tiles</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="m_comboBoxMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 76</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="m_buttonAutoDetect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="m_comboBoxMargin.Items2" xml:space="preserve">
-    <value>1 x 1</value>
-  </data>
-  <data name="&gt;&gt;m_trackBarZoom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Margin</value>
-  </data>
-  <data name="&gt;&gt;m_panelImage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;m_comboBoxTileSize.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Spacing</value>
+  <data name="m_textBoxImageSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 305</value>
   </data>
-  <data name="m_labelTileSizeBy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;m_textBoxTileHeight.Name" xml:space="preserve">
+    <value>m_textBoxTileHeight</value>
   </data>
-  <data name="m_groupBoxCustomSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 101</value>
+  <data name="m_tabGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 333</value>
   </data>
-  <data name="&gt;&gt;m_labelImageSource.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="m_labelTileSizeBy.Text" xml:space="preserve">
+    <value>x</value>
   </data>
-  <data name="&gt;&gt;m_buttonDoneSwapping.Parent" xml:space="preserve">
-    <value>m_tabAlignment</value>
+  <data name="m_buttonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="m_tabAlignment.Text" xml:space="preserve">
-    <value>Alignment</value>
+  <data name="m_trackBarZoom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 297</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+  <data name="&gt;&gt;m_labelZoom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="m_comboBoxMargin.Items4" xml:space="preserve">
-    <value>3 x 3</value>
-  </data>
-  <data name="m_labelTileSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+  <data name="m_tabCustomProperties.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="m_panelImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>339, 318</value>
   </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;m_textBoxLeftMargin.Name" xml:space="preserve">
+    <value>m_textBoxLeftMargin</value>
   </data>
-  <data name="&gt;&gt;m_duplicateIdMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="m_tabAlignment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 73</value>
   </data>
   <data name="&gt;&gt;m_buttonCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;m_comboBoxMargin.Name" xml:space="preserve">
-    <value>m_comboBoxMargin</value>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
-  <data name="&gt;&gt;m_buttonCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;m_buttonDoneSwapping.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>m_groupBoxCustomSettings</value>
-  </data>
-  <data name="m_textBoxImageSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 20</value>
-  </data>
-  <data name="&gt;&gt;m_tileSizeFixedMessageBox.Type" xml:space="preserve">
-    <value>TileMapEditor.Controls.CustomMessageBox, tIDE, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;m_buttonOk.Name" xml:space="preserve">
-    <value>m_buttonOk</value>
-  </data>
-  <data name="m_buttonDoneSwapping.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 23</value>
-  </data>
-  <data name="&gt;&gt;m_comboBoxSpacing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxSpacingX.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="m_tabAlignment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_textBoxId.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="m_textBoxSpacingX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
-  </data>
-  <data name="m_duplicateIdMessageBox.Caption" xml:space="preserve">
+  <data name="m_tileSizeFixedMessageBox.Caption" xml:space="preserve">
     <value>Tile Sheet Properties</value>
   </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="&gt;&gt;m_duplicateIdMessageBox.Name" xml:space="preserve">
+    <value>m_duplicateIdMessageBox</value>
+  </data>
+  <data name="m_textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 264</value>
+  </data>
+  <data name="&gt;&gt;m_trackBarZoom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_labelTileSizeBy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;m_labelTileSize.Parent" xml:space="preserve">
+    <value>m_groupBoxCustomSettings</value>
+  </data>
+  <data name="m_textBoxSpacingY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="&gt;&gt;m_customPropertyGrid.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomPropertyGrid, tIDE, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxMargin.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxSpacing.Name" xml:space="preserve">
+    <value>m_comboBoxSpacing</value>
+  </data>
+  <data name="m_comboBoxMargin.Items5" xml:space="preserve">
+    <value>4 x 4</value>
+  </data>
+  <data name="&gt;&gt;m_tabGeneral.Name" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxSpacingX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 106</value>
+  </data>
+  <data name="&gt;&gt;m_tileSizeFixedMessageBox.Type" xml:space="preserve">
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_comboBoxTileSize.Parent" xml:space="preserve">
+    <value>m_groupBoxQuickSettings</value>
+  </data>
+  <data name="&gt;&gt;m_textBoxDescription.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="m_textBoxTopMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;m_buttonDoneSwapping.Name" xml:space="preserve">
+    <value>m_buttonDoneSwapping</value>
+  </data>
+  <data name="m_buttonDoneSwapping.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;m_buttonBrowse.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <data name="m_comboBoxTileSize.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="m_buttonBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;m_labelTileSize.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;m_tileSizeFixedMessageBox.Name" xml:space="preserve">
+    <value>m_tileSizeFixedMessageBox</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="m_customPropertyGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 324</value>
   </data>
-  <data name="&gt;&gt;m_textBoxDescription.Name" xml:space="preserve">
-    <value>m_textBoxDescription</value>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="m_tileSizeFixedMessageBox.Text" xml:space="preserve">
-    <value>The tile size cannot be changed as this tile sheet is currently in use</value>
+  <data name="&gt;&gt;m_labelId.Name" xml:space="preserve">
+    <value>m_labelId</value>
   </data>
-  <metadata name="m_noImageSourceMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="label2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="m_panelImage.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;m_labelDescription.Parent" xml:space="preserve">
+    <value>m_tabGeneral</value>
+  </data>
+  <metadata name="label4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="label3.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="label6.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="m_labelTileSizeBy.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="label4.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="m_labelTileSize.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="m_duplicateIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>238, 17</value>
-  </metadata>
-  <metadata name="m_tileSizeFixedMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="m_tileSizeFixedMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>434, 17</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="m_duplicateIdMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>238, 17</value>
   </metadata>
-  <metadata name="label5.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="m_tabImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="m_tabImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>636, 17</value>
   </metadata>
-  <metadata name="label7.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="label3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>French (France)</value>
+  <metadata name="m_labelTileSizeBy.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="label7.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="m_noImageSourceMessageBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="label6.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="m_labelTileSize.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="label5.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
   </metadata>
 </root>
