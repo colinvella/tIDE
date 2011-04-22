@@ -80,7 +80,7 @@ namespace xTile.Pipeline
                 // note: using URI helps resolve \..\ instances
                 string absoluteImagePath = mapImport.MapDirectory + Path.DirectorySeparatorChar + tileSheet.ImageSource;
                 Uri uri = new Uri(absoluteImagePath);
-                absoluteImagePath = Path.GetFullPath(uri.AbsolutePath);
+                absoluteImagePath = Path.GetFullPath(Uri.UnescapeDataString(uri.AbsolutePath));
 
                 // not strictly needed, but sets asset dependency
                 contentProcessorContext.AddDependency(absoluteImagePath);
