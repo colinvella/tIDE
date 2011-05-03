@@ -1532,6 +1532,13 @@ namespace tIDE
             UpdateToolButtons();
         }
 
+        private void OnPickerTileIndexPropertiesChanged(object sender, TilePickerEventArgs tilePickerEventArgs)
+        {
+            m_needsSaving = true;
+            UpdateFileControls();
+            UpdateEditControls();
+        }
+
         private void OnTreeComponentChanged(object sender, MapTreeViewEventArgs mapTreeViewEventArgs)
         {
             xTile.ObjectModel.Component component = mapTreeViewEventArgs.Component;

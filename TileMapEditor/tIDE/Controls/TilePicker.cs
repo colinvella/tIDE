@@ -207,6 +207,9 @@ namespace tIDE.Controls
         [Category("Behavior"), Description("Occurs when a tile region is selected")]
         public event TilePickerEventHandler TileBrushSelected;
 
+        [Category("Behavior"), Description("Occurs when tile index properties are modified")]
+        public event TilePickerEventHandler TileIndexPropertiesChanged;
+
         #endregion
 
         #region Private Methods
@@ -555,13 +558,20 @@ namespace tIDE.Controls
 
         private void OnTileIndexProperties(object sender, EventArgs evemtArgs)
         {
+            int tileIndex = m_hoverTileIndex;
+
             TileIndexPropertyComponent tileIndexPropertyComponent
-                = new TileIndexPropertyComponent(m_tileSheet.TileIndexProperties[m_hoverTileIndex]);
+                = new TileIndexPropertyComponent(m_tileSheet.TileIndexProperties[tileIndex]);
 
             CustomPropertiesDialog customPropertiesDialog
                 = new CustomPropertiesDialog("Custom Properties for Tile Index #" + m_hoverTileIndex, tileIndexPropertyComponent);
 
-            customPropertiesDialog.ShowDialog(this);
+            if (customPropertiesDialog.ShowDialog(this) == DialogResult.Cancel)
+                return;
+
+            if (TileIndexPropertiesChanged != null)
+                TileIndexPropertiesChanged(this,
+                    new TilePickerEventArgs(m_tileSheet, tileIndex));
         }
 
         private void OnTileSheetImageSourceChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
