@@ -879,7 +879,12 @@ namespace tIDE
         private void OnEditUndo(object sender, EventArgs eventArgs)
         {
             if (m_commandHistory.CanUndo())
+            {
                 m_commandHistory.Undo();
+
+                if (!m_commandHistory.CanUndo())
+                    m_needsSaving = false;
+            }
             UpdateAllControls();
         }
 
