@@ -25,9 +25,9 @@ namespace tIDE.Controls
     [ToolboxBitmapAttribute(typeof(Panel))]
     public partial class MapPanel : UserControl, IDisplayDevice
     {
-        #region Private Variables
+        private readonly float[] m_zoomFactors = new float[] { 0.01f, 0.05f, 0.1f, 0.25f, 0.5f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f};
 
-        private const int MAX_ZOOM = 10;
+        #region Private Variables
 
         private Map m_map;
         private Bitmap m_backBuffer = null;
@@ -59,7 +59,8 @@ namespace tIDE.Controls
         private Graphics m_graphics;
         private xTile.Dimensions.Rectangle m_viewport;
         private bool m_autoScaleViewport; 
-        private int m_zoom;
+        private float m_zoom;
+        private int m_zoomIndex;
         private Brush m_veilBrush;
         private ImageAttributes m_imageAttributes;
         private ColorMatrix m_colorMatrix;
@@ -87,7 +88,12 @@ namespace tIDE.Controls
             Location layerLocation
                 = m_selectedLayer.ConvertMapToLayerLocation(m_viewport.Location, m_viewport.Size);
 
-            layerLocation += viewportOffset / m_zoom;
+            if (m_zoom > 1.0f)
+                layerLocation += viewportOffset / (int)m_zoom;
+            else if (m_zoom < 1.0f)
+                layerLocation += viewportOffset * (int)(1.0f / m_zoom);
+            else
+                layerLocation += viewportOffset;
 
             xTile.Dimensions.Size tileSize = m_selectedLayer.TileSize;
             layerLocation.X /= tileSize.Width;
@@ -333,13 +339,13 @@ namespace tIDE.Controls
                 xTile.Dimensions.Size displaySize = m_map.DisplaySize;
 
                 m_horizontalScrollBar.Maximum = displaySize.Width;
-                m_horizontalScrollBar.LargeChange = 1 + (clientRectangle.Width - 1) / m_zoom;
+                m_horizontalScrollBar.LargeChange = 1 + (int) ((clientRectangle.Width - 1) / m_zoom);
                 m_horizontalScrollBar.Value
                     = Math.Min(m_horizontalScrollBar.Value, displaySize.Width);
                 m_horizontalScrollBar.Visible = displaySize.Width * m_zoom > clientRectangle.Width;
 
                 m_verticalScrollBar.Maximum = displaySize.Height;
-                m_verticalScrollBar.LargeChange = 1 + (clientRectangle.Height - 1) / m_zoom;
+                m_verticalScrollBar.LargeChange = 1 + (int)((clientRectangle.Height - 1) / m_zoom);
                 m_verticalScrollBar.Value
                     = Math.Min(m_verticalScrollBar.Value, displaySize.Height);
                 m_verticalScrollBar.Visible = displaySize.Height * m_zoom > clientRectangle.Height;
@@ -363,6 +369,9 @@ namespace tIDE.Controls
 
         private void RestrictViewportToMap()
         {
+            if (m_map == null)
+                return;
+
             // ensure viewport within map
             m_viewport.X = Math.Max(0, Math.Min(m_viewport.X, m_map.DisplayWidth - m_viewport.Width));
             m_viewport.Y = Math.Max(0, Math.Min(m_viewport.Y, m_map.DisplayHeight - m_viewport.Height));
@@ -391,8 +400,8 @@ namespace tIDE.Controls
             if (m_autoScaleViewport)
             {
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-                m_viewport.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
-                m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+                m_viewport.Size.Width = 1 + (int)((clientRectangle.Width - 1) / m_zoom);
+                m_viewport.Size.Height = 1 + (int)((clientRectangle.Height - 1) / m_zoom);
             }
 
             UpdateScrollBars();
@@ -655,8 +664,8 @@ namespace tIDE.Controls
 
             if (m_dragViewMode)
             {
-                int deltaX = (m_dragViewPosition.X - m_mouseLocation.X) / m_zoom;
-                int deltaY = (m_dragViewPosition.Y - m_mouseLocation.Y) / m_zoom;
+                int deltaX = (int)((m_dragViewPosition.X - m_mouseLocation.X) / m_zoom);
+                int deltaY = (int)((m_dragViewPosition.Y - m_mouseLocation.Y) / m_zoom);
 
                 if (deltaX != 0 || deltaY != 0)
                 {
@@ -717,14 +726,14 @@ namespace tIDE.Controls
 
         private void OnMouseWheel(object sender, MouseEventArgs mouseEventArgs)
         {
-            if (mouseEventArgs.Delta < 0 && m_zoom <= 1
-                || mouseEventArgs.Delta > 0 && m_zoom >= MAX_ZOOM)
+            if (mouseEventArgs.Delta < 0 && m_zoomIndex <= 0
+                || mouseEventArgs.Delta > 0 && m_zoom >= m_zoomFactors.Length - 1)
                 return;
 
             if (mouseEventArgs.Delta < 0)
-                --Zoom;
+                --ZoomIndex;
             else if (mouseEventArgs.Delta > 0)
-                ++Zoom;
+                ++ZoomIndex;
 
             if (ZoomChanged != null)
                 ZoomChanged(sender, EventArgs.Empty);
@@ -785,8 +794,6 @@ namespace tIDE.Controls
 
         private void OnMapPaint(object sender, PaintEventArgs paintEventArgs)
         {
-            //m_graphics = paintEventArgs.Graphics;
-            //Graphics graphicsBack = Graphics.FromImage(m_backBuffer);
             m_graphics = Graphics.FromImage(m_backBuffer);
             m_graphics.Clear(this.BackColor);
 
@@ -892,7 +899,8 @@ namespace tIDE.Controls
                 xTile.Dimensions.Location.Origin, xTile.Dimensions.Size.Zero);
             m_autoScaleViewport = true;
 
-            m_zoom = 1;
+            m_zoomIndex = 5;
+            m_zoom = 1.0f;
 
             m_layerCompositing = LayerCompositing.DimUnselected;
 
@@ -957,7 +965,9 @@ namespace tIDE.Controls
         public void BeginScene()
         {
             m_graphics.ScaleTransform(m_zoom, m_zoom);
-            m_graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            m_graphics.InterpolationMode = m_zoom >= 1.0f
+                ? InterpolationMode.NearestNeighbor
+                : InterpolationMode.Bilinear;
             m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
         }
 
@@ -1127,19 +1137,19 @@ namespace tIDE.Controls
             }
         }
 
-        [Description("The zoom level of the map display"),
-         Category("Appearance"), Browsable(true), DefaultValue(1)
-        ]
-        public int Zoom
+        [Description("The zoom index level of the map display"),
+         Category("Appearance"), Browsable(true), DefaultValue(3)]
+        public int ZoomIndex
         {
-            get { return m_zoom; }
+            get { return m_zoomIndex; }
             set
             {
-                m_zoom = Math.Max(1, Math.Min(value, MAX_ZOOM));
+                m_zoomIndex = Math.Max(0, Math.Min(value, m_zoomFactors.Length - 1));
+                m_zoom = m_zoomFactors[m_zoomIndex];
 
                 System.Drawing.Rectangle clientRectangle = m_innerPanel.ClientRectangle;
-                m_viewport.Size.Width = 1 + (clientRectangle.Width - 1) / m_zoom;
-                m_viewport.Size.Height = 1 + (clientRectangle.Height - 1) / m_zoom;
+                m_viewport.Size.Width = 1 + (int)((clientRectangle.Width - 1) / m_zoom);
+                m_viewport.Size.Height = 1 + (int)((clientRectangle.Height - 1) / m_zoom);
 
                 RestrictViewportToMap();
 
@@ -1149,6 +1159,13 @@ namespace tIDE.Controls
 
                 Invalidate(true);
             }
+        }
+
+        [Description("The zoom level of the map display"),
+         Category("Appearance"), Browsable(true)]
+        public float Zoom
+        {
+            get { return m_zoom; }
         }
 
         [Description("The layer compositing mode for the map display"),

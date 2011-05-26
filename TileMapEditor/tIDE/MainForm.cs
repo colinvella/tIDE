@@ -236,14 +236,14 @@ namespace tIDE
 
         private void UpdateZoomControls()
         {
-            int zoom = m_mapPanel.Zoom;
             foreach (ToolStripMenuItem toolStripMenuItem in m_viewZoomMenuItem.DropDownItems)
-                toolStripMenuItem.Checked = toolStripMenuItem.Tag.ToString() == zoom.ToString();
+                toolStripMenuItem.Checked = false;
+            ((ToolStripMenuItem)m_viewZoomMenuItem.DropDownItems[m_mapPanel.ZoomIndex]).Checked = true;
 
-            m_viewZoomComboBox.SelectedIndex = zoom - 1;
+            m_viewZoomComboBox.SelectedIndex = m_mapPanel.ZoomIndex;
 
-            m_viewZoomInMenuItem.Enabled = m_viewZoomInButton.Enabled = zoom < 10;
-            m_viewZoomOutMenuItem.Enabled = m_viewZoomOutButton.Enabled = zoom > 1;
+            m_viewZoomInMenuItem.Enabled = m_viewZoomInButton.Enabled = m_mapPanel.ZoomIndex < 9;
+            m_viewZoomOutMenuItem.Enabled = m_viewZoomOutButton.Enabled = m_mapPanel.ZoomIndex > 0;
         }
 
         private void UpdateLayerVisibilityControls()
@@ -601,7 +601,7 @@ namespace tIDE
 
             m_selectedComponent = m_map;
 
-            m_viewZoomComboBox.SelectedIndex = 0;
+            m_viewZoomComboBox.SelectedIndex = m_mapPanel.ZoomIndex;
 
             ArrangeToolStripLayout();
 
@@ -1065,34 +1065,27 @@ namespace tIDE
             ToolStripDropDownItem toolStripDropDownItem = (ToolStripDropDownItem)sender;
             if (toolStripDropDownItem.Tag == null)
                 return;
-            int zoom = int.Parse(toolStripDropDownItem.Tag.ToString());
-            m_mapPanel.Zoom = zoom;
+            m_mapPanel.ZoomIndex = toolStripDropDownItem.GetCurrentParent().Items.IndexOf(toolStripDropDownItem);
 
             UpdateZoomControls();
         }
 
         private void OnViewZoomComboBox(object sender, EventArgs eventArgs)
         {
-            m_mapPanel.Zoom = m_viewZoomComboBox.SelectedIndex + 1;
+            m_mapPanel.ZoomIndex = m_viewZoomComboBox.SelectedIndex;
             UpdateZoomControls();
             m_viewToolStrip.Focus();
         }
 
         private void OnViewZoomIn(object sender, EventArgs eventArgs)
         {
-            if (m_mapPanel.Zoom == 10)
-                return;
-
-            ++m_mapPanel.Zoom;
+            ++m_mapPanel.ZoomIndex;
             UpdateZoomControls();
         }
 
         private void OnViewZoomOut(object sender, EventArgs eventArgs)
         {
-            if (m_mapPanel.Zoom == 1)
-                return;
-
-            --m_mapPanel.Zoom;
+            --m_mapPanel.ZoomIndex;
             UpdateZoomControls();
         }
 
