@@ -14,25 +14,21 @@ namespace tIDE
 {
     public class TileSelection
     {
-        #region Private Variables
-
-        private List<Location> m_tileLocations;
-        private Rectangle m_bounds;
-
-        #endregion
-
         #region Public Methods
 
         public TileSelection()
         {
             m_tileLocations = new List<Location>();
             m_bounds = new Rectangle(Location.Origin, Size.Zero);
+            m_tileSelectionBorders = new Dictionary<Location, TileSelectionBorder>();
         }
 
         public TileSelection(TileSelection tileSelection)
         {
             m_tileLocations = new List<Location>(tileSelection.m_tileLocations);
             m_bounds = tileSelection.m_bounds;
+            m_tileSelectionBorders = new Dictionary<Location, TileSelectionBorder>();
+            UpdateSelectionBorders();
         }
 
         public bool IsEmpty() { return m_tileLocations.Count == 0; }
@@ -43,10 +39,18 @@ namespace tIDE
                 && m_tileLocations.Contains(tileLocation);
         }
 
+        public TileSelectionBorder GetTileSelectionBorder(Location tileLocation)
+        {
+            TileSelectionBorder tileSelectionBorder = new TileSelectionBorder();
+            m_tileSelectionBorders.TryGetValue(tileLocation, out tileSelectionBorder);
+            return tileSelectionBorder;
+        }
+
         public void Clear()
         {
             m_tileLocations.Clear();
             m_bounds.Size = Size.Zero;
+            m_tileSelectionBorders.Clear();
         }
 
         public void AddLocation(Location tileLocation)
@@ -66,6 +70,7 @@ namespace tIDE
                 m_tileLocations.Add(tileLocation);
                 m_bounds.ExtendTo(tileLocation);
             }
+            UpdateSelectionBorders();
         }
 
         public void Merge(TileSelection tileSelection)
@@ -77,6 +82,7 @@ namespace tIDE
             {
                 m_bounds = tileSelection.Bounds;
                 m_tileLocations.AddRange(tileSelection.m_tileLocations);
+                UpdateSelectionBorders();
                 return;
             }
 
@@ -99,6 +105,7 @@ namespace tIDE
             }
 
             m_bounds.ExtendTo(tileSelection.m_bounds);
+            UpdateSelectionBorders();
         }
 
         public void SelectAll(Rectangle selectionContext)
@@ -112,6 +119,7 @@ namespace tIDE
             for (; location.Y < maxY; location.Y++)
                 for (location.X = selectionContext.Location.X; location.X < maxX; location.X++)
                     m_tileLocations.Add(location);
+            UpdateSelectionBorders();
         }
 
         public void Invert(Rectangle selectionContext)
@@ -145,6 +153,7 @@ namespace tIDE
             m_bounds.Size = Size.Zero;
             foreach (Location invertedLocation in m_invertedSelections)
                 m_bounds.ExtendTo(invertedLocation);
+            UpdateSelectionBorders();
         }
 
         public void EraseTiles(Layer layer)
@@ -168,5 +177,51 @@ namespace tIDE
         public Rectangle Bounds { get { return new Rectangle(m_bounds); } }
 
         #endregion
+
+        #region Private Methods
+
+        private void UpdateSelectionBorders()
+        {
+            m_tileSelectionBorders.Clear();
+            foreach (Location tileLocation in m_tileLocations)
+            {
+                TileSelectionBorder tileSelectionBorder = new TileSelectionBorder();
+
+                Location tileLocationNeighbour = new Location(tileLocation.X - 1, tileLocation.Y);
+                if (!Contains(tileLocationNeighbour))
+                    tileSelectionBorder.Left = true;
+
+                tileLocationNeighbour.X += 2;
+                if (!Contains(tileLocationNeighbour))
+                    tileSelectionBorder.Right = true;
+
+                --tileLocationNeighbour.X;
+                --tileLocationNeighbour.Y;
+                if (!Contains(tileLocationNeighbour))
+                    tileSelectionBorder.Above = true;
+
+                tileLocationNeighbour.Y += 2;
+                if (!Contains(tileLocationNeighbour))
+                    tileSelectionBorder.Below = true;
+
+                m_tileSelectionBorders[tileLocation] = tileSelectionBorder;
+            }
+        }
+
+        #endregion
+
+        #region Private Variables
+
+        private List<Location> m_tileLocations;
+        private Rectangle m_bounds;
+        private Dictionary<Location, TileSelectionBorder> m_tileSelectionBorders;
+
+        #endregion
+
+    }
+
+    public struct TileSelectionBorder
+    {
+        public bool Left, Right, Above, Below;
     }
 }

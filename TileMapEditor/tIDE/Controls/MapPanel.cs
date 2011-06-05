@@ -480,20 +480,17 @@ namespace tIDE.Controls
                             m_graphics.FillRectangle(m_tileSelectionBrush, x1, y1 , width, height);
 
                             // selection borders
-                            Location leftLocation = new Location(tileLocation.X - 1, tileLocation.Y);
-                            if (!m_tileSelection.Contains(leftLocation))
+                            TileSelectionBorder tileSelectionBorder = m_tileSelection.GetTileSelectionBorder(tileLocation);
+                            if (tileSelectionBorder.Left)
                                 m_graphics.DrawLine(Pens.DarkCyan, x1, y1, x1, y2);
 
-                            Location rightLocation = new Location(tileLocation.X + 1, tileLocation.Y);
-                            if (!m_tileSelection.Contains(rightLocation))
+                            if (tileSelectionBorder.Right)
                                 m_graphics.DrawLine(Pens.DarkCyan, x2, y1, x2, y2);
 
-                            Location topLocation = new Location(tileLocation.X, tileLocation.Y - 1);
-                            if (!m_tileSelection.Contains(topLocation))
+                            if (tileSelectionBorder.Above)
                                 m_graphics.DrawLine(Pens.DarkCyan, x1, y1, x2, y1);
 
-                            Location bottomLocation = new Location(tileLocation.X, tileLocation.Y + 1);
-                            if (!m_tileSelection.Contains(bottomLocation))
+                            if (tileSelectionBorder.Below)
                                 m_graphics.DrawLine(Pens.DarkCyan, x1, y2, x2, y2);
                         }
                     }
