@@ -18,56 +18,55 @@ namespace tIDE
 
         public TileSelection()
         {
-            m_tileLocations = new List<Location>();
+            m_tileSelections = new Dictionary<Location, TileSelectionBorder>();
             m_bounds = new Rectangle(Location.Origin, Size.Zero);
-            m_tileSelectionBorders = new Dictionary<Location, TileSelectionBorder>();
         }
 
         public TileSelection(TileSelection tileSelection)
         {
-            m_tileLocations = new List<Location>(tileSelection.m_tileLocations);
+            m_tileSelections = new Dictionary<Location, TileSelectionBorder>();
+            foreach (KeyValuePair<Location, TileSelectionBorder> pair in tileSelection.m_tileSelections)
+                m_tileSelections[pair.Key] = pair.Value;
+
             m_bounds = tileSelection.m_bounds;
-            m_tileSelectionBorders = new Dictionary<Location, TileSelectionBorder>();
-            UpdateSelectionBorders();
         }
 
-        public bool IsEmpty() { return m_tileLocations.Count == 0; }
+        public bool IsEmpty() { return m_tileSelections.Count == 0; }
 
         public bool Contains(Location tileLocation)
         {
             return m_bounds.Contains(tileLocation)
-                && m_tileLocations.Contains(tileLocation);
+                && m_tileSelections.ContainsKey(tileLocation);
         }
 
         public TileSelectionBorder GetTileSelectionBorder(Location tileLocation)
         {
             TileSelectionBorder tileSelectionBorder = new TileSelectionBorder();
-            m_tileSelectionBorders.TryGetValue(tileLocation, out tileSelectionBorder);
+            m_tileSelections.TryGetValue(tileLocation, out tileSelectionBorder);
             return tileSelectionBorder;
         }
 
         public void Clear()
         {
-            m_tileLocations.Clear();
+            m_tileSelections.Clear();
             m_bounds.Size = Size.Zero;
-            m_tileSelectionBorders.Clear();
         }
 
         public void AddLocation(Location tileLocation)
         {
-            if (m_tileLocations.Count == 0)
+            if (m_tileSelections.Count == 0)
             {
-                m_tileLocations.Add(tileLocation);
+                m_tileSelections[tileLocation] = new TileSelectionBorder(); 
                 m_bounds.Location = tileLocation;
                 m_bounds.Size.Width = m_bounds.Size.Height = 1;
             }
             else
             {
                 if (m_bounds.Contains(tileLocation)
-                    && m_tileLocations.Contains(tileLocation))
+                    && m_tileSelections.ContainsKey(tileLocation))
                     return;
 
-                m_tileLocations.Add(tileLocation);
+                m_tileSelections[tileLocation] = new TileSelectionBorder();
                 m_bounds.ExtendTo(tileLocation);
             }
             UpdateSelectionBorders();
@@ -78,31 +77,19 @@ namespace tIDE
             if (tileSelection.IsEmpty())
                 return;
 
-            if (m_tileLocations.Count == 0)
+            // dest selection is empty
+            if (m_tileSelections.Count == 0)
             {
                 m_bounds = tileSelection.Bounds;
-                m_tileLocations.AddRange(tileSelection.m_tileLocations);
+                foreach (KeyValuePair<Location, TileSelectionBorder> pair in tileSelection.m_tileSelections)
+                    m_tileSelections[pair.Key] = pair.Value;
                 UpdateSelectionBorders();
                 return;
             }
 
-            if (m_bounds.Intersects(tileSelection.m_bounds))
-            {
-                // overlapping - add with bounds testing for speed
-                foreach (Location tileLocation in tileSelection.m_tileLocations)
-                {
-                    if (m_bounds.Contains(tileLocation)
-                        && m_tileLocations.Contains(tileLocation))
-                        continue;
-
-                    m_tileLocations.Add(tileLocation);
-                }
-            }
-            else
-            {
-                // not overlapping - add indiscriminately
-                m_tileLocations.AddRange(tileSelection.m_tileLocations);
-            }
+            // otherwise, merge with existing
+            foreach (KeyValuePair<Location, TileSelectionBorder> pair in tileSelection.m_tileSelections)
+                m_tileSelections[pair.Key] = pair.Value;
 
             m_bounds.ExtendTo(tileSelection.m_bounds);
             UpdateSelectionBorders();
@@ -115,10 +102,10 @@ namespace tIDE
             int maxX = location.X + selectionContext.Size.Width;
             int maxY = location.Y + selectionContext.Size.Height;
 
-            m_tileLocations.Clear();
+            m_tileSelections.Clear();
             for (; location.Y < maxY; location.Y++)
                 for (location.X = selectionContext.Location.X; location.X < maxX; location.X++)
-                    m_tileLocations.Add(location);
+                    m_tileSelections[location] = new TileSelectionBorder();
             UpdateSelectionBorders();
         }
 
@@ -128,37 +115,39 @@ namespace tIDE
             int maxX = location.X + selectionContext.Size.Width ;
             int maxY = location.Y + selectionContext.Size.Height;
 
-            List<Location> m_invertedSelections = new List<Location>();
+            List<Location> invertedSelections = new List<Location>();
 
             Location initialLocation = Location.Origin;
             for (; location.Y < maxY; location.Y++)
                 for (location.X = selectionContext.Location.X; location.X < maxX; location.X++)
                     if (m_bounds.Contains(location))
                     {
-                        if (!m_tileLocations.Contains(location))
+                        if (!m_tileSelections.ContainsKey(location))
                         {
-                            m_invertedSelections.Add(location);
+                            invertedSelections.Add(location);
                             initialLocation = location;
                         }
                     }
                     else
                     {
-                        m_invertedSelections.Add(location);
+                        invertedSelections.Add(location);
                         initialLocation = location;
                     }
 
-            m_tileLocations = m_invertedSelections;
+            m_tileSelections.Clear();
+            foreach (Location tileLocation in invertedSelections)
+                m_tileSelections[tileLocation] = new TileSelectionBorder();
 
             m_bounds.Location = initialLocation;
             m_bounds.Size = Size.Zero;
-            foreach (Location invertedLocation in m_invertedSelections)
+            foreach (Location invertedLocation in invertedSelections)
                 m_bounds.ExtendTo(invertedLocation);
             UpdateSelectionBorders();
         }
 
         public void EraseTiles(Layer layer)
         {
-            foreach (Location tileLocation in m_tileLocations)
+            foreach (Location tileLocation in m_tileSelections.Keys)
                 if (layer.IsValidTileLocation(tileLocation))
                     layer.Tiles[tileLocation] = null;
 
@@ -169,9 +158,9 @@ namespace tIDE
 
         #region Public Properties
 
-        public ReadOnlyCollection<Location> Locations
+        public IEnumerable<Location> Locations
         {
-            get { return m_tileLocations.AsReadOnly(); }
+            get { return m_tileSelections.Keys; }
         }
 
         public Rectangle Bounds { get { return new Rectangle(m_bounds); } }
@@ -182,8 +171,8 @@ namespace tIDE
 
         private void UpdateSelectionBorders()
         {
-            m_tileSelectionBorders.Clear();
-            foreach (Location tileLocation in m_tileLocations)
+            List<Location> tileLocations = new List<Location>(m_tileSelections.Keys);
+            foreach (Location tileLocation in tileLocations)
             {
                 TileSelectionBorder tileSelectionBorder = new TileSelectionBorder();
 
@@ -204,7 +193,7 @@ namespace tIDE
                 if (!Contains(tileLocationNeighbour))
                     tileSelectionBorder.Below = true;
 
-                m_tileSelectionBorders[tileLocation] = tileSelectionBorder;
+                m_tileSelections[tileLocation] = tileSelectionBorder;
             }
         }
 
@@ -212,9 +201,8 @@ namespace tIDE
 
         #region Private Variables
 
-        private List<Location> m_tileLocations;
         private Rectangle m_bounds;
-        private Dictionary<Location, TileSelectionBorder> m_tileSelectionBorders;
+        private Dictionary<Location, TileSelectionBorder> m_tileSelections;
 
         #endregion
 
