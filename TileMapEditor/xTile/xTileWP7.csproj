@@ -15,7 +15,7 @@
     <XnaCrossPlatformGroupID>087b9535-db6d-4de1-8c2e-21b97bd55978</XnaCrossPlatformGroupID>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationIcon>xTile.ico</ApplicationIcon>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>xTileSignature.pfx</AssemblyOriginatorKeyFile>
     <XnaUpgrade>1</XnaUpgrade>
     <XnaOutputType>Library</XnaOutputType>

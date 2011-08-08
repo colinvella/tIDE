@@ -19,7 +19,7 @@
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationIcon>xTile.ico</ApplicationIcon>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>xTileSignature.pfx</AssemblyOriginatorKeyFile>
     <XnaUpgrade>1</XnaUpgrade>
     <XnaOutputType>Library</XnaOutputType>
