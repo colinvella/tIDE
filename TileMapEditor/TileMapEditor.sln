@@ -42,7 +42,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo360", "Demo\Demo360.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xTileWP7", "xTile\xTileWP7.csproj", "{4344AD41-A901-4E4D-9C55-70E65D95F1D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWP7.0", "Demo\DemoWP7.0.csproj", "{376109A2-CCF4-423E-BB48-10340BEDA555}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWP7", "Demo\DemoWP7.csproj", "{376109A2-CCF4-423E-BB48-10340BEDA555}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -80,12 +80,12 @@ Global
 		SccProjectUniqueName10 = Demo\\Demo360.csproj
 		SccProjectName10 = Demo
 		SccLocalPath10 = Demo
-		SccProjectUniqueName11 = Demo\\DemoWP7.0.csproj
-		SccProjectName11 = Demo
-		SccLocalPath11 = Demo
-		SccProjectUniqueName12 = xTile\\xTileWP7.csproj
-		SccProjectName12 = xTile
-		SccLocalPath12 = xTile
+		SccProjectUniqueName11 = xTile\\xTileWP7.csproj
+		SccProjectName11 = xTile
+		SccLocalPath11 = xTile
+		SccProjectUniqueName12 = Demo\\DemoWP7.csproj
+		SccProjectName12 = Demo
+		SccLocalPath12 = Demo
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
