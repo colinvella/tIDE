@@ -75,9 +75,9 @@
     <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xTile\xTileWP7.0.csproj">
+    <ProjectReference Include="..\xTile\xTileWP7.csproj">
       <Project>{4344AD41-A901-4E4D-9C55-70E65D95F1D7}</Project>
-      <Name>xTileWP7.0</Name>
+      <Name>xTileWP7</Name>
     </ProjectReference>
     <ProjectReference Include="Content\Content.contentproj">
       <Project>{64E1B41D-35F2-4BB8-B083-3116223D5D3B}</Project>
