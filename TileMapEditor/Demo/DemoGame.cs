@@ -77,14 +77,14 @@ namespace Demo
                 0, m_viewPort.Height - 56, m_viewPort.Width, 56);
 #endif
 
-            m_vecLeavePositions = new Vector2[20];
-            m_vecLeaveVelocities = new Vector2[m_vecLeavePositions.Length];
+            m_vecLeafPositions = new Vector2[20];
+            m_vecLeafVelocities = new Vector2[m_vecLeafPositions.Length];
             Random random = new Random();
-            for (int index = 0; index < m_vecLeavePositions.Length; index++)
+            for (int index = 0; index < m_vecLeafPositions.Length; index++)
             {
-                m_vecLeavePositions[index] = new Vector2(
+                m_vecLeafPositions[index] = new Vector2(
                     random.Next(m_viewPort.Width), random.Next(m_viewPort.Height));
-                m_vecLeaveVelocities[index] = new Vector2(
+                m_vecLeafVelocities[index] = new Vector2(
                     1 + random.Next(4), 1 + random.Next(3));
             }
 
@@ -169,20 +169,20 @@ namespace Demo
 
             // leaf animations
             Random random = new Random();
-            for (int index = 0; index < m_vecLeavePositions.Length; index++)
+            for (int index = 0; index < m_vecLeafPositions.Length; index++)
             {
-                m_vecLeavePositions[index] += m_vecLeaveVelocities[index];
-                if (m_vecLeavePositions[index].X > m_viewPort.Width)
+                m_vecLeafPositions[index] += m_vecLeafVelocities[index];
+                if (m_vecLeafPositions[index].X > m_viewPort.Width)
                 {
-                    m_vecLeavePositions[index].X = -m_textureLeaf.Width;
-                    m_vecLeaveVelocities[index].X = 1 + random.Next(4);
-                    m_vecLeaveVelocities[index].Y = 1 + random.Next(3);
+                    m_vecLeafPositions[index].X = -m_textureLeaf.Width;
+                    m_vecLeafVelocities[index].X = 1 + random.Next(4);
+                    m_vecLeafVelocities[index].Y = 1 + random.Next(3);
                 }
-                if (m_vecLeavePositions[index].Y > m_viewPort.Height)
+                if (m_vecLeafPositions[index].Y > m_viewPort.Height)
                 {
-                    m_vecLeavePositions[index].Y = -m_textureLeaf.Height;
-                    m_vecLeaveVelocities[index].X = 1 + random.Next(4);
-                    m_vecLeaveVelocities[index].Y = 1 + random.Next(3);
+                    m_vecLeafPositions[index].Y = -m_textureLeaf.Height;
+                    m_vecLeafVelocities[index].X = 1 + random.Next(4);
+                    m_vecLeafVelocities[index].Y = 1 + random.Next(3);
                 }
             }
 
@@ -280,7 +280,7 @@ namespace Demo
         {
             SpriteBatch spriteBatch = m_xnaDisplayDevice.SpriteBatchAlpha;
 
-            foreach (Vector2 vecLeaf in m_vecLeavePositions)
+            foreach (Vector2 vecLeaf in m_vecLeafPositions)
             {
                 float fRotation = ((vecLeaf.X + vecLeaf.Y) * 0.01f) % MathHelper.TwoPi;
                 spriteBatch.Draw(m_textureLeaf, vecLeaf, null, Color.White, fRotation, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
@@ -308,8 +308,8 @@ namespace Demo
         private Texture2D m_texturePanel;
         private SpriteFont m_spriteFontDemo;
         private Texture2D m_textureLeaf;
-        private Vector2[] m_vecLeavePositions;
-        private Vector2[] m_vecLeaveVelocities;
+        private Vector2[] m_vecLeafPositions;
+        private Vector2[] m_vecLeafVelocities;
 
         #endregion
     }
