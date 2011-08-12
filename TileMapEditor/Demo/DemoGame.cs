@@ -167,7 +167,7 @@ namespace Demo
             }
 #endif
 
-            // leave animations
+            // leaf animations
             Random random = new Random();
             for (int index = 0; index < m_vecLeavePositions.Length; index++)
             {
