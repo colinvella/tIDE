@@ -335,11 +335,13 @@ namespace xTile
         /// <summary>
         /// Visually renders this Map using the given display device and
         /// viewport into the map. The viewport is rendered at the given
-        /// display offset
+        /// display offset. If wrapAround is set to True, the map wraps
+        /// around at the edges across and / or down.
         /// </summary>
         /// <param name="displayDevice">Display device on which to render the Map</param>
-        /// <param name="displayOffset">Pixel offset on the device where to render the map</param>
         /// <param name="mapViewport">Viewport into the Map to be rendered</param>
+        /// <param name="displayOffset">Pixel offset on the device where to render the map</param>
+        /// <param name="wrapAround">Flag indicating if map wrap-around is performed</param>
         public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset, bool wrapAround)
         {
             displayDevice.BeginScene();

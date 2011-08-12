@@ -222,11 +222,14 @@ namespace xTile.Layers
 
         /// <summary>
         /// Visually renders the layer using the given display device,
-        /// pixel offset from the map origin and display viewport
+        /// pixel offset from the map origin and display viewport. If
+        /// wrapAround is set to True, the layer wraps around at the
+        /// edges across and / or down.
         /// </summary>
         /// <param name="displayDevice">Display device on which to render layer</param>
-        /// <param name="displayOffset">offset in pixel coordinates into the map from the top left</param>
         /// <param name="mapViewport">viewport on the dipslay device</param>
+        /// <param name="displayOffset">offset in pixel coordinates into the map from the top left</param>
+        /// <param name="wrapAround">Flag indicating if layer wrap-around is performed</param>
         public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset, bool wrapAround)
         {
             if (wrapAround)
