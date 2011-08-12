@@ -236,7 +236,7 @@ namespace Demo
         protected override void Draw(GameTime gameTime)
         {
             // draw map
-            m_map.Draw(m_xnaDisplayDevice, m_viewPort);
+            m_map.Draw(m_xnaDisplayDevice, m_viewPort, Location.Origin, false);
 
             // draw help panel
             m_spriteBatch.Begin();

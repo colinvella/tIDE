@@ -943,7 +943,7 @@ namespace tIDE.Controls
             m_graphics = graphics;
 
             xTile.Dimensions.Rectangle viewport = new xTile.Dimensions.Rectangle(layer.DisplaySize);
-            layer.Draw(this, xTile.Dimensions.Location.Origin, viewport);
+            layer.Draw(this, viewport, xTile.Dimensions.Location.Origin, false);
 
             m_graphics = oldGraphics;
 

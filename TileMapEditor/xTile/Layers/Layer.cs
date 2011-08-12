@@ -227,65 +227,12 @@ namespace xTile.Layers
         /// <param name="displayDevice">Display device on which to render layer</param>
         /// <param name="displayOffset">offset in pixel coordinates into the map from the top left</param>
         /// <param name="mapViewport">viewport on the dipslay device</param>
-        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
+        public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset, bool wrapAround)
         {
-            if (BeforeDraw != null)
-                BeforeDraw(this, new LayerEventArgs(this, mapViewport));
-
-            // determine internal tile offset
-            Location tileInternalOffset = new Location(
-                mapViewport.Location.X % m_tileSize.Width,
-                mapViewport.Location.Y % m_tileSize.Height);
-
-            // determine tile-level viewport location
-            int tileXMin = mapViewport.Location.X / m_tileSize.Width;
-            int tileYMin = mapViewport.Location.Y / m_tileSize.Height;
-
-            // determine tile-level viewport location limits
-            if (tileXMin < 0)
-            {
-                displayOffset.X -= tileXMin * m_tileSize.Width;
-                tileXMin = 0;
-            }
-            if (tileYMin < 0)
-            {
-                displayOffset.Y -= tileYMin * m_tileSize.Height;
-                tileYMin = 0;
-            }
-
-            // determine tile-level viewport size
-            int tileColumns = 1 + (mapViewport.Size.Width - 1) / m_tileSize.Width;
-            int tileRows = 1 + (mapViewport.Size.Height - 1) / m_tileSize.Height;
-
-            // increment tile-level viewport size if display not tile-aligned
-            if (tileInternalOffset.X != 0)
-                ++tileColumns;
-            if (tileInternalOffset.Y != 0)
-                ++tileRows;
-
-            // determine tile-level viewport size limits
-            int tileXMax = Math.Min(tileXMin + tileColumns, m_layerSize.Width);
-            int tileYMax = Math.Min(tileYMin + tileRows, m_layerSize.Height);
-
-            Location tileLocation = displayOffset - tileInternalOffset;
-
-            for (int tileY = tileYMin; tileY < tileYMax; tileY++)
-            {
-                tileLocation.X = displayOffset.X - tileInternalOffset.X;
-                for (int tileX = tileXMin; tileX < tileXMax; tileX++)
-                {
-                    Tile tile = m_tiles[tileX, tileY];
-
-                    if (tile != null)
-                        displayDevice.DrawTile(tile, tileLocation);
-
-                    tileLocation.X += m_tileSize.Width;
-                }
-                tileLocation.Y += m_tileSize.Height;
-            }
-
-            if (AfterDraw != null)
-                AfterDraw(this, new LayerEventArgs(this, mapViewport));
+            if (wrapAround)
+                DrawWrapped(displayDevice, mapViewport, displayOffset);
+            else
+                DrawNormal(displayDevice, mapViewport, displayOffset);
         }
 
         #endregion
@@ -425,6 +372,137 @@ namespace xTile.Layers
         /// Raised after this layer is rendered
         /// </summary>
         public event LayerEventHandler AfterDraw;
+
+        #endregion
+
+        #region Private Methods
+
+        private int Wrap(int value, int span)
+        {
+            value = value % span;
+            if (value < 0)
+                value += span;
+            return value;
+        }
+
+        private void DrawNormal(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset)
+        {
+            if (BeforeDraw != null)
+                BeforeDraw(this, new LayerEventArgs(this, mapViewport));
+
+            int tileWidth = m_tileSize.Width;
+            int tileHeight = m_tileSize.Height;
+
+            // determine internal tile offset
+            Location tileInternalOffset = new Location(
+                Wrap(mapViewport.X, tileWidth),
+                Wrap(mapViewport.Y, tileHeight));
+
+            // determine tile-level viewport location
+            int tileXMin = mapViewport.X >= 0 ? mapViewport.X / tileWidth : (mapViewport.X - tileWidth + 1) / tileWidth;
+            int tileYMin = mapViewport.Y >= 0 ? mapViewport.Y / tileHeight : (mapViewport.Y - tileHeight + 1) / tileHeight;
+
+            // determine tile-level viewport location limits
+            if (tileXMin < 0)
+            {
+                displayOffset.X -= tileXMin * tileWidth;
+                tileXMin = 0;
+            }
+            if (tileYMin < 0)
+            {
+                displayOffset.Y -= tileYMin * tileHeight;
+                tileYMin = 0;
+            }
+
+            // determine tile-level viewport size
+            int tileColumns = 1 + (mapViewport.Size.Width - 1) / tileWidth;
+            int tileRows = 1 + (mapViewport.Size.Height - 1) / tileHeight;
+
+            // increment tile-level viewport size if display not tile-aligned
+            if (tileInternalOffset.X != 0)
+                ++tileColumns;
+            if (tileInternalOffset.Y != 0)
+                ++tileRows;
+
+            // determine tile-level viewport size limits
+            int tileXMax = Math.Min(tileXMin + tileColumns, m_layerSize.Width);
+            int tileYMax = Math.Min(tileYMin + tileRows, m_layerSize.Height);
+
+            Location tileLocation = displayOffset - tileInternalOffset;
+
+            for (int tileY = tileYMin; tileY < tileYMax; tileY++)
+            {
+                tileLocation.X = displayOffset.X - tileInternalOffset.X;
+                for (int tileX = tileXMin; tileX < tileXMax; tileX++)
+                {
+                    Tile tile = m_tiles[tileX, tileY];
+
+                    if (tile != null)
+                        displayDevice.DrawTile(tile, tileLocation);
+
+                    tileLocation.X += tileWidth;
+                }
+                tileLocation.Y += tileHeight;
+            }
+
+            if (AfterDraw != null)
+                AfterDraw(this, new LayerEventArgs(this, mapViewport));
+        }
+
+        private void DrawWrapped(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset)
+        {
+            if (BeforeDraw != null)
+                BeforeDraw(this, new LayerEventArgs(this, mapViewport));
+
+            // store local values for performance
+            int tileWidth = m_tileSize.Width;
+            int tileHeight = m_tileSize.Height;
+            int layerWidth = m_layerSize.Width;
+            int layerHeight = m_layerSize.Height;
+
+            // determine internal tile offset
+            Location tileInternalOffset = new Location(
+                Wrap(mapViewport.X, tileWidth),
+                Wrap(mapViewport.Y, tileHeight));
+
+            // determine tile-level viewport location
+            int tileXMin = mapViewport.X >= 0 ? mapViewport.X / tileWidth : (mapViewport.X - tileWidth + 1) / tileWidth;
+            int tileYMin = mapViewport.Y >= 0 ? mapViewport.Y / tileHeight : (mapViewport.Y - tileHeight + 1) / tileHeight;
+
+            // determine tile-level viewport size
+            int tileColumns = 1 + (mapViewport.Size.Width - 1) / tileWidth;
+            int tileRows = 1 + (mapViewport.Size.Height - 1) / tileHeight;
+
+            // increment tile-level viewport size if display not tile-aligned
+            if (tileInternalOffset.X != 0)
+                ++tileColumns;
+            if (tileInternalOffset.Y != 0)
+                ++tileRows;
+
+            // determine tile-level viewport size limits
+            int tileXMax = tileXMin + tileColumns;
+            int tileYMax = tileYMin + tileRows;
+
+            Location tileLocation = displayOffset - tileInternalOffset;
+
+            for (int tileY = tileYMin; tileY < tileYMax; tileY++)
+            {
+                tileLocation.X = displayOffset.X - tileInternalOffset.X;
+                for (int tileX = tileXMin; tileX < tileXMax; tileX++)
+                {
+                    Tile tile = m_tiles[Wrap(tileX, layerWidth), Wrap(tileY, layerHeight)];
+
+                    if (tile != null)
+                        displayDevice.DrawTile(tile, tileLocation);
+
+                    tileLocation.X += tileWidth;
+                }
+                tileLocation.Y += tileHeight;
+            }
+
+            if (AfterDraw != null)
+                AfterDraw(this, new LayerEventArgs(this, mapViewport));
+        }
 
         #endregion
 

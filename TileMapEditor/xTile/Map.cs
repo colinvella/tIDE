@@ -329,7 +329,7 @@ namespace xTile
         /// <param name="mapViewport">Viewport into the Map to be rendered</param>
         public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport)
         {
-            Draw(displayDevice, Location.Origin, mapViewport);
+            Draw(displayDevice, mapViewport, Location.Origin, false);
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace xTile
         /// <param name="displayDevice">Display device on which to render the Map</param>
         /// <param name="displayOffset">Pixel offset on the device where to render the map</param>
         /// <param name="mapViewport">Viewport into the Map to be rendered</param>
-        public void Draw(IDisplayDevice displayDevice, Location displayOffset, Rectangle mapViewport)
+        public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset, bool wrapAround)
         {
             displayDevice.BeginScene();
 
@@ -353,7 +353,7 @@ namespace xTile
                     continue;
                     
                 Rectangle layerViewport = layer.ConvertMapToLayerViewport(mapViewport);
-                layer.Draw(displayDevice, displayOffset, layerViewport);
+                layer.Draw(displayDevice, layerViewport, displayOffset, wrapAround);
             }
 
             displayDevice.EndScene();
