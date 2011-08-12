@@ -71,8 +71,11 @@ namespace Demo
             // set help panel size
 #if WINDOWS
             m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
+                0, m_viewPort.Height - 104, m_viewPort.Width, 104);
+#elif XBOX360
+            m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
                 0, m_viewPort.Height - 80, m_viewPort.Width, 80);
-#else
+#elif WINDOWS_PHONE
             m_panelRectangle = new Microsoft.Xna.Framework.Rectangle(
                 0, m_viewPort.Height - 56, m_viewPort.Width, 56);
 #endif
@@ -150,6 +153,18 @@ namespace Demo
                 || keyboardState.IsKeyDown(Keys.Escape))
                 this.Exit();
 
+            // toggle wraparound on/off
+            if (gamePadButtons.X == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.W))
+            {
+                if (!m_wrapAroundPressed)
+                    m_wrapAround = !m_wrapAround;
+                m_wrapAroundPressed = true;
+            }
+            else
+            {
+                m_wrapAroundPressed = false;
+            }
+
 #if WINDOWS
             // toggle window / fullscreen mode
             if (gamePadButtons.Y == ButtonState.Pressed
@@ -215,13 +230,16 @@ namespace Demo
                 }
             }
 
-            // limit viewport to map
-            m_viewPort.Location.X = Math.Max(0, m_viewPort.X);
-            m_viewPort.Location.Y = Math.Max(0, m_viewPort.Y);
-            m_viewPort.Location.X = Math.Min(
-                m_map.DisplayWidth - m_viewPort.Width, m_viewPort.X);
-            m_viewPort.Location.Y = Math.Min(
-                m_map.DisplayHeight - m_viewPort.Height, m_viewPort.Y);
+            // limit viewport to map if wraparound disabled
+            if (!m_wrapAround)
+            {
+                m_viewPort.Location.X = Math.Max(0, m_viewPort.X);
+                m_viewPort.Location.Y = Math.Max(0, m_viewPort.Y);
+                m_viewPort.Location.X = Math.Min(
+                    m_map.DisplayWidth - m_viewPort.Width, m_viewPort.X);
+                m_viewPort.Location.Y = Math.Min(
+                    m_map.DisplayHeight - m_viewPort.Height, m_viewPort.Y);
+            }
 
             // update map for animations etc.
             m_map.Update(gameTime.ElapsedGameTime.Milliseconds);
@@ -236,18 +254,23 @@ namespace Demo
         protected override void Draw(GameTime gameTime)
         {
             // draw map
-            m_map.Draw(m_xnaDisplayDevice, m_viewPort, Location.Origin, false);
+            m_map.Draw(m_xnaDisplayDevice, m_viewPort, Location.Origin, m_wrapAround);
 
             // draw help panel
             m_spriteBatch.Begin();
             m_spriteBatch.Draw(m_texturePanel, m_panelRectangle, Color.White);
 #if WINDOWS
-            WriteText("Arrow keys / left gamepad thumbstick - navigate the map", 16, m_viewPort.Height - 72);
-            WriteText("Esc key    / gamepad Back button     - exit the demo", 16, m_viewPort.Height - 48);
+            WriteText("Arrow keys / left gamepad thumbstick - navigate the map", 16, m_viewPort.Height - 96);
+            WriteText("Esc key    / gamepad Back button     - exit the demo", 16, m_viewPort.Height - 72);
+            WriteText("W key      / gamepad X button        - window / fullscreen toggle", 16, m_viewPort.Height - 48);
             WriteText("Space key  / gamepad Y button        - window / fullscreen toggle", 16, m_viewPort.Height - 24);
-#else
-            WriteText("Arrow keys / left gamepad thumbstick - navigate the map", 16, m_viewPort.Height - 48);
-            WriteText("Esc key    / gamepad Back button     - exit the demo", 16, m_viewPort.Height - 24);
+#elif XBOX360
+            WriteText("Left gamepad thumbstick              - navigate the map", 16, m_viewPort.Height - 72);
+            WriteText("Gamepad X button                     - window / fullscreen toggle", 16, m_viewPort.Height - 48);
+            WriteText("Gamepad Back button                  - exit the demo", 16, m_viewPort.Height - 24);
+#elif WINDOWS_PHONE
+            WriteText("Touch                                - navigate the map", 16, m_viewPort.Height - 48);
+            WriteText("Back button                          - exit the demo", 16, m_viewPort.Height - 24);
 #endif
             m_spriteBatch.End();
 
@@ -310,6 +333,8 @@ namespace Demo
         private Texture2D m_textureLeaf;
         private Vector2[] m_vecLeafPositions;
         private Vector2[] m_vecLeafVelocities;
+
+        private bool m_wrapAround, m_wrapAroundPressed;
 
         #endregion
     }
