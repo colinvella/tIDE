@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Demo")]
-[assembly: AssemblyProduct("Demo")]
+[assembly: AssemblyTitle("xTile Demo")]
+[assembly: AssemblyProduct("xTile Demo")]
 [assembly: AssemblyDescription("Demo of the xTile Engine")]
 [assembly: AssemblyCompany("Microsoft")]
 
