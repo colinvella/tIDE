@@ -292,13 +292,16 @@ namespace xTile.Format
         {
             StoreInt32(stream, staticTile.TileIndex);
             stream.WriteByte((byte)staticTile.BlendMode);
+            StoreProperties(stream, staticTile);
         }
 
         private StaticTile LoadStaticTile(Stream stream, Layer layer, TileSheet tileSheet)
         {
             int tileIndex = LoadInt32(stream);
             BlendMode blendMode = (BlendMode)stream.ReadByte();
-            return new StaticTile(layer, tileSheet, blendMode, tileIndex);
+            StaticTile staticTile = new StaticTile(layer, tileSheet, blendMode, tileIndex);
+            LoadProperties(stream, staticTile);
+            return staticTile;
         }
 
         private void StoreAnimatedTile(Stream stream, AnimatedTile animatedTile)
@@ -319,6 +322,8 @@ namespace xTile.Format
                 stream.WriteByte((byte)'S');
                 StoreStaticTile(stream, tileFrame);
             }
+
+            StoreProperties(stream, animatedTile);
         }
 
         private AnimatedTile LoadAnimatedTile(Stream stream, Layer layer)
@@ -347,6 +352,9 @@ namespace xTile.Format
             }
 
             AnimatedTile animatedTile = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
+
+            LoadProperties(stream, animatedTile);
+
             return animatedTile;
         }
 
