@@ -163,7 +163,7 @@
     <value>m_mapTreeView</value>
   </data>
   <data name="&gt;&gt;m_mapTreeView.Type" xml:space="preserve">
-    <value>tIDE.Controls.MapTreeView, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.MapTreeView, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_mapTreeView.Parent" xml:space="preserve">
     <value>m_splitContainerVertical.Panel1</value>
@@ -199,7 +199,7 @@
     <value>m_tilePicker</value>
   </data>
   <data name="&gt;&gt;m_tilePicker.Type" xml:space="preserve">
-    <value>tIDE.Controls.TilePicker, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.TilePicker, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_tilePicker.Parent" xml:space="preserve">
     <value>m_splitContainerVertical.Panel2</value>
@@ -337,7 +337,7 @@
     <value>m_mapPanel</value>
   </data>
   <data name="&gt;&gt;m_mapPanel.Type" xml:space="preserve">
-    <value>tIDE.Controls.MapPanel, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.MapPanel, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_mapPanel.Parent" xml:space="preserve">
     <value>m_toolStripContainerInner.ContentPanel</value>
@@ -3161,7 +3161,7 @@
     <value>m_toolsTileBrushButton</value>
   </data>
   <data name="&gt;&gt;m_toolsTileBrushButton.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomToolStripSplitButton, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.CustomToolStripSplitButton, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_editUndoButton.Name" xml:space="preserve">
     <value>m_editUndoButton</value>
@@ -4151,31 +4151,31 @@
     <value>m_loadErrorMessageBox</value>
   </data>
   <data name="&gt;&gt;m_loadErrorMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_saveErrorMessageBox.Name" xml:space="preserve">
     <value>m_saveErrorMessageBox</value>
   </data>
   <data name="&gt;&gt;m_saveErrorMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_unsavedMessageBox.Name" xml:space="preserve">
     <value>m_unsavedMessageBox</value>
   </data>
   <data name="&gt;&gt;m_unsavedMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_hasDependencyMessageBox.Name" xml:space="preserve">
     <value>m_hasDependencyMessageBox</value>
   </data>
   <data name="&gt;&gt;m_hasDependencyMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;m_dependencyRemovedMessageBox.Name" xml:space="preserve">
     <value>m_dependencyRemovedMessageBox</value>
   </data>
   <data name="&gt;&gt;m_dependencyRemovedMessageBox.Type" xml:space="preserve">
-    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>tIDE.Controls.CustomMessageBox, tIDE, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
