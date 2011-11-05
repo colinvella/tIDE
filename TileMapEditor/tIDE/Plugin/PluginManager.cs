@@ -115,7 +115,7 @@ namespace tIDE.Plugin
                     return;
                 }
 
-                string[] directoryFiles = Directory.GetFiles(pluginsPath);
+                string[] directoryFiles = Directory.GetFiles(pluginsPath, "*.dll");
 
                 foreach (string filename in directoryFiles)
                 {
