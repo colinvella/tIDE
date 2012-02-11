@@ -23,7 +23,7 @@ namespace xTile.Display
     /// Abstract representation of a display device. The device supports basic rendering
     /// functions related to tile sheet management and tile drawing
     /// </summary>
-    public interface IDisplayDevice
+    public interface IDisplayDevice : IDisposable
     {
         #region Public Methods
 

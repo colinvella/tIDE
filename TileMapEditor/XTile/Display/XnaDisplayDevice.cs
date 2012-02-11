@@ -83,6 +83,11 @@ namespace xTile.Display
             m_modulationColour = Color.White;
         }
 
+        ~XnaDisplayDevice()
+        {
+            Dispose(false);
+        }
+
         /// <summary>
         /// Loads the given tile sheet. The image source is loaded from the
         /// content pipeline by stripping any extension from the image source
@@ -101,6 +106,9 @@ namespace xTile.Display
         /// <param name="tileSheet">Tile sheet to dispose</param>
         public void DisposeTileSheet(TileSheet tileSheet)
         {
+            if (!m_tileSheetTextures.ContainsKey(tileSheet))
+                return;
+
             m_tileSheetTextures.Remove(tileSheet);
         }
 
@@ -198,5 +206,38 @@ namespace xTile.Display
         private Color m_modulationColour;
 
         #endregion
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        private void Dispose(bool disposing)
+        {
+            if (!disposing)
+                return;
+
+            if (m_spriteBatchAlpha != null)
+            {
+                m_spriteBatchAlpha.Dispose();
+                m_spriteBatchAlpha = null;
+            }
+
+            if (m_spriteBatchAdditive != null)
+            {
+                m_spriteBatchAdditive.Dispose();
+                m_spriteBatchAdditive = null;
+            }
+            m_tileSheetTextures.Clear();
+        }
+
     }
 }

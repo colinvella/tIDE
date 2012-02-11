@@ -142,11 +142,13 @@ namespace xTile.Format
                 if (mapFormat == null)
                     throw new Exception("No IMapFormat implementation for files with extension '" + fileExtension + "'");
 
-                Stream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                Map map = mapFormat.Load(fileStream);
-                fileStream.Close();
-
-                return map;
+                using (Stream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    Map map = mapFormat.Load(fileStream);
+                    fileStream.Close();
+    
+                    return map;
+                }
             }
             catch (Exception exception)
             {

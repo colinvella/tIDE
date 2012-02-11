@@ -27,14 +27,15 @@ namespace xTile.Pipeline
         protected override Map Read(ContentReader contentReader, Map existingMap)
         {
             // existing map is ignored
-
             int dataLength = contentReader.ReadInt32();
             byte[] data = contentReader.ReadBytes(dataLength);
 
-            MemoryStream memoryStream = new MemoryStream(data);
-            Map map = FormatManager.Instance.BinaryFormat.Load(memoryStream);
+            using (MemoryStream memoryStream = new MemoryStream(data))
+            {
+            	Map map = FormatManager.Instance.BinaryFormat.Load(memoryStream);
 
-            return map;
+            	return map;
+            }
         }
     }
 }
