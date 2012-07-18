@@ -93,7 +93,9 @@ namespace xTile.Tiles
         /// <returns>Cloned static tile</returns>
         public override Tile Clone(Layer layer)
         {
-            return new StaticTile(layer, this.TileSheet, this.BlendMode, m_tileIndex);
+            Tile tileClone = new StaticTile(layer, this.TileSheet, this.BlendMode, m_tileIndex);
+            tileClone.Properties.CopyFrom(Properties);
+            return tileClone;
         }
 
         /// <summary>

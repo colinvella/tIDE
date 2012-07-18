@@ -48,10 +48,8 @@ namespace tIDE.Dialogs
             m_buttonClose.Visible = true;
         }
 
-        private void AddTileFrame(TileSheet tileSheet, int tileIndex)
+        private void AddTileFrame(StaticTile newTileFrame)
         {
-            StaticTile newTileFrame = new StaticTile(m_layer, tileSheet, BlendMode.Alpha, tileIndex);
-
             if (m_imageListAnimation.Images.Count == 0)
             {
                 m_imageListAnimation.ImageSize = new System.Drawing.Size(
@@ -63,8 +61,8 @@ namespace tIDE.Dialogs
             foreach (ListViewItem listViewItem in m_animationListView.Items)
             {
                 StaticTile tileFrame = (StaticTile)listViewItem.Tag;
-                if (tileFrame.TileSheet == tileSheet
-                    && tileFrame.TileIndex == tileIndex)
+                if (tileFrame.TileSheet == newTileFrame.TileSheet
+                    && tileFrame.TileIndex == newTileFrame.TileIndex)
                 {
                     imageListIndex = listViewItem.ImageIndex;
                     break;
@@ -72,7 +70,7 @@ namespace tIDE.Dialogs
             }
             if (imageListIndex == -1)
             {
-                Image tileImage = TileImageCache.Instance.GetTileBitmap(tileSheet, tileIndex);
+                Image tileImage = TileImageCache.Instance.GetTileBitmap(newTileFrame.TileSheet, newTileFrame.TileIndex);
                 m_imageListAnimation.Images.Add(tileImage);
                 imageListIndex = m_imageListAnimation.Images.Count - 1;
             }
@@ -83,6 +81,12 @@ namespace tIDE.Dialogs
             m_animationListView.Items.Add(newListViewItem);
         }
 
+        private void AddTileFrame(TileSheet tileSheet, int tileIndex)
+        {
+            StaticTile newTileFrame = new StaticTile(m_layer, tileSheet, BlendMode.Alpha, tileIndex);
+            AddTileFrame(newTileFrame);
+        }
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             Tile tile = m_layer.Tiles[m_tileLocation];
@@ -90,15 +94,16 @@ namespace tIDE.Dialogs
             {
                 if (tile is StaticTile)
                 {
+                    // convert to 1-frame animation
                     m_frameIntervalTextbox.Value = 250;
-                    AddTileFrame(tile.TileSheet, tile.TileIndex);
+                    AddTileFrame(tile.Clone(this.m_layer) as StaticTile);
                 }
                 else if (tile is AnimatedTile)
                 {
                     AnimatedTile animatedTile = tile as AnimatedTile;
                     m_frameIntervalTextbox.Value = animatedTile.FrameInterval;
                     foreach (StaticTile tileFrame in animatedTile.TileFrames)
-                        AddTileFrame(tileFrame.TileSheet, tileFrame.TileIndex);
+                        AddTileFrame(tileFrame.Clone(this.m_layer) as StaticTile);
                 }
             }
             else
@@ -202,6 +207,11 @@ namespace tIDE.Dialogs
                 tileFrames.Add((StaticTile)listViewItem.Tag);
             AnimatedTile animatedTile = new AnimatedTile(
                 m_layer, tileFrames.ToArray(), (long)m_frameIntervalTextbox.Value);
+
+            // copy anim tile-level properties
+            Tile oldTile = m_layer.Tiles[m_tileLocation];
+            if (oldTile != null)
+                animatedTile.Properties.CopyFrom(oldTile.Properties);
 
             Command command = new TileAnimationCommand(m_layer, m_tileLocation, animatedTile);
             CommandHistory.Instance.Do(command);

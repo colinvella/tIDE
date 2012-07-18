@@ -144,7 +144,11 @@ namespace xTile.Tiles
             List<StaticTile> tileFrames = new List<StaticTile>(m_tileFrames.Length);
             foreach (StaticTile tileFrame in m_tileFrames)
                 tileFrames.Add((StaticTile)tileFrame.Clone(layer));
-            return new AnimatedTile(layer, tileFrames.ToArray(), m_frameInterval);
+
+            Tile tileClone = new AnimatedTile(layer, tileFrames.ToArray(), m_frameInterval);
+            tileClone.Properties.CopyFrom(Properties);
+
+            return tileClone;
         }
 
         /// <summary>
