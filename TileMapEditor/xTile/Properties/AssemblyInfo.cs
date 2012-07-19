@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xTile")]
 [assembly: AssemblyDescription("Tile Engine for XNA 4.0")]
 [assembly: AssemblyCompany("Colin Vella")]
-[assembly: AssemblyCopyright("Copyright © Colin Vella 2010-2011")]
+[assembly: AssemblyCopyright("Copyright © Colin Vella 2010-2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.0.4.0")]
-[assembly: AssemblyFileVersionAttribute("2.0.4.0")]
+[assembly: AssemblyVersion("2.0.5.0")]
+[assembly: AssemblyFileVersionAttribute("2.0.5.0")]
