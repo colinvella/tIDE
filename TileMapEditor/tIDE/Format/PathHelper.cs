@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace tIDE.Format
 {
@@ -41,26 +43,29 @@ namespace tIDE.Format
 
         public static string GetAbsolutePath(string basePath, string relativePath)
         {
+            // trim paths from spaces
             basePath = basePath.Trim();
             relativePath = relativePath.Trim();
 
-            if (!Path.IsPathRooted(basePath) || Path.IsPathRooted(relativePath))
-                return relativePath;
+            // validate path parameters
+            if (!Path.IsPathRooted(basePath))
+                throw new ArgumentException("Path must be rooted", "basePath");
+            if (Path.IsPathRooted(relativePath))
+                throw new ArgumentException("Path must be relative", "relativePath");
 
-            while (relativePath.StartsWith(".." + Path.DirectorySeparatorChar))
-            {
-                relativePath = relativePath.Remove(0, 3);
-                int index = basePath.LastIndexOf(Path.DirectorySeparatorChar);
-                if (index <= 2)
-                    break;
-                else
-                    basePath = basePath.Remove(index + 1);
-            }
-
-            if (basePath.Length > 0 && !basePath.EndsWith(Path.DirectorySeparatorChar + ""))
+            // ensure base path has an ending separator
+            if (!basePath.EndsWith("" + Path.DirectorySeparatorChar))
                 basePath += Path.DirectorySeparatorChar;
 
-            return basePath + relativePath;
+            // combine base and relative paths with unprocessed parent directory references
+            string absolutePath = basePath + relativePath;
+
+            // consume every instance a directory - parent reference pair e.g. a\b\..\c -> a\c
+            Regex regex = new Regex(@"\\[^\\]+\\\.\.");
+            while (absolutePath.Contains(".."))
+                absolutePath = regex.Replace(absolutePath, @"");
+
+            return absolutePath;
         }
     }
 }
