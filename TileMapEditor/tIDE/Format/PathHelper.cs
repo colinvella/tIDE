@@ -60,7 +60,7 @@ namespace tIDE.Format
             // combine base and relative paths with unprocessed parent directory references
             string absolutePath = basePath + relativePath;
 
-            // consume every instance a directory - parent reference pair e.g. a\b\..\c -> a\c
+            // consume every instance of directory - parent reference pairs e.g. a\b\..\c -> a\c
             Regex regex = new Regex(@"\\[^\\]+\\\.\.");
             while (absolutePath.Contains(".."))
                 absolutePath = regex.Replace(absolutePath, @"");
