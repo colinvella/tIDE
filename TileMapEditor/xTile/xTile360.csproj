@@ -16,7 +16,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationIcon>xTile.ico</ApplicationIcon>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>xTileSignature.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <XnaUpgrade>1</XnaUpgrade>
     <XnaOutputType>Library</XnaOutputType>
     <XnaProfile>HiDef</XnaProfile>
@@ -150,9 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="xTile.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="xTileSignature.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework">
