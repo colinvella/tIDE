@@ -61,6 +61,7 @@ namespace Demo
             Window.Title = "xTile XNA Demo Application (Zune)";
 #elif WINDOWS_PHONE
             Window.Title = "xTile XNA Demo Application (Windows Phone)";
+            m_graphicsDeviceManager.IsFullScreen = true;
 #endif
 
             // set map viewport to match window size
