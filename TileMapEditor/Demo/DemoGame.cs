@@ -35,6 +35,8 @@ namespace Demo
 #if XBOX
             m_graphicsDeviceManager.PreferredBackBufferWidth = 1280;
             m_graphicsDeviceManager.PreferredBackBufferHeight = 720;
+#elif WINDOWS_PHONE
+            m_graphicsDeviceManager.IsFullScreen = true;
 #endif
 
             Content.RootDirectory = "Content";
@@ -61,7 +63,6 @@ namespace Demo
             Window.Title = "xTile XNA Demo Application (Zune)";
 #elif WINDOWS_PHONE
             Window.Title = "xTile XNA Demo Application (Windows Phone)";
-            m_graphicsDeviceManager.IsFullScreen = true;
 #endif
 
             // set map viewport to match window size
