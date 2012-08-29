@@ -40,7 +40,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <XnaRefreshLevel>0</XnaRefreshLevel>
+    <XnaRefreshLevel>1</XnaRefreshLevel>
     <XapFilename Condition="$(XnaOutputType)=='Game'">$(AssemblyName).xap</XapFilename>
     <SilverlightManifestTemplate Condition="$(XnaOutputType)=='Game'">Properties\AppManifest.xml</SilverlightManifestTemplate>
     <XnaWindowsPhoneManifestTemplate Condition="$(XnaOutputType)=='Game'">Properties\WMAppManifest.xml</XnaWindowsPhoneManifestTemplate>
