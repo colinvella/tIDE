@@ -112,19 +112,19 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="m_mapTreeView.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 178</value>
   </data>
   <data name="m_splitContainerVertical.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 413</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_splitContainerVertical.SplitterDistance" type="System.Int32, mscorlib">
     <value>178</value>
   </data>
@@ -133,6 +133,30 @@
   </data>
   <data name="m_toolStripContainerInner.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 391</value>
+  </data>
+  <data name="m_toolStripContainerInner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>579, 413</value>
+  </data>
+  <data name="m_splitContainerLeftRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 413</value>
+  </data>
+  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 413</value>
+  </data>
+  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 25</value>
+  </data>
+  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 50</value>
+  </data>
+  <data name="m_viewToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 25</value>
+  </data>
+  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 75</value>
   </data>
   <data name="m_toolsSelectButton.Text" xml:space="preserve">
     <value>Selecciona los Azulejos</value>
@@ -161,14 +185,50 @@
   <data name="m_toolsTileBrushButton.ToolTipText" xml:space="preserve">
     <value>Establece un pincel de azulejos</value>
   </data>
-  <data name="m_toolStripContainerInner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>579, 413</value>
+  <data name="m_layerNewButton.Text" xml:space="preserve">
+    <value>Nueva Capa</value>
   </data>
-  <data name="m_splitContainerLeftRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 413</value>
+  <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
+    <value>Nueva capa</value>
   </data>
-  <data name="m_toolStripContainer.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 413</value>
+  <data name="m_layerPropertiesButton.Text" xml:space="preserve">
+    <value>Propiedades de la Capa</value>
+  </data>
+  <data name="m_layerPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Propiedades de la capa</value>
+  </data>
+  <data name="m_layerOffsetButton.ToolTipText" xml:space="preserve">
+    <value>Desplaza los cuadros de la capa horizontal y / o vertical</value>
+  </data>
+  <data name="m_layerMakeInvisibileButton.Text" xml:space="preserve">
+    <value>Hace Invisibile</value>
+  </data>
+  <data name="m_layerMakeInvisibileButton.ToolTipText" xml:space="preserve">
+    <value>Hace invisibile</value>
+  </data>
+  <data name="m_layerMakeVisibileButton.Text" xml:space="preserve">
+    <value>Hace Visible</value>
+  </data>
+  <data name="m_layerMakeVisibileButton.ToolTipText" xml:space="preserve">
+    <value>Hace visible</value>
+  </data>
+  <data name="m_layerBringForwardButton.Text" xml:space="preserve">
+    <value>Ileva Delante</value>
+  </data>
+  <data name="m_layerBringForwardButton.ToolTipText" xml:space="preserve">
+    <value>Ileva la capa delante</value>
+  </data>
+  <data name="m_layerSendBackwardButton.Text" xml:space="preserve">
+    <value>Envia Atrás</value>
+  </data>
+  <data name="m_layerSendBackwardButton.ToolTipText" xml:space="preserve">
+    <value>Envia la capa atrás</value>
+  </data>
+  <data name="m_layerDeleteButton.Text" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="m_layerDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Elimina la capa</value>
   </data>
   <data name="m_mapPropertiesButton.Text" xml:space="preserve">
     <value>Propiedades del Mapa</value>
@@ -182,8 +242,155 @@
   <data name="m_mapStatisticsButton.ToolTipText" xml:space="preserve">
     <value>Estadísticas del mapa</value>
   </data>
-  <data name="m_mapToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 25</value>
+  <data name="m_viewZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="m_viewZoomLabel.Text" xml:space="preserve">
+    <value>Factor de Zoom</value>
+  </data>
+  <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
+    <value>Factor de zoom</value>
+  </data>
+  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
+    <value>A Escala</value>
+  </data>
+  <data name="m_viewZoomInButton.Text" xml:space="preserve">
+    <value>Zoom En</value>
+  </data>
+  <data name="m_viewZoomOutButton.Text" xml:space="preserve">
+    <value>Zoom a Cabo</value>
+  </data>
+  <data name="m_viewZoomOutButton.ToolTipText" xml:space="preserve">
+    <value>Zoom a cabo</value>
+  </data>
+  <data name="m_viewFullScreenButton.Text" xml:space="preserve">
+    <value>Pantalla Completa</value>
+  </data>
+  <data name="m_viewFullScreenButton.ToolTipText" xml:space="preserve">
+    <value>Ver en modo de pantalla completa</value>
+  </data>
+  <data name="m_viewWindowedButton.Text" xml:space="preserve">
+    <value>Modo de Ventana</value>
+  </data>
+  <data name="m_viewWindowedButton.ToolTipText" xml:space="preserve">
+    <value>Ver en modo de ventana</value>
+  </data>
+  <data name="m_viewLayersShowAllButton.Text" xml:space="preserve">
+    <value>Mostra Todas las Capas</value>
+  </data>
+  <data name="m_viewLayersShowAllButton.ToolTipText" xml:space="preserve">
+    <value>Mostra todas las capas</value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.Text" xml:space="preserve">
+    <value>Resaltar Sólo la Capa Seleccionada </value>
+  </data>
+  <data name="m_viewLayersHighlightSelectedButton.ToolTipText" xml:space="preserve">
+    <value>Resaltar sólo la capa seleccionada </value>
+  </data>
+  <data name="m_viewShowTileGuidesButton.Text" xml:space="preserve">
+    <value>Mostra la Cuadrícula de Azulejos</value>
+  </data>
+  <data name="m_viewShowTileGuidesButton.ToolTipText" xml:space="preserve">
+    <value>Mostra la cuadrícula de azulejos</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.Text" xml:space="preserve">
+    <value>Oculta la Cuadrícula de Azulejos</value>
+  </data>
+  <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
+    <value>Oculta la cuadrícula de azulejos</value>
+  </data>
+  <data name="m_tileSheetNewButton.Text" xml:space="preserve">
+    <value>Nueva Hoja de Azulejos</value>
+  </data>
+  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
+    <value>Nueva hoja de azulejos</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.Text" xml:space="preserve">
+    <value>Propiedades del Hoja de Azulejos</value>
+  </data>
+  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
+    <value>Propiedades del hoja de azulejos</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.Text" xml:space="preserve">
+    <value>Manega los Azulejos Automáticos</value>
+  </data>
+  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
+    <value>Manega los azulejos automáticos</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.Text" xml:space="preserve">
+    <value>Habilita la Actualización Automática</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
+    <value>Habilita actualización automática de las hojas de azulejos del disco</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.Text" xml:space="preserve">
+    <value>Deshabilita la Actualización Automática</value>
+  </data>
+  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
+    <value>Deshabilita actualización automática de las hojas de azulejos del disco</value>
+  </data>
+  <data name="m_tileSheetEditImageSourceButton.ToolTipText" xml:space="preserve">
+    <value>Acceda a la imagen de origen de la hoja de azulejos en una aplicación de pintura</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.Text" xml:space="preserve">
+    <value>Quita las Dependencias</value>
+  </data>
+  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
+    <value>Quite las dependencias de esta hoja de azulejos</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.Text" xml:space="preserve">
+    <value>Elimina la Hoja de Azulejos</value>
+  </data>
+  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
+    <value>Elimina la hoja de azulejos</value>
+  </data>
+  <data name="m_fileNewButton.Text" xml:space="preserve">
+    <value>Nueva Mapa</value>
+  </data>
+  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
+    <value>Nueva mapa</value>
+  </data>
+  <data name="m_fileOpenButton.Text" xml:space="preserve">
+    <value>Abre Mapa</value>
+  </data>
+  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
+    <value>Abre mapa</value>
+  </data>
+  <data name="m_fileSaveButton.Text" xml:space="preserve">
+    <value>Guarda la Mapa</value>
+  </data>
+  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
+    <value>Guarda la mapa</value>
+  </data>
+  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
+    <value>Guarda la Mapa Como</value>
+  </data>
+  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
+    <value>Guarda la mapa como</value>
+  </data>
+  <data name="m_filePageSetupButton.Text" xml:space="preserve">
+    <value>Configura Página</value>
+  </data>
+  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
+    <value>Configura la página para la impresión</value>
+  </data>
+  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
+    <value>Ver Previa de Impresión</value>
+  </data>
+  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
+    <value>Ver previa de impresión</value>
+  </data>
+  <data name="m_filePrintButton.Text" xml:space="preserve">
+    <value>Imprimi</value>
+  </data>
+  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
+    <value>Imprimi la mapa</value>
+  </data>
+  <data name="m_fileOptionsButton.Text" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
+    <value>Accede las opciones generales</value>
   </data>
   <data name="m_editUndoButton.Text" xml:space="preserve">
     <value>Deshace</value>
@@ -251,56 +458,11 @@
   <data name="m_editManageTileBrushesButton.ToolTipText" xml:space="preserve">
     <value>Manejar pinceles de azulejo</value>
   </data>
-  <data name="m_editToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 25</value>
+  <data name="m_fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 20</value>
   </data>
-  <data name="m_layerNewButton.Text" xml:space="preserve">
-    <value>Nueva Capa</value>
-  </data>
-  <data name="m_layerNewButton.ToolTipText" xml:space="preserve">
-    <value>Nueva capa</value>
-  </data>
-  <data name="m_layerPropertiesButton.Text" xml:space="preserve">
-    <value>Propiedades de la Capa</value>
-  </data>
-  <data name="m_layerPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Propiedades de la capa</value>
-  </data>
-  <data name="m_layerOffsetButton.ToolTipText" xml:space="preserve">
-    <value>Desplaza los cuadros de la capa horizontal y / o vertical</value>
-  </data>
-  <data name="m_layerMakeInvisibileButton.Text" xml:space="preserve">
-    <value>Hace Invisibile</value>
-  </data>
-  <data name="m_layerMakeInvisibileButton.ToolTipText" xml:space="preserve">
-    <value>Hace invisibile</value>
-  </data>
-  <data name="m_layerMakeVisibileButton.Text" xml:space="preserve">
-    <value>Hace Visible</value>
-  </data>
-  <data name="m_layerMakeVisibileButton.ToolTipText" xml:space="preserve">
-    <value>Hace visible</value>
-  </data>
-  <data name="m_layerBringForwardButton.Text" xml:space="preserve">
-    <value>Ileva Delante</value>
-  </data>
-  <data name="m_layerBringForwardButton.ToolTipText" xml:space="preserve">
-    <value>Ileva la capa delante</value>
-  </data>
-  <data name="m_layerSendBackwardButton.Text" xml:space="preserve">
-    <value>Envia Atrás</value>
-  </data>
-  <data name="m_layerSendBackwardButton.ToolTipText" xml:space="preserve">
-    <value>Envia la capa atrás</value>
-  </data>
-  <data name="m_layerDeleteButton.Text" xml:space="preserve">
-    <value>Elimina</value>
-  </data>
-  <data name="m_layerDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Elimina la capa</value>
-  </data>
-  <data name="m_layerToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+  <data name="m_fileMenuItem.Text" xml:space="preserve">
+    <value>&amp;Archivo</value>
   </data>
   <data name="m_fileNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -377,11 +539,11 @@
   <data name="m_fileExitMenuItem.Text" xml:space="preserve">
     <value>&amp;Sali</value>
   </data>
-  <data name="m_fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 20</value>
+  <data name="m_editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
   </data>
-  <data name="m_fileMenuItem.Text" xml:space="preserve">
-    <value>&amp;Archivo</value>
+  <data name="m_editMenuItem.Text" xml:space="preserve">
+    <value>&amp;Edita</value>
   </data>
   <data name="m_editUndoMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
@@ -464,11 +626,11 @@
   <data name="m_editManageTileBrushesMenuItem.Text" xml:space="preserve">
     <value>Manejar Pinceles de Azulejo...</value>
   </data>
-  <data name="m_editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+  <data name="m_viewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
   </data>
-  <data name="m_editMenuItem.Text" xml:space="preserve">
-    <value>&amp;Edita</value>
+  <data name="m_viewMenuItem.Text" xml:space="preserve">
+    <value>&amp;Ver</value>
   </data>
   <data name="m_viewZoomMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 22</value>
@@ -527,38 +689,38 @@
   <data name="m_viewHideTileGuidesMenuItem.Text" xml:space="preserve">
     <value>Oculta la Cuadrícula de Azulejos</value>
   </data>
-  <data name="m_viewViewportScaleToWindowMenuItem.Text" xml:space="preserve">
-    <value>Escala a la Ventana</value>
-  </data>
   <data name="m_viewViewportMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 22</value>
   </data>
   <data name="m_viewViewportMenuItem.Text" xml:space="preserve">
     <value>Portilla</value>
   </data>
-  <data name="m_viewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 20</value>
-  </data>
-  <data name="m_viewMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ver</value>
-  </data>
-  <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="m_mapPropertiesMenuItem.Text" xml:space="preserve">
-    <value>Propiedades...</value>
-  </data>
-  <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="m_mapStatisticsMenuItem.Text" xml:space="preserve">
-    <value>Estadísticas...</value>
+  <data name="m_viewViewportScaleToWindowMenuItem.Text" xml:space="preserve">
+    <value>Escala a la Ventana</value>
   </data>
   <data name="m_mapMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
   </data>
   <data name="m_mapMenuItem.Text" xml:space="preserve">
     <value>&amp;Mapa</value>
+  </data>
+  <data name="m_mapPropertiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="m_mapPropertiesMenuItem.Text" xml:space="preserve">
+    <value>Propiedades...</value>
+  </data>
+  <data name="m_mapStatisticsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="m_mapStatisticsMenuItem.Text" xml:space="preserve">
+    <value>Estadísticas...</value>
+  </data>
+  <data name="m_layerMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="m_layerMenuItem.Text" xml:space="preserve">
+    <value>&amp;Capa</value>
   </data>
   <data name="m_layerNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -617,11 +779,11 @@
   <data name="m_layerDeleteMenuItem.Text" xml:space="preserve">
     <value>Elimina</value>
   </data>
-  <data name="m_layerMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
+  <data name="m_tileSheetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 20</value>
   </data>
-  <data name="m_layerMenuItem.Text" xml:space="preserve">
-    <value>&amp;Capa</value>
+  <data name="m_tileSheetMenuItem.Text" xml:space="preserve">
+    <value>&amp;Hoja de Azulejos</value>
   </data>
   <data name="m_tileSheetNewMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>283, 22</value>
@@ -677,11 +839,11 @@
   <data name="m_tileSheetDeleteMenuItem.Text" xml:space="preserve">
     <value>Elimina</value>
   </data>
-  <data name="m_tileSheetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 20</value>
+  <data name="m_pluginMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
   </data>
-  <data name="m_tileSheetMenuItem.Text" xml:space="preserve">
-    <value>&amp;Hoja de Azulejos</value>
+  <data name="m_pluginMenuItem.Text" xml:space="preserve">
+    <value>Módul&amp;o</value>
   </data>
   <data name="m_pluginReloadMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 22</value>
@@ -698,11 +860,11 @@
   <data name="m_pluginNoneLoadedMenuItem.Text" xml:space="preserve">
     <value>No hay Módulos Cargados</value>
   </data>
-  <data name="m_pluginMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+  <data name="m_helpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
   </data>
-  <data name="m_pluginMenuItem.Text" xml:space="preserve">
-    <value>Módul&amp;o</value>
+  <data name="m_helpMenuItem.Text" xml:space="preserve">
+    <value>A&amp;yuda</value>
   </data>
   <data name="m_helpContentsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
@@ -730,174 +892,6 @@
   </data>
   <data name="m_helpAboutMenuItem.Text" xml:space="preserve">
     <value>Sobre</value>
-  </data>
-  <data name="m_helpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="m_helpMenuItem.Text" xml:space="preserve">
-    <value>A&amp;yuda</value>
-  </data>
-  <data name="m_menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 75</value>
-  </data>
-  <data name="m_tileSheetNewButton.Text" xml:space="preserve">
-    <value>Nueva Hoja de Azulejos</value>
-  </data>
-  <data name="m_tileSheetNewButton.ToolTipText" xml:space="preserve">
-    <value>Nueva hoja de azulejos</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.Text" xml:space="preserve">
-    <value>Propiedades del Hoja de Azulejos</value>
-  </data>
-  <data name="m_tileSheetPropertiesButton.ToolTipText" xml:space="preserve">
-    <value>Propiedades del hoja de azulejos</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.Text" xml:space="preserve">
-    <value>Manega los Azulejos Automáticos</value>
-  </data>
-  <data name="m_tileSheetAutoTilesButton.ToolTipText" xml:space="preserve">
-    <value>Manega los azulejos automáticos</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.Text" xml:space="preserve">
-    <value>Habilita la Actualización Automática</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateEnableButton.ToolTipText" xml:space="preserve">
-    <value>Habilita actualización automática de las hojas de azulejos del disco</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.Text" xml:space="preserve">
-    <value>Deshabilita la Actualización Automática</value>
-  </data>
-  <data name="m_tileSheetAutoUpdateDisableButton.ToolTipText" xml:space="preserve">
-    <value>Deshabilita actualización automática de las hojas de azulejos del disco</value>
-  </data>
-  <data name="m_tileSheetEditImageSourceButton.ToolTipText" xml:space="preserve">
-    <value>Acceda a la imagen de origen de la hoja de azulejos en una aplicación de pintura</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.Text" xml:space="preserve">
-    <value>Quita las Dependencias</value>
-  </data>
-  <data name="m_tileSheetRemoveDependenciesButton.ToolTipText" xml:space="preserve">
-    <value>Quite las dependencias de esta hoja de azulejos</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.Text" xml:space="preserve">
-    <value>Elimina la Hoja de Azulejos</value>
-  </data>
-  <data name="m_tileSheetDeleteButton.ToolTipText" xml:space="preserve">
-    <value>Elimina la hoja de azulejos</value>
-  </data>
-  <data name="m_tileSheetToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 99</value>
-  </data>
-  <data name="m_viewZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="m_viewZoomLabel.Text" xml:space="preserve">
-    <value>Factor de Zoom</value>
-  </data>
-  <data name="m_viewZoomLabel.ToolTipText" xml:space="preserve">
-    <value>Factor de zoom</value>
-  </data>
-  <data name="m_viewZoomComboBox.Items" xml:space="preserve">
-    <value>A Escala</value>
-  </data>
-  <data name="m_viewZoomInButton.Text" xml:space="preserve">
-    <value>Zoom En</value>
-  </data>
-  <data name="m_viewZoomOutButton.Text" xml:space="preserve">
-    <value>Zoom a Cabo</value>
-  </data>
-  <data name="m_viewZoomOutButton.ToolTipText" xml:space="preserve">
-    <value>Zoom a cabo</value>
-  </data>
-  <data name="m_viewFullScreenButton.Text" xml:space="preserve">
-    <value>Pantalla Completa</value>
-  </data>
-  <data name="m_viewFullScreenButton.ToolTipText" xml:space="preserve">
-    <value>Ver en modo de pantalla completa</value>
-  </data>
-  <data name="m_viewWindowedButton.Text" xml:space="preserve">
-    <value>Modo de Ventana</value>
-  </data>
-  <data name="m_viewWindowedButton.ToolTipText" xml:space="preserve">
-    <value>Ver en modo de ventana</value>
-  </data>
-  <data name="m_viewLayersShowAllButton.Text" xml:space="preserve">
-    <value>Mostra Todas las Capas</value>
-  </data>
-  <data name="m_viewLayersShowAllButton.ToolTipText" xml:space="preserve">
-    <value>Mostra todas las capas</value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.Text" xml:space="preserve">
-    <value>Resaltar Sólo la Capa Seleccionada </value>
-  </data>
-  <data name="m_viewLayersHighlightSelectedButton.ToolTipText" xml:space="preserve">
-    <value>Resaltar sólo la capa seleccionada </value>
-  </data>
-  <data name="m_viewShowTileGuidesButton.Text" xml:space="preserve">
-    <value>Mostra la Cuadrícula de Azulejos</value>
-  </data>
-  <data name="m_viewShowTileGuidesButton.ToolTipText" xml:space="preserve">
-    <value>Mostra la cuadrícula de azulejos</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.Text" xml:space="preserve">
-    <value>Oculta la Cuadrícula de Azulejos</value>
-  </data>
-  <data name="m_viewHideTileGuidesButton.ToolTipText" xml:space="preserve">
-    <value>Oculta la cuadrícula de azulejos</value>
-  </data>
-  <data name="m_viewToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 25</value>
-  </data>
-  <data name="m_fileNewButton.Text" xml:space="preserve">
-    <value>Nueva Mapa</value>
-  </data>
-  <data name="m_fileNewButton.ToolTipText" xml:space="preserve">
-    <value>Nueva mapa</value>
-  </data>
-  <data name="m_fileOpenButton.Text" xml:space="preserve">
-    <value>Abre Mapa</value>
-  </data>
-  <data name="m_fileOpenButton.ToolTipText" xml:space="preserve">
-    <value>Abre mapa</value>
-  </data>
-  <data name="m_fileSaveButton.Text" xml:space="preserve">
-    <value>Guarda la Mapa</value>
-  </data>
-  <data name="m_fileSaveButton.ToolTipText" xml:space="preserve">
-    <value>Guarda la mapa</value>
-  </data>
-  <data name="m_fileSaveAsButton.Text" xml:space="preserve">
-    <value>Guarda la Mapa Como</value>
-  </data>
-  <data name="m_fileSaveAsButton.ToolTipText" xml:space="preserve">
-    <value>Guarda la mapa como</value>
-  </data>
-  <data name="m_filePageSetupButton.Text" xml:space="preserve">
-    <value>Configura Página</value>
-  </data>
-  <data name="m_filePageSetupButton.ToolTipText" xml:space="preserve">
-    <value>Configura la página para la impresión</value>
-  </data>
-  <data name="m_filePrintPreviewButton.Text" xml:space="preserve">
-    <value>Ver Previa de Impresión</value>
-  </data>
-  <data name="m_filePrintPreviewButton.ToolTipText" xml:space="preserve">
-    <value>Ver previa de impresión</value>
-  </data>
-  <data name="m_filePrintButton.Text" xml:space="preserve">
-    <value>Imprimi</value>
-  </data>
-  <data name="m_filePrintButton.ToolTipText" xml:space="preserve">
-    <value>Imprimi la mapa</value>
-  </data>
-  <data name="m_fileOptionsButton.Text" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
-  <data name="m_fileOptionsButton.ToolTipText" xml:space="preserve">
-    <value>Accede las opciones generales</value>
-  </data>
-  <data name="m_fileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 124</value>
   </data>
   <data name="m_loadErrorMessageBox.Caption" xml:space="preserve">
     <value>Abre Mapa</value>
@@ -1678,7 +1672,7 @@
     <value>Cambios No Guardados</value>
   </data>
   <data name="m_unsavedMessageBox.Text" xml:space="preserve">
-    <value>Usted tiene cambios sin guardar. ¿Está seguro que desea continuar de todos modos?</value>
+    <value>Usted tiene cambios no guardados. ¿Desea guardar el mapa?</value>
   </data>
   <data name="m_hasDependencyMessageBox.Caption" xml:space="preserve">
     <value>Elimina la Hoja de Azulejos</value>

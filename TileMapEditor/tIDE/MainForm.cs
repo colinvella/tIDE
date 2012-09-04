@@ -50,6 +50,7 @@ namespace tIDE
         private CommandHistory m_commandHistory;
         private xTile.ObjectModel.Component m_selectedComponent;
         private TileBrushCollection m_tileBrushCollection;
+        private bool m_needsFilename;
         private bool m_needsSaving;
         private string m_filename;
 
@@ -434,6 +435,34 @@ namespace tIDE
             this.Text = shortName + " - tIDE";
         }
 
+        private Boolean HandleUnsavedChanges(object sender, EventArgs eventArgs)
+        {
+            // if nothing unsaved, nothing to worry about
+            if (!m_needsSaving)
+                return true;
+
+            // otherwise prompt user to save (Yes), discard (No) or abort the action (Cancel)
+            DialogResult dialogResult = m_unsavedMessageBox.Show();
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                // if Yes, do a Save/Save As operation
+                OnFileSave(sender, eventArgs);
+
+                // if still needs saving (cancelled Save As dialog), then cancel
+                if (m_needsSaving)
+                    return false;
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                // this action canceled by the user
+                return false;
+            }
+
+            // otherwise, saved
+            return true;
+        }
+
         private void OpenFile(string filename)
         {
             FormatManager formatManager = FormatManager.Instance;
@@ -483,7 +512,9 @@ namespace tIDE
                 m_mapPanel.Enabled = true;
                 m_mapPanel.Invalidate(true);
 
+                m_needsFilename = false;
                 m_needsSaving = false;
+
                 m_filename = filename;
                 m_commandHistory.Clear();
 
@@ -550,6 +581,7 @@ namespace tIDE
                 foreach (TileSheet tileSheet in m_map.TileSheets)
                     tileSheet.ImageSource = PathHelper.GetAbsolutePath(basePath, tileSheet.ImageSource);
 
+                m_needsFilename = false;
                 m_needsSaving = false;
                 RecentFilesManager.StoreFilename(filename);
                 UpdateFileControls();
@@ -590,6 +622,7 @@ namespace tIDE
             RegisterFileFormats();
 
             m_map = new Map("Untitled");
+            m_needsFilename = true;
             m_needsSaving = false;
             m_filename = "Untitled.tide";
             this.Text = "Untitled - tIDE";
@@ -628,9 +661,7 @@ namespace tIDE
 
         private void OnMainFormClosing(object sender, FormClosingEventArgs formClosingEventArgs)
         {
-            if (m_needsSaving &&
-                m_unsavedMessageBox.Show() == DialogResult.No)
-                formClosingEventArgs.Cancel = true;
+            formClosingEventArgs.Cancel = !HandleUnsavedChanges(sender, EventArgs.Empty);
         }
 
         private void OnCustomToolStripAdded(object sender, ControlEventArgs controlEventArgs)
@@ -730,8 +761,7 @@ namespace tIDE
 
         private void OnFileNew(object sender, EventArgs eventArgs)
         {
-            if (!m_needsSaving
-                && m_unsavedMessageBox.Show() == DialogResult.No)
+            if (!HandleUnsavedChanges(sender, eventArgs))
                 return;
 
             Map map = new Map("Untitled Map");
@@ -745,6 +775,9 @@ namespace tIDE
                 m_mapTreeView.UpdateTree();
                 m_tilePicker.Map = map;
                 m_mapPanel.Map = map;
+
+                m_needsFilename = true;
+                m_needsSaving = true;
 
                 m_commandHistory.Clear();
                 m_selectedComponent = null;
@@ -761,8 +794,8 @@ namespace tIDE
 
         private void OnFileOpen(object sender, EventArgs eventArgs)
         {
-            if (m_needsSaving &&
-                m_unsavedMessageBox.Show() == DialogResult.No) return;
+            if (!HandleUnsavedChanges(sender, eventArgs))
+                return;
 
             FormatManager formatManager = FormatManager.Instance;
 
@@ -780,7 +813,10 @@ namespace tIDE
 
         private void OnFileSave(object sender, EventArgs eventArgs)
         {
-            SaveFile(m_filename);
+            if (m_needsFilename)
+                OnFileSaveAs(sender, eventArgs);
+            else
+                SaveFile(m_filename);
         }
 
         private void OnFileSaveAs(object sender, EventArgs eventArgs)
@@ -847,8 +883,7 @@ namespace tIDE
 
         private void OnFileOpenRecent(object sender, EventArgs eventArgs)
         {
-            if (m_needsSaving &&
-                m_unsavedMessageBox.Show() == DialogResult.No)
+            if (!HandleUnsavedChanges(sender, eventArgs))
                 return;
 
             string filename = ((ToolStripMenuItem)sender).Text;
