@@ -55,6 +55,18 @@ namespace tIDE.Dialogs
             MarkAsModified();
         }
 
+        private bool IsDuplicateLayerId(string newLayerId)
+        {
+            foreach (Layer layer in m_layer.Map.Layers)
+            {
+                if (layer == m_layer)
+                    continue;
+                if (newLayerId == layer.Id)
+                    return true;
+            }
+            return false;
+        }
+
         private void OnDialogLoad(object sender, EventArgs eventArgs)
         {
             m_textBoxId.Text = m_layer.Id;
@@ -77,22 +89,28 @@ namespace tIDE.Dialogs
 
         private void OnDialogOk(object sender, EventArgs eventArgs)
         {
+            string newLayerId = m_textBoxId.Text;
+
+            if (IsDuplicateLayerId(newLayerId))
+            {
+                m_duplicateIdMessageBox.Show();
+                return;
+            }
+
             OnDialogApply(sender, eventArgs);
+
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void OnDialogApply(object sender, EventArgs e)
         {
-            string newId = m_textBoxId.Text;
+            string newLayerId = m_textBoxId.Text;
 
-            foreach (Layer layer in m_layer.Map.Layers)
+            if (IsDuplicateLayerId(newLayerId))
             {
-                if (layer == m_layer)
-                    continue;
-                if (newId == layer.Id)
-                {
-                    m_duplicateIdMessageBox.Show();
-                    return;
-                }
+                m_duplicateIdMessageBox.Show();
+                return;
             }
 
             Size newLayerSize = new Size((int)m_numericLayerWidth.Value, (int)m_numericLayerHeight.Value);
@@ -102,7 +120,7 @@ namespace tIDE.Dialogs
 
             if (m_isNewLayer)
             {
-                m_layer.Id = newId;
+                m_layer.Id = newLayerId;
                 m_layer.Description = m_textBoxDescription.Text;
                 m_layer.LayerSize = newLayerSize;
                 m_layer.TileSize = newTileSize;
@@ -111,7 +129,7 @@ namespace tIDE.Dialogs
                 m_isNewLayer = false;
             }
             else
-                command = new LayerPropertiesCommand(m_layer, newId, m_textBoxDescription.Text,
+                command = new LayerPropertiesCommand(m_layer, newLayerId, m_textBoxDescription.Text,
                     newLayerSize, newTileSize, m_checkBoxVisible.Checked,
                     m_customPropertyGrid.NewProperties, m_alignmentButton.Alignment);
 

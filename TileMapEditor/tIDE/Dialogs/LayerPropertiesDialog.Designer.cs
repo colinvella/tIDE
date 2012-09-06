@@ -81,7 +81,6 @@
             // m_buttonOk
             // 
             resources.ApplyResources(this.m_buttonOk, "m_buttonOk");
-            this.m_buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.m_buttonOk.Name = "m_buttonOk";
             this.m_buttonOk.UseVisualStyleBackColor = true;
             this.m_buttonOk.Click += new System.EventHandler(this.OnDialogOk);
@@ -145,7 +144,6 @@
             // 
             // m_tabGeneral
             // 
-            resources.ApplyResources(this.m_tabGeneral, "m_tabGeneral");
             this.m_tabGeneral.BackColor = System.Drawing.Color.Transparent;
             this.m_tabGeneral.Controls.Add(this.m_alignmentButton);
             this.m_tabGeneral.Controls.Add(this.m_lblAlignment);
@@ -164,14 +162,15 @@
             this.m_tabGeneral.Controls.Add(m_labelDescription);
             this.m_tabGeneral.Controls.Add(this.m_textBoxId);
             this.m_tabGeneral.Controls.Add(m_labelId);
+            resources.ApplyResources(this.m_tabGeneral, "m_tabGeneral");
             this.m_tabGeneral.Name = "m_tabGeneral";
             this.m_tabGeneral.UseVisualStyleBackColor = true;
             // 
             // m_alignmentButton
             // 
-            resources.ApplyResources(this.m_alignmentButton, "m_alignmentButton");
             this.m_alignmentButton.Alignment = tIDE.Controls.Alignment.Centre;
             this.m_alignmentButton.Image = global::tIDE.Properties.Resources.Layer;
+            resources.ApplyResources(this.m_alignmentButton, "m_alignmentButton");
             this.m_alignmentButton.Name = "m_alignmentButton";
             // 
             // m_lblAlignment
@@ -315,9 +314,9 @@
             // 
             // m_tabCustomProperties
             // 
-            resources.ApplyResources(this.m_tabCustomProperties, "m_tabCustomProperties");
             this.m_tabCustomProperties.BackColor = System.Drawing.Color.Transparent;
             this.m_tabCustomProperties.Controls.Add(this.m_customPropertyGrid);
+            resources.ApplyResources(this.m_tabCustomProperties, "m_tabCustomProperties");
             this.m_tabCustomProperties.Name = "m_tabCustomProperties";
             this.m_tabCustomProperties.UseVisualStyleBackColor = true;
             // 
