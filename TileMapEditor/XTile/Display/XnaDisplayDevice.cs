@@ -65,7 +65,7 @@ namespace xTile.Display
         #region Public Methods
 
         /// <summary>
-        /// Constructs an XNA displat device using the given content manager and
+        /// Constructs an XNA display device using the given content manager and
         /// XNA graphics device
         /// </summary>
         /// <param name="contentManager">Content manager to use for resource access</param>
@@ -83,6 +83,9 @@ namespace xTile.Display
             m_modulationColour = Color.White;
         }
 
+        /// <summary>
+        /// Destructs the XNA display device
+        /// </summary>
         ~XnaDisplayDevice()
         {
             Dispose(false);
@@ -126,7 +129,7 @@ namespace xTile.Display
         /// 
         /// NOTE: This function is not supported on the Zune platform.
         /// </summary>
-        /// <param name="clippingRegion">Clipping region to apply</param>
+        /// <param name="viewport">Viewport to apply</param>
         public void SetViewport(xTile.Dimensions.Rectangle viewport)
         {
             // further clip region within display device's dimensions
