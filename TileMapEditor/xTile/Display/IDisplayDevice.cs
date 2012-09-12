@@ -49,7 +49,7 @@ namespace xTile.Display
         /// graphics coordinate origin is shifted to match the top-left corner of
         /// the viewport.
         /// </summary>
-        /// <param name="clippingRegion">Clipping region to apply</param>
+        /// <param name="viewport">device viewport to apply</param>
         void SetViewport(Rectangle viewport);
 
         /// <summary>
