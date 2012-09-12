@@ -968,14 +968,14 @@ namespace tIDE.Controls
             m_graphics.PixelOffsetMode = PixelOffsetMode.Half;
         }
 
-        public void SetClippingRegion(xTile.Dimensions.Rectangle clippingRegion)
+        public void SetViewport(xTile.Dimensions.Rectangle viewport)
         {
             if (m_graphics == null)
                 return;
 
             m_graphics.SetClip(new RectangleF(
-                    clippingRegion.Location.X, clippingRegion.Location.Y,
-                    clippingRegion.Size.Width, clippingRegion.Size.Height));
+                viewport.Location.X, viewport.Location.Y,
+                viewport.Size.Width, viewport.Size.Height));
         }
 
         public void DrawTile(Tile tile, Location location)

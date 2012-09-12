@@ -346,8 +346,8 @@ namespace xTile
         {
             displayDevice.BeginScene();
 
-            Rectangle clippingRegion = new Rectangle(displayOffset, mapViewport.Size);
-            displayDevice.SetClippingRegion(clippingRegion);
+            Rectangle deviceViewport = new Rectangle(displayOffset, mapViewport.Size);
+            displayDevice.SetViewport(deviceViewport);
 
             foreach (Layer layer in m_layers)
             {

@@ -122,26 +122,26 @@ namespace xTile.Display
         }
 
         /// <summary>
-        /// Sets the clipping region.
+        /// Sets the viewport.
         /// 
         /// NOTE: This function is not supported on the Zune platform.
         /// </summary>
         /// <param name="clippingRegion">Clipping region to apply</param>
-        public void SetClippingRegion(xTile.Dimensions.Rectangle clippingRegion)
+        public void SetViewport(xTile.Dimensions.Rectangle viewport)
         {
             // further clip region within display device's dimensions
             int nMaxWidth = m_graphicsDevice.PresentationParameters.BackBufferWidth;
             int nMaxHeight = m_graphicsDevice.PresentationParameters.BackBufferHeight;
 
-            int nClipLeft = Clamp(clippingRegion.X, 0, nMaxWidth);
-            int nClipTop = Clamp(clippingRegion.Y, 0, nMaxHeight);
-            int nClipRight = Clamp(clippingRegion.X + clippingRegion.Width, 0, nMaxWidth);
-            int nClipBottom = Clamp(clippingRegion.Y + clippingRegion.Height, 0, nMaxHeight);
-            int nClipWidth = nClipRight - nClipLeft;
-            int nClipHeight = nClipBottom - nClipTop;
+            int viewportLeft = Clamp(viewport.X, 0, nMaxWidth);
+            int viewportTop = Clamp(viewport.Y, 0, nMaxHeight);
+            int viewportRight = Clamp(viewport.X + viewport.Width, 0, nMaxWidth);
+            int viewportBottom = Clamp(viewport.Y + viewport.Height, 0, nMaxHeight);
+            int viewportWidth = viewportRight - viewportLeft;
+            int viewportHeight = viewportBottom - viewportTop;
 
             m_graphicsDevice.Viewport = new Viewport(
-                nClipLeft, nClipTop, nClipWidth, nClipHeight);
+                viewportLeft, viewportTop, viewportWidth, viewportHeight);
         }
 
         /// <summary>

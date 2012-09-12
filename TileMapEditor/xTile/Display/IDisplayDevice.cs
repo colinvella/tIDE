@@ -45,12 +45,12 @@ namespace xTile.Display
         void BeginScene();
 
         /// <summary>
-        /// Sets the allowed drawing region associated with the device. This
-        /// functionality is used to by the rendering engine according to the
-        /// configured view port.
+        /// Sets the viewport of the display device. This method assumes the the
+        /// graphics coordinate origin is shifted to match the top-left corner of
+        /// the viewport.
         /// </summary>
         /// <param name="clippingRegion">Clipping region to apply</param>
-        void SetClippingRegion(Rectangle clippingRegion);
+        void SetViewport(Rectangle viewport);
 
         /// <summary>
         /// Draws the given tile at the given location
