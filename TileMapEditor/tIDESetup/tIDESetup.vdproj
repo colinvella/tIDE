@@ -21,13 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0390F2ED1DC654A4CA03B829B361351D"
-        "OwnerKey" = "8:_EC74E7DFBAB3833B8D74CC32DE6F9157"
+        "MsmKey" = "8:_268D7316F743C259836943F5E9393B07"
+        "OwnerKey" = "8:_BBA627139334EC04313315D8DE92EA1C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_0390F2ED1DC654A4CA03B829B361351D"
+        "MsmKey" = "8:_268D7316F743C259836943F5E9393B07"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,7 +63,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EC74E7DFBAB3833B8D74CC32DE6F9157"
+        "MsmKey" = "8:_BBA627139334EC04313315D8DE92EA1C"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -76,13 +76,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EC74E7DFBAB3833B8D74CC32DE6F9157"
+        "OwnerKey" = "8:_BBA627139334EC04313315D8DE92EA1C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0390F2ED1DC654A4CA03B829B361351D"
+        "OwnerKey" = "8:_268D7316F743C259836943F5E9393B07"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -130,7 +130,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\tIDESetup205.msi"
+        "OutputFilename" = "8:Release\\tIDESetup206.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -271,14 +271,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0390F2ED1DC654A4CA03B829B361351D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_268D7316F743C259836943F5E9393B07"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.4.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.5.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_0390F2ED1DC654A4CA03B829B361351D"
+                    "_268D7316F743C259836943F5E9393B07"
                     {
                     "Name" = "8:xTile.dll"
                     "Attributes" = "3:512"
@@ -382,14 +382,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EC74E7DFBAB3833B8D74CC32DE6F9157"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BBA627139334EC04313315D8DE92EA1C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:tIDE.Plugin, Version=2.0.4.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:tIDE.Plugin, Version=2.0.5.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_EC74E7DFBAB3833B8D74CC32DE6F9157"
+                    "_BBA627139334EC04313315D8DE92EA1C"
                     {
                     "Name" = "8:tIDE.Plugin.dll"
                     "Attributes" = "3:512"
@@ -536,24 +536,24 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:tIDE v2.0.5"
-        "ProductCode" = "8:{724D556A-92B6-405B-AD00-904A82A9B99D}"
-        "PackageCode" = "8:{9D92A4D3-3AEE-42B8-BE07-2C9ABBF1729C}"
+        "ProductName" = "8:tIDE v2.0.6"
+        "ProductCode" = "8:{8ECBFE70-6CAF-42BC-899D-07863E78A207}"
+        "PackageCode" = "8:{C103717E-B26A-47B5-894F-8CD8545DE204}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.5"
+        "ProductVersion" = "8:2.0.6"
         "Manufacturer" = "8:Colin Vella"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://tide.codeplex.com"
-        "Title" = "8:tIDE Tile Map Editor v2.0.5"
-        "Subject" = "8:Tilemap Integrated Development Environment (tIDE) v2.0.5"
+        "Title" = "8:tIDE Tile Map Editor v2.0.6"
+        "Subject" = "8:Tilemap Integrated Development Environment (tIDE) v2.0.6"
         "ARPCONTACT" = "8:Colin Vella"
         "Keywords" = "8:tIDE tile map editor 2D level graphics parallax XNA 4.0"
-        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v2.0.5"
+        "ARPCOMMENTS" = "8:tIDE Tile Map Editor v2.0.6"
         "ARPURLINFOABOUT" = "8:http://tide.codeplex.com"
         "ARPPRODUCTICON" = "8:_8C1D6D84C6D743038E647C8C01F89DA4"
         "ARPIconIndex" = "3:0"
