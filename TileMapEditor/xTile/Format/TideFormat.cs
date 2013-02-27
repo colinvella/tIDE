@@ -153,9 +153,10 @@ namespace xTile.Format
 
         #region Private Methods
 
-        private void LoadProperties(XmlHelper xmlHelper, Component component)
+        private void LoadProperties(XmlHelper xmlHelper, Component component, bool consumeStartElement)
         {
-            xmlHelper.AdvanceStartElement("Properties");
+            if (consumeStartElement)
+                xmlHelper.AdvanceStartElement("Properties");
 
             while (xmlHelper.AdvanceStartRepeatedElement("Property", "Properties"))
             {
@@ -174,6 +175,11 @@ namespace xTile.Format
 
                 xmlHelper.AdvanceEndElement("Property");
             }
+        }
+
+        private void LoadProperties(XmlHelper xmlHelper, Component component)
+        {
+            LoadProperties(xmlHelper, component, true);
         }
 
         private void StoreProperties(Component component, XmlWriter xmlWriter)
@@ -245,11 +251,25 @@ namespace xTile.Format
             AnimatedTile animatedTile
                 = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
 
-            // end of this element or optional props
-            if (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
-                LoadProperties(xmlHelper, animatedTile);
 
-            return animatedTile;
+            // advance to end Animated tag or Properties
+            xmlHelper.AdvanceNode();
+
+            XmlNodeType xmlNodeType = xmlHelper.XmlReader.NodeType;
+            string nodeName = xmlHelper.XmlReader.Name;
+            if (xmlNodeType == XmlNodeType.Element && nodeName == "Properties")
+            {
+                LoadProperties(xmlHelper, animatedTile, false);
+
+                xmlHelper.AdvanceNode();
+                xmlNodeType = xmlHelper.XmlReader.NodeType;
+                nodeName = xmlHelper.XmlReader.Name;
+            }
+
+            if (xmlNodeType == XmlNodeType.EndElement && nodeName == "Animated")
+                return animatedTile;
+            else
+                throw new Exception("Closing \"Animated\" element expected");
         }
 
         private void StoreAnimatedTile(AnimatedTile animatedTile, XmlWriter xmlWriter)
