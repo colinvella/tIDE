@@ -264,7 +264,7 @@ namespace Demo
 #if WINDOWS
             WriteText("Arrow keys / left gamepad thumbstick - navigate the map", 16, m_viewPort.Height - 96);
             WriteText("Esc key    / gamepad Back button     - exit the demo", 16, m_viewPort.Height - 72);
-            WriteText("W key      / gamepad X button        - window / fullscreen toggle", 16, m_viewPort.Height - 48);
+            WriteText("W key      / gamepad X button        - wrap around toggle", 16, m_viewPort.Height - 48);
             WriteText("Space key  / gamepad Y button        - window / fullscreen toggle", 16, m_viewPort.Height - 24);
 #elif XBOX360
             WriteText("Left gamepad thumbstick              - navigate the map", 16, m_viewPort.Height - 72);
