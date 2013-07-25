@@ -344,10 +344,10 @@ namespace xTile
         /// <param name="wrapAround">Flag indicating if map wrap-around is performed</param>
         public void Draw(IDisplayDevice displayDevice, Rectangle mapViewport, Location displayOffset, bool wrapAround)
         {
-            displayDevice.BeginScene();
-
             Rectangle deviceViewport = new Rectangle(displayOffset, mapViewport.Size);
-            displayDevice.SetViewport(deviceViewport);
+            displayDevice.Viewport = deviceViewport;
+
+            displayDevice.BeginScene();
 
             foreach (Layer layer in m_layers)
             {

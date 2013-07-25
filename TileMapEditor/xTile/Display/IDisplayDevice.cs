@@ -45,14 +45,6 @@ namespace xTile.Display
         void BeginScene();
 
         /// <summary>
-        /// Sets the viewport of the display device. This method assumes the the
-        /// graphics coordinate origin is shifted to match the top-left corner of
-        /// the viewport.
-        /// </summary>
-        /// <param name="viewport">device viewport to apply</param>
-        void SetViewport(Rectangle viewport);
-
-        /// <summary>
         /// Draws the given tile at the given location
         /// </summary>
         /// <param name="tile">Tile to draw</param>
@@ -63,6 +55,17 @@ namespace xTile.Display
         /// Performs any actions necessary to terminate rendering of the current frame
         /// </summary>
         void EndScene();
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Sets the viewport of the display device. This property assumes that the
+        /// graphics coordinate origin is shifted to match the top-left corner of
+        /// the viewport.
+        /// </summary>
+        Rectangle Viewport { get; set; }
 
         #endregion
     }

@@ -431,11 +431,11 @@ namespace xTile.Layers
             int tileXMax = Math.Min(tileXMin + tileColumns, m_layerSize.Width);
             int tileYMax = Math.Min(tileYMin + tileRows, m_layerSize.Height);
 
-            Location tileLocation = -tileInternalOffset;
+            Location tileLocation = displayOffset - tileInternalOffset;
 
             for (int tileY = tileYMin; tileY < tileYMax; tileY++)
             {
-                tileLocation.X = -tileInternalOffset.X;
+                tileLocation.X = displayOffset.X - tileInternalOffset.X;
                 for (int tileX = tileXMin; tileX < tileXMax; tileX++)
                 {
                     Tile tile = m_tiles[tileX, tileY];

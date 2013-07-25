@@ -1226,7 +1226,16 @@ namespace tIDE.Controls
             }
         }
 
+        // ignored for tIDE
         public xTile.Dimensions.Rectangle Viewport
+        {
+            get { return new xTile.Dimensions.Rectangle(); }
+            set
+            {
+            }
+        }
+
+        public xTile.Dimensions.Rectangle MapViewport
         {
             get { return m_viewport; }
             set

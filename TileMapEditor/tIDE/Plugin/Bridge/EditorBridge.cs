@@ -31,7 +31,7 @@ namespace tIDE.Plugin.Bridge
                 return;
 
             Location layerDisplayLocation = layer.ConvertMapToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y), m_mapPanel.Viewport.Size);
+                new Location(mouseEventArgs.X, mouseEventArgs.Y), m_mapPanel.MapViewport.Size);
             Location tileLocation = layer.GetTileLocation(layerDisplayLocation);
 
             m_mouseDown(mouseEventArgs, tileLocation);
@@ -47,7 +47,7 @@ namespace tIDE.Plugin.Bridge
                 return;
 
             Location layerDisplayLocation = layer.ConvertMapToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y), m_mapPanel.Viewport.Size);
+                new Location(mouseEventArgs.X, mouseEventArgs.Y), m_mapPanel.MapViewport.Size);
             Location tileLocation = layer.GetTileLocation(layerDisplayLocation);
 
             m_mouseMove(mouseEventArgs, tileLocation);
@@ -63,7 +63,7 @@ namespace tIDE.Plugin.Bridge
                 return;
 
             Location layerDisplayLocation = layer.ConvertMapToLayerLocation(
-                new Location(mouseEventArgs.X, mouseEventArgs.Y), m_mapPanel.Viewport.Size);
+                new Location(mouseEventArgs.X, mouseEventArgs.Y), m_mapPanel.MapViewport.Size);
             Location tileLocation = layer.GetTileLocation(layerDisplayLocation);
 
             m_mouseUp(mouseEventArgs, tileLocation);

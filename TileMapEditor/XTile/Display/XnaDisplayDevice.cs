@@ -34,6 +34,31 @@ namespace xTile.Display
         #region Public Properties
 
         /// <summary>
+        /// Sets the viewport of the display device. This property assumes that the
+        /// graphics coordinate origin is shifted to match the top-left corner of
+        /// the viewport.
+        /// </summary>
+        public xTile.Dimensions.Rectangle Viewport
+        {
+            get { return new Dimensions.Rectangle(m_scissorRectangle.X, m_scissorRectangle.Y, m_scissorRectangle.Width, m_scissorRectangle.Height); }
+            set
+            {
+                // further clip region within display device's dimensions
+                int nMaxWidth = m_graphicsDevice.PresentationParameters.BackBufferWidth;
+                int nMaxHeight = m_graphicsDevice.PresentationParameters.BackBufferHeight;
+
+                int viewportLeft = Clamp(value.X, 0, nMaxWidth);
+                int viewportTop = Clamp(value.Y, 0, nMaxHeight);
+                int viewportRight = Clamp(value.X + value.Width, 0, nMaxWidth);
+                int viewportBottom = Clamp(value.Y + value.Height, 0, nMaxHeight);
+                int viewportWidth = viewportRight - viewportLeft;
+                int viewportHeight = viewportBottom - viewportTop;
+
+                m_scissorRectangle = new Microsoft.Xna.Framework.Rectangle(viewportLeft, viewportTop, viewportWidth, viewportHeight);
+            }
+        }
+
+        /// <summary>
         /// Colour modulation property. This is set to White by default
         /// 
         /// NOTE: This property is specific to this implementation
@@ -78,6 +103,10 @@ namespace xTile.Display
             m_spriteBatchAdditive = new SpriteBatch(graphicsDevice);
             m_tileSheetTextures = new Dictionary<TileSheet, Texture2D>();
 
+            m_scissorRectangle = new Microsoft.Xna.Framework.Rectangle(0, 0,
+                graphicsDevice.PresentationParameters.BackBufferWidth,
+                graphicsDevice.PresentationParameters.BackBufferHeight);
+
             m_tilePosition = new Vector2();
             m_sourceRectangle = new Microsoft.Xna.Framework.Rectangle();
             m_modulationColour = Color.White;
@@ -120,31 +149,12 @@ namespace xTile.Display
         /// </summary>
         public void BeginScene()
         {
-            m_spriteBatchAlpha.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
-            m_spriteBatchAdditive.Begin(SpriteSortMode.Deferred, BlendState.Additive);
-        }
+            RasterizerState rasterizerState = new RasterizerState();
+            rasterizerState.ScissorTestEnable = true;
 
-        /// <summary>
-        /// Sets the viewport.
-        /// 
-        /// NOTE: This function is not supported on the Zune platform.
-        /// </summary>
-        /// <param name="viewport">Viewport to apply</param>
-        public void SetViewport(xTile.Dimensions.Rectangle viewport)
-        {
-            // further clip region within display device's dimensions
-            int nMaxWidth = m_graphicsDevice.PresentationParameters.BackBufferWidth;
-            int nMaxHeight = m_graphicsDevice.PresentationParameters.BackBufferHeight;
-
-            int viewportLeft = Clamp(viewport.X, 0, nMaxWidth);
-            int viewportTop = Clamp(viewport.Y, 0, nMaxHeight);
-            int viewportRight = Clamp(viewport.X + viewport.Width, 0, nMaxWidth);
-            int viewportBottom = Clamp(viewport.Y + viewport.Height, 0, nMaxHeight);
-            int viewportWidth = viewportRight - viewportLeft;
-            int viewportHeight = viewportBottom - viewportTop;
-
-            m_graphicsDevice.Viewport = new Viewport(
-                viewportLeft, viewportTop, viewportWidth, viewportHeight);
+            m_graphicsDevice.ScissorRectangle = m_scissorRectangle;
+            m_spriteBatchAlpha.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, rasterizerState);
+            m_spriteBatchAdditive.Begin(SpriteSortMode.Deferred, BlendState.Additive, null, null, rasterizerState);
         }
 
         /// <summary>
@@ -204,6 +214,7 @@ namespace xTile.Display
         private SpriteBatch m_spriteBatchAlpha;
         private SpriteBatch m_spriteBatchAdditive;
         private Dictionary<TileSheet, Texture2D> m_tileSheetTextures;
+        private Microsoft.Xna.Framework.Rectangle m_scissorRectangle;
         private Microsoft.Xna.Framework.Vector2 m_tilePosition;
         private Microsoft.Xna.Framework.Rectangle m_sourceRectangle;
         private Color m_modulationColour;

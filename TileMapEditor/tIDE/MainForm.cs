@@ -709,40 +709,40 @@ namespace tIDE
                 case Keys.Left:
                     if (selectedLayer != null)
                     {
-                        Rectangle viewport = m_mapPanel.Viewport;
+                        Rectangle viewport = m_mapPanel.MapViewport;
                         viewport.X = Math.Max(0,
                             viewport.X - selectedLayer.TileWidth);
-                        m_mapPanel.Viewport = viewport;
+                        m_mapPanel.MapViewport = viewport;
                         keyEventArgs.Handled = true;
                     }    
                     break;
                 case Keys.Right:
                     if (selectedLayer != null)
                     {
-                        Rectangle viewport = m_mapPanel.Viewport;
+                        Rectangle viewport = m_mapPanel.MapViewport;
                         viewport.X = Math.Min(m_map.DisplayWidth - viewport.Width,
                             viewport.X + selectedLayer.TileWidth);
-                        m_mapPanel.Viewport = viewport;
+                        m_mapPanel.MapViewport = viewport;
                         keyEventArgs.Handled = true;
                     }
                     break;
                 case Keys.Up:
                     if (selectedLayer != null)
                     {
-                        Rectangle viewport = m_mapPanel.Viewport;
+                        Rectangle viewport = m_mapPanel.MapViewport;
                         viewport.Y = Math.Max(0,
                             viewport.Y - selectedLayer.TileHeight);
-                        m_mapPanel.Viewport = viewport;
+                        m_mapPanel.MapViewport = viewport;
                         keyEventArgs.Handled = true;
                     }
                     break;
                 case Keys.Down:
                     if (selectedLayer != null)
                     {
-                        Rectangle viewport = m_mapPanel.Viewport;
+                        Rectangle viewport = m_mapPanel.MapViewport;
                         viewport.Y = Math.Min(m_map.DisplayHeight - viewport.Height,
                             viewport.Y + selectedLayer.TileHeight);
-                        m_mapPanel.Viewport = viewport;
+                        m_mapPanel.MapViewport = viewport;
                         keyEventArgs.Handled = true;
                     }
                     break;
@@ -1194,7 +1194,7 @@ namespace tIDE
                 xTile.Dimensions.Location.Origin, viewPortSize);
 
             m_mapPanel.AutoScaleViewport = false;
-            m_mapPanel.Viewport = viewport;
+            m_mapPanel.MapViewport = viewport;
 
             foreach (ToolStripMenuItem toolStripMenuItem in m_viewViewportMenuItem.DropDownItems)
                 toolStripMenuItem.Checked
@@ -1216,7 +1216,7 @@ namespace tIDE
 
         private void OnMapStatistics(object sender, EventArgs eventArgs)
         {
-            MapStatisticsDialog mapStatisticsDialog = new MapStatisticsDialog(m_map, m_mapPanel.Viewport);
+            MapStatisticsDialog mapStatisticsDialog = new MapStatisticsDialog(m_map, m_mapPanel.MapViewport);
             mapStatisticsDialog.ShowDialog(this);
         }
 
