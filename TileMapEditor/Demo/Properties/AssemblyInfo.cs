@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Demo of the xTile Engine")]
 [assembly: AssemblyCompany("Microsoft")]
 
-[assembly: AssemblyCopyright("Copyright © Colin Vella 2010-2011")]
+[assembly: AssemblyCopyright("Copyright © Colin Vella 2010-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,5 +30,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.0.6.0")]
-[assembly: AssemblyFileVersionAttribute("2.0.6.0")]
+[assembly: AssemblyVersion("2.0.7.0")]
+[assembly: AssemblyFileVersionAttribute("2.0.7.0")]
