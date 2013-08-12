@@ -21,13 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_268D7316F743C259836943F5E9393B07"
-        "OwnerKey" = "8:_BBA627139334EC04313315D8DE92EA1C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_268D7316F743C259836943F5E9393B07"
+        "MsmKey" = "8:_27584AD5FBA658EC907CC8C30BC1FE64"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,7 +57,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BBA627139334EC04313315D8DE92EA1C"
+        "MsmKey" = "8:_E13520060D6E5905A55CFD38ACB02A9E"
+        "OwnerKey" = "8:_27584AD5FBA658EC907CC8C30BC1FE64"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E13520060D6E5905A55CFD38ACB02A9E"
         "OwnerKey" = "8:_62F24CC67EE04B7A9FBFDE99397CBA0C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -76,13 +76,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BBA627139334EC04313315D8DE92EA1C"
+        "OwnerKey" = "8:_27584AD5FBA658EC907CC8C30BC1FE64"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_268D7316F743C259836943F5E9393B07"
+        "OwnerKey" = "8:_E13520060D6E5905A55CFD38ACB02A9E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -130,7 +130,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\tIDESetup206.msi"
+        "OutputFilename" = "8:Release\\tIDESetup207.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -271,20 +271,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_268D7316F743C259836943F5E9393B07"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_27584AD5FBA658EC907CC8C30BC1FE64"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.5.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:tIDE.Plugin, Version=2.0.6.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_268D7316F743C259836943F5E9393B07"
+                    "_27584AD5FBA658EC907CC8C30BC1FE64"
                     {
-                    "Name" = "8:xTile.dll"
+                    "Name" = "8:tIDE.Plugin.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:xTile.dll"
+            "SourcePath" = "8:tIDE.Plugin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
@@ -382,20 +382,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BBA627139334EC04313315D8DE92EA1C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E13520060D6E5905A55CFD38ACB02A9E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:tIDE.Plugin, Version=2.0.5.0, Culture=neutral, processorArchitecture=x86"
+            "AssemblyAsmDisplayName" = "8:xTile, Version=2.0.7.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_BBA627139334EC04313315D8DE92EA1C"
+                    "_E13520060D6E5905A55CFD38ACB02A9E"
                     {
-                    "Name" = "8:tIDE.Plugin.dll"
+                    "Name" = "8:xTile.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:tIDE.Plugin.dll"
+            "SourcePath" = "8:xTile.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C7369F2D12C5471D8D5BDC1D32AADC69"
@@ -538,7 +538,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:tIDE v2.0.6"
         "ProductCode" = "8:{8ECBFE70-6CAF-42BC-899D-07863E78A207}"
-        "PackageCode" = "8:{C103717E-B26A-47B5-894F-8CD8545DE204}"
+        "PackageCode" = "8:{00D25C4A-9EEE-46C4-B1E3-FA8FB2E190C5}"
         "UpgradeCode" = "8:{0B44D157-03C3-4D18-8FEB-F49FED64B611}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
