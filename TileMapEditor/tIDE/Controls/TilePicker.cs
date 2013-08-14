@@ -400,7 +400,7 @@ namespace tIDE.Controls
 
                     int tileIndex = m_hoverTileIndex;
                     if (m_orderMode == OrderMode.MRU)
-                        tileIndex = m_indexToMru[tileIndex];
+                        tileIndex = m_hoverTileIndex < 0 ? m_hoverTileIndex : m_indexToMru[tileIndex];
                     m_lblIdxValue.Text = m_hoverTileIndex < 0
                         ? ""
                         : m_hoverTileIndex.ToString();
