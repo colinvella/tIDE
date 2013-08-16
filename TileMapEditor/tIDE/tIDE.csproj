@@ -697,6 +697,7 @@
     <None Include="Resources\FileSaveAs.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\ToolsFloodFill.png" />
     <None Include="app.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Resources\Edit.png" />
