@@ -72,6 +72,7 @@ namespace tIDE.Controls
 
         private Cursor m_singleTileCursor;
         private Cursor m_tileBlockCursor;
+        private Cursor m_floodFillCursor;
         private Cursor m_eraserCursor;
         private Cursor m_dropperCursor;
 
@@ -192,6 +193,35 @@ namespace tIDE.Controls
                 m_selectedLayer, m_selectedTileSheet, m_selectedTileIndex,
                 new Location(minX, minY),
                 new xTile.Dimensions.Size(maxX - minX + 1, maxY - minY + 1));
+            m_commandHistory.Do(command);
+
+            m_innerPanel.Invalidate();
+
+            if (MapChanged != null)
+                MapChanged(this, EventArgs.Empty);
+        }
+
+        private void DoFloodFill()
+        {
+            if (m_selectedLayer == null)
+                return;
+            if (m_selectedTileSheet == null)
+                return;
+            if (m_selectedTileIndex < 0)
+                return;
+
+            if (m_selectedLayer.TileSize != m_selectedTileSheet.TileSize)
+            {
+                m_tileSizeMessageBox.Show();
+                return;
+            }
+
+            if (!m_selectedLayer.IsValidTileLocation(m_tileLayerLocation))
+                return;
+
+            Command command = new ToolsFloodFillCommand(m_selectedLayer, m_tileLayerLocation, m_selectedTileSheet, m_selectedTileIndex);
+
+            Tile oldTile = m_selectedLayer.Tiles[m_tileLayerLocation];
             m_commandHistory.Do(command);
 
             m_innerPanel.Invalidate();
@@ -598,6 +628,7 @@ namespace tIDE.Controls
                         break;
                     case EditTool.SingleTile: DrawSingleTile(); break;
                     case EditTool.TileBlock: m_dragTileStart = m_tileLayerLocation; break;
+                    case EditTool.FloodFill: DoFloodFill(); break;
                     case EditTool.Eraser: EraseTile(); break;
                     case EditTool.Dropper:
                         PickTile();
@@ -889,6 +920,7 @@ namespace tIDE.Controls
 
             m_singleTileCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsSingleTileCursor));
             m_tileBlockCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsTileBlockCursor));
+            m_floodFillCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsFloodFillCursor));
             m_eraserCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsEraserCursor));
             m_dropperCursor = new Cursor(new MemoryStream(Properties.Resources.ToolsDropperCursor));
 
@@ -1206,6 +1238,7 @@ namespace tIDE.Controls
                 {
                     case EditTool.SingleTile: m_innerPanel.Cursor = m_singleTileCursor; break;
                     case EditTool.TileBlock: m_innerPanel.Cursor = m_tileBlockCursor; break;
+                    case EditTool.FloodFill: m_innerPanel.Cursor = m_floodFillCursor; break;
                     case EditTool.Eraser: m_innerPanel.Cursor = m_eraserCursor; break;
                     case EditTool.Dropper: m_innerPanel.Cursor = m_dropperCursor; break;
                     case EditTool.Texture:
@@ -1329,6 +1362,7 @@ namespace tIDE.Controls
         Select,
         SingleTile,
         TileBlock,
+        FloodFill,
         Eraser,
         Dropper,
         Texture,

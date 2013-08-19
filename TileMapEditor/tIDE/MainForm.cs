@@ -383,6 +383,7 @@ namespace tIDE
             m_toolsSelectButton.Checked = editTool == EditTool.Select;
             m_toolsSingleTileButton.Checked = editTool == EditTool.SingleTile;
             m_toolsTileBlockButton.Checked = editTool == EditTool.TileBlock;
+            m_toolsFloodFillButton.Checked = editTool == EditTool.FloodFill;
             m_toolsEraserButton.Checked = editTool == EditTool.Eraser;
             m_toolsDropperButton.Checked = editTool == EditTool.Dropper;
             m_toolsTextureButton.Checked = editTool == EditTool.Texture;
@@ -690,6 +691,11 @@ namespace tIDE
                     break;
                 case Keys.B:
                     m_mapPanel.EditTool = EditTool.TileBlock;
+                    UpdateToolButtons();
+                    keyEventArgs.SuppressKeyPress = true;
+                    break;
+                case Keys.F:
+                    m_mapPanel.EditTool = EditTool.FloodFill;
                     UpdateToolButtons();
                     keyEventArgs.SuppressKeyPress = true;
                     break;
@@ -1636,6 +1642,13 @@ namespace tIDE
         private void OnToolsTileBlock(object sender, EventArgs eventArgs)
         {
             m_mapPanel.EditTool = EditTool.TileBlock;
+            m_mapPanel.TileSelection.Clear();
+            UpdateToolButtons();
+        }
+
+        private void OnToolsFloodFill(object sender, EventArgs eventargs)
+        {
+            m_mapPanel.EditTool = EditTool.FloodFill;
             m_mapPanel.TileSelection.Clear();
             UpdateToolButtons();
         }

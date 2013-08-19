@@ -94,6 +94,7 @@
     <Compile Include="ClipBoardManager.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandHistory.cs" />
+    <Compile Include="Commands\ToolsFloodFillCommand.cs" />
     <Compile Include="Commands\LayerOffsetCommand.cs" />
     <Compile Include="Commands\TileSheetAutoTilesCommand.cs" />
     <Compile Include="Commands\TileSheetRemoveDependencyCommand.cs" />
@@ -698,6 +699,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ToolsFloodFill.png" />
+    <None Include="Resources\ToolsFloodFillCursor.cur" />
     <None Include="app.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Resources\Edit.png" />
@@ -809,7 +811,6 @@
     <None Include="Resources\ToolsTileBrush.png" />
     <None Include="Resources\ToolsDropperCursor.cur" />
     <None Include="Resources\ToolsEraserCursor.cur" />
-    <None Include="Resources\ToolsSingleTileCursor.cur" />
     <None Include="Resources\ToolsTileBlockCursor.cur" />
     <None Include="Resources\ViewWindowed.png" />
     <None Include="Resources\ViewFullScreen.png" />
