@@ -1,5 +1,5 @@
-# tIDE
-Tile IDE (tIDE) and xTile are an integrated solution for building tile-based games for Windows, Xbox 360 and Windows Phone 7 using Microsoft [XNA](http://www.xna.com/) 3.1 and 4.0 technology. This software is licensed under the [Microsoft Public License (Ms-PL)](http://www.opensource.org/licenses/ms-pl.html) open source agreement.
+# tIDE (Tilemap Integrated Development Environment)
+<img align="left" src="http://i.imgur.com/mjMNCMw.png"> Tile IDE (tIDE) and xTile are an integrated solution for building tile-based games for Windows, Xbox 360 and Windows Phone 7 using Microsoft [XNA](http://www.xna.com/) 3.1 and 4.0 technology. This software is licensed under the [Microsoft Public License (Ms-PL)](http://www.opensource.org/licenses/ms-pl.html) open source agreement.
 
 ![Twitter](http://i.imgur.com/Xx3oGpM.png) Follow tIDE and xTile on [Twitter](https://twitter.com/#!/tIDExTile) or [Tweet](http://twitter.com/share) about this project
 
