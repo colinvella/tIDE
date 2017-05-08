@@ -1,4 +1,15 @@
-﻿using System;
+﻿/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+//  LICENSE    Microsoft Public License (Ms-PL)                            //
+//             http://www.opensource.org/licenses/ms-pl.html               //
+//                                                                         //
+//  AUTHOR     Colin Vella                                                 //
+//                                                                         //
+//  CODEBASE   http://tide.codeplex.com                                    //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -6,20 +17,146 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-using XTile.Dimensions;
-using XTile.ObjectModel;
-using XTile.Layers;
-using XTile.Tiles;
+using xTile.Dimensions;
+using xTile.ObjectModel;
+using xTile.Layers;
+using xTile.Tiles;
 
-namespace XTile.Format
+namespace xTile.Format
 {
+    /// <summary>
+    /// Default tIDE map format implementation
+    /// </summary>
     internal class TideFormat: IMapFormat
     {
-        private CompatibilityResults m_compatibilityResults;
+        #region Public Properties
 
-        private void LoadProperties(XmlHelper xmlHelper, Component component)
+        /// <summary>
+        /// tIDE map format name
+        /// </summary>
+        public string Name
         {
-            xmlHelper.AdvanceStartElement("Properties");
+            get { return "tIDE Map File"; }
+        }
+
+        /// <summary>
+        /// tIDE map format descriptor
+        /// </summary>
+        public string FileExtensionDescriptor
+        {
+            get { return "tIDE Map Files (*.tide)"; }
+        }
+
+        /// <summary>
+        /// tIDE file extension (.tide)
+        /// </summary>
+        public string FileExtension
+        {
+            get { return "tide"; }
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Determines the map compatibility with tIDE. This is implicitly
+        /// supported in Full
+        /// </summary>
+        /// <param name="map">Map to analyse</param>
+        /// <returns>Format compatibility report</returns>
+        public CompatibilityReport DetermineCompatibility(Map map)
+        {
+            // trivially compatible
+            return m_compatibilityResults;
+        }
+
+        /// <summary>
+        /// Loads a map in tIDE format from the given stream
+        /// </summary>
+        /// <param name="stream">Input stream</param>
+        /// <returns>Map instance loaded from stream</returns>
+        public Map Load(Stream stream)
+        {
+#if WINDOWS
+            XmlTextReader xmlReader = new XmlTextReader(stream);
+            xmlReader.WhitespaceHandling = WhitespaceHandling.None;
+
+            XmlHelper xmlHelper = new XmlHelper(xmlReader);
+
+            xmlHelper.AdvanceDeclaration();
+            xmlHelper.AdvanceStartElement("Map");
+            string mapId = xmlHelper.GetAttribute("Id");
+            Map map = new Map(mapId);
+
+            xmlHelper.AdvanceStartElement("Description");
+            string mapDescription = xmlHelper.GetCData();
+            xmlHelper.AdvanceEndElement("Description");
+            map.Description = mapDescription;
+
+            LoadTileSheets(xmlHelper, map);
+
+            LoadLayers(xmlHelper, map);
+
+            LoadProperties(xmlHelper, map);
+
+            return map;
+#else
+            throw new NotSupportedException();
+#endif
+        }
+
+        /// <summary>
+        /// Stores the given map in the given output stream using
+        /// the tIDE format
+        /// </summary>
+        /// <param name="map">Map to store</param>
+        /// <param name="stream">Output stream</param>
+        public void Store(Map map, Stream stream)
+        {
+#if WINDOWS
+            XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
+            xmlWriter.Formatting = Formatting.Indented;
+
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("Map");
+            xmlWriter.WriteAttributeString("Id", map.Id);
+
+            xmlWriter.WriteStartElement("Description");
+            xmlWriter.WriteCData(map.Description);
+            xmlWriter.WriteEndElement();
+
+            StoreTileSheets(map.TileSheets, xmlWriter);
+
+            StoreLayers(map.Layers, xmlWriter);
+
+            StoreProperties(map, xmlWriter);
+
+            xmlWriter.WriteEndElement();
+
+            xmlWriter.Flush();
+#else
+            throw new NotSupportedException();
+#endif
+        }
+
+        #endregion
+
+        #region Internal Methods
+
+        internal TideFormat()
+        {
+            m_compatibilityResults = new CompatibilityReport();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void LoadProperties(XmlHelper xmlHelper, Component component, bool consumeStartElement)
+        {
+            if (consumeStartElement)
+                xmlHelper.AdvanceStartElement("Properties");
 
             while (xmlHelper.AdvanceStartRepeatedElement("Property", "Properties"))
             {
@@ -38,6 +175,11 @@ namespace XTile.Format
 
                 xmlHelper.AdvanceEndElement("Property");
             }
+        }
+
+        private void LoadProperties(XmlHelper xmlHelper, Component component)
+        {
+            LoadProperties(xmlHelper, component, true);
         }
 
         private void StoreProperties(Component component, XmlWriter xmlWriter)
@@ -109,11 +251,25 @@ namespace XTile.Format
             AnimatedTile animatedTile
                 = new AnimatedTile(layer, tileFrames.ToArray(), frameInterval);
 
-            // end of this element or optional props
-            if (xmlHelper.AdvanceNode() != XmlNodeType.EndElement)
-                LoadProperties(xmlHelper, animatedTile);
 
-            return animatedTile;
+            // advance to end Animated tag or Properties
+            xmlHelper.AdvanceNode();
+
+            XmlNodeType xmlNodeType = xmlHelper.XmlReader.NodeType;
+            string nodeName = xmlHelper.XmlReader.Name;
+            if (xmlNodeType == XmlNodeType.Element && nodeName == "Properties")
+            {
+                LoadProperties(xmlHelper, animatedTile, false);
+
+                xmlHelper.AdvanceNode();
+                xmlNodeType = xmlHelper.XmlReader.NodeType;
+                nodeName = xmlHelper.XmlReader.Name;
+            }
+
+            if (xmlNodeType == XmlNodeType.EndElement && nodeName == "Animated")
+                return animatedTile;
+            else
+                throw new Exception("Closing \"Animated\" element expected");
         }
 
         private void StoreAnimatedTile(AnimatedTile animatedTile, XmlWriter xmlWriter)
@@ -220,6 +376,8 @@ namespace XTile.Format
         {
             string id = xmlHelper.GetAttribute("Id");
 
+            bool visible = bool.Parse(xmlHelper.GetAttribute("Visible"));
+
             xmlHelper.AdvanceStartElement("Description");
             string description = xmlHelper.GetCData();
             xmlHelper.AdvanceEndElement("Description");
@@ -231,6 +389,7 @@ namespace XTile.Format
 
             Layer layer = new Layer(id, map, layerSize, tileSize);
             layer.Description = description;
+            layer.Visible = visible;
 
             xmlHelper.AdvanceStartElement("TileArray");
 
@@ -281,6 +440,7 @@ namespace XTile.Format
         {
             xmlWriter.WriteStartElement("Layer");
             xmlWriter.WriteAttributeString("Id", layer.Id);
+            xmlWriter.WriteAttributeString("Visible", layer.Visible.ToString());
 
             xmlWriter.WriteStartElement("Description");
             xmlWriter.WriteCData(layer.Description);
@@ -296,11 +456,11 @@ namespace XTile.Format
             TileSheet previousTileSheet = null;
             int nullCount = 0;
 
-            for (int tileY = 0; tileY < layer.LayerSize.Height; tileY++)
+            for (int tileY = 0; tileY < layer.LayerHeight; tileY++)
             {
                 xmlWriter.WriteStartElement("Row");
 
-                for (int tileX = 0; tileX < layer.LayerSize.Width; tileX++)
+                for (int tileX = 0; tileX < layer.LayerWidth; tileX++)
                 {
                     Tile currentTile = layer.Tiles[tileX, tileY];
 
@@ -375,80 +535,12 @@ namespace XTile.Format
             xmlTextWriter.WriteEndElement();
         }
 
-        internal TideFormat()
-        {
-            m_compatibilityResults = new CompatibilityResults(CompatibilityLevel.Full);
-        }
+        #endregion
 
-        public CompatibilityResults DetermineCompatibility(Map map)
-        {
-            // trivially compatible
-            return m_compatibilityResults;
-        }
+        #region Private Variables
 
-        public Map Load(Stream stream)
-        {
-            XmlTextReader xmlReader = new XmlTextReader(stream);
-            xmlReader.WhitespaceHandling = WhitespaceHandling.None;
+        private CompatibilityReport m_compatibilityResults;
 
-            XmlHelper xmlHelper = new XmlHelper(xmlReader);
-
-            xmlHelper.AdvanceDeclaration();
-            xmlHelper.AdvanceStartElement("Map");
-            string mapId = xmlHelper.GetAttribute("Id");
-            Map map = new Map(mapId);
-
-            xmlHelper.AdvanceStartElement("Description");
-            string mapDescription = xmlHelper.GetCData();
-            xmlHelper.AdvanceEndElement("Description");
-            map.Description = mapDescription;
-
-            LoadTileSheets(xmlHelper, map);
-
-            LoadLayers(xmlHelper, map);
-
-            LoadProperties(xmlHelper, map);
-
-            return map;
-        }
-
-        public void Store(Map map, Stream stream)
-        {
-            XmlTextWriter xmlWriter = new XmlTextWriter(stream, Encoding.UTF8);
-            xmlWriter.Formatting = Formatting.Indented;
-
-            xmlWriter.WriteStartDocument();
-            xmlWriter.WriteStartElement("Map");
-            xmlWriter.WriteAttributeString("Id", map.Id);
-
-            xmlWriter.WriteStartElement("Description");
-            xmlWriter.WriteCData(map.Description);
-            xmlWriter.WriteEndElement();
-
-            StoreTileSheets(map.TileSheets, xmlWriter);
-
-            StoreLayers(map.Layers, xmlWriter);
-
-            StoreProperties(map, xmlWriter);
-
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.Flush();
-        }
-
-        public string Name
-        {
-            get { return "TIDE Map File"; }
-        }
-
-        public string FileExtensionDescriptor
-        {
-            get { return "tIDE Map Files (*.tide)"; }
-        }
-
-        public string FileExtension
-        {
-            get { return "tide"; }
-        }
+        #endregion
     }
 }
