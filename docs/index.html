@@ -6,12 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="shortcut icon" href="images/favicon.ico" /
+		<link rel="shortcut icon" href="images/favicon.ico" />
 		<title>tIDE: Tilemap Integrated Development Environment</title>
 	</head>
 	
 	<body>
 		<style>
+			.modal-dialog {
+				padding-top: 100px;
+			}
+
 			.modal-body.scrollable {
 				height: 512px;
 				overflow-y: auto;
@@ -64,7 +68,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					  <ul class="nav navbar-nav">
 						<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-						<li><a href="#">Downloads</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#downloadModal">Downloads</a></li>
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
 						  <ul class="dropdown-menu">
@@ -315,7 +319,35 @@
 			<!-- end of main content panel -->
 		</div>
 		
-
+		<!-- download modal -->
+		<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Download Binaries</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-8">xTile XNA for Windows PC</div>
+							<div class="col-sm-4"><a href="bin/xTileDemo207.zip">xTile PC Demo v2.0.7</a></div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">tIDE Editor Installer</div>
+							<div class="col-sm-4"><a href="bin/tIDESetup207.msi">tIDE v2.0.7 MSI Setup</a></div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">xTile Engine Libray for PC, XBox 360 and WP7</div>
+							<div class="col-sm-4"><a href="bin/xTile207.zip">xTile Engine v2.0.7</a></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<!-- license modal -->
 		<div class="modal fade" id="licenseModal" tabindex="-1" role="dialog" aria-labelledby="licenseModal" aria-hidden="true">
 			<div class="modal-dialog">
