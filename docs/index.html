@@ -328,18 +328,54 @@
 						<h4 class="modal-title" id="myModalLabel">Download Binaries</h4>
 					</div>
 					<div class="modal-body">
-						<div class="row">
-							<div class="col-sm-8">xTile XNA for Windows PC</div>
-							<div class="col-sm-4"><a href="bin/xTileDemo207.zip">xTile PC Demo v2.0.7</a></div>
-						</div>
-						<div class="row">
-							<div class="col-sm-8">tIDE Editor Installer</div>
-							<div class="col-sm-4"><a href="bin/tIDESetup207.msi">tIDE v2.0.7 MSI Setup</a></div>
-						</div>
-						<div class="row">
-							<div class="col-sm-8">xTile Engine Libray for PC, XBox 360 and WP7</div>
-							<div class="col-sm-4"><a href="bin/xTile207.zip">xTile Engine v2.0.7</a></div>
-						</div>
+
+						<!-- download tabs -->
+						<div>
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#downloadDemo" aria-controls="downloadDemo" role="tab" data-toggle="tab">Demo</a></li>
+								<li role="presentation"><a href="#downloadEditor" aria-controls="downloadEditor" role="tab" data-toggle="tab">Editor</a></li>
+								<li role="presentation"><a href="#downloadEngine" aria-controls="downloadEngine" role="tab" data-toggle="tab">Engine</a></li>
+							</ul>
+
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="downloadDemo">
+									<br>
+									<div class="row">
+										<div class="col-sm-6">
+											<img src="images/xTile40Demo.png" width="100%">
+										</div>
+										<div class="col-sm-6 text-center">
+											<br><br>xTile Engine PC Demo v2.0.7<br><br><a class="btn btn-primary" href="bin/xTileDemo207.zip">Download</a>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="downloadEditor">
+									<br>
+									<div class="row">
+										<div class="col-sm-6">
+											<img src="images/tIDE01.png" width="100%">
+										</div>
+										<div class="col-sm-6 text-center">
+											<br><br>tIDE v2.0.7 MSI Setup<br><br><a class="btn btn-primary" href="bin/tIDESetup207.msi">Download</a>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="downloadEngine">
+									<br>
+									<div class="row">
+										<div class="col-sm-6">
+											<img src="images/xTileInGame.png" width="100%">
+										</div>
+										<div class="col-sm-6 text-center">
+											<br><br>xTile Engine v2.0.7<br><br><a class="btn btn-primary" href="bin/xTile207.zip">Download</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>					
+				
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
