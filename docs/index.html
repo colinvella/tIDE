@@ -67,14 +67,20 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					  <ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
 						<li><a href="https://github.com/colinvella/tIDE"><img src="images/GitHub.png" height="16"> Source</a></li>
 						<li><a href="#" data-toggle="modal" data-target="#downloadModal">Downloads</a></li>
 						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Getting Started <span class="caret"></span></a>
 						  <ul class="dropdown-menu">
-							<li><a href="#">tIDE Tile Map Editor</a></li>
-							<li><a href="#">xTile tile rendering engine</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#editorDocModal">tIDE Tile Map Editor</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#engineDocModal">xTile Rendering Engine</a></li>
+						  </ul>
+						</li>
+						<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="#" data-toggle="modal" data-target="#tutorialGS31Modal">XNA Game Studio 3.1</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#tutorialGS40Modal">XNA Game Studio 4.0</a></li>
 						  </ul>
 						</li>
 					  </ul>
@@ -376,6 +382,54 @@
 								</div>
 							</div>
 						</div>					
+				
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- editor doc modal -->
+		<div class="modal fade" id="editorDocModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">tIDE Prerequisites, Installation and Usage</h4>
+					</div>
+					<div class="modal-body">
+
+						<h4>Build Prerequisites</h4>
+
+						To build the editor from the source code, you will need the following:
+						<ul>
+							<li>Visual Studio 2010 Express (or better)</li>
+							<li>Visual Studio 2010 Team Explorer (or download the source directly)</li>
+							<li>.NET Framework 4.0</li>
+							<li>XNA Game Studio 4.0</li>
+						</ul>
+
+						<p><b>NOTE</b> When downloading the source code from version control, the signed assemblies will cause Visual Studio to prompt the user to enter a password for every .pfx key file. The passwords are identical to the key file names without the .pfx extension, that is "xTilePipeline" and "xTileSignature" respectively.</p>
+
+						<h4>Runtime Prerequisites</h4>
+
+						To install the binary version, you will need the following runtime libraries:
+						<ul>
+							<li>.NET Framework 4.0</li>
+							<li>XNA Framework 4.0 Re-distributable</li>
+						</ul>
+						
+						<p>If the above libraries are not present in the system, they will be downloaded and installed by the MSI installer. See below for more details.</p>
+						
+						<h4>Installation</h4>
+
+						<p>Download the MSI install file, double-click the file to start the installation and follow the setup wizard.</p>
+						
+						<h4>Usage Manual</h4>
+
+						<p>Press <b>F1</b> within the application to access the built-in help system.</p>
 				
 					</div>
 					<div class="modal-footer">
