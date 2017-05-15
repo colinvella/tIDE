@@ -77,7 +77,7 @@
 						  </ul>
 						</li>
 						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usage Tutorials <span class="caret"></span></a>
 						  <ul class="dropdown-menu">
 							<li><a href="#" data-toggle="modal" data-target="#tutorialGS31Modal">XNA Game Studio 3.1</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#tutorialGS40Modal">XNA Game Studio 4.0</a></li>
@@ -196,8 +196,6 @@
 			
 				</div>
 			</div>
-
-
 			
 			<!-- editor features -->
 			<div class="panel panel-default">
@@ -392,7 +390,7 @@
 		</div>
 
 		<!-- editor doc modal -->
-		<div class="modal fade" id="editorDocModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
+		<div class="modal fade" id="editorDocModal" tabindex="-1" role="dialog" aria-labelledby="editorDocModal" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -431,6 +429,95 @@
 
 						<p>Press <b>F1</b> within the application to access the built-in help system.</p>
 				
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- engine doc modal -->
+		<div class="modal fade" id="engineDocModal" tabindex="-1" role="dialog" aria-labelledby="engineDocModal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">xTile Prerequisites, Installation and Usage</h4>
+					</div>
+					<div class="modal-body">
+
+						<h4>Build Prerequisites</h4>
+
+						To build the xTile engine from the source code, you will need the following::
+						<ul>
+							<li>Visual Studio 2010 Express (or better)</li>
+							<li>Visual Studio 2010 Team Explorer (or download the source directly)</li>
+							<li>.NET Framework 4.0</li>
+							<li>XNA Game Studio 4.0</li>
+						</ul>
+
+						<p><b>NOTE</b> When downloading the source code from version control, the signed assemblies will cause Visual Studio to prompt the user to enter a password for every .pfx key file. The passwords are identical to the key file names without the .pfx extension, that is "xTilePipeline" and "xTileSignature" respectively.</p>
+
+						<h4>Development  Prerequisites</h4>
+
+						To use the engine assemblies in your XNA applications, you will need the following runtime libraries:
+						<ul>
+							<li>Visual Studio 2010 Express (or better)</li>
+							<li>.NET Framework 4.0</li>
+							<li>XNA Framework 4.0</li>
+						</ul>
+						
+						<h4>Runtime Prerequisites</h4>
+
+						To use the engine assemblies, you will need the following runtime libraries:
+						<ul>
+							<li>.NET Framework 4.0</li>
+							<li>XNA Framework 4.0 Re-distributable</li>
+						</ul>
+
+						<h4>Development Tutorial</h4>
+						
+						<p>An easy tutorial to get you started using the xTile rendering engine is available here (Game Studio 3.1) and here (Game Studio 4.0).</p>
+				
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- tutorial GS 3.1 modal -->
+		<div class="modal fade" id="tutorialGS31Modal" tabindex="-1" role="dialog" aria-labelledby="tutorialGS31Modal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Tutorial for Game Studio 3.1</h4>
+					</div>
+					<div class="modal-body">
+
+To do				
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- tutorial GS 4.0 modal -->
+		<div class="modal fade" id="tutorialGS40Modal" tabindex="-1" role="dialog" aria-labelledby="tutorialGS40Modal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Tutorial for Game Studio 4.0</h4>
+					</div>
+					<div class="modal-body">
+
+To do				
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
