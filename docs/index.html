@@ -488,15 +488,51 @@
 
 		<!-- tutorial GS 3.1 modal -->
 		<div class="modal fade" id="tutorialGS31Modal" tabindex="-1" role="dialog" aria-labelledby="tutorialGS31Modal" aria-hidden="true">
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">Tutorial for Game Studio 3.1</h4>
+						<h4 class="modal-title" id="myModalLabel">Tutorial for XNA Game Studio 3.1</h4>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body scrollable">
 
-To do				
+						<p>This is a short tutorial explaining how to get started with the xTile tiling engine using Game Studio 3.1. By the end of this tutorial you should have a working XNA 3.1 game application for Windows featuring a parallax scrolling animated map.</p>
+
+						<p>You can access a copy of this tutorial in PDF format <a href="xTileTutorial.pdf" target="_blank">here</a>.</p>
+
+						<h4>Prerequisites</h4>
+
+						<ul>
+							<li>Visual Studio 2008 (any edition)</li>
+							<li>.NET Framework 3.5</li>
+							<li>XNA Game Studio 3.1</li>
+							<li>xTile Engine libraries (<a href="bin/xTile125.zip">xTile125.zip</a> for compatiblity with Game Studio 3.1)</li>
+							<li>tIDE map content (<a href="bin/TutorialContent120.zip">TutorialContent120.zip</a>)</li>
+						</ul>
+
+						<h4>Steps</h4>
+
+						<ol>
+							<li>Start Visual Studio 2008 and create a new XNA Windows Game (3.1) project and name it xTileGame1.<p><img src="images/Tutorial01.png"></p></li>
+							<li>Using the Solution Explorer panel, create a new solution folder named xTile directly under the solution. Also create a corresponding xTile folder on disk within the xTileGame1 solution folder.<p><img src="images/Tutorial02.png"></p></li>
+							<li>Copy the xTile.dll (PC version) and xTile.Pipeline.dll assemblies from the downloaded xTile Engine ZIP archive into the xTile solution folder created previously. Add the assemblies as existing items under the xTile folder in Solution Explorer.<p><img src="images/Tutorial03.png"></p></li>
+							<li>Add an xTile.dll reference to the xTileGame1 project.<p><img src="images/Tutorial04.png"></p></li>
+							<li>Add an xTile.Pipeline.dll reference to the Content project of the xTileGame1 project (not the game project itself).<p><img src="images/Tutorial05.png"></p></li>
+							<li>Add a tIDE map file and its associated tile sheet images in the Content project. Create content folders as necessary to maintain relative path references from the map file to the tile sheet image sources. Ensure that the map file's Content Importer and Content Processor properties are set respectively to tIDE Map Importer and tIDE Map Processor. Also ensure that the Build Action property of the tile sheet image files referred by the map file is set to None to avoid conflicts with the map's content processor.<p><img src="images/Tutorial06.png"></p></li>
+							<li>Compile the project and verify that the tIDE map file is being correctly processed by the content pipeline.<p><img src="images/Tutorial07.png"></p></li>
+							<li>Access the code file Game1.cs and add the following using clauses for the xTile engine:<p><img src="images/Tutorial08.png"></p></li>
+							<li>Add member variables for an xTile map, display device and viewport:<p><img src="images/Tutorial09.png"></p></li>
+							<li>Within the Initialize() method, instantiate the map display device, load the map resources and set a display viewport:<p><img src="images/Tutorial10.png"></p></li>
+							<li>Within the LoadContent() method, load the map from the content pipeline:<p><img src="images/Tutorial11.png"></p></li>
+							<li>Within the Update(GameTime gameTime) method, update the map for tile animation and update the viewport for level scrolling:<p><img src="images/Tutorial12.png"></p></li>
+							<li>Within the Draw(GameTime gameTime) method, render the map visually using the display device and viewport:<p><img src="images/Tutorial13.png"></p></li>
+							<li>Compile and run the xTileGame1 project.<p><img src="images/Tutorial14.png"></p></li>
+						</ol>
+
+<div class="alert alert-warning">
+	<strong>Note for Visual Studio Express Users</strong><br>Solution folders are not supported in the Express edition of Visual Studio. In this case, you may place the assemblies in project folders or simply opt out from adding them as project items.
+</div>
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
